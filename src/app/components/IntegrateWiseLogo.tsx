@@ -49,6 +49,20 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
       <path d="M54.4289 24.0981C57.2918 23.9117 60.1534 24.5081 62.6015 26.0896C65.4302 27.9537 67.4361 30.8902 68.1869 34.2659C69.8061 41.6067 66.1104 48.8144 58.7958 50.4793C58.2895 57.3078 58.9545 64.3443 58.5307 71.1759C58.4181 72.9914 57.9205 73.9957 56.5214 75.0978C56.3931 75.1081 56.2648 75.1145 56.1359 75.1174C51.0795 75.2217 52.6041 66.0946 52.6752 62.4761C52.7507 58.5825 52.737 54.6875 52.6345 50.7944C50.5873 50.0704 49.4134 49.7003 47.6489 48.343C39.5366 42.1034 41.3196 28.6442 50.8118 24.9543C52.215 24.4087 52.9705 24.2882 54.4289 24.0981Z" fill={primaryFill}/>
       <path d="M99.962 0.0385742C100.777 0.0494756 101.729 0.0622401 102.446 0.511322C104.346 1.70249 103.266 20.6982 104.036 24.2648C105.743 24.8311 106.854 25.2996 108.355 26.3919C111.142 28.4403 113.01 31.5636 113.534 35.0534C114.896 43.6881 110.083 49.5955 101.937 50.9023C91.7734 51.1206 85.498 42.8928 88.6263 32.6878C90.1022 27.8734 93.8406 25.7758 97.9669 23.7354C97.7641 21.2334 97.8914 17.3462 97.8638 14.7078C97.8249 10.9673 97.5441 6.60225 98.0138 2.93355C98.2122 1.38582 98.8007 0.848198 99.962 0.0385742Z" fill={primaryFill}/>
       <path d="M143.213 24.2366C150.341 22.5523 157.437 27.1675 159.04 34.5294C160.642 41.8912 156.14 49.1946 148.999 50.8173C141.9 52.4304 134.874 47.8178 133.281 40.4996C131.688 33.1813 136.128 25.9112 143.213 24.2366Z" fill={accentFill}/>
+      {variant !== 'icon-only' && (
+        <g>
+          <text 
+            x="93" 
+            y="120" 
+            fill={textColor} 
+            fontFamily="Inter, system-ui, sans-serif" 
+            fontWeight="normal" 
+            fontSize="14"
+          >
+            Knowledge Workspace over the Spine and Empowered by AI
+          </text>
+        </g>
+      )}
     </svg>
   );
 
@@ -64,11 +78,11 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
     <div className={clsx("flex items-center gap-4", className)}>
       {logoSvg}
       <div className="flex flex-col gap-0.5">
-        <h1 className={clsx("tracking-tight", titleColorClass, variant === 'full' ? 'text-5xl font-bold' : 'text-3xl font-semibold')} style={{ color: '#232D42' }}>
+        <h1 className={clsx("tracking-tight", titleColorClass, variant === 'full' ? 'text-5xl font-bold' : 'text-3xl font-semibold')} style={{ color: colorVariant === 'default' ? 'var(--foreground)' : undefined }}>
           IntegrateWise
         </h1>
-        <p className={clsx("tracking-wide", subtitleColorClass, variant === 'full' ? 'text-lg' : 'text-base')} style={{ color: '#636A82' }}>
-          The Knowledge Workspace empowered by AI and the Spine
+        <p className={clsx("tracking-wide", subtitleColorClass, variant === 'full' ? 'text-lg' : 'text-base')} style={{ color: colorVariant === 'default' ? 'var(--muted-foreground)' : undefined }}>
+          IntegrateWise. - Knowledge Workspace Over the Spine and Empowered by AI
         </p>
       </div>
     </div>

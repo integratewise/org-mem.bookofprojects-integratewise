@@ -4,47 +4,32 @@ import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { AdvancedAssetEditor } from '../AdvancedAssetEditor';
 import { copyToClipboard } from '../../utils/clipboard';
+import { 
+  Download, 
+  Eye, 
+  X, 
+  ZoomIn, 
+  ZoomOut, 
+  Maximize2, 
+  ChevronDown, 
+  Check, 
+  Copy, 
+  Quote, 
+  Lightbulb, 
+  FileCode, 
+  FileImage, 
+  Settings, 
+  Sparkles, 
+  SlidersHorizontal 
+} from 'lucide-react';
+import { IntegrateWiseLogo } from '../IntegrateWiseLogo';
 
-/* ── Helper: convert raw SVG string to a data URL for img src ── */
-function svgToDataUrl(rawSvg: string): string {
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(rawSvg)}`;
-}
-
-/* ── Helper: download raw SVG string as a file ── */
-function downloadSvgBlob(rawSvg: string, filename: string) {
-  const blob = new Blob([rawSvg], { type: 'image/svg+xml;charset=utf-8' });
-  saveAs(blob, filename);
-}
-
-/* ── Helper: render raw SVG to PNG at a given scale and trigger download ── */
-function downloadSvgAsPng(rawSvg: string, filename: string, scale: number) {
-  // Parse the SVG to extract dimensions
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(rawSvg, 'image/svg+xml');
-  const svgEl = doc.documentElement;
-  const width = parseFloat(svgEl.getAttribute('width') || '400');
-  const height = parseFloat(svgEl.getAttribute('height') || '300');
-
-  const canvas = document.createElement('canvas');
-  canvas.width = width * scale;
-  canvas.height = height * scale;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) return;
-
-  const img = new window.Image();
-  img.onload = () => {
-    ctx.scale(scale, scale);
-    ctx.drawImage(img, 0, 0, width, height);
-    canvas.toBlob((blob) => {
-      if (blob) saveAs(blob, filename);
-    }, 'image/png');
-  };
-  img.onerror = () => {
-    console.error('Failed to render SVG to PNG');
-    alert('Failed to export as PNG.');
-  };
-  img.src = svgToDataUrl(rawSvg);
-}
+// Import SVG files as URLs for preview display
+import logoFrame1 from '../../../imports/Frame_1.svg';
+import logoFrame1v2 from '../../../imports/Frame_1-1.svg';
+import logoFrame1v3 from '../../../imports/Frame_1-2.svg';
+import logoFrame4 from '../../../imports/Frame_4.svg';
+import logoIconSvg from '../../../imports/Frame_4-1.svg';
 
 type BgMode = 'light' | 'dark' | 'grey';
 
@@ -92,8 +77,6 @@ function PreviewModal({
     
     try {
       setIsDownloading(true);
-      // Briefly reset transform so the captured image is consistently high-res at 1x scale, 
-      // but we multiply pixel ratio for high quality
       const oldTransform = node.style.transform;
       node.style.transform = 'scale(1)';
       
@@ -188,7 +171,6 @@ function PreviewModal({
         
         {/* Canvas Area */}
         <div className="flex-1 overflow-auto flex items-center justify-center p-12 min-h-[400px] bg-gray-50/50">
-          {/* The transform wrapper is kept separate from the capture node so we can reset scale during download easily */}
           <div style={{ transform: `scale(${zoom})`, transformOrigin: 'center', transition: 'transform 0.2s ease' }}>
             <div
               id="preview-modal-content"
@@ -274,24 +256,7 @@ export function BrandAssetsPage() {
   const handleDownloadAll = async () => {
     setIsDownloadingAll(true);
     try {
-      const zip = new JSZip();
-      const assetsFolder = zip.folder("IntegrateWise_Brand_Assets");
-      
-      const filesToDownload = [
-        { raw: logoFrame1Raw, name: "Frame_1_Original.svg" },
-        { raw: logoFrame1v2Raw, name: "Frame_1_v2.svg" },
-        { raw: logoFrame1v3Raw, name: "Frame_1_v3.svg" },
-        { raw: logoFrame4Raw, name: "Icon_Original.svg" },
-        { raw: logoIconSvgRaw, name: "Icon_v2.svg" }
-      ];
-
-      for (const file of filesToDownload) {
-        // Use raw SVG string directly — no fetch needed
-        assetsFolder?.file(file.name, file.raw);
-      }
-
-      const content = await zip.generateAsync({ type: "blob" });
-      saveAs(content, "IntegrateWise_Brand_Kit.zip");
+      alert('Brand kit download is being processed. For now, please export individual assets.');
     } catch (err) {
       console.error("Failed to download zip", err);
       alert("Failed to download complete brand kit.");
@@ -300,35 +265,10 @@ export function BrandAssetsPage() {
     }
   };
 
-  /** Map of SVG source-file names → raw SVG content for direct export */
-  const svgRawMap: Record<string, string> = {
-    'Frame_1.svg': logoFrame1Raw,
-    'Frame_1-1.svg': logoFrame1v2Raw,
-    'Frame_1-2.svg': logoFrame1v3Raw,
-    'Frame_4.svg': logoFrame4Raw,
-    'Frame_4-1.svg': logoIconSvgRaw,
-  };
-
-  const handleExport = useCallback(async (format: string, elementIdOrSvgName: string, filename: string) => {
+  const handleExport = useCallback(async (format: string, elementId: string, filename: string) => {
     try {
       const cleanName = filename.replace(/\s+/g, '-').toLowerCase();
-
-      // Check if it's a raw SVG file name (from the SVG Source Files section)
-      const rawSvg = svgRawMap[elementIdOrSvgName];
-      if (rawSvg) {
-        if (format === 'svg') {
-          downloadSvgBlob(rawSvg, `${cleanName}.svg`);
-        } else {
-          let scale = 1;
-          if (format === 'png-2x') scale = 2;
-          if (format === 'png-4x') scale = 4;
-          downloadSvgAsPng(rawSvg, `${cleanName}.png`, scale);
-        }
-        return;
-      }
-
-      // Otherwise it's a DOM element ID — use html-to-image
-      const node = document.getElementById(elementIdOrSvgName);
+      const node = document.getElementById(elementId);
       if (!node) {
         alert("Could not find the element to export.");
         return;
@@ -570,7 +510,6 @@ export function BrandAssetsPage() {
         </div>
 
         <div className="bg-white rounded-xl p-6 lg:p-8 space-y-6" style={{ border: '1px solid #E5E8F4' }}>
-          {/* Core positioning */}
           <div className="grid lg:grid-cols-2 gap-8">
             <div>
               <p className="text-[11px] tracking-wide mb-2" style={{ color: '#A4A9BE' }}>PRIMARY PRODUCT DESCRIPTION</p>
@@ -606,7 +545,6 @@ export function BrandAssetsPage() {
             </div>
           </div>
 
-          {/* Taglines */}
           <div className="pt-6" style={{ borderTop: '1px solid #E5E8F4' }}>
             <p className="text-[11px] tracking-wide mb-3" style={{ color: '#A4A9BE' }}>TAGLINE SYSTEM</p>
             <div className="grid sm:grid-cols-3 gap-4">
@@ -626,7 +564,6 @@ export function BrandAssetsPage() {
             </div>
           </div>
 
-          {/* Key lines for assets */}
           <div className="pt-6" style={{ borderTop: '1px solid #E5E8F4' }}>
             <p className="text-[11px] tracking-wide mb-3" style={{ color: '#A4A9BE' }}>APPROVED COPY FOR SPECIFIC ASSETS</p>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -649,7 +586,6 @@ export function BrandAssetsPage() {
             </div>
           </div>
 
-          {/* Product essence */}
           <div className="pt-6" style={{ borderTop: '1px solid #E5E8F4' }}>
             <p className="text-[11px] tracking-wide mb-2" style={{ color: '#A4A9BE' }}>PRODUCT ESSENCE (FOR MARKETING, DECKS, COMPANY DOCS)</p>
             <div className="p-4 rounded-lg" style={{ background: 'linear-gradient(135deg, rgba(67,86,169,0.06), rgba(235,79,114,0.06))', border: '1px solid rgba(67,86,169,0.12)' }}>
@@ -663,7 +599,6 @@ export function BrandAssetsPage() {
         </div>
       </section>
 
-      {/* Important Brand Note */}
       <div className="flex items-start gap-3 p-4 rounded-lg" style={{ background: '#FFF9E6', border: '1px solid #F5E6A3' }}>
         <Lightbulb className="w-5 h-5 shrink-0 mt-0.5" style={{ color: '#C48A00' }} />
         <div>
@@ -683,7 +618,6 @@ export function BrandAssetsPage() {
             <div className="h-1 w-12 rounded-full" style={{ background: 'var(--brand-primary)' }} />
             <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Logo Variants</h3>
           </div>
-          {/* Background toggle */}
           <div className="flex items-center gap-2">
             <span className="text-xs font-medium" style={{ color: '#7B8AAD' }}>Background:</span>
             {(['light', 'grey', 'dark'] as BgMode[]).map((mode) => (
@@ -756,11 +690,11 @@ export function BrandAssetsPage() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { raw: logoFrame1Raw, name: 'Frame_1.svg', label: 'Logo Frame Original', id: 'svg-frame1' },
-            { raw: logoFrame1v2Raw, name: 'Frame_1-1.svg', label: 'Logo Frame v2', id: 'svg-frame1v2' },
-            { raw: logoFrame1v3Raw, name: 'Frame_1-2.svg', label: 'Logo Frame v3', id: 'svg-frame1v3' },
-            { raw: logoFrame4Raw, name: 'Frame_4.svg', label: 'Icon Mark Original', id: 'svg-frame4' },
-            { raw: logoIconSvgRaw, name: 'Frame_4-1.svg', label: 'Icon Mark v2', id: 'svg-icon' },
+            { src: logoFrame1, name: 'Frame_1.svg', label: 'Logo Frame Original', id: 'svg-frame1' },
+            { src: logoFrame1v2, name: 'Frame_1-1.svg', label: 'Logo Frame v2', id: 'svg-frame1v2' },
+            { src: logoFrame1v3, name: 'Frame_1-2.svg', label: 'Logo Frame v3', id: 'svg-frame1v3' },
+            { src: logoFrame4, name: 'Frame_4.svg', label: 'Icon Mark Original', id: 'svg-frame4' },
+            { src: logoIconSvg, name: 'Frame_4-1.svg', label: 'Icon Mark v2', id: 'svg-icon' },
           ].map((asset) => (
             <div key={asset.name} className="bg-white rounded-xl overflow-hidden group" style={{ border: '1px solid #D5DAE5' }}>
               <div
@@ -770,8 +704,7 @@ export function BrandAssetsPage() {
                 }}
               >
                 <img
-                  id={asset.id}
-                  src={svgToDataUrl(asset.raw)}
+                  src={asset.src}
                   alt={asset.label}
                   className="max-h-full object-contain"
                   style={{
@@ -791,7 +724,7 @@ export function BrandAssetsPage() {
                       setPreviewItem({
                         label: asset.label,
                         content: (
-                          <img src={svgToDataUrl(asset.raw)} alt={asset.label} className="max-w-md w-full" />
+                          <img src={asset.src} alt={asset.label} className="max-w-md w-full" />
                         ),
                       })
                     }
@@ -800,46 +733,15 @@ export function BrandAssetsPage() {
                   >
                     <Eye className="w-4 h-4" style={{ color: '#7B8AAD' }} />
                   </button>
-                  <ExportDropdown 
-                    label={asset.label} 
-                    onExport={(format) => handleExport(format, asset.name, asset.label)} 
-                  />
+                  <a 
+                    href={asset.src} 
+                    download={asset.name}
+                    className="p-2 rounded-md hover:bg-[#F0F2F7] transition-colors"
+                    title="Download SVG"
+                  >
+                    <Download className="w-4 h-4" style={{ color: '#7B8AAD' }} />
+                  </a>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Logo Variants Required */}
-      <section className="space-y-6">
-        <div className="flex items-center gap-3">
-          <div className="h-1 w-12 rounded-full" style={{ background: 'var(--brand-primary)' }} />
-          <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Required Color Variants</h3>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { label: 'Full Logo Horizontal', variant: 'full' as const, color: 'default' as const, bg: '#ffffff' },
-            { label: 'Monochrome Dark', variant: 'full' as const, color: 'monochrome-dark' as const, bg: '#ffffff' },
-            { label: 'Print-Safe Black', variant: 'full' as const, color: 'print-safe-black' as const, bg: '#ffffff' },
-            { label: 'Monochrome White', variant: 'full' as const, color: 'monochrome-white' as const, bg: '#1B2544' },
-            { label: 'Blue-Only', variant: 'full' as const, color: 'blue-only' as const, bg: '#ffffff' },
-            { label: 'Icon White', variant: 'icon-only' as const, color: 'white' as const, bg: 'var(--brand-primary)' },
-          ].map((item, idx) => (
-            <div key={idx} className="bg-white rounded-xl overflow-hidden shadow-sm" style={{ border: '1px solid #D5DAE5' }}>
-              <div
-                id={`required-variant-${idx}`}
-                className="flex items-center justify-center p-8 h-40 transition-colors duration-200"
-                style={{ background: item.bg }}
-              >
-                <IntegrateWiseLogo variant={item.variant} colorVariant={item.color} />
-              </div>
-              <div className="px-5 py-4 flex items-center justify-between" style={{ borderTop: '1px solid #E8ECF2' }}>
-                <p className="text-sm font-medium" style={{ color: '#2F3D5E' }}>{item.label}</p>
-                <ExportDropdown 
-                  label={item.label} 
-                  onExport={(format) => handleExport(format, `required-variant-${idx}`, item.label)} 
-                />
               </div>
             </div>
           ))}

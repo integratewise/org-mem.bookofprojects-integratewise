@@ -8,6 +8,8 @@ import { SalesPage } from "./components/pages/SalesPage";
 import { StationeryPage } from "./components/pages/StationeryPage";
 import { GeneratorsPage } from "./components/pages/GeneratorsPage";
 import { DocumentationPage } from "./components/pages/DocumentationPage";
+import { CompanyPage } from "./components/pages/CompanyPage";
+import { ArchitecturePage } from "./components/pages/ArchitecturePage";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +23,8 @@ export const router = createBrowserRouter([
     ),
     children: [
       { index: true, Component: HomePage },
+      { path: "company", Component: CompanyPage },
+      { path: "architecture", Component: ArchitecturePage },
       { path: "brand-assets", Component: BrandAssetsPage },
       { path: "design-tokens", Component: DesignTokensPage },
       { path: "stationery", Component: StationeryPage },
@@ -33,8 +37,8 @@ export const router = createBrowserRouter([
         Component: () => (
           <div className="flex items-center justify-center h-full">
             <div className="text-center">
-              <h1 className="text-4xl font-bold" style={{ color: '#1D1E21' }}>404</h1>
-              <p style={{ color: '#636A82' }} className="mt-2">Page not found</p>
+              <h1 className="text-4xl font-bold" style={{ color: 'var(--foreground)' }}>404</h1>
+              <p style={{ color: 'var(--muted-foreground)' }} className="mt-2">Page not found</p>
             </div>
           </div>
         ),

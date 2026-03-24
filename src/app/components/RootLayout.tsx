@@ -52,6 +52,19 @@ const NAV_STRUCTURE: NavEntry[] = [
   {
     type: 'group',
     group: {
+      id: 'company-product',
+      label: 'Company & Product',
+      icon: Building2,
+      color: '#4356A9',
+      children: [
+        { to: '/company', icon: Building2, label: 'Company & Product Master', color: '#4356A9' },
+        { to: '/architecture', icon: GitBranch, label: 'Executive Architecture', color: '#636A82' },
+      ],
+    },
+  },
+  {
+    type: 'group',
+    group: {
       id: 'brand-identity',
       label: 'Brand & Identity',
       icon: Palette,

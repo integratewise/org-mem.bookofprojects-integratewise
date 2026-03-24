@@ -23,11 +23,30 @@ import {
   Check,
   Package,
   Users,
+  Building2,
 } from 'lucide-react';
 import { useState } from 'react';
 import { copyToClipboard } from '../../utils/clipboard';
 
 const sections = [
+  {
+    to: '/company',
+    icon: Building2,
+    title: 'Company & Product',
+    description: 'Company introduction, vision, mission, belief system, business model, and GTM strategy',
+    count: 8,
+    label: 'sections',
+    color: '#4356A9',
+  },
+  {
+    to: '/architecture',
+    icon: GitBranch,
+    title: 'Executive Architecture',
+    description: 'L0/L1/L2/L3 layers, Spine, data flows, pipeline, and core architectural rules',
+    count: 12,
+    label: 'sections',
+    color: '#636A82',
+  },
   {
     to: '/brand-assets',
     icon: Palette,
@@ -254,11 +273,11 @@ export function HomePage() {
         <p className="text-xs font-semibold mb-3" style={{ color: '#475578' }}>One-Click Copy</p>
         <div className="flex flex-wrap gap-2">
           {[
-            { id: 'qc1', label: 'Tagline', text: 'AI Thinks in Context — and Waits for Approval' },
-            { id: 'qc2', label: 'Descriptor', text: 'The Knowledge Workspace empowered by AI and the Spine' },
-            { id: 'qc3', label: 'Short', text: 'AI Knowledge Workspace' },
+            { id: 'qc1', label: 'Tagline', text: 'AI Thinks in Context �� and Waits for Approval' },
+            { id: 'qc2', label: 'Descriptor', text: 'Knowledge Workspace over the Spine, empowered by AI and governed by approvals' },
+            { id: 'qc3', label: 'Short', text: 'Knowledge Workspace over the Spine Intelligence and Empowered by AI' },
             { id: 'qc4', label: 'Website', text: 'integratewise.ai' },
-            { id: 'qc5', label: 'Email', text: 'connect@integratewise.co' },
+            { id: 'qc5', label: 'Email', text: 'connect@integratewise.ai' },
           ].map(item => (
             <button
               key={item.id}
@@ -309,8 +328,8 @@ export function HomePage() {
             </div>
             <div className="space-y-4">
               <div>
-                <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>CORE DESCRIPTOR</p>
-                <p className="text-sm font-medium" style={{ color: '#333944' }}>The Knowledge Workspace empowered by AI and the Spine</p>
+                <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>CANONICAL STATEMENT</p>
+                <p className="text-sm font-medium" style={{ color: '#333944' }}>Knowledge Workspace over the Spine, empowered by AI and governed by approvals</p>
               </div>
               <div>
                 <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>PRIMARY TAGLINE</p>
@@ -319,6 +338,10 @@ export function HomePage() {
               <div>
                 <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>SHORT VERSION</p>
                 <p className="text-sm font-medium" style={{ color: '#333944' }}>Context-Aware AI. Approval-Controlled Work.</p>
+              </div>
+              <div>
+                <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>FOOTER LINE</p>
+                <p className="text-sm font-medium" style={{ color: '#333944' }}>IntegrateWise LLP · Bengaluru, India · AI Thinks in Context. Actions Wait for Humans.</p>
               </div>
             </div>
           </div>
@@ -423,10 +446,10 @@ export function HomePage() {
         <div className="bg-white rounded-xl p-6" style={{ border: '1px solid #E5E8F4' }}>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { dept: 'General', emails: ['info@integratewise.co', 'connect@integratewise.co'] },
-              { dept: 'Sales', emails: ['sales@integratewise.co', 'sales@integratewise.ai'] },
-              { dept: 'Support', emails: ['support@integratewise.co', 'support@integratewise.ai'] },
-              { dept: 'Billing', emails: ['billing@integratewise.co', 'billing@integratewise.ai'] },
+              { dept: 'General', emails: ['hello@integratewise.ai', 'connect@integratewise.ai'] },
+              { dept: 'Sales', emails: ['sales@integratewise.ai'] },
+              { dept: 'Support', emails: ['support@integratewise.ai'] },
+              { dept: 'Billing', emails: ['billing@integratewise.ai'] },
             ].map((contact) => (
               <div key={contact.dept}>
                 <p className="text-xs font-semibold mb-2" style={{ color: '#333944' }}>{contact.dept}</p>
@@ -438,9 +461,9 @@ export function HomePage() {
           </div>
           <div className="mt-4 pt-4 flex flex-wrap gap-6" style={{ borderTop: '1px solid #E5E8F4' }}>
             {[
-              { dept: 'Marketing', email: 'marketing@integratewise.co' },
-              { dept: 'Careers', email: 'careers@integratewise.co' },
-              { dept: 'Security', email: 'security@integratewise.co' },
+              { dept: 'Marketing', email: 'marketing@integratewise.ai' },
+              { dept: 'Careers', email: 'careers@integratewise.ai' },
+              { dept: 'Security', email: 'security@integratewise.ai' },
               { dept: 'Website', email: 'integratewise.ai' },
             ].map((c) => (
               <div key={c.dept}>

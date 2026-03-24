@@ -43,7 +43,7 @@ import { saveAs } from 'file-saver';
 const BRAND = {
   company: 'IntegrateWise LLP',
   companyShort: 'IntegrateWise',
-  descriptor: 'The Knowledge Workspace empowered by AI and the Spine',
+  descriptor: 'Knowledge Workspace Over the Spine and Empowered by AI',
   descriptorShort: 'AI Knowledge Workspace',
   tagline: 'AI Thinks in Context — and Waits for Approval',
   taglineShort: 'Context-Aware AI. Approval-Controlled Work.',
@@ -58,14 +58,14 @@ const BRAND = {
     navy: '#1B2544',
   },
   emails: {
-    general: 'info@integratewise.co',
-    connect: 'connect@integratewise.co',
-    sales: 'sales@integratewise.co',
-    support: 'support@integratewise.co',
-    billing: 'billing@integratewise.co',
-    careers: 'careers@integratewise.co',
-    security: 'security@integratewise.co',
-    marketing: 'marketing@integratewise.co',
+    general: 'hello@integratewise.ai',
+    connect: 'connect@integratewise.ai',
+    sales: 'sales@integratewise.ai',
+    support: 'support@integratewise.ai',
+    billing: 'billing@integratewise.ai',
+    careers: 'careers@integratewise.ai',
+    security: 'security@integratewise.ai',
+    marketing: 'marketing@integratewise.ai',
   } as Record<string, string>,
   spineDescriptions: [
     'The Spine (SSOT)',
@@ -487,17 +487,17 @@ function CampaignKitGenerator({ team, setExportLog }: {
         const f = kit.folder('01_LinkedIn_Banners')!;
         for (const [styleName, styleData] of Object.entries(BANNER_STYLES)) {
           const canvas = document.createElement('canvas');
-          canvas.width = 1584; canvas.height = 396;
+          canvas.width = 1128; canvas.height = 191;
           const ctx = canvas.getContext('2d')!;
           if (styleName === 'dark') { ctx.fillStyle = BRAND.colors.navy; }
           else {
-            const grad = ctx.createLinearGradient(0, 0, 1584, 396);
+            const grad = ctx.createLinearGradient(0, 0, 1128, 191);
             if (styleName === 'gradient') { grad.addColorStop(0, BRAND.colors.primary); grad.addColorStop(0.5, BRAND.colors.primaryDark); grad.addColorStop(1, BRAND.colors.navy); }
             else if (styleName === 'accent') { grad.addColorStop(0, BRAND.colors.primary); grad.addColorStop(1, BRAND.colors.accent); }
             else { grad.addColorStop(0, '#EDF0F5'); grad.addColorStop(1, '#D5DAE5'); }
             ctx.fillStyle = grad;
           }
-          ctx.fillRect(0, 0, 1584, 396);
+          ctx.fillRect(0, 0, 1128, 191);
           ctx.fillStyle = styleData.isLight ? BRAND.colors.navy : '#fff';
           ctx.font = '700 42px system-ui, sans-serif'; ctx.fillText('IntegrateWise', 80, 180);
           ctx.globalAlpha = styleData.isLight ? 1 : 0.75;
@@ -637,7 +637,7 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
     if (!ref.current) return;
     setIsExporting(true);
     try {
-      const dataUrl = await toPng(ref.current, { pixelRatio: 2, cacheBust: true, width: 1584, height: 396 });
+      const dataUrl = await toPng(ref.current, { pixelRatio: 2, cacheBust: true, width: 1128, height: 191 });
       const a = document.createElement('a'); a.href = dataUrl;
       a.download = `IntegrateWise-LinkedIn-Banner-${style}.png`; a.click();
       addToLog(setExportLog, { name: `LinkedIn Banner (${style})`, type: 'PNG' });
@@ -649,11 +649,11 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
     try {
       const zip = new JSZip();
       for (const [sn, sd] of Object.entries(BANNER_STYLES)) {
-        const canvas = document.createElement('canvas'); canvas.width = 1584; canvas.height = 396;
+        const canvas = document.createElement('canvas'); canvas.width = 1128; canvas.height = 191;
         const ctx = canvas.getContext('2d')!;
         if (sn === 'dark') { ctx.fillStyle = BRAND.colors.navy; }
-        else { const g = ctx.createLinearGradient(0,0,1584,396); if(sn==='gradient'){g.addColorStop(0,BRAND.colors.primary);g.addColorStop(.5,BRAND.colors.primaryDark);g.addColorStop(1,BRAND.colors.navy)}else if(sn==='accent'){g.addColorStop(0,BRAND.colors.primary);g.addColorStop(1,BRAND.colors.accent)}else{g.addColorStop(0,'#EDF0F5');g.addColorStop(1,'#D5DAE5')}ctx.fillStyle=g; }
-        ctx.fillRect(0,0,1584,396);
+        else { const g = ctx.createLinearGradient(0,0,1128,191); if(sn==='gradient'){g.addColorStop(0,BRAND.colors.primary);g.addColorStop(.5,BRAND.colors.primaryDark);g.addColorStop(1,BRAND.colors.navy)}else if(sn==='accent'){g.addColorStop(0,BRAND.colors.primary);g.addColorStop(1,BRAND.colors.accent)}else{g.addColorStop(0,'#EDF0F5');g.addColorStop(1,'#D5DAE5')}ctx.fillStyle=g; }
+        ctx.fillRect(0,0,1128,191);
         ctx.fillStyle = sd.isLight ? BRAND.colors.navy : '#fff';
         ctx.font = '700 42px system-ui'; ctx.fillText(editTitle, 80, 180);
         ctx.globalAlpha = sd.isLight ? 1 : .75; ctx.fillStyle = sd.isLight ? '#5F6E93' : '#fff';
@@ -708,7 +708,7 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
       <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #D5DAE5', boxShadow: editState.shadowEnabled ? `0 4px ${editState.shadowBlur}px rgba(0,0,0,0.1)` : undefined }}>
         <div style={{ transform: 'scale(0.5)', transformOrigin: 'top left', width: '200%', height: 0, paddingBottom: '12.5%' }}>
           <div ref={ref} style={{
-            width: 1584, height: 396, ...bgStyle,
+            width: 1128, height: 191, ...bgStyle,
             position: 'relative', display: 'flex', alignItems: 'center',
             padding: `0 ${editState.paddingX}px`,
             fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -774,7 +774,7 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
         <button onClick={handleExport} disabled={isExporting}
           className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold text-white transition-all"
           style={{ background: isExporting ? '#9BA8C2' : '#4154A3' }}>
-          <Download className="w-3.5 h-3.5" /> {isExporting ? 'Exporting...' : 'Download This Style (1584x396)'}
+          <Download className="w-3.5 h-3.5" /> {isExporting ? 'Exporting...' : 'Download This Style (1128x191)'}
         </button>
         <button onClick={batchExport} disabled={isBatch}
           className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold transition-all"
@@ -1011,7 +1011,7 @@ function TeamRosterManager({ team, setTeam }: { team: TeamMember[]; setTeam: Rea
                       className="px-2 py-1 rounded text-xs focus:outline-none focus:ring-1 focus:ring-[#4154A3]/30" style={{ border: '1px solid #D5DAE5', color: '#1B2544' }} placeholder="Title" />
                     <select value={member.email} onChange={e => updateMember(member.id, 'email', e.target.value)}
                       className="px-2 py-1 rounded text-xs bg-white focus:outline-none" style={{ border: '1px solid #D5DAE5', color: '#1B2544' }}>
-                      {Object.keys(BRAND.emails).map(k => <option key={k} value={k}>{k}@integratewise.co</option>)}
+                      {Object.keys(BRAND.emails).map(k => <option key={k} value={k}>{k}@integratewise.ai</option>)}
                     </select>
                   </div>
                 ) : (
@@ -1148,7 +1148,7 @@ type Tool = 'campaign-kit' | 'linkedin-banner' | 'social-post' | 'team-roster' |
 
 const tools: { id: Tool; icon: typeof Package; label: string; desc: string; color: string; badge?: string }[] = [
   { id: 'campaign-kit', icon: Package, label: 'Campaign Kit', desc: 'One-click full export', color: '#EB4379', badge: 'NEW' },
-  { id: 'linkedin-banner', icon: Linkedin, label: 'LinkedIn Banners', desc: '1584x396, 4 styles', color: '#0A66C2' },
+  { id: 'linkedin-banner', icon: Linkedin, label: 'LinkedIn Banners', desc: '1128x191, 4 styles', color: '#0A66C2' },
   { id: 'social-post', icon: ImageIcon, label: 'Social Posts', desc: 'Editable, all platforms', color: '#4154A3' },
   { id: 'team-roster', icon: Users, label: 'Team & Signatures', desc: 'Manage team, copy HTML', color: '#364789' },
   { id: 'copy-library', icon: Type, label: 'Copy Library', desc: 'All approved copy', color: '#6B7DC4' },
