@@ -83,11 +83,11 @@ const DEFAULT_TEAM: TeamMember[] = [
 ];
 
 const POST_TEMPLATES = [
-  { id: 'thought', name: 'Thought Leadership', headline: 'AI Thinks in Context', subline: 'Workflows Should Too', bg: `linear-gradient(135deg, ${BRAND.colors.primary} 0%, ${BRAND.colors.primaryDark} 100%)` },
-  { id: 'problem', name: 'Problem Statement', headline: 'Modern Work Is Fragmented', subline: 'Tools disconnected · Knowledge scattered · AI without context', bg: `linear-gradient(135deg, ${BRAND.colors.navy} 0%, #2F3D5E 100%)` },
-  { id: 'solution', name: 'Solution', headline: 'IntegrateWise', subline: 'One Workspace · One Spine · Context-Aware AI · Human Approvals', bg: `linear-gradient(135deg, ${BRAND.colors.primary} 0%, ${BRAND.colors.accent} 100%)` },
-  { id: 'announce', name: 'Announcement', headline: 'The Spine is Live', subline: 'A unified intelligence layer connecting tools, context, and decisions', bg: `linear-gradient(135deg, ${BRAND.colors.primaryDark} 0%, ${BRAND.colors.primary} 50%, ${BRAND.colors.primaryLight} 100%)` },
-  { id: 'custom', name: 'Custom', headline: 'Your Headline Here', subline: 'Your supporting text here', bg: `linear-gradient(135deg, ${BRAND.colors.primary} 0%, ${BRAND.colors.primaryDark} 100%)` },
+  { id: 'thought', name: 'Thought Leadership', headline: 'AI Thinks in Context', subline: 'Workflows Should Too', bg: `linear-gradient(135deg, #1a1f36 0%, #2d3561 25%, #4154A3 50%, #5a6bc4 75%, #7b8ad4 100%)` },
+  { id: 'problem', name: 'Problem Statement', headline: 'Modern Work Is Fragmented', subline: 'Tools disconnected · Knowledge scattered · AI without context', bg: `linear-gradient(135deg, #0f1419 0%, #1B2544 40%, #2d3a5c 70%, #3d4d75 100%)` },
+  { id: 'solution', name: 'Solution', headline: 'IntegrateWise', subline: 'One Workspace · One Spine · Context-Aware AI · Human Approvals', bg: `linear-gradient(135deg, #4154A3 0%, #5a3d8a 30%, #8b2f6b 60%, #EB4379 100%)` },
+  { id: 'announce', name: 'Announcement', headline: 'The Spine is Live', subline: 'A unified intelligence layer connecting tools, context, and decisions', bg: `linear-gradient(135deg, #0d1f33 0%, #1e3a5f 25%, #2d5a8b 50%, #4a7ab8 75%, #6b9ad4 100%)` },
+  { id: 'custom', name: 'Custom', headline: 'Your Headline Here', subline: 'Your supporting text here', bg: `linear-gradient(135deg, #2d3561 0%, #4154A3 50%, #5a6bc4 100%)` },
 ];
 
 const PLATFORMS = {
@@ -98,10 +98,12 @@ const PLATFORMS = {
 } as const;
 
 const BANNER_STYLES: Record<string, { bg: string; isLight: boolean; label: string }> = {
-  gradient: { bg: `linear-gradient(135deg, ${BRAND.colors.primary} 0%, ${BRAND.colors.primaryDark} 50%, ${BRAND.colors.navy} 100%)`, isLight: false, label: 'Gradient' },
-  dark: { bg: BRAND.colors.navy, isLight: false, label: 'Dark' },
-  light: { bg: 'linear-gradient(135deg, #EDF0F5 0%, #D5DAE5 100%)', isLight: true, label: 'Light' },
-  accent: { bg: `linear-gradient(135deg, ${BRAND.colors.primary} 0%, ${BRAND.colors.accent} 100%)`, isLight: false, label: 'Accent' },
+  ocean: { bg: `linear-gradient(135deg, #0d1f33 0%, #1e3a5f 20%, #2d5a8b 40%, #4154A3 60%, #5a6bc4 80%, #7b8ad4 100%)`, isLight: false, label: 'Ocean' },
+  midnight: { bg: `linear-gradient(135deg, #0a0e1a 0%, #1B2544 30%, #2d3561 60%, #3d4d75 100%)`, isLight: false, label: 'Midnight' },
+  sunset: { bg: `linear-gradient(135deg, #1a1f36 0%, #2d3561 20%, #5a3d8a 50%, #8b2f6b 75%, #EB4379 100%)`, isLight: false, label: 'Sunset' },
+  professional: { bg: `linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #cbd5e1 60%, #94a3b8 100%)`, isLight: true, label: 'Professional' },
+  cosmic: { bg: `linear-gradient(135deg, #0f172a 0%, #1e1b4b 25%, #312e81 50%, #4338ca 75%, #6366f1 100%)`, isLight: false, label: 'Cosmic' },
+  emerald: { bg: `linear-gradient(135deg, #064e3b 0%, #065f46 25%, #047857 50%, #059669 75%, #10b981 100%)`, isLight: false, label: 'Emerald' },
 };
 
 interface TeamMember { id: string; name: string; title: string; email: string; }
