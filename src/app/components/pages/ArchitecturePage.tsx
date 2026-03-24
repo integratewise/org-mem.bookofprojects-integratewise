@@ -665,66 +665,97 @@ export function ArchitecturePage() {
           >
             <Layers className="w-6 h-6 text-[#4154A3]" />
           </motion.div>
-          <h2 className="text-2xl font-bold text-[#1B2544]">Layer Architecture (L0-L3)</h2>
+          <h2 className="text-2xl font-bold text-[#1B2544]">Layer Architecture (L0-L5)</h2>
         </div>
         
         <div className="bg-white rounded-2xl border border-[#D5DAE5] p-6 shadow-sm">
           <AnimatedLayerCard 
             number={0}
-            title="Onboarding Layer"
-            subtitle="Tenant Identity & Schema Direction"
-            description="Establishes tenant context, department, industry, and schema direction."
+            title="Connection Layer"
+            subtitle="Data Ingestion & Connectivity"
+            description="Gateways, connectors, webhooks — raw data entering the system."
             color="#6B7DC4"
-            icon={Users}
+            icon={Cloud}
             features={[
-              "Resolves tenant context and identity",
-              "Determines department base schema",
-              "Applies industry-specific overrides"
+              "API gateways and connectors",
+              "Webhook receivers",
+              "Raw data ingestion",
+              "Protocol adapters"
             ]}
           />
           
           <AnimatedLayerCard 
             number={1}
-            title="Workspace Layer (L1)"
-            subtitle="Primary Operating Surface"
-            description="The daily operating surface where users work."
+            title="Unified Workspace (over the Spine)"
+            subtitle="Human Interface Layer"
+            description="Knowledge Workspace — the UI where humans see truth, signals, and approval cards."
             color="#4154A3"
             icon={Globe}
             features={[
-              "Renders dashboards and modules",
-              "Displays approvals and signals",
-              "Entity 360 views and navigation",
-              "Reads only from Spine projections"
+              "Unified dashboard interface",
+              "Approval cards and signals",
+              "Entity 360 visualization",
+              "Human-in-the-loop controls"
             ]}
           />
           
           <AnimatedLayerCard 
             number={2}
-            title="Cognitive Layer (L2)"
-            subtitle="Intelligence & Reasoning"
-            description="The intelligence layer that reasons, proposes, and waits for approval."
+            title="Cognitive Intelligence Overlay"
+            subtitle="AI Reasoning & Detection"
+            description="Entity 360, Depth Matrix, signal detection, proposal generation."
             color="#EB4379"
             icon={Brain}
             features={[
-              "Builds Entity 360 from Spine data",
-              "Generates signals and proposals",
-              "Checks policy and routes approvals",
-              "Never bypasses governance rules"
+              "Entity 360 construction",
+              "Depth Matrix analysis",
+              "Signal detection engine",
+              "Proposal generation"
             ]}
           />
           
           <AnimatedLayerCard 
             number={3}
-            title="Platform Layer (L3)"
-            subtitle="Controlled Backend Path"
-            description="All data is ingested, normalized, stored, and re-ingested through the canonical pipeline."
+            title="Canonical Truth & Memory Layer"
+            subtitle="Spine & Knowledge Store"
+            description="Spine + Knowledge + Memory Accumulator — normalized entities, relationships, AI memory."
             color="#1B2544"
+            icon={Database}
+            features={[
+              "Spine truth boundary",
+              "Normalized entity store",
+              "Relationship graph",
+              "Memory accumulator"
+            ]}
+          />
+          
+          <AnimatedLayerCard 
+            number={4}
+            title="Orchestration & Middleware"
+            subtitle="Routing & Coordination"
+            description="Workflow/BFF, pipelines, queueing — everything that routes and coordinates between L0–L3."
+            color="#F59E0B"
+            icon={Workflow}
+            features={[
+              "Workflow engine",
+              "BFF (Backend-for-Frontend)",
+              "Pipeline orchestration",
+              "Message queueing"
+            ]}
+          />
+          
+          <AnimatedLayerCard 
+            number={5}
+            title="Infrastructure Services"
+            subtitle="Core Platform Infrastructure"
+            description="Compute, storage, networking, and security services that power the platform."
+            color="#10B981"
             icon={Server}
             features={[
-              "Gateway and connector management",
-              "8-stage pipeline processing",
-              "Spine truth boundary enforcement",
-              "Workflow/BFF and re-ingestion"
+              "Compute and container orchestration",
+              "Persistent storage services",
+              "Network and security",
+              "Monitoring and observability"
             ]}
           />
         </div>
