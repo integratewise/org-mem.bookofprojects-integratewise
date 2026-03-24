@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Download,
   Eye,
@@ -25,8 +26,11 @@ import {
   Shield,
   Brain,
   Layers,
+  Lightbulb,
 } from 'lucide-react';
 import { copyToClipboard } from '../../utils/clipboard';
+import { ImageWithFallback } from '../figma/ImageWithFallback';
+import logoIcon from '../../../imports/Frame_4-1.svg';
 
 type Category = 'all' | 'social' | 'linkedin' | 'whatsapp' | 'print' | 'web' | 'events';
 type ViewMode = 'grid' | 'list';
