@@ -13,6 +13,7 @@ import { ArchitecturePage } from "./components/pages/ArchitecturePage";
 import { LinkedInPage } from "./components/pages/LinkedInPage";
 import { WhatsAppPage } from "./components/pages/WhatsAppPage";
 import { EmailPage } from "./components/pages/EmailPage";
+import { PresentationsPage } from "./components/pages/PresentationsPage";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,7 @@ export const router = createBrowserRouter([
       { path: "linkedin", Component: LinkedInPage },
       { path: "whatsapp", Component: WhatsAppPage },
       { path: "email", Component: EmailPage },
+      { path: "presentations", Component: PresentationsPage },
       { path: "sales", Component: SalesPage },
       { path: "documentation", Component: DocumentationPage },
       {

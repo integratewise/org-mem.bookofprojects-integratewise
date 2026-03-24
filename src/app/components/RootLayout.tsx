@@ -22,6 +22,7 @@ import {
   Shield,
   MessageCircle,
   Mail,
+  Presentation,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -92,6 +93,7 @@ const NAV_STRUCTURE: NavEntry[] = [
         { to: '/linkedin', icon: Megaphone, label: 'LinkedIn', color: '#0A66C2' },
         { to: '/whatsapp', icon: MessageCircle, label: 'WhatsApp', color: '#25D366' },
         { to: '/email', icon: Mail, label: 'Email', color: '#4154A3' },
+        { to: '/presentations', icon: Presentation, label: 'Presentations', color: '#636A82' },
         { to: '/sales', icon: HandCoins, label: 'Sales', color: '#D9637F' },
       ],
     },
