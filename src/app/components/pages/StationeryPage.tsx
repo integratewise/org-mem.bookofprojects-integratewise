@@ -377,6 +377,7 @@ function generateHTML(id: string): string {
   <meta charset="UTF-8">
   <title>IntegrateWise Letterhead</title>
   <style>
+    @media print { @page { margin: 0; } body { margin: 0; } }
     body { margin: 0; font-family: Arial, sans-serif; }
     .page { width: 210mm; height: 297mm; padding: 25mm; box-sizing: border-box; position: relative; }
     .header { display: flex; justify-content: space-between; border-bottom: 2px solid ${brandColor}; padding-bottom: 15px; }
@@ -418,6 +419,286 @@ function generateHTML(id: string): string {
 </body>
 </html>`;
 
+    case 'invoice':
+      return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>IntegrateWise Invoice</title>
+  <style>
+    @media print { @page { margin: 0; } body { margin: 0; } }
+    body { margin: 0; font-family: Arial, sans-serif; background: #fff; }
+    .page { width: 210mm; height: 297mm; padding: 25mm; box-sizing: border-box; }
+    .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid ${brandColor}; padding-bottom: 20px; }
+    .logo h1 { color: ${brandColor}; margin: 0; font-size: 28px; }
+    .logo p { margin: 5px 0 0; color: #636A82; font-size: 13px; }
+    .invoice-title { text-align: right; }
+    .invoice-title h2 { margin: 0; font-size: 24px; color: #1B2544; }
+    .invoice-title p { margin: 5px 0 0; color: #636A82; font-size: 13px; }
+    .details { display: flex; justify-content: space-between; margin-top: 30px; }
+    .bill-to h3, .invoice-details h3 { margin: 0 0 10px; font-size: 11px; color: #9BA8C2; text-transform: uppercase; }
+    .bill-to p, .invoice-details p { margin: 3px 0; font-size: 13px; color: #333944; }
+    .invoice-details { text-align: right; }
+    table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+    th { text-align: left; padding: 12px 8px; border-bottom: 2px solid ${brandColor}; font-size: 13px; color: #1B2544; }
+    td { padding: 12px 8px; border-bottom: 1px solid #E8ECF2; font-size: 13px; color: #333944; }
+    .text-right { text-align: right; }
+    .totals { margin-top: 30px; display: flex; justify-content: flex-end; }
+    .totals-table { width: 250px; }
+    .totals-table td { border: none; padding: 6px 0; }
+    .totals-table tr:last-child td { border-top: 2px solid ${brandColor}; padding-top: 10px; font-weight: bold; }
+    .totals-table tr:last-child td:last-child { color: ${brandColor}; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="logo">
+        <h1>IntegrateWise</h1>
+        <p>Knowledge Workspace Over the Spine and Empowered by AI</p>
+      </div>
+      <div class="invoice-title">
+        <h2>INVOICE</h2>
+        <p>#INV-2026-001</p>
+      </div>
+    </div>
+    <div class="details">
+      <div class="bill-to">
+        <h3>Bill To:</h3>
+        <p><strong>[Client Name]</strong></p>
+        <p>[Client Address]</p>
+        <p>[Client Email]</p>
+      </div>
+      <div class="invoice-details">
+        <h3>Invoice Details:</h3>
+        <p><strong>Date:</strong> [Invoice Date]</p>
+        <p><strong>Due Date:</strong> [Due Date]</p>
+        <p><strong>Terms:</strong> Net 30</p>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th class="text-right">Qty</th>
+          <th class="text-right">Rate</th>
+          <th class="text-right">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>IntegrateWise Platform - Growth Plan</td>
+          <td class="text-right">1</td>
+          <td class="text-right">$999.00</td>
+          <td class="text-right">$999.00</td>
+        </tr>
+        <tr>
+          <td>Implementation Services</td>
+          <td class="text-right">40</td>
+          <td class="text-right">$150.00</td>
+          <td class="text-right">$6,000.00</td>
+        </tr>
+        <tr>
+          <td>Training & Onboarding</td>
+          <td class="text-right">1</td>
+          <td class="text-right">$500.00</td>
+          <td class="text-right">$500.00</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="totals">
+      <table class="totals-table">
+        <tr>
+          <td>Subtotal:</td>
+          <td class="text-right">$7,499.00</td>
+        </tr>
+        <tr>
+          <td>Tax (18% GST):</td>
+          <td class="text-right">$1,349.82</td>
+        </tr>
+        <tr>
+          <td>Total:</td>
+          <td class="text-right">$8,848.82</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>`;
+
+    case 'proposal':
+      return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>IntegrateWise Proposal</title>
+  <style>
+    @media print { @page { margin: 0; } body { margin: 0; } }
+    body { margin: 0; font-family: Arial, sans-serif; background: #fff; }
+    .page { width: 210mm; height: 297mm; padding: 25mm; box-sizing: border-box; position: relative; }
+    .header { text-align: center; border-bottom: 2px solid ${brandColor}; padding-bottom: 20px; }
+    .header h1 { color: ${brandColor}; margin: 0; font-size: 32px; }
+    .header p { margin: 10px 0 0; color: #636A82; font-size: 14px; }
+    .proposal-title { text-align: center; margin: 40px 0; }
+    .proposal-title h2 { margin: 0; font-size: 24px; color: #1B2544; }
+    .proposal-title p { margin: 10px 0 0; color: #636A82; }
+    .meta { display: flex; justify-content: center; gap: 60px; margin: 30px 0; }
+    .meta-item { text-align: center; }
+    .meta-item .label { font-size: 11px; color: #9BA8C2; text-transform: uppercase; margin-bottom: 5px; }
+    .meta-item .value { font-size: 14px; color: #333944; }
+    .content { margin-top: 40px; }
+    .section { margin-bottom: 30px; }
+    .section h3 { color: ${brandColor}; font-size: 16px; margin: 0 0 15px; border-bottom: 1px solid #E8ECF2; padding-bottom: 8px; }
+    .section p { color: #333944; font-size: 13px; line-height: 1.6; margin: 0 0 10px; }
+    .signatures { display: flex; justify-content: space-between; margin-top: 60px; padding-top: 30px; border-top: 1px solid #E8ECF2; }
+    .signature-block { width: 45%; }
+    .signature-line { border-top: 1px solid #333; margin-top: 40px; padding-top: 8px; font-size: 12px; color: #636A82; }
+    .footer { position: absolute; bottom: 25mm; left: 25mm; right: 25mm; text-align: center; font-size: 10px; color: #9BA8C2; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <h1>IntegrateWise</h1>
+      <p>Knowledge Workspace Over the Spine and Empowered by AI</p>
+    </div>
+    <div class="proposal-title">
+      <h2>PROJECT PROPOSAL</h2>
+      <p>[Project Title]</p>
+    </div>
+    <div class="meta">
+      <div class="meta-item">
+        <div class="label">Prepared For</div>
+        <div class="value">[Client Name]</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Date</div>
+        <div class="value">[Proposal Date]</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Valid Until</div>
+        <div class="value">[Expiration Date]</div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="section">
+        <h3>Executive Summary</h3>
+        <p>[Provide a brief overview of the project and key benefits...]</p>
+      </div>
+      <div class="section">
+        <h3>Scope of Work</h3>
+        <p>[Detail the services and deliverables included in this proposal...]</p>
+      </div>
+      <div class="section">
+        <h3>Timeline</h3>
+        <p>[Outline the project timeline and key milestones...]</p>
+      </div>
+    </div>
+    <div class="signatures">
+      <div class="signature-block">
+        <div class="signature-line">
+          <strong>Prepared By</strong><br>
+          [Your Name]<br>
+          IntegrateWise LLP
+        </div>
+      </div>
+      <div class="signature-block">
+        <div class="signature-line">
+          <strong>Accepted By</strong><br>
+          [Client Representative]<br>
+          [Client Company]
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>IntegrateWise LLP • Bengaluru, India • hello@integratewise.ai • integratewise.ai</p>
+    </div>
+  </div>
+</body>
+</html>`;
+
+    case 'seal':
+      return `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer rings -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#4154A3" stroke-width="3"/>
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#4154A3" stroke-width="1"/>
+  
+  <!-- Text path definition -->
+  <defs>
+    <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+  </defs>
+  
+  <!-- Circular text -->
+  <text fill="#4154A3" font-size="10" font-weight="600" letter-spacing="2" font-family="Arial, sans-serif">
+    <textPath href="#circlePath">
+      INTEGRATEWISE LLP • KNOWLEDGE WORKSPACE •
+    </textPath>
+  </text>
+  
+  <!-- Center circle -->
+  <circle cx="100" cy="100" r="50" fill="#4154A3"/>
+  
+  <!-- Initials -->
+  <text x="100" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial, sans-serif">IW</text>
+  
+  <!-- Established text -->
+  <text x="100" y="110" text-anchor="middle" fill="white" font-size="6" font-family="Arial, sans-serif">EST. 2024</text>
+</svg>`;
+
+    case 'business-card':
+      return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>IntegrateWise Business Card</title>
+  <style>
+    @media print { @page { margin: 0; size: auto; } body { margin: 0; } }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+    .wrapper { display: flex; gap: 20px; flex-wrap: wrap; }
+    .card { width: 85mm; height: 55mm; box-sizing: border-box; border-radius: 4mm; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .front { background: #fff; padding: 6mm; display: flex; flex-direction: column; justify-content: space-between; border: 0.5pt solid #E8ECF2; }
+    .back { background: ${brandColor}; padding: 6mm; display: flex; flex-direction: column; justify-content: space-between; color: #fff; }
+    .front .logo h2 { margin: 0; color: ${brandColor}; font-size: 18px; }
+    .front .logo p { margin: 2mm 0 0; color: #636A82; font-size: 8px; }
+    .front .person { margin-top: auto; }
+    .front .person .name { margin: 0; font-size: 13px; font-weight: bold; color: #1B2544; }
+    .front .person .title { margin: 1mm 0 0; font-size: 9px; color: #636A82; }
+    .back .contact { font-size: 8px; line-height: 1.6; color: rgba(255,255,255,0.85); }
+    .back .contact a { color: #fff; text-decoration: none; }
+    .back .tagline { font-size: 7px; font-style: italic; color: rgba(255,255,255,0.7); margin-top: auto; }
+    @media print { .wrapper { gap: 0; } .card { box-shadow: none; page-break-inside: avoid; margin-bottom: 10mm; } }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Front -->
+    <div class="card front">
+      <div class="logo">
+        <h2>IntegrateWise</h2>
+        <p>Knowledge Workspace Over the Spine and Empowered by AI</p>
+      </div>
+      <div class="person">
+        <p class="name">[Your Name]</p>
+        <p class="title">[Your Title]</p>
+      </div>
+    </div>
+    <!-- Back -->
+    <div class="card back">
+      <div class="contact">
+        <p><a href="mailto:hello@integratewise.ai">hello@integratewise.ai</a></p>
+        <p><a href="https://integratewise.ai">integratewise.ai</a></p>
+        <p>+91 [Phone Number]</p>
+      </div>
+      <div class="tagline">
+        AI Thinks in Context — and Waits for Approval<br>
+        Bengaluru, India
+      </div>
+    </div>
+  </div>
+</body>
+</html>`;
+
     case 'email-signature':
       return `<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 13px; color: #2F3D5E;">
   <tr>
@@ -444,6 +725,113 @@ function generateHTML(id: string): string {
     </td>
   </tr>
 </table>`;
+
+    case 'document-cover':
+      return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>IntegrateWise Document Cover</title>
+  <style>
+    @media print { @page { margin: 0; } body { margin: 0; } }
+    body { margin: 0; font-family: Arial, sans-serif; }
+    .page { width: 1920px; height: 1080px; position: relative; overflow: hidden; background: #fff; }
+    .accent-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 120px; background: ${brandColor}; }
+    .logo-area { position: absolute; left: 160px; top: 80px; }
+    .logo-area h1 { margin: 0; color: ${brandColor}; font-size: 48px; }
+    .logo-area p { margin: 10px 0 0; color: #636A82; font-size: 18px; }
+    .content { position: absolute; left: 160px; right: 160px; top: 50%; transform: translateY(-50%); }
+    .doc-type { font-size: 16px; color: ${brandColor}; text-transform: uppercase; letter-spacing: 3px; margin: 0 0 20px; }
+    .title { font-size: 72px; color: #1B2544; margin: 0; font-weight: bold; line-height: 1.1; }
+    .subtitle { font-size: 24px; color: #636A82; margin: 30px 0 0; }
+    .meta { position: absolute; left: 160px; bottom: 100px; display: flex; gap: 80px; }
+    .meta-item .label { font-size: 12px; color: #9BA8C2; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px; }
+    .meta-item .value { font-size: 16px; color: #333944; margin: 0; }
+    .footer { position: absolute; right: 160px; bottom: 100px; text-align: right; }
+    .footer p { margin: 0; font-size: 14px; color: #9BA8C2; }
+    .tagline { margin-top: 10px; font-style: italic; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="accent-bar"></div>
+    <div class="logo-area">
+      <h1>IntegrateWise</h1>
+      <p>Knowledge Workspace Over the Spine and Empowered by AI</p>
+    </div>
+    <div class="content">
+      <p class="doc-type">[Document Type]</p>
+      <h2 class="title">[Document Title]</h2>
+      <p class="subtitle">[Brief description or subtitle]</p>
+    </div>
+    <div class="meta">
+      <div class="meta-item">
+        <p class="label">Prepared By</p>
+        <p class="value">[Author Name]</p>
+      </div>
+      <div class="meta-item">
+        <p class="label">Date</p>
+        <p class="value">[Document Date]</p>
+      </div>
+      <div class="meta-item">
+        <p class="label">Version</p>
+        <p class="value">v1.0</p>
+      </div>
+    </div>
+    <div class="footer">
+      <p>IntegrateWise LLP • Bengaluru, India</p>
+      <p class="tagline">AI Thinks in Context — and Waits for Approval</p>
+    </div>
+  </div>
+</body>
+</html>`;
+
+    case 'envelope':
+      return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>IntegrateWise Envelope</title>
+  <style>
+    @media print { @page { margin: 0; } body { margin: 0; } }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; }
+    .envelope { width: 220mm; height: 110mm; background: #fff; position: relative; box-sizing: border-box; overflow: hidden; }
+    .brand-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 8mm; background: ${brandColor}; }
+    .return-address { position: absolute; left: 15mm; top: 10mm; font-size: 9px; color: #636A82; line-height: 1.4; }
+    .return-address strong { color: ${brandColor}; font-size: 11px; }
+    .recipient-address { position: absolute; left: 80mm; top: 35mm; font-size: 12px; color: #1B2544; line-height: 1.6; }
+    .recipient-address strong { font-size: 13px; }
+    .stamp-area { position: absolute; right: 15mm; top: 10mm; width: 25mm; height: 30mm; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; }
+    .stamp-area span { font-size: 8px; color: #ccc; }
+    .tagline { position: absolute; left: 15mm; bottom: 10mm; font-size: 8px; color: #9BA8C2; font-style: italic; }
+    @media print { .envelope { box-shadow: none; } }
+  </style>
+</head>
+<body>
+  <div class="envelope">
+    <div class="brand-bar"></div>
+    <div class="return-address">
+      <strong>IntegrateWise LLP</strong><br>
+      Bengaluru, India<br>
+      hello@integratewise.ai<br>
+      integratewise.ai
+    </div>
+    <div class="recipient-address">
+      <strong>[Recipient Name]</strong><br>
+      [Company Name]<br>
+      [Street Address]<br>
+      [City, State, ZIP]<br>
+      [Country]
+    </div>
+    <div class="stamp-area">
+      <span>STAMP</span>
+    </div>
+    <div class="tagline">
+      AI Thinks in Context — and Waits for Approval
+    </div>
+  </div>
+</body>
+</html>`;
 
     default:
       return `<!-- HTML template for ${id} -->`;

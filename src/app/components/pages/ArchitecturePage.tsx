@@ -259,7 +259,7 @@ function PipelineStage({
   );
 }
 
-// Flow diagram component
+// Flow diagram component - REDESIGNED with vertical/grid layout
 function FlowDiagram({ 
   letter, 
   title, 
@@ -283,6 +283,10 @@ function FlowDiagram({
     }, 1500);
     return () => clearInterval(interval);
   }, [steps.length]);
+
+  // Calculate grid layout - use 2 columns for better spacing
+  const cols = 3;
+  const rows = Math.ceil(steps.length / cols);
 
   return (
     <motion.div
@@ -311,75 +315,129 @@ function FlowDiagram({
       
       <p className="text-sm text-[#5F6E93] mb-6">{description}</p>
       
-      {/* Animated Flow Steps */}
+      {/* Redesigned Flow Steps - 3-column Grid Layout */}
       <div className="relative">
-        <div className="flex items-center justify-between overflow-x-auto pb-4">
-          {steps.map((step, i) => (
-            <div key={i} className="flex items-center">
+        {/* Grid of steps */}
+        <div className="grid grid-cols-3 gap-4">
+          {steps.map((step, i) => {
+            const isActive = activeStep === i;
+            const isCompleted = activeStep > i;
+            
+            return (
               <motion.div
-                animate={{
-                  scale: activeStep === i ? 1.1 : 1,
-                  boxShadow: activeStep === i ? `0 0 20px ${color}60` : 'none'
-                }}
-                className={`flex flex-col items-center p-3 rounded-lg min-w-[80px] transition-all ${
-                  activeStep === i ? 'bg-[rgba(65,84,163,0.08)]' : ''
-                }`}
+                key={i}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: i * 0.08 }}
+                className="relative"
               >
                 <motion.div
-                  animate={activeStep === i ? { y: [0, -5, 0] } : {}}
-                  transition={{ duration: 0.5 }}
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center mb-2 ${
-                    activeStep === i ? 'text-white' : 'text-[#5F6E93]'
+                  animate={{
+                    scale: isActive ? 1.05 : 1,
+                    boxShadow: isActive ? `0 0 20px ${color}40` : isCompleted ? `0 0 10px ${color}20` : '0 2px 8px rgba(0,0,0,0.06)'
+                  }}
+                  className={`flex flex-col items-center p-4 rounded-xl min-h-[100px] transition-all ${
+                    isActive ? 'bg-[rgba(65,84,163,0.08)] border-2' : 
+                    isCompleted ? 'bg-[rgba(65,84,163,0.04)] border' : 'bg-[#F8FAFC] border'
                   }`}
-                  style={{ background: activeStep === i ? color : '#F0F2F7' }}
+                  style={{ borderColor: isActive ? color : isCompleted ? `${color}40` : '#E8ECF2' }}
                 >
-                  <step.icon className="w-5 h-5" />
-                </motion.div>
-                <span className={`text-xs text-center ${activeStep === i ? 'font-medium text-[#1B2544]' : 'text-[#5F6E93]'}`}>
-                  {step.label}
-                </span>
-                
-                {/* Progress bar */}
-                {activeStep === i && (
+                  {/* Step number indicator */}
+                  <div 
+                    className="absolute top-2 left-2 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold"
+                    style={{ 
+                      background: isActive ? color : isCompleted ? color : '#E8ECF2',
+                      color: isActive || isCompleted ? 'white' : '#9BA8C2'
+                    }}
+                  >
+                    {i + 1}
+                  </div>
+                  
+                  {/* Icon */}
                   <motion.div
-                    layoutId="progress"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 rounded-full"
-                    style={{ background: color }}
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ duration: 1.5 }}
+                    animate={isActive ? { 
+                      y: [0, -3, 0],
+                    } : {}}
+                    transition={{ duration: 0.5 }}
+                    className={`w-11 h-11 rounded-xl flex items-center justify-center mb-2 mt-1 ${
+                      isActive ? 'text-white' : isCompleted ? 'text-white' : 'text-[#5F6E93]'
+                    }`}
+                    style={{ background: isActive ? color : isCompleted ? `${color}cc` : '#F0F2F7' }}
+                  >
+                    <step.icon className="w-5 h-5" />
+                  </motion.div>
+                  
+                  {/* Label */}
+                  <span className={`text-xs text-center font-medium leading-tight ${
+                    isActive ? 'text-[#1B2544]' : 'text-[#5F6E93]'
+                  }`}>
+                    {step.label}
+                  </span>
+                  
+                  {/* Connection arrow to next step (except last) */}
+                  {i < steps.length - 1 && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: i * 0.1 + 0.3 }}
+                      className="absolute hidden lg:block"
+                      style={{
+                        // Position arrows between grid items
+                        ...(i % 3 !== 2 && { right: '-14px', top: '50%', transform: 'translateY(-50%)' }), // Right arrow
+                        ...(i % 3 === 2 && i < steps.length - 1 && { bottom: '-18px', left: '50%', transform: 'translateX(-50%) rotate(90deg)' }), // Down arrow for end of row
+                      }}
+                    >
+                      <ArrowRight 
+                        className="w-4 h-4" 
+                        style={{ color: isCompleted ? color : '#E8ECF2' }}
+                      />
+                    </motion.div>
+                  )}
+                </motion.div>
+                
+                {/* Active pulse ring */}
+                {isActive && (
+                  <motion.div
+                    className="absolute inset-0 rounded-xl pointer-events-none"
+                    style={{ border: `2px solid ${color}` }}
+                    animate={{ opacity: [0.5, 1, 0.5] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
                   />
                 )}
               </motion.div>
-              
-              {i < steps.length - 1 && (
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="w-8 h-0.5 mx-1"
-                  style={{ 
-                    background: activeStep > i ? color : '#E8ECF2',
-                    opacity: activeStep >= i ? 1 : 0.3
-                  }}
-                />
-              )}
-            </div>
-          ))}
+            );
+          })}
         </div>
         
-        {/* Animated data packet */}
+        {/* Progress indicator at bottom */}
+        <div className="mt-4 flex items-center gap-2">
+          <div className="flex-1 h-1.5 bg-[#E8ECF2] rounded-full overflow-hidden">
+            <motion.div
+              className="h-full rounded-full"
+              style={{ background: color }}
+              initial={{ width: '0%' }}
+              animate={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            />
+          </div>
+          <span className="text-xs font-medium text-[#5F6E93] min-w-[40px] text-right">
+            {activeStep + 1}/{steps.length}
+          </span>
+        </div>
+        
+        {/* Animated data packet that moves through the grid */}
         <motion.div
-          className="absolute top-1/2 w-3 h-3 rounded-full"
+          className="absolute w-3 h-3 rounded-full pointer-events-none"
           style={{ background: color }}
           animate={{
-            left: ['0%', '100%'],
+            // Calculate position based on active step in 3-column grid
+            top: `${Math.floor(activeStep / 3) * 116 + 50}px`,
+            left: `${(activeStep % 3) * 33.33 + 16.5}%`,
             opacity: [0, 1, 1, 0]
           }}
           transition={{
-            duration: steps.length * 1.5,
-            repeat: Infinity,
-            ease: "linear"
+            duration: 1.5,
+            ease: "easeInOut"
           }}
         />
       </div>
