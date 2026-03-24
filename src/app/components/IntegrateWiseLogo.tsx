@@ -11,32 +11,38 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
   // Determine fill colors based on colorVariant
   let primaryFill = 'var(--brand-primary)';
   let accentFill = 'var(--brand-accent)';
+  let textColor = 'var(--brand-gray-900)';
   let titleColorClass = 'text-brand-gray-900';
   let subtitleColorClass = 'text-brand-gray-600';
 
   if (colorVariant === 'white') {
     primaryFill = '#FFFFFF';
     accentFill = 'var(--brand-accent)';
+    textColor = '#FFFFFF';
     titleColorClass = 'text-white';
     subtitleColorClass = 'text-white/80';
   } else if (colorVariant === 'monochrome-white') {
     primaryFill = '#FFFFFF';
     accentFill = '#FFFFFF';
+    textColor = '#FFFFFF';
     titleColorClass = 'text-white';
     subtitleColorClass = 'text-white/80';
   } else if (colorVariant === 'monochrome-dark') {
     primaryFill = 'var(--brand-gray-900)';
     accentFill = 'var(--brand-gray-900)';
+    textColor = 'var(--brand-gray-900)';
     titleColorClass = 'text-brand-gray-900';
     subtitleColorClass = 'text-brand-gray-900';
   } else if (colorVariant === 'blue-only') {
     primaryFill = 'var(--brand-primary)';
     accentFill = 'var(--brand-primary)';
+    textColor = 'var(--brand-primary)';
     titleColorClass = 'text-brand-primary';
     subtitleColorClass = 'text-brand-primary';
   } else if (colorVariant === 'print-safe-black') {
     primaryFill = '#000000';
     accentFill = '#000000';
+    textColor = '#000000';
     titleColorClass = 'text-black';
     subtitleColorClass = 'text-black';
   }
