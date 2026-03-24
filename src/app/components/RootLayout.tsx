@@ -1,5 +1,6 @@
 import { Outlet, NavLink, useLocation, useNavigate } from 'react-router';
 import { IntegrateWiseLogo } from './IntegrateWiseLogo';
+import { AIAssistant } from './ai/AIAssistant';
 import {
   Home,
   Palette,
@@ -471,6 +472,9 @@ export function RootLayout() {
           <Outlet />
         </main>
       </div>
+
+      {/* AI Assistant - available on all pages */}
+      <AIAssistant pageTitle={currentPage} />
     </div>
   );
 }
