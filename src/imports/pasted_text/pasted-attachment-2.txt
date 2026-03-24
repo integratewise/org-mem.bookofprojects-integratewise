@@ -1,0 +1,339 @@
+ 1. Master Principle
+
+Never treat files as **final outputs**.
+
+Everything should exist as **editable source templates** in:
+
+* **Figma**
+* **Google Slides / PowerPoint**
+* **Google Docs**
+
+Then you export:
+
+```
+Figma / Slides / Docs
+        ↓
+   PDF / PPT
+```
+
+This way you can always **import → edit → update → re-export**.
+
+---
+
+# 2. Importing PowerPoint into Figma (Best Method)
+
+Figma supports **direct PPT import**.
+
+### Steps
+
+1. Open Figma
+2. Drag the **.pptx file**
+3. Figma converts slides into frames.
+
+Each slide becomes a **fully editable design**.
+
+You can then:
+
+* edit text
+* change colors
+* replace images
+* update layouts
+
+---
+
+# 3. Importing PDF into Figma
+
+PDF import also works.
+
+### Steps
+
+1. Drag PDF into Figma
+2. It converts into vector layers
+
+Then you can:
+
+* edit text
+* move objects
+* replace icons
+* redesign slides
+
+Tip:
+
+```
+Always export PDF from vector tools
+(not flattened images)
+```
+
+Otherwise text becomes non-editable.
+
+---
+
+# 4. Best File Structure for IntegrateWise
+
+Create a **single master design system file**.
+
+```
+IntegrateWise Brand System
+```
+
+Pages:
+
+```
+01 Logo System
+02 Colors
+03 Typography
+04 Stationery
+05 Email Signatures
+06 Marketing Templates
+07 LinkedIn Templates
+08 WhatsApp Assets
+09 Pitch Deck
+10 Architecture Diagrams
+```
+
+---
+
+# 5. Create a Master Pitch Deck Template
+
+Instead of making many presentations, build **one reusable template**.
+
+Slides:
+
+```
+Cover
+Problem
+Fragmentation
+IntegrateWise
+The Spine
+How It Works
+Workspace
+Approvals
+Use Cases
+Closing
+```
+
+Then duplicate the file when needed.
+
+---
+
+# 6. Editable Marketing Templates
+
+Create reusable frames for:
+
+### LinkedIn Posts
+
+```
+1200 × 1200
+```
+
+### Architecture diagrams
+
+```
+1600 × 900
+```
+
+### Product announcements
+
+```
+1200 × 675
+```
+
+### WhatsApp images
+
+```
+1080 × 1080
+```
+
+Each template should have:
+
+```
+Headline
+Body text
+Illustration
+CTA
+Logo
+```
+
+---
+
+# 7. Making PDFs Editable Later
+
+Export PDFs like this:
+
+```
+Export → PDF → Vector
+```
+
+Avoid:
+
+```
+Flatten
+Rasterize
+Outline text
+```
+
+This keeps the PDF **editable when re-imported**.
+
+---
+
+# 8. Managing Versions
+
+Use version naming:
+
+```
+IntegrateWise-PitchDeck-v1
+IntegrateWise-PitchDeck-v2
+IntegrateWise-PitchDeck-v3
+```
+
+Or use:
+
+```
+Figma Version History
+```
+
+---
+
+# 9. Marketing Asset Workflow
+
+Professional workflow:
+
+```
+Figma Template
+      ↓
+Duplicate frame
+      ↓
+Update content
+      ↓
+Export PNG / PDF
+      ↓
+Post on LinkedIn / WhatsApp
+```
+
+Never design assets from scratch.
+
+---
+
+# 10. Email Signature System
+
+Create **one signature template**.
+
+Every employee copies it.
+
+Example:
+
+```
+Name
+Role
+
+IntegrateWise LLP
+Knowledge Workspace Empowered by AI and the Spine
+
+AI Thinks in Context — and Waits for Approval
+
+connect@integratewise.co
+integratewise.ai
+```
+
+---
+
+# 11. WhatsApp Catalog Usage
+
+WhatsApp works best for **short explanations**.
+
+Catalog items:
+
+```
+IntegrateWise Platform
+The Spine
+Context-Aware AI
+Approval-driven Workflows
+Enterprise Knowledge Workspace
+```
+
+Each item should have:
+
+```
+Title
+Short description
+Image
+Link to website
+```
+
+---
+
+# 12. LinkedIn Asset Library
+
+Create a **LinkedIn asset folder**.
+
+Templates:
+
+```
+Product insight
+Architecture explanation
+Problem post
+Feature announcement
+Customer story
+```
+
+This allows posting quickly.
+
+---
+
+# 13. Architecture Diagrams (Very Important)
+
+Your product needs **clear visual diagrams**.
+
+Create diagrams for:
+
+```
+Spine Architecture
+AI Intelligence Loop
+Workspace Layers
+Approval System
+Entity 360
+```
+
+These will be used everywhere:
+
+* website
+* presentations
+* marketing
+* product docs
+
+---
+
+# 14. Brand Governance Rule
+
+Every design should reinforce this message:
+
+```
+IntegrateWise = Knowledge Workspace
+Spine = Unified Intelligence Layer
+AI = Thinks in Context
+Execution = Human Approvals
+```
+
+Consistency builds **category authority**.
+
+---
+
+# 15. The Missing Piece Most Startups Ignore
+
+You should also create:
+
+```
+IntegrateWise Illustration System
+```
+
+This includes:
+
+* Spine node diagrams
+* AI thinking loops
+* approval checkpoints
+* context cards
+* layered architecture visuals
+
+Companies like **Stripe, Notion, Databricks** use this heavily.
+
+---
