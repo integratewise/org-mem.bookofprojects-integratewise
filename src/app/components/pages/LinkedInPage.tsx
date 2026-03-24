@@ -3,10 +3,11 @@ import { motion } from 'motion/react';
 import { 
   Linkedin, Download, Copy, Check, ExternalLink, 
   Image, FileText, Share2, Sparkles, Palette,
-  Edit2, Save, X, Plus, Trash2, RotateCcw
+  Edit2, Save, X, Plus, Trash2, RotateCcw, RefreshCw
 } from 'lucide-react';
 import { toPng } from 'html-to-image';
 import { copyToClipboard } from '../../utils/clipboard';
+import { autoSyncContent, loadConnections } from '../../services/sync';
 
 // Default LinkedIn Content
 const DEFAULT_LINKEDIN_CONTENT = {
@@ -445,6 +446,16 @@ export function LinkedInPage() {
   const [activeTab, setActiveTab] = useState<'banner' | 'posts' | 'company'>('banner');
   const [isEditing, setIsEditing] = useState(false);
   const [content, setContent] = useState(() => loadContent());
+  const [connectedChannels, setConnectedChannels] = useState<string[]>([]);
+
+  // Load connected channels on mount
+  useEffect(() => {
+    const connections = loadConnections();
+    const connected = connections
+      .filter(c => c.status === 'connected' && (c.type === 'marketing' || c.type === 'branding'))
+      .map(c => c.name);
+    setConnectedChannels(connected);
+  }, []);
 
   // Save content when it changes
   useEffect(() => {
@@ -454,6 +465,14 @@ export function LinkedInPage() {
   const handleSave = () => {
     saveContent(content);
     setIsEditing(false);
+    // Trigger auto-sync to connected marketing channels
+    autoSyncContent('content', 'linkedin', content);
+    // Refresh connected channels
+    const connections = loadConnections();
+    const connected = connections
+      .filter(c => c.status === 'connected' && (c.type === 'marketing' || c.type === 'branding'))
+      .map(c => c.name);
+    setConnectedChannels(connected);
   };
 
   const handleReset = () => {
@@ -501,6 +520,16 @@ export function LinkedInPage() {
           </div>
           <h1 className="text-3xl font-bold text-[#1B2544] mb-2">LinkedIn Assets</h1>
           <p className="text-[#5F6E93]">Company page content, banners, and post templates for LinkedIn</p>
+          
+          {/* Sync Status */}
+          {connectedChannels.length > 0 && (
+            <div className="flex items-center gap-2 mt-2">
+              <span className="flex items-center gap-1 text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full">
+                <RefreshCw className="w-3 h-3" />
+                Synced to: {connectedChannels.join(', ')}
+              </span>
+            </div>
+          )}
         </div>
         
         {/* Edit Controls */}

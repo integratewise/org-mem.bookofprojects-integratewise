@@ -23,6 +23,7 @@ import {
   MessageCircle,
   Mail,
   Presentation,
+  LayoutDashboard,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -79,6 +80,10 @@ const NAV_STRUCTURE: NavEntry[] = [
         { to: '/stationery', icon: Stamp, label: 'Stationery', color: '#232D42' },
       ],
     },
+  },
+  {
+    type: 'item',
+    item: { to: '/control-panel', icon: LayoutDashboard, label: 'Control Panel', color: '#4154A3' },
   },
   {
     type: 'group',
