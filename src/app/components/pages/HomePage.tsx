@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import { copyToClipboard } from '../../utils/clipboard';
+import { ValuePropDiagram } from '../diagrams/ArchitectureDiagrams';
 
 const sections = [
   {
@@ -204,6 +205,15 @@ export function HomePage() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Value Proposition Diagram */}
+      <div className="bg-white rounded-2xl border border-[#E8ECF2] p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <Layers className="w-5 h-5 text-[#4154A3]" />
+          <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Core Value Propositions</h3>
+        </div>
+        <ValuePropDiagram />
       </div>
 
       {/* Daily Quick Actions */}

@@ -8,6 +8,13 @@ import {
   Sparkles, Activity, Box as BoxIcon, Network,
   HardDrive, Terminal, Cloud, Code, Eye
 } from 'lucide-react';
+import {
+  LayerArchitectureDiagram,
+  PipelineDiagram,
+  ThreeFlowsDiagram,
+  CognitiveLoopDiagram,
+  SpineVisualizationDiagram
+} from '../diagrams/ArchitectureDiagrams';
 
 // Animated node component for flow diagrams
 function AnimatedNode({ 
@@ -758,6 +765,12 @@ export function ArchitecturePage() {
               "Monitoring and observability"
             ]}
           />
+          
+          {/* Layer Architecture Diagram */}
+          <div className="mt-8 pt-8 border-t border-[#E8ECF2]">
+            <p className="text-sm text-[#5F6E93] mb-4 text-center">Visual Overview of Layer Architecture</p>
+            <LayerArchitectureDiagram />
+          </div>
         </div>
       </motion.section>
 
@@ -858,6 +871,12 @@ export function ArchitecturePage() {
               </div>
             </div>
           </motion.div>
+          
+          {/* Pipeline Diagram */}
+          <div className="mt-8 pt-8 border-t border-[#E8ECF2]">
+            <p className="text-sm text-[#5F6E93] mb-4 text-center">Complete Pipeline Flow</p>
+            <PipelineDiagram />
+          </div>
         </div>
       </motion.section>
 
@@ -932,6 +951,12 @@ export function ArchitecturePage() {
             <strong className="text-[#EB4379]">Critical Rule:</strong> Flow C never writes directly to Spine truth. All AI content passes through governance.
           </p>
         </motion.div>
+        
+        {/* Three Flows Diagram */}
+        <div className="mt-8">
+          <p className="text-sm text-[#5F6E93] mb-4 text-center">Complete Flow Architecture</p>
+          <ThreeFlowsDiagram />
+        </div>
       </motion.section>
 
       {/* Spine & Cognitive Loop Side by Side */}
@@ -949,6 +974,11 @@ export function ArchitecturePage() {
           </div>
           
           <SpineVisualization />
+          
+          {/* SVG Spine Diagram */}
+          <div className="mt-6">
+            <SpineVisualizationDiagram />
+          </div>
           
           <div className="grid grid-cols-2 gap-3 mt-6">
             {[
@@ -986,7 +1016,12 @@ export function ArchitecturePage() {
           
           <CognitiveLoopViz />
           
-          <div className="text-center mt-8">
+          {/* SVG Cognitive Loop Diagram */}
+          <div className="mt-6">
+            <CognitiveLoopDiagram />
+          </div>
+          
+          <div className="text-center mt-4">
             <p className="text-xs text-[#5F6E93]">
               Entity 360 → Think → Govern → HITL → Act → Adjust
             </p>
