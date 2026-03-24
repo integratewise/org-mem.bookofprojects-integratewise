@@ -20,6 +20,8 @@ import {
   Box,
   GitBranch,
   Shield,
+  MessageCircle,
+  Mail,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -86,7 +88,10 @@ const NAV_STRUCTURE: NavEntry[] = [
       color: '#EB4F72',
       children: [
         { to: '/generators', icon: Zap, label: 'Quick Generators', color: '#EB4F72' },
-        { to: '/marketing', icon: Megaphone, label: 'Marketing', color: '#EB4F72' },
+        { to: '/marketing', icon: Megaphone, label: 'Marketing Hub', color: '#EB4F72' },
+        { to: '/linkedin', icon: Megaphone, label: 'LinkedIn', color: '#0A66C2' },
+        { to: '/whatsapp', icon: MessageCircle, label: 'WhatsApp', color: '#25D366' },
+        { to: '/email', icon: Mail, label: 'Email', color: '#4154A3' },
         { to: '/sales', icon: HandCoins, label: 'Sales', color: '#D9637F' },
       ],
     },

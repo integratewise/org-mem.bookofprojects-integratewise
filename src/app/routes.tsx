@@ -10,6 +10,9 @@ import { GeneratorsPage } from "./components/pages/GeneratorsPage";
 import { DocumentationPage } from "./components/pages/DocumentationPage";
 import { CompanyPage } from "./components/pages/CompanyPage";
 import { ArchitecturePage } from "./components/pages/ArchitecturePage";
+import { LinkedInPage } from "./components/pages/LinkedInPage";
+import { WhatsAppPage } from "./components/pages/WhatsAppPage";
+import { EmailPage } from "./components/pages/EmailPage";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +33,9 @@ export const router = createBrowserRouter([
       { path: "stationery", Component: StationeryPage },
       { path: "generators", Component: GeneratorsPage },
       { path: "marketing", Component: MarketingPage },
+      { path: "linkedin", Component: LinkedInPage },
+      { path: "whatsapp", Component: WhatsAppPage },
+      { path: "email", Component: EmailPage },
       { path: "sales", Component: SalesPage },
       { path: "documentation", Component: DocumentationPage },
       {
