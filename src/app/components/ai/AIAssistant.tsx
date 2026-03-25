@@ -5,7 +5,8 @@ import {
   MessageSquare, ChevronDown, ChevronUp, Settings,
   Copy, Check, RefreshCw, Loader2, PanelRight, PanelRightClose
 } from 'lucide-react';
-import { sendMessageToAI, reviewContent, generateContent, strategizeContent } from '../../services/openrouter';
+import { sendMessageToAI } from '../../services/openrouter';
+import { loadText, saveText } from '../../lib/storage';
 
 interface Message {
   id: string;
@@ -42,6 +43,7 @@ export function AIAssistant({ initialContext, pageTitle }: AIAssistantProps) {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [apiKey, setApiKey] = useState('');
+  const [model, setModel] = useState('anthropic/claude-3.5-sonnet');
   const [showSettings, setShowSettings] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -49,8 +51,10 @@ export function AIAssistant({ initialContext, pageTitle }: AIAssistantProps) {
 
   // Load API key from localStorage
   useEffect(() => {
-    const savedKey = localStorage.getItem('openrouter_api_key');
+    const savedKey = loadText('openrouter_api_key');
     if (savedKey) setApiKey(savedKey);
+    const savedModel = loadText('openrouter_model', 'anthropic/claude-3.5-sonnet');
+    if (savedModel) setModel(savedModel);
   }, []);
 
   // Auto-scroll to bottom
@@ -85,7 +89,7 @@ export function AIAssistant({ initialContext, pageTitle }: AIAssistantProps) {
         ? `Current page: ${pageTitle || 'Unknown'}\n\nPage content:\n${initialContext}`
         : undefined;
 
-      const response = await sendMessageToAI(text, context, apiKey || undefined);
+      const response = await sendMessageToAI(text, context, apiKey || undefined, model || undefined);
 
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -122,7 +126,8 @@ export function AIAssistant({ initialContext, pageTitle }: AIAssistantProps) {
   };
 
   const saveApiKey = () => {
-    localStorage.setItem('openrouter_api_key', apiKey);
+    saveText('openrouter_api_key', apiKey);
+    saveText('openrouter_model', model);
     setShowSettings(false);
   };
 
@@ -196,7 +201,7 @@ export function AIAssistant({ initialContext, pageTitle }: AIAssistantProps) {
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">Brand AI</h3>
-                  <p className="text-xs text-white/70">Document Controller & Content Strategist</p>
+                  <p className="text-xs text-white/70">{model}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -270,6 +275,17 @@ export function AIAssistant({ initialContext, pageTitle }: AIAssistantProps) {
                         openrouter.ai/keys
                       </a>
                     </p>
+                    <label className="block text-sm font-medium text-[#1B2544] mt-4 mb-2">
+                      Model
+                    </label>
+                    <input
+                      type="text"
+                      value={model}
+                      onChange={(e) => setModel(e.target.value)}
+                      placeholder="anthropic/claude-3.5-sonnet"
+                      className="w-full px-3 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-[#4154A3]"
+                      style={{ borderColor: '#D5DAE5' }}
+                    />
                   </div>
                 </motion.div>
               )}

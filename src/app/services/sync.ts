@@ -1,5 +1,6 @@
 // Central Sync Service for Control Panel
 // Manages connections and syncs to external Sales, GTM, Marketing, and Branding systems
+import { loadJson, saveJson } from '../lib/storage';
 
 export interface SyncConnection {
   id: string;
@@ -67,24 +68,22 @@ const DEFAULT_CONNECTIONS: SyncConnection[] = [
 
 // Load connections from localStorage
 export function loadConnections(): SyncConnection[] {
-  const saved = localStorage.getItem('sync_connections');
-  return saved ? JSON.parse(saved) : DEFAULT_CONNECTIONS;
+  return loadJson('sync_connections', DEFAULT_CONNECTIONS);
 }
 
 // Save connections
 export function saveConnections(connections: SyncConnection[]) {
-  localStorage.setItem('sync_connections', JSON.stringify(connections));
+  saveJson('sync_connections', connections);
 }
 
 // Load sync queue
 export function loadSyncQueue(): SyncJob[] {
-  const saved = localStorage.getItem('sync_queue');
-  return saved ? JSON.parse(saved) : [];
+  return loadJson('sync_queue', []);
 }
 
 // Save sync queue
 export function saveSyncQueue(queue: SyncJob[]) {
-  localStorage.setItem('sync_queue', JSON.stringify(queue));
+  saveJson('sync_queue', queue);
 }
 
 // Add job to sync queue

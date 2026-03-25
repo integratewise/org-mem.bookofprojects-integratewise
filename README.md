@@ -1,7 +1,7 @@
 
-  # Business Branding Design
+  # IntegrateWise Brand Documentations
 
-  This is a code bundle for Business Branding Design. The original project is available at https://www.figma.com/design/3SBhUirNQSBcb0F5n5NOX7/Business-Branding-Design.
+  This repository contains the IntegrateWise brand, sales, marketing, and documentation hub built with Vite and React.
 
   ## Running the code
 

@@ -8,6 +8,7 @@ import {
 import { toPng } from 'html-to-image';
 import { copyToClipboard } from '../../utils/clipboard';
 import { autoSyncContent, loadConnections } from '../../services/sync';
+import { loadJson, saveJson } from '../../lib/storage';
 
 // Default LinkedIn Content
 const DEFAULT_LINKEDIN_CONTENT = {
@@ -90,13 +91,12 @@ IntegrateWise brings work, knowledge, and decisions together into one governed e
 
 // Load content from localStorage or use default
 function loadContent() {
-  const saved = localStorage.getItem('linkedin_content');
-  return saved ? JSON.parse(saved) : DEFAULT_LINKEDIN_CONTENT;
+  return loadJson('linkedin_content', DEFAULT_LINKEDIN_CONTENT);
 }
 
 // Save content to localStorage
 function saveContent(content: typeof DEFAULT_LINKEDIN_CONTENT) {
-  localStorage.setItem('linkedin_content', JSON.stringify(content));
+  saveJson('linkedin_content', content);
 }
 
 // Copy Button Component

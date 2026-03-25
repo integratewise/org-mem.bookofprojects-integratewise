@@ -6,6 +6,7 @@ import {
   Edit2, Save, X, Plus, Trash2, RotateCcw
 } from 'lucide-react';
 import { copyToClipboard } from '../../utils/clipboard';
+import { loadJson, saveJson } from '../../lib/storage';
 
 // Default WhatsApp Content
 const DEFAULT_WHATSAPP_CONTENT = {
@@ -108,13 +109,12 @@ Would you like to discuss which plan fits your needs?`,
 
 // Load content from localStorage
 function loadContent() {
-  const saved = localStorage.getItem('whatsapp_content');
-  return saved ? JSON.parse(saved) : DEFAULT_WHATSAPP_CONTENT;
+  return loadJson('whatsapp_content', DEFAULT_WHATSAPP_CONTENT);
 }
 
 // Save content to localStorage
 function saveContent(content: typeof DEFAULT_WHATSAPP_CONTENT) {
-  localStorage.setItem('whatsapp_content', JSON.stringify(content));
+  saveJson('whatsapp_content', content);
 }
 
 // Copy Button Component
@@ -505,7 +505,7 @@ export function WhatsAppPage() {
       </motion.div>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {[
           { label: 'Catalog Items', count: content.catalog.length, icon: ShoppingBag },
           { label: 'Templates', count: content.templates.length, icon: MessageCircle },

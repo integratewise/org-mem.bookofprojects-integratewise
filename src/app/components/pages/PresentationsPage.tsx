@@ -8,6 +8,7 @@ import {
 import { toPng, toBlob } from 'html-to-image';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
+import { loadJson, saveJson } from '../../lib/storage';
 import { copyToClipboard } from '../../utils/clipboard';
 
 // Default Presentation Slides
@@ -169,19 +170,16 @@ const DEFAULT_BANNERS = [
 
 // Load from localStorage
 function loadData() {
-  const saved = localStorage.getItem('presentation_slides');
-  const savedCarousel = localStorage.getItem('carousel_slides');
-  const savedBanners = localStorage.getItem('linkedin_banners');
   return {
-    slides: saved ? JSON.parse(saved) : DEFAULT_SLIDES,
-    carousel: savedCarousel ? JSON.parse(savedCarousel) : DEFAULT_CAROUSEL_SLIDES,
-    banners: savedBanners ? JSON.parse(savedBanners) : DEFAULT_BANNERS
+    slides: loadJson('presentation_slides', DEFAULT_SLIDES),
+    carousel: loadJson('carousel_slides', DEFAULT_CAROUSEL_SLIDES),
+    banners: loadJson('linkedin_banners', DEFAULT_BANNERS)
   };
 }
 
 // Save to localStorage
 function saveData(key: string, data: any) {
-  localStorage.setItem(key, JSON.stringify(data));
+  saveJson(key, data);
 }
 
 // Copy Button

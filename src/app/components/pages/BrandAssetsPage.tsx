@@ -33,6 +33,20 @@ import logoIconSvg from '../../../imports/Frame_4-1.svg';
 
 type BgMode = 'light' | 'dark' | 'grey';
 
+const SVG_SOURCE_ASSETS = [
+  { src: logoFrame1, name: 'Frame_1.svg', label: 'Logo Frame Original' },
+  { src: logoFrame1v2, name: 'Frame_1-1.svg', label: 'Logo Frame v2' },
+  { src: logoFrame1v3, name: 'Frame_1-2.svg', label: 'Logo Frame v3' },
+  { src: logoFrame4, name: 'Frame_4.svg', label: 'Icon Mark Original' },
+  { src: logoIconSvg, name: 'Frame_4-1.svg', label: 'Icon Mark v2' },
+] as const;
+
+const LOGO_VARIANTS = [
+  { label: 'Full Logo', variant: 'full' as const, desc: 'Logo mark + wordmark + descriptor' },
+  { label: 'Compact Logo', variant: 'compact' as const, desc: 'Logo mark + wordmark' },
+  { label: 'Icon Only', variant: 'icon-only' as const, desc: 'Logo mark for favicons & avatars' },
+] as const;
+
 /* ── Preview Modal ── */
 function PreviewModal({
   open,
@@ -256,7 +270,58 @@ export function BrandAssetsPage() {
   const handleDownloadAll = async () => {
     setIsDownloadingAll(true);
     try {
-      alert('Brand kit download is being processed. For now, please export individual assets.');
+      const zip = new JSZip();
+      const sourceFolder = zip.folder('svg-sources');
+      const exportsFolder = zip.folder('generated-exports');
+      const copyFolder = zip.folder('brand-copy');
+
+      for (const asset of SVG_SOURCE_ASSETS) {
+        const response = await fetch(asset.src);
+        const blob = await response.blob();
+        sourceFolder?.file(asset.name, blob);
+      }
+
+      for (const variant of LOGO_VARIANTS) {
+        const node = document.getElementById(`logo-${variant.variant}`);
+        if (!node) continue;
+
+        const pngDataUrl = await toPng(node, { pixelRatio: 3, cacheBust: true });
+        const svgDataUrl = await toSvg(node, { cacheBust: true });
+
+        const pngBlob = await (await fetch(pngDataUrl)).blob();
+        const svgBlob = await (await fetch(svgDataUrl)).blob();
+        const cleanName = variant.label.replace(/\s+/g, '-').toLowerCase();
+
+        exportsFolder?.file(`integratewise-${cleanName}.png`, pngBlob);
+        exportsFolder?.file(`integratewise-${cleanName}.svg`, svgBlob);
+      }
+
+      const studioNode = document.getElementById('studio-export-node');
+      if (studioNode) {
+        const studioPng = await toPng(studioNode, { pixelRatio: 3, cacheBust: true });
+        const studioBlob = await (await fetch(studioPng)).blob();
+        exportsFolder?.file(
+          `integratewise-studio-${studioVariant}-${studioColor}.png`,
+          studioBlob,
+        );
+      }
+
+      copyFolder?.file(
+        'approved-messaging.txt',
+        [
+          'IntegrateWise',
+          'A Knowledge Workspace empowered by AI and the Spine.',
+          '',
+          'Primary tagline:',
+          'AI Thinks in Context — and Waits for Approval',
+          '',
+          'Extended marketing tagline:',
+          'AI Thinks in Context. Humans Stay in Control. Every Action Waits for Approval.',
+        ].join('\n'),
+      );
+
+      const content = await zip.generateAsync({ type: 'blob' });
+      saveAs(content, 'IntegrateWise-Brand-Kit.zip');
     } catch (err) {
       console.error("Failed to download zip", err);
       alert("Failed to download complete brand kit.");
@@ -638,11 +703,7 @@ export function BrandAssetsPage() {
         </div>
 
         <div className="grid gap-6">
-          {[
-            { label: 'Full Logo', desc: 'Logo mark + wordmark + descriptor', variant: 'full' as const },
-            { label: 'Compact Logo', desc: 'Logo mark + wordmark', variant: 'compact' as const },
-            { label: 'Icon Only', desc: 'Logo mark for favicons & avatars', variant: 'icon-only' as const },
-          ].map((v) => (
+          {LOGO_VARIANTS.map((v) => (
             <div key={v.variant} className="bg-white rounded-xl overflow-hidden" style={{ border: '1px solid #D5DAE5' }}>
               <div className="px-6 py-3 flex items-center justify-between" style={{ borderBottom: '1px solid #E8ECF2' }}>
                 <div>
@@ -689,13 +750,7 @@ export function BrandAssetsPage() {
           <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>SVG Source Files</h3>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            { src: logoFrame1, name: 'Frame_1.svg', label: 'Logo Frame Original', id: 'svg-frame1' },
-            { src: logoFrame1v2, name: 'Frame_1-1.svg', label: 'Logo Frame v2', id: 'svg-frame1v2' },
-            { src: logoFrame1v3, name: 'Frame_1-2.svg', label: 'Logo Frame v3', id: 'svg-frame1v3' },
-            { src: logoFrame4, name: 'Frame_4.svg', label: 'Icon Mark Original', id: 'svg-frame4' },
-            { src: logoIconSvg, name: 'Frame_4-1.svg', label: 'Icon Mark v2', id: 'svg-icon' },
-          ].map((asset) => (
+          {SVG_SOURCE_ASSETS.map((asset) => (
             <div key={asset.name} className="bg-white rounded-xl overflow-hidden group" style={{ border: '1px solid #D5DAE5' }}>
               <div
                 className="flex items-center justify-center p-6 h-44 transition-colors duration-200"

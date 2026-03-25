@@ -2,6 +2,7 @@
 // Acts as Document Controller and Content Strategist
 
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
+const DEFAULT_OPENROUTER_MODEL = import.meta.env.VITE_OPENROUTER_MODEL || 'anthropic/claude-3.5-sonnet';
 
 export interface AIMessage {
   role: 'system' | 'user' | 'assistant';
@@ -23,6 +24,25 @@ export interface AIResponse {
     completion_tokens: number;
     total_tokens: number;
   };
+}
+
+function extractMessageContent(content: unknown): string {
+  if (typeof content === 'string') return content;
+
+  if (Array.isArray(content)) {
+    return content
+      .map((part) => {
+        if (typeof part === 'string') return part;
+        if (part && typeof part === 'object' && 'text' in part) {
+          return String((part as { text?: unknown }).text ?? '');
+        }
+        return '';
+      })
+      .join('\n')
+      .trim();
+  }
+
+  return '';
 }
 
 // Default system prompt for BrandDocumentations AI
@@ -56,7 +76,8 @@ When responding:
 export async function sendMessageToAI(
   userMessage: string,
   context?: string,
-  apiKey?: string
+  apiKey?: string,
+  model?: string
 ): Promise<AIResponse> {
   const key = apiKey || import.meta.env.VITE_OPENROUTER_API_KEY;
   
@@ -77,6 +98,9 @@ export async function sendMessageToAI(
 
   messages.push({ role: 'user', content: userMessage });
 
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 45000);
+
   const response = await fetch(OPENROUTER_API_URL, {
     method: 'POST',
     headers: {
@@ -85,12 +109,15 @@ export async function sendMessageToAI(
       'HTTP-Referer': window.location.origin,
       'X-Title': 'IntegrateWise Brand Documentation AI',
     },
+    signal: controller.signal,
     body: JSON.stringify({
-      model: 'anthropic/claude-3.5-sonnet',
+      model: model || DEFAULT_OPENROUTER_MODEL,
       messages,
       temperature: 0.7,
       max_tokens: 4000,
     }),
+  }).finally(() => {
+    window.clearTimeout(timeout);
   });
 
   if (!response.ok) {
@@ -101,14 +128,14 @@ export async function sendMessageToAI(
   const data = await response.json();
   
   return {
-    content: data.choices[0]?.message?.content || '',
-    model: data.model,
+    content: extractMessageContent(data.choices?.[0]?.message?.content),
+    model: data.model || model || DEFAULT_OPENROUTER_MODEL,
     usage: data.usage,
   };
 }
 
 // Specialized functions for different tasks
-export async function reviewContent(content: string, contentType: string, apiKey?: string): Promise<AIResponse> {
+export async function reviewContent(content: string, contentType: string, apiKey?: string, model?: string): Promise<AIResponse> {
   const prompt = `Please review this ${contentType} for brand alignment, clarity, and strategic positioning:
 
 ${content}
@@ -119,7 +146,7 @@ Provide:
 3. Suggested revisions
 4. Brand consistency score (1-10)`;
 
-  return sendMessageToAI(prompt, undefined, apiKey);
+  return sendMessageToAI(prompt, undefined, apiKey, model);
 }
 
 export async function generateContent(
@@ -127,7 +154,8 @@ export async function generateContent(
   purpose: string,
   audience: string,
   tone: string,
-  apiKey?: string
+  apiKey?: string,
+  model?: string
 ): Promise<AIResponse> {
   const prompt = `Generate ${contentType} content:
 - Purpose: ${purpose}
@@ -136,13 +164,14 @@ export async function generateContent(
 
 Create content that aligns with IntegrateWise brand messaging (Knowledge Workspace, Spine, AI governance).`;
 
-  return sendMessageToAI(prompt, undefined, apiKey);
+  return sendMessageToAI(prompt, undefined, apiKey, model);
 }
 
 export async function strategizeContent(
   goal: string,
   currentAssets: string,
-  apiKey?: string
+  apiKey?: string,
+  model?: string
 ): Promise<AIResponse> {
   const prompt = `As Content Strategist, help me develop a content strategy:
 
@@ -156,5 +185,5 @@ Provide:
 3. Priority actions
 4. Messaging framework suggestions`;
 
-  return sendMessageToAI(prompt, undefined, apiKey);
+  return sendMessageToAI(prompt, undefined, apiKey, model);
 }

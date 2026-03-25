@@ -105,7 +105,7 @@ const sections = [
 ];
 
 const quickStats = [
-  { icon: Download, label: 'Total Assets', value: '45+' },
+  { icon: Download, label: 'Core Docs', value: '40' },
   { icon: FileText, label: 'Templates', value: '26' },
   { icon: LayoutTemplate, label: 'Categories', value: '5' },
 ];

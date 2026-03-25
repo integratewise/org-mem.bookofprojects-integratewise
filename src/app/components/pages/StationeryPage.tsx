@@ -1,13 +1,14 @@
-import { useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { 
   Download, Eye, FileText, Mail, CreditCard, Stamp, 
   Receipt, Signature, BookOpen, Printer, X, Check,
   Copy, ChevronDown, ChevronUp, Loader2
 } from 'lucide-react';
-import { toPng } from 'html-to-image';
+import { toBlob } from 'html-to-image';
 import { saveAs } from 'file-saver';
 import { copyToClipboard } from '../../utils/clipboard';
+import { loadJson, saveJson } from '../../lib/storage';
 
 type Tab = 'all' | 'documents' | 'identity' | 'digital';
 
@@ -22,16 +23,235 @@ interface StationeryItem {
   status: 'ready' | 'draft';
 }
 
+type StationeryContent = Record<string, string>;
+
 const items: StationeryItem[] = [
-  { id: 'letterhead', title: 'Letterhead', description: 'Official A4 letterhead template', specs: 'A4 (210×297mm)', tab: 'documents', icon: FileText, format: 'HTML/PDF', status: 'ready' },
-  { id: 'invoice', title: 'Invoice Template', description: 'Professional billing template', specs: 'A4 (210×297mm)', tab: 'documents', icon: Receipt, format: 'HTML/PDF', status: 'ready' },
-  { id: 'proposal', title: 'Proposal Template', description: 'Project proposal with signature blocks', specs: 'A4 (210×297mm)', tab: 'documents', icon: BookOpen, format: 'HTML/PDF', status: 'ready' },
+  { id: 'letterhead', title: 'Letterhead', description: 'Official A4 letterhead template', specs: 'A4 (210×297mm)', tab: 'documents', icon: FileText, format: 'PNG/HTML', status: 'ready' },
+  { id: 'invoice', title: 'Invoice Template', description: 'Professional billing template', specs: 'A4 (210×297mm)', tab: 'documents', icon: Receipt, format: 'PNG/HTML', status: 'ready' },
+  { id: 'proposal', title: 'Proposal Template', description: 'Project proposal with signature blocks', specs: 'A4 (210×297mm)', tab: 'documents', icon: BookOpen, format: 'PNG/HTML', status: 'ready' },
   { id: 'seal', title: 'Company Seal', description: 'Official circular seal design', specs: 'Vector SVG', tab: 'identity', icon: Stamp, format: 'SVG/PNG', status: 'ready' },
-  { id: 'business-card', title: 'Business Card', description: 'Front and back design', specs: '85×55mm', tab: 'identity', icon: CreditCard, format: 'HTML/PDF', status: 'ready' },
+  { id: 'business-card', title: 'Business Card', description: 'Front and back design', specs: '85×55mm', tab: 'identity', icon: CreditCard, format: 'PNG/HTML', status: 'ready' },
   { id: 'email-signature', title: 'Email Signature', description: 'HTML email signature template', specs: '600px wide', tab: 'digital', icon: Mail, format: 'HTML', status: 'ready' },
   { id: 'document-cover', title: 'Document Cover', description: 'Presentation cover page', specs: '1920×1080px', tab: 'documents', icon: BookOpen, format: 'HTML/PNG', status: 'ready' },
-  { id: 'envelope', title: 'Envelope', description: 'Corporate envelope template', specs: 'DL (220×110mm)', tab: 'documents', icon: Printer, format: 'HTML/PDF', status: 'ready' },
+  { id: 'envelope', title: 'Envelope', description: 'Corporate envelope template', specs: 'DL (220×110mm)', tab: 'documents', icon: Printer, format: 'PNG/HTML', status: 'ready' },
 ];
+
+function createSafeFilename(title: string) {
+  return `IntegrateWise-${title.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') || 'stationery'}`;
+}
+
+function generateSealSVG() {
+  return `
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <linearGradient id="sealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4154A3" />
+      <stop offset="100%" stop-color="#1B2544" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="#ffffff" />
+  <circle cx="600" cy="600" r="420" fill="none" stroke="url(#sealGradient)" stroke-width="28" />
+  <circle cx="600" cy="600" r="350" fill="none" stroke="#EB4379" stroke-width="10" stroke-dasharray="12 18" />
+  <text x="600" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="8" fill="#4154A3">INTEGRATEWISE LLP</text>
+  <text x="600" y="870" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="600" letter-spacing="6" fill="#4154A3">OFFICIAL SEAL</text>
+  <circle cx="600" cy="600" r="180" fill="url(#sealGradient)" opacity="0.1" />
+  <text x="600" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="70" font-weight="700" fill="#1B2544">IW</text>
+  <text x="600" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#636A82">AI Thinks in Context</text>
+  <text x="600" y="675" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#636A82">Waits for Approval</text>
+</svg>`.trim();
+}
+
+function getDefaultStationeryContent(id: string): StationeryContent {
+  switch (id) {
+    case 'letterhead':
+      return {
+        companyName: 'IntegrateWise',
+        tagline: 'Knowledge Workspace Over the Spine and Empowered by AI',
+        companyDetails: 'IntegrateWise LLP\nBengaluru, India\nhello@integratewise.ai\nintegratewise.ai',
+        date: 'March 25, 2026',
+        recipient: 'Recipient Name',
+        subject: 'Strategic rollout proposal',
+        body: 'Thank you for exploring IntegrateWise.\n\nWe are sharing a governed AI rollout proposal for your team.\n\nPlease review the enclosed scope, timeline, and approval checkpoints.',
+        footer: 'AI Thinks in Context — and Waits for Approval',
+      };
+    case 'invoice':
+      return {
+        companyName: 'IntegrateWise',
+        tagline: 'Knowledge Workspace Over the Spine and Empowered by AI',
+        invoiceNumber: '#INV-2026-001',
+        clientName: 'Client Name',
+        clientAddress: 'Client Address',
+        invoiceDate: 'March 25, 2026',
+        dueDate: 'April 10, 2026',
+        lineItem: 'IntegrateWise Platform - Growth Plan',
+        total: '$1,178.82',
+      };
+    case 'proposal':
+      return {
+        companyName: 'IntegrateWise',
+        tagline: 'Knowledge Workspace Over the Spine and Empowered by AI',
+        proposalTitle: 'Context-Aware AI Rollout',
+        preparedFor: 'Client Name',
+        proposalDate: 'March 2026',
+        validUntil: '30 Days',
+        summary: 'Unify fragmented tools into one governed workspace where AI reasons in context and every action waits for approval.',
+        scope: 'Spine setup, workflow design, approval checkpoints, rollout onboarding, and stakeholder enablement.',
+        timeline: '4-week setup, 2-week pilot, 30-day success review with measurable adoption milestones.',
+        preparedBy: 'IntegrateWise LLP',
+        acceptedBy: 'Client Representative',
+      };
+    case 'seal':
+      return {
+        companyName: 'INTEGRATEWISE LLP',
+        label: 'OFFICIAL SEAL',
+        initials: 'IW',
+        taglineTop: 'AI Thinks in Context',
+        taglineBottom: 'Waits for Approval',
+      };
+    case 'business-card':
+      return {
+        companyName: 'IntegrateWise',
+        tagline: 'Knowledge Workspace Over the Spine and Empowered by AI',
+        personName: 'Your Name',
+        personTitle: 'Your Title',
+        email: 'hello@integratewise.ai',
+        website: 'integratewise.ai',
+        phone: '+91 [Phone]',
+        location: 'Bengaluru, India',
+        footer: 'AI Thinks in Context — and Waits for Approval',
+      };
+    case 'email-signature':
+      return {
+        companyName: 'IntegrateWise',
+        tagline: 'Knowledge Workspace Over the Spine',
+        personName: 'Your Name',
+        personTitle: 'Your Title',
+        email: 'hello@integratewise.ai',
+        website: 'integratewise.ai',
+        footer: 'AI Thinks in Context — and Waits for Approval',
+      };
+    case 'document-cover':
+      return {
+        companyName: 'IntegrateWise',
+        tagline: 'Knowledge Workspace Over the Spine and Empowered by AI',
+        documentType: 'Board Brief',
+        documentTitle: 'Governed Intelligence Rollout Plan',
+        documentSubtitle: 'Execution roadmap for adopting context-aware AI across work, knowledge, and decisions.',
+        preparedBy: 'Strategy Office',
+        documentDate: 'March 2026',
+        version: 'v1.0',
+      };
+    case 'envelope':
+      return {
+        companyName: 'IntegrateWise LLP',
+        returnAddress: 'Bengaluru, India',
+        email: 'hello@integratewise.ai',
+        website: 'integratewise.ai',
+        recipientName: 'Recipient Name',
+        recipientCompany: 'Company Name',
+        recipientStreet: 'Street Address',
+        recipientCity: 'City, State, ZIP',
+        recipientCountry: 'Country',
+        footer: 'AI Thinks in Context — and Waits for Approval',
+      };
+    default:
+      return {};
+  }
+}
+
+function getStationeryFields(id: string): Array<{ key: string; label: string; multiline?: boolean }> {
+  switch (id) {
+    case 'letterhead':
+      return [
+        { key: 'companyName', label: 'Company Name' },
+        { key: 'tagline', label: 'Tagline' },
+        { key: 'companyDetails', label: 'Company Details', multiline: true },
+        { key: 'date', label: 'Date' },
+        { key: 'recipient', label: 'Recipient' },
+        { key: 'subject', label: 'Subject' },
+        { key: 'body', label: 'Body Copy', multiline: true },
+        { key: 'footer', label: 'Footer' },
+      ];
+    case 'invoice':
+      return [
+        { key: 'companyName', label: 'Company Name' },
+        { key: 'tagline', label: 'Tagline' },
+        { key: 'invoiceNumber', label: 'Invoice Number' },
+        { key: 'clientName', label: 'Client Name' },
+        { key: 'clientAddress', label: 'Client Address', multiline: true },
+        { key: 'invoiceDate', label: 'Invoice Date' },
+        { key: 'dueDate', label: 'Due Date' },
+        { key: 'lineItem', label: 'Primary Line Item' },
+        { key: 'total', label: 'Total' },
+      ];
+    case 'proposal':
+      return [
+        { key: 'proposalTitle', label: 'Proposal Title' },
+        { key: 'preparedFor', label: 'Prepared For' },
+        { key: 'proposalDate', label: 'Date' },
+        { key: 'validUntil', label: 'Valid Until' },
+        { key: 'summary', label: 'Executive Summary', multiline: true },
+        { key: 'scope', label: 'Scope', multiline: true },
+        { key: 'timeline', label: 'Timeline', multiline: true },
+        { key: 'preparedBy', label: 'Prepared By' },
+        { key: 'acceptedBy', label: 'Accepted By' },
+      ];
+    case 'seal':
+      return [
+        { key: 'companyName', label: 'Company Ring Text' },
+        { key: 'label', label: 'Seal Label' },
+        { key: 'initials', label: 'Initials' },
+        { key: 'taglineTop', label: 'Top Tagline' },
+        { key: 'taglineBottom', label: 'Bottom Tagline' },
+      ];
+    case 'business-card':
+      return [
+        { key: 'companyName', label: 'Company Name' },
+        { key: 'tagline', label: 'Tagline' },
+        { key: 'personName', label: 'Person Name' },
+        { key: 'personTitle', label: 'Person Title' },
+        { key: 'email', label: 'Email' },
+        { key: 'website', label: 'Website' },
+        { key: 'phone', label: 'Phone' },
+        { key: 'location', label: 'Location' },
+        { key: 'footer', label: 'Footer' },
+      ];
+    case 'email-signature':
+      return [
+        { key: 'companyName', label: 'Company Name' },
+        { key: 'tagline', label: 'Tagline' },
+        { key: 'personName', label: 'Person Name' },
+        { key: 'personTitle', label: 'Person Title' },
+        { key: 'email', label: 'Email' },
+        { key: 'website', label: 'Website' },
+        { key: 'footer', label: 'Footer' },
+      ];
+    case 'document-cover':
+      return [
+        { key: 'documentType', label: 'Document Type' },
+        { key: 'documentTitle', label: 'Document Title' },
+        { key: 'documentSubtitle', label: 'Subtitle', multiline: true },
+        { key: 'preparedBy', label: 'Prepared By' },
+        { key: 'documentDate', label: 'Date' },
+        { key: 'version', label: 'Version' },
+      ];
+    case 'envelope':
+      return [
+        { key: 'companyName', label: 'Company Name' },
+        { key: 'returnAddress', label: 'Return Address', multiline: true },
+        { key: 'email', label: 'Email' },
+        { key: 'website', label: 'Website' },
+        { key: 'recipientName', label: 'Recipient Name' },
+        { key: 'recipientCompany', label: 'Recipient Company' },
+        { key: 'recipientStreet', label: 'Street' },
+        { key: 'recipientCity', label: 'City / State / ZIP' },
+        { key: 'recipientCountry', label: 'Country' },
+        { key: 'footer', label: 'Footer' },
+      ];
+    default:
+      return [];
+  }
+}
 
 // Copy Button Component
 function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) {
@@ -60,13 +280,25 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
   const previewRef = useRef<HTMLDivElement>(null);
   const [isExporting, setIsExporting] = useState(false);
   const [activeTab, setActiveTab] = useState<'preview' | 'html'>('preview');
+  const [content, setContent] = useState<StationeryContent>(() => getDefaultStationeryContent(item.id));
+
+  useEffect(() => {
+    setContent(loadJson(`stationery-asset-${item.id}`, getDefaultStationeryContent(item.id)));
+  }, [item.id]);
+
+  useEffect(() => {
+    saveJson(`stationery-asset-${item.id}`, content);
+  }, [item.id, content]);
 
   const handleDownload = async () => {
     if (!previewRef.current) return;
     setIsExporting(true);
     try {
-      const dataUrl = await toPng(previewRef.current, { pixelRatio: 2 });
-      saveAs(dataUrl, `IntegrateWise-${item.title.replace(/\s+/g, '-')}.png`);
+      const blob = await toBlob(previewRef.current, { pixelRatio: 2, cacheBust: true });
+      if (!blob) {
+        throw new Error('Could not generate image blob');
+      }
+      saveAs(blob, `${createSafeFilename(item.title)}.png`);
     } catch (err) {
       console.error('Export failed:', err);
     } finally {
@@ -75,9 +307,14 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
   };
 
   const handleDownloadHTML = () => {
-    const htmlContent = generateHTML(item.id);
-    const blob = new Blob([htmlContent], { type: 'text/html' });
-    saveAs(blob, `IntegrateWise-${item.title.replace(/\s+/g, '-')}.html`);
+    const htmlContent = generateHTML(item.id, content);
+    const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+    saveAs(blob, `${createSafeFilename(item.title)}.html`);
+  };
+
+  const handleDownloadSVG = () => {
+      const blob = new Blob([generateSealSVG()], { type: 'image/svg+xml;charset=utf-8' });
+      saveAs(blob, `${createSafeFilename(item.title)}.svg`);
   };
 
   return (
@@ -100,7 +337,7 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
 
         {/* Tabs */}
         <div className="flex border-b border-[#E8ECF2]">
-          <button
+            <button
             onClick={() => setActiveTab('preview')}
             className={`px-4 py-2 text-sm font-medium border-b-2 transition-all ${
               activeTab === 'preview' ? 'border-[#4154A3] text-[#4154A3]' : 'border-transparent text-[#5F6E93]'
@@ -122,13 +359,35 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
         <div className="flex-1 overflow-auto p-6 bg-[#F8FAFC]">
           {activeTab === 'preview' ? (
             <div className="flex justify-center">
-              <div ref={previewRef} className="bg-white shadow-lg">
-                <PreviewContent id={item.id} />
+              <div className="grid lg:grid-cols-[320px_minmax(0,1fr)] gap-6 items-start">
+                <div className="bg-white rounded-xl border border-[#E8ECF2] p-4 space-y-4">
+                  {getStationeryFields(item.id).map((field) => (
+                    <div key={field.key}>
+                      <label className="text-xs font-medium text-[#5F6E93]">{field.label}</label>
+                      {field.multiline ? (
+                        <textarea
+                          value={content[field.key] ?? ''}
+                          onChange={(e) => setContent((prev) => ({ ...prev, [field.key]: e.target.value }))}
+                          className="mt-1 w-full rounded-lg border border-[#D5DAE5] px-3 py-2 text-sm min-h-20"
+                        />
+                      ) : (
+                        <input
+                          value={content[field.key] ?? ''}
+                          onChange={(e) => setContent((prev) => ({ ...prev, [field.key]: e.target.value }))}
+                          className="mt-1 w-full rounded-lg border border-[#D5DAE5] px-3 py-2 text-sm"
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+                <div ref={previewRef} className="bg-white shadow-lg">
+                  <PreviewContent id={item.id} content={content} />
+                </div>
               </div>
             </div>
           ) : (
             <div className="bg-[#1B2544] rounded-lg p-4 overflow-x-auto">
-              <pre className="text-sm text-white/90 whitespace-pre-wrap">{generateHTML(item.id)}</pre>
+              <pre className="text-sm text-white/90 whitespace-pre-wrap">{generateHTML(item.id, content)}</pre>
             </div>
           )}
         </div>
@@ -144,15 +403,25 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
               {isExporting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
               {isExporting ? 'Exporting...' : 'Download PNG'}
             </button>
-            <button
-              onClick={handleDownloadHTML}
-              className="flex items-center gap-2 px-4 py-2 border border-[#D5DAE5] text-[#475578] rounded-lg text-sm font-medium hover:bg-[#F0F2F7]"
-            >
-              <FileText className="w-4 h-4" />
-              Download HTML
-            </button>
+            {item.id === 'seal' ? (
+              <button
+                onClick={handleDownloadSVG}
+                className="flex items-center gap-2 px-4 py-2 border border-[#D5DAE5] text-[#475578] rounded-lg text-sm font-medium hover:bg-[#F0F2F7]"
+              >
+                <FileText className="w-4 h-4" />
+                Download SVG
+              </button>
+            ) : item.format.includes('HTML') ? (
+              <button
+                onClick={handleDownloadHTML}
+                className="flex items-center gap-2 px-4 py-2 border border-[#D5DAE5] text-[#475578] rounded-lg text-sm font-medium hover:bg-[#F0F2F7]"
+              >
+                <FileText className="w-4 h-4" />
+                Download HTML Template
+              </button>
+            ) : null}
           </div>
-          <CopyButton text={generateHTML(item.id)} label="Copy HTML" />
+          <CopyButton text={generateHTML(item.id, content)} label="Copy HTML" />
         </div>
       </motion.div>
     </div>
@@ -160,9 +429,8 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
 }
 
 // Preview Content Component
-function PreviewContent({ id }: { id: string }) {
+function PreviewContent({ id, content }: { id: string; content: StationeryContent }) {
   const brandColor = '#4154A3';
-  const accentColor = '#EB4379';
   
   switch (id) {
     case 'letterhead':
@@ -171,30 +439,31 @@ function PreviewContent({ id }: { id: string }) {
           {/* Header */}
           <div className="flex justify-between items-start pb-4 border-b-2" style={{ borderColor: brandColor }}>
             <div>
-              <h1 className="text-3xl font-bold" style={{ color: brandColor }}>IntegrateWise</h1>
-              <p className="text-sm text-[#636A82] mt-1">Knowledge Workspace Over the Spine and Empowered by AI</p>
+              <h1 className="text-3xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
+              <p className="text-sm text-[#636A82] mt-1">{content.tagline}</p>
             </div>
             <div className="text-right text-xs text-[#636A82]">
-              <p>IntegrateWise LLP</p>
-              <p>Bengaluru, India</p>
-              <p>hello@integratewise.ai</p>
-              <p>integratewise.ai</p>
+              {content.companyDetails.split('\n').map((line) => (
+                <p key={line}>{line}</p>
+              ))}
             </div>
           </div>
           {/* Body */}
           <div className="mt-12 text-[#333944]">
-            <p className="text-sm mb-2">Date: _______________</p>
+            <p className="text-sm mb-2">Date: {content.date}</p>
             <p className="text-sm mb-2">To:</p>
-            <p className="text-sm mb-8 ml-4">[Recipient Name]</p>
-            <p className="text-sm mb-4">Subject: _______________</p>
-            <div className="h-64 border-2 border-dashed border-[#E8ECF2] rounded-lg flex items-center justify-center">
-              <p className="text-[#9BA8C2]">Your content here...</p>
+            <p className="text-sm mb-8 ml-4">{content.recipient}</p>
+            <p className="text-sm mb-4">Subject: {content.subject}</p>
+            <div className="h-64 border border-[#E8ECF2] rounded-lg p-6">
+              {content.body.split('\n').map((line) => (
+                <p key={line} className="text-sm mb-3">{line}</p>
+              ))}
             </div>
           </div>
           {/* Footer */}
           <div className="absolute bottom-12 left-12 right-12 pt-4 border-t border-[#E8ECF2]">
             <p className="text-xs text-[#9BA8C2] text-center">
-              AI Thinks in Context — and Waits for Approval
+              {content.footer}
             </p>
           </div>
         </div>
@@ -206,25 +475,27 @@ function PreviewContent({ id }: { id: string }) {
           {/* Header */}
           <div className="flex justify-between items-start pb-6 border-b-2" style={{ borderColor: brandColor }}>
             <div>
-              <h1 className="text-3xl font-bold" style={{ color: brandColor }}>IntegrateWise</h1>
-              <p className="text-sm text-[#636A82]">Knowledge Workspace Over the Spine and Empowered by AI</p>
+              <h1 className="text-3xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
+              <p className="text-sm text-[#636A82]">{content.tagline}</p>
             </div>
             <div className="text-right">
               <h2 className="text-2xl font-bold text-[#1B2544]">INVOICE</h2>
-              <p className="text-sm text-[#636A82]">#INV-2026-001</p>
+              <p className="text-sm text-[#636A82]">{content.invoiceNumber}</p>
             </div>
           </div>
           {/* Invoice Details */}
           <div className="grid grid-cols-2 gap-8 mt-8">
             <div>
               <p className="text-xs font-semibold text-[#9BA8C2] mb-2">BILL TO:</p>
-              <p className="text-sm text-[#333944]">[Client Name]</p>
-              <p className="text-sm text-[#636A82]">[Client Address]</p>
+              <p className="text-sm text-[#333944]">{content.clientName}</p>
+              {content.clientAddress.split('\n').map((line) => (
+                <p key={line} className="text-sm text-[#636A82]">{line}</p>
+              ))}
             </div>
             <div className="text-right">
               <p className="text-xs font-semibold text-[#9BA8C2] mb-2">INVOICE DETAILS:</p>
-              <p className="text-sm text-[#333944]">Date: _______________</p>
-              <p className="text-sm text-[#333944]">Due Date: _______________</p>
+              <p className="text-sm text-[#333944]">Date: {content.invoiceDate}</p>
+              <p className="text-sm text-[#333944]">Due Date: {content.dueDate}</p>
             </div>
           </div>
           {/* Line Items */}
@@ -240,7 +511,7 @@ function PreviewContent({ id }: { id: string }) {
               </thead>
               <tbody>
                 <tr className="border-b border-[#E8ECF2]">
-                  <td className="py-4 text-sm text-[#333944]">IntegrateWise Platform - Growth Plan</td>
+                  <td className="py-4 text-sm text-[#333944]">{content.lineItem}</td>
                   <td className="py-4 text-sm text-[#333944] text-right">1</td>
                   <td className="py-4 text-sm text-[#333944] text-right">$999.00</td>
                   <td className="py-4 text-sm text-[#333944] text-right">$999.00</td>
@@ -261,7 +532,7 @@ function PreviewContent({ id }: { id: string }) {
               </div>
               <div className="flex justify-between py-2 border-t-2" style={{ borderColor: brandColor }}>
                 <span className="text-sm font-semibold text-[#1B2544]">Total:</span>
-                <span className="text-sm font-bold" style={{ color: brandColor }}>$1,178.82</span>
+                <span className="text-sm font-bold" style={{ color: brandColor }}>{content.total}</span>
               </div>
             </div>
           </div>
@@ -311,15 +582,118 @@ function PreviewContent({ id }: { id: string }) {
               </defs>
               <text fill="#4154A3" fontSize="10" fontWeight="600" letterSpacing="2">
                 <textPath href="#circlePath">
-                  INTEGRATEWISE LLP • KNOWLEDGE WORKSPACE •
+                  {content.companyName} • KNOWLEDGE WORKSPACE •
                 </textPath>
               </text>
               {/* Center */}
               <circle cx="100" cy="100" r="50" fill="#4154A3" />
-              <text x="100" y="95" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">IW</text>
-              <text x="100" y="110" textAnchor="middle" fill="white" fontSize="6">EST. 2024</text>
+              <text x="100" y="95" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">{content.initials}</text>
+              <text x="100" y="110" textAnchor="middle" fill="white" fontSize="6">{content.label}</text>
             </svg>
           </div>
+        </div>
+      );
+
+    case 'proposal':
+      return (
+        <div className="w-[800px] h-[1131px] p-12 bg-white relative">
+          <div className="text-center border-b-2 pb-5" style={{ borderColor: brandColor }}>
+            <h1 className="text-3xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
+            <p className="text-sm text-[#636A82] mt-2">{content.tagline}</p>
+          </div>
+          <div className="text-center mt-10">
+            <p className="text-xs tracking-[0.3em] text-[#9BA8C2]">PROJECT PROPOSAL</p>
+            <h2 className="text-3xl font-bold text-[#1B2544] mt-3">{content.proposalTitle}</h2>
+            <p className="text-sm text-[#636A82] mt-2">Prepared for enterprise buyers evaluating governed execution</p>
+          </div>
+          <div className="grid grid-cols-3 gap-4 mt-8 text-center">
+            {[
+              ['Prepared For', content.preparedFor],
+              ['Date', content.proposalDate],
+              ['Valid Until', content.validUntil],
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-lg border border-[#E8ECF2] p-4">
+                <p className="text-[11px] uppercase text-[#9BA8C2]">{label}</p>
+                <p className="text-sm font-medium text-[#1B2544] mt-2">{value}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 space-y-6">
+            {[
+              ['Executive Summary', content.summary],
+              ['Scope of Work', content.scope],
+              ['Timeline', content.timeline],
+            ].map(([heading, copy]) => (
+              <div key={heading}>
+                <h3 className="text-sm font-semibold uppercase tracking-wide" style={{ color: brandColor }}>{heading}</h3>
+                <p className="text-sm text-[#475578] mt-2 leading-6">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="absolute bottom-12 left-12 right-12 grid grid-cols-2 gap-8">
+            <div className="border-t pt-3">
+              <p className="text-xs font-semibold text-[#1B2544]">Prepared By</p>
+              <p className="text-sm text-[#636A82] mt-1">{content.preparedBy}</p>
+            </div>
+            <div className="border-t pt-3">
+              <p className="text-xs font-semibold text-[#1B2544]">Accepted By</p>
+              <p className="text-sm text-[#636A82] mt-1">{content.acceptedBy}</p>
+            </div>
+          </div>
+        </div>
+      );
+
+    case 'document-cover':
+      return (
+        <div className="w-[960px] h-[540px] bg-white relative overflow-hidden">
+          <div className="absolute inset-y-0 left-0 w-20" style={{ background: brandColor }} />
+          <div className="absolute top-16 left-28">
+            <h1 className="text-4xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
+            <p className="text-sm text-[#636A82] mt-2">{content.tagline}</p>
+          </div>
+          <div className="absolute left-28 right-24 top-1/2 -translate-y-1/2">
+            <p className="text-xs tracking-[0.35em] text-[#9BA8C2] uppercase">{content.documentType}</p>
+            <h2 className="text-5xl font-bold text-[#1B2544] mt-4 leading-tight">{content.documentTitle}</h2>
+            <p className="text-lg text-[#636A82] mt-4 max-w-2xl">{content.documentSubtitle}</p>
+          </div>
+          <div className="absolute left-28 bottom-16 flex gap-10">
+            {[
+              ['Prepared By', content.preparedBy],
+              ['Date', content.documentDate],
+              ['Version', content.version],
+            ].map(([label, value]) => (
+              <div key={label}>
+                <p className="text-[11px] uppercase text-[#9BA8C2]">{label}</p>
+                <p className="text-sm font-medium text-[#1B2544] mt-1">{value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+
+    case 'envelope':
+      return (
+        <div className="w-[831px] h-[416px] bg-white relative overflow-hidden border border-[#E8ECF2]">
+          <div className="absolute inset-y-0 left-0 w-8" style={{ background: brandColor }} />
+          <div className="absolute left-14 top-10 text-[#636A82] text-xs leading-5">
+            <p className="font-semibold text-[#4154A3]">{content.companyName}</p>
+            {content.returnAddress.split('\n').map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+            <p>{content.email}</p>
+            <p>{content.website}</p>
+          </div>
+          <div className="absolute left-[300px] top-[130px] text-[#1B2544] text-sm leading-6">
+            <p className="font-semibold">{content.recipientName}</p>
+            <p>{content.recipientCompany}</p>
+            <p>{content.recipientStreet}</p>
+            <p>{content.recipientCity}</p>
+            <p>{content.recipientCountry}</p>
+          </div>
+          <div className="absolute right-12 top-8 w-24 h-28 border border-dashed border-[#D5DAE5] flex items-center justify-center text-[10px] text-[#9BA8C2]">
+            STAMP
+          </div>
+          <p className="absolute left-14 bottom-8 text-[11px] italic text-[#9BA8C2]">{content.footer}</p>
         </div>
       );
       
@@ -330,24 +704,24 @@ function PreviewContent({ id }: { id: string }) {
             <tbody>
               <tr>
                 <td style={{ paddingRight: '16px', borderRight: '2px solid #4154A3' }}>
-                  <p style={{ margin: '0', fontSize: '18px', fontWeight: '600', color: '#4154A3' }}>IntegrateWise</p>
-                  <p style={{ margin: '4px 0 0', fontSize: '11px', color: '#636A82' }}>Knowledge Workspace Over the Spine</p>
+                  <p style={{ margin: '0', fontSize: '18px', fontWeight: '600', color: '#4154A3' }}>{content.companyName}</p>
+                  <p style={{ margin: '4px 0 0', fontSize: '11px', color: '#636A82' }}>{content.tagline}</p>
                 </td>
                 <td style={{ paddingLeft: '16px' }}>
-                  <p style={{ margin: '0', fontWeight: '600', color: '#1B2544' }}>[Your Name]</p>
-                  <p style={{ margin: '2px 0', fontSize: '12px', color: '#5F6E93' }}>[Your Title]</p>
+                  <p style={{ margin: '0', fontWeight: '600', color: '#1B2544' }}>{content.personName}</p>
+                  <p style={{ margin: '2px 0', fontSize: '12px', color: '#5F6E93' }}>{content.personTitle}</p>
                   <p style={{ margin: '8px 0 0', fontSize: '11px' }}>
-                    <a href="mailto:hello@integratewise.ai" style={{ color: '#4154A3', textDecoration: 'none' }}>hello@integratewise.ai</a>
+                    <a href={`mailto:${content.email}`} style={{ color: '#4154A3', textDecoration: 'none' }}>{content.email}</a>
                   </p>
                   <p style={{ margin: '2px 0', fontSize: '11px' }}>
-                    <a href="https://integratewise.ai" style={{ color: '#4154A3', textDecoration: 'none' }}>integratewise.ai</a>
+                    <a href={`https://${content.website}`} style={{ color: '#4154A3', textDecoration: 'none' }}>{content.website}</a>
                   </p>
                 </td>
               </tr>
               <tr>
                 <td colSpan={2} style={{ paddingTop: '12px', borderTop: '1px solid #E8ECF2', marginTop: '12px' }}>
                   <p style={{ margin: '0', fontSize: '10px', color: '#9BA8C2', fontStyle: 'italic' }}>
-                    AI Thinks in Context — and Waits for Approval
+                    {content.footer}
                   </p>
                 </td>
               </tr>
@@ -366,7 +740,7 @@ function PreviewContent({ id }: { id: string }) {
 }
 
 // Generate HTML for download
-function generateHTML(id: string): string {
+function generateHTML(id: string, content: StationeryContent): string {
   const brandColor = '#4154A3';
   
   switch (id) {
@@ -392,28 +766,24 @@ function generateHTML(id: string): string {
   <div class="page">
     <div class="header">
       <div class="logo">
-        <h1>IntegrateWise</h1>
-        <p>Knowledge Workspace Over the Spine and Empowered by AI</p>
+        <h1>${content.companyName}</h1>
+        <p>${content.tagline}</p>
       </div>
       <div class="company-info">
-        <p>IntegrateWise LLP</p>
-        <p>Bengaluru, India</p>
-        <p>hello@integratewise.ai</p>
-        <p>integratewise.ai</p>
+        ${content.companyDetails.split('\n').map((line) => `<p>${line}</p>`).join('')}
       </div>
     </div>
     <div class="content">
-      <p>Date: _______________</p>
+      <p>Date: ${content.date}</p>
       <p style="margin-top: 30px;">To:</p>
-      <p style="margin-left: 20px;">[Recipient Name]</p>
-      <p style="margin-left: 20px;">[Recipient Address]</p>
-      <p style="margin-top: 30px;">Subject: _______________</p>
+      <p style="margin-left: 20px;">${content.recipient}</p>
+      <p style="margin-top: 30px;">Subject: ${content.subject}</p>
       <div style="margin-top: 40px; min-height: 300px;">
-        <p>[Your content here...]</p>
+        ${content.body.split('\n').map((line) => `<p>${line}</p>`).join('')}
       </div>
     </div>
     <div class="footer">
-      <p>AI Thinks in Context — and Waits for Approval</p>
+      <p>${content.footer}</p>
     </div>
   </div>
 </body>
@@ -454,25 +824,24 @@ function generateHTML(id: string): string {
   <div class="page">
     <div class="header">
       <div class="logo">
-        <h1>IntegrateWise</h1>
-        <p>Knowledge Workspace Over the Spine and Empowered by AI</p>
+        <h1>${content.companyName}</h1>
+        <p>${content.tagline}</p>
       </div>
       <div class="invoice-title">
         <h2>INVOICE</h2>
-        <p>#INV-2026-001</p>
+        <p>${content.invoiceNumber}</p>
       </div>
     </div>
     <div class="details">
       <div class="bill-to">
         <h3>Bill To:</h3>
-        <p><strong>[Client Name]</strong></p>
-        <p>[Client Address]</p>
-        <p>[Client Email]</p>
+        <p><strong>${content.clientName}</strong></p>
+        ${content.clientAddress.split('\n').map((line) => `<p>${line}</p>`).join('')}
       </div>
       <div class="invoice-details">
         <h3>Invoice Details:</h3>
-        <p><strong>Date:</strong> [Invoice Date]</p>
-        <p><strong>Due Date:</strong> [Due Date]</p>
+        <p><strong>Date:</strong> ${content.invoiceDate}</p>
+        <p><strong>Due Date:</strong> ${content.dueDate}</p>
         <p><strong>Terms:</strong> Net 30</p>
       </div>
     </div>
@@ -487,7 +856,7 @@ function generateHTML(id: string): string {
       </thead>
       <tbody>
         <tr>
-          <td>IntegrateWise Platform - Growth Plan</td>
+          <td>${content.lineItem}</td>
           <td class="text-right">1</td>
           <td class="text-right">$999.00</td>
           <td class="text-right">$999.00</td>
@@ -518,7 +887,7 @@ function generateHTML(id: string): string {
         </tr>
         <tr>
           <td>Total:</td>
-          <td class="text-right">$8,848.82</td>
+          <td class="text-right">${content.total}</td>
         </tr>
       </table>
     </div>
@@ -559,54 +928,52 @@ function generateHTML(id: string): string {
 <body>
   <div class="page">
     <div class="header">
-      <h1>IntegrateWise</h1>
-      <p>Knowledge Workspace Over the Spine and Empowered by AI</p>
+      <h1>${content.companyName}</h1>
+      <p>${content.tagline}</p>
     </div>
     <div class="proposal-title">
       <h2>PROJECT PROPOSAL</h2>
-      <p>[Project Title]</p>
+      <p>${content.proposalTitle}</p>
     </div>
     <div class="meta">
       <div class="meta-item">
         <div class="label">Prepared For</div>
-        <div class="value">[Client Name]</div>
+        <div class="value">${content.preparedFor}</div>
       </div>
       <div class="meta-item">
         <div class="label">Date</div>
-        <div class="value">[Proposal Date]</div>
+        <div class="value">${content.proposalDate}</div>
       </div>
       <div class="meta-item">
         <div class="label">Valid Until</div>
-        <div class="value">[Expiration Date]</div>
+        <div class="value">${content.validUntil}</div>
       </div>
     </div>
     <div class="content">
       <div class="section">
         <h3>Executive Summary</h3>
-        <p>[Provide a brief overview of the project and key benefits...]</p>
+        <p>${content.summary}</p>
       </div>
       <div class="section">
         <h3>Scope of Work</h3>
-        <p>[Detail the services and deliverables included in this proposal...]</p>
+        <p>${content.scope}</p>
       </div>
       <div class="section">
         <h3>Timeline</h3>
-        <p>[Outline the project timeline and key milestones...]</p>
+        <p>${content.timeline}</p>
       </div>
     </div>
     <div class="signatures">
       <div class="signature-block">
         <div class="signature-line">
           <strong>Prepared By</strong><br>
-          [Your Name]<br>
-          IntegrateWise LLP
+          ${content.preparedBy}
         </div>
       </div>
       <div class="signature-block">
         <div class="signature-line">
           <strong>Accepted By</strong><br>
-          [Client Representative]<br>
-          [Client Company]
+          ${content.acceptedBy}
         </div>
       </div>
     </div>
@@ -675,24 +1042,24 @@ function generateHTML(id: string): string {
     <!-- Front -->
     <div class="card front">
       <div class="logo">
-        <h2>IntegrateWise</h2>
-        <p>Knowledge Workspace Over the Spine and Empowered by AI</p>
+        <h2>${content.companyName}</h2>
+        <p>${content.tagline}</p>
       </div>
       <div class="person">
-        <p class="name">[Your Name]</p>
-        <p class="title">[Your Title]</p>
+        <p class="name">${content.personName}</p>
+        <p class="title">${content.personTitle}</p>
       </div>
     </div>
     <!-- Back -->
     <div class="card back">
       <div class="contact">
-        <p><a href="mailto:hello@integratewise.ai">hello@integratewise.ai</a></p>
-        <p><a href="https://integratewise.ai">integratewise.ai</a></p>
-        <p>+91 [Phone Number]</p>
+        <p><a href="mailto:${content.email}">${content.email}</a></p>
+        <p><a href="https://${content.website}">${content.website}</a></p>
+        <p>${content.phone}</p>
       </div>
       <div class="tagline">
-        AI Thinks in Context — and Waits for Approval<br>
-        Bengaluru, India
+        ${content.footer}<br>
+        ${content.location}
       </div>
     </div>
   </div>
@@ -703,24 +1070,24 @@ function generateHTML(id: string): string {
       return `<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 13px; color: #2F3D5E;">
   <tr>
     <td style="padding-right: 16px; border-right: 2px solid #4154A3;">
-      <p style="margin: 0; font-size: 18px; font-weight: 600; color: #4154A3;">IntegrateWise</p>
-      <p style="margin: 4px 0 0; font-size: 11px; color: #636A82;">Knowledge Workspace Over the Spine</p>
+      <p style="margin: 0; font-size: 18px; font-weight: 600; color: #4154A3;">${content.companyName}</p>
+      <p style="margin: 4px 0 0; font-size: 11px; color: #636A82;">${content.tagline}</p>
     </td>
     <td style="padding-left: 16px;">
-      <p style="margin: 0; font-weight: 600; color: #1B2544;">[Your Name]</p>
-      <p style="margin: 2px 0; font-size: 12px; color: #5F6E93;">[Your Title]</p>
+      <p style="margin: 0; font-weight: 600; color: #1B2544;">${content.personName}</p>
+      <p style="margin: 2px 0; font-size: 12px; color: #5F6E93;">${content.personTitle}</p>
       <p style="margin: 8px 0 0; font-size: 11px;">
-        <a href="mailto:hello@integratewise.ai" style="color: #4154A3; text-decoration: none;">hello@integratewise.ai</a>
+        <a href="mailto:${content.email}" style="color: #4154A3; text-decoration: none;">${content.email}</a>
       </p>
       <p style="margin: 2px 0; font-size: 11px;">
-        <a href="https://integratewise.ai" style="color: #4154A3; text-decoration: none;">integratewise.ai</a>
+        <a href="https://${content.website}" style="color: #4154A3; text-decoration: none;">${content.website}</a>
       </p>
     </td>
   </tr>
   <tr>
     <td colspan="2" style="padding-top: 12px; border-top: 1px solid #E8ECF2;">
       <p style="margin: 0; font-size: 10px; color: #9BA8C2; font-style: italic;">
-        AI Thinks in Context — and Waits for Approval
+        ${content.footer}
       </p>
     </td>
   </tr>
@@ -756,26 +1123,26 @@ function generateHTML(id: string): string {
   <div class="page">
     <div class="accent-bar"></div>
     <div class="logo-area">
-      <h1>IntegrateWise</h1>
-      <p>Knowledge Workspace Over the Spine and Empowered by AI</p>
+      <h1>${content.companyName}</h1>
+      <p>${content.tagline}</p>
     </div>
     <div class="content">
-      <p class="doc-type">[Document Type]</p>
-      <h2 class="title">[Document Title]</h2>
-      <p class="subtitle">[Brief description or subtitle]</p>
+      <p class="doc-type">${content.documentType}</p>
+      <h2 class="title">${content.documentTitle}</h2>
+      <p class="subtitle">${content.documentSubtitle}</p>
     </div>
     <div class="meta">
       <div class="meta-item">
         <p class="label">Prepared By</p>
-        <p class="value">[Author Name]</p>
+        <p class="value">${content.preparedBy}</p>
       </div>
       <div class="meta-item">
         <p class="label">Date</p>
-        <p class="value">[Document Date]</p>
+        <p class="value">${content.documentDate}</p>
       </div>
       <div class="meta-item">
         <p class="label">Version</p>
-        <p class="value">v1.0</p>
+        <p class="value">${content.version}</p>
       </div>
     </div>
     <div class="footer">
@@ -811,23 +1178,23 @@ function generateHTML(id: string): string {
   <div class="envelope">
     <div class="brand-bar"></div>
     <div class="return-address">
-      <strong>IntegrateWise LLP</strong><br>
-      Bengaluru, India<br>
-      hello@integratewise.ai<br>
-      integratewise.ai
+      <strong>${content.companyName}</strong><br>
+      ${content.returnAddress.replace(/\n/g, '<br>')}<br>
+      ${content.email}<br>
+      ${content.website}
     </div>
     <div class="recipient-address">
-      <strong>[Recipient Name]</strong><br>
-      [Company Name]<br>
-      [Street Address]<br>
-      [City, State, ZIP]<br>
-      [Country]
+      <strong>${content.recipientName}</strong><br>
+      ${content.recipientCompany}<br>
+      ${content.recipientStreet}<br>
+      ${content.recipientCity}<br>
+      ${content.recipientCountry}
     </div>
     <div class="stamp-area">
       <span>STAMP</span>
     </div>
     <div class="tagline">
-      AI Thinks in Context — and Waits for Approval
+      ${content.footer}
     </div>
   </div>
 </body>
@@ -855,7 +1222,7 @@ function StationeryCard({ item }: { item: StationeryItem }) {
         {/* Preview Area */}
         <div className="h-40 bg-[#F8FAFC] flex items-center justify-center p-4">
           <div className="scale-50 origin-center">
-            <PreviewContent id={item.id} />
+            <PreviewContent id={item.id} content={getDefaultStationeryContent(item.id)} />
           </div>
         </div>
         
@@ -921,7 +1288,7 @@ export function StationeryPage() {
       </motion.div>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {[
           { label: 'Documents', count: items.filter(i => i.tab === 'documents').length, icon: FileText },
           { label: 'Identity', count: items.filter(i => i.tab === 'identity').length, icon: CreditCard },

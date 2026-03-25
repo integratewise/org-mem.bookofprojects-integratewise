@@ -424,7 +424,7 @@ export function ControlPanelPage() {
       </motion.div>
 
       {/* Stats */}
-      <div className="grid grid-cols-5 gap-4 mb-8">
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
         {[
           { label: 'Connections', value: connections.filter(c => c.status === 'connected').length, total: connections.length, color: '#4154A3' },
           { label: 'Pending', value: stats.pending, color: '#F59E0B' },

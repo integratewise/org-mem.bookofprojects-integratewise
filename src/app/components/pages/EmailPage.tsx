@@ -6,6 +6,7 @@ import {
   Edit2, Save, X, Plus, Trash2, RotateCcw
 } from 'lucide-react';
 import { copyToClipboard } from '../../utils/clipboard';
+import { loadJson, saveJson } from '../../lib/storage';
 
 // Default Email Content
 const DEFAULT_EMAIL_CONTENT = {
@@ -138,13 +139,12 @@ IntegrateWise`,
 
 // Load content from localStorage
 function loadContent() {
-  const saved = localStorage.getItem('email_content');
-  return saved ? JSON.parse(saved) : DEFAULT_EMAIL_CONTENT;
+  return loadJson('email_content', DEFAULT_EMAIL_CONTENT);
 }
 
 // Save content to localStorage
 function saveContent(content: typeof DEFAULT_EMAIL_CONTENT) {
-  localStorage.setItem('email_content', JSON.stringify(content));
+  saveJson('email_content', content);
 }
 
 // Copy Button Component
@@ -486,7 +486,7 @@ export function EmailPage() {
       </motion.div>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {[
           { label: 'Subject Lines', count: totalSubjects, icon: Inbox },
           { label: 'Templates', count: Object.keys(content.templates).length, icon: Send },

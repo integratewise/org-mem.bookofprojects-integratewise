@@ -2,7 +2,7 @@ import { Outlet, NavLink, useLocation, useNavigate } from 'react-router';
 import { IntegrateWiseLogo } from './IntegrateWiseLogo';
 import { AIAssistant } from './ai/AIAssistant';
 import {
-  Home,
+  type LucideIcon,
   Palette,
   SwatchBook,
   Megaphone,
@@ -33,7 +33,7 @@ import { useState, useEffect } from 'react';
 
 interface NavItem {
   to: string;
-  icon: typeof Home;
+  icon: LucideIcon;
   label: string;
   end?: boolean;
   color?: string;
@@ -42,7 +42,7 @@ interface NavItem {
 interface NavGroup {
   id: string;
   label: string;
-  icon: typeof Home;
+  icon: LucideIcon;
   color: string;
   children: NavItem[];
 }
@@ -51,27 +51,10 @@ type NavEntry = { type: 'item'; item: NavItem } | { type: 'group'; group: NavGro
 
 const NAV_STRUCTURE: NavEntry[] = [
   {
-    type: 'item',
-    item: { to: '/', icon: Home, label: 'Dashboard', end: true },
-  },
-  {
     type: 'group',
     group: {
-      id: 'company-product',
-      label: 'Company & Product',
-      icon: Building2,
-      color: '#4356A9',
-      children: [
-        { to: '/company', icon: Building2, label: 'Company & Product Master', color: '#4356A9' },
-        { to: '/architecture', icon: GitBranch, label: 'Executive Architecture', color: '#636A82' },
-      ],
-    },
-  },
-  {
-    type: 'group',
-    group: {
-      id: 'brand-identity',
-      label: 'Brand & Identity',
+      id: 'brand-system',
+      label: 'Brand System',
       icon: Palette,
       color: '#4356A9',
       children: [
@@ -82,9 +65,19 @@ const NAV_STRUCTURE: NavEntry[] = [
     },
   },
   {
-    type: 'item',
-    item: { to: '/control-panel', icon: LayoutDashboard, label: 'Control Panel', color: '#4154A3' },
+    type: 'group',
+    group: {
+      id: 'company-system',
+      label: 'Company & Product',
+      icon: Building2,
+      color: '#636A82',
+      children: [
+        { to: '/company', icon: Target, label: 'Strategy & Execution', color: '#4154A3' },
+        { to: '/architecture', icon: GitBranch, label: 'Architecture', color: '#636A82' },
+      ],
+    },
   },
+  // Top level items
   {
     type: 'group',
     group: {
@@ -94,7 +87,7 @@ const NAV_STRUCTURE: NavEntry[] = [
       color: '#EB4F72',
       children: [
         { to: '/generators', icon: Zap, label: 'Quick Generators', color: '#EB4F72' },
-        { to: '/marketing', icon: Megaphone, label: 'Marketing Hub', color: '#EB4F72' },
+        { to: '/marketing', icon: Megaphone, label: 'Marketing', color: '#EB4F72' },
         { to: '/linkedin', icon: Megaphone, label: 'LinkedIn', color: '#0A66C2' },
         { to: '/whatsapp', icon: MessageCircle, label: 'WhatsApp', color: '#25D366' },
         { to: '/email', icon: Mail, label: 'Email', color: '#4154A3' },
@@ -103,6 +96,11 @@ const NAV_STRUCTURE: NavEntry[] = [
       ],
     },
   },
+  {
+    type: 'item',
+    item: { to: '/control-panel', icon: LayoutDashboard, label: 'Control Panel', color: '#4154A3' },
+  },
+  // Documentation Library (6 items)
   {
     type: 'group',
     group: {
@@ -126,7 +124,7 @@ const NAV_STRUCTURE: NavEntry[] = [
 
 export function RootLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set(['brand-identity', 'marketing-gtm']));
+  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set(['brand-system', 'company-system', 'marketing-gtm', 'documentation']));
   const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
@@ -426,7 +424,7 @@ export function RootLayout() {
           <div className="px-4 py-3 rounded-lg" style={{ background: 'rgba(67,86,169,0.15)' }}>
             <p className="text-xs font-medium text-white">Brand & Marketing Hub v1.0</p>
             <p className="text-[11px] mt-0.5" style={{ color: 'var(--brand-navy-400)' }}>
-              6 Master Packs &middot; 45+ Documents
+              6 Master Packs &middot; 40 Documents
             </p>
           </div>
         </div>

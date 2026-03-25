@@ -733,17 +733,17 @@ export function DocumentationPage() {
   const inProgressDocs = allDocs.filter(d => d.status === 'in-progress').length;
   const plannedDocs = allDocs.filter(d => d.status === 'planned').length;
 
-  const handleDownloadDoc = (doc: Document, format: 'md' | 'txt' | 'pdf') => {
+  const handleDownloadDoc = (doc: Document, format: 'md' | 'txt') => {
     if (!doc.baseContent) {
       alert('This document does not have base content yet.');
       return;
     }
 
-    const blob = new Blob([doc.baseContent], { type: 'text/plain' });
+    const blob = new Blob([doc.baseContent], { type: format === 'md' ? 'text/markdown;charset=utf-8' : 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${doc.title.replace(/\s+/g, '_')}.${format === 'pdf' ? 'txt' : format}`;
+    a.download = `${doc.title.replace(/\s+/g, '_')}.${format}`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
