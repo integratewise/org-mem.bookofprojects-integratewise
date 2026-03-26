@@ -10,6 +10,49 @@ import { copyToClipboard } from '../../utils/clipboard';
 import { autoSyncContent, loadConnections } from '../../services/sync';
 import { loadJson, saveJson } from '../../lib/storage';
 
+// LinkedIn Carousel Templates
+const CAROUSEL_TEMPLATES = [
+  {
+    id: 'carousel-1',
+    title: "The $8M Lesson",
+    subtitle: "5-slide story about disconnected tools",
+    slides: [
+      "The $8M Lesson: When Disconnected Tools Nearly Cost Everything",
+      "Signal 1: Support ticket spiked. Signal 2: Product adoption dropped. Signal 3: Executive warning sat in a note.",
+      "Three signals. Three systems. Zero connection.",
+      "The account was nearly lost. That's the cost of fragmentation.",
+      "What if every signal fed into one place — and that place could think?"
+    ],
+    theme: "gradient-ocean"
+  },
+  {
+    id: 'carousel-2',
+    title: "Context-Aware AI",
+    subtitle: "How IntegrateWise thinks before acting",
+    slides: [
+      "AI Without Context is Just Fancy Autocomplete",
+      "Most AI tools guess. They don't know your business.",
+      "IntegrateWise builds an Entity 360° — every customer, every touchpoint, connected.",
+      "AI reasons with full context. Proposes actions. Waits for approval.",
+      "Context before Intelligence. Governance before Execution."
+    ],
+    theme: "gradient-dark"
+  },
+  {
+    id: 'carousel-3',
+    title: "The Spine Explained",
+    subtitle: "Your unified intelligence layer",
+    slides: [
+      "Meet the Spine: Your Single Source of Truth",
+      "Every tool you use. Every decision you make. All connected.",
+      "The Spine unifies your tech stack into one Adaptive layer.",
+      "AI operates on top — with full context, not guesses.",
+      "One workspace. One intelligence. One truth."
+    ],
+    theme: "gradient-sunset"
+  }
+];
+
 // Default LinkedIn Content
 const DEFAULT_LINKEDIN_CONTENT = {
   banner: {
@@ -243,6 +286,78 @@ function BannerPreview({
   );
 }
 
+// Carousel Card Component
+function CarouselCard({ carousel, index }: { carousel: typeof CAROUSEL_TEMPLATES[0]; index: number }) {
+  const [expanded, setExpanded] = useState(false);
+  
+  const gradients: Record<string, string> = {
+    "gradient-dark": "linear-gradient(135deg, #1B2544 0%, #2d3561 50%, #4154A3 100%)",
+    "gradient-ocean": "linear-gradient(135deg, #0d1f33 0%, #1e3a5f 30%, #4154A3 60%, #6B7DC4 100%)",
+    "gradient-sunset": "linear-gradient(135deg, #1a1f36 0%, #4154A3 30%, #8b2f6b 60%, #EB4379 100%)"
+  };
+
+  const handleCopyAll = () => {
+    const text = carousel.slides.join('\n\n--- Slide ---\n\n');
+    copyToClipboard(text);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      className="bg-white rounded-xl border border-[#E8ECF2] overflow-hidden"
+    >
+      {/* Preview */}
+      <div 
+        className="h-40 flex items-center justify-center p-6"
+        style={{ background: gradients[carousel.theme] || gradients["gradient-dark"] }}
+      >
+        <div className="text-center text-white">
+          <div className="w-12 h-12 mx-auto mb-2 rounded-lg bg-white/20 flex items-center justify-center">
+            <span className="text-lg font-bold">{carousel.slides.length}</span>
+          </div>
+          <p className="font-bold text-lg">{carousel.title}</p>
+          <p className="text-xs opacity-70 mt-1">{carousel.subtitle}</p>
+        </div>
+      </div>
+      
+      {/* Content */}
+      <div className="p-6">
+        <div className={`space-y-3 ${expanded ? '' : 'max-h-40 overflow-hidden'}`}>
+          {carousel.slides.map((slide: string, i: number) => (
+            <div key={i} className="flex gap-3">
+              <span className="w-6 h-6 rounded-full bg-[#0A66C2] text-white text-xs flex items-center justify-center shrink-0">
+                {i + 1}
+              </span>
+              <p className="text-sm text-[#475578] flex-1">{slide}</p>
+            </div>
+          ))}
+        </div>
+        
+        {!expanded && (
+          <button 
+            onClick={() => setExpanded(true)}
+            className="text-xs text-[#0A66C2] mt-3 hover:underline"
+          >
+            Show all {carousel.slides.length} slides
+          </button>
+        )}
+        
+        <div className="flex gap-2 mt-4 pt-4 border-t border-[#E8ECF2]">
+          <button
+            onClick={handleCopyAll}
+            className="flex items-center gap-2 px-3 py-1.5 bg-[#0A66C2] text-white rounded-lg text-xs font-medium hover:bg-[#0958a8]"
+          >
+            <Copy className="w-3.5 h-3.5" />
+            Copy All Slides
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 // LinkedIn Post Card
 function LinkedInPostCard({ 
   post, 
@@ -443,7 +558,7 @@ function CompanyInfo({
 
 // Main Component
 export function LinkedInPage() {
-  const [activeTab, setActiveTab] = useState<'banner' | 'posts' | 'company'>('banner');
+  const [activeTab, setActiveTab] = useState<'banner' | 'posts' | 'carousels' | 'company'>('banner');
   const [isEditing, setIsEditing] = useState(false);
   const [content, setContent] = useState(() => loadContent());
   const [connectedChannels, setConnectedChannels] = useState<string[]>([]);
@@ -577,6 +692,7 @@ export function LinkedInPage() {
         {[
           { key: 'banner', label: 'Company Banner', icon: Image },
           { key: 'posts', label: 'Post Templates', icon: FileText },
+          { key: 'carousels', label: 'Carousels', icon: Palette },
           { key: 'company', label: 'Company Info', icon: Share2 },
         ].map((tab) => (
           <button
@@ -646,6 +762,22 @@ export function LinkedInPage() {
                   onChange={(updated) => updatePost(i, updated)}
                   onDelete={() => deletePost(i)}
                 />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'carousels' && (
+          <div className="space-y-6">
+            <div className="bg-gradient-to-r from-[#0A66C2]/10 to-transparent rounded-xl p-4 border border-[#0A66C2]/20">
+              <p className="text-sm text-[#475578]">
+                <Sparkles className="w-4 h-4 inline mr-2 text-[#0A66C2]" />
+                LinkedIn carousels get 2x more engagement than single-image posts. Use these 5-slide templates.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {CAROUSEL_TEMPLATES.map((carousel, i) => (
+                <CarouselCard key={carousel.id} carousel={carousel} index={i} />
               ))}
             </div>
           </div>
