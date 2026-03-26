@@ -24,6 +24,44 @@ const CONTENT_LIBRARY = {
         cta: BRAND.website
       }
     },
+    carousels: [
+      {
+        title: "The $8M Lesson",
+        subtitle: "5-slide story about disconnected tools",
+        slides: [
+          "The $8M Lesson: When Disconnected Tools Nearly Cost Everything",
+          "Signal 1: Support ticket spiked. Signal 2: Product adoption dropped. Signal 3: Executive warning sat in a note.",
+          "Three signals. Three systems. Zero connection.",
+          "The account was nearly lost. That's the cost of fragmentation.",
+          "What if every signal fed into one place — and that place could think?"
+        ],
+        theme: "gradient-ocean"
+      },
+      {
+        title: "Context-Aware AI",
+        subtitle: "How IntegrateWise thinks before acting",
+        slides: [
+          "AI Without Context is Just Fancy Autocomplete",
+          "Most AI tools guess. They don't know your business.",
+          "IntegrateWise builds an Entity 360° — every customer, every touchpoint, connected.",
+          "AI reasons with full context. Proposes actions. Waits for approval.",
+          "Context before Intelligence. Governance before Execution."
+        ],
+        theme: "gradient-dark"
+      },
+      {
+        title: "The Spine Explained",
+        subtitle: "Your unified intelligence layer",
+        slides: [
+          "Meet the Spine: Your Single Source of Truth",
+          "Every tool you use. Every decision you make. All connected.",
+          "The Spine unifies your tech stack into one Adaptive layer.",
+          "AI operates on top — with full context, not guesses.",
+          "One workspace. One intelligence. One truth."
+        ],
+        theme: "gradient-sunset"
+      }
+    ],
     posts: [
       {
         title: "Problem-Solution Post",
@@ -378,6 +416,19 @@ export function MarketingPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {CONTENT_LIBRARY.linkedin.posts.map((post, i) => (
                   <LinkedInPostCard key={i} post={post} index={i} />
+                ))}
+              </div>
+            </section>
+
+            {/* LinkedIn Carousel */}
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <Presentation className="w-5 h-5 text-[#4154A3]" />
+                <h2 className="text-xl font-bold text-[#1B2544]">LinkedIn Carousel Templates</h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                {CONTENT_LIBRARY.linkedin.carousels.map((carousel, i) => (
+                  <CarouselCard key={i} carousel={carousel} index={i} />
                 ))}
               </div>
             </section>
