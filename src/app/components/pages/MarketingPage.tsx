@@ -241,6 +241,73 @@ function LinkedInPostCard({ post, index }: { post: any; index: number }) {
   );
 }
 
+// LinkedIn Carousel Card
+function CarouselCard({ carousel, index }: { carousel: any; index: number }) {
+  const [expanded, setExpanded] = useState(false);
+  
+  const gradients: Record<string, string> = {
+    "gradient-dark": "linear-gradient(135deg, #1B2544 0%, #2d3561 50%, #4154A3 100%)",
+    "gradient-ocean": "linear-gradient(135deg, #0d1f33 0%, #1e3a5f 30%, #4154A3 60%, #6B7DC4 100%)",
+    "gradient-sunset": "linear-gradient(135deg, #1a1f36 0%, #4154A3 30%, #8b2f6b 60%, #EB4379 100%)"
+  };
+
+  return (
+    <motion.div
+      initial={{ y: 30, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="bg-white rounded-xl border border-[#D5DAE5] overflow-hidden shadow-sm"
+    >
+      {/* Carousel Preview */}
+      <div 
+        className="h-40 flex items-center justify-center p-6"
+        style={{ background: gradients[carousel.theme] || gradients["gradient-dark"] }}
+      >
+        <div className="text-center text-white">
+          <Presentation className="w-8 h-8 mx-auto mb-2 opacity-80" />
+          <p className="font-bold text-lg">{carousel.title}</p>
+          <p className="text-xs opacity-70 mt-1">{carousel.slides.length} slides</p>
+        </div>
+      </div>
+      
+      {/* Content */}
+      <div className="p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <Linkedin className="w-4 h-4 text-[#0A66C2]" />
+          <span className="text-xs font-medium text-[#9BA8C2]">LINKEDIN CAROUSEL</span>
+        </div>
+        
+        <p className="text-sm text-[#475578] mb-3">{carousel.subtitle}</p>
+        
+        <div className={`space-y-2 ${expanded ? '' : 'max-h-32 overflow-hidden'}`}>
+          {carousel.slides.map((slide: string, i: number) => (
+            <div key={i} className="flex gap-3 text-sm">
+              <span className="w-6 h-6 rounded-full bg-[#4154A3] text-white text-xs flex items-center justify-center shrink-0">
+                {i + 1}
+              </span>
+              <p className="text-[#475578] text-sm">{slide}</p>
+            </div>
+          ))}
+        </div>
+        
+        {!expanded && (
+          <button 
+            onClick={() => setExpanded(true)}
+            className="text-xs text-[#4154A3] mt-3 hover:underline"
+          >
+            Show all {carousel.slides.length} slides
+          </button>
+        )}
+        
+        <div className="flex gap-2 mt-4 pt-4 border-t border-[#E8ECF2]">
+          <CopyButton text={carousel.slides.join('\n\n---\n\n')} label="Copy All Slides" />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 // WhatsApp Catalog Item
 function CatalogItem({ item, index }: { item: any; index: number }) {
   return (

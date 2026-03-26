@@ -276,6 +276,136 @@ function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) 
   );
 }
 
+// Ready-Made Business Card Component
+function ReadyMadeBusinessCard({ name, title, email, phone }: { name: string; title: string; email: string; phone: string }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isExporting, setIsExporting] = useState(false);
+  const brandColor = '#4154A3';
+
+  const handleDownload = async () => {
+    if (!cardRef.current) return;
+    setIsExporting(true);
+    try {
+      const blob = await toBlob(cardRef.current, { pixelRatio: 3, cacheBust: true });
+      if (!blob) throw new Error('Could not generate image');
+      saveAs(blob, `IntegrateWise-BusinessCard-${name.replace(/\s+/g, '')}.png`);
+    } catch (err) {
+      console.error('Export failed:', err);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ scale: 0.9, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      className="bg-white rounded-xl border border-[#E8ECF2] p-5"
+    >
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h3 className="font-semibold text-[#1B2544]">{name}</h3>
+          <p className="text-xs text-[#5F6E93]">{title}</p>
+        </div>
+        <div className="flex gap-2">
+          <CopyButton text={`${name}\n${title}\n${email}\n${phone}\n${BRAND.website}`} label="Copy Info" />
+          <button
+            onClick={handleDownload}
+            disabled={isExporting}
+            className="flex items-center gap-2 px-3 py-1.5 bg-[#4154A3] text-white rounded-lg text-xs font-medium disabled:opacity-50"
+          >
+            {isExporting ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Download className="w-3.5 h-3.5" />}
+            {isExporting ? '...' : 'Download'}
+          </button>
+        </div>
+      </div>
+      
+      {/* Business Card Preview */}
+      <div className="flex gap-3 overflow-x-auto pb-2">
+        {/* Front */}
+        <div ref={cardRef} className="shrink-0">
+          <div className="w-[340px] h-[200px] bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between border border-[#E8ECF2]">
+            <div>
+              <h3 className="text-2xl font-bold" style={{ color: brandColor }}>IntegrateWise</h3>
+              <p className="text-xs text-[#636A82] mt-1">{TAGLINES.descriptorExtended}</p>
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-[#1B2544]">{name}</p>
+              <p className="text-xs text-[#636A82]">{title}</p>
+            </div>
+          </div>
+        </div>
+        {/* Back */}
+        <div className="shrink-0">
+          <div className="w-[340px] h-[200px] rounded-xl shadow-lg p-6 flex flex-col justify-between" style={{ background: brandColor }}>
+            <div className="text-white/80 text-xs space-y-1">
+              <p>{email}</p>
+              <p>{BRAND.website}</p>
+              <p>{phone}</p>
+            </div>
+            <div className="text-white text-xs">
+              <p>{BRAND.location}</p>
+              <p className="mt-2 italic">{TAGLINES.primary}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+// Ready-Made Email Signature Component
+function ReadyMadeEmailSignature({ name, title, email }: { name: string; title: string; email: string }) {
+  const signatureHTML = `<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 13px; color: #2F3D5E; margin-top: 20px;">
+  <tr>
+    <td style="padding-right: 16px; border-right: 2px solid #4154A3;">
+      <p style="margin: 0; font-size: 16px; font-weight: 600; color: #4154A3;">IntegrateWise</p>
+      <p style="margin: 4px 0 0; font-size: 11px; color: #636A82;">${TAGLINES.descriptor}</p>
+    </td>
+    <td style="padding-left: 16px;">
+      <p style="margin: 0; font-weight: 600; color: #1B2544;">${name}</p>
+      <p style="margin: 2px 0; font-size: 12px; color: #5F6E93;">${title}</p>
+      <p style="margin: 8px 0 0; font-size: 11px;">
+        <a href="mailto:${email}" style="color: #4154A3; text-decoration: none;">${email}</a>
+      </p>
+      <p style="margin: 2px 0; font-size: 11px;">
+        <a href="https://${BRAND.website}" style="color: #4154A3; text-decoration: none;">${BRAND.website}</a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding-top: 12px; border-top: 1px solid #E8ECF2; margin-top: 12px;">
+      <p style="margin: 0; font-size: 10px; color: #9BA8C2; font-style: italic;">
+        ${TAGLINES.primary}
+      </p>
+    </td>
+  </tr>
+</table>`;
+
+  return (
+    <motion.div
+      initial={{ scale: 0.9, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      className="bg-white rounded-xl border border-[#E8ECF2] p-5"
+    >
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h3 className="font-semibold text-[#1B2544]">{name} - Email Signature</h3>
+          <p className="text-xs text-[#5F6E93]">Ready to use in Gmail/Outlook</p>
+        </div>
+        <div className="flex gap-2">
+          <CopyButton text={signatureHTML} label="Copy HTML" />
+        </div>
+      </div>
+      
+      {/* Preview */}
+      <div className="bg-[#F8FAFC] rounded-lg p-4 overflow-x-auto">
+        <div dangerouslySetInnerHTML={{ __html: signatureHTML }} />
+      </div>
+    </motion.div>
+  );
+}
+
 // Preview Modal
 function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => void }) {
   const previewRef = useRef<HTMLDivElement>(null);
@@ -1331,6 +1461,40 @@ export function StationeryPage() {
           </button>
         ))}
       </div>
+
+      {/* Ready-Made Team Templates */}
+      {activeTab === 'all' || activeTab === 'identity' || activeTab === 'digital' ? (
+        <section className="mb-10">
+          <div className="flex items-center gap-2 mb-4">
+            <Signature className="w-5 h-5 text-[#4154A3]" />
+            <h2 className="text-xl font-bold text-[#1B2544]">Ready-Made Team Templates</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <ReadyMadeBusinessCard 
+              name="Arun K."
+              title="Co-Founder & CEO"
+              email="arun@integratewise.ai"
+              phone="+91 98765 43210"
+            />
+            <ReadyMadeBusinessCard 
+              name="Nirmal K."
+              title="Co-Founder & CTO"
+              email="nirmal@integratewise.ai"
+              phone="+91 98765 43211"
+            />
+            <ReadyMadeEmailSignature
+              name="Arun K."
+              title="Co-Founder & CEO"
+              email="arun@integratewise.ai"
+            />
+            <ReadyMadeEmailSignature
+              name="Nirmal K."
+              title="Co-Founder & CTO"
+              email="nirmal@integratewise.ai"
+            />
+          </div>
+        </section>
+      ) : null}
 
       {/* Grid */}
       <div className="grid md:grid-cols-2 gap-6">
