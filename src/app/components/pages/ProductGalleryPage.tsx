@@ -370,12 +370,14 @@ export function ProductGalleryPage() {
               onClick={() => setSelectedItem(item)}
             >
               {/* Preview */}
-              <div className="aspect-square bg-gray-50 flex items-center justify-center p-4 overflow-hidden">
+              <div className="aspect-square bg-gray-50 flex items-center justify-center p-4 overflow-hidden relative">
                 {item.type === 'svg' && item.src ? (
                   <img src={item.src} alt={item.title} className="max-w-full max-h-full object-contain" />
                 ) : item.type === 'component' && item.component ? (
-                  <div className="w-full h-full flex items-center justify-center overflow-hidden scale-75">
-                    {item.component}
+                  <div className="w-full h-full flex items-center justify-center overflow-hidden" style={{ maxWidth: '160px', maxHeight: '160px' }}>
+                    <div className="scale-[0.6] origin-center">
+                      {item.component}
+                    </div>
                   </div>
                 ) : (
                   <div className="text-center">
