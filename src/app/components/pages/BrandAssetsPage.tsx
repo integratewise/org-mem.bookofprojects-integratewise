@@ -23,6 +23,7 @@ import {
   SlidersHorizontal 
 } from 'lucide-react';
 import { IntegrateWiseLogo } from '../IntegrateWiseLogo';
+import { TAGLINES, BRAND, CONTACT } from '../../lib/brand';
 
 // Import SVG files as URLs for preview display
 import logoFrame1 from '../../../imports/Frame_1.svg';
@@ -309,14 +310,14 @@ export function BrandAssetsPage() {
       copyFolder?.file(
         'approved-messaging.txt',
         [
-          'IntegrateWise',
-          'A Knowledge Workspace empowered by AI and the Spine.',
+          BRAND.name,
+          TAGLINES.descriptorFull,
           '',
           'Primary tagline:',
-          'AI Thinks in Context — and Waits for Approval',
+          TAGLINES.primary,
           '',
           'Extended marketing tagline:',
-          'AI Thinks in Context. Humans Stay in Control. Every Action Waits for Approval.',
+          TAGLINES.valueProp,
         ].join('\n'),
       );
 
@@ -578,12 +579,12 @@ export function BrandAssetsPage() {
           <div className="grid lg:grid-cols-2 gap-8">
             <div>
               <p className="text-[11px] tracking-wide mb-2" style={{ color: '#A4A9BE' }}>PRIMARY PRODUCT DESCRIPTION</p>
-              <p className="text-lg font-semibold" style={{ color: '#232D42' }}>IntegrateWise</p>
+              <p className="text-lg font-semibold" style={{ color: '#232D42' }}>{BRAND.name}</p>
               <p className="text-sm mt-1 italic" style={{ color: '#55608C' }}>
-                A Knowledge Workspace empowered by AI and the Spine — a workspace-first system that connects your tools, grounds intelligence in the Spine, compounds approved knowledge, and enables governed action.
+                {TAGLINES.oneParagraph}
               </p>
               <p className="text-sm font-medium mt-2" style={{ color: '#333944' }}>
-                AI thinks in context — and works through approvals.
+                {TAGLINES.primary}
               </p>
             </div>
             <div>
@@ -615,7 +616,7 @@ export function BrandAssetsPage() {
             <div className="grid sm:grid-cols-3 gap-4">
               <MessagingCard
                 label="Primary Tagline"
-                text="AI Thinks in Context — and Waits for Approval"
+                text={TAGLINES.primary}
                 highlight
               />
               <MessagingCard
@@ -624,7 +625,7 @@ export function BrandAssetsPage() {
               />
               <MessagingCard
                 label="Extended (Marketing)"
-                text="AI Thinks in Context. Humans Stay in Control. Every Action Waits for Approval."
+                text={TAGLINES.valueProp}
               />
             </div>
           </div>
@@ -633,10 +634,10 @@ export function BrandAssetsPage() {
             <p className="text-[11px] tracking-wide mb-3" style={{ color: '#A4A9BE' }}>APPROVED COPY FOR SPECIFIC ASSETS</p>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { asset: 'Letterhead', line: 'IntegrateWise LLP · The Knowledge Workspace empowered by AI and the Spine' },
-                { asset: 'Invoice Footer', line: 'IntegrateWise — AI Thinks in Context and Works Through Approvals' },
-                { asset: 'Business Card', line: 'The Knowledge Workspace empowered by AI and the Spine' },
-                { asset: 'Profile Headline', line: 'The Knowledge Workspace Where AI Thinks in Context' },
+                { asset: 'Letterhead', line: `${BRAND.legalName} · ${TAGLINES.descriptorFull}` },
+                { asset: 'Invoice Footer', line: `${BRAND.name} — ${TAGLINES.primary}` },
+                { asset: 'Business Card', line: TAGLINES.descriptorFull },
+                { asset: 'Profile Headline', line: `The ${BRAND.category} Where AI Thinks in Context` },
                 { asset: 'Brochure Headline', line: 'Bring Work, Knowledge, and Decisions Together Through the Spine' },
                 { asset: 'Marketing Headline', line: 'Work Becomes Smarter When AI Understands Context' },
               ].map((item) => (

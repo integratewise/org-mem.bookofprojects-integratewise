@@ -28,6 +28,7 @@ import {
 import { useState } from 'react';
 import { copyToClipboard } from '../../utils/clipboard';
 import { ValuePropDiagram } from '../diagrams/ArchitectureDiagrams';
+import { TAGLINES, BRAND, CONTACT, FOOTER_LINE } from '../../lib/brand';
 
 const sections = [
   {
@@ -283,11 +284,11 @@ export function HomePage() {
         <p className="text-xs font-semibold mb-3" style={{ color: '#475578' }}>One-Click Copy</p>
         <div className="flex flex-wrap gap-2">
           {[
-            { id: 'qc1', label: 'Tagline', text: 'AI Thinks in Context �� and Waits for Approval' },
-            { id: 'qc2', label: 'Descriptor', text: 'Knowledge Workspace over the Spine, empowered by AI and governed by approvals' },
-            { id: 'qc3', label: 'Short', text: 'Knowledge Workspace over the Spine Intelligence and Empowered by AI' },
-            { id: 'qc4', label: 'Website', text: 'integratewise.ai' },
-            { id: 'qc5', label: 'Email', text: 'connect@integratewise.ai' },
+            { id: 'qc1', label: 'Tagline', text: TAGLINES.primary },
+            { id: 'qc2', label: 'Descriptor', text: TAGLINES.descriptor },
+            { id: 'qc3', label: 'Short', text: TAGLINES.descriptorExtended },
+            { id: 'qc4', label: 'Website', text: BRAND.website },
+            { id: 'qc5', label: 'Email', text: CONTACT.connect },
           ].map(item => (
             <button
               key={item.id}
@@ -339,11 +340,11 @@ export function HomePage() {
             <div className="space-y-4">
               <div>
                 <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>CANONICAL STATEMENT</p>
-                <p className="text-sm font-medium" style={{ color: '#333944' }}>Knowledge Workspace over the Spine, empowered by AI and governed by approvals</p>
+                <p className="text-sm font-medium" style={{ color: '#333944' }}>{TAGLINES.descriptor}</p>
               </div>
               <div>
                 <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>PRIMARY TAGLINE</p>
-                <p className="text-sm font-medium" style={{ color: '#333944' }}>AI Thinks in Context — and Waits for Approval</p>
+                <p className="text-sm font-medium" style={{ color: '#333944' }}>{TAGLINES.primary}</p>
               </div>
               <div>
                 <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>SHORT VERSION</p>
@@ -351,7 +352,7 @@ export function HomePage() {
               </div>
               <div>
                 <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>FOOTER LINE</p>
-                <p className="text-sm font-medium" style={{ color: '#333944' }}>IntegrateWise LLP · Bengaluru, India · AI Thinks in Context. Actions Wait for Humans.</p>
+                <p className="text-sm font-medium" style={{ color: '#333944' }}>{FOOTER_LINE}</p>
               </div>
             </div>
           </div>

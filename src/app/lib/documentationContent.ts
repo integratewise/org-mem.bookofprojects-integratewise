@@ -1,54 +1,51 @@
-// This file imports all documentation markdown files and maps them to document IDs
-import companyIntro from '../../imports/pasted_text/integratewise-company-intro.md?raw';
-import aboutPage from '../../imports/pasted_text/integratewise-about.md?raw';
-import brochure from '../../imports/pasted_text/integratewise-brochure.md?raw';
-import intro from '../../imports/pasted_text/integratewise-intro.md?raw';
-import websiteCopy from '../../imports/pasted_text/integratewise-website-copy.md?raw';
-import productDoc from '../../imports/pasted_text/integratewise-product-doc.md?raw';
-import websitePages from '../../imports/pasted_text/integratewise-website-pages.md?raw';
+/**
+ * Single source of truth: integratewise-overview.md
+ *
+ * Every doc ID maps to a section of the master overview document.
+ * To update content, edit the markdown file — nothing else.
+ * To add a new doc, add an entry below pointing to the relevant heading.
+ */
 import overview from '../../imports/pasted_text/integratewise-overview.md?raw';
+import { extractSection } from './sectionExtractor';
 
-// Map document IDs to their content
+const s = (heading: string) => extractSection(overview, heading);
+
 export const documentContent: Record<string, string> = {
-  // Pack A - Company & Corporate Strategy
-  'a-01': companyIntro,
-  'a-02': companyIntro, // Company Profile (reuse intro for now)
-  'a-03': intro, // Vision, Mission, Belief System
-  
-  // Pack B - Category, Positioning & Brand
-  'b-01': overview, // Category Definition
-  'b-02': websiteCopy, // Messaging Framework
-  'b-03': websiteCopy, // Brand Guidelines (from website copy which has brand messaging)
-  'b-04': intro, // Positioning Statement
-  'b-05': overview, // ICP Definition
-  
-  // Pack C - Product Narrative & System
-  'c-01': productDoc, // Product Overview
-  'c-02': overview, // Product Vision
-  'c-03': productDoc, // Use Case Library
-  'c-04': productDoc, // Feature Map
-  
-  // Pack D - Architecture & Technical System
-  'd-01': productDoc, // Architecture Overview
-  'd-02': productDoc, // Spine Architecture
-  'd-03': productDoc, // Flow A/B/C Documentation
-  'd-04': productDoc, // Governed Intelligence Cycle
-  'd-05': productDoc, // Approval Workflow Architecture
-  
-  // Pack E - AI, Governance & Trust
-  'e-01': productDoc, // AI Governance Framework
-  'e-02': productDoc, // Approval-first Execution Policy
-  
-  // Pack F - GTM, Sales & Customer Success
-  'f-01': websiteCopy, // Sales Deck
-  'f-02': websiteCopy, // Investor Deck
-  'f-03': brochure, // One-Pager
-  'f-04': aboutPage, // Demo Narrative
-  
-  // Additional content mappings
-  'website-home': websitePages,
-  'website-about': aboutPage,
-  'brochure': brochure,
+  // Pack A — Company & Corporate Strategy
+  'a-01': s('1. IntegrateWise in One View'),
+  'a-02': s('2. Company Overview'),
+  'a-03': s('5. Vision, Mission, and Belief System'),
+  'a-04': s('6. Founder and Strategic Thesis'),
+
+  // Pack B — Category, Positioning & Brand
+  'b-01': s('4. Category Definition'),
+  'b-02': s('20. Go-to-Market Narrative'),
+  'b-04': s('10. How IntegrateWise Is Different'),
+  'b-05': s('18. Who IntegrateWise Is For'),
+
+  // Pack C — Product Narrative & System
+  'c-01': s('7. What the Product Is'),
+  'c-02': s('8. The Adaptive Spine'),
+  'c-03': s('19. Use Cases'),
+  'c-04': s('9. Core Product Capabilities'),
+
+  // Pack D — Architecture & Technical System
+  'd-01': s('11. The Product Operating Model'),
+  'd-02': s('8. The Adaptive Spine'),
+  'd-03': s('12. Flow Model'),
+  'd-04': s('13. Entity 360 and Evidence Model'),
+  'd-05': s('14. Human-in-the-Loop and Approval-First Execution'),
+
+  // Pack E — AI, Governance & Trust
+  'e-01': s('15. AI Governance and Trust Model'),
+  'e-02': s('14. Human-in-the-Loop and Approval-First Execution'),
+
+  // Pack F — GTM, Sales & Customer Success
+  'f-01': s('20. Go-to-Market Narrative'),
+  'f-02': s('23. Why This Matters Now'),
+  'f-03': s('21. One-Paragraph Product Narrative'),
+
+  // Convenience aliases
   'overview': overview,
 };
 

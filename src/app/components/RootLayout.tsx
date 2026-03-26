@@ -24,6 +24,9 @@ import {
   Mail,
   Presentation,
   LayoutDashboard,
+  Sparkles,
+  Rocket,
+  Image,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -50,6 +53,14 @@ interface NavGroup {
 type NavEntry = { type: 'item'; item: NavItem } | { type: 'group'; group: NavGroup };
 
 const NAV_STRUCTURE: NavEntry[] = [
+  {
+    type: 'item',
+    item: { to: '/quick-start', icon: Rocket, label: 'Quick Start', color: '#EB4F72' },
+  },
+  {
+    type: 'item',
+    item: { to: '/gallery', icon: Image, label: 'Product Gallery', color: '#4154A3' },
+  },
   {
     type: 'group',
     group: {

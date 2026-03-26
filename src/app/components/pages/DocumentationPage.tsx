@@ -49,8 +49,6 @@ interface Document {
   status: DocStatus;
   priority: DocPriority;
   owner: string;
-  baseContent?: string;
-  template?: string;
 }
 
 interface DocumentPack {
@@ -79,21 +77,6 @@ const DOCUMENTATION_PACKS: DocumentPack[] = [
         status: 'complete',
         priority: 'tier1',
         owner: 'Founder',
-        baseContent: `# IntegrateWise — Company Introduction
-
-IntegrateWise is building the category-defining Knowledge Workspace empowered by AI and the Spine. A workspace-first system that connects your tools, grounds intelligence in the Spine, compounds approved knowledge, and enables governed action.
-
-## What We Do
-
-IntegrateWise is a knowledge workspace where the Spine becomes the single source of truth and AI operates on top of that context — thinking, proposing, and learning while every action remains under human approval.
-
-## Our Mission
-
-To end the GenAI Divide and Tool Sprawl by creating a unified workspace where AI thinks in context and humans stay in control.
-
-## Core Belief
-
-AI Thinks in Context — and Waits for Approval.`
       },
       {
         id: 'a-02',
@@ -102,23 +85,6 @@ AI Thinks in Context — and Waits for Approval.`
         status: 'complete',
         priority: 'tier1',
         owner: 'Founder',
-        baseContent: `# IntegrateWise LLP — Company Profile
-
-**Legal Entity:** IntegrateWise LLP
-**Founded:** 2024
-**Headquarters:** Bengaluru, India
-**Website:** integratewise.ai
-
-**Category:** Knowledge Workspace / Enterprise AI Platform
-
-**Product:** IntegrateWise — The Knowledge Workspace empowered by AI and the Spine
-
-**Tagline:** AI Thinks in Context — and Waits for Approval
-
-**Contact:**
-- General: info@integratewise.co
-- Partnerships: connect@integratewise.co
-- Sales: sales@integratewise.co`
       },
       {
         id: 'a-03',
@@ -127,19 +93,6 @@ AI Thinks in Context — and Waits for Approval.`
         status: 'in-progress',
         priority: 'tier1',
         owner: 'Founder',
-        baseContent: `# Vision, Mission, and Belief System
-
-## Vision
-To create a world where AI and humans work together seamlessly — where intelligence is contextual, actions are governed, and work flows naturally.
-
-## Mission
-To build the Knowledge Workspace that ends tool sprawl and the GenAI divide by unifying context, intelligence, and human control.
-
-## Core Beliefs
-- AI should think in context, not in isolation
-- Every AI action should wait for human approval
-- Work, knowledge, and decisions belong in one place
-- The Spine is the single source of truth`
       },
       {
         id: 'a-04',
@@ -198,27 +151,6 @@ To build the Knowledge Workspace that ends tool sprawl and the GenAI divide by u
         status: 'complete',
         priority: 'tier1',
         owner: 'Marketing',
-        baseContent: `# Knowledge Workspace — Category Definition
-
-## Category Name
-Knowledge Workspace
-
-## Category Description
-A Knowledge Workspace is a unified environment where work, knowledge, context, and AI come together under human governance.
-
-Unlike traditional collaboration tools (fragmented) or standalone AI assistants (context-blind), Knowledge Workspaces organize operational truth into a unified intelligence layer (the Spine) and let AI reason, propose, and act on top of that context — while ensuring every action waits for human approval.
-
-## Why This Category Exists
-- **Problem 1:** Tool Sprawl — teams use 10+ disconnected tools
-- **Problem 2:** GenAI Divide — AI can't access real context
-- **Problem 3:** Control Paradox — automation without governance
-
-## Category Characteristics
-✓ Unified Spine (Single Source of Truth)
-✓ Context-Aware AI
-✓ Human-Governed Execution
-✓ Cross-Tool Intelligence
-✓ Approval-First Workflow`
       },
       {
         id: 'b-02',
@@ -227,30 +159,6 @@ Unlike traditional collaboration tools (fragmented) or standalone AI assistants 
         status: 'complete',
         priority: 'tier1',
         owner: 'Marketing',
-        baseContent: `# IntegrateWise Messaging Framework
-
-## Primary Message
-IntegrateWise is a knowledge workspace where AI thinks in context and waits for approval.
-
-## Core Descriptor
-The Knowledge Workspace empowered by AI and the Spine
-
-## Primary Tagline
-AI Thinks in Context — and Waits for Approval
-
-## Value Pillars
-
-### 1. Unified Context (The Spine)
-One source of truth connecting tools, knowledge, conversations, and decisions.
-
-### 2. Context-Aware AI
-AI reasons across systems, proposes actions, and continuously learns.
-
-### 3. Human-Governed Execution
-Every AI action waits for human approval before execution.
-
-### 4. End Tool Sprawl
-Work, knowledge, and decisions in one governed workspace.`
       },
       {
         id: 'b-03',
@@ -309,30 +217,6 @@ Work, knowledge, and decisions in one governed workspace.`
         status: 'complete',
         priority: 'tier1',
         owner: 'Product',
-        baseContent: `# IntegrateWise — Product Overview
-
-## What is IntegrateWise?
-
-IntegrateWise is a Knowledge Workspace where the Spine becomes the single source of truth and AI operates on top of that context — thinking, proposing, and learning while every action remains under human approval.
-
-## Core Components
-
-### 1. The Spine (SSOT)
-The unified intelligence layer connecting tools, context, knowledge, and decisions.
-
-### 2. AI Context Engine
-AI operates on Spine context — proposing actions, reasoning across systems, and continuously learning.
-
-### 3. Approval Governance Layer
-Every AI-initiated action passes through human-controlled checkpoints.
-
-### 4. Workspace Layers
-Structured environment for knowledge management, task orchestration, and cross-tool integration.
-
-## Who Is It For?
-- Operations teams drowning in tool sprawl
-- Companies blocked by the GenAI Divide
-- Teams needing context-aware AI with governance`
       },
       {
         id: 'c-02',
@@ -391,32 +275,6 @@ Structured environment for knowledge management, task orchestration, and cross-t
         status: 'complete',
         priority: 'tier1',
         owner: 'Engineering',
-        baseContent: `# IntegrateWise — Architecture Overview
-
-## System Architecture
-
-IntegrateWise is built on a layered architecture with the Spine at its core.
-
-## Core Layers
-
-### L0 — External Systems Layer
-Integration with external tools (Slack, Notion, Jira, etc.)
-
-### L1 — The Spine (SSOT)
-Unified data model, entity-360 views, normalized context
-
-### L2 — Intelligence Layer
-AI reasoning, context engine, workflow intelligence
-
-### L3 — Application Layer
-User workspace, approval workflows, collaboration
-
-## Key Components
-
-**The Spine:** Single source of truth connecting all systems
-**Entity-360:** Complete view of every entity across systems
-**Flow Architecture:** Flow A (ingestion), Flow B (intelligence), Flow C (execution)
-**Governed Intelligence Cycle:** Think → Propose → Approve → Execute → Learn`
       },
       {
         id: 'd-02',
@@ -483,32 +341,6 @@ User workspace, approval workflows, collaboration
         status: 'complete',
         priority: 'tier1',
         owner: 'Product',
-        baseContent: `# AI Governance Framework
-
-## Core Principle
-Every AI action waits for human approval.
-
-## Governance Model
-
-### 1. Approval-First Execution
-AI can think, analyze, and propose — but cannot execute without explicit human approval.
-
-### 2. Scoped Agent Permissions
-Every AI agent has explicit permissions defining what it can propose and to whom.
-
-### 3. Decision Logging & Audit
-Every AI proposal, approval, rejection, and execution is logged for audit.
-
-### 4. Evidence & Citation
-Every AI recommendation includes evidence, sources, and reasoning.
-
-### 5. Correction & Learning
-When humans reject or modify AI proposals, the system learns.
-
-## Governance Checkpoints
-- **Sensitive Actions:** Always require approval
-- **Low-Risk Actions:** Can be auto-approved based on policy
-- **High-Risk Actions:** Multi-level approval workflow`
       },
       {
         id: 'e-02',
@@ -559,45 +391,6 @@ When humans reject or modify AI proposals, the system learns.
         status: 'complete',
         priority: 'tier1',
         owner: 'Sales',
-        baseContent: `# IntegrateWise Sales Deck — Structure
-
-## Slide 1: Title
-**IntegrateWise**
-The Knowledge Workspace empowered by AI and the Spine
-
-## Slide 2: The Problem
-**Modern Work Is Fragmented**
-- Tool Sprawl: Teams use 10+ disconnected tools
-- GenAI Divide: AI can't access real context
-- Control Paradox: Automation without governance
-
-## Slide 3: The Solution
-**IntegrateWise: Knowledge Workspace**
-One Spine · Context-Aware AI · Human Approvals
-
-## Slide 4: How It Works
-The Spine → AI Context Engine → Approval Layer → Execution
-
-## Slide 5: Core Capabilities
-- Unified intelligence layer
-- Cross-system AI reasoning
-- Approval-first execution
-- Continuous learning
-
-## Slide 6: Use Cases
-Operations, Sales, Finance, IT, HR
-
-## Slide 7: Why Now
-GenAI explosion + Enterprise adoption gap
-
-## Slide 8: Differentiation
-We're not a tool. We're the workspace.
-
-## Slide 9: Traction
-Early adopters, partnerships, roadmap
-
-## Slide 10: Call to Action
-Start with a POC`
       },
       {
         id: 'f-02',
@@ -734,12 +527,13 @@ export function DocumentationPage() {
   const plannedDocs = allDocs.filter(d => d.status === 'planned').length;
 
   const handleDownloadDoc = (doc: Document, format: 'md' | 'txt') => {
-    if (!doc.baseContent) {
-      alert('This document does not have base content yet.');
+    const content = getDocumentContent(doc.id);
+    if (!content) {
+      alert('This document does not have content yet.');
       return;
     }
 
-    const blob = new Blob([doc.baseContent], { type: format === 'md' ? 'text/markdown;charset=utf-8' : 'text/plain;charset=utf-8' });
+    const blob = new Blob([content], { type: format === 'md' ? 'text/markdown;charset=utf-8' : 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -920,7 +714,7 @@ export function DocumentationPage() {
             </div>
 
             {/* Actions */}
-            {selectedDoc.baseContent && (
+            {getDocumentContent(selectedDoc.id) && (
               <div className="mb-6 flex gap-2">
                 <button
                   onClick={() => handleDownloadDoc(selectedDoc, 'md')}
@@ -942,25 +736,25 @@ export function DocumentationPage() {
             )}
 
             {/* Content */}
-            {selectedDoc.baseContent ? (
+            {getDocumentContent(selectedDoc.id) ? (
               <div className="prose prose-sm max-w-none">
                 <div className="bg-white rounded-xl p-8" style={{ border: '1px solid #E5E8F4' }}>
                   <article className="markdown-content">
-                    <ReactMarkdown 
+                    <ReactMarkdown
                       remarkPlugins={[remarkGfm]}
                       components={{
                         img: ({node, ...props}) => (
                           <span className="my-8 flex justify-center w-full">
-                            <img 
-                              {...props} 
-                              className="rounded-xl shadow-lg border max-h-[400px] object-cover" 
+                            <img
+                              {...props}
+                              className="rounded-xl shadow-lg border max-h-[400px] object-cover"
                               style={{ borderColor: '#E5E8F4' }}
                             />
                           </span>
                         )
                       }}
                     >
-                      {getDocumentContent(selectedDoc.id) || selectedDoc.baseContent}
+                      {getDocumentContent(selectedDoc.id)!}
                     </ReactMarkdown>
                   </article>
                 </div>

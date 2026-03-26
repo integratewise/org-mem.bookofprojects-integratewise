@@ -15,6 +15,8 @@ import { WhatsAppPage } from "./components/pages/WhatsAppPage";
 import { EmailPage } from "./components/pages/EmailPage";
 import { PresentationsPage } from "./components/pages/PresentationsPage";
 import { ControlPanelPage } from "./components/pages/ControlPanelPage";
+import { QuickStartPage } from "./components/pages/QuickStartPage";
+import { ProductGalleryPage } from "./components/pages/ProductGalleryPage";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +30,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       { index: true, Component: HomePage },
+      { path: "quick-start", Component: QuickStartPage },
       { path: "company", Component: CompanyPage },
       { path: "architecture", Component: ArchitecturePage },
       { path: "brand-assets", Component: BrandAssetsPage },
@@ -40,6 +43,7 @@ export const router = createBrowserRouter([
       { path: "email", Component: EmailPage },
       { path: "presentations", Component: PresentationsPage },
       { path: "control-panel", Component: ControlPanelPage },
+      { path: "gallery", Component: ProductGalleryPage },
       { path: "sales", Component: SalesPage },
       { path: "documentation", Component: DocumentationPage },
       {

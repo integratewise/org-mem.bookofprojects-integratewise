@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { TAGLINES, BRAND, CONTACT } from '../../lib/brand';
 import { motion } from 'motion/react';
 import { 
   Download, Eye, FileText, Mail, CreditCard, Stamp, 
@@ -56,8 +57,8 @@ function generateSealSVG() {
   <text x="600" y="870" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="600" letter-spacing="6" fill="#4154A3">OFFICIAL SEAL</text>
   <circle cx="600" cy="600" r="180" fill="url(#sealGradient)" opacity="0.1" />
   <text x="600" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="70" font-weight="700" fill="#1B2544">IW</text>
-  <text x="600" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#636A82">AI Thinks in Context</text>
-  <text x="600" y="675" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#636A82">Waits for Approval</text>
+  <text x="600" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#636A82">${TAGLINES.split.top}</text>
+  <text x="600" y="675" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#636A82">${TAGLINES.split.bottom}</text>
 </svg>`.trim();
 }
 
@@ -65,75 +66,75 @@ function getDefaultStationeryContent(id: string): StationeryContent {
   switch (id) {
     case 'letterhead':
       return {
-        companyName: 'IntegrateWise',
-        tagline: 'Knowledge Workspace Over the Spine and Empowered by AI',
-        companyDetails: 'IntegrateWise LLP\nBengaluru, India\nhello@integratewise.ai\nintegratewise.ai',
+        companyName: BRAND.name,
+        tagline: TAGLINES.descriptorExtended,
+        companyDetails: `${BRAND.legalName}\n${BRAND.location}\n${CONTACT.general}\n${BRAND.website}`,
         date: 'March 25, 2026',
         recipient: 'Recipient Name',
         subject: 'Strategic rollout proposal',
-        body: 'Thank you for exploring IntegrateWise.\n\nWe are sharing a governed AI rollout proposal for your team.\n\nPlease review the enclosed scope, timeline, and approval checkpoints.',
-        footer: 'AI Thinks in Context — and Waits for Approval',
+        body: `Thank you for exploring ${BRAND.name}.\n\nWe are sharing a governed AI rollout proposal for your team.\n\nPlease review the enclosed scope, timeline, and approval checkpoints.`,
+        footer: TAGLINES.primary,
       };
     case 'invoice':
       return {
-        companyName: 'IntegrateWise',
-        tagline: 'Knowledge Workspace Over the Spine and Empowered by AI',
+        companyName: BRAND.name,
+        tagline: TAGLINES.descriptorExtended,
         invoiceNumber: '#INV-2026-001',
         clientName: 'Client Name',
         clientAddress: 'Client Address',
         invoiceDate: 'March 25, 2026',
         dueDate: 'April 10, 2026',
-        lineItem: 'IntegrateWise Platform - Growth Plan',
+        lineItem: `${BRAND.name} Platform - Growth Plan`,
         total: '$1,178.82',
       };
     case 'proposal':
       return {
-        companyName: 'IntegrateWise',
-        tagline: 'Knowledge Workspace Over the Spine and Empowered by AI',
+        companyName: BRAND.name,
+        tagline: TAGLINES.descriptorExtended,
         proposalTitle: 'Context-Aware AI Rollout',
         preparedFor: 'Client Name',
         proposalDate: 'March 2026',
         validUntil: '30 Days',
-        summary: 'Unify fragmented tools into one governed workspace where AI reasons in context and every action waits for approval.',
+        summary: `Unify fragmented tools into one governed workspace where AI reasons in context and every action waits for approval.`,
         scope: 'Spine setup, workflow design, approval checkpoints, rollout onboarding, and stakeholder enablement.',
         timeline: '4-week setup, 2-week pilot, 30-day success review with measurable adoption milestones.',
-        preparedBy: 'IntegrateWise LLP',
+        preparedBy: BRAND.legalName,
         acceptedBy: 'Client Representative',
       };
     case 'seal':
       return {
-        companyName: 'INTEGRATEWISE LLP',
+        companyName: BRAND.legalName.toUpperCase(),
         label: 'OFFICIAL SEAL',
         initials: 'IW',
-        taglineTop: 'AI Thinks in Context',
-        taglineBottom: 'Waits for Approval',
+        taglineTop: TAGLINES.split.top,
+        taglineBottom: TAGLINES.split.bottom,
       };
     case 'business-card':
       return {
-        companyName: 'IntegrateWise',
-        tagline: 'Knowledge Workspace Over the Spine and Empowered by AI',
+        companyName: BRAND.name,
+        tagline: TAGLINES.descriptorExtended,
         personName: 'Your Name',
         personTitle: 'Your Title',
-        email: 'hello@integratewise.ai',
-        website: 'integratewise.ai',
+        email: CONTACT.general,
+        website: BRAND.website,
         phone: '+91 [Phone]',
-        location: 'Bengaluru, India',
-        footer: 'AI Thinks in Context — and Waits for Approval',
+        location: BRAND.location,
+        footer: TAGLINES.primary,
       };
     case 'email-signature':
       return {
-        companyName: 'IntegrateWise',
-        tagline: 'Knowledge Workspace Over the Spine',
+        companyName: BRAND.name,
+        tagline: TAGLINES.descriptor,
         personName: 'Your Name',
         personTitle: 'Your Title',
-        email: 'hello@integratewise.ai',
-        website: 'integratewise.ai',
-        footer: 'AI Thinks in Context — and Waits for Approval',
+        email: CONTACT.general,
+        website: BRAND.website,
+        footer: TAGLINES.primary,
       };
     case 'document-cover':
       return {
-        companyName: 'IntegrateWise',
-        tagline: 'Knowledge Workspace Over the Spine and Empowered by AI',
+        companyName: BRAND.name,
+        tagline: TAGLINES.descriptorExtended,
         documentType: 'Board Brief',
         documentTitle: 'Governed Intelligence Rollout Plan',
         documentSubtitle: 'Execution roadmap for adopting context-aware AI across work, knowledge, and decisions.',
@@ -143,16 +144,16 @@ function getDefaultStationeryContent(id: string): StationeryContent {
       };
     case 'envelope':
       return {
-        companyName: 'IntegrateWise LLP',
-        returnAddress: 'Bengaluru, India',
-        email: 'hello@integratewise.ai',
-        website: 'integratewise.ai',
+        companyName: BRAND.legalName,
+        returnAddress: BRAND.location,
+        email: CONTACT.general,
+        website: BRAND.website,
         recipientName: 'Recipient Name',
         recipientCompany: 'Company Name',
         recipientStreet: 'Street Address',
         recipientCity: 'City, State, ZIP',
         recipientCountry: 'Country',
-        footer: 'AI Thinks in Context — and Waits for Approval',
+        footer: TAGLINES.primary,
       };
     default:
       return {};
@@ -546,7 +547,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           <div className="w-[340px] h-[200px] bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between border border-[#E8ECF2]">
             <div>
               <h3 className="text-2xl font-bold" style={{ color: brandColor }}>IntegrateWise</h3>
-              <p className="text-xs text-[#636A82] mt-1">Knowledge Workspace Over the Spine and Empowered by AI</p>
+              <p className="text-xs text-[#636A82] mt-1">{TAGLINES.descriptorExtended}</p>
             </div>
             <div>
               <p className="text-sm font-semibold text-[#1B2544]">[Your Name]</p>
@@ -556,13 +557,13 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           {/* Back */}
           <div className="w-[340px] h-[200px] rounded-xl shadow-lg p-6 flex flex-col justify-between" style={{ background: brandColor }}>
             <div className="text-white/80 text-xs">
-              <p>hello@integratewise.ai</p>
-              <p>integratewise.ai</p>
+              <p>{CONTACT.general}</p>
+              <p>{BRAND.website}</p>
               <p>+91 [Phone]</p>
             </div>
             <div className="text-white text-xs">
-              <p>Bengaluru, India</p>
-              <p className="mt-2 italic">AI Thinks in Context — and Waits for Approval</p>
+              <p>{BRAND.location}</p>
+              <p className="mt-2 italic">{TAGLINES.primary}</p>
             </div>
           </div>
         </div>

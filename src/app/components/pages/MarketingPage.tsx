@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   Download, Eye, X, Share2, Linkedin, MessageCircle, 
   FileText, Image, Mail, Presentation, Globe, Filter,
@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { toPng } from 'html-to-image';
 import { copyToClipboard } from '../../utils/clipboard';
+import { TAGLINES, BRAND, CONTACT } from '../../lib/brand';
 
 // Marketing Content Templates
 const CONTENT_LIBRARY = {
@@ -18,9 +19,9 @@ const CONTENT_LIBRARY = {
       description: "1128×191 px - Professional banner for company page",
       bg: "linear-gradient(135deg, #0d1f33 0%, #1e3a5f 30%, #4154A3 60%, #5a6bc4 100%)",
       content: {
-        headline: "IntegrateWise",
-        tagline: "AI Thinks in Context — and Waits for Approval",
-        cta: "integratewise.ai"
+        headline: BRAND.name,
+        tagline: TAGLINES.primary,
+        cta: BRAND.website
       }
     },
     posts: [
@@ -28,7 +29,7 @@ const CONTENT_LIBRARY = {
         title: "Problem-Solution Post",
         content: `Modern work is fragmented. Tools disconnected. Knowledge scattered. AI without context.
 
-That's why we built IntegrateWise — a Knowledge Workspace where your entire tech stack connects into one Adaptive Spine.
+That's why we built ${BRAND.name} — a ${BRAND.category} where your entire tech stack connects into one Adaptive Spine.
 
 AI surfaces what matters. Humans approve every action.
 
@@ -74,7 +75,7 @@ Ready to see your connected reality?
   },
   whatsapp: {
     catalog: [
-      { id: "platform", name: "IntegrateWise Platform", price: "Starting at $499/mo", description: "Knowledge Workspace with Adaptive Spine" },
+      { id: "platform", name: `${BRAND.name} Platform`, price: "Starting at $499/mo", description: `${BRAND.category} with Adaptive Spine` },
       { id: "spine", name: "Adaptive Spine", price: "Included", description: "Unified intelligence layer" },
       { id: "ai", name: "Context-Aware AI", price: "Included", description: "AI that understands your business" },
       { id: "approvals", name: "Approval Workflows", price: "Included", description: "Human-governed execution" },
@@ -84,7 +85,7 @@ Ready to see your connected reality?
         title: "Welcome Message",
         text: `👋 Welcome to IntegrateWise!
 
-The Knowledge Workspace Over the Spine and Empowered by AI — connecting your tools, context, and decisions in one place.
+${TAGLINES.descriptorExtended} — connecting your tools, context, and decisions in one place.
 
 How can we help you today?
 
@@ -96,9 +97,9 @@ How can we help you today?
         title: "Demo Booking",
         text: `📅 Ready to see IntegrateWise in action?
 
-We'd love to show you how the Spine connects your entire workspace and how AI Thinks in Context — and Waits for Approval.
+We'd love to show you how the Spine connects your entire workspace and how ${TAGLINES.primary}.
 
-👉 Book your demo: https://integratewise.ai/demo
+👉 Book your demo: ${CONTACT.demo}
 
 Or reply with your preferred time!`
       }
