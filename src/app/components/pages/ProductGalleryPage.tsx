@@ -63,14 +63,14 @@ export function ProductGalleryPage() {
 
   // Gallery items data
   const galleryItems: GalleryItem[] = [
-    // Logos
+    // Logos - Using SVG files for proper scaling in gallery
     {
       id: 'logo-full-color',
       title: 'Full Logo - Color',
       description: 'Primary logo with full color scheme',
       category: 'logos',
-      type: 'component',
-      component: <IntegrateWiseLogo variant="full" className="w-full h-full" />,
+      type: 'svg',
+      src: logoFrame1,
       formats: ['SVG', 'PNG', 'PDF'],
       size: '1200×400px',
       tags: ['logo', 'primary', 'color']
@@ -80,8 +80,8 @@ export function ProductGalleryPage() {
       title: 'Compact Logo',
       description: 'Logo mark + wordmark without descriptor',
       category: 'logos',
-      type: 'component',
-      component: <IntegrateWiseLogo variant="compact" className="w-full h-full" />,
+      type: 'svg',
+      src: logoFrame1v2,
       formats: ['SVG', 'PNG', 'PDF'],
       size: '800×200px',
       tags: ['logo', 'compact']
@@ -91,8 +91,8 @@ export function ProductGalleryPage() {
       title: 'Icon Only',
       description: 'Logo mark for favicons and avatars',
       category: 'logos',
-      type: 'component',
-      component: <IntegrateWiseLogo variant="icon-only" className="w-full h-full" />,
+      type: 'svg',
+      src: logoIconSvg,
       formats: ['SVG', 'PNG', 'ICO'],
       size: '512×512px',
       tags: ['logo', 'icon', 'favicon']
@@ -370,14 +370,12 @@ export function ProductGalleryPage() {
               onClick={() => setSelectedItem(item)}
             >
               {/* Preview */}
-              <div className="aspect-square bg-gray-50 flex items-center justify-center p-4 overflow-hidden relative">
+              <div className="aspect-square bg-gray-50 flex items-center justify-center p-4 overflow-hidden">
                 {item.type === 'svg' && item.src ? (
                   <img src={item.src} alt={item.title} className="max-w-full max-h-full object-contain" />
                 ) : item.type === 'component' && item.component ? (
-                  <div className="w-[140px] h-[140px] flex items-center justify-center overflow-hidden">
-                    <div className="scale-50 origin-center">
-                      {item.component}
-                    </div>
+                  <div className="w-full h-full flex items-center justify-center">
+                    {item.component}
                   </div>
                 ) : (
                   <div className="text-center">
