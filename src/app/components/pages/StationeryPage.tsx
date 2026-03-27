@@ -57,6 +57,13 @@ const items: StationeryItem[] = [
   { id: 'notepad', title: 'Notepad Design', description: 'Custom branded notepad template', specs: 'A5 (148×210mm)', tab: 'collateral', icon: FileText, format: 'PNG/HTML/PDF', status: 'ready', category: 'Collateral', tags: ['stationery', 'notepad', 'branded'] },
   { id: 'folder', title: 'Folder Template', description: 'File folder branding design', specs: 'A4 Folded', tab: 'collateral', icon: Folder, format: 'PNG/HTML/PDF', status: 'ready', category: 'Collateral', tags: ['folder', 'physical', 'branding'] },
   { id: 'sticker', title: 'Sticker Design', description: 'Custom branded sticker sheet', specs: 'Multiple sizes', tab: 'collateral', icon: Stamp, format: 'PNG/SVG/PDF', status: 'ready', category: 'Collateral', tags: ['sticker', 'branding', 'promotional'] },
+
+  // Marketing & Social
+  { id: 'sales-deck', title: 'Sales & Marketing Deck', description: 'Professional presentation slides for sales pitches', specs: '16:9 (1920×1080px)', tab: 'digital', icon: BookOpen, format: 'PNG/HTML/PDF', status: 'ready', category: 'Marketing & Social', tags: ['sales', 'presentation', 'marketing', 'deck', 'slides'] },
+  { id: 'presentation-bg', title: 'Presentation Background', description: 'Custom branded presentation background', specs: '1920×1080px', tab: 'digital', icon: Palette, format: 'PNG/HTML', status: 'ready', category: 'Marketing & Social', tags: ['background', 'presentation', 'design', 'digital'] },
+  { id: 'whatsapp-banner', title: 'WhatsApp Banner', description: 'Branded banner for WhatsApp profile and groups', specs: '2048×1024px', tab: 'digital', icon: Mail, format: 'PNG/HTML', status: 'ready', category: 'Marketing & Social', tags: ['whatsapp', 'social', 'banner', 'messaging'] },
+  { id: 'linkedin-banner', title: 'LinkedIn Banner', description: 'Professional LinkedIn profile and post banner', specs: '1200×627px', tab: 'digital', icon: Mail, format: 'PNG/HTML', status: 'ready', category: 'Marketing & Social', tags: ['linkedin', 'social', 'banner', 'professional'] },
+  { id: 'poster', title: 'Promotional Poster', description: 'Eye-catching promotional poster design', specs: 'A2 (420×594mm)', tab: 'collateral', icon: BookOpen, format: 'PNG/HTML/PDF', status: 'ready', category: 'Marketing & Social', tags: ['poster', 'promotional', 'marketing', 'announcement'] },
 ];
 
 function createSafeFilename(title: string) {
@@ -238,6 +245,48 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         stickerText: 'Made with IntegrateWise',
         brandColor: '#4154A3',
       };
+    case 'sales-deck':
+      return {
+        slideTitle: 'Sales Presentation',
+        slideSubtitle: 'Context-Aware AI Solutions',
+        companyName: BRAND.name,
+        tagline: TAGLINES.descriptorExtended,
+        mainMessage: 'Unify tools. Govern AI. Scale impact.',
+        ctaText: 'Get Started Today',
+        brandColor: '#4154A3',
+      };
+    case 'presentation-bg':
+      return {
+        companyName: BRAND.name,
+        tagline: TAGLINES.descriptorExtended,
+        backgroundText: 'Presentation',
+        brandColor: '#4154A3',
+      };
+    case 'whatsapp-banner':
+      return {
+        companyName: BRAND.name,
+        tagline: TAGLINES.descriptor,
+        bannerMessage: 'Connect with us on WhatsApp',
+        ctaText: 'Chat Now',
+        brandColor: '#4154A3',
+      };
+    case 'linkedin-banner':
+      return {
+        companyName: BRAND.name,
+        tagline: TAGLINES.descriptorExtended,
+        bannerHeading: 'Governed Intelligence Platform',
+        bannerText: TAGLINES.primary,
+        brandColor: '#4154A3',
+      };
+    case 'poster':
+      return {
+        companyName: BRAND.name,
+        posterTitle: 'Introducing IntegrateWise',
+        posterSubtitle: 'The Governed AI Platform',
+        posterMessage: TAGLINES.descriptorExtended,
+        posterCTA: 'Learn More',
+        brandColor: '#4154A3',
+      };
     default:
       return { brandColor: '#4154A3' };
   }
@@ -396,6 +445,48 @@ function getStationeryFields(id: string): Array<{ key: string; label: string; mu
         { key: 'companyName', label: 'Company Name' },
         { key: 'tagline', label: 'Tagline' },
         { key: 'stickerText', label: 'Sticker Text' },
+      ];
+    case 'sales-deck':
+      return [
+        ...baseFields,
+        { key: 'slideTitle', label: 'Slide Title' },
+        { key: 'slideSubtitle', label: 'Slide Subtitle' },
+        { key: 'companyName', label: 'Company Name' },
+        { key: 'tagline', label: 'Tagline' },
+        { key: 'mainMessage', label: 'Main Message', multiline: true },
+        { key: 'ctaText', label: 'Call to Action' },
+      ];
+    case 'presentation-bg':
+      return [
+        ...baseFields,
+        { key: 'companyName', label: 'Company Name' },
+        { key: 'tagline', label: 'Tagline' },
+        { key: 'backgroundText', label: 'Background Text' },
+      ];
+    case 'whatsapp-banner':
+      return [
+        ...baseFields,
+        { key: 'companyName', label: 'Company Name' },
+        { key: 'tagline', label: 'Tagline' },
+        { key: 'bannerMessage', label: 'Banner Message' },
+        { key: 'ctaText', label: 'Call to Action' },
+      ];
+    case 'linkedin-banner':
+      return [
+        ...baseFields,
+        { key: 'companyName', label: 'Company Name' },
+        { key: 'tagline', label: 'Tagline' },
+        { key: 'bannerHeading', label: 'Banner Heading' },
+        { key: 'bannerText', label: 'Banner Text', multiline: true },
+      ];
+    case 'poster':
+      return [
+        ...baseFields,
+        { key: 'companyName', label: 'Company Name' },
+        { key: 'posterTitle', label: 'Poster Title' },
+        { key: 'posterSubtitle', label: 'Subtitle' },
+        { key: 'posterMessage', label: 'Message', multiline: true },
+        { key: 'posterCTA', label: 'Call to Action' },
       ];
     default:
       return baseFields;
@@ -829,6 +920,70 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
               </tbody>
             </table>
           </div>
+        </div>
+      );
+
+    case 'sales-deck':
+      return (
+        <div className="w-[1280px] h-[720px] p-12 flex flex-col justify-between" style={{ background: `linear-gradient(135deg, ${brandColor} 0%, ${brandColor}dd 100%)` }}>
+          <div className="text-white">
+            <h1 className="text-5xl font-bold mb-4">{content.slideTitle}</h1>
+            <p className="text-2xl opacity-90">{content.slideSubtitle}</p>
+          </div>
+          <div className="text-white">
+            <p className="text-xl mb-4 opacity-90">{content.mainMessage}</p>
+            <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold text-lg">{content.ctaText}</button>
+          </div>
+          <p className="text-white/60 text-sm">{content.companyName}</p>
+        </div>
+      );
+
+    case 'presentation-bg':
+      return (
+        <div className="w-[1920px] h-[1080px] p-20 flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${brandColor} 0%, ${brandColor}88 100%)` }}>
+          <div className="text-center text-white">
+            <h1 className="text-6xl font-bold mb-6">{content.companyName}</h1>
+            <p className="text-2xl mb-12 opacity-90">{content.backgroundText}</p>
+            <p className="text-lg opacity-80">{content.tagline}</p>
+          </div>
+        </div>
+      );
+
+    case 'whatsapp-banner':
+      return (
+        <div className="w-[1024px] h-[512px] p-12 flex items-center justify-between rounded-lg" style={{ background: `linear-gradient(to right, ${brandColor}, ${brandColor}bb)` }}>
+          <div className="text-white">
+            <h2 className="text-4xl font-bold mb-4">{content.bannerMessage}</h2>
+            <p className="text-lg opacity-90">{content.companyName}</p>
+            <button className="mt-6 px-6 py-2 bg-white text-gray-900 rounded-lg font-semibold">{content.ctaText}</button>
+          </div>
+          <div className="text-white text-6xl opacity-20">💬</div>
+        </div>
+      );
+
+    case 'linkedin-banner':
+      return (
+        <div className="w-[1200px] h-[627px] p-12 bg-gradient-to-r flex flex-col justify-center" style={{ background: `linear-gradient(to right, ${brandColor}, ${brandColor}99)` }}>
+          <div className="text-white">
+            <h1 className="text-5xl font-bold mb-4">{content.bannerHeading}</h1>
+            <p className="text-xl opacity-90 max-w-2xl">{content.bannerText}</p>
+            <p className="mt-8 text-lg font-semibold">{content.companyName}</p>
+          </div>
+        </div>
+      );
+
+    case 'poster':
+      return (
+        <div className="w-[600px] h-[846px] p-12 bg-gradient-to-b flex flex-col justify-between text-white" style={{ background: `linear-gradient(135deg, ${brandColor} 0%, ${brandColor}88 100%)` }}>
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-4">{content.posterTitle}</h1>
+            <p className="text-2xl opacity-90">{content.posterSubtitle}</p>
+          </div>
+          <div className="text-center">
+            <p className="text-lg mb-8 opacity-80">{content.posterMessage}</p>
+            <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-bold text-lg">{content.posterCTA}</button>
+          </div>
+          <p className="text-center text-sm opacity-70">{content.companyName}</p>
         </div>
       );
 
