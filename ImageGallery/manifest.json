@@ -1,0 +1,312 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-03-29",
+  "baseUrl": "/ImageGallery",
+  "cdn": {
+    "enabled": false,
+    "provider": "cloudflare-r2",
+    "bucket": "integratewise-assets",
+    "url": "https://assets.integratewise.ai"
+  },
+  "categories": {
+    "heroes": {
+      "description": "Hero banner images for landing pages",
+      "path": "/heroes",
+      "count": 6,
+      "images": [
+        {
+          "id": "hero-001",
+          "filename": "Professional_SaaS_homepage_hero_image_for_Integrat-1774506307051.png",
+          "name": "Main Homepage Hero",
+          "tags": ["homepage", "main", "b2b", "saas"],
+          "usage": ["marketing-home", "landing-main"],
+          "dimensions": "1920x1080",
+          "format": "png"
+        },
+        {
+          "id": "hero-002",
+          "filename": "Premium_professional_B2B_SaaS_homepage_hero_banner-1774512571795.png",
+          "name": "Premium Hero Banner",
+          "tags": ["premium", "banner", "b2b"],
+          "usage": ["landing-go", "marketing-hero"],
+          "dimensions": "1920x1080",
+          "format": "png"
+        },
+        {
+          "id": "hero-003",
+          "filename": "Premium_professional_B2B_SaaS_homepage_hero_banner-1774519104159.png",
+          "name": "Alternate Premium Hero",
+          "tags": ["premium", "banner", "alternative"],
+          "usage": ["landing-alt", "marketing-alt"],
+          "dimensions": "1920x1080",
+          "format": "png"
+        },
+        {
+          "id": "hero-004",
+          "filename": "Professional_B2B_SaaS_hero_banner_background_overl-1774512375903.png",
+          "name": "Hero Background",
+          "tags": ["background", "overlay", "subtle"],
+          "usage": ["bg-overlay", "subtle-hero"],
+          "dimensions": "1920x1080",
+          "format": "png"
+        },
+        {
+          "id": "hero-005",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774519181744.png",
+          "name": "IntegrateWise Hero",
+          "tags": ["branded", "integratewise", "main"],
+          "usage": ["marketing-home", "brand-hero"],
+          "dimensions": "1920x1080",
+          "format": "png"
+        },
+        {
+          "id": "hero-006",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774520888349.png",
+          "name": "IntegrateWise Hero Alt",
+          "tags": ["branded", "integratewise", "alternate"],
+          "usage": ["landing-alt", "brand-hero-alt"],
+          "dimensions": "1920x1080",
+          "format": "png"
+        }
+      ]
+    },
+    "features": {
+      "description": "Feature section visuals",
+      "path": "/features",
+      "count": 1,
+      "images": [
+        {
+          "id": "feature-001",
+          "filename": "Engaging_feature_section_visual_showing_Brainstorm-1774450892198.png",
+          "name": "Brainstorm Feature",
+          "tags": ["brainstorm", "collaboration", "features"],
+          "usage": ["feature-section", "collaboration"],
+          "dimensions": "1200x800",
+          "format": "png"
+        }
+      ]
+    },
+    "infographics": {
+      "description": "Diagrams, comparisons, and data visualizations",
+      "path": "/infographics",
+      "count": 3,
+      "images": [
+        {
+          "id": "infographic-001",
+          "filename": "Infographic_illustration_showing_the_Spines_adapt-1774451114075.png",
+          "name": "Spine Adaptability",
+          "tags": ["spine", "adaptability", "architecture"],
+          "usage": ["product-page", "architecture"],
+          "dimensions": "1200x800",
+          "format": "png"
+        },
+        {
+          "id": "infographic-002",
+          "filename": "Split-screen_comparison_infographic_showing_tool_f-1774651518950.png",
+          "name": "Tool Comparison",
+          "tags": ["comparison", "tools", "before-after"],
+          "usage": ["landing-page", "comparison-section"],
+          "dimensions": "1600x900",
+          "format": "png"
+        },
+        {
+          "id": "infographic-003",
+          "filename": "Technical_diagram_illustration_showing_What_if_ev-1774651535482.png",
+          "name": "Technical Diagram",
+          "tags": ["technical", "diagram", "what-if"],
+          "usage": ["docs", "technical-page"],
+          "dimensions": "1600x900",
+          "format": "png"
+        }
+      ]
+    },
+    "illustrations": {
+      "description": "General illustrations and concept art",
+      "path": "/illustrations",
+      "count": 11,
+      "images": [
+        {
+          "id": "illust-001",
+          "filename": "A_dramatic_before-and-after_split-screen_illustrat-1774597272023.png",
+          "name": "Before After Split",
+          "tags": ["before-after", "transformation", "dramatic"],
+          "usage": ["landing-page", "transformation"],
+          "dimensions": "1600x800",
+          "format": "png"
+        },
+        {
+          "id": "illust-002",
+          "filename": "A_wide_panoramic_illustration_showing_a_chaotic_di-1774597269667.png",
+          "name": "Chaos Panorama",
+          "tags": ["chaos", "problem", "wide"],
+          "usage": ["problem-section", "landing-page"],
+          "dimensions": "2400x800",
+          "format": "png"
+        },
+        {
+          "id": "illust-003",
+          "filename": "An_elegant_visualization_showing_diverse_business_-1774597221820.png",
+          "name": "Diverse Business",
+          "tags": ["diversity", "business", "elegant"],
+          "usage": ["about-page", "diversity"],
+          "dimensions": "1600x900",
+          "format": "png"
+        },
+        {
+          "id": "illust-004",
+          "filename": "An_illustration_showing_how_mistakes_happen_when_t-1774597232913.png",
+          "name": "Mistakes Illustration",
+          "tags": ["mistakes", "problem", "tools"],
+          "usage": ["problem-section", "pain-points"],
+          "dimensions": "1200x800",
+          "format": "png"
+        },
+        {
+          "id": "illust-005",
+          "filename": "An_illustration_visualizing_the_hidden_cost_of_con-1774597247342.png",
+          "name": "Hidden Costs",
+          "tags": ["costs", "hidden", "problem"],
+          "usage": ["pricing-page", "problem-section"],
+          "dimensions": "1200x800",
+          "format": "png"
+        },
+        {
+          "id": "illust-006",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774519193460.png",
+          "name": "IntegrateWise Professional",
+          "tags": ["professional", "b2b", "branded"],
+          "usage": ["marketing-site", "about"],
+          "dimensions": "1200x800",
+          "format": "png"
+        },
+        {
+          "id": "illust-007",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520896099.png",
+          "name": "IntegrateWise Solution",
+          "tags": ["solution", "b2b", "professional"],
+          "usage": ["solutions-page", "features"],
+          "dimensions": "1200x800",
+          "format": "png"
+        },
+        {
+          "id": "illust-008",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520914217.png",
+          "name": "IntegrateWise Workflow",
+          "tags": ["workflow", "automation", "b2b"],
+          "usage": ["features-page", "workflow"],
+          "dimensions": "1200x800",
+          "format": "png"
+        },
+        {
+          "id": "illust-009",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520917466.png",
+          "name": "IntegrateWise Integration",
+          "tags": ["integration", "connectors", "b2b"],
+          "usage": ["integrations-page", "connectors"],
+          "dimensions": "1200x800",
+          "format": "png"
+        },
+        {
+          "id": "illust-010",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520920168.png",
+          "name": "IntegrateWise Platform",
+          "tags": ["platform", "overview", "b2b"],
+          "usage": ["platform-page", "overview"],
+          "dimensions": "1200x800",
+          "format": "png"
+        },
+        {
+          "id": "illust-011",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520935703.png",
+          "name": "IntegrateWise Value",
+          "tags": ["value", "roi", "b2b"],
+          "usage": ["pricing-page", "value-prop"],
+          "dimensions": "1200x800",
+          "format": "png"
+        }
+      ]
+    },
+    "screenshots": {
+      "description": "App screenshots for demos and documentation",
+      "path": "/screenshots",
+      "count": 12,
+      "subcategories": {
+        "onboarding": {
+          "description": "Onboarding flow screenshots",
+          "count": 12,
+          "images": [
+            {"id": "ss-onb-001", "filename": "1.png", "name": "Onboarding Step 1", "tags": ["onboarding", "step1"] },
+            {"id": "ss-onb-002", "filename": "7.png", "name": "Onboarding Step 7", "tags": ["onboarding", "step7"] },
+            {"id": "ss-onb-003", "filename": "8.png", "name": "Onboarding Step 8", "tags": ["onboarding", "step8"] },
+            {"id": "ss-onb-004", "filename": "9.png", "name": "Onboarding Step 9", "tags": ["onboarding", "step9"] },
+            {"id": "ss-onb-005", "filename": "10.png", "name": "Onboarding Step 10", "tags": ["onboarding", "step10"] },
+            {"id": "ss-onb-006", "filename": "11.png", "name": "Onboarding Step 11", "tags": ["onboarding", "step11"] },
+            {"id": "ss-onb-007", "filename": "12.png", "name": "Onboarding Step 12", "tags": ["onboarding", "step12"] },
+            {"id": "ss-onb-stage1", "filename": "OnBoarding - Stage 1.png", "name": "Stage 1", "tags": ["onboarding", "stage1"] },
+            {"id": "ss-onb-stage2-1", "filename": "OnBoarding - Stage 2.1.png", "name": "Stage 2.1", "tags": ["onboarding", "stage2"] },
+            {"id": "ss-onb-stage2-2", "filename": "OnBoarding - Stage 2.2.png", "name": "Stage 2.2", "tags": ["onboarding", "stage2"] },
+            {"id": "ss-onb-stage2-3", "filename": "OnBoarding - Stage 2.3.png", "name": "Stage 2.3", "tags": ["onboarding", "stage2"] },
+            {"id": "ss-onb-stage3", "filename": "OnBoarding - Stage 3.png", "name": "Stage 3", "tags": ["onboarding", "stage3"] },
+            {"id": "ss-onb-stage4", "filename": "OnBoarding - Stage 4.png", "name": "Stage 4", "tags": ["onboarding", "stage4"] }
+          ]
+        }
+      }
+    },
+    "logos": {
+      "description": "Brand logos and lockups",
+      "path": "/logos",
+      "count": 1,
+      "images": [
+        {
+          "id": "logo-001",
+          "filename": "integratewise-logo-official.png",
+          "name": "IntegrateWise Official Logo",
+          "tags": ["logo", "official", "brand"],
+          "usage": ["all-pages", "header", "footer"],
+          "dimensions": "800x200",
+          "format": "png"
+        }
+      ]
+    },
+    "icons": {
+      "description": "Icons and small graphics",
+      "path": "/icons",
+      "count": 6,
+      "images": [
+        {"id": "icon-001", "filename": "Frame_1.svg", "name": "Frame 1", "tags": ["frame", "ui"] },
+        {"id": "icon-002", "filename": "Frame_1-1.svg", "name": "Frame 1-1", "tags": ["frame", "ui"] },
+        {"id": "icon-003", "filename": "Frame_1-2.svg", "name": "Frame 1-2", "tags": ["frame", "ui"] },
+        {"id": "icon-004", "filename": "Frame_4.svg", "name": "Frame 4", "tags": ["frame", "ui"] },
+        {"id": "icon-005", "filename": "Frame_4-1.svg", "name": "Frame 4-1", "tags": ["frame", "ui"] },
+        {"id": "icon-006", "filename": "].png", "name": "Bracket Icon", "tags": ["icon", "bracket"] }
+      ]
+    },
+    "generated": {
+      "description": "AI-generated images",
+      "path": "/generated",
+      "count": 1,
+      "images": [
+        {
+          "id": "gen-001",
+          "filename": "Upscale_and_enhance_image_quality-1774452841805.png",
+          "name": "Upscaled Quality",
+          "tags": ["ai-generated", "upscaled"],
+          "usage": ["experimental"],
+          "format": "png"
+        }
+      ]
+    },
+    "stock": {
+      "description": "Stock photos from external sources",
+      "path": "/stock",
+      "count": 0,
+      "images": []
+    }
+  },
+  "stats": {
+    "totalImages": 41,
+    "totalCategories": 9,
+    "formats": ["png", "svg"],
+    "largestCategory": "illustrations"
+  }
+}
