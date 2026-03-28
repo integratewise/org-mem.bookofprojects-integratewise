@@ -1,0 +1,33 @@
+ID,Name,Category,Status,Endpoint,Last Checked,Notes,Priority,Assigned To,Dependencies
+svc-mcp-connector,MCP Connector,Core Services,working,https://integratewise-mcp-connector.connect-a1b.workers.dev,2026-03-28,LIVE - 12 tools available (kb.* figma.*). Health check passing.,critical,,cloudflare-account|supabase
+svc-gateway,API Gateway,Core Services,working,https://integratewise-gateway.connect-a1b.workers.dev,2026-03-28,LIVE - Entry point for all API calls. Service bindings active.,critical,,mcp-connector|knowledge|workflow
+svc-knowledge,Knowledge Service,Core Services,working,https://integratewise-knowledge.connect-a1b.workers.dev,2026-03-28,LIVE - Knowledge base operations. Scheduled tasks running.,critical,,supabase
+svc-workflow,Workflow Service (BFF),Core Services,working,https://integratewise-bff.connect-a1b.workers.dev,2026-03-28,LIVE - Backend-for-frontend. Daily scheduled tasks.,high,,supabase
+svc-think,Think Service (AI),Core Services,partial,https://integratewise-think.connect-a1b.workers.dev,2026-03-28,DEPLOYED but endpoint structure needs verification. May need OpenRouter config.,high,,openrouter-api-key
+svc-normalizer,Normalizer Service,Core Services,working,https://integratewise-normalizer.connect-a1b.workers.dev,2026-03-28,LIVE - Data normalization pipeline.,high,,
+svc-loader,Loader Service,Core Services,working,,2026-03-28,DEPLOYED - Data loading pipeline.,medium,,
+svc-govern,Govern Service,Core Services,working,,2026-03-28,DEPLOYED - Governance engine.,medium,,
+svc-act,Act Service,Core Services,working,,2026-03-28,DEPLOYED - Action execution.,medium,,
+svc-pipeline,Pipeline Service,Core Services,working,,2026-03-28,DEPLOYED - Data pipeline orchestration.,medium,,
+conn-figma,Figma Connector,Connectors,working,,2026-03-28,IMPLEMENTED - figma.get_file figma.export_image figma.get_components figma.get_comments figma.get_node. Token configured.,high,,figma-access-token
+conn-sendgrid,SendGrid Connector (Email),Connectors,not-working,,2026-03-28,NOT CONFIGURED - Code exists (sendgrid.ts) but SENDGRID_API_KEY is placeholder. Sign up at sendgrid.com required.,critical,Nirmal,sendgrid-api-key
+conn-gmail,Gmail Connector,Connectors,not-working,,2026-03-28,NOT CONFIGURED - Code exists. Requires Google OAuth credentials.,high,,google-client-id|google-client-secret
+conn-slack,Slack Connector,Connectors,not-working,,2026-03-28,NOT CONFIGURED - Code exists. Requires SLACK_BOT_TOKEN.,medium,,slack-bot-token
+conn-hubspot,HubSpot Connector,Connectors,not-working,,2026-03-28,NOT CONFIGURED - Code exists. OAuth credentials needed.,low,,hubspot-client-id|hubspot-client-secret
+conn-salesforce,Salesforce Connector,Connectors,not-working,,2026-03-28,NOT CONFIGURED - Code exists. OAuth credentials needed.,low,,salesforce-client-id|salesforce-client-secret
+conn-stripe,Stripe Connector,Connectors,not-working,,2026-03-28,NOT CONFIGURED - Code exists. Requires STRIPE_SECRET_KEY.,medium,,stripe-secret-key
+conn-linear,Linear Connector,Connectors,not-working,,2026-03-28,NOT CONFIGURED - Code exists. Requires LINEAR_API_KEY.,medium,,linear-api-key
+conn-github,GitHub Connector,Connectors,partial,,2026-03-28,PLACEHOLDER - GITHUB_WEBHOOK_SECRET configured but GITHUB_CLIENT_ID is placeholder.,medium,,github-client-id|github-client-secret
+ai-openrouter,OpenRouter Integration,AI Services,working,,2026-03-28,CONFIGURED - API key active. $0.022 usage. Default model: claude-3.5-sonnet.,critical,,openrouter-api-key
+ai-moonshot,Moonshot AI (Kimi),AI Services,working,,2026-03-28,CONFIGURED - API key active. Used by Kimi Code CLI.,medium,,moonshot-api-key
+ai-image-gen,AI Image Generation,AI Services,partial,,2026-03-28,IMPLEMENTED but API keys are placeholders. Supports GenSpark OpenRouter Pollinations Stability AI. Pollinations works (free).,medium,,genspark-api-key|stability-api-key
+auto-n8n,n8n Workflows,Automation,partial,,2026-03-28,WORKFLOWS CREATED but need import. GCP instance running at n8n.integratewise.co. Morning brief + LinkedIn workflows ready.,high,Nirmal,email-service
+auto-morning-brief,Morning Brief Automation,Automation,not-working,,2026-03-28,PENDING - n8n workflow created but not imported/activated. Needs email credentials.,high,Nirmal,n8n|email-service
+deploy-cloudflare,Cloudflare Workers,Deployment,working,,2026-03-28,WORKING - 6+ services deployed. Account ID and API token configured.,critical,,cloudflare-api-token
+deploy-supabase,Supabase Database,Deployment,working,,2026-03-28,CONFIGURED - URL and service keys set. D1 database for Flow C.,critical,,supabase-service-key
+deploy-n8n-gcp,n8n on GCP,Deployment,working,,2026-03-28,RUNNING - Instance at n8n.integratewise.co. Workflows need import.,high,,gcp-instance
+cred-email,Email Service (SendGrid/Resend),Credentials,not-working,,2026-03-28,NOT CONFIGURED - No email API key. Required for morning brief automation. Get from sendgrid.com or resend.com.,critical,Nirmal,
+cred-calendar,Google Calendar Integration,Credentials,not-working,,2026-03-28,NOT CONFIGURED - Requires Google OAuth credentials.,medium,,google-client-id|google-client-secret
+fe-brand-store,Brand Store (Ops Command Center),Frontend,partial,,2026-03-28,BUILT but not deployed. Components ready: AIAssistant OpsCommandCenter CredentialsVault. Need build & deploy.,high,Agent,mcp-connector|credentials
+fe-marketing-site,Marketing Site (integratewise.online),Frontend,partial,,2026-03-28,PAGES BUILT (Product Home Solutions) but need deployment. Domain updated to .ai.,high,Agent,
+fe-cursor-mcp,Cursor MCP Integration,Frontend,partial,,2026-03-28,CONFIG UPDATED - Hardcoded values. May need Cursor reload. Test in progress.,medium,,mcp-connector
