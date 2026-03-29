@@ -1,0 +1,77 @@
+backend:
+  name: git-gateway
+  branch: main
+  # For local development, use:
+  # name: proxy
+  # proxy_url: http://localhost:8081/api/v1
+
+# Local backend for laptop editing (no internet required)
+local_backend: true
+
+media_folder: "ImageGallery"
+public_folder: "/ImageGallery"
+
+# Image Gallery Collections
+collections:
+  - name: "heroes"
+    label: "Hero Images"
+    folder: "ImageGallery/heroes"
+    create: true
+    slug: "{{name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "ID", name: "id", widget: "string", pattern: ['hero-\d+', "Must start with hero-"] }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Usage", name: "usage", widget: "list" }
+      - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
+      - { label: "Format", name: "format", widget: "select", options: ["png", "jpg", "webp", "svg"] }
+
+  - name: "illustrations"
+    label: "Illustrations"
+    folder: "ImageGallery/illustrations"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "ID", name: "id", widget: "string", pattern: ['illust-\d+', "Must start with illust-"] }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Usage", name: "usage", widget: "list" }
+
+  - name: "infographics"
+    label: "Infographics"
+    folder: "ImageGallery/infographics"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list" }
+
+  - name: "screenshots"
+    label: "Screenshots"
+    folder: "ImageGallery/screenshots"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Category", name: "category", widget: "select", options: ["onboarding", "app", "docs"] }
+
+  - name: "logos"
+    label: "Logos"
+    folder: "ImageGallery/logos"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+
+  - name: "icons"
+    label: "Icons"
+    folder: "ImageGallery/icons"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }

@@ -1,42 +1,89 @@
 # 🖼️ IntegrateWise Image Gallery / CMS
 
-Centralized image management system. **Drop images in → Reference by ID → Auto-sync to sites.**
+Centralized image management system with **Dropbox sync**. Drop images in Dropbox → Auto-import → Reference by ID → Deploy to sites.
 
 ---
 
-## 📁 Folder Structure
+## 📁 Folder Structure (~150MB, 420+ images)
 
 ```
 ImageGallery/
-├── heroes/           # Hero banners (1920x1080)
-├── features/         # Feature section visuals
-├── illustrations/    # Concept art & illustrations
-├── infographics/     # Diagrams, comparisons, charts
-├── screenshots/      # App screenshots
-│   └── onboarding/   # Onboarding flow
-├── logos/            # Brand logos
-├── icons/            # Icons & small graphics
-├── generated/        # AI-generated images
-├── stock/            # Stock photos (external)
-├── thumbnails/       # Auto-generated thumbnails
-├── manifest.json     # Image registry (auto-generated)
-└── README.md         # This file
+├── marketing/         196 images (marketing content, illustrations)
+├── icons/             149 images (SVG icons & vector graphics)
+├── logos/              64 images (brand logos & variants)
+├── screenshots/        33 images (product UI screenshots)
+├── campaigns/          16 images (social media campaigns)
+├── heroes/              6 images (homepage hero banners)
+├── illustrations/      11 images (concept art)
+├── infographics/        3 images (diagrams, comparisons)
+├── features/            1 image (feature sections)
+├── notes/               6 images (documentation screenshots)
+├── whiteboards/         4 images (development whiteboards)
+├── diagrams/            1 image (architecture diagrams)
+├── product/             1 image (product images)
+├── uncategorized/       4 images (needs manual categorization)
+├── generated/           1 image (AI-upscaled)
+├── stock/               (empty - for future)
+├── manifest.json        # Image registry (420+ entries)
+├── README.md            # This file
+└── lib/                 # TypeScript + React library
+    ├── index.ts         # getImage(), search, filter
+    └── GalleryImage.tsx # React components
+```
+
+---
+
+## 🔄 Dropbox Sync (Daily Auto-Sync)
+
+Your Dropbox folder `/IntegrateWise - Collation March` is synced daily to ImageGallery.
+
+### Auto-Categorization Rules
+
+| Dropbox Folder | ImageGallery Category |
+|----------------|----------------------|
+| `Marketing Content/Images Gallery` | `marketing/` |
+| `Marketing Content/SVG` | `icons/` |
+| `Marketing Content/Brand Contents/Logo` | `logos/` |
+| `Marketing Content/Brand Contents/Campaign` | `campaigns/` |
+| `Product Presentations/Product Screenshots` | `screenshots/` |
+| `Company Documentations/Whiteboards` | `whiteboards/` |
+| Any `.svg` file | `icons/` |
+
+### Manual Sync Commands
+
+```bash
+# One-time import from Dropbox
+node scripts/dropbox-sync.mjs --import-all
+
+# Watch mode (syncs every 24 hours)
+node scripts/dropbox-sync.mjs --watch
+
+# Preview what would sync (dry run)
+node scripts/dropbox-sync.mjs --dry-run
+
+# Verbose output
+node scripts/dropbox-sync.mjs --import-all --verbose
 ```
 
 ---
 
 ## 🚀 Quick Usage
 
-### 1. Add New Images
+### 1. Add New Images (2 ways)
 
-Simply drop files into the appropriate folder:
-
+**Option A: Drop in Dropbox (Auto-sync)**
 ```bash
-# Hero image for new landing page
-cp new-hero.png ImageGallery/heroes/
+# Just drop files in Dropbox - they'll sync automatically
+~/Dropbox/IntegrateWise - Collation March/Marketing Content/Images Gallery/
+```
 
-# Screenshot for docs
-cp dashboard.png ImageGallery/screenshots/app/
+**Option B: Add directly to ImageGallery**
+```bash
+# Copy to folder
+cp new-image.png ImageGallery/marketing/
+
+# Add to manifest
+node scripts/add-image.mjs --file new-image.png --category marketing --tags "b2b,homepage"
 ```
 
 ### 2. Reference in Code
@@ -45,71 +92,123 @@ cp dashboard.png ImageGallery/screenshots/app/
 // Using the image ID from manifest
 import { getImage } from '@/lib/image-gallery';
 
-const heroImage = getImage('hero-001');
-// Returns: { src: '/ImageGallery/heroes/...', alt: 'Main Homepage Hero', ... }
+const image = getImage('mark-196'); // marketing-196
+// Returns: { src: '/ImageGallery/marketing/...', alt: '...', tags: [...] }
 
-<img src={heroImage.src} alt={heroImage.alt} />
+<img src={image.src} alt={image.name} />
 ```
 
-### 3. Or Direct Path
+### 3. Search Images
 
 ```tsx
-<img src="/ImageGallery/heroes/hero-001.png" alt="Hero" />
+import { searchImages, findImagesByTag } from '@/lib/image-gallery';
+
+// Search by name/tag
+const results = searchImages('hero');
+
+// Find by tag
+const b2bImages = findImagesByTag('b2b');
+
+// Get all in category
+const icons = getImagesByCategory('icons');
 ```
+
+---
+
+## 📊 Current Inventory
+
+| Category | Count | Description |
+|----------|-------|-------------|
+| Marketing | 196 | Marketing content, illustrations, gallery images |
+| Icons | 149 | SVG vectors, UI icons |
+| Logos | 64 | Brand logos, variants, formats |
+| Screenshots | 33 | Product UI, onboarding, Knowledge UI |
+| Campaigns | 16 | Social media posts, LinkedIn banners |
+| Heroes | 6 | Homepage hero banners |
+| Illustrations | 11 | Concept art, B2B illustrations |
+| Infographics | 3 | Diagrams, comparisons |
+| Notes | 6 | Documentation screenshots |
+| Whiteboards | 4 | Development whiteboards |
+| Other | 10 | Features, diagrams, product, etc. |
+| **Total** | **~420** | PNG, SVG, JPG formats |
 
 ---
 
 ## 📋 Image Manifest
 
-All images are cataloged in `manifest.json` with:
+All images cataloged in `manifest.json`:
 
-- **ID** - Unique identifier (e.g., `hero-001`)
-- **Filename** - Actual file name
-- **Tags** - Search/filter tags
-- **Usage** - Recommended page placements
-- **Dimensions** - Width x Height
+```json
+{
+  "id": "mark-196",
+  "filename": "hero-banner.png",
+  "name": "Hero Banner",
+  "category": "marketing",
+  "tags": ["hero", "b2b", "homepage"],
+  "usage": ["landing-page", "marketing-site"],
+  "format": "png",
+  "source": "dropbox",
+  "imported": "2026-03-29"
+}
+```
 
-### Search Images
+### Search via CLI
 
 ```bash
 # Find by tag
-cat manifest.json | jq '.categories.heroes.images[] | select(.tags[] == "b2b")'
+cat manifest.json | jq '.categories.marketing.images[] | select(.tags[] == "hero")'
 
-# Find by usage
-cat manifest.json | jq '.categories.illustrations.images[] | select(.usage[] == "pricing-page")'
+# Count by category
+cat manifest.json | jq '.categories | map_values(.images | length)'
 ```
 
 ---
 
-## 🔄 Sync to FrontEnd Sites
+## 🛠️ Helper Scripts
 
-Images are automatically synced to:
+| Script | Purpose |
+|--------|---------|
+| `dropbox-sync.mjs` | Sync from Dropbox to ImageGallery |
+| `sync-images.mjs` | Sync to FrontEnd sites |
+| `add-image.mjs` | Add single image to manifest |
+| `validate-manifest.mjs` | Check for missing files |
 
-| Site | Path |
-|------|------|
-| Marketing (integratewise.ai) | `FrontEnd/sites/marketing/public/images/` |
-| Landing (go.integratewise.ai) | `FrontEnd/sites/landing/public/images/` |
-| Portfolio (showcase.integratewise.ai) | `FrontEnd/sites/portfolio/public/images/` |
+---
 
-### Manual Sync
+## 🔗 Integration with FrontEnd
+
+### Sync to Sites
 
 ```bash
-# Run sync script
+# Sync all to all sites
 node scripts/sync-images.mjs
 
-# Or sync specific category
+# Sync specific category to specific site
 node scripts/sync-images.mjs --category heroes --site marketing
+```
+
+### React Component
+
+```tsx
+import { GalleryImage } from '@/lib/image-gallery';
+
+// By ID
+<GalleryImage id="hero-001" width={1920} height={1080} />
+
+// By category/filename
+<GalleryImageByPath category="marketing" filename="banner.png" />
+
+// Background
+<GalleryBackground id="hero-001" overlay>
+  <h1>Content over image</h1>
+</GalleryBackground>
 ```
 
 ---
 
 ## ☁️ Cloud CDN Setup (Optional)
 
-To enable Cloudflare R2 CDN:
-
-1. Set bucket name in `manifest.json` → `cdn.bucket`
-2. Upload images: `npm run upload-images`
-3. Base URL auto-switches to CDN
+Enable Cloudflare R2 in `manifest.json`:
 
 ```json
 {
@@ -124,107 +223,6 @@ To enable Cloudflare R2 CDN:
 
 ---
 
-## 📊 Current Inventory
-
-| Category | Count | Formats |
-|----------|-------|---------|
-| Heroes | 6 | PNG |
-| Features | 1 | PNG |
-| Illustrations | 11 | PNG |
-| Infographics | 3 | PNG |
-| Screenshots | 12 | PNG |
-| Logos | 1 | PNG |
-| Icons | 6 | SVG/PNG |
-| **Total** | **41** | PNG/SVG |
-
----
-
-## 📝 Naming Convention
-
-When adding new images, follow this pattern:
-
-```
-[descriptor]_[purpose]_[variant]-[timestamp].png
-
-Examples:
-- Professional_B2B_SaaS_hero_image-1774519181744.png
-- Split-screen_comparison_infographic-1774651518950.png
-- dashboard_screenshot_v2-20260329.png
-```
-
-Or use simple IDs after adding to manifest:
-```
-hero-007.png
-feature-002.png
-```
-
----
-
-## 🛠️ Helper Scripts
-
-### Add Image to Manifest
-
-```bash
-node scripts/add-image.mjs --file new-image.png --category heroes --tags "b2b,homepage"
-```
-
-### Generate Thumbnails
-
-```bash
-node scripts/generate-thumbnails.mjs
-```
-
-### Validate Manifest
-
-```bash
-node scripts/validate-manifest.mjs
-```
-
----
-
-## 🔗 Integration with FrontEnd
-
-### React Hook
-
-```tsx
-// hooks/useGalleryImage.ts
-import manifest from '@image-gallery/manifest.json';
-
-export const useGalleryImage = (id: string) => {
-  // Search all categories for image ID
-  for (const [cat, data] of Object.entries(manifest.categories)) {
-    const found = data.images?.find(img => img.id === id);
-    if (found) return { ...found, category: cat };
-  }
-  return null;
-};
-```
-
-### Next.js Image Component
-
-```tsx
-import Image from 'next/image';
-import { useGalleryImage } from '@/hooks/useGalleryImage';
-
-export const GalleryImage = ({ id, ...props }) => {
-  const img = useGalleryImage(id);
-  if (!img) return null;
-  
-  return (
-    <Image
-      src={`/images/${img.category}/${img.filename}`}
-      alt={img.name}
-      width={800}
-      height={600}
-      {...props}
-    />
-  );
-};
-
-// Usage: <GalleryImage id="hero-001" />
-```
-
----
-
 **Last Updated:** March 29, 2026  
-**Total Images:** 41 across 9 categories
+**Total Images:** 420+ across 15 categories  
+**Sync Source:** `/Users/nirmal/Dropbox/IntegrateWise - Collation March`
