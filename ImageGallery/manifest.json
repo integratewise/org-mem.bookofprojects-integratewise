@@ -18,8 +18,16 @@
           "id": "hero-001",
           "filename": "Professional_SaaS_homepage_hero_image_for_Integrat-1774506307051.png",
           "name": "Main Homepage Hero",
-          "tags": ["homepage", "main", "b2b", "saas"],
-          "usage": ["marketing-home", "landing-main"],
+          "tags": [
+            "homepage",
+            "main",
+            "b2b",
+            "saas"
+          ],
+          "usage": [
+            "marketing-home",
+            "landing-main"
+          ],
           "dimensions": "1920x1080",
           "format": "png"
         },
@@ -27,8 +35,15 @@
           "id": "hero-002",
           "filename": "Premium_professional_B2B_SaaS_homepage_hero_banner-1774512571795.png",
           "name": "Premium Hero Banner",
-          "tags": ["premium", "banner", "b2b"],
-          "usage": ["landing-go", "marketing-hero"],
+          "tags": [
+            "premium",
+            "banner",
+            "b2b"
+          ],
+          "usage": [
+            "landing-go",
+            "marketing-hero"
+          ],
           "dimensions": "1920x1080",
           "format": "png"
         },
@@ -36,8 +51,15 @@
           "id": "hero-003",
           "filename": "Premium_professional_B2B_SaaS_homepage_hero_banner-1774519104159.png",
           "name": "Alternate Premium Hero",
-          "tags": ["premium", "banner", "alternative"],
-          "usage": ["landing-alt", "marketing-alt"],
+          "tags": [
+            "premium",
+            "banner",
+            "alternative"
+          ],
+          "usage": [
+            "landing-alt",
+            "marketing-alt"
+          ],
           "dimensions": "1920x1080",
           "format": "png"
         },
@@ -45,8 +67,15 @@
           "id": "hero-004",
           "filename": "Professional_B2B_SaaS_hero_banner_background_overl-1774512375903.png",
           "name": "Hero Background",
-          "tags": ["background", "overlay", "subtle"],
-          "usage": ["bg-overlay", "subtle-hero"],
+          "tags": [
+            "background",
+            "overlay",
+            "subtle"
+          ],
+          "usage": [
+            "bg-overlay",
+            "subtle-hero"
+          ],
           "dimensions": "1920x1080",
           "format": "png"
         },
@@ -54,8 +83,15 @@
           "id": "hero-005",
           "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774519181744.png",
           "name": "IntegrateWise Hero",
-          "tags": ["branded", "integratewise", "main"],
-          "usage": ["marketing-home", "brand-hero"],
+          "tags": [
+            "branded",
+            "integratewise",
+            "main"
+          ],
+          "usage": [
+            "marketing-home",
+            "brand-hero"
+          ],
           "dimensions": "1920x1080",
           "format": "png"
         },
@@ -63,8 +99,15 @@
           "id": "hero-006",
           "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774520888349.png",
           "name": "IntegrateWise Hero Alt",
-          "tags": ["branded", "integratewise", "alternate"],
-          "usage": ["landing-alt", "brand-hero-alt"],
+          "tags": [
+            "branded",
+            "integratewise",
+            "alternate"
+          ],
+          "usage": [
+            "landing-alt",
+            "brand-hero-alt"
+          ],
           "dimensions": "1920x1080",
           "format": "png"
         }
@@ -79,8 +122,15 @@
           "id": "feature-001",
           "filename": "Engaging_feature_section_visual_showing_Brainstorm-1774450892198.png",
           "name": "Brainstorm Feature",
-          "tags": ["brainstorm", "collaboration", "features"],
-          "usage": ["feature-section", "collaboration"],
+          "tags": [
+            "brainstorm",
+            "collaboration",
+            "features"
+          ],
+          "usage": [
+            "feature-section",
+            "collaboration"
+          ],
           "dimensions": "1200x800",
           "format": "png"
         }
@@ -95,8 +145,15 @@
           "id": "infographic-001",
           "filename": "Infographic_illustration_showing_the_Spines_adapt-1774451114075.png",
           "name": "Spine Adaptability",
-          "tags": ["spine", "adaptability", "architecture"],
-          "usage": ["product-page", "architecture"],
+          "tags": [
+            "spine",
+            "adaptability",
+            "architecture"
+          ],
+          "usage": [
+            "product-page",
+            "architecture"
+          ],
           "dimensions": "1200x800",
           "format": "png"
         },
@@ -104,8 +161,15 @@
           "id": "infographic-002",
           "filename": "Split-screen_comparison_infographic_showing_tool_f-1774651518950.png",
           "name": "Tool Comparison",
-          "tags": ["comparison", "tools", "before-after"],
-          "usage": ["landing-page", "comparison-section"],
+          "tags": [
+            "comparison",
+            "tools",
+            "before-after"
+          ],
+          "usage": [
+            "landing-page",
+            "comparison-section"
+          ],
           "dimensions": "1600x900",
           "format": "png"
         },
@@ -113,8 +177,15 @@
           "id": "infographic-003",
           "filename": "Technical_diagram_illustration_showing_What_if_ev-1774651535482.png",
           "name": "Technical Diagram",
-          "tags": ["technical", "diagram", "what-if"],
-          "usage": ["docs", "technical-page"],
+          "tags": [
+            "technical",
+            "diagram",
+            "what-if"
+          ],
+          "usage": [
+            "docs",
+            "technical-page"
+          ],
           "dimensions": "1600x900",
           "format": "png"
         }
@@ -129,8 +200,15 @@
           "id": "illust-001",
           "filename": "A_dramatic_before-and-after_split-screen_illustrat-1774597272023.png",
           "name": "Before After Split",
-          "tags": ["before-after", "transformation", "dramatic"],
-          "usage": ["landing-page", "transformation"],
+          "tags": [
+            "before-after",
+            "transformation",
+            "dramatic"
+          ],
+          "usage": [
+            "landing-page",
+            "transformation"
+          ],
           "dimensions": "1600x800",
           "format": "png"
         },
@@ -138,8 +216,15 @@
           "id": "illust-002",
           "filename": "A_wide_panoramic_illustration_showing_a_chaotic_di-1774597269667.png",
           "name": "Chaos Panorama",
-          "tags": ["chaos", "problem", "wide"],
-          "usage": ["problem-section", "landing-page"],
+          "tags": [
+            "chaos",
+            "problem",
+            "wide"
+          ],
+          "usage": [
+            "problem-section",
+            "landing-page"
+          ],
           "dimensions": "2400x800",
           "format": "png"
         },
@@ -147,8 +232,15 @@
           "id": "illust-003",
           "filename": "An_elegant_visualization_showing_diverse_business_-1774597221820.png",
           "name": "Diverse Business",
-          "tags": ["diversity", "business", "elegant"],
-          "usage": ["about-page", "diversity"],
+          "tags": [
+            "diversity",
+            "business",
+            "elegant"
+          ],
+          "usage": [
+            "about-page",
+            "diversity"
+          ],
           "dimensions": "1600x900",
           "format": "png"
         },
@@ -156,8 +248,15 @@
           "id": "illust-004",
           "filename": "An_illustration_showing_how_mistakes_happen_when_t-1774597232913.png",
           "name": "Mistakes Illustration",
-          "tags": ["mistakes", "problem", "tools"],
-          "usage": ["problem-section", "pain-points"],
+          "tags": [
+            "mistakes",
+            "problem",
+            "tools"
+          ],
+          "usage": [
+            "problem-section",
+            "pain-points"
+          ],
           "dimensions": "1200x800",
           "format": "png"
         },
@@ -165,8 +264,15 @@
           "id": "illust-005",
           "filename": "An_illustration_visualizing_the_hidden_cost_of_con-1774597247342.png",
           "name": "Hidden Costs",
-          "tags": ["costs", "hidden", "problem"],
-          "usage": ["pricing-page", "problem-section"],
+          "tags": [
+            "costs",
+            "hidden",
+            "problem"
+          ],
+          "usage": [
+            "pricing-page",
+            "problem-section"
+          ],
           "dimensions": "1200x800",
           "format": "png"
         },
@@ -174,8 +280,15 @@
           "id": "illust-006",
           "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774519193460.png",
           "name": "IntegrateWise Professional",
-          "tags": ["professional", "b2b", "branded"],
-          "usage": ["marketing-site", "about"],
+          "tags": [
+            "professional",
+            "b2b",
+            "branded"
+          ],
+          "usage": [
+            "marketing-site",
+            "about"
+          ],
           "dimensions": "1200x800",
           "format": "png"
         },
@@ -183,8 +296,15 @@
           "id": "illust-007",
           "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520896099.png",
           "name": "IntegrateWise Solution",
-          "tags": ["solution", "b2b", "professional"],
-          "usage": ["solutions-page", "features"],
+          "tags": [
+            "solution",
+            "b2b",
+            "professional"
+          ],
+          "usage": [
+            "solutions-page",
+            "features"
+          ],
           "dimensions": "1200x800",
           "format": "png"
         },
@@ -192,8 +312,15 @@
           "id": "illust-008",
           "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520914217.png",
           "name": "IntegrateWise Workflow",
-          "tags": ["workflow", "automation", "b2b"],
-          "usage": ["features-page", "workflow"],
+          "tags": [
+            "workflow",
+            "automation",
+            "b2b"
+          ],
+          "usage": [
+            "features-page",
+            "workflow"
+          ],
           "dimensions": "1200x800",
           "format": "png"
         },
@@ -201,8 +328,15 @@
           "id": "illust-009",
           "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520917466.png",
           "name": "IntegrateWise Integration",
-          "tags": ["integration", "connectors", "b2b"],
-          "usage": ["integrations-page", "connectors"],
+          "tags": [
+            "integration",
+            "connectors",
+            "b2b"
+          ],
+          "usage": [
+            "integrations-page",
+            "connectors"
+          ],
           "dimensions": "1200x800",
           "format": "png"
         },
@@ -210,8 +344,15 @@
           "id": "illust-010",
           "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520920168.png",
           "name": "IntegrateWise Platform",
-          "tags": ["platform", "overview", "b2b"],
-          "usage": ["platform-page", "overview"],
+          "tags": [
+            "platform",
+            "overview",
+            "b2b"
+          ],
+          "usage": [
+            "platform-page",
+            "overview"
+          ],
           "dimensions": "1200x800",
           "format": "png"
         },
@@ -219,8 +360,15 @@
           "id": "illust-011",
           "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520935703.png",
           "name": "IntegrateWise Value",
-          "tags": ["value", "roi", "b2b"],
-          "usage": ["pricing-page", "value-prop"],
+          "tags": [
+            "value",
+            "roi",
+            "b2b"
+          ],
+          "usage": [
+            "pricing-page",
+            "value-prop"
+          ],
           "dimensions": "1200x800",
           "format": "png"
         }
@@ -229,56 +377,2528 @@
     "screenshots": {
       "description": "App screenshots for demos and documentation",
       "path": "/screenshots",
-      "count": 12,
+      "count": 20,
       "subcategories": {
         "onboarding": {
           "description": "Onboarding flow screenshots",
           "count": 12,
           "images": [
-            {"id": "ss-onb-001", "filename": "1.png", "name": "Onboarding Step 1", "tags": ["onboarding", "step1"] },
-            {"id": "ss-onb-002", "filename": "7.png", "name": "Onboarding Step 7", "tags": ["onboarding", "step7"] },
-            {"id": "ss-onb-003", "filename": "8.png", "name": "Onboarding Step 8", "tags": ["onboarding", "step8"] },
-            {"id": "ss-onb-004", "filename": "9.png", "name": "Onboarding Step 9", "tags": ["onboarding", "step9"] },
-            {"id": "ss-onb-005", "filename": "10.png", "name": "Onboarding Step 10", "tags": ["onboarding", "step10"] },
-            {"id": "ss-onb-006", "filename": "11.png", "name": "Onboarding Step 11", "tags": ["onboarding", "step11"] },
-            {"id": "ss-onb-007", "filename": "12.png", "name": "Onboarding Step 12", "tags": ["onboarding", "step12"] },
-            {"id": "ss-onb-stage1", "filename": "OnBoarding - Stage 1.png", "name": "Stage 1", "tags": ["onboarding", "stage1"] },
-            {"id": "ss-onb-stage2-1", "filename": "OnBoarding - Stage 2.1.png", "name": "Stage 2.1", "tags": ["onboarding", "stage2"] },
-            {"id": "ss-onb-stage2-2", "filename": "OnBoarding - Stage 2.2.png", "name": "Stage 2.2", "tags": ["onboarding", "stage2"] },
-            {"id": "ss-onb-stage2-3", "filename": "OnBoarding - Stage 2.3.png", "name": "Stage 2.3", "tags": ["onboarding", "stage2"] },
-            {"id": "ss-onb-stage3", "filename": "OnBoarding - Stage 3.png", "name": "Stage 3", "tags": ["onboarding", "stage3"] },
-            {"id": "ss-onb-stage4", "filename": "OnBoarding - Stage 4.png", "name": "Stage 4", "tags": ["onboarding", "stage4"] }
+            {
+              "id": "ss-onb-001",
+              "filename": "1.png",
+              "name": "Onboarding Step 1",
+              "tags": [
+                "onboarding",
+                "step1"
+              ]
+            },
+            {
+              "id": "ss-onb-002",
+              "filename": "7.png",
+              "name": "Onboarding Step 7",
+              "tags": [
+                "onboarding",
+                "step7"
+              ]
+            },
+            {
+              "id": "ss-onb-003",
+              "filename": "8.png",
+              "name": "Onboarding Step 8",
+              "tags": [
+                "onboarding",
+                "step8"
+              ]
+            },
+            {
+              "id": "ss-onb-004",
+              "filename": "9.png",
+              "name": "Onboarding Step 9",
+              "tags": [
+                "onboarding",
+                "step9"
+              ]
+            },
+            {
+              "id": "ss-onb-005",
+              "filename": "10.png",
+              "name": "Onboarding Step 10",
+              "tags": [
+                "onboarding",
+                "step10"
+              ]
+            },
+            {
+              "id": "ss-onb-006",
+              "filename": "11.png",
+              "name": "Onboarding Step 11",
+              "tags": [
+                "onboarding",
+                "step11"
+              ]
+            },
+            {
+              "id": "ss-onb-007",
+              "filename": "12.png",
+              "name": "Onboarding Step 12",
+              "tags": [
+                "onboarding",
+                "step12"
+              ]
+            },
+            {
+              "id": "ss-onb-stage1",
+              "filename": "OnBoarding - Stage 1.png",
+              "name": "Stage 1",
+              "tags": [
+                "onboarding",
+                "stage1"
+              ]
+            },
+            {
+              "id": "ss-onb-stage2-1",
+              "filename": "OnBoarding - Stage 2.1.png",
+              "name": "Stage 2.1",
+              "tags": [
+                "onboarding",
+                "stage2"
+              ]
+            },
+            {
+              "id": "ss-onb-stage2-2",
+              "filename": "OnBoarding - Stage 2.2.png",
+              "name": "Stage 2.2",
+              "tags": [
+                "onboarding",
+                "stage2"
+              ]
+            },
+            {
+              "id": "ss-onb-stage2-3",
+              "filename": "OnBoarding - Stage 2.3.png",
+              "name": "Stage 2.3",
+              "tags": [
+                "onboarding",
+                "stage2"
+              ]
+            },
+            {
+              "id": "ss-onb-stage3",
+              "filename": "OnBoarding - Stage 3.png",
+              "name": "Stage 3",
+              "tags": [
+                "onboarding",
+                "stage3"
+              ]
+            },
+            {
+              "id": "ss-onb-stage4",
+              "filename": "OnBoarding - Stage 4.png",
+              "name": "Stage 4",
+              "tags": [
+                "onboarding",
+                "stage4"
+              ]
+            }
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "id": "scre-001",
+          "filename": "1.png",
+          "name": "1",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.175Z"
+        },
+        {
+          "id": "scre-002",
+          "filename": "10.png",
+          "name": "10",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.177Z"
+        },
+        {
+          "id": "scre-003",
+          "filename": "11.png",
+          "name": "11",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.180Z"
+        },
+        {
+          "id": "scre-004",
+          "filename": "12.png",
+          "name": "12",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.183Z"
+        },
+        {
+          "id": "scre-005",
+          "filename": "13.png",
+          "name": "13",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.185Z"
+        },
+        {
+          "id": "scre-006",
+          "filename": "2.png",
+          "name": "2",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.188Z"
+        },
+        {
+          "id": "scre-007",
+          "filename": "3.png",
+          "name": "3",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.193Z"
+        },
+        {
+          "id": "scre-008",
+          "filename": "4.png",
+          "name": "4",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.197Z"
+        },
+        {
+          "id": "scre-009",
+          "filename": "5.png",
+          "name": "5",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.200Z"
+        },
+        {
+          "id": "scre-010",
+          "filename": "6.png",
+          "name": "6",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.204Z"
+        },
+        {
+          "id": "scre-011",
+          "filename": "7.png",
+          "name": "7",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.207Z"
+        },
+        {
+          "id": "scre-012",
+          "filename": "8.png",
+          "name": "8",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.211Z"
+        },
+        {
+          "id": "scre-013",
+          "filename": "9.png",
+          "name": "9",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.214Z"
+        },
+        {
+          "id": "scre-014",
+          "filename": "1F15CD7E-4538-4DFE-8307-B3E129E4A959.PNG",
+          "name": "1F15CD7E 4538 4DFE 8307 B3E129E4A959",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "PNG",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.215Z"
+        },
+        {
+          "id": "scre-015",
+          "filename": "21E42806-785A-4256-A253-9C41E5124ED3.PNG",
+          "name": "21E42806 785A 4256 A253 9C41E5124ED3",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "PNG",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.216Z"
+        },
+        {
+          "id": "scre-016",
+          "filename": "3583F822-4BC6-4B5D-9E67-23FA343528CD.PNG",
+          "name": "3583F822 4BC6 4B5D 9E67 23FA343528CD",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "PNG",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.219Z"
+        },
+        {
+          "id": "scre-017",
+          "filename": "3758EB4B-0E8B-4A11-95B0-46FA15DCE7A1.PNG",
+          "name": "3758EB4B 0E8B 4A11 95B0 46FA15DCE7A1",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "PNG",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.220Z"
+        },
+        {
+          "id": "scre-018",
+          "filename": "A5DECD8F-67B4-4053-95F1-A6F52C55EBF8.PNG",
+          "name": "A5DECD8F 67B4 4053 95F1 A6F52C55EBF8",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "PNG",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.222Z"
+        },
+        {
+          "id": "scre-019",
+          "filename": "AAA65F54-BE61-472C-9FF3-6CDFBABC2B73.PNG",
+          "name": "AAA65F54 BE61 472C 9FF3 6CDFBABC2B73",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "PNG",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.222Z"
+        },
+        {
+          "id": "scre-020",
+          "filename": "FEE23D7C-0AF4-4AFC-B031-C899A0F6495D.PNG",
+          "name": "FEE23D7C 0AF4 4AFC B031 C899A0F6495D",
+          "tags": [
+            "screenshots",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "PNG",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.224Z"
+        }
+      ]
     },
     "logos": {
       "description": "Brand logos and lockups",
       "path": "/logos",
-      "count": 1,
+      "count": 59,
       "images": [
         {
           "id": "logo-001",
           "filename": "integratewise-logo-official.png",
           "name": "IntegrateWise Official Logo",
-          "tags": ["logo", "official", "brand"],
-          "usage": ["all-pages", "header", "footer"],
+          "tags": [
+            "logo",
+            "official",
+            "brand"
+          ],
+          "usage": [
+            "all-pages",
+            "header",
+            "footer"
+          ],
           "dimensions": "800x200",
           "format": "png"
+        },
+        {
+          "id": "logo-002",
+          "filename": "209 revisions.png",
+          "name": "209 revisions",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.301Z"
+        },
+        {
+          "id": "logo-003",
+          "filename": "Frame_1_Original.svg",
+          "name": "Frame 1 Original",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.303Z"
+        },
+        {
+          "id": "logo-004",
+          "filename": "Icon_Original.svg",
+          "name": "Icon Original",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.303Z"
+        },
+        {
+          "id": "logo-005",
+          "filename": "Group 2.png",
+          "name": "Group 2",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.305Z"
+        },
+        {
+          "id": "logo-006",
+          "filename": "Group 2.svg",
+          "name": "Group 2",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.306Z"
+        },
+        {
+          "id": "logo-007",
+          "filename": "Logo Full.png",
+          "name": "Logo Full",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.307Z"
+        },
+        {
+          "id": "logo-008",
+          "filename": "Logo Standards.png",
+          "name": "Logo Standards",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.310Z"
+        },
+        {
+          "id": "logo-009",
+          "filename": "Logo_Mark_Dark.png",
+          "name": "Logo Mark Dark",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.311Z"
+        },
+        {
+          "id": "logo-010",
+          "filename": "Logo_Mark_Transparent.png",
+          "name": "Logo Mark Transparent",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.313Z"
+        },
+        {
+          "id": "logo-011",
+          "filename": "Logo_Mark_Whitw.png",
+          "name": "Logo Mark Whitw",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.314Z"
+        },
+        {
+          "id": "logo-012",
+          "filename": "integratewise-compact-logo.png",
+          "name": "integratewise compact logo",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.315Z"
+        },
+        {
+          "id": "logo-013",
+          "filename": "integratewise-compact-logo.svg",
+          "name": "integratewise compact logo",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.316Z"
+        },
+        {
+          "id": "logo-014",
+          "filename": "integratewise-full-logo-preview-2.png",
+          "name": "integratewise full logo preview 2",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.318Z"
+        },
+        {
+          "id": "logo-015",
+          "filename": "integratewise-full-logo-preview-3.png",
+          "name": "integratewise full logo preview 3",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.320Z"
+        },
+        {
+          "id": "logo-016",
+          "filename": "integratewise-full-logo-preview-4.png",
+          "name": "integratewise full logo preview 4",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.322Z"
+        },
+        {
+          "id": "logo-017",
+          "filename": "integratewise-full-logo-preview.png",
+          "name": "integratewise full logo preview",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.323Z"
+        },
+        {
+          "id": "logo-018",
+          "filename": "integratewise-full-logo.png",
+          "name": "integratewise full logo",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.324Z"
+        },
+        {
+          "id": "logo-019",
+          "filename": "integratewise-full-logo.svg",
+          "name": "integratewise full logo",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.325Z"
+        },
+        {
+          "id": "logo-020",
+          "filename": "integratewise-icon-only.png",
+          "name": "integratewise icon only",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.325Z"
+        },
+        {
+          "id": "logo-021",
+          "filename": "integratewise-icon-only.svg",
+          "name": "integratewise icon only",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.327Z"
+        },
+        {
+          "id": "logo-022",
+          "filename": "svgviewer-output.svg",
+          "name": "svgviewer output",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.328Z"
+        },
+        {
+          "id": "logo-023",
+          "filename": "svgviewer-png-output.png",
+          "name": "svgviewer png output",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.329Z"
+        },
+        {
+          "id": "logo-024",
+          "filename": "Frame 1.png",
+          "name": "Frame 1",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.127Z"
+        },
+        {
+          "id": "logo-025",
+          "filename": "Frame 1.svg",
+          "name": "Frame 1",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.128Z"
+        },
+        {
+          "id": "logo-026",
+          "filename": "Frame 14.png",
+          "name": "Frame 14",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.130Z"
+        },
+        {
+          "id": "logo-027",
+          "filename": "Frame 4.svg",
+          "name": "Frame 4",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.130Z"
+        },
+        {
+          "id": "logo-028",
+          "filename": "Frame 5.png",
+          "name": "Frame 5",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.130Z"
+        },
+        {
+          "id": "logo-029",
+          "filename": "Group 2 (1).png",
+          "name": "Group 2 (1)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.132Z"
+        },
+        {
+          "id": "logo-030",
+          "filename": "Group 2 (1).svg",
+          "name": "Group 2 (1)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.132Z"
+        },
+        {
+          "id": "logo-031",
+          "filename": "Group 2 (2).png",
+          "name": "Group 2 (2)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.133Z"
+        },
+        {
+          "id": "logo-032",
+          "filename": "Group 2 (3).png",
+          "name": "Group 2 (3)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.133Z"
+        },
+        {
+          "id": "logo-033",
+          "filename": "Home Page.png",
+          "name": "Home Page",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.147Z"
+        },
+        {
+          "id": "logo-034",
+          "filename": "Group 2-1.png",
+          "name": "Group 2 1",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.149Z"
+        },
+        {
+          "id": "logo-035",
+          "filename": "Group 3.png",
+          "name": "Group 3",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.150Z"
+        },
+        {
+          "id": "logo-036",
+          "filename": "].png",
+          "name": "]",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.150Z"
+        },
+        {
+          "id": "logo-037",
+          "filename": "dark.png",
+          "name": "dark",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.152Z"
+        },
+        {
+          "id": "logo-038",
+          "filename": "svgviewer-output (1).svg",
+          "name": "svgviewer output (1)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.152Z"
+        },
+        {
+          "id": "logo-039",
+          "filename": "svgviewer-output (2).svg",
+          "name": "svgviewer output (2)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.152Z"
+        },
+        {
+          "id": "logo-040",
+          "filename": "svgviewer-output (3).svg",
+          "name": "svgviewer output (3)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.152Z"
+        },
+        {
+          "id": "logo-041",
+          "filename": "svgviewer-output (4).svg",
+          "name": "svgviewer output (4)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.153Z"
+        },
+        {
+          "id": "logo-042",
+          "filename": "svgviewer-output (5).svg",
+          "name": "svgviewer output (5)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.153Z"
+        },
+        {
+          "id": "logo-043",
+          "filename": "svgviewer-output (6).svg",
+          "name": "svgviewer output (6)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.153Z"
+        },
+        {
+          "id": "logo-044",
+          "filename": "svgviewer-output (7).svg",
+          "name": "svgviewer output (7)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.153Z"
+        },
+        {
+          "id": "logo-045",
+          "filename": "svgviewer-output (8).jpg",
+          "name": "svgviewer output (8)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "jpg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.153Z"
+        },
+        {
+          "id": "logo-046",
+          "filename": "svgviewer-output (8).svg",
+          "name": "svgviewer output (8)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.153Z"
+        },
+        {
+          "id": "logo-047",
+          "filename": "svgviewer-output (9).svg",
+          "name": "svgviewer output (9)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.153Z"
+        },
+        {
+          "id": "logo-048",
+          "filename": "svgviewer-output Optimized.svg",
+          "name": "svgviewer output Optimized",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.153Z"
+        },
+        {
+          "id": "logo-049",
+          "filename": "svgviewer-output full.svg",
+          "name": "svgviewer output full",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.154Z"
+        },
+        {
+          "id": "logo-050",
+          "filename": "svgviewer-output mark.svg",
+          "name": "svgviewer output mark",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.154Z"
+        },
+        {
+          "id": "logo-051",
+          "filename": "svgviewer-output-dark.svg",
+          "name": "svgviewer output dark",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.154Z"
+        },
+        {
+          "id": "logo-052",
+          "filename": "svgviewer-output-no.svg",
+          "name": "svgviewer output no",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.154Z"
+        },
+        {
+          "id": "logo-053",
+          "filename": "svgviewer-png-output (1).png",
+          "name": "svgviewer png output (1)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.154Z"
+        },
+        {
+          "id": "logo-054",
+          "filename": "svgviewer-png-output (2).png",
+          "name": "svgviewer png output (2)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.155Z"
+        },
+        {
+          "id": "logo-055",
+          "filename": "svgviewer-png-output (2).webp",
+          "name": "svgviewer png output (2)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "webp",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.155Z"
+        },
+        {
+          "id": "logo-056",
+          "filename": "svgviewer-png-output (3).png",
+          "name": "svgviewer png output (3)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.155Z"
+        },
+        {
+          "id": "logo-057",
+          "filename": "svgviewer-png-output (4).png",
+          "name": "svgviewer png output (4)",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.155Z"
+        },
+        {
+          "id": "logo-058",
+          "filename": "svgviewer-png-output 0.5x.png",
+          "name": "svgviewer png output 0.5x",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.155Z"
+        },
+        {
+          "id": "logo-059",
+          "filename": "svgviewer-png-output 1x.png",
+          "name": "svgviewer png output 1x",
+          "tags": [
+            "logos",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.155Z"
         }
       ]
     },
     "icons": {
       "description": "Icons and small graphics",
       "path": "/icons",
-      "count": 6,
+      "count": 82,
       "images": [
-        {"id": "icon-001", "filename": "Frame_1.svg", "name": "Frame 1", "tags": ["frame", "ui"] },
-        {"id": "icon-002", "filename": "Frame_1-1.svg", "name": "Frame 1-1", "tags": ["frame", "ui"] },
-        {"id": "icon-003", "filename": "Frame_1-2.svg", "name": "Frame 1-2", "tags": ["frame", "ui"] },
-        {"id": "icon-004", "filename": "Frame_4.svg", "name": "Frame 4", "tags": ["frame", "ui"] },
-        {"id": "icon-005", "filename": "Frame_4-1.svg", "name": "Frame 4-1", "tags": ["frame", "ui"] },
-        {"id": "icon-006", "filename": "].png", "name": "Bracket Icon", "tags": ["icon", "bracket"] }
+        {
+          "id": "icon-001",
+          "filename": "Frame_1.svg",
+          "name": "Frame 1",
+          "tags": [
+            "frame",
+            "ui"
+          ]
+        },
+        {
+          "id": "icon-002",
+          "filename": "Frame_1-1.svg",
+          "name": "Frame 1-1",
+          "tags": [
+            "frame",
+            "ui"
+          ]
+        },
+        {
+          "id": "icon-003",
+          "filename": "Frame_1-2.svg",
+          "name": "Frame 1-2",
+          "tags": [
+            "frame",
+            "ui"
+          ]
+        },
+        {
+          "id": "icon-004",
+          "filename": "Frame_4.svg",
+          "name": "Frame 4",
+          "tags": [
+            "frame",
+            "ui"
+          ]
+        },
+        {
+          "id": "icon-005",
+          "filename": "Frame_4-1.svg",
+          "name": "Frame 4-1",
+          "tags": [
+            "frame",
+            "ui"
+          ]
+        },
+        {
+          "id": "icon-006",
+          "filename": "].png",
+          "name": "Bracket Icon",
+          "tags": [
+            "icon",
+            "bracket"
+          ]
+        },
+        {
+          "id": "icon-007",
+          "filename": "Frame 4.svg",
+          "name": "Frame 4",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.136Z"
+        },
+        {
+          "id": "icon-008",
+          "filename": "Frame.svg",
+          "name": "Frame",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.215Z"
+        },
+        {
+          "id": "icon-009",
+          "filename": "Group.svg",
+          "name": "Group",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.217Z"
+        },
+        {
+          "id": "icon-010",
+          "filename": "Vector-1.svg",
+          "name": "Vector 1",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.218Z"
+        },
+        {
+          "id": "icon-011",
+          "filename": "Vector-10.svg",
+          "name": "Vector 10",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.218Z"
+        },
+        {
+          "id": "icon-012",
+          "filename": "Vector-11.svg",
+          "name": "Vector 11",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.219Z"
+        },
+        {
+          "id": "icon-013",
+          "filename": "Vector-12.svg",
+          "name": "Vector 12",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.219Z"
+        },
+        {
+          "id": "icon-014",
+          "filename": "Vector-13.svg",
+          "name": "Vector 13",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.219Z"
+        },
+        {
+          "id": "icon-015",
+          "filename": "Vector-14.svg",
+          "name": "Vector 14",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.219Z"
+        },
+        {
+          "id": "icon-016",
+          "filename": "Vector-15.svg",
+          "name": "Vector 15",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.219Z"
+        },
+        {
+          "id": "icon-017",
+          "filename": "Vector-16.svg",
+          "name": "Vector 16",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.219Z"
+        },
+        {
+          "id": "icon-018",
+          "filename": "Vector-17.svg",
+          "name": "Vector 17",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.220Z"
+        },
+        {
+          "id": "icon-019",
+          "filename": "Vector-18.svg",
+          "name": "Vector 18",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.220Z"
+        },
+        {
+          "id": "icon-020",
+          "filename": "Vector-19.svg",
+          "name": "Vector 19",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.220Z"
+        },
+        {
+          "id": "icon-021",
+          "filename": "Vector-2.svg",
+          "name": "Vector 2",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.221Z"
+        },
+        {
+          "id": "icon-022",
+          "filename": "Vector-20.svg",
+          "name": "Vector 20",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.221Z"
+        },
+        {
+          "id": "icon-023",
+          "filename": "Vector-21.svg",
+          "name": "Vector 21",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.221Z"
+        },
+        {
+          "id": "icon-024",
+          "filename": "Vector-22.svg",
+          "name": "Vector 22",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.221Z"
+        },
+        {
+          "id": "icon-025",
+          "filename": "Vector-23.svg",
+          "name": "Vector 23",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.222Z"
+        },
+        {
+          "id": "icon-026",
+          "filename": "Vector-24.svg",
+          "name": "Vector 24",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.222Z"
+        },
+        {
+          "id": "icon-027",
+          "filename": "Vector-25.svg",
+          "name": "Vector 25",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.222Z"
+        },
+        {
+          "id": "icon-028",
+          "filename": "Vector-26.svg",
+          "name": "Vector 26",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.223Z"
+        },
+        {
+          "id": "icon-029",
+          "filename": "Vector-27.svg",
+          "name": "Vector 27",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.223Z"
+        },
+        {
+          "id": "icon-030",
+          "filename": "Vector-28.svg",
+          "name": "Vector 28",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.223Z"
+        },
+        {
+          "id": "icon-031",
+          "filename": "Vector-29.svg",
+          "name": "Vector 29",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.224Z"
+        },
+        {
+          "id": "icon-032",
+          "filename": "Vector-3.svg",
+          "name": "Vector 3",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.224Z"
+        },
+        {
+          "id": "icon-033",
+          "filename": "Vector-30.svg",
+          "name": "Vector 30",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.224Z"
+        },
+        {
+          "id": "icon-034",
+          "filename": "Vector-31.svg",
+          "name": "Vector 31",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.224Z"
+        },
+        {
+          "id": "icon-035",
+          "filename": "Vector-32.svg",
+          "name": "Vector 32",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.225Z"
+        },
+        {
+          "id": "icon-036",
+          "filename": "Vector-33.svg",
+          "name": "Vector 33",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.225Z"
+        },
+        {
+          "id": "icon-037",
+          "filename": "Vector-34.svg",
+          "name": "Vector 34",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.225Z"
+        },
+        {
+          "id": "icon-038",
+          "filename": "Vector-35.svg",
+          "name": "Vector 35",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.226Z"
+        },
+        {
+          "id": "icon-039",
+          "filename": "Vector-36.svg",
+          "name": "Vector 36",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.226Z"
+        },
+        {
+          "id": "icon-040",
+          "filename": "Vector-37.svg",
+          "name": "Vector 37",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.226Z"
+        },
+        {
+          "id": "icon-041",
+          "filename": "Vector-38.svg",
+          "name": "Vector 38",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.226Z"
+        },
+        {
+          "id": "icon-042",
+          "filename": "Vector-39.svg",
+          "name": "Vector 39",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.226Z"
+        },
+        {
+          "id": "icon-043",
+          "filename": "Vector-4.svg",
+          "name": "Vector 4",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.227Z"
+        },
+        {
+          "id": "icon-044",
+          "filename": "Vector-40.svg",
+          "name": "Vector 40",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.227Z"
+        },
+        {
+          "id": "icon-045",
+          "filename": "Vector-41.svg",
+          "name": "Vector 41",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.228Z"
+        },
+        {
+          "id": "icon-046",
+          "filename": "Vector-42.svg",
+          "name": "Vector 42",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.228Z"
+        },
+        {
+          "id": "icon-047",
+          "filename": "Vector-43.svg",
+          "name": "Vector 43",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.229Z"
+        },
+        {
+          "id": "icon-048",
+          "filename": "Vector-44.svg",
+          "name": "Vector 44",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.229Z"
+        },
+        {
+          "id": "icon-049",
+          "filename": "Vector-45.svg",
+          "name": "Vector 45",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.229Z"
+        },
+        {
+          "id": "icon-050",
+          "filename": "Vector-46.svg",
+          "name": "Vector 46",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.230Z"
+        },
+        {
+          "id": "icon-051",
+          "filename": "Vector-47.svg",
+          "name": "Vector 47",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.230Z"
+        },
+        {
+          "id": "icon-052",
+          "filename": "Vector-48.svg",
+          "name": "Vector 48",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.230Z"
+        },
+        {
+          "id": "icon-053",
+          "filename": "Vector-49.svg",
+          "name": "Vector 49",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.230Z"
+        },
+        {
+          "id": "icon-054",
+          "filename": "Vector-5.svg",
+          "name": "Vector 5",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.230Z"
+        },
+        {
+          "id": "icon-055",
+          "filename": "Vector-50.svg",
+          "name": "Vector 50",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.230Z"
+        },
+        {
+          "id": "icon-056",
+          "filename": "Vector-51.svg",
+          "name": "Vector 51",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.231Z"
+        },
+        {
+          "id": "icon-057",
+          "filename": "Vector-52.svg",
+          "name": "Vector 52",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.231Z"
+        },
+        {
+          "id": "icon-058",
+          "filename": "Vector-53.svg",
+          "name": "Vector 53",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.231Z"
+        },
+        {
+          "id": "icon-059",
+          "filename": "Vector-54.svg",
+          "name": "Vector 54",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.231Z"
+        },
+        {
+          "id": "icon-060",
+          "filename": "Vector-55.svg",
+          "name": "Vector 55",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.231Z"
+        },
+        {
+          "id": "icon-061",
+          "filename": "Vector-56.svg",
+          "name": "Vector 56",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.232Z"
+        },
+        {
+          "id": "icon-062",
+          "filename": "Vector-57.svg",
+          "name": "Vector 57",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.232Z"
+        },
+        {
+          "id": "icon-063",
+          "filename": "Vector-58.svg",
+          "name": "Vector 58",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.232Z"
+        },
+        {
+          "id": "icon-064",
+          "filename": "Vector-59.svg",
+          "name": "Vector 59",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.232Z"
+        },
+        {
+          "id": "icon-065",
+          "filename": "Vector-6.svg",
+          "name": "Vector 6",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.232Z"
+        },
+        {
+          "id": "icon-066",
+          "filename": "Vector-60.svg",
+          "name": "Vector 60",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.233Z"
+        },
+        {
+          "id": "icon-067",
+          "filename": "Vector-61.svg",
+          "name": "Vector 61",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.233Z"
+        },
+        {
+          "id": "icon-068",
+          "filename": "Vector-62.svg",
+          "name": "Vector 62",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.233Z"
+        },
+        {
+          "id": "icon-069",
+          "filename": "Vector-63.svg",
+          "name": "Vector 63",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.233Z"
+        },
+        {
+          "id": "icon-070",
+          "filename": "Vector-64.svg",
+          "name": "Vector 64",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.233Z"
+        },
+        {
+          "id": "icon-071",
+          "filename": "Vector-65.svg",
+          "name": "Vector 65",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.234Z"
+        },
+        {
+          "id": "icon-072",
+          "filename": "Vector-66.svg",
+          "name": "Vector 66",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.234Z"
+        },
+        {
+          "id": "icon-073",
+          "filename": "Vector-67.svg",
+          "name": "Vector 67",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.234Z"
+        },
+        {
+          "id": "icon-074",
+          "filename": "Vector-68.svg",
+          "name": "Vector 68",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.234Z"
+        },
+        {
+          "id": "icon-075",
+          "filename": "Vector-69.svg",
+          "name": "Vector 69",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.235Z"
+        },
+        {
+          "id": "icon-076",
+          "filename": "Vector-7.svg",
+          "name": "Vector 7",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.235Z"
+        },
+        {
+          "id": "icon-077",
+          "filename": "Vector-70.svg",
+          "name": "Vector 70",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.235Z"
+        },
+        {
+          "id": "icon-078",
+          "filename": "Vector-71.svg",
+          "name": "Vector 71",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.235Z"
+        },
+        {
+          "id": "icon-079",
+          "filename": "Vector-8.svg",
+          "name": "Vector 8",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.235Z"
+        },
+        {
+          "id": "icon-080",
+          "filename": "Vector-9.svg",
+          "name": "Vector 9",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.236Z"
+        },
+        {
+          "id": "icon-081",
+          "filename": "Vector.svg",
+          "name": "Vector",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.236Z"
+        },
+        {
+          "id": "icon-082",
+          "filename": "9f94dc20bb2a09c15241d3a880b7ad01.svg",
+          "name": "9f94dc20bb2a09c15241d3a880b7ad01",
+          "tags": [
+            "icons",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.291Z"
+        }
       ]
     },
     "generated": {
@@ -290,8 +2910,13 @@
           "id": "gen-001",
           "filename": "Upscale_and_enhance_image_quality-1774452841805.png",
           "name": "Upscaled Quality",
-          "tags": ["ai-generated", "upscaled"],
-          "usage": ["experimental"],
+          "tags": [
+            "ai-generated",
+            "upscaled"
+          ],
+          "usage": [
+            "experimental"
+          ],
           "format": "png"
         }
       ]
@@ -301,12 +2926,3439 @@
       "path": "/stock",
       "count": 0,
       "images": []
+    },
+    "notes": {
+      "description": "notes images",
+      "path": "/notes",
+      "count": 6,
+      "images": [
+        {
+          "id": "note-001",
+          "filename": "gallery-desktop.png",
+          "name": "gallery desktop",
+          "tags": [
+            "notes",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.067Z"
+        },
+        {
+          "id": "note-002",
+          "filename": "gallery-fixed.png",
+          "name": "gallery fixed",
+          "tags": [
+            "notes",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.082Z"
+        },
+        {
+          "id": "note-003",
+          "filename": "gallery-page.png",
+          "name": "gallery page",
+          "tags": [
+            "notes",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.117Z"
+        },
+        {
+          "id": "note-004",
+          "filename": "gallery-scale-50.png",
+          "name": "gallery scale 50",
+          "tags": [
+            "notes",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.129Z"
+        },
+        {
+          "id": "note-005",
+          "filename": "gallery-scale-60.png",
+          "name": "gallery scale 60",
+          "tags": [
+            "notes",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.131Z"
+        },
+        {
+          "id": "note-006",
+          "filename": "gallery-svg-logos.png",
+          "name": "gallery svg logos",
+          "tags": [
+            "notes",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.134Z"
+        }
+      ]
+    },
+    "whiteboards": {
+      "description": "whiteboards images",
+      "path": "/whiteboards",
+      "count": 4,
+      "images": [
+        {
+          "id": "whit-001",
+          "filename": "Gemini_Generated_Image_cq2npccq2npccq2n.png",
+          "name": "Gemini Generated Image cq2npccq2npccq2n",
+          "tags": [
+            "whiteboards",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.166Z"
+        },
+        {
+          "id": "whit-002",
+          "filename": "Gemini_Generated_Image_slvl1lslvl1lslvl.png",
+          "name": "Gemini Generated Image slvl1lslvl1lslvl",
+          "tags": [
+            "whiteboards",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.180Z"
+        },
+        {
+          "id": "whit-003",
+          "filename": "Whiteboards.png",
+          "name": "Whiteboards",
+          "tags": [
+            "whiteboards",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.191Z"
+        },
+        {
+          "id": "whit-004",
+          "filename": "unnamed.jpg",
+          "name": "unnamed",
+          "tags": [
+            "whiteboards",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "jpg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.194Z"
+        }
+      ]
+    },
+    "diagrams": {
+      "description": "diagrams images",
+      "path": "/diagrams",
+      "count": 1,
+      "images": [
+        {
+          "id": "diag-001",
+          "filename": "mermaid-diagram.png",
+          "name": "mermaid diagram",
+          "tags": [
+            "diagrams",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.197Z"
+        }
+      ]
+    },
+    "uncategorized": {
+      "description": "uncategorized images",
+      "path": "/uncategorized",
+      "count": 4,
+      "images": [
+        {
+          "id": "unca-001",
+          "filename": "unnamed.png",
+          "name": "unnamed",
+          "tags": [
+            "uncategorized",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.211Z"
+        },
+        {
+          "id": "unca-002",
+          "filename": "3583F822-4BC6-4B5D-9E67-23FA343528CD.PNG",
+          "name": "3583F822 4BC6 4B5D 9E67 23FA343528CD",
+          "tags": [
+            "uncategorized",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "PNG",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.214Z"
+        },
+        {
+          "id": "unca-003",
+          "filename": "209 revisions.png",
+          "name": "209 revisions",
+          "tags": [
+            "uncategorized",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.338Z"
+        },
+        {
+          "id": "unca-004",
+          "filename": "ea1f25cb-222f-4cb3-b4ba-2684760cf361.jpg",
+          "name": "ea1f25cb 222f 4cb3 b4ba 2684760cf361",
+          "tags": [
+            "uncategorized",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "jpg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.225Z"
+        }
+      ]
+    },
+    "campaigns": {
+      "description": "campaigns images",
+      "path": "/campaigns",
+      "count": 16,
+      "images": [
+        {
+          "id": "camp-001",
+          "filename": "linkedin-banner-accent.png",
+          "name": "linkedin banner accent",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.239Z"
+        },
+        {
+          "id": "camp-002",
+          "filename": "linkedin-banner-dark.png",
+          "name": "linkedin banner dark",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.240Z"
+        },
+        {
+          "id": "camp-003",
+          "filename": "linkedin-banner-gradient.png",
+          "name": "linkedin banner gradient",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.242Z"
+        },
+        {
+          "id": "camp-004",
+          "filename": "linkedin-banner-light.png",
+          "name": "linkedin banner light",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.245Z"
+        },
+        {
+          "id": "camp-005",
+          "filename": "facebook-announce.png",
+          "name": "facebook announce",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.248Z"
+        },
+        {
+          "id": "camp-006",
+          "filename": "facebook-problem.png",
+          "name": "facebook problem",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.252Z"
+        },
+        {
+          "id": "camp-007",
+          "filename": "facebook-solution.png",
+          "name": "facebook solution",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.254Z"
+        },
+        {
+          "id": "camp-008",
+          "filename": "facebook-thought.png",
+          "name": "facebook thought",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.257Z"
+        },
+        {
+          "id": "camp-009",
+          "filename": "instagram-announce.png",
+          "name": "instagram announce",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.261Z"
+        },
+        {
+          "id": "camp-010",
+          "filename": "instagram-problem.png",
+          "name": "instagram problem",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.264Z"
+        },
+        {
+          "id": "camp-011",
+          "filename": "instagram-solution.png",
+          "name": "instagram solution",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.268Z"
+        },
+        {
+          "id": "camp-012",
+          "filename": "instagram-thought.png",
+          "name": "instagram thought",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.272Z"
+        },
+        {
+          "id": "camp-013",
+          "filename": "linkedin-announce.png",
+          "name": "linkedin announce",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.276Z"
+        },
+        {
+          "id": "camp-014",
+          "filename": "linkedin-problem.png",
+          "name": "linkedin problem",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.279Z"
+        },
+        {
+          "id": "camp-015",
+          "filename": "linkedin-solution.png",
+          "name": "linkedin solution",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.283Z"
+        },
+        {
+          "id": "camp-016",
+          "filename": "linkedin-thought.png",
+          "name": "linkedin thought",
+          "tags": [
+            "campaigns",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.286Z"
+        }
+      ]
+    },
+    "marketing": {
+      "description": "marketing images",
+      "path": "/marketing",
+      "count": 193,
+      "images": [
+        {
+          "id": "mark-001",
+          "filename": "2396076b8a52b6cf254b10055783fbcd95d71a6d.png",
+          "name": "2396076b8a52b6cf254b10055783fbcd95d71a6d",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.339Z"
+        },
+        {
+          "id": "mark-002",
+          "filename": "3dcedf640c9d3d8d2c2ec8264faedebd456cc72a.png",
+          "name": "3dcedf640c9d3d8d2c2ec8264faedebd456cc72a",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.339Z"
+        },
+        {
+          "id": "mark-003",
+          "filename": "About Us • Desktop.png",
+          "name": "About Us • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.343Z"
+        },
+        {
+          "id": "mark-004",
+          "filename": "About Us • Mobile.png",
+          "name": "About Us • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.347Z"
+        },
+        {
+          "id": "mark-005",
+          "filename": "Blog  • Desktop.png",
+          "name": "Blog  • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.350Z"
+        },
+        {
+          "id": "mark-006",
+          "filename": "Blog  • Mobile.png",
+          "name": "Blog  • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.353Z"
+        },
+        {
+          "id": "mark-007",
+          "filename": "By Industry • Desktop.png",
+          "name": "By Industry • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.356Z"
+        },
+        {
+          "id": "mark-008",
+          "filename": "By Industry • Mobile.png",
+          "name": "By Industry • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.360Z"
+        },
+        {
+          "id": "mark-009",
+          "filename": "By Use Case • Desktop.png",
+          "name": "By Use Case • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.366Z"
+        },
+        {
+          "id": "mark-010",
+          "filename": "By Use Case • Mobile.png",
+          "name": "By Use Case • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.370Z"
+        },
+        {
+          "id": "mark-011",
+          "filename": "Contact • Desktop.png",
+          "name": "Contact • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.372Z"
+        },
+        {
+          "id": "mark-012",
+          "filename": "Contact • Mobile.png",
+          "name": "Contact • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.375Z"
+        },
+        {
+          "id": "mark-013",
+          "filename": "Home • Desktop.png",
+          "name": "Home • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.384Z"
+        },
+        {
+          "id": "mark-014",
+          "filename": "Home • Mobile.png",
+          "name": "Home • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.393Z"
+        },
+        {
+          "id": "mark-015",
+          "filename": "How It Helps You • Desktop.png",
+          "name": "How It Helps You • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.396Z"
+        },
+        {
+          "id": "mark-016",
+          "filename": "How It Helps You • Mobile.png",
+          "name": "How It Helps You • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.399Z"
+        },
+        {
+          "id": "mark-017",
+          "filename": "Legal • Desktop.png",
+          "name": "Legal • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.402Z"
+        },
+        {
+          "id": "mark-018",
+          "filename": "Legal • Mobile.png",
+          "name": "Legal • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.403Z"
+        },
+        {
+          "id": "mark-019",
+          "filename": "Pricing • Desktop.png",
+          "name": "Pricing • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.405Z"
+        },
+        {
+          "id": "mark-020",
+          "filename": "Pricing • Mobile.png",
+          "name": "Pricing • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.407Z"
+        },
+        {
+          "id": "mark-021",
+          "filename": "Product • Desktop.png",
+          "name": "Product • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.410Z"
+        },
+        {
+          "id": "mark-022",
+          "filename": "Product • Mobile.png",
+          "name": "Product • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.412Z"
+        },
+        {
+          "id": "mark-023",
+          "filename": "Realization • Desktop.png",
+          "name": "Realization • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.414Z"
+        },
+        {
+          "id": "mark-024",
+          "filename": "Realization • Mobile.png",
+          "name": "Realization • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.416Z"
+        },
+        {
+          "id": "mark-025",
+          "filename": "Resources • Desktop.png",
+          "name": "Resources • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.417Z"
+        },
+        {
+          "id": "mark-026",
+          "filename": "Resources • Mobile.png",
+          "name": "Resources • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.419Z"
+        },
+        {
+          "id": "mark-027",
+          "filename": "Solutions • Desktop.png",
+          "name": "Solutions • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.421Z"
+        },
+        {
+          "id": "mark-028",
+          "filename": "Solutions • Mobile.png",
+          "name": "Solutions • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.422Z"
+        },
+        {
+          "id": "mark-029",
+          "filename": "The Missing X • Desktop.png",
+          "name": "The Missing X • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.424Z"
+        },
+        {
+          "id": "mark-030",
+          "filename": "The Missing X • Mobile.png",
+          "name": "The Missing X • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.426Z"
+        },
+        {
+          "id": "mark-031",
+          "filename": "Why IntegrateWise • Desktop.png",
+          "name": "Why IntegrateWise • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.430Z"
+        },
+        {
+          "id": "mark-032",
+          "filename": "Why IntegrateWise • Mobile.png",
+          "name": "Why IntegrateWise • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.432Z"
+        },
+        {
+          "id": "mark-033",
+          "filename": "Your Routine • Desktop.png",
+          "name": "Your Routine • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.434Z"
+        },
+        {
+          "id": "mark-034",
+          "filename": "Your Routine • Mobile.png",
+          "name": "Your Routine • Mobile",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.435Z"
+        },
+        {
+          "id": "mark-035",
+          "filename": "76f4c06e86f5cdbe516fb6447ed45a10730f1cd5.png",
+          "name": "76f4c06e86f5cdbe516fb6447ed45a10730f1cd5",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.438Z"
+        },
+        {
+          "id": "mark-036",
+          "filename": "A_clean_technical_illustration_showing_the_Adaptiv-1774597259488.png",
+          "name": "A clean technical illustration showing the Adaptiv 1774597259488",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.443Z"
+        },
+        {
+          "id": "mark-037",
+          "filename": "A_creative_visual_metaphor_showing_each_business_a-1774597235590.png",
+          "name": "A creative visual metaphor showing each business a 1774597235590",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.450Z"
+        },
+        {
+          "id": "mark-038",
+          "filename": "A_detailed_Entity-360_view_interface_mockup_showin-1774597276578.png",
+          "name": "A detailed Entity 360 view interface mockup showin 1774597276578",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.454Z"
+        },
+        {
+          "id": "mark-039",
+          "filename": "A_detailed_mockup_of_a_unified_customer_view_dashb-1774597250000.png",
+          "name": "A detailed mockup of a unified customer view dashb 1774597250000",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.459Z"
+        },
+        {
+          "id": "mark-040",
+          "filename": "A_dramatic_before-and-after_split-screen_illustrat-1774597272023.png",
+          "name": "A dramatic before and after split screen illustrat 1774597272023",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.464Z"
+        },
+        {
+          "id": "mark-041",
+          "filename": "A_dramatic_visual_metaphor_showing_critical_busine-1774597244853.png",
+          "name": "A dramatic visual metaphor showing critical busine 1774597244853",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.469Z"
+        },
+        {
+          "id": "mark-042",
+          "filename": "A_horizontal_five-step_process_flow_diagram_showin-1774597252555.png",
+          "name": "A horizontal five step process flow diagram showin 1774597252555",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.477Z"
+        },
+        {
+          "id": "mark-043",
+          "filename": "A_sophisticated_diagram_illustrating_the_Adaptive_-1774597274073.png",
+          "name": "A sophisticated diagram illustrating the Adaptive  1774597274073",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.481Z"
+        },
+        {
+          "id": "mark-044",
+          "filename": "A_sophisticated_illustration_depicting_an_AI_assis-1774597255262.png",
+          "name": "A sophisticated illustration depicting an AI assis 1774597255262",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.487Z"
+        },
+        {
+          "id": "mark-045",
+          "filename": "About Us.png",
+          "name": "About Us",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.491Z"
+        },
+        {
+          "id": "mark-046",
+          "filename": "An_elegant_ecosystem_map_visualization_showing_twe-1774597278473.png",
+          "name": "An elegant ecosystem map visualization showing twe 1774597278473",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.497Z"
+        },
+        {
+          "id": "mark-047",
+          "filename": "An_illustration_depicting_data_fragmentation_acros-1774597227362.png",
+          "name": "An illustration depicting data fragmentation acros 1774597227362",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.504Z"
+        },
+        {
+          "id": "mark-048",
+          "filename": "An_illustration_showing_a_modern_knowledge_workspa-1774597257651.png",
+          "name": "An illustration showing a modern knowledge workspa 1774597257651",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.509Z"
+        },
+        {
+          "id": "mark-049",
+          "filename": "An_illustration_showing_a_professionals_energy_be-1774597238290.png",
+          "name": "An illustration showing a professionals energy be 1774597238290",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.517Z"
+        },
+        {
+          "id": "mark-050",
+          "filename": "An_illustration_showing_professionals_manually_sti-1774597229942.png",
+          "name": "An illustration showing professionals manually sti 1774597229942",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.525Z"
+        },
+        {
+          "id": "mark-051",
+          "filename": "An_illustration_showing_the_spreadsheet_trap_that_-1774597242595 (1).png",
+          "name": "An illustration showing the spreadsheet trap that  1774597242595 (1)",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.531Z"
+        },
+        {
+          "id": "mark-052",
+          "filename": "An_illustration_showing_the_spreadsheet_trap_that_-1774597242595.png",
+          "name": "An illustration showing the spreadsheet trap that  1774597242595",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.538Z"
+        },
+        {
+          "id": "mark-053",
+          "filename": "Circular_flow_diagram_illustrating_the_canonical_s-1774451058149.png",
+          "name": "Circular flow diagram illustrating the canonical s 1774451058149",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.543Z"
+        },
+        {
+          "id": "mark-054",
+          "filename": "Clean_minimal_diagram_showing_IntegrateWise_intell-1774452775971.png",
+          "name": "Clean minimal diagram showing IntegrateWise intell 1774452775971",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.547Z"
+        },
+        {
+          "id": "mark-055",
+          "filename": "Clean_minimal_illustration_showing_simple_connecti-1774453833551.png",
+          "name": "Clean minimal illustration showing simple connecti 1774453833551",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.550Z"
+        },
+        {
+          "id": "mark-056",
+          "filename": "Clean_onboarding_illustration_showing_IntegrateWis-1774453954468.png",
+          "name": "Clean onboarding illustration showing IntegrateWis 1774453954468",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.556Z"
+        },
+        {
+          "id": "mark-057",
+          "filename": "Clean_technical_pipeline_diagram_showing_the_manda-1774451049011.png",
+          "name": "Clean technical pipeline diagram showing the manda 1774451049011",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.559Z"
+        },
+        {
+          "id": "mark-058",
+          "filename": "Compelling_call-to-action_visual_showing_Apply_To-1774453798064.png",
+          "name": "Compelling call to action visual showing Apply To 1774453798064",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.564Z"
+        },
+        {
+          "id": "mark-059",
+          "filename": "Compelling_company_origin_story_visual_for_Integra-1774452437967.png",
+          "name": "Compelling company origin story visual for Integra 1774452437967",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.569Z"
+        },
+        {
+          "id": "mark-060",
+          "filename": "Compelling_hook_visual_for_IntegrateWise_demo_show-1774454780317.png",
+          "name": "Compelling hook visual for IntegrateWise demo show 1774454780317",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.574Z"
+        },
+        {
+          "id": "mark-061",
+          "filename": "Detailed_case_study_hero_for_Proof_8M_Account_S-1774450951593.png",
+          "name": "Detailed case study hero for Proof 8M Account S 1774450951593",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.580Z"
+        },
+        {
+          "id": "mark-062",
+          "filename": "Detailed_technical_flow_diagram_showing_the_L2_Cog-1774451044239.png",
+          "name": "Detailed technical flow diagram showing the L2 Cog 1774451044239",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.585Z"
+        },
+        {
+          "id": "mark-063",
+          "filename": "Dont be Human Cable for your own data and with your tools.png",
+          "name": "Dont be Human Cable for your own data and with your tools",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.593Z"
+        },
+        {
+          "id": "mark-064",
+          "filename": "Dramatic_professional_illustration_showing_the_uni-1774452465151.png",
+          "name": "Dramatic professional illustration showing the uni 1774452465151",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.601Z"
+        },
+        {
+          "id": "mark-065",
+          "filename": "Dramatic_supporting_visual_for_2025_Problem_page_s-1774450907012.png",
+          "name": "Dramatic supporting visual for 2025 Problem page s 1774450907012",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.608Z"
+        },
+        {
+          "id": "mark-066",
+          "filename": "Engaging_feature_section_visual_showing_Brainstorm-1774450892198.png",
+          "name": "Engaging feature section visual showing Brainstorm 1774450892198",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.613Z"
+        },
+        {
+          "id": "mark-067",
+          "filename": "Extract_and_isolate_a_clean_high-resolution_versi-1774515552771.png",
+          "name": "Extract and isolate a clean high resolution versi 1774515552771",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.615Z"
+        },
+        {
+          "id": "mark-068",
+          "filename": "A_wide_panoramic_illustration_showing_a_chaotic_di-1774597269667.png",
+          "name": "A wide panoramic illustration showing a chaotic di 1774597269667",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.621Z"
+        },
+        {
+          "id": "mark-069",
+          "filename": "An_elegant_visualization_showing_diverse_business_-1774597221820.png",
+          "name": "An elegant visualization showing diverse business  1774597221820",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.626Z"
+        },
+        {
+          "id": "mark-070",
+          "filename": "An_illustration_showing_how_mistakes_happen_when_t-1774597232913.png",
+          "name": "An illustration showing how mistakes happen when t 1774597232913",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.632Z"
+        },
+        {
+          "id": "mark-071",
+          "filename": "An_illustration_visualizing_the_hidden_cost_of_con-1774597247342.png",
+          "name": "An illustration visualizing the hidden cost of con 1774597247342",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.638Z"
+        },
+        {
+          "id": "mark-072",
+          "filename": "Infographic_illustration_showing_the_Spines_adapt-1774451114075.png",
+          "name": "Infographic illustration showing the Spines adapt 1774451114075",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.644Z"
+        },
+        {
+          "id": "mark-073",
+          "filename": "Premium_professional_B2B_SaaS_homepage_hero_banner-1774512571795.png",
+          "name": "Premium professional B2B SaaS homepage hero banner 1774512571795",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.652Z"
+        },
+        {
+          "id": "mark-074",
+          "filename": "Premium_professional_B2B_SaaS_homepage_hero_banner-1774519104159.png",
+          "name": "Premium professional B2B SaaS homepage hero banner 1774519104159",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.657Z"
+        },
+        {
+          "id": "mark-075",
+          "filename": "Professional_B2B_SaaS_hero_banner_background_overl-1774512375903.png",
+          "name": "Professional B2B SaaS hero banner background overl 1774512375903",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.663Z"
+        },
+        {
+          "id": "mark-076",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774519181744.png",
+          "name": "Professional B2B SaaS hero image for IntegrateWise 1774519181744",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.668Z"
+        },
+        {
+          "id": "mark-077",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774520888349.png",
+          "name": "Professional B2B SaaS hero image for IntegrateWise 1774520888349",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.674Z"
+        },
+        {
+          "id": "mark-078",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774519193460.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774519193460",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.680Z"
+        },
+        {
+          "id": "mark-079",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520896099.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774520896099",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.686Z"
+        },
+        {
+          "id": "mark-080",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520914217.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774520914217",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.692Z"
+        },
+        {
+          "id": "mark-081",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520917466.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774520917466",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.698Z"
+        },
+        {
+          "id": "mark-082",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520920168.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774520920168",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.703Z"
+        },
+        {
+          "id": "mark-083",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520935703.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774520935703",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.709Z"
+        },
+        {
+          "id": "mark-084",
+          "filename": "Professional_SaaS_homepage_hero_image_for_Integrat-1774506307051.png",
+          "name": "Professional SaaS homepage hero image for Integrat 1774506307051",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.720Z"
+        },
+        {
+          "id": "mark-085",
+          "filename": "Screenshot 2026-03-12 at 4.06.04 AM.png",
+          "name": "Screenshot 2026 03 12 at 4.06.04 AM",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.724Z"
+        },
+        {
+          "id": "mark-086",
+          "filename": "Split-screen_comparison_infographic_showing_tool_f-1774651518950.png",
+          "name": "Split screen comparison infographic showing tool f 1774651518950",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.727Z"
+        },
+        {
+          "id": "mark-087",
+          "filename": "Technical_diagram_illustration_showing_What_if_ev-1774651535482.png",
+          "name": "Technical diagram illustration showing What if ev 1774651535482",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.733Z"
+        },
+        {
+          "id": "mark-088",
+          "filename": "Upscale_and_enhance_image_quality-1774452841805.png",
+          "name": "Upscale and enhance image quality 1774452841805",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.744Z"
+        },
+        {
+          "id": "mark-089",
+          "filename": "].png",
+          "name": "]",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.745Z"
+        },
+        {
+          "id": "mark-090",
+          "filename": "IntegrateWise and the Knowledge Workspace Category.png",
+          "name": "IntegrateWise and the Knowledge Workspace Category",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.747Z"
+        },
+        {
+          "id": "mark-091",
+          "filename": "IntegrateWise-Document-Cover.png",
+          "name": "IntegrateWise Document Cover",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.749Z"
+        },
+        {
+          "id": "mark-092",
+          "filename": "IntegrateWise-Master-Sales-Deck.png",
+          "name": "IntegrateWise Master Sales Deck",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.754Z"
+        },
+        {
+          "id": "mark-093",
+          "filename": "IntegrateWise_ The Architecture of Context.png",
+          "name": "IntegrateWise  The Architecture of Context",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.756Z"
+        },
+        {
+          "id": "mark-094",
+          "filename": "Legal.png",
+          "name": "Legal",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.759Z"
+        },
+        {
+          "id": "mark-095",
+          "filename": "1.png",
+          "name": "1",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.761Z"
+        },
+        {
+          "id": "mark-096",
+          "filename": "1.svg",
+          "name": "1",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.764Z"
+        },
+        {
+          "id": "mark-097",
+          "filename": "2.png",
+          "name": "2",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.766Z"
+        },
+        {
+          "id": "mark-098",
+          "filename": "3.png",
+          "name": "3",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.769Z"
+        },
+        {
+          "id": "mark-099",
+          "filename": "ElevenLabs_image_nano-banana-2_BASED these ..._2026-03-28T07_58_20 1.png",
+          "name": "ElevenLabs image nano banana 2 BASED these ... 2026 03 28T07 58 20 1",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.772Z"
+        },
+        {
+          "id": "mark-100",
+          "filename": "e.png",
+          "name": "e",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.774Z"
+        },
+        {
+          "id": "mark-101",
+          "filename": "white.png",
+          "name": "white",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.776Z"
+        },
+        {
+          "id": "mark-102",
+          "filename": "Modern Work is Fragmented.png",
+          "name": "Modern Work is Fragmented",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.778Z"
+        },
+        {
+          "id": "mark-103",
+          "filename": "Modern_detective-style_visualization_showing_patte-1774451096975.png",
+          "name": "Modern detective style visualization showing patte 1774451096975",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.783Z"
+        },
+        {
+          "id": "mark-104",
+          "filename": "Narrative_visual_showing_founders_turning_point_m-1774452334924.png",
+          "name": "Narrative visual showing founders turning point m 1774452334924",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.790Z"
+        },
+        {
+          "id": "mark-105",
+          "filename": "Personal_and_universal_hero_image_for_The_Problem-1774450940026.png",
+          "name": "Personal and universal hero image for The Problem 1774450940026",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.799Z"
+        },
+        {
+          "id": "mark-106",
+          "filename": "Powerful_narrative_moment_showing_founders_breakt-1774452600638.png",
+          "name": "Powerful narrative moment showing founders breakt 1774452600638",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.804Z"
+        },
+        {
+          "id": "mark-107",
+          "filename": "Pricing.png",
+          "name": "Pricing",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.806Z"
+        },
+        {
+          "id": "mark-108",
+          "filename": "Privacy Policy • Desktop.png",
+          "name": "Privacy Policy • Desktop",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.809Z"
+        },
+        {
+          "id": "mark-109",
+          "filename": "Professional_B2B_SaaS_conceptual_illustration_for_-1774520908670.png",
+          "name": "Professional B2B SaaS conceptual illustration for  1774520908670",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.814Z"
+        },
+        {
+          "id": "mark-110",
+          "filename": "Professional_B2B_SaaS_contact_form_interface_mocku-1774519124690.png",
+          "name": "Professional B2B SaaS contact form interface mocku 1774519124690",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.819Z"
+        },
+        {
+          "id": "mark-111",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774507167284.png",
+          "name": "Professional B2B SaaS hero image for IntegrateWise 1774507167284",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.824Z"
+        },
+        {
+          "id": "mark-112",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774516657659.png",
+          "name": "Professional B2B SaaS hero image for IntegrateWise 1774516657659",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.827Z"
+        },
+        {
+          "id": "mark-113",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774519132959.png",
+          "name": "Professional B2B SaaS hero image for IntegrateWise 1774519132959",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.833Z"
+        },
+        {
+          "id": "mark-114",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774519159028.png",
+          "name": "Professional B2B SaaS hero image for IntegrateWise 1774519159028",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.837Z"
+        },
+        {
+          "id": "mark-115",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774520904850.png",
+          "name": "Professional B2B SaaS hero image for IntegrateWise 1774520904850",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.843Z"
+        },
+        {
+          "id": "mark-116",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774520924816.png",
+          "name": "Professional B2B SaaS hero image for IntegrateWise 1774520924816",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.848Z"
+        },
+        {
+          "id": "mark-117",
+          "filename": "Professional_B2B_SaaS_hero_image_for_IntegrateWise-1774520932452.png",
+          "name": "Professional B2B SaaS hero image for IntegrateWise 1774520932452",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.854Z"
+        },
+        {
+          "id": "mark-118",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774516666844.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774516666844",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.859Z"
+        },
+        {
+          "id": "mark-119",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774516720759.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774516720759",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.863Z"
+        },
+        {
+          "id": "mark-120",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774519128622.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774519128622",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.870Z"
+        },
+        {
+          "id": "mark-121",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520892798.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774520892798",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.875Z"
+        },
+        {
+          "id": "mark-122",
+          "filename": "Professional_B2B_SaaS_illustration_for_IntegrateWi-1774520899269.png",
+          "name": "Professional B2B SaaS illustration for IntegrateWi 1774520899269",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.882Z"
+        },
+        {
+          "id": "mark-123",
+          "filename": "Professional_B2B_SaaS_interface_mockup_for_Integra-1774520901983.png",
+          "name": "Professional B2B SaaS interface mockup for Integra 1774520901983",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.889Z"
+        },
+        {
+          "id": "mark-124",
+          "filename": "Professional_B2B_SaaS_interface_mockup_for_Integra-1774520911134.png",
+          "name": "Professional B2B SaaS interface mockup for Integra 1774520911134",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.894Z"
+        },
+        {
+          "id": "mark-125",
+          "filename": "Professional_B2B_SaaS_team_photograph_for_Integrat-1774519112411.png",
+          "name": "Professional B2B SaaS team photograph for Integrat 1774519112411",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.903Z"
+        },
+        {
+          "id": "mark-126",
+          "filename": "Professional_B2B_SaaS_team_photograph_for_Integrat-1774520928651.png",
+          "name": "Professional B2B SaaS team photograph for Integrat 1774520928651",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.909Z"
+        },
+        {
+          "id": "mark-127",
+          "filename": "Professional_call-to-action_hero_image_for_Integra-1774453104182.png",
+          "name": "Professional call to action hero image for Integra 1774453104182",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.918Z"
+        },
+        {
+          "id": "mark-128",
+          "filename": "Professional_customer_support_and_success_concept_-1774455132508.png",
+          "name": "Professional customer support and success concept  1774455132508",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.922Z"
+        },
+        {
+          "id": "mark-129",
+          "filename": "Professional_enterprise_software_architecture_diag-1774504727052.png",
+          "name": "Professional enterprise software architecture diag 1774504727052",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.938Z"
+        },
+        {
+          "id": "mark-130",
+          "filename": "Professional_feature_section_image_showing_seamles-1774452714456.png",
+          "name": "Professional feature section image showing seamles 1774452714456",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.942Z"
+        },
+        {
+          "id": "mark-131",
+          "filename": "Professional_hero_image_for_homepage_showing_The_-1774450959512.png",
+          "name": "Professional hero image for homepage showing The  1774450959512",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.948Z"
+        },
+        {
+          "id": "mark-132",
+          "filename": "Professional_photograph_of_diverse_startup_team_co-1774453012425.png",
+          "name": "Professional photograph of diverse startup team co 1774453012425",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.953Z"
+        },
+        {
+          "id": "mark-133",
+          "filename": "Professional_technical_architecture_diagram_showin-1774451066287.png",
+          "name": "Professional technical architecture diagram showin 1774451066287",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.957Z"
+        },
+        {
+          "id": "mark-134",
+          "filename": "Professional_technical_diagram_illustrating_Integr-1774453911581.png",
+          "name": "Professional technical diagram illustrating Integr 1774453911581",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.961Z"
+        },
+        {
+          "id": "mark-135",
+          "filename": "Professional_testimonial_visual_for_IntegrateWise_-1774454863579.png",
+          "name": "Professional testimonial visual for IntegrateWise  1774454863579",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.966Z"
+        },
+        {
+          "id": "mark-136",
+          "filename": "Realistic_evening_work_burnout_photography_Moody_-1774651547454.png",
+          "name": "Realistic evening work burnout photography Moody  1774651547454",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.971Z"
+        },
+        {
+          "id": "mark-137",
+          "filename": "Realistic_office_photography_showing_meeting_with_-1774651554499.png",
+          "name": "Realistic office photography showing meeting with  1774651554499",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.980Z"
+        },
+        {
+          "id": "mark-138",
+          "filename": "Realistic_professional_photography_of_diverse_busi-1774651559842.png",
+          "name": "Realistic professional photography of diverse busi 1774651559842",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.986Z"
+        },
+        {
+          "id": "mark-139",
+          "filename": "Remove_background_from_logo_image_to_create_transp-1774533526460.png",
+          "name": "Remove background from logo image to create transp 1774533526460",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.988Z"
+        },
+        {
+          "id": "mark-140",
+          "filename": "Sales_demo_flow_visualization_showing_6-step_prese-1774450991802.png",
+          "name": "Sales demo flow visualization showing 6 step prese 1774450991802",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.992Z"
+        },
+        {
+          "id": "mark-141",
+          "filename": "Side-by-side_comparison_illustration_showing_categ-1774451086306.png",
+          "name": "Side by side comparison illustration showing categ 1774451086306",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:01.996Z"
+        },
+        {
+          "id": "mark-142",
+          "filename": "Timeline_diagram_showing_workspace_loading_phases_-1774451040821.png",
+          "name": "Timeline diagram showing workspace loading phases  1774451040821",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.002Z"
+        },
+        {
+          "id": "mark-143",
+          "filename": "Transformative_hero_image_for_How_Spine_Solves_Yo-1774450947326.png",
+          "name": "Transformative hero image for How Spine Solves Yo 1774450947326",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.009Z"
+        },
+        {
+          "id": "mark-144",
+          "filename": "Welcoming_and_approachable_hero_image_for_Contact_-1774450925699.png",
+          "name": "Welcoming and approachable hero image for Contact  1774450925699",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.015Z"
+        },
+        {
+          "id": "mark-145",
+          "filename": "Welcoming_professional_image_showing_IntegrateWise-1774454959549.png",
+          "name": "Welcoming professional image showing IntegrateWise 1774454959549",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.020Z"
+        },
+        {
+          "id": "mark-146",
+          "filename": "a47dcc56700a6b172659616806767f52707e2aa4.png",
+          "name": "a47dcc56700a6b172659616806767f52707e2aa4",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.024Z"
+        },
+        {
+          "id": "mark-147",
+          "filename": "adaptive spine.png",
+          "name": "adaptive spine",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.028Z"
+        },
+        {
+          "id": "mark-148",
+          "filename": "adaptive-icon.png",
+          "name": "adaptive icon",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.029Z"
+        },
+        {
+          "id": "mark-149",
+          "filename": "amazon.png",
+          "name": "amazon",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.030Z"
+        },
+        {
+          "id": "mark-150",
+          "filename": "attio.png",
+          "name": "attio",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.030Z"
+        },
+        {
+          "id": "mark-151",
+          "filename": "b4d0118543bc011744949ebbf871f95430182503.png",
+          "name": "b4d0118543bc011744949ebbf871f95430182503",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.031Z"
+        },
+        {
+          "id": "mark-152",
+          "filename": "b7b4e314cc3eb923b7fa8aac8183d1866fe76120.png",
+          "name": "b7b4e314cc3eb923b7fa8aac8183d1866fe76120",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.032Z"
+        },
+        {
+          "id": "mark-153",
+          "filename": "b9320919cc0e07a1bd312286c0f80174ef3d5a81.png",
+          "name": "b9320919cc0e07a1bd312286c0f80174ef3d5a81",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.038Z"
+        },
+        {
+          "id": "mark-154",
+          "filename": "ba9f4b8e17ab49c0146123ed44fdd8620311d726.png",
+          "name": "ba9f4b8e17ab49c0146123ed44fdd8620311d726",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.040Z"
+        },
+        {
+          "id": "mark-155",
+          "filename": "claude.png",
+          "name": "claude",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.040Z"
+        },
+        {
+          "id": "mark-156",
+          "filename": "d568b164c26b35eebe6a407c03f478bc8049c84b.png",
+          "name": "d568b164c26b35eebe6a407c03f478bc8049c84b",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.041Z"
+        },
+        {
+          "id": "mark-157",
+          "filename": "download (1).png",
+          "name": "download (1)",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.047Z"
+        },
+        {
+          "id": "mark-158",
+          "filename": "download.png",
+          "name": "download",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.054Z"
+        },
+        {
+          "id": "mark-159",
+          "filename": "e305aba212440b8f4e00d513a6d63488a81a5e74.png",
+          "name": "e305aba212440b8f4e00d513a6d63488a81a5e74",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.054Z"
+        },
+        {
+          "id": "mark-160",
+          "filename": "favicon.png",
+          "name": "favicon",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.055Z"
+        },
+        {
+          "id": "mark-161",
+          "filename": "gemini-2.5-flash-image_Make_this_image_equivalent_to_the_home_page_maybe_that_banner_page.-0.jpg",
+          "name": "gemini 2.5 flash image Make this image equivalent to the home page maybe that banner page. 0",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "jpg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.057Z"
+        },
+        {
+          "id": "mark-162",
+          "filename": "github.png",
+          "name": "github",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.057Z"
+        },
+        {
+          "id": "mark-163",
+          "filename": "gmail.png",
+          "name": "gmail",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.058Z"
+        },
+        {
+          "id": "mark-164",
+          "filename": "hero banner.jpeg",
+          "name": "hero banner",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "jpeg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.060Z"
+        },
+        {
+          "id": "mark-165",
+          "filename": "hubspot.png",
+          "name": "hubspot",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.061Z"
+        },
+        {
+          "id": "mark-166",
+          "filename": "icon.png",
+          "name": "icon",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.062Z"
+        },
+        {
+          "id": "mark-167",
+          "filename": "image.png",
+          "name": "image",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.067Z"
+        },
+        {
+          "id": "mark-168",
+          "filename": "image_28a941ac-29cf-4329-8b25-9c94748e1db0.svg",
+          "name": "image 28a941ac 29cf 4329 8b25 9c94748e1db0",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.069Z"
+        },
+        {
+          "id": "mark-169",
+          "filename": "image_5ac51f36-3a61-4d57-8cca-819c0a9db59d.svg",
+          "name": "image 5ac51f36 3a61 4d57 8cca 819c0a9db59d",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.074Z"
+        },
+        {
+          "id": "mark-170",
+          "filename": "images.png",
+          "name": "images",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.075Z"
+        },
+        {
+          "id": "mark-171",
+          "filename": "instagram-announce.png",
+          "name": "instagram announce",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.078Z"
+        },
+        {
+          "id": "mark-172",
+          "filename": "instagram-problem.png",
+          "name": "instagram problem",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.083Z"
+        },
+        {
+          "id": "mark-173",
+          "filename": "instagram-solution.png",
+          "name": "instagram solution",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.086Z"
+        },
+        {
+          "id": "mark-174",
+          "filename": "linkedin-banner-accent.png",
+          "name": "linkedin banner accent",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.089Z"
+        },
+        {
+          "id": "mark-175",
+          "filename": "linkedin-banner-dark.png",
+          "name": "linkedin banner dark",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.090Z"
+        },
+        {
+          "id": "mark-176",
+          "filename": "linkedin-banner-gradient.png",
+          "name": "linkedin banner gradient",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.092Z"
+        },
+        {
+          "id": "mark-177",
+          "filename": "linkedin-banner-light.png",
+          "name": "linkedin banner light",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.094Z"
+        },
+        {
+          "id": "mark-178",
+          "filename": "logPo_green.png",
+          "name": "logPo green",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.098Z"
+        },
+        {
+          "id": "mark-179",
+          "filename": "logo_green.png",
+          "name": "logo green",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.102Z"
+        },
+        {
+          "id": "mark-180",
+          "filename": "logo_white.png",
+          "name": "logo white",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.104Z"
+        },
+        {
+          "id": "mark-181",
+          "filename": "logodgreen.svg",
+          "name": "logodgreen",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.108Z"
+        },
+        {
+          "id": "mark-182",
+          "filename": "logogreen.svg",
+          "name": "logogreen",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.114Z"
+        },
+        {
+          "id": "mark-183",
+          "filename": "logowh.svg",
+          "name": "logowh",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "svg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.116Z"
+        },
+        {
+          "id": "mark-184",
+          "filename": "neon.png",
+          "name": "neon",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.117Z"
+        },
+        {
+          "id": "mark-185",
+          "filename": "notion.png",
+          "name": "notion",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.118Z"
+        },
+        {
+          "id": "mark-186",
+          "filename": "openai.jpg",
+          "name": "openai",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "jpg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.120Z"
+        },
+        {
+          "id": "mark-187",
+          "filename": "outlook.png",
+          "name": "outlook",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.120Z"
+        },
+        {
+          "id": "mark-188",
+          "filename": "partial-react-logo.png",
+          "name": "partial react logo",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.121Z"
+        },
+        {
+          "id": "mark-189",
+          "filename": "phonepe.png",
+          "name": "phonepe",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.121Z"
+        },
+        {
+          "id": "mark-190",
+          "filename": "react-logo.png",
+          "name": "react logo",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.122Z"
+        },
+        {
+          "id": "mark-191",
+          "filename": "salesforce.png",
+          "name": "salesforce",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.123Z"
+        },
+        {
+          "id": "mark-192",
+          "filename": "spine.jpeg",
+          "name": "spine",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "jpeg",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.125Z"
+        },
+        {
+          "id": "mark-193",
+          "filename": "supabase.png",
+          "name": "supabase",
+          "tags": [
+            "marketing",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.126Z"
+        }
+      ]
+    },
+    "product": {
+      "description": "product images",
+      "path": "/product",
+      "count": 1,
+      "images": [
+        {
+          "id": "prod-001",
+          "filename": "Layerd Architecture.png",
+          "name": "Layerd Architecture",
+          "tags": [
+            "product",
+            "auto-imported"
+          ],
+          "usage": [
+            "general"
+          ],
+          "format": "png",
+          "source": "dropbox",
+          "imported": "2026-03-29T06:28:02.172Z"
+        }
+      ]
     }
   },
   "stats": {
-    "totalImages": 41,
+    "totalImages": 420,
     "totalCategories": 9,
-    "formats": ["png", "svg"],
+    "formats": [
+      "png",
+      "svg"
+    ],
     "largestCategory": "illustrations"
   }
 }
