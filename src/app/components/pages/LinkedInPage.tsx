@@ -71,13 +71,13 @@ const DEFAULT_LINKEDIN_CONTENT = {
       title: "Problem-Solution Post",
       content: `Modern work is fragmented. Tools disconnected. Knowledge scattered. AI without context.
 
-That's why we built IntegrateWise — a Knowledge Workspace where your entire tech stack connects into one Adaptive Spine.
+That's why we built IntegrateWise — an adaptive continuity workspace where your entire tech stack connects into one Adaptive Spine.
 
 AI surfaces what matters. Humans approve every action.
 
 Context before Intelligence. Governance before Execution.
 
-#KnowledgeWorkspace #AIGovernance #IntegrateWise`,
+#AdaptiveContinuity #AIGovernance #IntegrateWise`,
       image: "gradient-dark"
     },
     {
@@ -108,7 +108,7 @@ That's IntegrateWise.`,
 ✓ AI reasons with full context
 ✓ Every action waits for approval
 
-The Knowledge Workspace is here.
+The Adaptive Continuity Workspace is here.
 
 Ready to see your connected reality?
 
@@ -118,13 +118,13 @@ Ready to see your connected reality?
   ],
   companyInfo: {
     name: "IntegrateWise",
-    tagline: "Knowledge Workspace Over the Spine and Empowered by AI",
-    about: `IntegrateWise is a knowledge workspace powered by the Spine — a unified intelligence layer that connects tools, context, knowledge, and decisions.
+    tagline: "Adaptive continuity workspace hydrated by the Spine",
+    about: `IntegrateWise is an adaptive continuity workspace powered by the Spine — a unified continuity core that connects tools, context, knowledge, and decisions.
 
-By organizing operational truth into the Spine, AI can reason across systems, propose actions, and continuously learn while ensuring that every action waits for human approval.
+By continuously hydrating the Spine from connectors and operational reality, AI can reason across systems, propose actions, and continuously learn while ensuring that every action waits for human approval.
 
-IntegrateWise brings work, knowledge, and decisions together into one governed environment where intelligence is contextual and execution remains human-controlled.`,
-    specialties: "AI Workspace, Knowledge Workspace, Context-Aware AI, Enterprise AI, Human-Governed AI, Workflow Intelligence, Data Integration, Decision Intelligence",
+IntegrateWise projects workspace and knowledge from the current continuity topology — one governed environment where intelligence is grounded in organizational truth.`,
+    specialties: "Adaptive Continuity Workspace, Organizational Continuity, Context-Aware AI, Enterprise AI, Human-Governed AI, Workflow Intelligence, Data Integration, Decision Intelligence",
     website: "https://integratewise.ai",
     industry: "Enterprise Software",
     size: "11-50 employees",

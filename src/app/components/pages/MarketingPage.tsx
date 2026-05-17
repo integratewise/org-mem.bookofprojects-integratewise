@@ -102,7 +102,7 @@ That's IntegrateWise.`,
 ✓ AI reasons with full context
 ✓ Every action waits for approval
 
-The Knowledge Workspace is here.
+The Adaptive Continuity Workspace is here.
 
 Ready to see your connected reality?
 

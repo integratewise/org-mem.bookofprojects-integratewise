@@ -492,7 +492,7 @@ export function CompanyPage() {
               "Pre-launch: Build waitlist, tease features, create FOMO",
               "Assets: Landing page, demo video, case studies, battlecards",
               "Channels: LinkedIn, email, webinars, PR, paid social",
-              "Messaging: 'The Knowledge Workspace that Waits for Approval'",
+              "Messaging: 'The Adaptive Continuity Workspace that Waits for Approval'",
               "CTA: 'Join [X] teams already on the waitlist'",
               "Launch: Coordinated push across all channels",
               "Post: Measure, optimize, nurture non-converters"
@@ -643,7 +643,7 @@ I noticed [Company] is growing fast in [space]. Most [Role] I talk to at similar
 
 The data exists. The context lives somewhere else. The action happens in a third place. Sound familiar?
 
-We built IntegrateWise to solve exactly this — a Knowledge Workspace that connects your entire tech stack into one intelligence layer, where AI surfaces what matters but waits for your approval before acting.
+We built IntegrateWise to solve exactly this — an adaptive continuity workspace that connects your entire tech stack into one Adaptive Spine, where AI surfaces what matters but waits for your approval before acting.
 
 Worth a brief conversation to see if this applies to [Company]?
 
@@ -829,12 +829,12 @@ Best,
         <SectionHeader icon={Quote} title="Canonical Statement" />
         <AnimatedCard className="bg-gradient-to-br from-[rgba(65,84,163,0.05)] to-[rgba(235,67,121,0.05)]">
           <h2 className="text-2xl font-bold text-[#1B2544] mb-2">
-            Knowledge Workspace Over the Spine and Empowered by AI
+            Adaptive Continuity Workspace — Hydrated by the Spine
           </h2>
           <p className="text-lg text-[#5F6E93] mb-4">
             Where AI thinks in context and waits for approvals
           </p>
-          <CopyButton text="Knowledge Workspace Over the Spine and Empowered by AI. Where AI thinks in context and waits for approvals." />
+          <CopyButton text="Adaptive continuity workspace hydrated by the Spine. Where AI thinks in context and waits for approvals." />
         </AnimatedCard>
       </motion.section>
 
