@@ -147,7 +147,7 @@ const DOCUMENTATION_PACKS: DocumentPack[] = [
       {
         id: 'b-01',
         title: 'Category Definition Brief',
-        description: 'Knowledge Workspace as a category',
+        description: 'Continuity as a category and operating model',
         status: 'complete',
         priority: 'tier1',
         owner: 'Marketing',

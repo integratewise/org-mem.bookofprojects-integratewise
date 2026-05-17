@@ -13,7 +13,7 @@ export const BRAND = {
   founded: '2024',
   location: 'Bengaluru, India',
   website: 'integratewise.ai',
-  category: 'Knowledge Workspace',
+  category: 'Adaptive Continuity Workspace',
 } as const;
 
 // ─── Taglines & Descriptors ───────────────────────────────────────────────────
@@ -29,14 +29,14 @@ export const TAGLINES = {
   },
 
   /** Short descriptor for headlines, social bios, slide subtitles */
-  descriptor: 'Knowledge Workspace empowered by AI and the Spine',
+  descriptor: 'Adaptive continuity workspace hydrated by the Spine',
 
   /** Full descriptor for letterheads, one-pagers */
-  descriptorFull: 'The Knowledge Workspace empowered by AI and the Spine',
+  descriptorFull: 'The adaptive continuity workspace hydrated by the Spine',
 
   /** Extended form for banners and marketing copy */
   descriptorExtended:
-    'Knowledge Workspace over the Spine and Empowered by AI',
+    'Adaptive continuity workspace projected from hydrated organizational reality',
 
   /** Long-form value statement */
   valueProp:
@@ -44,7 +44,7 @@ export const TAGLINES = {
 
   /** One-paragraph product narrative */
   oneParagraph:
-    'IntegrateWise is a Knowledge Workspace empowered by AI and the Spine — a workspace-first system that connects your tools, grounds intelligence in the Spine, compounds approved knowledge, and enables governed action.',
+    'IntegrateWise is an adaptive continuity workspace where connectors, workflows, conversations, and artifacts continuously hydrate the Spine; workspace and knowledge then project from current continuity with human-governed AI execution.',
 } as const;
 
 // ─── Contact & Social ─────────────────────────────────────────────────────────

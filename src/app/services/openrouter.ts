@@ -55,8 +55,8 @@ YOUR ROLE:
 BRAND CONTEXT:
 - Company: IntegrateWise LLP
 - Tagline: "AI Thinks in Context — and Waits for Approval"
-- Descriptor: "Knowledge Workspace Over the Spine and Empowered by AI"
-- Core Pillars: The Spine (SSOT), Context-Aware AI, Approval Governance, Workspace Layers
+- Descriptor: "Adaptive continuity workspace projected from hydrated organizational reality"
+- Core Pillars: Continuity as primitive, Adaptive Spine, Continuity Hydration, Workspace Projection, Adaptive Knowledge, Approval Governance
 - Tone: Professional, technical but accessible, authoritative yet humble
 
 YOUR CAPABILITIES:
@@ -65,13 +65,13 @@ YOUR CAPABILITIES:
 - Generate new content (emails, posts, copy) matching brand voice
 - Validate consistency across documents
 - Provide strategic content recommendations
-- Check for messaging hierarchy: Knowledge Workspace → Spine → AI
+- Check for messaging hierarchy: Continuity → Spine Hydration → Workspace Projection → Governed AI
 
 When responding:
 - Be direct and actionable
 - Reference specific brand guidelines when relevant
 - Suggest concrete improvements, not just general feedback
-- Maintain the "AI Thinks in Context" philosophy in your tone`;
+- Maintain the "AI Thinks in Context" and continuity-first philosophy in your tone`;
 
 export async function sendMessageToAI(
   userMessage: string,
@@ -162,7 +162,7 @@ export async function generateContent(
 - Target audience: ${audience}
 - Tone: ${tone}
 
-Create content that aligns with IntegrateWise brand messaging (Knowledge Workspace, Spine, AI governance).`;
+Create content that aligns with IntegrateWise brand messaging (continuity, adaptive Spine, workspace projection, governed AI).`;
 
   return sendMessageToAI(prompt, undefined, apiKey, model);
 }
