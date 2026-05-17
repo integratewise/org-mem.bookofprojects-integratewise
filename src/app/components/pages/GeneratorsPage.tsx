@@ -43,8 +43,8 @@ import { saveAs } from 'file-saver';
 const BRAND = {
   company: 'IntegrateWise LLP',
   companyShort: 'IntegrateWise',
-  descriptor: 'Knowledge Workspace Over the Spine and Empowered by AI',
-  descriptorShort: 'AI Knowledge Workspace',
+  descriptor: 'Adaptive continuity workspace hydrated by the Spine',
+  descriptorShort: 'Adaptive Continuity Workspace',
   tagline: 'AI Thinks in Context — and Waits for Approval',
   taglineShort: 'Context-Aware AI. Approval-Controlled Work.',
   taglineExtended: 'AI Thinks in Context. Humans Stay in Control. Every Action Waits for Approval.',
@@ -72,8 +72,8 @@ const BRAND = {
     'The Spine — Unified Intelligence Layer',
     'The Spine — Single Source of Truth and Unified Intelligence Layer',
   ],
-  linkedinSpecialties: 'AI Workspace, Knowledge Workspace, Context-Aware AI, Enterprise AI, Human-Governed AI, Workflow Intelligence, Data Integration, Decision Intelligence',
-  linkedinAbout: `IntegrateWise is a knowledge workspace powered by the Spine — a unified intelligence layer that connects tools, context, knowledge, and decisions.\n\nBy organizing operational truth into the Spine, AI can reason across systems, propose actions, and continuously learn while ensuring that every action waits for human approval.\n\nIntegrateWise brings work, knowledge, and decisions together into one governed environment where intelligence is contextual and execution remains human-controlled.`,
+  linkedinSpecialties: 'Adaptive Continuity Workspace, Context-Aware AI, Enterprise AI, Human-Governed AI, Workflow Intelligence, Organizational Continuity, Data Integration, Decision Intelligence',
+  linkedinAbout: `IntegrateWise is an adaptive continuity workspace powered by the Spine — a unified continuity core that connects tools, context, knowledge, and decisions.\n\nBy continuously hydrating the Spine from connectors and operational reality, AI can reason across systems, propose actions, and continuously learn while ensuring that every action waits for human approval.\n\nIntegrateWise projects workspace and knowledge from the current continuity topology — one governed environment where intelligence is grounded in organizational truth.`,
 };
 
 const DEFAULT_TEAM: TeamMember[] = [
@@ -1069,7 +1069,7 @@ function CopyLibrary() {
       { id: 'a1', label: 'Letterhead', text: `${BRAND.company} · ${BRAND.descriptor}` },
       { id: 'a2', label: 'Invoice Footer', text: 'IntegrateWise — AI Thinks in Context and Works Through Approvals' },
       { id: 'a3', label: 'Business Card', text: BRAND.descriptor },
-      { id: 'a4', label: 'Profile Headline', text: 'The Knowledge Workspace Where AI Thinks in Context' },
+      { id: 'a4', label: 'Profile Headline', text: 'The Adaptive Continuity Workspace — AI Thinks in Context' },
       { id: 'a5', label: 'Brochure', text: 'Bring Work, Knowledge, and Decisions Together Through the Spine' },
       { id: 'a6', label: 'Marketing', text: 'Work Becomes Smarter When AI Understands Context' },
     ]},

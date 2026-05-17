@@ -17,7 +17,7 @@ const DEFAULT_SLIDES = [
     id: '1',
     type: 'title',
     title: "IntegrateWise",
-    subtitle: "Knowledge Workspace Over the Spine",
+    subtitle: "Adaptive Continuity Workspace — Hydrated by the Spine",
     tagline: "AI Thinks in Context — and Waits for Approval",
     layout: 'center'
   },
@@ -33,8 +33,8 @@ const DEFAULT_SLIDES = [
   {
     id: '3',
     type: 'solution',
-    title: "The Knowledge Workspace",
-    content: "Where your entire tech stack connects into one Adaptive Spine. AI surfaces what matters. Humans approve every action.",
+    title: "The Adaptive Continuity Workspace",
+    content: "Where your entire tech stack connects into one Adaptive Spine. Continuity hydrates continuously. AI surfaces what matters. Humans approve every action.",
     features: [
       "Unified Intelligence Layer",
       "Context-Aware AI",
@@ -145,7 +145,7 @@ const DEFAULT_BANNERS = [
     id: 'b2',
     name: 'Dark Mode',
     bg: 'linear-gradient(135deg, #1B2544 0%, #2d3561 50%, #4154A3 100%)',
-    headline: 'The Knowledge Workspace',
+    headline: 'The Adaptive Continuity Workspace',
     tagline: 'Unified Intelligence. Human-Governed.',
     cta: 'integratewise.ai'
   },
@@ -162,7 +162,7 @@ const DEFAULT_BANNERS = [
     name: 'Clean White',
     bg: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%)',
     headline: 'IntegrateWise',
-    tagline: 'Knowledge Workspace Over the Spine',
+    tagline: 'Adaptive Continuity Workspace — Hydrated by the Spine',
     cta: 'integratewise.ai',
     textColor: '#1B2544'
   }

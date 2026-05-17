@@ -654,7 +654,7 @@ export function ArchitecturePage() {
           transition={{ delay: 0.2 }}
           className="text-lg text-[#5F6E93] leading-relaxed max-w-2xl mx-auto"
         >
-          A <strong className="text-[#1B2544]">Knowledge Workspace over the Spine</strong>, empowered by AI and governed by approvals.
+          An <strong className="text-[#1B2544]">Adaptive Continuity Workspace</strong>, hydrated from the Spine and governed by human approvals.
         </motion.p>
       </motion.div>
 
@@ -693,9 +693,9 @@ export function ArchitecturePage() {
           
           <AnimatedLayerCard 
             number={1}
-            title="Unified Workspace (over the Spine)"
+            title="Adaptive Continuity Workspace (projected from Spine)"
             subtitle="Human Interface Layer"
-            description="Knowledge Workspace — the UI where humans see truth, signals, and approval cards."
+            description="Adaptive Continuity Workspace — the UI where humans see truth, signals, and approval cards projected from current continuity."
             color="#4154A3"
             icon={Globe}
             features={[

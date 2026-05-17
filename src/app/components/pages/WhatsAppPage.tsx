@@ -15,7 +15,7 @@ const DEFAULT_WHATSAPP_CONTENT = {
       id: "platform", 
       name: "IntegrateWise Platform", 
       price: "Starting at $499/mo", 
-      description: "Knowledge Workspace with Adaptive Spine",
+      description: "Adaptive Continuity Workspace powered by the Spine",
       emoji: "🚀"
     },
     { 
@@ -47,7 +47,7 @@ const DEFAULT_WHATSAPP_CONTENT = {
       emoji: "👋",
       text: `👋 Welcome to IntegrateWise!
 
-The Knowledge Workspace Over the Spine and Empowered by AI — connecting your tools, context, and decisions in one place.
+The Adaptive Continuity Workspace — hydrated by the Spine and empowered by AI — connecting your tools, context, and decisions in one place.
 
 How can we help you today?
 

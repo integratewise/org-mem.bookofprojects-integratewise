@@ -41,7 +41,7 @@ Quick question: How are you currently handling cross-tool visibility? Most teams
 • Missing signals because they're in different systems
 • AI without proper context
 
-We built IntegrateWise to solve exactly this — a Knowledge Workspace where your entire tech stack connects into one Adaptive Spine. AI surfaces what matters, humans approve every action.
+We built IntegrateWise to solve exactly this — an adaptive continuity workspace where your entire tech stack connects into one Adaptive Spine. Continuity hydrates continuously. AI surfaces what matters, humans approve every action.
 
 Worth a brief conversation to see if this applies to {{Company}}?
 
@@ -102,7 +102,7 @@ IntegrateWise`,
   <tr>
     <td style="padding-right: 16px; border-right: 2px solid #4154A3;">
       <p style="margin: 0; font-size: 18px; font-weight: 600; color: #4154A3;">IntegrateWise</p>
-      <p style="margin: 4px 0 0; font-size: 11px; color: #636A82;">Knowledge Workspace Over the Spine</p>
+      <p style="margin: 4px 0 0; font-size: 11px; color: #636A82;">Adaptive Continuity Workspace — Hydrated by the Spine</p>
     </td>
     <td style="padding-left: 16px;">
       <p style="margin: 0; font-weight: 600; color: #1B2544;">[Your Name]</p>
@@ -128,7 +128,7 @@ IntegrateWise`,
       name: "Minimal",
       html: `<div style="font-family: Arial, sans-serif; font-size: 13px; color: #2F3D5E;">
   <p style="margin: 0; font-weight: 600; color: #1B2544;">[Your Name]</p>
-  <p style="margin: 2px 0; font-size: 12px; color: #4154A3;">IntegrateWise — Knowledge Workspace Over the Spine</p>
+  <p style="margin: 2px 0; font-size: 12px; color: #4154A3;">IntegrateWise — Adaptive Continuity Workspace</p>
   <p style="margin: 4px 0 0; font-size: 11px; color: #5F6E93;">
     hello@integratewise.ai | integratewise.ai
   </p>

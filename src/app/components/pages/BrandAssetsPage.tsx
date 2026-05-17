@@ -668,11 +668,11 @@ export function BrandAssetsPage() {
       <div className="flex items-start gap-3 p-4 rounded-lg" style={{ background: '#FFF9E6', border: '1px solid #F5E6A3' }}>
         <Lightbulb className="w-5 h-5 shrink-0 mt-0.5" style={{ color: '#C48A00' }} />
         <div>
-          <p className="text-sm font-medium" style={{ color: '#6B4D00' }}>Important Brand Correction</p>
+          <p className="text-sm font-medium" style={{ color: '#6B4D00' }}>Brand Descriptor Update</p>
           <p className="text-sm mt-1" style={{ color: '#7A5C00' }}>
             The original logo subtitle says "Enterprise integrations" — the brand now clearly
-            stands for <strong>Knowledge Workspace</strong>. All stationery and marketing
-            materials use the updated descriptor: "IntegrateWise — The Knowledge Workspace empowered by AI and the Spine."
+            stands for <strong>Adaptive Continuity Workspace</strong>. All stationery and marketing
+            materials use the updated descriptor: "IntegrateWise — Adaptive continuity workspace hydrated by the Spine."
           </p>
         </div>
       </div>
