@@ -119,13 +119,13 @@ const NAV_STRUCTURE: NavEntry[] = [
       label: 'Documentation Library',
       icon: BookOpen,
       color: '#636A82',
-      children: [
-        { to: '/documentation?pack=pack-a', icon: Building2, label: 'Company & Corporate', color: '#4356A9' },
+        children: [
+        { to: '/documentation?pack=pack-a', icon: Building2, label: 'Doctrine & Continuity Strategy', color: '#4356A9' },
         { to: '/documentation?pack=pack-b', icon: Target, label: 'Category & Positioning', color: '#EB4F72' },
-        { to: '/documentation?pack=pack-c', icon: Box, label: 'Product Narrative', color: '#55608C' },
-        { to: '/documentation?pack=pack-d', icon: GitBranch, label: 'Architecture & Technical', color: '#636A82' },
+        { to: '/documentation?pack=pack-c', icon: Box, label: 'Product Narrative & Continuity', color: '#55608C' },
+        { to: '/documentation?pack=pack-d', icon: GitBranch, label: 'Adaptive Spine & Technical System', color: '#636A82' },
         { to: '/documentation?pack=pack-e', icon: Shield, label: 'AI Governance & Trust', color: '#232D42' },
-        { to: '/documentation?pack=pack-f', icon: Megaphone, label: 'GTM & Customer Success', color: '#D9637F' },
+        { to: '/documentation?pack=pack-f', icon: Megaphone, label: 'GTM, Sales & Customer Success', color: '#D9637F' },
       ],
     },
   },
@@ -190,7 +190,7 @@ export function RootLayout() {
         }
       }
     }
-    return 'Brand Store';
+    return 'Continuity Documentation System';
   })();
 
   // Check if a doc-pack nav item is "active" (matches current URL including query)

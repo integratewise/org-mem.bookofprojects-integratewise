@@ -65,7 +65,7 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
             fontWeight="normal" 
             fontSize="14"
           >
-            Knowledge Workspace over the Spine and Empowered by AI
+            Adaptive continuity workspace projected from hydrated organizational reality
           </text>
         </g>
       )}
@@ -88,7 +88,7 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
           IntegrateWise
         </h1>
         <p className={clsx("tracking-wide", subtitleColorClass, variant === 'full' ? 'text-lg' : 'text-base')} style={{ color: colorVariant === 'default' ? 'var(--muted-foreground)' : undefined }}>
-          IntegrateWise. - Knowledge Workspace Over the Spine and Empowered by AI
+          IntegrateWise. - Adaptive continuity workspace projected from hydrated organizational reality
         </p>
       </div>
     </div>

@@ -99,7 +99,7 @@ const sections = [
     icon: FileText,
     title: 'Documentation',
     description: '6 doctrine packs: continuity, category, product, architecture, governance, and GTM',
-    count: 45,
+    count: 40,
     label: 'documents',
     color: '#636A82',
   },

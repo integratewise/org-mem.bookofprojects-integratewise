@@ -28,19 +28,19 @@ interface BrandContent {
 
 const DEFAULT_CONTENT: BrandContent = {
   oneLiner: TAGLINES.descriptorExtended,
-  shortDescription: "IntegrateWise brings your work, knowledge, and decisions together in one intelligent workspace powered by the Spine.",
-  fullDescription: `IntegrateWise is a Knowledge Workspace empowered by AI and the Spine — a workspace-first system that connects your tools, grounds intelligence in the Spine, compounds approved knowledge, and enables governed action.
+  shortDescription: "IntegrateWise brings continuity, knowledge, and decisions together in an adaptive workspace projected from the Spine.",
+  fullDescription: `IntegrateWise is an adaptive continuity workspace where connectors and workflows hydrate the Spine continuously.
 
-Unlike traditional collaboration tools or standalone AI assistants, IntegrateWise organizes operational truth into a unified intelligence layer (the Spine) and lets AI reason, propose, and act on top of that context — while ensuring every action waits for human approval.`,
+Unlike static collaboration tools or standalone AI assistants, IntegrateWise organizes evolving operational reality into continuity structures and lets AI reason, propose, and act on top of that context — while ensuring every action waits for human approval.`,
   keyBenefits: [
-    "Connect all your tools into one unified workspace",
-    "AI thinks in context, not in isolation",
+    "Hydrate continuity from connectors, workflows, and operational signals",
+    "Project workspace from the organization's current continuity state",
+    "Keep knowledge adaptive as continuity evolves",
     "Every action waits for human approval",
-    "End tool sprawl and knowledge fragmentation",
-    "Governed AI that learns from your decisions"
+    "Reduce tool sprawl and knowledge fragmentation"
   ],
-  problemStatement: "Modern work is fragmented. Teams use 10+ disconnected tools. AI can't access real context. Automation lacks governance.",
-  solutionStatement: "IntegrateWise: One Spine. Context-Aware AI. Human Approvals.",
+  problemStatement: "Modern operations are fragmented. Teams use disconnected systems, continuity breaks, and static workspaces drift away from reality.",
+  solutionStatement: "IntegrateWise: Continuity first. Adaptive Spine hydration. Workspace projection. Human approvals.",
   callToAction: "Book your demo at integratewise.ai/demo"
 };
 
