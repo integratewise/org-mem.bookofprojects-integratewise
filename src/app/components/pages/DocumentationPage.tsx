@@ -64,10 +64,10 @@ interface DocumentPack {
 const DOCUMENTATION_PACKS: DocumentPack[] = [
   {
     id: 'pack-a',
-    name: 'Company & Corporate Strategy',
+    name: 'Doctrine & Continuity Strategy',
     icon: Building2,
     color: '#4356A9',
-    description: 'Defines the company itself, its direction, and its business case.',
+    description: 'Defines continuity doctrine, company direction, and strategic business framing.',
     primaryAudience: 'Investors, partners, strategic hires, ecosystem stakeholders',
     documents: [
       {
@@ -204,10 +204,10 @@ const DOCUMENTATION_PACKS: DocumentPack[] = [
   },
   {
     id: 'pack-c',
-    name: 'Product Narrative & System',
+    name: 'Product Narrative & Continuity System',
     icon: Box,
     color: '#55608C',
-    description: 'Defines what the product is, who it serves, and what capabilities it provides.',
+    description: 'Defines the continuity-native product model, users, and capability architecture.',
     primaryAudience: 'Product, design, GTM, implementation, engineering',
     documents: [
       {
@@ -262,10 +262,10 @@ const DOCUMENTATION_PACKS: DocumentPack[] = [
   },
   {
     id: 'pack-d',
-    name: 'Architecture & Technical System',
+    name: 'Adaptive Spine & Technical System',
     icon: GitBranch,
     color: '#636A82',
-    description: 'Defines how IntegrateWise actually works at a system level.',
+    description: 'Defines hydration flows and how the Adaptive Spine operates as core infrastructure.',
     primaryAudience: 'Engineering, product, solution architecture, investors, enterprise buyers',
     documents: [
       {
@@ -797,10 +797,10 @@ export function DocumentationPage() {
           // Overview / landing state
           <div className="p-8 max-w-5xl mx-auto">
             <div className="mb-8">
-              <h1 className="text-3xl font-bold mb-3" style={{ color: '#232D42' }}>IntegrateWise Documentation System</h1>
+              <h1 className="text-3xl font-bold mb-3" style={{ color: '#232D42' }}>IntegrateWise Continuity Documentation System</h1>
               <p className="text-base" style={{ color: '#636A82' }}>
-                Comprehensive documentation organized into 6 master packs covering company, category, product, 
-                architecture, governance, and go-to-market.
+                Unified doctrine documentation organized into 6 packs covering continuity strategy,
+                category narrative, product system, adaptive architecture, governance, and go-to-market.
               </p>
             </div>
 
