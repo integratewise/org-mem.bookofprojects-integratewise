@@ -1,11 +1,19 @@
 
-  # IntegrateWise Brand Documentations
+ # IntegrateWise — Continuity Documentation System
 
-  This repository contains the IntegrateWise brand, sales, marketing, and documentation hub built with Vite and React.
+ This repository is the canonical IntegrateWise documentation/product narrative system.
+ It unifies doctrine, architecture, brand, and go-to-market content around one model:
 
-  ## Running the code
+ - continuity as the primitive
+ - the Adaptive Spine as core infrastructure
+ - connectors as continuity hydration channels
+ - workspace as a projection of current continuity
+ - knowledge as adaptive organizational understanding
+ - organizational continuity evolution as the product outcome
 
-  Run `npm i` to install the dependencies.
+ ## Run locally
 
-  Run `npm run dev` to start the development server.
+ - `npm i`
+ - `npm run dev`
+ - `npm run build`
   

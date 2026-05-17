@@ -255,7 +255,7 @@ export function RootLayout() {
           <IntegrateWiseLogo variant="icon-only" className="scale-75 origin-left" />
           <div className="ml-2">
             <p className="text-sm font-semibold text-white">IntegrateWise</p>
-            <p className="text-[11px]" style={{ color: 'var(--brand-navy-400)' }}>Brand & Marketing Hub</p>
+              <p className="text-[11px]" style={{ color: 'var(--brand-navy-400)' }}>Continuity Documentation System</p>
           </div>
           <button
             className="ml-auto lg:hidden p-1 rounded-md"
@@ -433,9 +433,9 @@ export function RootLayout() {
         {/* Sidebar footer */}
         <div className="p-4 shrink-0" style={{ borderTop: '1px solid var(--brand-navy-700)' }}>
           <div className="px-4 py-3 rounded-lg" style={{ background: 'rgba(67,86,169,0.15)' }}>
-            <p className="text-xs font-medium text-white">Brand & Marketing Hub v1.0</p>
+            <p className="text-xs font-medium text-white">Continuity Documentation System v1.0</p>
             <p className="text-[11px] mt-0.5" style={{ color: 'var(--brand-navy-400)' }}>
-              6 Master Packs &middot; 40 Documents
+              6 Doctrine Packs &middot; 40 Documents
             </p>
           </div>
         </div>

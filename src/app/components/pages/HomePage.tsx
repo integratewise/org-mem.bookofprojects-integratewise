@@ -34,8 +34,8 @@ const sections = [
   {
     to: '/company',
     icon: Building2,
-    title: 'Company & Product',
-    description: 'Company introduction, vision, mission, belief system, business model, and GTM strategy',
+    title: 'Doctrine & Product',
+    description: 'Continuity doctrine, company narrative, mission, and strategic operating model',
     count: 8,
     label: 'sections',
     color: '#4356A9',
@@ -43,8 +43,8 @@ const sections = [
   {
     to: '/architecture',
     icon: GitBranch,
-    title: 'Executive Architecture',
-    description: 'L0/L1/L2/L3 layers, Spine, data flows, pipeline, and core architectural rules',
+    title: 'Adaptive Architecture',
+    description: 'Adaptive Spine, hydration flows, continuity pipeline, and execution architecture',
     count: 12,
     label: 'sections',
     color: '#636A82',
@@ -98,7 +98,7 @@ const sections = [
     to: '/documentation',
     icon: FileText,
     title: 'Documentation',
-    description: '6 master packs: Company, Category, Product, Architecture, Governance, GTM',
+    description: '6 doctrine packs: continuity, category, product, architecture, governance, and GTM',
     count: 45,
     label: 'documents',
     color: '#636A82',
@@ -114,8 +114,8 @@ const quickStats = [
 const productArchitecture = [
   {
     icon: GitBranch,
-    title: 'The Spine (SSOT)',
-    description: 'Single Source of Truth — the unified intelligence layer connecting tools, context, and decisions across the workspace.',
+    title: 'Adaptive Spine',
+    description: 'Continuity core that hydrates organizational truth, relationships, signals, and decisions.',
     color: '#4356A9',
   },
   {
@@ -132,8 +132,8 @@ const productArchitecture = [
   },
   {
     icon: Layers,
-    title: 'Workspace Layers',
-    description: 'Structured layers for knowledge management, task orchestration, and cross-tool integration within a single platform.',
+    title: 'Workspace Projection',
+    description: 'Work surfaces continuously adapt to the current continuity topology understood by the Spine.',
     color: '#636A82',
   },
 ];
@@ -177,18 +177,18 @@ export function HomePage() {
             </div>
             <div>
               <p className="text-sm font-semibold text-white">IntegrateWise</p>
-              <p className="text-xs" style={{ color: '#808CA9' }}>Enterprise Brand Store</p>
+              <p className="text-xs" style={{ color: '#808CA9' }}>Adaptive Continuity Workspace</p>
             </div>
           </div>
           <div className="max-w-2xl">
-            <h2 className="text-2xl lg:text-3xl font-bold text-white">
-              Brand Identity & Asset Repository
-            </h2>
-            <p className="mt-3" style={{ color: '#A4A9BE' }}>
-              Your centralized hub for brand assets, corporate stationery, marketing
-              collateral, and sales enablement materials. Everything to represent
-              IntegrateWise consistently across legal, finance, product, and marketing.
-            </p>
+              <h2 className="text-2xl lg:text-3xl font-bold text-white">
+                Continuity-Native Documentation & Operating Narrative
+              </h2>
+              <p className="mt-3" style={{ color: '#A4A9BE' }}>
+                A unified system where doctrine, architecture, and execution language stay aligned:
+                continuity is the primitive, connectors hydrate the Spine, and workspace plus knowledge
+                continuously adapt from current organizational reality.
+              </p>
           </div>
           <div className="flex flex-wrap gap-4 mt-8">
             {quickStats.map((stat) => (
@@ -408,9 +408,9 @@ export function HomePage() {
           <div className="rounded-xl p-6" style={{ background: 'linear-gradient(135deg, rgba(67,86,169,0.06), rgba(235,79,114,0.06))', border: '1px solid rgba(67,86,169,0.12)' }}>
             <p className="text-[10px] tracking-widest mb-2" style={{ color: '#808CA9' }}>PRODUCT ESSENCE</p>
             <p className="text-sm leading-relaxed" style={{ color: '#333944' }}>
-              IntegrateWise is a knowledge workspace where the Spine becomes the single source
-              of truth and AI operates on top of that context — thinking, proposing, and
-              learning while every action remains under human approval.
+              IntegrateWise is a continuity workspace where the Adaptive Spine continuously hydrates
+              from connected systems and operational behavior, while AI proposes actions with evidence
+              and every execution path remains human-approved.
             </p>
           </div>
         </div>
