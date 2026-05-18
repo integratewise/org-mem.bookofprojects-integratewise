@@ -17,6 +17,12 @@ import { PresentationsPage } from "./components/pages/PresentationsPage";
 import { ControlPanelPage } from "./components/pages/ControlPanelPage";
 import { QuickStartPage } from "./components/pages/QuickStartPage";
 import { ProductGalleryPage } from "./components/pages/ProductGalleryPage";
+import { RuntimeLayout } from "./runtime/RuntimeLayout";
+import { RuntimeDashboardPage } from "./runtime/RuntimeDashboardPage";
+import { TriagePage } from "./runtime/TriagePage";
+import { KnowledgeHubPage } from "./runtime/KnowledgeHubPage";
+import { ReferencePage } from "./runtime/ReferencePage";
+import { GovernancePage } from "./runtime/GovernancePage";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +63,17 @@ export const router = createBrowserRouter([
           </div>
         ),
       },
+    ],
+  },
+  {
+    path: "/runtime",
+    Component: RuntimeLayout,
+    children: [
+      { index: true, Component: RuntimeDashboardPage },
+      { path: "triage", Component: TriagePage },
+      { path: "knowledge", Component: KnowledgeHubPage },
+      { path: "references", Component: ReferencePage },
+      { path: "governance", Component: GovernancePage },
     ],
   },
 ]);
