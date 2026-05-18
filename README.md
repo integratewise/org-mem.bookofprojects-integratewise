@@ -87,6 +87,43 @@ src/
 
 ---
 
+## Canonical Knowledge Runtime Foundation (Incremental)
+
+This repository now includes a canonical, implementation-neutral knowledge runtime contract that complements (and does not replace) the existing documentation projection system.
+
+Canonical logical model:
+
+```text
+/{domain}/triage
+/{domain}/knowledge-persisted
+/{domain}/references
+```
+
+Approved domains:
+
+- executive
+- product
+- engineering
+- design
+- ai-operations
+- business-operations
+- sales
+- marketing
+- customer-success
+- finance
+- research-and-continuity
+- infrastructure-and-security
+
+Code foundation location:
+
+- `src/app/lib/knowledgeRuntime.ts`
+  - Typed domain + state source of truth
+  - Canonical path construction/validation helpers
+  - Generic canonical knowledge item model (for docs, images, attachments, tables, views, records, generated outputs, and references)
+  - Seeded domain/state container scaffolding for runtime adapters
+
+---
+
 ## Canonical Doctrine Source
 
 `src/imports/pasted_text/integratewise-overview.md` is the **single master document** for all doctrine, architecture, product narrative, and company content.
@@ -150,4 +187,3 @@ npm run build    # production build (Vite)
 | D | Adaptive Spine & Technical System | Architecture, flow model, entities |
 | E | AI Governance & Trust | AI governance, human-in-the-loop |
 | F | GTM, Sales & Customer Success | Go-to-market, sales narrative |
-

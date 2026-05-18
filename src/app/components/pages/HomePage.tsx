@@ -24,11 +24,18 @@ import {
   Package,
   Users,
   Building2,
+  Database,
 } from 'lucide-react';
 import { useState } from 'react';
 import { copyToClipboard } from '../../utils/clipboard';
 import { ValuePropDiagram } from '../diagrams/ArchitectureDiagrams';
 import { TAGLINES, BRAND, CONTACT, FOOTER_LINE } from '../../lib/brand';
+import {
+  APPROVED_KNOWLEDGE_DOMAINS,
+  KNOWLEDGE_STATES,
+  CANONICAL_DOMAIN_STATE_CONTAINERS,
+  buildKnowledgePath,
+} from '../../lib/knowledgeRuntime';
 
 const sections = [
   {
@@ -215,6 +222,51 @@ export function HomePage() {
           <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Core Value Propositions</h3>
         </div>
         <ValuePropDiagram />
+      </div>
+
+      {/* Canonical Knowledge Runtime Foundation */}
+      <div className="bg-white rounded-2xl border border-[#E8ECF2] p-6 space-y-4">
+        <div className="flex items-center gap-3">
+          <Database className="w-5 h-5 text-[#4154A3]" />
+          <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>
+            Canonical Knowledge Runtime Foundation
+          </h3>
+        </div>
+        <p className="text-sm" style={{ color: '#636A82' }}>
+          Domain/state foundation used for implementation-neutral runtime mapping:
+          <span className="font-mono ml-1">/{'{domain}'}/triage</span>,
+          <span className="font-mono ml-1">/{'{domain}'}/knowledge-persisted</span>,
+          <span className="font-mono ml-1">/{'{domain}'}/references</span>.
+        </p>
+        <div className="grid lg:grid-cols-2 gap-4">
+          <div>
+            <p className="text-xs font-semibold mb-2" style={{ color: '#333944' }}>Approved Domains</p>
+            <div className="flex flex-wrap gap-2">
+              {APPROVED_KNOWLEDGE_DOMAINS.map((domain) => (
+                <span
+                  key={domain}
+                  className="text-xs px-2 py-1 rounded-full"
+                  style={{ background: '#F0F2F7', color: '#475578' }}
+                >
+                  {domain}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="text-xs font-semibold mb-2" style={{ color: '#333944' }}>Canonical States</p>
+            <div className="space-y-1">
+              {KNOWLEDGE_STATES.map((state) => (
+                <p key={state} className="text-xs font-mono" style={{ color: '#636A82' }}>
+                  {buildKnowledgePath('executive', state)}
+                </p>
+              ))}
+            </div>
+            <p className="text-[11px] mt-2" style={{ color: '#9BA8C2' }}>
+              Seeded containers: {CANONICAL_DOMAIN_STATE_CONTAINERS.length}
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Daily Quick Actions */}

@@ -169,3 +169,25 @@ export {
 export {
   extractSection,
 } from './sectionExtractor';
+
+// Canonical knowledge runtime foundation
+export {
+  APPROVED_KNOWLEDGE_DOMAINS,
+  KNOWLEDGE_STATES,
+  KNOWLEDGE_ITEM_TYPES,
+  CANONICAL_DOMAIN_STATE_CONTAINERS,
+  type KnowledgeDomain,
+  type KnowledgeState,
+  type KnowledgeItemType,
+  type CanonicalKnowledgePath,
+  type CanonicalKnowledgeItem,
+  type DomainStateContainer,
+  type KnowledgeLineage,
+  type KnowledgeReference,
+  isKnowledgeDomain,
+  isKnowledgeState,
+  buildKnowledgePath,
+  parseKnowledgePath,
+  isCanonicalKnowledgePath,
+  createDomainStateContainers,
+} from './knowledgeRuntime';
