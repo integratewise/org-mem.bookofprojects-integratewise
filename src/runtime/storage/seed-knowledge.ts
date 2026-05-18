@@ -341,35 +341,49 @@ Continuity becomes reconstructable.`,
     id: "know-three-layers",
     type: "doctrine",
     domain: "engineering",
-    title: "The Three Memory Layers",
-    content: `The Spine is NOT one database. It is an adaptive continuity orchestration layer over multiple storage substrates.
+    title: "The Spine + Surface Architecture",
+    content: `The complete product has TWO parts: the Spine (data normalization) and the Surface (human continuity interface).
 
-## Layer 1 — Conversational Continuity (CouchDB)
-Dynamic. Adaptive. Session-oriented.
-- Stores: chats, AI cognition, transcript continuity, temporary reasoning, operational dialogue
-- Governed by: triage, confidence, promotion rules
-- Why CouchDB: append-oriented, event-friendly, revision-aware, distributed, replication-capable
+## The Spine (Postgres/Supabase) — Canonical Entity Layer
+The Spine is where entities scattered across CRM, billing, support, and all connected tools get normalized into one canonical layer.
+- **Eliminates**: Data scattering — no more jumping between tools to find customer info
+- **Stores**: Contacts, companies, deals, tickets, invoices, activities — all normalized from integrations
+- **Also stores**: Doctrine, strategies, governance, architecture, audit trails
+- **Nature**: Stable, governed, canonical truth. The single source of reality.
 
-## Layer 2 — Persistent Knowledge Canon (Postgres/Supabase)
-Stable but evolving.
-- Stores: doctrine, books, operational documentation, strategies, architecture, governance, company evolution
-- This is the Living Organizational Library
-- NOT raw chat export. It is synthesized, structured, curated, continuously rewritten.
+## The Surface (Cloudflare + CouchDB + Twin) — Human Continuity Layer
+**Data alone is not enough.** Even with all entities in Postgres, humans still context-switch because raw entity data is incomplete without operational narrative.
 
-## Layer 3 — Attached Knowledge Artifacts (R2)
-The actual media substrate.
-- Stores: PDFs, images, presentations, animations, diagrams, videos, datasets, assets
-- These are Referenced Knowledge Objects — not embedded cognition.
+The Surface gives humans:
+- **Conversational continuity** — what was discussed, decided, reasoned (CouchDB)
+- **Operational narrative** — the story layered on top of entity data
+- **Governance context** — approvals, decisions, audit trails
+- **AI reasoning companion** — the Twin that thinks alongside the human
+- **Adaptive projections** — the right view at the right time
+
+**The Surface eliminates the REMAINING context switching** — incomplete narratives, missing operational context, and the cognitive load of piecing together meaning from raw data.
+
+## The Three Memory Substrates
+
+| Layer | Technology | Stores |
+|---|---|---|
+| Conversational Continuity | CouchDB | AI sessions, transcripts, temporary reasoning — RAW cognition BEFORE governance |
+| Canonical Organizational Truth | Postgres/Supabase | Entities from all tools + doctrine + governance + audit |
+| Attached Knowledge Artifacts | R2 | PDFs, images, presentations, videos, datasets |
 
 ## The Critical Pipeline
 
 \`\`\`
-CouchDB raw transcript
-→ Triage
-→ Promotion
-→ Postgres Knowledge Pages
-→ Projection Layer
-\`\`\``,
+Raw AI cognition / Integration events
+→ CouchDB (conversational buffer) + Pipeline (entity normalization)
+→ Triage + Classification
+→ Promotion / Governance
+→ Postgres (canonical entity truth + knowledge canon)
+→ Surface Projection (workbench / spine-org interface with narrative + reasoning)
+\`\`\`
+
+**Before**: Spine only = data normalization (still felt incomplete)
+**Now**: Complete product = Spine (canonical data) + Surface (human continuity interface)`,
     confidence: "certain",
     version: 1,
     lineage: [],

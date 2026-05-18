@@ -58,18 +58,47 @@ The Spine stores continuity relationships, knowledge evolution, operational line
 
 ---
 
-## The Three Memory Layers
+## The Two-Part Architecture: Spine + Surface
+
+### The Spine (Postgres/Supabase) — Canonical Entity Layer
+The Spine is where entities scattered across CRM, billing, support, communication, and all connected tools get **normalized into one canonical layer**.
+- **Eliminates**: Data scattering — no more jumping between 15 tools to find customer info
+- **Stores**: Contacts, companies, deals, tickets, invoices, activities, campaigns — all normalized
+- **Nature**: Stable, governed, canonical truth. The single source of entity reality.
+
+### The Surface (Cloudflare + CouchDB + Twin) — Human Continuity Layer
+**Data alone is not enough.** Even with all entities in Postgres, humans still context-switch because raw entity data is incomplete without operational narrative.
+
+The Surface gives humans:
+- **Conversational continuity** — what was discussed, decided, reasoned (CouchDB)
+- **Operational narrative** — the story layered on top of entity data
+- **Governance context** — approvals, decisions, audit trails
+- **AI reasoning companion** — the Twin that thinks alongside the human
+- **Adaptive projections** — the right view of the right data at the right time
+
+**The Surface eliminates the REMAINING context switching** — the incomplete narratives, missing operational context, and cognitive load of piecing together meaning from raw data.
+
+### The Three Memory Substrates
 
 | Layer | Technology | Nature | Stores |
 |---|---|---|---|
 | Conversational Continuity | CouchDB | Dynamic, adaptive, session-oriented | AI sessions, reasoning traces, transcripts, temporary continuity |
-| Persistent Knowledge Canon | Postgres/Supabase | Stable but evolving | Doctrine, strategies, architecture, governance, company evolution |
+| Canonical Organizational Truth | Postgres/Supabase | Stable, governed, canonical | **Entities** (contacts, deals, tickets, invoices) + **Doctrine** (strategies, governance, architecture) |
 | Attached Knowledge Artifacts | R2 | Media substrate | PDFs, images, presentations, diagrams, videos, datasets |
 
-The critical pipeline:
+### The Critical Pipeline
+
 \`\`\`
-Raw AI cognition → CouchDB → Triage → Promotion → Postgres Knowledge Pages → Projection Layer
+Raw AI cognition / Integration events
+→ CouchDB (conversational buffer) + Pipeline (entity normalization)
+→ Triage + Classification
+→ Promotion / Governance
+→ Postgres (canonical entity truth + knowledge canon)
+→ Surface Projection (workbench / spine-org interface with narrative + reasoning)
 \`\`\`
+
+**Before**: Spine layer only = data normalization (still felt incomplete)
+**Now**: Complete product = Spine (canonical data) + Surface (human continuity interface)
 
 ---
 
