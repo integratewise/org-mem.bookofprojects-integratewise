@@ -607,4 +607,153 @@ Operations runs ON the product: the company's own sales, marketing, delivery, an
     updatedAt: Date.now(),
     promotedAt: Date.now(),
   },
+
+  {
+    id: "know-strategic-definition",
+    type: "doctrine",
+    domain: "executive",
+    title: "IntegrateWise — Canonical Strategic Definition",
+    content: `# The Core Problem
+
+Modern organizations do not suffer from lack of software.
+
+They suffer from:
+
+**continuity fragmentation across software systems.**
+
+Operational understanding becomes fragmented because:
+
+- systems do not share continuity,
+- workflows lose context,
+- conversations lose lineage,
+- governance disconnects from execution,
+- and AI cannot reason across organizational history.
+
+Humans continuously reconstruct continuity manually.
+
+This becomes the hidden operational tax of modern organizations.
+
+---
+
+# What IntegrateWise Does
+
+IntegrateWise does NOT replace:
+
+- CRMs
+- documentation systems
+- workflow tools
+- communication platforms
+- ticketing systems
+- storage systems
+- operational software
+
+Instead:
+
+**IntegrateWise creates continuity across them.**
+
+---
+
+# The Spine
+
+The Spine is:
+
+**the continuity substrate between operational systems.**
+
+The Spine:
+
+- links organizational signals,
+- preserves continuity lineage,
+- synthesizes organizational understanding,
+- stabilizes governance,
+- and enables continuity-aware cognition.
+
+---
+
+# Important Principle
+
+IntegrateWise does NOT own the customer's operational systems.
+
+Customers continue using:
+
+- HubSpot
+- Salesforce
+- Slack
+- Google Workspace
+- GitHub
+- Asana
+- Mailchimp
+- existing workflows
+- existing storage
+- existing infrastructure
+
+IntegrateWise operates:
+
+**above them as the continuity layer.**
+
+---
+
+# The Strategic Advantage
+
+This approach:
+
+- minimizes adoption resistance,
+- preserves existing investments,
+- avoids replacement friction,
+- and compounds organizational understanding over time.
+
+Organizations keep their systems.
+
+IntegrateWise preserves continuity BETWEEN systems.
+
+---
+
+# What IntegrateWise Owns
+
+IntegrateWise owns:
+
+- the continuity graph
+- synthesis lineage
+- governance continuity
+- operational cognition
+- continuity objects
+- organizational understanding
+
+NOT:
+
+- primary source systems
+- raw operational ownership
+- or SaaS replacement infrastructure
+
+---
+
+# Final Product Definition
+
+IntegrateWise is:
+
+**the continuity-native cognition and orchestration substrate across the organizational ecosystem.**
+
+It enables organizations to:
+
+- preserve continuity,
+- reduce context reconstruction,
+- stabilize operational understanding,
+- govern execution safely,
+- and allow AI to reason continuously across fragmented operational systems.
+
+The organization already has software.
+
+IntegrateWise makes the organization itself:
+
+**contextually continuous.**`,
+    confidence: "certain",
+    version: 1,
+    lineage: [],
+    references: ["ref-company-os"],
+    tags: ["strategic-definition", "executive", "doctrine", "product-definition"],
+    authorId: "human:founder",
+    entityIds: [],
+    createdAt: Date.now(),
+    updatedAt: Date.now(),
+    promotedAt: Date.now(),
+  },
 ];

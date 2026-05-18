@@ -27,6 +27,7 @@ import {
   Sparkles,
   Rocket,
   Image,
+  Cpu,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -110,6 +111,10 @@ const NAV_STRUCTURE: NavEntry[] = [
   {
     type: 'item',
     item: { to: '/control-panel', icon: LayoutDashboard, label: 'Control Panel', color: '#4154A3' },
+  },
+  {
+    type: 'item',
+    item: { to: '/runtime', icon: Cpu, label: 'Knowledge Runtime', color: '#10B981' },
   },
   // Documentation Library (6 items)
   {

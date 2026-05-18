@@ -9,6 +9,9 @@
 import type { Signal, TriageQueue, TriageIteration } from "../domain/triage";
 import type { KnowledgeObject, KnowledgeQuery } from "../domain/knowledge";
 import type { Reference, Citation, LineageChain } from "../domain/references";
+import type { ApprovedDomain } from "../core/domains";
+import type { CanonicalState } from "../core/paths";
+import { createKnowledgeObject } from "../domain/knowledge";
 
 const PREFIX = "iw:runtime:";
 
@@ -145,6 +148,78 @@ export const LineageStore = {
   get: (knowledgeId: string): LineageChain | null => {
     const raw = localStorage.getItem(key("lineage", knowledgeId));
     return raw ? JSON.parse(raw) : null;
+  },
+};
+
+// --- Domain-Scoped Canonical Storage ---
+
+export const DomainStore = {
+  knowledgeByDomain: (domain: ApprovedDomain): KnowledgeObject[] =>
+    getAll<KnowledgeObject>("knowledge")
+      .filter((k) => k.domain === domain)
+      .sort((a, b) => b.updatedAt - a.updatedAt),
+
+  referencesByDomain: (domain: ApprovedDomain): Reference[] =>
+    getAll<Reference>("references")
+      .filter((r) => r.metadata?.domain === domain)
+      .sort((a, b) => b.capturedAt - a.capturedAt),
+
+  signalsByDomain: (domain: ApprovedDomain): Signal[] =>
+    getAll<Signal>("signals")
+      .filter((s) => s.payload?.domain === domain || s.sourceId?.startsWith(domain))
+      .sort((a, b) => b.timestamp - a.timestamp),
+
+  countByDomainAndState: (): Record<string, Record<CanonicalState, number>> => {
+    const result: Record<string, Record<CanonicalState, number>> = {};
+    for (const k of getAll<KnowledgeObject>("knowledge")) {
+      if (!result[k.domain]) result[k.domain] = { triage: 0, "knowledge-persisted": 0, references: 0 };
+      result[k.domain]["knowledge-persisted"]++;
+    }
+    for (const s of getAll<Signal>("signals")) {
+      const domain = (s.payload?.domain as string) || "unknown";
+      if (!result[domain]) result[domain] = { triage: 0, "knowledge-persisted": 0, references: 0 };
+      result[domain].triage++;
+    }
+    for (const r of getAll<Reference>("references")) {
+      const domain = (r.metadata?.domain as string) || "unknown";
+      if (!result[domain]) result[domain] = { triage: 0, "knowledge-persisted": 0, references: 0 };
+      result[domain].references++;
+    }
+    return result;
+  },
+};
+
+// --- Promotion Engine: Triage → Knowledge-Persisted ---
+
+export const PromotionEngine = {
+  promoteSignal: (signalId: string, reviewerId: string): KnowledgeObject | null => {
+    const signal = SignalStore.get(signalId);
+    if (!signal) return null;
+
+    const iterations = TriageStore.getIterationsForSignal(signalId);
+    const lastIteration = iterations[iterations.length - 1];
+    if (!lastIteration || lastIteration.status !== "approved") return null;
+
+    const domain = (signal.payload?.domain as ApprovedDomain) || "business-operations";
+    const knowledge = createKnowledgeObject({
+      type: "summary",
+      domain,
+      title: `Synthesis of ${signal.entityType}:${signal.entityId}`,
+      content: `**Signal Source**: ${signal.source}\n**Action**: ${signal.action}\n**Payload**: \`\`\`json\n${JSON.stringify(signal.payload, null, 2)}\n\`\`\`\n\n**Classification**: ${lastIteration.classifiedAs}\n**Score**: ${lastIteration.score.toFixed(2)}\n**Reasoning**: ${lastIteration.reasoning}`,
+      confidence: signal.confidence > 0.8 ? "certain" : signal.confidence > 0.5 ? "probable" : "speculative",
+      references: [],
+      tags: ["promoted", signal.source, signal.entityType, signal.action],
+      authorId: reviewerId,
+      entityIds: [signal.entityId],
+    });
+
+    KnowledgeStore.save(knowledge);
+
+    // Mark iteration as fully promoted
+    const promoted: TriageIteration = { ...lastIteration, status: "approved" };
+    TriageStore.saveIteration(promoted);
+
+    return knowledge;
   },
 };
 

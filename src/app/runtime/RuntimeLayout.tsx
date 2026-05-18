@@ -1,8 +1,9 @@
 import { NavLink, Outlet } from "react-router";
-import { Activity, BookOpen, GitBranch, LayoutDashboard, Shield } from "lucide-react";
+import { Activity, BookOpen, GitBranch, LayoutDashboard, Shield, Globe } from "lucide-react";
 
 const navItems = [
   { to: "/runtime", label: "Dashboard", icon: LayoutDashboard },
+  { to: "/runtime/domains", label: "Domains", icon: Globe },
   { to: "/runtime/triage", label: "Triage", icon: Activity },
   { to: "/runtime/knowledge", label: "Knowledge", icon: BookOpen },
   { to: "/runtime/references", label: "References", icon: GitBranch },

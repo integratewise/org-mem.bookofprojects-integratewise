@@ -1,8 +1,8 @@
-// OpenRouter AI Service for BrandDocumentations
-// Acts as Document Controller and Content Strategist
+// LiteLLM Proxy Service — Self-hosted on Hostinger VPS
+// Replaces direct OpenRouter calls with local proxy for cost tracking & fallback
 
-const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const DEFAULT_OPENROUTER_MODEL = import.meta.env.VITE_OPENROUTER_MODEL || 'anthropic/claude-3.5-sonnet';
+const LITELLM_API_URL = import.meta.env.VITE_LITELLM_URL || 'https://litellm.operations.integratewise.ai/v1/chat/completions';
+const DEFAULT_LITELLM_MODEL = import.meta.env.VITE_LITELLM_MODEL || 'openrouter/anthropic/claude-3.5-sonnet';
 
 export interface AIMessage {
   role: 'system' | 'user' | 'assistant';
@@ -14,6 +14,7 @@ export interface AIRequest {
   model?: string;
   temperature?: number;
   max_tokens?: number;
+  stream?: boolean;
 }
 
 export interface AIResponse {
@@ -28,7 +29,6 @@ export interface AIResponse {
 
 function extractMessageContent(content: unknown): string {
   if (typeof content === 'string') return content;
-
   if (Array.isArray(content)) {
     return content
       .map((part) => {
@@ -41,11 +41,9 @@ function extractMessageContent(content: unknown): string {
       .join('\n')
       .trim();
   }
-
   return '';
 }
 
-// Default system prompt for BrandDocumentations AI
 const DEFAULT_SYSTEM_PROMPT = `You are the IntegrateWise Knowledge Runtime AI.
 
 CANONICAL PRODUCT DEFINITION:
@@ -87,119 +85,75 @@ When responding:
 - Reference canonical storage model: /{domain}/{state}/{item}
 - Suggest concrete promotions from triage → knowledge-persisted
 - Maintain continuity-native framing
-- Never position IntegrateWise as a replacement for existing tools; always as the continuity layer between them`;
+- Never position IntegrateWise as a replacement for existing tools; always as the continuity layer between them`
 
-export async function sendMessageToAI(
+export async function sendMessageToLiteLLM(
   userMessage: string,
   context?: string,
   apiKey?: string,
   model?: string
 ): Promise<AIResponse> {
-  const key = apiKey || import.meta.env.VITE_OPENROUTER_API_KEY;
-  
-  if (!key) {
-    throw new Error('OpenRouter API key not found. Please set VITE_OPENROUTER_API_KEY in your .env file.');
-  }
+  const key = apiKey || import.meta.env.VITE_LITELLM_API_KEY || 'sk-litellm-proxy';
 
-  const messages: AIMessage[] = [
-    { role: 'system', content: DEFAULT_SYSTEM_PROMPT },
-  ];
-
+  const messages: AIMessage[] = [{ role: 'system', content: DEFAULT_SYSTEM_PROMPT }];
   if (context) {
-    messages.push({
-      role: 'system',
-      content: `Current document context:\n${context}`,
-    });
+    messages.push({ role: 'system', content: `Runtime context:\n${context}` });
   }
-
   messages.push({ role: 'user', content: userMessage });
 
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 45000);
 
-  const response = await fetch(OPENROUTER_API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${key}`,
-      'HTTP-Referer': window.location.origin,
-      'X-Title': 'IntegrateWise Brand Documentation AI',
-    },
-    signal: controller.signal,
-    body: JSON.stringify({
-      model: model || DEFAULT_OPENROUTER_MODEL,
-      messages,
-      temperature: 0.7,
-      max_tokens: 4000,
-    }),
-  }).finally(() => {
+  try {
+    const response = await fetch(LITELLM_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${key}`,
+      },
+      signal: controller.signal,
+      body: JSON.stringify({
+        model: model || DEFAULT_LITELLM_MODEL,
+        messages,
+        temperature: 0.7,
+        max_tokens: 4000,
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({}));
+      throw new Error(error.error?.message || `LiteLLM API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return {
+      content: extractMessageContent(data.choices?.[0]?.message?.content),
+      model: data.model || model || DEFAULT_LITELLM_MODEL,
+      usage: data.usage,
+    };
+  } finally {
     window.clearTimeout(timeout);
-  });
-
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({}));
-    throw new Error(error.error?.message || `API error: ${response.status}`);
   }
-
-  const data = await response.json();
-  
-  return {
-    content: extractMessageContent(data.choices?.[0]?.message?.content),
-    model: data.model || model || DEFAULT_OPENROUTER_MODEL,
-    usage: data.usage,
-  };
 }
 
-// Specialized functions for different tasks
-export async function reviewContent(content: string, contentType: string, apiKey?: string, model?: string): Promise<AIResponse> {
-  const prompt = `Please review this ${contentType} for brand alignment, clarity, and strategic positioning:
-
-${content}
-
-Provide:
-1. Overall assessment (✅ aligned, ⚠️ needs work, ❌ off-brand)
-2. Specific issues or improvements needed
-3. Suggested revisions
-4. Brand consistency score (1-10)`;
-
-  return sendMessageToAI(prompt, undefined, apiKey, model);
-}
-
-export async function generateContent(
-  contentType: string,
-  purpose: string,
-  audience: string,
-  tone: string,
+export async function synthesizeSignal(
+  signalPayload: Record<string, unknown>,
   apiKey?: string,
   model?: string
 ): Promise<AIResponse> {
-  const prompt = `Generate ${contentType} content:
-- Purpose: ${purpose}
-- Target audience: ${audience}
-- Tone: ${tone}
+  const prompt = `Synthesize this operational signal into a canonical knowledge summary:
 
-Create content that aligns with IntegrateWise brand messaging (continuity, adaptive Spine, workspace projection, governed AI).`;
+SIGNAL:
+\`\`\`json
+${JSON.stringify(signalPayload, null, 2)}
+\`\`\`
 
-  return sendMessageToAI(prompt, undefined, apiKey, model);
-}
+Output:
+1. Title (max 80 chars)
+2. Summary (2-3 sentences)
+3. Suggested domain (one of: executive, product, engineering, design, ai-operations, business-operations, sales, marketing, customer-success, finance, research-and-continuity, infrastructure-and-security)
+4. Suggested tags (comma separated)
+5. Confidence level (certain, probable, speculative)`;
 
-export async function strategizeContent(
-  goal: string,
-  currentAssets: string,
-  apiKey?: string,
-  model?: string
-): Promise<AIResponse> {
-  const prompt = `As Content Strategist, help me develop a content strategy:
-
-GOAL: ${goal}
-
-CURRENT ASSETS:\n${currentAssets}
-
-Provide:
-1. Strategic recommendations
-2. Content gaps to fill
-3. Priority actions
-4. Messaging framework suggestions`;
-
-  return sendMessageToAI(prompt, undefined, apiKey, model);
+  return sendMessageToLiteLLM(prompt, undefined, apiKey, model);
 }

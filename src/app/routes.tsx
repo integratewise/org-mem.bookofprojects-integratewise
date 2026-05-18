@@ -23,6 +23,7 @@ import { TriagePage } from "./runtime/TriagePage";
 import { KnowledgeHubPage } from "./runtime/KnowledgeHubPage";
 import { ReferencePage } from "./runtime/ReferencePage";
 import { GovernancePage } from "./runtime/GovernancePage";
+import { DomainExplorerPage } from "./runtime/DomainExplorerPage";
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +75,7 @@ export const router = createBrowserRouter([
       { path: "knowledge", Component: KnowledgeHubPage },
       { path: "references", Component: ReferencePage },
       { path: "governance", Component: GovernancePage },
+      { path: "domains", Component: DomainExplorerPage },
     ],
   },
 ]);
