@@ -168,77 +168,22 @@ export function runtimeStats(): {
 
 // --- Seed data for demo ---
 
-import { createKnowledgeObject } from "../domain/knowledge";
-import { createReference } from "../domain/references";
-import { createSignal, createTriageQueue, createTriageIteration } from "../domain/triage";
+import { seedKnowledge, seedReferences } from "./seed-knowledge";
+import { metaKnowledge } from "./seed-knowledge-meta";
 
 export function seedRuntimeData(): void {
   if (KnowledgeStore.count() > 0) return; // Already seeded
 
-  // Seed a triage queue
-  const queue = createTriageQueue("Default Ingestion");
-  TriageStore.saveQueue(queue);
+  // Load canonical references
+  for (const ref of seedReferences) {
+    ReferenceStore.save(ref);
+  }
 
-  // Seed a few signals
-  const sig1 = createSignal({
-    source: "connector",
-    sourceId: "hubspot",
-    entityType: "contact",
-    entityId: "contact_001",
-    action: "created",
-    payload: { email: "acme@example.com", company: "Acme Corp" },
-    severity: "medium",
-    confidence: 0.82,
-  });
-  SignalStore.save(sig1);
-  TriageStore.saveIteration(createTriageIteration(sig1, 1));
+  // Load canonical knowledge objects
+  for (const know of seedKnowledge) {
+    KnowledgeStore.save(know);
+  }
 
-  const sig2 = createSignal({
-    source: "twin",
-    sourceId: "think-1",
-    entityType: "deal",
-    entityId: "deal_042",
-    action: "stalled",
-    payload: { daysInactive: 5, value: 50000 },
-    severity: "high",
-    confidence: 0.91,
-  });
-  SignalStore.save(sig2);
-  TriageStore.saveIteration(createTriageIteration(sig2, 1));
-
-  // Seed knowledge
-  const k1 = createKnowledgeObject({
-    type: "summary",
-    domain: "sales",
-    title: "Q2 Pipeline Health",
-    content: "Pipeline velocity decreased 12% vs Q1. 3 enterprise deals stalled >5 days.",
-    confidence: "probable",
-    references: [],
-    tags: ["pipeline", "q2", "health"],
-    authorId: "twin:think-1",
-    entityIds: ["deal_042"],
-  });
-  KnowledgeStore.save(k1);
-
-  const k2 = createKnowledgeObject({
-    type: "doctrine",
-    domain: "governance",
-    title: "HITL Gate Policy",
-    content: "All external posts, email sends, and canonical mutations require explicit human approval.",
-    confidence: "certain",
-    references: [],
-    tags: ["governance", "policy", "hitl"],
-    authorId: "human:founder",
-    entityIds: [],
-  });
-  KnowledgeStore.save(k2);
-
-  // Seed references
-  const ref1 = createReference({
-    type: "document",
-    title: "IntegrateWise Architecture v3.1",
-    source: "Docs/INTEGRATEWISE_ARCHITECTURE_TOOLS_AND_STACK.md",
-    metadata: { version: "3.1", author: "Twin" },
-  });
-  ReferenceStore.save(ref1);
+  // Load meta-knowledge: synthesized essence of IntegrateWise
+  KnowledgeStore.save(metaKnowledge);
 }
