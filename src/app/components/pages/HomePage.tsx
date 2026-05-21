@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router';
-import Image1Vectorized from '../../../imports/Image1Vectorized';
 import {
   Palette,
   SwatchBook,
@@ -28,6 +27,7 @@ import {
 import { useState } from 'react';
 import { copyToClipboard } from '../../utils/clipboard';
 import { ValuePropDiagram } from '../diagrams/ArchitectureDiagrams';
+import { IntegrateWiseLogo } from '../IntegrateWiseLogo';
 import { TAGLINES, BRAND, CONTACT, FOOTER_LINE } from '../../lib/brand';
 
 const sections = [
@@ -35,10 +35,10 @@ const sections = [
     to: '/company',
     icon: Building2,
     title: 'Doctrine & Product',
-    description: 'Continuity doctrine, company narrative, mission, and strategic operating model',
+    description: 'Continuity doctrine, company narrative, mission, and whole-system operating model',
     count: 8,
     label: 'sections',
-    color: '#4356A9',
+    color: 'var(--forest)',
   },
   {
     to: '/architecture',
@@ -47,7 +47,7 @@ const sections = [
     description: 'Adaptive Spine, hydration flows, continuity pipeline, and execution architecture',
     count: 12,
     label: 'sections',
-    color: '#636A82',
+    color: 'var(--slate)',
   },
   {
     to: '/brand-assets',
@@ -56,16 +56,16 @@ const sections = [
     description: 'Logo system, brand messaging, taglines, and visual identity guidelines',
     count: 5,
     label: 'assets',
-    color: '#4356A9',
+    color: 'var(--forest)',
   },
   {
     to: '/design-tokens',
     icon: SwatchBook,
     title: 'Design Tokens',
-    description: 'Colors, typography, spacing, and component foundations',
+    description: 'Forest + Paper tokens, typography, spacing, and component foundations',
     count: 8,
     label: 'token groups',
-    color: '#55608C',
+    color: 'var(--gold-light)',
   },
   {
     to: '/stationery',
@@ -74,7 +74,7 @@ const sections = [
     description: 'Letterhead, invoice, proposal, seal, business card, email signature',
     count: 8,
     label: 'templates',
-    color: '#232D42',
+    color: 'var(--forest-mid)',
   },
   {
     to: '/marketing',
@@ -83,7 +83,7 @@ const sections = [
     description: 'Social templates, LinkedIn assets, WhatsApp catalog, marketing one-pagers',
     count: 14,
     label: 'deliverables',
-    color: '#EB4F72',
+    color: 'var(--gold)',
   },
   {
     to: '/sales',
@@ -92,7 +92,7 @@ const sections = [
     description: 'Pitch decks, one-pagers, case studies, battlecards, and proposals',
     count: 10,
     label: 'deliverables',
-    color: '#D9637F',
+    color: 'var(--red)',
   },
   {
     to: '/documentation',
@@ -101,7 +101,7 @@ const sections = [
     description: '6 doctrine packs: continuity, category, product, architecture, governance, and GTM',
     count: 40,
     label: 'documents',
-    color: '#636A82',
+    color: 'var(--slate)',
   },
 ];
 
@@ -116,25 +116,25 @@ const productArchitecture = [
     icon: GitBranch,
     title: 'Adaptive Spine',
     description: 'Continuity core that hydrates organizational truth, relationships, signals, and decisions.',
-    color: '#4356A9',
+    color: 'var(--forest)',
   },
   {
     icon: Zap,
     title: 'AI Context Engine',
     description: 'AI operates on top of the Spine context — thinking, proposing, and learning while every action remains under human approval.',
-    color: '#55608C',
+    color: 'var(--gold-light)',
   },
   {
     icon: Shield,
     title: 'Approval Governance',
     description: 'Every AI-initiated action passes through human-controlled checkpoints. Nothing executes without explicit approval.',
-    color: '#232D42',
+    color: 'var(--forest-mid)',
   },
   {
     icon: Layers,
     title: 'Workspace Projection',
     description: 'Work surfaces continuously adapt to the current continuity topology understood by the Spine.',
-    color: '#636A82',
+    color: 'var(--slate)',
   },
 ];
 
@@ -153,38 +153,38 @@ export function HomePage() {
       {/* Hero banner */}
       <div
         className="relative rounded-2xl overflow-hidden"
-        style={{ background: '#232D42' }}
+        style={{ background: 'linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 58%, var(--slate) 100%)' }}
       >
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-[-120px] right-[-60px] w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(67,86,169,0.3) 0%, transparent 70%)' }} />
-          <div className="absolute bottom-[-80px] left-[-40px] w-[300px] h-[300px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(235,79,114,0.15) 0%, transparent 70%)' }} />
+          <div className="absolute top-[-120px] right-[-60px] w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(61,122,80,0.28) 0%, transparent 70%)' }} />
+          <div className="absolute bottom-[-80px] left-[-40px] w-[300px] h-[300px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(184,148,63,0.18) 0%, transparent 70%)' }} />
           {/* Spine node decorative line */}
           <svg className="absolute right-8 top-8 opacity-10" width="200" height="200" viewBox="0 0 200 200" fill="none">
-            <circle cx="30" cy="30" r="8" fill="#4356A9" />
-            <circle cx="100" cy="80" r="12" fill="#4356A9" />
-            <circle cx="170" cy="50" r="6" fill="#EB4F72" />
-            <circle cx="140" cy="150" r="10" fill="#4356A9" />
-            <line x1="30" y1="30" x2="100" y2="80" stroke="#4356A9" strokeWidth="2" />
-            <line x1="100" y1="80" x2="170" y2="50" stroke="#4356A9" strokeWidth="2" />
-            <line x1="100" y1="80" x2="140" y2="150" stroke="#4356A9" strokeWidth="2" />
+            <circle cx="30" cy="30" r="8" fill="var(--forest-bright)" />
+            <circle cx="100" cy="80" r="12" fill="var(--forest-bright)" />
+            <circle cx="170" cy="50" r="6" fill="var(--gold)" />
+            <circle cx="140" cy="150" r="10" fill="var(--forest-bright)" />
+            <line x1="30" y1="30" x2="100" y2="80" stroke="var(--gold-light)" strokeWidth="2" />
+            <line x1="100" y1="80" x2="170" y2="50" stroke="var(--gold-light)" strokeWidth="2" />
+            <line x1="100" y1="80" x2="140" y2="150" stroke="var(--gold-light)" strokeWidth="2" />
           </svg>
         </div>
         <div className="relative z-10 p-8 lg:p-12">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(67,86,169,0.4)' }}>
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(184,148,63,0.22)', border: '1px solid rgba(240,224,176,0.18)' }}>
               <Shield className="w-5 h-5 text-white" />
             </div>
             <div>
               <p className="text-sm font-semibold text-white">IntegrateWise</p>
-              <p className="text-xs" style={{ color: '#808CA9' }}>Adaptive Continuity Workspace</p>
+              <p className="text-xs" style={{ color: 'rgba(244,240,232,0.72)' }}>Adaptive continuity workspace hydrated by the Spine</p>
             </div>
           </div>
           <div className="max-w-2xl">
               <h2 className="text-2xl lg:text-3xl font-bold text-white">
                 Continuity-Native Documentation & Operating Narrative
               </h2>
-              <p className="mt-3" style={{ color: '#A4A9BE' }}>
+              <p className="mt-3" style={{ color: 'rgba(244,240,232,0.8)' }}>
                 A unified system where doctrine, architecture, and execution language stay aligned:
                 continuity is the primitive, connectors hydrate the Spine, and workspace plus knowledge
                 continuously adapt from current organizational reality.
@@ -195,12 +195,12 @@ export function HomePage() {
               <div
                 key={stat.label}
                 className="flex items-center gap-3 rounded-lg px-5 py-3"
-                style={{ background: 'rgba(67,86,169,0.25)', border: '1px solid rgba(67,86,169,0.35)' }}
+                style={{ background: 'rgba(244,240,232,0.08)', border: '1px solid rgba(240,224,176,0.16)' }}
               >
-                <stat.icon className="w-5 h-5" style={{ color: '#808CA9' }} />
+                <stat.icon className="w-5 h-5" style={{ color: 'rgba(244,240,232,0.7)' }} />
                 <div>
                   <p className="text-xl font-bold text-white">{stat.value}</p>
-                  <p className="text-xs" style={{ color: '#808CA9' }}>{stat.label}</p>
+                  <p className="text-xs" style={{ color: 'rgba(244,240,232,0.7)' }}>{stat.label}</p>
                 </div>
               </div>
             ))}
@@ -209,10 +209,10 @@ export function HomePage() {
       </div>
 
       {/* Value Proposition Diagram */}
-      <div className="bg-white rounded-2xl border border-[#E8ECF2] p-6">
+      <div className="rounded-2xl p-6" style={{ background: 'var(--paper)', border: '1px solid var(--rule-light)' }}>
         <div className="flex items-center gap-3 mb-4">
-          <Layers className="w-5 h-5 text-[#4154A3]" />
-          <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Core Value Propositions</h3>
+          <Layers className="w-5 h-5" style={{ color: 'var(--forest)' }} />
+          <h3 className="text-lg font-semibold" style={{ color: 'var(--ink)' }}>Core Value Propositions</h3>
         </div>
         <ValuePropDiagram />
       </div>
@@ -221,13 +221,13 @@ export function HomePage() {
       <div>
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <Zap className="w-5 h-5" style={{ color: '#EB4379' }} />
-            <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Daily Quick Actions</h3>
+            <Zap className="w-5 h-5" style={{ color: 'var(--gold)' }} />
+            <h3 className="text-lg font-semibold" style={{ color: 'var(--ink)' }}>Daily Quick Actions</h3>
           </div>
           <button
             onClick={() => navigate('/generators')}
             className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md transition-colors"
-            style={{ color: '#4154A3', background: 'rgba(65,84,163,0.08)' }}
+            style={{ color: 'var(--forest)', background: 'rgba(184,148,63,0.12)' }}
           >
             All Generators <ArrowRight className="w-3 h-3" />
           </button>
@@ -236,7 +236,7 @@ export function HomePage() {
         <button
           onClick={() => navigate('/generators')}
           className="w-full mb-4 group relative overflow-hidden rounded-xl p-5 text-left hover:shadow-lg transition-all"
-          style={{ background: 'linear-gradient(135deg, #4154A3, #EB4379)', border: 'none' }}
+          style={{ background: 'linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 60%, var(--gold) 100%)', border: '1px solid rgba(240,224,176,0.18)' }}
         >
           <div className="absolute top-[-50%] right-[-10%] w-[300px] h-[300px] rounded-full bg-white/10" />
           <div className="relative z-10 flex items-center gap-4">
@@ -255,24 +255,24 @@ export function HomePage() {
         </button>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { icon: Linkedin, label: 'LinkedIn Banners', desc: 'Batch export all 4 styles', to: '/generators', color: '#0A66C2' },
-            { icon: Users, label: 'Team & Signatures', desc: 'Manage roster, copy HTML', to: '/generators', color: '#364789' },
-            { icon: Image, label: 'Social Posts', desc: 'Editable, all platforms', to: '/generators', color: '#EB4379' },
-            { icon: Type, label: 'Copy Library', desc: 'One-click copy all', to: '/generators', color: '#6B7DC4' },
+            { icon: Linkedin, label: 'LinkedIn Banners', desc: 'Batch export all 4 styles', to: '/generators', color: 'var(--slate-mid)' },
+            { icon: Users, label: 'Team & Signatures', desc: 'Manage roster, copy HTML', to: '/generators', color: 'var(--forest-mid)' },
+            { icon: Image, label: 'Social Posts', desc: 'Editable, all platforms', to: '/generators', color: 'var(--gold)' },
+            { icon: Type, label: 'Copy Library', desc: 'One-click copy all', to: '/generators', color: 'var(--slate)' },
           ].map(action => (
             <button
               key={action.label}
               onClick={() => navigate(action.to)}
               className="group flex items-center gap-3 bg-white rounded-xl px-5 py-4 text-left hover:shadow-md transition-all"
-              style={{ border: '1px solid #D5DAE5' }}
+              style={{ border: '1px solid var(--rule-light)' }}
             >
               <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform"
                 style={{ background: `${action.color}12` }}>
                 <action.icon className="w-5 h-5" style={{ color: action.color }} />
               </div>
               <div>
-                <p className="text-sm font-medium" style={{ color: '#1B2544' }}>{action.label}</p>
-                <p className="text-[11px]" style={{ color: '#9BA8C2' }}>{action.desc}</p>
+                <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>{action.label}</p>
+                <p className="text-[11px]" style={{ color: 'var(--slate-mid)' }}>{action.desc}</p>
               </div>
             </button>
           ))}
@@ -280,8 +280,8 @@ export function HomePage() {
       </div>
 
       {/* One-Click Copy Bar */}
-      <div className="bg-white rounded-xl p-5" style={{ border: '1px solid #D5DAE5' }}>
-        <p className="text-xs font-semibold mb-3" style={{ color: '#475578' }}>One-Click Copy</p>
+      <div className="bg-white rounded-xl p-5" style={{ border: '1px solid var(--rule-light)' }}>
+        <p className="text-xs font-semibold mb-3" style={{ color: 'var(--forest-mid)' }}>One-Click Copy</p>
         <div className="flex flex-wrap gap-2">
           {[
             { id: 'qc1', label: 'Tagline', text: TAGLINES.primary },
@@ -295,11 +295,11 @@ export function HomePage() {
               onClick={() => quickCopy(item.id, item.text)}
               className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all"
               style={{
-                background: copiedId === item.id ? '#10B981' : '#F0F2F7',
-                color: copiedId === item.id ? '#fff' : '#475578',
+                background: copiedId === item.id ? 'var(--forest-bright)' : 'var(--paper-warm)',
+                color: copiedId === item.id ? 'var(--paper)' : 'var(--forest-mid)',
               }}
             >
-              {copiedId === item.id ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" style={{ color: '#9BA8C2' }} />}
+              {copiedId === item.id ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" style={{ color: 'var(--slate-mid)' }} />}
               {copiedId === item.id ? 'Copied!' : item.label}
             </button>
           ))}
@@ -311,68 +311,67 @@ export function HomePage() {
         {/* Brand Identity System */}
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <div className="h-1 w-10 rounded-full" style={{ background: '#4356A9' }} />
-            <h3 className="text-lg font-semibold" style={{ color: '#232D42' }}>Brand Identity System</h3>
+            <div className="h-1 w-10 rounded-full" style={{ background: 'var(--forest)' }} />
+            <h3 className="text-lg font-semibold" style={{ color: 'var(--ink)' }}>Brand Identity System</h3>
           </div>
-
-          {/* Figma Vectorized Logo Preview */}
-          <div className="bg-white rounded-xl overflow-hidden" style={{ border: '1px solid #E5E8F4' }}>
-            <div className="px-5 py-3 flex items-center justify-between" style={{ borderBottom: '1px solid #E5E8F4' }}>
+          {/* Canonical Logo Preview */}
+          <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--rule-light)', background: 'var(--paper)' }}>
+            <div className="px-5 py-3 flex items-center justify-between" style={{ borderBottom: '1px solid var(--rule-light)' }}>
               <div>
-                <p className="text-sm font-semibold" style={{ color: '#232D42' }}>Master Logo Composition</p>
-                <p className="text-xs" style={{ color: '#808CA9' }}>Vectorized brand identity asset</p>
+                <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>Canonical Mark & Wordmark</p>
+                <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Forest + Paper runtime expression</p>
               </div>
-              <span className="text-[10px] px-2 py-1 rounded-full font-medium" style={{ background: 'rgba(67,86,169,0.08)', color: '#4356A9' }}>
-                Figma Source
+              <span className="text-[10px] px-2 py-1 rounded-full font-medium" style={{ background: 'rgba(184,148,63,0.12)', color: 'var(--forest)' }}>
+                Current Canonical
               </span>
             </div>
-            <div className="relative w-full" style={{ aspectRatio: '1344/768' }}>
-              <Image1Vectorized />
+            <div className="px-6 py-10 flex items-center justify-center" style={{ background: 'linear-gradient(180deg, var(--paper) 0%, var(--paper-warm) 100%)' }}>
+              <IntegrateWiseLogo variant="compact" />
             </div>
           </div>
 
           {/* Brand Positioning */}
-          <div className="bg-white rounded-xl p-6" style={{ border: '1px solid #E5E8F4' }}>
+          <div className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
             <div className="flex items-center gap-2 mb-4">
-              <Quote className="w-4 h-4" style={{ color: '#4356A9' }} />
-              <p className="text-sm font-semibold" style={{ color: '#232D42' }}>Brand Positioning</p>
+              <Quote className="w-4 h-4" style={{ color: 'var(--forest)' }} />
+              <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>Brand Positioning</p>
             </div>
             <div className="space-y-4">
               <div>
-                <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>CANONICAL STATEMENT</p>
-                <p className="text-sm font-medium" style={{ color: '#333944' }}>{TAGLINES.descriptor}</p>
+                <p className="text-[10px] tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>CANONICAL STATEMENT</p>
+                <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>{TAGLINES.descriptor}</p>
               </div>
               <div>
-                <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>PRIMARY TAGLINE</p>
-                <p className="text-sm font-medium" style={{ color: '#333944' }}>{TAGLINES.primary}</p>
+                <p className="text-[10px] tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>PRIMARY TAGLINE</p>
+                <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>{TAGLINES.primary}</p>
               </div>
               <div>
-                <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>SHORT VERSION</p>
-                <p className="text-sm font-medium" style={{ color: '#333944' }}>Context-Aware AI. Approval-Controlled Work.</p>
+                <p className="text-[10px] tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>SHORT VERSION</p>
+                <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>Context-Aware AI. Approval-Controlled Work.</p>
               </div>
               <div>
-                <p className="text-[10px] tracking-widest mb-1" style={{ color: '#808CA9' }}>FOOTER LINE</p>
-                <p className="text-sm font-medium" style={{ color: '#333944' }}>{FOOTER_LINE}</p>
+                <p className="text-[10px] tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>FOOTER LINE</p>
+                <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>{FOOTER_LINE}</p>
               </div>
             </div>
           </div>
 
           {/* Color Palette Quick View */}
-          <div className="bg-white rounded-xl p-6" style={{ border: '1px solid #E5E8F4' }}>
-            <p className="text-sm font-semibold mb-4" style={{ color: '#232D42' }}>Enterprise Color Palette</p>
+          <div className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
+            <p className="text-sm font-semibold mb-4" style={{ color: 'var(--ink)' }}>Forest + Paper Palette</p>
             <div className="grid grid-cols-5 gap-3">
               {[
-                { name: 'Primary Blue', color: '#4356A9' },
-                { name: 'Dark Navy', color: '#232D42' },
-                { name: 'Accent Pink', color: '#EB4F72' },
-                { name: 'Blue Grey', color: '#636A82' },
-                { name: 'Soft Grey', color: '#EDEEF0' },
+                { name: 'Paper', color: 'var(--paper)' },
+                { name: 'Paper Warm', color: 'var(--paper-warm)' },
+                { name: 'Forest', color: 'var(--forest)' },
+                { name: 'Gold', color: 'var(--gold)' },
+                { name: 'Slate', color: 'var(--slate)' },
               ].map((c) => (
                 <div key={c.name} className="flex flex-col gap-2">
-                  <div className="h-14 rounded-lg" style={{ background: c.color, border: c.color === '#EDEEF0' ? '1px solid #E5E8F4' : undefined }} />
+                  <div className="h-14 rounded-lg" style={{ background: c.color, border: c.name.startsWith('Paper') ? '1px solid var(--rule-light)' : undefined }} />
                   <div>
-                    <p className="text-[10px] font-medium" style={{ color: '#333944' }}>{c.name}</p>
-                    <p className="text-[10px] font-mono" style={{ color: '#808CA9' }}>{c.color}</p>
+                    <p className="text-[10px] font-medium" style={{ color: 'var(--ink)' }}>{c.name}</p>
+                    <p className="text-[10px] font-mono" style={{ color: 'var(--slate-mid)' }}>{c.color}</p>
                   </div>
                 </div>
               ))}
@@ -383,12 +382,12 @@ export function HomePage() {
         {/* Product Architecture System */}
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <div className="h-1 w-10 rounded-full" style={{ background: '#EB4F72' }} />
-            <h3 className="text-lg font-semibold" style={{ color: '#232D42' }}>Product Architecture System</h3>
+            <div className="h-1 w-10 rounded-full" style={{ background: 'var(--gold)' }} />
+            <h3 className="text-lg font-semibold" style={{ color: 'var(--ink)' }}>Product Architecture System</h3>
           </div>
 
           {productArchitecture.map((item) => (
-            <div key={item.title} className="bg-white rounded-xl p-6" style={{ border: '1px solid #E5E8F4' }}>
+            <div key={item.title} className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
               <div className="flex items-start gap-4">
                 <div
                   className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0"
@@ -397,17 +396,17 @@ export function HomePage() {
                   <item.icon className="w-5 h-5" style={{ color: item.color }} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold" style={{ color: '#232D42' }}>{item.title}</h4>
-                  <p className="text-sm mt-1.5 leading-relaxed" style={{ color: '#636A82' }}>{item.description}</p>
+                  <h4 className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>{item.title}</h4>
+                  <p className="text-sm mt-1.5 leading-relaxed" style={{ color: 'var(--slate)' }}>{item.description}</p>
                 </div>
               </div>
             </div>
           ))}
 
           {/* Product Essence */}
-          <div className="rounded-xl p-6" style={{ background: 'linear-gradient(135deg, rgba(67,86,169,0.06), rgba(235,79,114,0.06))', border: '1px solid rgba(67,86,169,0.12)' }}>
-            <p className="text-[10px] tracking-widest mb-2" style={{ color: '#808CA9' }}>PRODUCT ESSENCE</p>
-            <p className="text-sm leading-relaxed" style={{ color: '#333944' }}>
+          <div className="rounded-xl p-6" style={{ background: 'linear-gradient(135deg, rgba(26,58,42,0.06), rgba(184,148,63,0.10))', border: '1px solid rgba(196,186,168,0.75)' }}>
+            <p className="text-[10px] tracking-widest mb-2" style={{ color: 'var(--slate-mid)' }}>PRODUCT ESSENCE</p>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               IntegrateWise is a continuity workspace where the Adaptive Spine continuously hydrates
               from connected systems and operational behavior, while AI proposes actions with evidence
               and every execution path remains human-approved.
@@ -418,14 +417,14 @@ export function HomePage() {
 
       {/* Section cards */}
       <div>
-        <h3 className="text-lg font-semibold mb-4" style={{ color: '#232D42' }}>Browse Categories</h3>
+        <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ink)' }}>Browse Categories</h3>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {sections.map((section) => (
             <button
               key={section.to}
               onClick={() => navigate(section.to)}
               className="group bg-white rounded-xl p-6 text-left hover:shadow-lg transition-all"
-              style={{ border: '1px solid #E5E8F4' }}
+              style={{ border: '1px solid var(--rule-light)' }}
             >
               <div className="flex items-start justify-between">
                 <div
@@ -434,10 +433,10 @@ export function HomePage() {
                 >
                   <section.icon className="w-6 h-6" style={{ color: section.color }} />
                 </div>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-all" style={{ color: '#A4A9BE' }} />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-0.5 transition-all" style={{ color: 'var(--slate-mid)' }} />
               </div>
-              <h4 className="text-base font-semibold mt-4" style={{ color: '#232D42' }}>{section.title}</h4>
-              <p className="text-sm mt-1" style={{ color: '#808CA9' }}>{section.description}</p>
+              <h4 className="text-base font-semibold mt-4" style={{ color: 'var(--ink)' }}>{section.title}</h4>
+              <p className="text-sm mt-1" style={{ color: 'var(--slate-mid)' }}>{section.description}</p>
               <div className="mt-4 flex items-center gap-2">
                 <span
                   className="text-xs font-medium px-2.5 py-1 rounded-full"
@@ -453,8 +452,8 @@ export function HomePage() {
 
       {/* Contact System */}
       <div>
-        <h3 className="text-lg font-semibold mb-4" style={{ color: '#232D42' }}>Official Contact System</h3>
-        <div className="bg-white rounded-xl p-6" style={{ border: '1px solid #E5E8F4' }}>
+        <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ink)' }}>Official Contact System</h3>
+        <div className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { dept: 'General', emails: ['hello@integratewise.ai', 'connect@integratewise.ai'] },
@@ -463,14 +462,14 @@ export function HomePage() {
               { dept: 'Billing', emails: ['billing@integratewise.ai'] },
             ].map((contact) => (
               <div key={contact.dept}>
-                <p className="text-xs font-semibold mb-2" style={{ color: '#333944' }}>{contact.dept}</p>
+                <p className="text-xs font-semibold mb-2" style={{ color: 'var(--ink)' }}>{contact.dept}</p>
                 {contact.emails.map((email) => (
-                  <p key={email} className="text-xs font-mono" style={{ color: '#808CA9' }}>{email}</p>
+                  <p key={email} className="text-xs font-mono" style={{ color: 'var(--slate-mid)' }}>{email}</p>
                 ))}
               </div>
             ))}
           </div>
-          <div className="mt-4 pt-4 flex flex-wrap gap-6" style={{ borderTop: '1px solid #E5E8F4' }}>
+          <div className="mt-4 pt-4 flex flex-wrap gap-6" style={{ borderTop: '1px solid var(--rule-light)' }}>
             {[
               { dept: 'Marketing', email: 'marketing@integratewise.ai' },
               { dept: 'Careers', email: 'careers@integratewise.ai' },
@@ -478,8 +477,8 @@ export function HomePage() {
               { dept: 'Website', email: 'integratewise.ai' },
             ].map((c) => (
               <div key={c.dept}>
-                <p className="text-xs font-semibold" style={{ color: '#333944' }}>{c.dept}</p>
-                <p className="text-xs font-mono" style={{ color: '#808CA9' }}>{c.email}</p>
+                <p className="text-xs font-semibold" style={{ color: 'var(--ink)' }}>{c.dept}</p>
+                <p className="text-xs font-mono" style={{ color: 'var(--slate-mid)' }}>{c.email}</p>
               </div>
             ))}
           </div>
@@ -488,26 +487,26 @@ export function HomePage() {
 
       {/* Recent updates */}
       <div>
-        <h3 className="text-lg font-semibold mb-4" style={{ color: '#232D42' }}>Recent Updates</h3>
-        <div className="bg-white rounded-xl" style={{ border: '1px solid #E5E8F4' }}>
+        <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ink)' }}>Recent Updates</h3>
+        <div className="bg-white rounded-xl" style={{ border: '1px solid var(--rule-light)' }}>
           {[
-            { title: 'Logo Mark v2 Updated', category: 'Brand Assets', date: 'Mar 14, 2026', color: '#4356A9' },
-            { title: 'Corporate Stationery Suite Published', category: 'Stationery', date: 'Mar 13, 2026', color: '#232D42' },
-            { title: 'Q1 Sales Deck Published', category: 'Sales', date: 'Mar 12, 2026', color: '#D9637F' },
-            { title: 'LinkedIn & WhatsApp Assets Added', category: 'Marketing', date: 'Mar 10, 2026', color: '#EB4F72' },
-            { title: 'Design Tokens v1.0 Finalized', category: 'Design Tokens', date: 'Mar 8, 2026', color: '#55608C' },
+            { title: 'Logo Mark v2 Updated', category: 'Brand Assets', date: 'Mar 14, 2026', color: 'var(--forest)' },
+            { title: 'Corporate Stationery Suite Published', category: 'Stationery', date: 'Mar 13, 2026', color: 'var(--forest-mid)' },
+            { title: 'Q1 Sales Deck Published', category: 'Sales', date: 'Mar 12, 2026', color: 'var(--red)' },
+            { title: 'LinkedIn & WhatsApp Assets Added', category: 'Marketing', date: 'Mar 10, 2026', color: 'var(--gold)' },
+            { title: 'Design Tokens v1.0 Finalized', category: 'Design Tokens', date: 'Mar 8, 2026', color: 'var(--slate)' },
           ].map((update, i, arr) => (
             <div
               key={i}
               className="flex items-center gap-4 px-6 py-4"
-              style={i < arr.length - 1 ? { borderBottom: '1px solid #E5E8F4' } : undefined}
+              style={i < arr.length - 1 ? { borderBottom: '1px solid var(--rule-light)' } : undefined}
             >
               <div className="w-2 h-2 rounded-full shrink-0" style={{ background: update.color }} />
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium truncate" style={{ color: '#333944' }}>{update.title}</p>
-                <p className="text-xs" style={{ color: '#A4A9BE' }}>{update.category}</p>
+                <p className="text-sm font-medium truncate" style={{ color: 'var(--ink)' }}>{update.title}</p>
+                <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>{update.category}</p>
               </div>
-              <span className="text-xs shrink-0" style={{ color: '#A4A9BE' }}>{update.date}</span>
+              <span className="text-xs shrink-0" style={{ color: 'var(--slate-mid)' }}>{update.date}</span>
             </div>
           ))}
         </div>

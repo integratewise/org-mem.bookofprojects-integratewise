@@ -75,11 +75,11 @@ function PreviewModal({
   
   const bgStyle: Record<string, React.CSSProperties | undefined> = {
     white: { background: '#ffffff' },
-    grey: { background: '#EDF0F5' },
-    dark: { background: '#1B2544' },
+    grey: { background: 'var(--paper-warm)' },
+    dark: { background: 'var(--forest)' },
     checker: {
       backgroundImage:
-        'linear-gradient(45deg, #D5DAE5 25%, transparent 25%), linear-gradient(-45deg, #D5DAE5 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #D5DAE5 75%), linear-gradient(-45deg, transparent 75%, #D5DAE5 75%)',
+        'linear-gradient(45deg, var(--rule-light) 25%, transparent 25%), linear-gradient(-45deg, var(--rule-light) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, var(--rule-light) 75%), linear-gradient(-45deg, transparent 75%, var(--rule-light) 75%)',
       backgroundSize: '20px 20px',
       backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
       backgroundColor: '#ffffff'
@@ -117,10 +117,10 @@ function PreviewModal({
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
       <div className="relative bg-white rounded-2xl shadow-2xl w-[90vw] max-w-4xl max-h-[90vh] flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: '1px solid #D5DAE5' }}>
+        <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: '1px solid var(--rule-light)' }}>
           <div>
-            <p className="text-base font-semibold" style={{ color: '#1B2544' }}>{label}</p>
-            <p className="text-xs" style={{ color: '#9BA8C2' }}>Preview Mode</p>
+            <p className="text-base font-semibold" style={{ color: 'var(--forest)' }}>{label}</p>
+            <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Preview Mode</p>
           </div>
           <div className="flex items-center gap-2">
             {(['white', 'grey', 'dark', 'checker'] as const).map((bg) => (
@@ -129,57 +129,57 @@ function PreviewModal({
                 onClick={() => setPreviewBg(bg)}
                 className="w-6 h-6 rounded-md transition-colors"
                 style={{
-                  border: previewBg === bg ? '2px solid #4154A3' : '2px solid #BCC3D4',
+                  border: previewBg === bg ? '2px solid var(--forest)' : '2px solid var(--rule)',
                   background:
                     bg === 'white'
                       ? '#fff'
                       : bg === 'grey'
-                      ? '#EDF0F5'
+                      ? 'var(--paper-warm)'
                       : bg === 'dark'
-                      ? '#1B2544'
-                      : 'repeating-conic-gradient(#D5DAE5 0% 25%, transparent 0% 50%) 50% / 10px 10px',
+                      ? 'var(--forest)'
+                      : 'repeating-conic-gradient(var(--rule-light) 0% 25%, transparent 0% 50%) 50% / 10px 10px',
                 }}
                 title={bg.charAt(0).toUpperCase() + bg.slice(1)}
               />
             ))}
-            <div className="w-px h-6 mx-1" style={{ background: '#D5DAE5' }} />
+            <div className="w-px h-6 mx-1" style={{ background: 'var(--rule-light)' }} />
             <button
               onClick={() => setZoom((z) => Math.max(0.25, z - 0.25))}
-              className="p-1.5 rounded-md hover:bg-[#F0F2F7]"
+              className="p-1.5 rounded-md hover:bg-[var(--paper-warm)]"
             >
-              <ZoomOut className="w-4 h-4" style={{ color: '#5F6E93' }} />
+              <ZoomOut className="w-4 h-4" style={{ color: 'var(--slate)' }} />
             </button>
-            <span className="text-xs font-mono w-10 text-center" style={{ color: '#7B8AAD' }}>{Math.round(zoom * 100)}%</span>
+            <span className="text-xs font-mono w-10 text-center" style={{ color: 'var(--slate-mid)' }}>{Math.round(zoom * 100)}%</span>
             <button
               onClick={() => setZoom((z) => Math.min(3, z + 0.25))}
-              className="p-1.5 rounded-md hover:bg-[#F0F2F7]"
+              className="p-1.5 rounded-md hover:bg-[var(--paper-warm)]"
             >
-              <ZoomIn className="w-4 h-4" style={{ color: '#5F6E93' }} />
+              <ZoomIn className="w-4 h-4" style={{ color: 'var(--slate)' }} />
             </button>
             <button
               onClick={() => setZoom(1)}
-              className="p-1.5 rounded-md hover:bg-[#F0F2F7]"
+              className="p-1.5 rounded-md hover:bg-[var(--paper-warm)]"
               title="Reset zoom"
             >
-              <Maximize2 className="w-4 h-4" style={{ color: '#5F6E93' }} />
+              <Maximize2 className="w-4 h-4" style={{ color: 'var(--slate)' }} />
             </button>
             
-            <div className="w-px h-6 mx-1" style={{ background: '#D5DAE5' }} />
+            <div className="w-px h-6 mx-1" style={{ background: 'var(--rule-light)' }} />
             
             <button
               onClick={handleModalDownload}
               disabled={isDownloading}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-white transition-colors"
-              style={{ background: isDownloading ? '#9BA8C2' : '#4154A3' }}
+              style={{ background: isDownloading ? 'var(--slate-mid)' : 'var(--forest)' }}
             >
               <Download className="w-3.5 h-3.5" /> 
               {isDownloading ? 'Saving...' : 'Download'}
             </button>
 
-            <div className="w-px h-6 mx-1" style={{ background: '#D5DAE5' }} />
+            <div className="w-px h-6 mx-1" style={{ background: 'var(--rule-light)' }} />
             
-            <button onClick={onClose} className="p-1.5 rounded-md hover:bg-[#F0F2F7]">
-              <X className="w-5 h-5" style={{ color: '#5F6E93' }} />
+            <button onClick={onClose} className="p-1.5 rounded-md hover:bg-[var(--paper-warm)]">
+              <X className="w-5 h-5" style={{ color: 'var(--slate)' }} />
             </button>
           </div>
         </div>
@@ -375,16 +375,16 @@ export function BrandAssetsPage() {
       {/* Page header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold" style={{ color: '#232D42' }}>Brand Assets</h2>
-          <p className="mt-1" style={{ color: '#808CA9' }}>
-            Logo system, brand messaging, visual identity guidelines, and brand motifs
+          <h2 className="text-2xl font-bold" style={{ color: 'var(--forest-mid)' }}>Brand Assets</h2>
+          <p className="mt-1" style={{ color: 'var(--slate-mid)' }}>
+            Canonical mark system, Forest + Paper brand language, descriptor usage, and runtime-safe brand assets
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-2">
           <button
             onClick={() => setShowAdvancedEditor(true)}
             className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-white transition-all shadow-sm hover:shadow"
-            style={{ background: 'linear-gradient(135deg, var(--brand-primary), var(--brand-accent))' }}
+            style={{ background: 'linear-gradient(135deg, var(--forest), var(--gold))' }}
           >
             <Sparkles className="w-4 h-4" />
             Advanced Editor
@@ -394,9 +394,9 @@ export function BrandAssetsPage() {
             disabled={isDownloadingAll}
             className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all shadow-sm hover:shadow"
             style={{ 
-              background: isDownloadingAll ? '#9BA8C2' : '#fff',
-              color: isDownloadingAll ? '#fff' : '#1B2544',
-              border: isDownloadingAll ? 'none' : '1px solid #D5DAE5'
+              background: isDownloadingAll ? 'var(--slate-mid)' : '#fff',
+              color: isDownloadingAll ? '#fff' : 'var(--forest)',
+              border: isDownloadingAll ? 'none' : '1px solid var(--rule-light)'
             }}
           >
             <Download className="w-4 h-4" />
@@ -407,26 +407,26 @@ export function BrandAssetsPage() {
 
       {/* Feature Highlight Card */}
       <div className="relative overflow-hidden rounded-2xl p-6 lg:p-8" style={{ 
-        background: 'linear-gradient(135deg, rgba(65,84,163,0.08), rgba(235,67,121,0.08))',
-        border: '1px solid rgba(65,84,163,0.15)'
+        background: 'linear-gradient(135deg, rgba(26,58,42,0.07), rgba(184,148,63,0.12))',
+        border: '1px solid rgba(196,186,168,0.7)' 
       }}>
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
           <div className="flex-shrink-0">
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, var(--brand-primary), var(--brand-accent))' }}>
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, var(--forest), var(--gold))' }}>
               <Sparkles className="w-8 h-8 text-white" />
             </div>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-bold mb-1" style={{ color: '#1B2544' }}>Advanced Asset Editor Now Available</h3>
-            <p className="text-sm mb-3" style={{ color: '#5F6E93' }}>
-              Create custom brand assets with comprehensive editing tools. Adjust colors, dimensions, effects, and export to 12+ social media and print formats in one batch.
+            <h3 className="text-lg font-bold mb-1" style={{ color: 'var(--forest)' }}>Advanced Asset Editor Now Available</h3>
+            <p className="text-sm mb-3" style={{ color: 'var(--slate)' }}>
+              Create canonical Forest + Paper brand assets with adjustable layouts, governed descriptor usage, and export workflows across social, documentation, and print formats.
             </p>
             <div className="flex flex-wrap gap-2">
               {['Custom Colors', 'Gradients & Effects', 'Batch Export', 'Social Media Presets'].map((feature) => (
                 <span
                   key={feature}
                   className="px-3 py-1 rounded-full text-xs font-medium"
-                  style={{ background: 'rgba(65,84,163,0.1)', color: '#4154A3' }}
+                  style={{ background: 'rgba(184,148,63,0.12)', color: 'var(--forest)' }}
                 >
                   {feature}
                 </span>
@@ -436,7 +436,7 @@ export function BrandAssetsPage() {
           <button
             onClick={() => setShowAdvancedEditor(true)}
             className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-white transition-all shadow-sm hover:shadow-lg whitespace-nowrap"
-            style={{ background: 'linear-gradient(135deg, var(--brand-primary), var(--brand-accent))' }}
+            style={{ background: 'linear-gradient(135deg, var(--forest), var(--gold))' }}
           >
             <Settings className="w-4 h-4" />
             Open Editor
@@ -444,17 +444,22 @@ export function BrandAssetsPage() {
         </div>
       </div>
 
+      <div className="rounded-xl p-5" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
+        <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>Canonical asset rule</p>
+        <p className="text-sm mt-2" style={{ color: 'var(--slate)' }}>Historical SVG source exports may still preserve earlier palette references, but all live-rendered brand assets and runtime-facing surfaces should use the current Forest + Paper system and the descriptor "Adaptive continuity workspace hydrated by the Spine."</p>
+      </div>
+
       {/* Asset Studio */}
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <div className="h-1 w-12 rounded-full" style={{ background: 'var(--brand-primary)' }} />
-          <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Interactive Brand Studio</h3>
+          <h3 className="text-lg font-semibold" style={{ color: 'var(--forest)' }}>Interactive Brand Studio</h3>
         </div>
         
-        <div className="bg-white rounded-xl overflow-hidden shadow-sm" style={{ border: '1px solid #D5DAE5' }}>
+        <div className="bg-white rounded-xl overflow-hidden shadow-sm" style={{ border: '1px solid var(--rule-light)' }}>
           <div className="flex flex-col lg:flex-row">
             {/* Controls */}
-            <div className="w-full lg:w-80 p-6 space-y-6" style={{ borderRight: '1px solid #E8ECF2', background: '#F8FAFC' }}>
+            <div className="w-full lg:w-80 p-6 space-y-6" style={{ borderRight: '1px solid var(--paper-deep)', background: 'var(--paper-warm)' }}>
               <div className="flex items-center gap-2 mb-2">
                 <SlidersHorizontal className="w-4 h-4 text-brand-gray-600" />
                 <h4 className="text-sm font-semibold text-brand-gray-900">Customizer</h4>
@@ -483,7 +488,7 @@ export function BrandAssetsPage() {
                     { id: 'white', label: 'White' },
                     { id: 'monochrome-dark', label: 'Mono Dark' },
                     { id: 'monochrome-white', label: 'Mono White' },
-                    { id: 'blue-only', label: 'Blue Only' },
+                    { id: 'blue-only', label: 'Forest Only' },
                     { id: 'print-safe-black', label: 'Print Black' },
                   ].map(theme => (
                     <button
@@ -506,13 +511,13 @@ export function BrandAssetsPage() {
                       onClick={() => setStudioBg(bg)}
                       className="w-8 h-8 rounded-md transition-all shadow-sm"
                       style={{
-                        border: studioBg === bg ? '2px solid #4154A3' : '1px solid #D5DAE5',
+                        border: studioBg === bg ? '2px solid var(--forest)' : '1px solid var(--rule-light)',
                         background:
                           bg === 'white' ? '#fff' :
-                          bg === 'grey' ? '#EDF0F5' :
-                          bg === 'dark' ? '#1B2544' :
+                          bg === 'grey' ? 'var(--paper-warm)' :
+                          bg === 'dark' ? 'var(--forest)' :
                           bg === 'transparent' ? 'transparent' :
-                          'repeating-conic-gradient(#D5DAE5 0% 25%, transparent 0% 50%) 50% / 10px 10px',
+                          'repeating-conic-gradient(var(--rule-light) 0% 25%, transparent 0% 50%) 50% / 10px 10px',
                         backgroundColor: bg === 'checker' ? '#ffffff' : undefined
                       }}
                       title={bg}
@@ -524,7 +529,7 @@ export function BrandAssetsPage() {
 
             {/* Preview & Export Area */}
             <div className="flex-1 flex flex-col min-h-[400px]">
-              <div className="px-6 py-4 flex items-center justify-between" style={{ borderBottom: '1px solid #E8ECF2' }}>
+              <div className="px-6 py-4 flex items-center justify-between" style={{ borderBottom: '1px solid var(--paper-deep)' }}>
                 <div>
                   <p className="text-sm font-semibold text-brand-gray-900">Live Preview</p>
                   <p className="text-xs text-brand-gray-500">Rendered in high-resolution</p>
@@ -537,7 +542,7 @@ export function BrandAssetsPage() {
               <div 
                 className="flex-1 overflow-hidden flex items-center justify-center p-8 relative"
                 style={{ 
-                  background: 'repeating-conic-gradient(#f0f2f7 0% 25%, transparent 0% 50%) 50% / 20px 20px',
+                  background: 'repeating-conic-gradient(var(--rule-light) 0% 25%, transparent 0% 50%) 50% / 20px 20px',
                   backgroundColor: '#ffffff'
                 }}
               >
@@ -548,10 +553,10 @@ export function BrandAssetsPage() {
                   style={{
                     background:
                       studioBg === 'white' ? '#fff' :
-                      studioBg === 'grey' ? '#EDF0F5' :
-                      studioBg === 'dark' ? '#1B2544' :
+                      studioBg === 'grey' ? 'var(--paper-warm)' :
+                      studioBg === 'dark' ? 'var(--forest)' :
                       studioBg === 'transparent' ? 'transparent' :
-                      'repeating-conic-gradient(#D5DAE5 0% 25%, transparent 0% 50%) 50% / 20px 20px',
+                      'repeating-conic-gradient(var(--rule-light) 0% 25%, transparent 0% 50%) 50% / 20px 20px',
                     backgroundColor: studioBg === 'checker' ? '#ffffff' : undefined,
                     minWidth: '400px',
                     minHeight: '200px'
@@ -572,38 +577,38 @@ export function BrandAssetsPage() {
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <div className="h-1 w-12 rounded-full" style={{ background: 'var(--brand-primary)' }} />
-          <h3 className="text-lg font-semibold" style={{ color: '#232D42' }}>Brand Messaging System</h3>
+          <h3 className="text-lg font-semibold" style={{ color: 'var(--forest-mid)' }}>Brand Messaging System</h3>
         </div>
 
-        <div className="bg-white rounded-xl p-6 lg:p-8 space-y-6" style={{ border: '1px solid #E5E8F4' }}>
+        <div className="bg-white rounded-xl p-6 lg:p-8 space-y-6" style={{ border: '1px solid var(--rule-light)' }}>
           <div className="grid lg:grid-cols-2 gap-8">
             <div>
-              <p className="text-[11px] tracking-wide mb-2" style={{ color: '#A4A9BE' }}>PRIMARY PRODUCT DESCRIPTION</p>
-              <p className="text-lg font-semibold" style={{ color: '#232D42' }}>{BRAND.name}</p>
-              <p className="text-sm mt-1 italic" style={{ color: '#55608C' }}>
+              <p className="text-[11px] tracking-wide mb-2" style={{ color: 'var(--slate-mid)' }}>PRIMARY PRODUCT DESCRIPTION</p>
+              <p className="text-lg font-semibold" style={{ color: 'var(--forest-mid)' }}>{BRAND.name}</p>
+              <p className="text-sm mt-1 italic" style={{ color: 'var(--slate)' }}>
                 {TAGLINES.oneParagraph}
               </p>
-              <p className="text-sm font-medium mt-2" style={{ color: '#333944' }}>
+              <p className="text-sm font-medium mt-2" style={{ color: 'var(--ink)' }}>
                 {TAGLINES.primary}
               </p>
             </div>
             <div>
-              <p className="text-[11px] tracking-wide mb-2" style={{ color: '#A4A9BE' }}>SPINE EXPLANATION (USE CONSISTENTLY)</p>
+              <p className="text-[11px] tracking-wide mb-2" style={{ color: 'var(--slate-mid)' }}>SPINE EXPLANATION (USE CONSISTENTLY)</p>
               <div className="space-y-2">
                 {[
                   'The Spine (SSOT)',
                   'The Spine — Unified Intelligence Layer',
                   'The Spine — Single Source of Truth and Unified Intelligence Layer',
                 ].map((variant) => (
-                  <div key={variant} className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{ background: '#F2F3F4' }}>
-                    <p className="text-sm flex-1" style={{ color: '#55608C' }}>{variant}</p>
+                  <div key={variant} className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{ background: 'var(--paper-warm)' }}>
+                    <p className="text-sm flex-1" style={{ color: 'var(--slate)' }}>{variant}</p>
                     <button
-                      className="p-1 rounded hover:bg-[#E5E8F4]"
+                      className="p-1 rounded hover:bg-[var(--paper-deep)]"
                       onClick={() => {
                         copyToClipboard(variant);
                       }}
                     >
-                      <Copy className="w-3.5 h-3.5" style={{ color: '#A4A9BE' }} />
+                      <Copy className="w-3.5 h-3.5" style={{ color: 'var(--slate-mid)' }} />
                     </button>
                   </div>
                 ))}
@@ -611,8 +616,8 @@ export function BrandAssetsPage() {
             </div>
           </div>
 
-          <div className="pt-6" style={{ borderTop: '1px solid #E5E8F4' }}>
-            <p className="text-[11px] tracking-wide mb-3" style={{ color: '#A4A9BE' }}>TAGLINE SYSTEM</p>
+          <div className="pt-6" style={{ borderTop: '1px solid var(--rule-light)' }}>
+            <p className="text-[11px] tracking-wide mb-3" style={{ color: 'var(--slate-mid)' }}>TAGLINE SYSTEM</p>
             <div className="grid sm:grid-cols-3 gap-4">
               <MessagingCard
                 label="Primary Tagline"
@@ -630,8 +635,8 @@ export function BrandAssetsPage() {
             </div>
           </div>
 
-          <div className="pt-6" style={{ borderTop: '1px solid #E5E8F4' }}>
-            <p className="text-[11px] tracking-wide mb-3" style={{ color: '#A4A9BE' }}>APPROVED COPY FOR SPECIFIC ASSETS</p>
+          <div className="pt-6" style={{ borderTop: '1px solid var(--rule-light)' }}>
+            <p className="text-[11px] tracking-wide mb-3" style={{ color: 'var(--slate-mid)' }}>APPROVED COPY FOR SPECIFIC ASSETS</p>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 { asset: 'Letterhead', line: `${BRAND.legalName} · ${TAGLINES.descriptorFull}` },
@@ -641,21 +646,21 @@ export function BrandAssetsPage() {
                 { asset: 'Brochure Headline', line: 'Bring Work, Knowledge, and Decisions Together Through the Spine' },
                 { asset: 'Marketing Headline', line: 'Work Becomes Smarter When AI Understands Context' },
               ].map((item) => (
-                <div key={item.asset} className="flex items-start gap-3 p-3 rounded-lg" style={{ background: '#F2F3F4' }}>
-                  <Quote className="w-4 h-4 shrink-0 mt-0.5" style={{ color: '#A4A9BE' }} />
+                <div key={item.asset} className="flex items-start gap-3 p-3 rounded-lg" style={{ background: 'var(--paper-warm)' }}>
+                  <Quote className="w-4 h-4 shrink-0 mt-0.5" style={{ color: 'var(--slate-mid)' }} />
                   <div>
                     <p className="text-[11px] font-medium" style={{ color: '#808CA9' }}>{item.asset}</p>
-                    <p className="text-sm mt-0.5" style={{ color: '#333944' }}>{item.line}</p>
+                    <p className="text-sm mt-0.5" style={{ color: 'var(--ink)' }}>{item.line}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="pt-6" style={{ borderTop: '1px solid #E5E8F4' }}>
-            <p className="text-[11px] tracking-wide mb-2" style={{ color: '#A4A9BE' }}>PRODUCT ESSENCE (FOR MARKETING, DECKS, COMPANY DOCS)</p>
-            <div className="p-4 rounded-lg" style={{ background: 'linear-gradient(135deg, rgba(67,86,169,0.06), rgba(235,79,114,0.06))', border: '1px solid rgba(67,86,169,0.12)' }}>
-              <p className="text-sm leading-relaxed" style={{ color: '#333944' }}>
+          <div className="pt-6" style={{ borderTop: '1px solid var(--rule-light)' }}>
+            <p className="text-[11px] tracking-wide mb-2" style={{ color: 'var(--slate-mid)' }}>PRODUCT ESSENCE (FOR MARKETING, DECKS, COMPANY DOCS)</p>
+            <div className="p-4 rounded-lg" style={{ background: 'linear-gradient(135deg, rgba(26,58,42,0.06), rgba(184,148,63,0.10))', border: '1px solid rgba(196,186,168,0.75)' }}>
+              <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
                 IntegrateWise is a knowledge workspace where the Spine becomes the single source
                 of truth and AI operates on top of that context — thinking, proposing, and
                 learning while every action remains under human approval.
@@ -665,14 +670,14 @@ export function BrandAssetsPage() {
         </div>
       </section>
 
-      <div className="flex items-start gap-3 p-4 rounded-lg" style={{ background: '#FFF9E6', border: '1px solid #F5E6A3' }}>
-        <Lightbulb className="w-5 h-5 shrink-0 mt-0.5" style={{ color: '#C48A00' }} />
+      <div className="flex items-start gap-3 p-4 rounded-lg" style={{ background: 'var(--gold-pale)', border: '1px solid var(--gold-light)' }}>
+        <Lightbulb className="w-5 h-5 shrink-0 mt-0.5" style={{ color: 'var(--gold)' }} />
         <div>
-          <p className="text-sm font-medium" style={{ color: '#6B4D00' }}>Brand Descriptor Update</p>
-          <p className="text-sm mt-1" style={{ color: '#7A5C00' }}>
+          <p className="text-sm font-medium" style={{ color: 'var(--forest)' }}>Brand Descriptor Update</p>
+          <p className="text-sm mt-1" style={{ color: 'var(--slate)' }}>
             The original logo subtitle says "Enterprise integrations" — the brand now clearly
-            stands for <strong>Adaptive Continuity Workspace</strong>. All stationery and marketing
-            materials use the updated descriptor: "IntegrateWise — Adaptive continuity workspace hydrated by the Spine."
+            now uses the canonical descriptor <strong>Adaptive continuity workspace hydrated by the Spine</strong>. All stationery and marketing
+            materials should use the updated descriptor: "IntegrateWise — Adaptive continuity workspace hydrated by the Spine."
           </p>
         </div>
       </div>
@@ -682,10 +687,10 @@ export function BrandAssetsPage() {
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center gap-3">
             <div className="h-1 w-12 rounded-full" style={{ background: 'var(--brand-primary)' }} />
-            <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Logo Variants</h3>
+            <h3 className="text-lg font-semibold" style={{ color: 'var(--forest)' }}>Logo Variants</h3>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-xs font-medium" style={{ color: '#7B8AAD' }}>Background:</span>
+            <span className="text-xs font-medium" style={{ color: 'var(--slate-mid)' }}>Background:</span>
             {(['light', 'grey', 'dark'] as BgMode[]).map((mode) => (
               <button
                 key={mode}
@@ -693,8 +698,8 @@ export function BrandAssetsPage() {
                 className="px-2.5 py-1 rounded-md text-xs font-medium transition-colors"
                 style={
                   bgMode === mode
-                    ? { border: '1px solid #4154A3', background: 'rgba(65,84,163,0.08)', color: '#4154A3' }
-                    : { border: '1px solid #D5DAE5', background: 'white', color: '#5F6E93' }
+                    ? { border: '1px solid var(--forest)', background: 'rgba(184,148,63,0.12)', color: 'var(--forest)' }
+                    : { border: '1px solid var(--rule-light)', background: 'white', color: 'var(--slate)' }
                 }
               >
                 {mode === 'light' ? 'White' : mode === 'grey' ? 'Grey' : 'Dark'}
@@ -705,11 +710,11 @@ export function BrandAssetsPage() {
 
         <div className="grid gap-6">
           {LOGO_VARIANTS.map((v) => (
-            <div key={v.variant} className="bg-white rounded-xl overflow-hidden" style={{ border: '1px solid #D5DAE5' }}>
-              <div className="px-6 py-3 flex items-center justify-between" style={{ borderBottom: '1px solid #E8ECF2' }}>
+            <div key={v.variant} className="bg-white rounded-xl overflow-hidden" style={{ border: '1px solid var(--rule-light)' }}>
+              <div className="px-6 py-3 flex items-center justify-between" style={{ borderBottom: '1px solid var(--paper-deep)' }}>
                 <div>
-                  <p className="text-sm font-semibold" style={{ color: '#1B2544' }}>{v.label}</p>
-                  <p className="text-xs" style={{ color: '#9BA8C2' }}>{v.desc}</p>
+                  <p className="text-sm font-semibold" style={{ color: 'var(--forest)' }}>{v.label}</p>
+                  <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>{v.desc}</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <button
@@ -719,8 +724,8 @@ export function BrandAssetsPage() {
                         content: <IntegrateWiseLogo variant={v.variant} />,
                       })
                     }
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium hover:bg-[#F0F2F7] transition-colors"
-                    style={{ color: '#5F6E93' }}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium hover:bg-[var(--paper-warm)] transition-colors"
+                    style={{ color: 'var(--slate)' }}
                   >
                     <Eye className="w-3.5 h-3.5" /> Preview
                   </button>
@@ -734,7 +739,7 @@ export function BrandAssetsPage() {
                 id={`logo-${v.variant}`}
                 className="flex items-center justify-center p-12 transition-colors duration-200"
                 style={{
-                  background: bgMode === 'light' ? '#fff' : bgMode === 'grey' ? '#EDF0F5' : '#1B2544'
+                  background: bgMode === 'light' ? '#fff' : bgMode === 'grey' ? 'var(--paper-warm)' : 'var(--forest)'
                 }}
               >
                 <IntegrateWiseLogo variant={v.variant} colorVariant={bgMode === 'dark' ? 'white' : 'default'} />
@@ -748,15 +753,15 @@ export function BrandAssetsPage() {
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <div className="h-1 w-12 rounded-full" style={{ background: 'var(--brand-primary)' }} />
-          <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>SVG Source Files</h3>
+          <h3 className="text-lg font-semibold" style={{ color: 'var(--forest)' }}>SVG Source Files</h3>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SVG_SOURCE_ASSETS.map((asset) => (
-            <div key={asset.name} className="bg-white rounded-xl overflow-hidden group" style={{ border: '1px solid #D5DAE5' }}>
+            <div key={asset.name} className="bg-white rounded-xl overflow-hidden group" style={{ border: '1px solid var(--rule-light)' }}>
               <div
                 className="flex items-center justify-center p-6 h-44 transition-colors duration-200"
                 style={{
-                  background: bgMode === 'light' ? '#fff' : bgMode === 'grey' ? '#EDF0F5' : '#1B2544'
+                  background: bgMode === 'light' ? '#fff' : bgMode === 'grey' ? 'var(--paper-warm)' : 'var(--forest)'
                 }}
               >
                 <img
@@ -769,10 +774,10 @@ export function BrandAssetsPage() {
                   }}
                 />
               </div>
-              <div className="px-5 py-4 flex items-center justify-between" style={{ borderTop: '1px solid #E8ECF2' }}>
+              <div className="px-5 py-4 flex items-center justify-between" style={{ borderTop: '1px solid var(--paper-deep)' }}>
                 <div>
-                  <p className="text-sm font-medium" style={{ color: '#2F3D5E' }}>{asset.label}</p>
-                  <p className="text-xs font-mono" style={{ color: '#9BA8C2' }}>{asset.name}</p>
+                  <p className="text-sm font-medium" style={{ color: 'var(--forest-mid)' }}>{asset.label}</p>
+                  <p className="text-xs font-mono" style={{ color: 'var(--slate-mid)' }}>{asset.name}</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <button
@@ -784,18 +789,18 @@ export function BrandAssetsPage() {
                         ),
                       })
                     }
-                    className="p-2 rounded-md hover:bg-[#F0F2F7] transition-colors"
+                    className="p-2 rounded-md hover:bg-[var(--paper-warm)] transition-colors"
                     title="Preview"
                   >
-                    <Eye className="w-4 h-4" style={{ color: '#7B8AAD' }} />
+                    <Eye className="w-4 h-4" style={{ color: 'var(--slate-mid)' }} />
                   </button>
                   <a 
                     href={asset.src} 
                     download={asset.name}
-                    className="p-2 rounded-md hover:bg-[#F0F2F7] transition-colors"
+                    className="p-2 rounded-md hover:bg-[var(--paper-warm)] transition-colors"
                     title="Download SVG"
                   >
-                    <Download className="w-4 h-4" style={{ color: '#7B8AAD' }} />
+                    <Download className="w-4 h-4" style={{ color: 'var(--slate-mid)' }} />
                   </a>
                 </div>
               </div>
@@ -808,7 +813,7 @@ export function BrandAssetsPage() {
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <div className="h-1 w-12 rounded-full" style={{ background: 'var(--brand-primary)' }} />
-          <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Brand Motifs</h3>
+          <h3 className="text-lg font-semibold" style={{ color: 'var(--forest)' }}>Brand Motifs</h3>
         </div>
         <div className="grid sm:grid-cols-2 gap-6">
           {[
@@ -817,9 +822,9 @@ export function BrandAssetsPage() {
             { name: 'Context Card', desc: 'Soft-edged box representing structured knowledge/context blocks.' },
             { name: 'Layer Bands', desc: 'Subtle layered strips suggesting workspace, intelligence, and governance layers.' },
           ].map((motif) => (
-            <div key={motif.name} className="bg-white rounded-xl p-6" style={{ border: '1px solid #D5DAE5' }}>
-              <h4 className="text-sm font-semibold" style={{ color: '#1B2544' }}>{motif.name}</h4>
-              <p className="text-xs mt-1" style={{ color: '#7B8AAD' }}>{motif.desc}</p>
+            <div key={motif.name} className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
+              <h4 className="text-sm font-semibold" style={{ color: 'var(--forest)' }}>{motif.name}</h4>
+              <p className="text-xs mt-1" style={{ color: 'var(--slate-mid)' }}>{motif.desc}</p>
             </div>
           ))}
         </div>
@@ -829,15 +834,15 @@ export function BrandAssetsPage() {
       <section className="space-y-6">
         <div className="flex items-center gap-3">
           <div className="h-1 w-12 rounded-full" style={{ background: 'var(--brand-primary)' }} />
-          <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Usage Guidelines</h3>
+          <h3 className="text-lg font-semibold" style={{ color: 'var(--forest)' }}>Usage Guidelines</h3>
         </div>
         <div className="grid sm:grid-cols-2 gap-6">
-          <div className="bg-white rounded-xl p-6" style={{ border: '1px solid #D5DAE5' }}>
+          <div className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: '#E8F5EE' }}>
-                <Check className="w-4 h-4" style={{ color: '#10B981' }} />
+              <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'rgba(61,122,80,0.12)' }}>
+                <Check className="w-4 h-4" style={{ color: 'var(--forest-bright)' }} />
               </div>
-              <h4 className="text-sm font-semibold" style={{ color: '#1B2544' }}>Do</h4>
+              <h4 className="text-sm font-semibold" style={{ color: 'var(--forest)' }}>Do</h4>
             </div>
             <ul className="space-y-3">
               {[
@@ -848,19 +853,19 @@ export function BrandAssetsPage() {
                 'Print: minimum 25mm width. Digital: minimum 120px width',
                 'Scale proportionally — never stretch',
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#475578' }}>
-                  <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: '#10B981' }} />
+                <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--slate)' }}>
+                  <Check className="w-4 h-4 mt-0.5 shrink-0" style={{ color: 'var(--forest-bright)' }} />
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-white rounded-xl p-6" style={{ border: '1px solid #D5DAE5' }}>
+          <div className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: '#FEE8EC' }}>
-                <X className="w-4 h-4" style={{ color: '#EB4379' }} />
+              <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'rgba(139,32,32,0.10)' }}>
+                <X className="w-4 h-4" style={{ color: 'var(--gold)' }} />
               </div>
-              <h4 className="text-sm font-semibold" style={{ color: '#1B2544' }}>Don't</h4>
+              <h4 className="text-sm font-semibold" style={{ color: 'var(--forest)' }}>Don't</h4>
             </div>
             <ul className="space-y-3">
               {[
@@ -869,10 +874,10 @@ export function BrandAssetsPage() {
                 'Place the logo on busy or low-contrast backgrounds',
                 'Rotate or skew the logo in any direction',
                 'Use full-color logo on dark backgrounds',
-                'Use coral/pink heavily in formal documents (seal, invoice)',
+                'Use deck-only or legacy accent palettes in canonical product/runtime surfaces',
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#475578' }}>
-                  <X className="w-4 h-4 mt-0.5 shrink-0" style={{ color: '#EB4379' }} />
+                <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--slate)' }}>
+                  <X className="w-4 h-4 mt-0.5 shrink-0" style={{ color: 'var(--gold)' }} />
                   {item}
                 </li>
               ))}
@@ -885,10 +890,10 @@ export function BrandAssetsPage() {
       <section className="space-y-6 pb-8">
         <div className="flex items-center gap-3">
           <div className="h-1 w-12 rounded-full" style={{ background: 'var(--brand-primary)' }} />
-          <h3 className="text-lg font-semibold" style={{ color: '#1B2544' }}>Overall Design Style</h3>
+          <h3 className="text-lg font-semibold" style={{ color: 'var(--forest)' }}>Overall Design Style</h3>
         </div>
-        <div className="bg-white rounded-xl p-6" style={{ border: '1px solid #D5DAE5' }}>
-          <p className="text-sm font-semibold mb-3" style={{ color: '#1B2544' }}>Enterprise Minimal + Intelligent Systems Aesthetic</p>
+        <div className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
+          <p className="text-sm font-semibold mb-3" style={{ color: 'var(--forest)' }}>Enterprise Minimal + Intelligent Systems Aesthetic</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { feel: 'Trusted enterprise platform', not: 'Not flashy startup graphics' },
@@ -896,12 +901,12 @@ export function BrandAssetsPage() {
               { feel: 'Structured intelligence system', not: 'Not crowded marketing layouts' },
               { feel: 'Human-governed AI', not: 'Not generic tech templates' },
             ].map((item, i) => (
-              <div key={i} className="p-3 rounded-lg" style={{ background: '#F0F2F7' }}>
-                <p className="text-sm flex items-center gap-1.5" style={{ color: '#2F3D5E' }}>
-                  <Check className="w-3.5 h-3.5" style={{ color: '#10B981' }} />{item.feel}
+              <div key={i} className="p-3 rounded-lg" style={{ background: 'var(--paper-warm)' }}>
+                <p className="text-sm flex items-center gap-1.5" style={{ color: 'var(--forest-mid)' }}>
+                  <Check className="w-3.5 h-3.5" style={{ color: 'var(--forest-bright)' }} />{item.feel}
                 </p>
-                <p className="text-xs flex items-center gap-1.5 mt-1" style={{ color: '#9BA8C2' }}>
-                  <X className="w-3.5 h-3.5" style={{ color: '#EB4379' }} />{item.not}
+                <p className="text-xs flex items-center gap-1.5 mt-1" style={{ color: 'var(--slate-mid)' }}>
+                  <X className="w-3.5 h-3.5" style={{ color: 'var(--gold)' }} />{item.not}
                 </p>
               </div>
             ))}
@@ -918,12 +923,12 @@ function MessagingCard({ label, text, highlight }: { label: string; text: string
       className="p-4 rounded-lg"
       style={
         highlight
-          ? { border: '1px solid rgba(65,84,163,0.2)', background: 'rgba(65,84,163,0.05)' }
-          : { border: '1px solid #E8ECF2', background: '#F0F2F7' }
+          ? { border: '1px solid rgba(184,148,63,0.35)', background: 'rgba(184,148,63,0.10)' }
+          : { border: '1px solid var(--paper-deep)', background: 'var(--paper-warm)' }
       }
     >
-      <p className="text-[11px] font-medium mb-1" style={{ color: '#7B8AAD' }}>{label}</p>
-      <p className={`text-sm ${highlight ? 'font-semibold' : ''}`} style={{ color: highlight ? '#1B2544' : '#2F3D5E' }}>{text}</p>
+      <p className="text-[11px] font-medium mb-1" style={{ color: 'var(--slate-mid)' }}>{label}</p>
+      <p className={`text-sm ${highlight ? 'font-semibold' : ''}`} style={{ color: highlight ? 'var(--forest)' : 'var(--forest-mid)' }}>{text}</p>
     </div>
   );
 }

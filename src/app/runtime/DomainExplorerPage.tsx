@@ -28,9 +28,9 @@ const contentIcons: Record<ContentType, React.ElementType> = {
 };
 
 const contentColors: Record<CanonicalState, string> = {
-  triage: "#F59E0B",
-  "knowledge-persisted": "#10B981",
-  references: "#8B5CF6",
+  triage: "#B8943F",
+  "knowledge-persisted": "#3D7A50",
+  references: "#2A4A6A",
 };
 
 interface DomainCounts {
@@ -80,8 +80,8 @@ export function DomainExplorerPage() {
         <div className="flex items-center gap-3">
           {affineHealth !== null && (
             <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full" style={{
-              background: affineHealth ? "#10B98115" : "#EF444415",
-              color: affineHealth ? "#10B981" : "#EF4444",
+              background: affineHealth ? "rgba(61,122,80,0.12)" : "rgba(139,32,32,0.10)",
+              color: affineHealth ? "#3D7A50" : "#8B2020",
             }}>
               {affineHealth ? <CheckCircle className="w-3 h-3" /> : <AlertCircle className="w-3 h-3" />}
               AFFiNE {affineHealth ? "Online" : "Offline"}
@@ -130,15 +130,15 @@ export function DomainExplorerPage() {
               </div>
               <div className="grid grid-cols-3 gap-2">
                 <div className="text-center p-2 rounded-lg" style={{ background: "var(--muted)" }}>
-                  <div className="text-lg font-bold" style={{ color: "#F59E0B" }}>{count.triage}</div>
+                  <div className="text-lg font-bold" style={{ color: "#B8943F" }}>{count.triage}</div>
                   <div className="text-[10px]" style={{ color: "var(--muted-foreground)" }}>Triage</div>
                 </div>
                 <div className="text-center p-2 rounded-lg" style={{ background: "var(--muted)" }}>
-                  <div className="text-lg font-bold" style={{ color: "#10B981" }}>{count["knowledge-persisted"]}</div>
+                  <div className="text-lg font-bold" style={{ color: "#3D7A50" }}>{count["knowledge-persisted"]}</div>
                   <div className="text-[10px]" style={{ color: "var(--muted-foreground)" }}>Knowledge</div>
                 </div>
                 <div className="text-center p-2 rounded-lg" style={{ background: "var(--muted)" }}>
-                  <div className="text-lg font-bold" style={{ color: "#8B5CF6" }}>{count.references}</div>
+                  <div className="text-lg font-bold" style={{ color: "#2A4A6A" }}>{count.references}</div>
                   <div className="text-[10px]" style={{ color: "var(--muted-foreground)" }}>Refs</div>
                 </div>
               </div>
@@ -199,7 +199,7 @@ function DomainDetail({ domain, onBack }: { domain: ApprovedDomain; onBack: () =
           <button
             onClick={() => setShowCreate(!showCreate)}
             className="px-4 py-2 rounded-lg text-sm font-medium text-white transition-opacity hover:opacity-90 flex items-center gap-2"
-            style={{ background: "var(--brand-primary)" }}
+            style={{ background: "var(--forest)" }}
           >
             <Plus className="w-4 h-4" />
             New Item

@@ -38,18 +38,18 @@ export const DOMAIN_LABELS: Record<ApprovedDomain, string> = {
 };
 
 export const DOMAIN_COLORS: Record<ApprovedDomain, string> = {
-  executive: "#1B2544",
-  product: "#EB4F72",
-  engineering: "#4154A3",
-  design: "#8B5CF6",
-  "ai-operations": "#6366F1",
-  "business-operations": "#55608C",
-  sales: "#D9637F",
-  marketing: "#F59E0B",
-  "customer-success": "#10B981",
-  finance: "#232D42",
-  "research-and-continuity": "#3B82F6",
-  "infrastructure-and-security": "#EF4444",
+  executive: "#1A2E4A",
+  product: "#1A3A2A",
+  engineering: "#2A4A6A",
+  design: "#D4AC5A",
+  "ai-operations": "#2D5A3D",
+  "business-operations": "#1A2E4A",
+  sales: "#8B2020",
+  marketing: "#B8943F",
+  "customer-success": "#3D7A50",
+  finance: "#0C0C0C",
+  "research-and-continuity": "#2D5A3D",
+  "infrastructure-and-security": "#8B2020",
 };
 
 export function isApprovedDomain(value: string): value is ApprovedDomain {

@@ -9,15 +9,15 @@ interface IntegrateWiseLogoProps {
 export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', className = '' }: IntegrateWiseLogoProps) {
   
   // Determine fill colors based on colorVariant
-  let primaryFill = 'var(--brand-primary)';
-  let accentFill = 'var(--brand-accent)';
-  let textColor = 'var(--brand-gray-900)';
+  let primaryFill = 'var(--forest)';
+  let accentFill = 'var(--gold)';
+  let textColor = 'var(--ink)';
   let titleColorClass = 'text-brand-gray-900';
   let subtitleColorClass = 'text-brand-gray-600';
 
   if (colorVariant === 'white') {
     primaryFill = '#FFFFFF';
-    accentFill = 'var(--brand-accent)';
+    accentFill = 'var(--gold-light)';
     textColor = '#FFFFFF';
     titleColorClass = 'text-white';
     subtitleColorClass = 'text-white/80';
@@ -28,15 +28,15 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
     titleColorClass = 'text-white';
     subtitleColorClass = 'text-white/80';
   } else if (colorVariant === 'monochrome-dark') {
-    primaryFill = 'var(--brand-gray-900)';
-    accentFill = 'var(--brand-gray-900)';
-    textColor = 'var(--brand-gray-900)';
+    primaryFill = 'var(--ink)';
+    accentFill = 'var(--ink)';
+    textColor = 'var(--ink)';
     titleColorClass = 'text-brand-gray-900';
     subtitleColorClass = 'text-brand-gray-900';
   } else if (colorVariant === 'blue-only') {
-    primaryFill = 'var(--brand-primary)';
-    accentFill = 'var(--brand-primary)';
-    textColor = 'var(--brand-primary)';
+    primaryFill = 'var(--forest)';
+    accentFill = 'var(--forest)';
+    textColor = 'var(--forest)';
     titleColorClass = 'text-brand-primary';
     subtitleColorClass = 'text-brand-primary';
   } else if (colorVariant === 'print-safe-black') {
@@ -61,11 +61,11 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
             x="93" 
             y="120" 
             fill={textColor} 
-            fontFamily="Inter, system-ui, sans-serif" 
+            fontFamily="Instrument Sans, system-ui, sans-serif" 
             fontWeight="normal" 
             fontSize="14"
           >
-            Adaptive continuity workspace projected from hydrated organizational reality
+            Adaptive continuity workspace hydrated by the Spine
           </text>
         </g>
       )}
@@ -88,7 +88,7 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
           IntegrateWise
         </h1>
         <p className={clsx("tracking-wide", subtitleColorClass, variant === 'full' ? 'text-lg' : 'text-base')} style={{ color: colorVariant === 'default' ? 'var(--muted-foreground)' : undefined }}>
-          IntegrateWise. - Adaptive continuity workspace projected from hydrated organizational reality
+          Adaptive continuity workspace hydrated by the Spine
         </p>
       </div>
     </div>
