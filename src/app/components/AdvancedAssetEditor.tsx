@@ -56,14 +56,14 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
   const [colorVariant, setColorVariant] = useState<'default' | 'white' | 'monochrome-dark' | 'monochrome-white' | 'blue-only' | 'print-safe-black'>('default');
   
   // Custom colors
-  const [customPrimaryColor, setCustomPrimaryColor] = useState('#4154A3');
-  const [customAccentColor, setCustomAccentColor] = useState('#EB4379');
+  const [customPrimaryColor, setCustomPrimaryColor] = useState('#1A3A2A');
+  const [customAccentColor, setCustomAccentColor] = useState('#B8943F');
   const [useCustomColors, setUseCustomColors] = useState(false);
   
   // Background settings
   const [bgType, setBgType] = useState<'solid' | 'gradient' | 'transparent'>('solid');
   const [bgColor, setBgColor] = useState('#ffffff');
-  const [bgGradientStart, setBgGradientStart] = useState('#EDF0F5');
+  const [bgGradientStart, setBgGradientStart] = useState('#EBE5D8');
   const [bgGradientEnd, setBgGradientEnd] = useState('#ffffff');
   const [bgGradientAngle, setBgGradientAngle] = useState(135);
   
@@ -104,7 +104,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
   const getBackgroundStyle = (): React.CSSProperties => {
     if (bgType === 'transparent') {
       return {
-        background: 'repeating-conic-gradient(#D5DAE5 0% 25%, transparent 0% 50%) 50% / 20px 20px',
+        background: 'repeating-conic-gradient(var(--rule-light) 0% 25%, transparent 0% 50%) 50% / 20px 20px',
         backgroundColor: '#ffffff'
       };
     }
@@ -222,30 +222,30 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
       <div className="relative bg-white rounded-2xl shadow-2xl w-[95vw] max-w-7xl max-h-[95vh] flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: '1px solid #D5DAE5' }}>
+        <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: '1px solid var(--rule-light)' }}>
           <div>
-            <h2 className="text-lg font-bold" style={{ color: '#1B2544' }}>Advanced Asset Editor</h2>
-            <p className="text-xs" style={{ color: '#9BA8C2' }}>Comprehensive brand asset customization & batch export</p>
+            <h2 className="text-lg font-bold" style={{ color: 'var(--forest)' }}>Advanced Asset Editor</h2>
+            <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Comprehensive brand asset customization & batch export</p>
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={resetToDefaults}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors"
-              style={{ border: '1px solid #D5DAE5', color: '#5F6E93' }}
+              style={{ border: '1px solid var(--rule-light)', color: 'var(--slate)' }}
             >
               <RefreshCw className="w-3.5 h-3.5" /> Reset
             </button>
-            <button onClick={onClose} className="p-1.5 rounded-md hover:bg-[#F0F2F7]">
-              <X className="w-5 h-5" style={{ color: '#5F6E93' }} />
+            <button onClick={onClose} className="p-1.5 rounded-md hover:bg-[var(--paper-warm)]">
+              <X className="w-5 h-5" style={{ color: 'var(--slate)' }} />
             </button>
           </div>
         </div>
 
         <div className="flex flex-1 overflow-hidden">
           {/* Left Panel - Controls */}
-          <div className="w-80 overflow-y-auto" style={{ borderRight: '1px solid #E8ECF2', background: '#F8FAFC' }}>
+          <div className="w-80 overflow-y-auto" style={{ borderRight: '1px solid var(--rule-light)', background: 'var(--paper-warm)' }}>
             {/* Tabs */}
-            <div className="flex flex-wrap gap-1 p-3" style={{ borderBottom: '1px solid #E8ECF2' }}>
+            <div className="flex flex-wrap gap-1 p-3" style={{ borderBottom: '1px solid var(--rule-light)' }}>
               {[
                 { id: 'basic', label: 'Basic', icon: Settings },
                 { id: 'colors', label: 'Colors', icon: Palette },
@@ -259,8 +259,8 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors"
                   style={
                     activeTab === tab.id
-                      ? { background: '#4154A3', color: 'white' }
-                      : { background: 'white', color: '#5F6E93', border: '1px solid #D5DAE5' }
+                      ? { background: 'var(--forest)', color: 'var(--paper)' }
+                      : { background: 'white', color: 'var(--slate)', border: '1px solid var(--rule-light)' }
                   }
                 >
                   <tab.icon className="w-3.5 h-3.5" />
@@ -298,7 +298,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                         { id: 'white', label: 'White' },
                         { id: 'monochrome-dark', label: 'Mono Dark' },
                         { id: 'monochrome-white', label: 'Mono White' },
-                        { id: 'blue-only', label: 'Blue Only' },
+                        { id: 'blue-only', label: 'Forest Only' },
                         { id: 'print-safe-black', label: 'Print Black' },
                       ].map(theme => (
                         <button
@@ -334,7 +334,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                       </label>
                     </div>
                     {useCustomColors && (
-                      <div className="space-y-3 p-3 rounded-lg" style={{ background: '#F0F2F7' }}>
+                      <div className="space-y-3 p-3 rounded-lg" style={{ background: 'var(--paper)' }}>
                         <div>
                           <label className="text-xs font-medium text-brand-gray-700">Primary Color</label>
                           <div className="flex items-center gap-2 mt-1">
@@ -564,7 +564,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                     </div>
 
                     {shadowEnabled && (
-                      <div className="space-y-3 p-3 rounded-lg" style={{ background: '#F0F2F7' }}>
+                      <div className="space-y-3 p-3 rounded-lg" style={{ background: 'var(--paper)' }}>
                         <div>
                           <label className="text-xs font-medium text-brand-gray-700">
                             Blur: {shadowBlur}px
@@ -645,7 +645,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                     <label className="text-xs font-medium text-brand-gray-700">
                       Batch Export Presets ({selectedPresets.length} selected)
                     </label>
-                    <div className="space-y-1.5 max-h-64 overflow-y-auto p-2 rounded-lg" style={{ background: '#F0F2F7' }}>
+                    <div className="space-y-1.5 max-h-64 overflow-y-auto p-2 rounded-lg" style={{ background: 'var(--paper)' }}>
                       {EXPORT_PRESETS.map(preset => (
                         <button
                           key={preset.id}
@@ -653,8 +653,8 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                           className="w-full flex items-center justify-between px-3 py-2 rounded-md text-xs transition-colors"
                           style={
                             selectedPresets.includes(preset.id)
-                              ? { background: '#4154A3', color: 'white' }
-                              : { background: 'white', color: '#5F6E93' }
+                              ? { background: 'var(--forest)', color: 'var(--paper)' }
+                              : { background: 'white', color: 'var(--slate)' }
                           }
                         >
                           <span className="font-medium">{preset.name}</span>
@@ -668,7 +668,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                     onClick={handleBatchExport}
                     disabled={isExporting || selectedPresets.length === 0}
                     className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                    style={{ background: '#EB4379', color: 'white' }}
+                    style={{ background: 'var(--gold)', color: 'var(--ink)' }}
                   >
                     {isExporting ? (
                       <>

@@ -55,11 +55,11 @@ type NavEntry = { type: 'item'; item: NavItem } | { type: 'group'; group: NavGro
 const NAV_STRUCTURE: NavEntry[] = [
   {
     type: 'item',
-    item: { to: '/quick-start', icon: Rocket, label: 'Quick Start', color: '#EB4F72' },
+    item: { to: '/quick-start', icon: Rocket, label: 'Quick Start', color: 'var(--gold)' },
   },
   {
     type: 'item',
-    item: { to: '/gallery', icon: Image, label: 'Product Gallery', color: '#4154A3' },
+    item: { to: '/gallery', icon: Image, label: 'Product Gallery', color: 'var(--slate-mid)' },
   },
   {
     type: 'group',
@@ -67,11 +67,11 @@ const NAV_STRUCTURE: NavEntry[] = [
       id: 'brand-system',
       label: 'Brand System',
       icon: Palette,
-      color: '#4356A9',
+      color: 'var(--forest)',
       children: [
-        { to: '/brand-assets', icon: Palette, label: 'Brand Assets', color: '#4356A9' },
-        { to: '/design-tokens', icon: SwatchBook, label: 'Design Tokens', color: '#55608C' },
-        { to: '/stationery', icon: Stamp, label: 'Stationery', color: '#232D42' },
+        { to: '/brand-assets', icon: Palette, label: 'Brand Assets', color: 'var(--forest)' },
+        { to: '/design-tokens', icon: SwatchBook, label: 'Design Tokens', color: 'var(--gold-light)' },
+        { to: '/stationery', icon: Stamp, label: 'Stationery', color: 'var(--forest-mid)' },
       ],
     },
   },
@@ -81,10 +81,10 @@ const NAV_STRUCTURE: NavEntry[] = [
       id: 'company-system',
       label: 'Company & Product',
       icon: Building2,
-      color: '#636A82',
+      color: 'var(--slate)',
       children: [
-        { to: '/company', icon: Target, label: 'Strategy & Execution', color: '#4154A3' },
-        { to: '/architecture', icon: GitBranch, label: 'Architecture', color: '#636A82' },
+        { to: '/company', icon: Target, label: 'Strategy & Execution', color: 'var(--slate-mid)' },
+        { to: '/architecture', icon: GitBranch, label: 'Architecture', color: 'var(--slate)' },
       ],
     },
   },
@@ -95,21 +95,21 @@ const NAV_STRUCTURE: NavEntry[] = [
       id: 'marketing-gtm',
       label: 'Marketing & GTM',
       icon: Megaphone,
-      color: '#EB4F72',
+      color: 'var(--gold)',
       children: [
-        { to: '/generators', icon: Zap, label: 'Quick Generators', color: '#EB4F72' },
-        { to: '/marketing', icon: Megaphone, label: 'Marketing', color: '#EB4F72' },
-        { to: '/linkedin', icon: Megaphone, label: 'LinkedIn', color: '#0A66C2' },
-        { to: '/whatsapp', icon: MessageCircle, label: 'WhatsApp', color: '#25D366' },
-        { to: '/email', icon: Mail, label: 'Email', color: '#4154A3' },
-        { to: '/presentations', icon: Presentation, label: 'Presentations', color: '#636A82' },
-        { to: '/sales', icon: HandCoins, label: 'Sales', color: '#D9637F' },
+        { to: '/generators', icon: Zap, label: 'Quick Generators', color: 'var(--gold)' },
+        { to: '/marketing', icon: Megaphone, label: 'Marketing', color: 'var(--gold)' },
+        { to: '/linkedin', icon: Megaphone, label: 'LinkedIn', color: 'var(--slate-mid)' },
+        { to: '/whatsapp', icon: MessageCircle, label: 'WhatsApp', color: 'var(--forest-bright)' },
+        { to: '/email', icon: Mail, label: 'Email', color: 'var(--slate-mid)' },
+        { to: '/presentations', icon: Presentation, label: 'Presentations', color: 'var(--slate)' },
+        { to: '/sales', icon: HandCoins, label: 'Sales', color: 'var(--red)' },
       ],
     },
   },
   {
     type: 'item',
-    item: { to: '/control-panel', icon: LayoutDashboard, label: 'Control Panel', color: '#4154A3' },
+    item: { to: '/control-panel', icon: LayoutDashboard, label: 'Control Panel', color: 'var(--slate-mid)' },
   },
   // Documentation Library (6 items)
   {
@@ -118,14 +118,14 @@ const NAV_STRUCTURE: NavEntry[] = [
       id: 'documentation',
       label: 'Documentation Library',
       icon: BookOpen,
-      color: '#636A82',
+      color: 'var(--slate)',
         children: [
-        { to: '/documentation?pack=pack-a', icon: Building2, label: 'Doctrine & Continuity Strategy', color: '#4356A9' },
-        { to: '/documentation?pack=pack-b', icon: Target, label: 'Category & Positioning', color: '#EB4F72' },
-        { to: '/documentation?pack=pack-c', icon: Box, label: 'Product Narrative & Continuity', color: '#55608C' },
-        { to: '/documentation?pack=pack-d', icon: GitBranch, label: 'Adaptive Spine & Technical System', color: '#636A82' },
-        { to: '/documentation?pack=pack-e', icon: Shield, label: 'AI Governance & Trust', color: '#232D42' },
-        { to: '/documentation?pack=pack-f', icon: Megaphone, label: 'GTM, Sales & Customer Success', color: '#D9637F' },
+        { to: '/documentation?pack=pack-a', icon: Building2, label: 'Doctrine & Continuity Strategy', color: 'var(--forest)' },
+        { to: '/documentation?pack=pack-b', icon: Target, label: 'Category & Positioning', color: 'var(--gold)' },
+        { to: '/documentation?pack=pack-c', icon: Box, label: 'Product Narrative & Continuity', color: 'var(--gold-light)' },
+        { to: '/documentation?pack=pack-d', icon: GitBranch, label: 'Adaptive Spine & Technical System', color: 'var(--slate)' },
+        { to: '/documentation?pack=pack-e', icon: Shield, label: 'AI Governance & Trust', color: 'var(--forest-mid)' },
+        { to: '/documentation?pack=pack-f', icon: Megaphone, label: 'GTM, Sales & Customer Success', color: 'var(--red)' },
       ],
     },
   },
@@ -231,7 +231,7 @@ export function RootLayout() {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden" style={{ background: 'var(--brand-gray-100)' }}>
+    <div className="flex h-screen overflow-hidden" style={{ background: 'var(--paper-warm)' }}>
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div
@@ -245,21 +245,21 @@ export function RootLayout() {
         className={`fixed lg:static inset-y-0 left-0 z-50 w-72 flex flex-col transition-transform duration-200 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
-        style={{ background: 'var(--brand-navy-800)', borderRight: '1px solid var(--brand-navy-700)' }}
+        style={{ background: 'var(--forest)', borderRight: '1px solid var(--sidebar-border)' }}
       >
         {/* Sidebar header */}
         <div
           className="h-16 flex items-center px-6 shrink-0"
-          style={{ borderBottom: '1px solid var(--brand-navy-700)' }}
+          style={{ borderBottom: '1px solid var(--sidebar-border)' }}
         >
           <IntegrateWiseLogo variant="icon-only" className="scale-75 origin-left" />
           <div className="ml-2">
             <p className="text-sm font-semibold text-white">IntegrateWise</p>
-              <p className="text-[11px]" style={{ color: 'var(--brand-navy-400)' }}>Continuity Documentation System</p>
+              <p className="text-[11px]" style={{ color: 'rgba(244,240,232,0.72)' }}>Continuity Documentation System</p>
           </div>
           <button
             className="ml-auto lg:hidden p-1 rounded-md"
-            style={{ color: 'var(--brand-navy-400)' }}
+            style={{ color: 'rgba(244,240,232,0.72)' }}
             onClick={() => setSidebarOpen(false)}
           >
             <X className="w-5 h-5" />
@@ -271,7 +271,7 @@ export function RootLayout() {
           <div className="relative">
             <Search
               className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5"
-              style={{ color: 'var(--brand-navy-400)' }}
+              style={{ color: 'rgba(244,240,232,0.72)' }}
             />
             <input
               type="text"
@@ -280,9 +280,9 @@ export function RootLayout() {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-9 pr-3 py-2 rounded-lg text-xs"
               style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid var(--brand-navy-700)',
-                color: 'var(--brand-navy-300)',
+                background: 'rgba(244,240,232,0.08)',
+                border: '1px solid var(--sidebar-border)',
+                color: 'rgba(244,240,232,0.82)',
               }}
             />
           </div>
@@ -306,15 +306,15 @@ export function RootLayout() {
                   }
                   style={({ isActive }) =>
                     isActive
-                      ? { background: 'var(--brand-primary)' }
-                      : { color: 'var(--brand-navy-300)' }
+                      ? { background: 'var(--gold)', color: 'var(--ink)' }
+                      : { color: 'rgba(244,240,232,0.82)' }
                   }
                 >
                   {({ isActive }) => (
                     <>
                       <item.icon
                         className="w-5 h-5 shrink-0"
-                        style={!isActive ? { color: 'var(--brand-navy-500)' } : undefined}
+                        style={!isActive ? { color: 'rgba(244,240,232,0.56)' } : undefined}
                       />
                       <span>{item.label}</span>
                     </>
@@ -338,8 +338,8 @@ export function RootLayout() {
                   onClick={() => toggleGroup(group.id)}
                   className="w-full flex items-center gap-2.5 px-4 py-2 rounded-lg text-left transition-colors"
                   style={{
-                    background: isExpanded ? 'rgba(255,255,255,0.04)' : 'transparent',
-                    color: hasActiveChild ? '#fff' : 'var(--brand-navy-300)',
+                    background: isExpanded ? 'rgba(244,240,232,0.06)' : 'transparent',
+                    color: hasActiveChild ? 'var(--paper)' : 'rgba(244,240,232,0.82)',
                   }}
                 >
                   {isExpanded ? (
@@ -377,14 +377,14 @@ export function RootLayout() {
                             className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left transition-colors text-sm"
                             style={
                               isActive
-                                ? { background: 'var(--brand-primary)', color: '#fff' }
-                                : { color: 'var(--brand-navy-300)' }
+                                ? { background: 'var(--gold)', color: 'var(--ink)' }
+                                : { color: 'rgba(244,240,232,0.82)' }
                             }
                           >
                             <child.icon
                               className="w-4 h-4 shrink-0"
                               style={{
-                                color: isActive ? '#fff' : child.color || 'var(--brand-navy-500)',
+                                color: isActive ? 'var(--ink)' : child.color || 'rgba(244,240,232,0.56)',
                               }}
                             />
                             <span className="text-xs">{child.label}</span>
@@ -405,8 +405,8 @@ export function RootLayout() {
                           }
                           style={({ isActive }) =>
                             isActive
-                              ? { background: 'var(--brand-primary)', color: '#fff' }
-                              : { color: 'var(--brand-navy-300)' }
+                              ? { background: 'var(--gold)', color: 'var(--ink)' }
+                              : { color: 'rgba(244,240,232,0.82)' }
                           }
                         >
                           {({ isActive }) => (
@@ -414,7 +414,7 @@ export function RootLayout() {
                               <child.icon
                                 className="w-4 h-4 shrink-0"
                                 style={{
-                                  color: isActive ? '#fff' : child.color || 'var(--brand-navy-500)',
+                                  color: isActive ? 'var(--ink)' : child.color || 'rgba(244,240,232,0.56)',
                                 }}
                               />
                               <span className="text-xs">{child.label}</span>
@@ -431,10 +431,10 @@ export function RootLayout() {
         </nav>
 
         {/* Sidebar footer */}
-        <div className="p-4 shrink-0" style={{ borderTop: '1px solid var(--brand-navy-700)' }}>
-          <div className="px-4 py-3 rounded-lg" style={{ background: 'rgba(67,86,169,0.15)' }}>
+        <div className="p-4 shrink-0" style={{ borderTop: '1px solid var(--sidebar-border)' }}>
+          <div className="px-4 py-3 rounded-lg" style={{ background: 'rgba(184,148,63,0.18)' }}>
             <p className="text-xs font-medium text-white">Continuity Documentation System v1.0</p>
-            <p className="text-[11px] mt-0.5" style={{ color: 'var(--brand-navy-400)' }}>
+            <p className="text-[11px] mt-0.5" style={{ color: 'rgba(244,240,232,0.72)' }}>
               6 Doctrine Packs &middot; 40 Documents
             </p>
           </div>
@@ -445,12 +445,12 @@ export function RootLayout() {
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top bar */}
         <header
-          className="h-16 bg-white flex items-center px-6 shrink-0"
-          style={{ borderBottom: '1px solid var(--brand-gray-200)' }}
+          className="h-16 flex items-center px-6 shrink-0"
+          style={{ background: 'var(--paper)', borderBottom: '1px solid var(--rule-light)' }}
         >
           <button
             className="lg:hidden p-2 -ml-2 mr-3 rounded-md"
-            style={{ color: 'var(--brand-gray-600)' }}
+            style={{ color: 'var(--slate)' }}
             onClick={() => setSidebarOpen(true)}
           >
             <Menu className="w-5 h-5" />
@@ -470,10 +470,10 @@ export function RootLayout() {
                     if (isMatch) {
                       return (
                         <>
-                          <span className="text-sm" style={{ color: 'var(--brand-gray-500)' }}>
+                          <span className="text-sm" style={{ color: 'var(--slate-mid)' }}>
                             {entry.group.label}
                           </span>
-                          <ChevronRight className="w-3.5 h-3.5" style={{ color: 'var(--brand-gray-400)' }} />
+                          <ChevronRight className="w-3.5 h-3.5" style={{ color: 'var(--rule)' }} />
                         </>
                       );
                     }
@@ -482,7 +482,7 @@ export function RootLayout() {
               }
               return null;
             })()}
-            <h1 className="text-lg font-semibold" style={{ color: 'var(--brand-navy-800)' }}>
+            <h1 className="text-lg font-semibold" style={{ color: 'var(--ink)' }}>
               {currentPage}
             </h1>
           </div>

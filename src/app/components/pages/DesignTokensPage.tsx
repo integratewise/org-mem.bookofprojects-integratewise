@@ -12,13 +12,13 @@ function CopyButton({ text }: { text: string }) {
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
       }}
-      className="p-1 rounded hover:bg-[#E8ECF2] transition-colors"
+      className="p-1 rounded hover:bg-[var(--paper-deep)] transition-colors"
       title={`Copy ${text}`}
     >
       {copied ? (
-        <Check className="w-3 h-3" style={{ color: '#10B981' }} />
+        <Check className="w-3 h-3" style={{ color: 'var(--forest-bright)' }} />
       ) : (
-        <Copy className="w-3 h-3" style={{ color: '#9BA8C2' }} />
+        <Copy className="w-3 h-3" style={{ color: 'var(--slate-mid)' }} />
       )}
     </button>
   );
@@ -30,70 +30,67 @@ export function DesignTokensPage() {
     <div className="p-6 lg:p-10 max-w-7xl mx-auto space-y-10">
       {/* Page header */}
       <div>
-        <h2 className="text-2xl font-bold" style={{ color: '#1B2544' }}>
+        <h2 className="text-2xl font-bold" style={{ color: 'var(--ink)' }}>
           Design Tokens
         </h2>
-        <p className="mt-1" style={{ color: '#7B8AAD' }}>
-          The single source of truth for IntegrateWise brand colors, typography, spacing, radius, and elevation — all values match{' '}
+        <p className="mt-1" style={{ color: 'var(--slate-mid)' }}>
+          The single source of truth for the canonical Forest + Paper design system — colors, typography, spacing, radius, and elevation all match{' '}
           <code
             className="text-xs font-mono px-1 py-0.5 rounded"
-            style={{ background: '#F0F2F7', color: '#4154A3' }}
+            style={{ background: 'var(--paper-warm)', color: 'var(--forest)' }}
           >
             theme.css
           </code>{' '}
-          exactly.
+          exactly, with Forest + Paper as the governing product/runtime language.
         </p>
       </div>
 
-      {/* ─── Color Palette ─── */}
+      {/* ─── Canonical Palette ─── */}
       <section className="space-y-6">
-        <SectionHeader title="Color Palette" />
+        <SectionHeader title="Canonical Palette" />
 
-        {/* Primary + Accent */}
-        <TokenCard title="Brand Colors">
+        {/* Primary + Gold Accent */}
+        <TokenCard title="Forest + Gold Scale">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
-            <ColorToken name="Primary" hex="#4154A3" variable="--brand-primary" usage="Buttons, links, active nav" />
-            <ColorToken name="Primary Dark" hex="#364789" variable="--brand-primary-dark" usage="Hover states, gradients" />
-            <ColorToken name="Primary Light" hex="#6B7DC4" variable="--brand-primary-light" usage="Secondary highlights" />
-            <ColorToken name="Accent" hex="#EB4379" variable="--brand-accent" usage="CTAs, logo dot, emphasis" />
-            <ColorToken name="Accent Dark" hex="#D03568" variable="--brand-accent-dark" usage="Hover states" />
-            <ColorToken name="Accent Light" hex="#F26694" variable="--brand-accent-light" usage="Soft highlights" />
+            <ColorToken name="Forest" hex="#1A3A2A" variable="--forest" usage="Primary runtime shell, emphasis, active UI" />
+            <ColorToken name="Forest Mid" hex="#2D5A3D" variable="--forest-mid" usage="Depth, dark surfaces, hover states" />
+            <ColorToken name="Forest Bright" hex="#3D7A50" variable="--forest-bright" usage="Positive states, vitality, subtle highlights" />
+            <ColorToken name="Gold" hex="#B8943F" variable="--gold" usage="Calls to action, accent marks, approvals" />
+            <ColorToken name="Gold Light" hex="#D4AC5A" variable="--gold-light" usage="Hover states, warm highlights" />
+            <ColorToken name="Gold Pale" hex="#F0E0B0" variable="--gold-pale" usage="Soft emphasis and decorative fills" />
           </div>
         </TokenCard>
 
-        {/* Blue-Grey Neutrals */}
-        <TokenCard title="Blue-Grey Neutrals (Brand-Aligned)">
-          <p className="text-xs mb-5" style={{ color: '#7B8AAD' }}>
-            These are NOT standard Tailwind grays. They carry a blue undertone that aligns with the primary palette, extracted directly from the Figma design system.
+        {/* Paper, rule, and neutral surfaces */}
+        <TokenCard title="Paper, Rules & Editorial Neutrals">
+          <p className="text-xs mb-5" style={{ color: 'var(--slate-mid)' }}>
+            These are the canonical paper and rule surfaces used across the product shell, doctrine surfaces, and continuity interfaces.
           </p>
-          <div className="space-y-0 rounded-xl overflow-hidden" style={{ border: '1px solid #D5DAE5' }}>
+          <div className="space-y-0 rounded-xl overflow-hidden" style={{ border: '1px solid var(--rule-light)' }}>
             {/* App background - special token */}
             <NeutralRow
-              name="Background"
-              hex="#EDF0F5"
-              variable="--brand-bg"
-              usage="Main app background"
+              name="Paper"
+              hex="#F4F0E8"
+              variable="--paper"
+              usage="Primary product and documentation surface"
               textDark
             />
             {([
-              { shade: '50', hex: '#F0F2F7', variable: '--brand-gray-50', usage: 'Card inner fills, input backgrounds' },
-              { shade: '100', hex: '#E8ECF2', variable: '--brand-gray-100', usage: 'Light borders, dividers' },
-              { shade: '200', hex: '#D5DAE5', variable: '--brand-gray-200', usage: 'Borders, separators' },
-              { shade: '300', hex: '#BCC3D4', variable: '--brand-gray-300', usage: 'Disabled icons, subtle UI' },
-              { shade: '400', hex: '#9BA8C2', variable: '--brand-gray-400', usage: 'Captions, labels, timestamps' },
-              { shade: '500', hex: '#7B8AAD', variable: '--brand-gray-500', usage: 'Sidebar icons, secondary text' },
-              { shade: '600', hex: '#5F6E93', variable: '--brand-gray-600', usage: 'Nav items, body text' },
-              { shade: '700', hex: '#475578', variable: '--brand-gray-700', usage: 'Emphasis body text' },
-              { shade: '800', hex: '#2F3D5E', variable: '--brand-gray-800', usage: 'Strong body text, labels' },
-              { shade: '900', hex: '#1B2544', variable: '--brand-gray-900', usage: 'Headings, maximum contrast' },
+              { shade: 'warm', hex: '#EBE5D8', variable: '--paper-warm', usage: 'Secondary paper surfaces, embedded panels' },
+              { shade: 'deep', hex: '#E0D9C8', variable: '--paper-deep', usage: 'Inset backgrounds, muted blocks' },
+              { shade: 'rule-light', hex: '#D8D0C0', variable: '--rule-light', usage: 'Dividers, table borders, separators' },
+              { shade: 'rule', hex: '#C4BAA8', variable: '--rule', usage: 'Stronger rules and structural lines' },
+              { shade: 'slate-mid', hex: '#2A4A6A', variable: '--slate-mid', usage: 'Secondary text, metadata, technical accents' },
+              { shade: 'slate', hex: '#1A2E4A', variable: '--slate', usage: 'Structured technical emphasis' },
+              { shade: 'ink', hex: '#0C0C0C', variable: '--ink', usage: 'Maximum contrast text and marks' },
             ] as const).map((t) => (
               <NeutralRow
                 key={t.shade}
-                name={`Gray ${t.shade}`}
+                name={String(t.shade)}
                 hex={t.hex}
                 variable={t.variable}
                 usage={t.usage}
-                textDark={Number(t.shade) <= 400}
+                textDark={!['slate-mid', 'slate', 'ink'].includes(String(t.shade))}
               />
             ))}
           </div>
@@ -102,10 +99,10 @@ export function DesignTokensPage() {
         {/* Semantic Colors */}
         <TokenCard title="Semantic Colors">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            <ColorToken name="Success" hex="#10B981" variable="--brand-success" usage="Positive states" />
-            <ColorToken name="Warning" hex="#F59E0B" variable="--brand-warning" usage="Caution states" />
-            <ColorToken name="Error" hex="#EF4444" variable="--brand-error" usage="Error states" />
-            <ColorToken name="Info" hex="#3B82F6" variable="--brand-info" usage="Informational" />
+            <ColorToken name="Success" hex="var(--forest-bright)" variable="--brand-success" usage="Positive states" />
+            <ColorToken name="Warning" hex="var(--gold)" variable="--brand-warning" usage="Caution states" />
+            <ColorToken name="Error" hex="var(--red)" variable="--brand-error" usage="Error states" />
+            <ColorToken name="Info" hex="var(--slate-mid)" variable="--brand-info" usage="Informational" />
           </div>
         </TokenCard>
 
@@ -114,26 +111,44 @@ export function DesignTokensPage() {
           <div className="space-y-4">
             <div
               className="h-28 rounded-xl"
-              style={{ background: 'linear-gradient(135deg, #4154A3 0%, #364789 50%, #EB4379 100%)' }}
+              style={{ background: 'linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 50%, var(--gold) 100%)' }}
             />
             <div className="flex items-center gap-2">
-              <code className="text-xs font-mono px-2 py-1 rounded" style={{ background: '#F0F2F7', color: '#475578' }}>
-                linear-gradient(135deg, #4154A3 0%, #364789 50%, #EB4379 100%)
+              <code className="text-xs font-mono px-2 py-1 rounded" style={{ background: 'var(--paper-warm)', color: 'var(--forest-mid)' }}>
+                linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 50%, var(--gold) 100%)
               </code>
-              <CopyButton text="linear-gradient(135deg, #4154A3 0%, #364789 50%, #EB4379 100%)" />
+              <CopyButton text="linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 50%, var(--gold) 100%)" />
             </div>
-            <p className="text-xs" style={{ color: '#7B8AAD' }}>
-              Used on hero banners, card accents, and marketing backgrounds. Primary Blue flows through Dark Navy into Accent Pink.
+            <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>
+              Used on hero banners, card accents, and marketing backgrounds. Forest establishes the primary tone, while gold provides editorial emphasis and action cues.
             </p>
           </div>
         </TokenCard>
       </section>
 
-      {/* ─── Typography ─── */}
+      {/* ─── Typography Families ─── */}
       <section className="space-y-6">
-        <SectionHeader title="Typography" />
+        <SectionHeader title="Typography Families" />
 
-        <TokenCard title="Type Scale">
+        <TokenCard title="Type Scale & Families">
+          <div className="mb-6 grid md:grid-cols-2 gap-4">
+            <div className="rounded-xl p-4" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
+              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>Instrument Sans</p>
+              <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Primary UI and body family for readable product and documentation surfaces.</p>
+            </div>
+            <div className="rounded-xl p-4" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
+              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>DM Serif Display</p>
+              <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Editorial and display headings for the paper-like continuity voice.</p>
+            </div>
+            <div className="rounded-xl p-4" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
+              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>IBM Plex Mono</p>
+              <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Tokens, technical labels, code, schemas, and system references.</p>
+            </div>
+            <div className="rounded-xl p-4" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
+              <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>Bebas Neue</p>
+              <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Condensed emphasis for posters, section marks, and high-contrast callouts.</p>
+            </div>
+          </div>
           <div className="space-y-5">
             {([
               { name: '5xl', rem: '3rem', px: '48px', variable: '--text-5xl' },
@@ -149,15 +164,15 @@ export function DesignTokensPage() {
               <div
                 key={t.name}
                 className="flex items-baseline justify-between pb-4"
-                style={{ borderBottom: '1px solid #E8ECF2' }}
+                style={{ borderBottom: '1px solid var(--paper-deep)' }}
               >
-                <p className="flex-1 font-semibold" style={{ fontSize: t.rem, color: '#1B2544' }}>
-                  The quick brown fox
+                <p className="flex-1 font-semibold" style={{ fontSize: t.rem, color: 'var(--ink)' }}>
+                  The continuity system speaks clearly
                 </p>
                 <div className="text-right ml-4 shrink-0">
-                  <p className="text-sm font-medium" style={{ color: '#1B2544' }}>{t.name}</p>
+                  <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>{t.name}</p>
                   <div className="flex items-center gap-1.5 justify-end">
-                    <p className="text-xs font-mono" style={{ color: '#5F6E93' }}>
+                    <p className="text-xs font-mono" style={{ color: 'var(--slate)' }}>
                       {t.rem} / {t.px}
                     </p>
                     <CopyButton text={t.variable} />
@@ -168,7 +183,7 @@ export function DesignTokensPage() {
           </div>
         </TokenCard>
 
-        <TokenCard title="Font Weights">
+        <TokenCard title="Font Weights & Usage">
           <div className="space-y-4">
             {([
               { name: 'Light', value: '300', variable: '--font-weight-light' },
@@ -180,15 +195,15 @@ export function DesignTokensPage() {
               <div
                 key={w.name}
                 className="flex items-baseline justify-between pb-3"
-                style={{ borderBottom: '1px solid #E8ECF2' }}
+                style={{ borderBottom: '1px solid var(--paper-deep)' }}
               >
-                <p className="text-2xl" style={{ fontWeight: w.value, color: '#1B2544' }}>
-                  The quick brown fox
+                <p className="text-2xl" style={{ fontWeight: w.value, color: 'var(--ink)' }}>
+                  The continuity system speaks clearly
                 </p>
                 <div className="text-right ml-4 shrink-0">
-                  <p className="text-sm font-medium" style={{ color: '#1B2544' }}>{w.name}</p>
+                  <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>{w.name}</p>
                   <div className="flex items-center gap-1.5 justify-end">
-                    <p className="text-xs font-mono" style={{ color: '#5F6E93' }}>{w.value}</p>
+                    <p className="text-xs font-mono" style={{ color: 'var(--slate)' }}>{w.value}</p>
                     <CopyButton text={w.variable} />
                   </div>
                 </div>
@@ -215,17 +230,17 @@ export function DesignTokensPage() {
               <div key={s.name} className="flex items-center gap-4">
                 <div
                   className="h-12 rounded"
-                  style={{ width: s.rem, background: '#4154A3' }}
+                  style={{ width: s.rem, background: 'var(--forest)' }}
                 />
                 <div className="flex-1 flex items-center justify-between">
-                  <p className="font-medium" style={{ color: '#1B2544' }}>
+                  <p className="font-medium" style={{ color: 'var(--ink)' }}>
                     space-{s.name}
                   </p>
                   <div className="flex items-center gap-2">
-                    <p className="text-sm font-mono" style={{ color: '#5F6E93' }}>
+                    <p className="text-sm font-mono" style={{ color: 'var(--slate)' }}>
                       {s.rem}
                     </p>
-                    <p className="text-xs" style={{ color: '#9BA8C2' }}>{s.px}</p>
+                    <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>{s.px}</p>
                     <CopyButton text={`--space-${s.name}`} />
                   </div>
                 </div>
@@ -255,18 +270,18 @@ export function DesignTokensPage() {
                   className="h-24"
                   style={{
                     borderRadius: r.rem,
-                    background: 'linear-gradient(135deg, #4154A3, #EB4379)',
+                    background: 'linear-gradient(135deg, var(--forest), var(--gold))',
                   }}
                 />
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="font-semibold text-sm" style={{ color: '#1B2544' }}>
+                    <p className="font-semibold text-sm" style={{ color: 'var(--ink)' }}>
                       radius-{r.name}
                     </p>
-                    <p className="text-xs font-mono mt-0.5" style={{ color: '#5F6E93' }}>
+                    <p className="text-xs font-mono mt-0.5" style={{ color: 'var(--slate)' }}>
                       {r.rem}
                     </p>
-                    <p className="text-xs" style={{ color: '#9BA8C2' }}>{r.px}</p>
+                    <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>{r.px}</p>
                   </div>
                   <CopyButton text={`--radius-${r.name}`} />
                 </div>
@@ -293,16 +308,16 @@ export function DesignTokensPage() {
                   className="h-32 bg-white rounded-xl flex items-center justify-center"
                   style={{ boxShadow: s.value }}
                 >
-                  <p className="font-medium" style={{ color: '#5F6E93' }}>
+                  <p className="font-medium" style={{ color: 'var(--slate)' }}>
                     shadow-{s.name}
                   </p>
                 </div>
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="font-semibold text-sm" style={{ color: '#1B2544' }}>
+                    <p className="font-semibold text-sm" style={{ color: 'var(--ink)' }}>
                       Level {s.name}
                     </p>
-                    <p className="text-xs mt-0.5" style={{ color: '#7B8AAD' }}>
+                    <p className="text-xs mt-0.5" style={{ color: 'var(--slate-mid)' }}>
                       {s.desc}
                     </p>
                   </div>
@@ -323,25 +338,25 @@ export function DesignTokensPage() {
             <div className="flex flex-wrap gap-3">
               <button
                 className="px-6 py-3 rounded-lg font-medium text-white transition-colors"
-                style={{ background: '#4154A3' }}
+                style={{ background: 'var(--forest)' }}
               >
                 Primary
               </button>
               <button
                 className="px-6 py-3 rounded-lg font-medium text-white transition-colors"
-                style={{ background: '#EB4379' }}
+                style={{ background: 'var(--gold)' }}
               >
-                Accent
+                Gold Accent
               </button>
               <button
                 className="px-6 py-3 rounded-lg font-medium transition-colors"
-                style={{ background: '#F0F2F7', color: '#1B2544' }}
+                style={{ background: 'var(--paper-warm)', color: 'var(--ink)' }}
               >
                 Secondary
               </button>
               <button
                 className="px-6 py-3 rounded-lg font-medium transition-colors"
-                style={{ background: 'transparent', color: '#5F6E93', border: '1px solid #D5DAE5' }}
+                style={{ background: 'transparent', color: 'var(--slate)', border: '1px solid var(--rule-light)' }}
               >
                 Ghost
               </button>
@@ -353,20 +368,20 @@ export function DesignTokensPage() {
             <div className="space-y-4">
               <div
                 className="p-6 rounded-xl"
-                style={{ border: '1px solid #D5DAE5' }}
+                style={{ border: '1px solid var(--rule-light)' }}
               >
-                <h4 className="font-semibold" style={{ color: '#1B2544' }}>
+                <h4 className="font-semibold" style={{ color: 'var(--ink)' }}>
                   Default Card
                 </h4>
-                <p className="text-sm mt-2" style={{ color: '#5F6E93' }}>
-                  White card with blue-grey border
+                <p className="text-sm mt-2" style={{ color: 'var(--slate)' }}>
+                  Paper card with warm rule-line structure
                 </p>
               </div>
               <div
                 className="p-6 rounded-xl text-white"
-                style={{ background: '#4154A3' }}
+                style={{ background: 'var(--forest)' }}
               >
-                <h4 className="font-semibold">Featured Card</h4>
+                <h4 className="font-semibold">Canonical Accent Card</h4>
                 <p className="text-sm mt-2 opacity-80">
                   Primary brand color background
                 </p>
@@ -380,15 +395,15 @@ export function DesignTokensPage() {
               <input
                 type="text"
                 placeholder="Default input"
-                className="w-full px-4 py-2.5 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#4154A3]/30"
-                style={{ background: '#F0F2F7', border: '1px solid #D5DAE5', color: '#1B2544' }}
+                className="w-full px-4 py-2.5 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--forest)]/30"
+                style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)', color: 'var(--ink)' }}
                 readOnly
               />
               <input
                 type="text"
                 placeholder="Focused input"
                 className="w-full px-4 py-2.5 rounded-lg text-sm focus:outline-none"
-                style={{ background: 'white', border: '2px solid #4154A3', color: '#1B2544' }}
+                style={{ background: 'white', border: '2px solid var(--forest)', color: 'var(--ink)' }}
                 readOnly
               />
             </div>
@@ -399,38 +414,38 @@ export function DesignTokensPage() {
             <div className="flex flex-wrap gap-3">
               <span
                 className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full"
-                style={{ background: '#E8F5EE', color: '#10B981' }}
+                style={{ background: 'rgba(61,122,80,0.12)', color: 'var(--forest-bright)' }}
               >
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#10B981' }} />
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--forest-bright)' }} />
                 Ready
               </span>
               <span
                 className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full"
-                style={{ background: '#FEF3C7', color: '#F59E0B' }}
+                style={{ background: 'rgba(184,148,63,0.14)', color: 'var(--gold)' }}
               >
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#F59E0B' }} />
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--gold)' }} />
                 In Review
               </span>
               <span
                 className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full"
-                style={{ background: '#F0F2F7', color: '#7B8AAD' }}
+                style={{ background: 'var(--paper-warm)', color: 'var(--slate-mid)' }}
               >
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#9BA8C2' }} />
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--slate-mid)' }} />
                 Draft
               </span>
               <span
                 className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full"
-                style={{ background: 'rgba(65,84,163,0.08)', color: '#4154A3' }}
+                style={{ background: 'rgba(26,58,42,0.08)', color: 'var(--forest)' }}
               >
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#4154A3' }} />
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--forest)' }} />
                 Active
               </span>
               <span
                 className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full"
-                style={{ background: 'rgba(235,67,121,0.08)', color: '#EB4379' }}
+                style={{ background: 'rgba(184,148,63,0.10)', color: 'var(--gold)' }}
               >
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#EB4379' }} />
-                Featured
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--gold)' }} />
+                Canonical Accent
               </span>
             </div>
           </TokenCard>
@@ -447,8 +462,8 @@ export function DesignTokensPage() {
 function SectionHeader({ title }: { title: string }) {
   return (
     <div className="flex items-center gap-3">
-      <div className="h-1 w-12 rounded-full" style={{ background: '#4154A3' }} />
-      <h2 className="text-xl font-semibold" style={{ color: '#1B2544' }}>
+      <div className="h-1 w-12 rounded-full" style={{ background: 'var(--forest)' }} />
+      <h2 className="text-xl font-semibold" style={{ color: 'var(--ink)' }}>
         {title}
       </h2>
     </div>
@@ -463,9 +478,9 @@ function TokenCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-white rounded-xl p-8" style={{ border: '1px solid #D5DAE5' }}>
+    <div className="bg-white rounded-xl p-8" style={{ border: '1px solid var(--rule-light)' }}>
       {title && (
-        <h3 className="text-base font-semibold mb-6" style={{ color: '#1B2544' }}>
+        <h3 className="text-base font-semibold mb-6" style={{ color: 'var(--ink)' }}>
           {title}
         </h3>
       )}
@@ -490,25 +505,25 @@ function ColorToken({
     <div className="flex flex-col gap-3">
       <div
         className="h-24 rounded-lg"
-        style={{ background: hex, border: '1px solid #D5DAE5' }}
+        style={{ background: hex, border: '1px solid var(--rule-light)' }}
       />
       <div>
         <div className="flex items-center justify-between">
-          <p className="font-semibold text-sm" style={{ color: '#1B2544' }}>
+          <p className="font-semibold text-sm" style={{ color: 'var(--ink)' }}>
             {name}
           </p>
           <CopyButton text={hex} />
         </div>
-        <p className="text-xs font-mono mt-0.5" style={{ color: '#5F6E93' }}>
+        <p className="text-xs font-mono mt-0.5" style={{ color: 'var(--slate)' }}>
           {hex}
         </p>
         <p
           className="text-[10px] font-mono mt-0.5"
-          style={{ color: '#9BA8C2' }}
+          style={{ color: 'var(--slate-mid)' }}
         >
           {variable}
         </p>
-        <p className="text-xs mt-1" style={{ color: '#7B8AAD' }}>
+        <p className="text-xs mt-1" style={{ color: 'var(--slate-mid)' }}>
           {usage}
         </p>
       </div>
@@ -537,25 +552,25 @@ function NeutralRow({
     >
       <p
         className="text-sm font-semibold w-28 shrink-0"
-        style={{ color: textDark ? '#1B2544' : '#F0F2F7' }}
+        style={{ color: textDark ? 'var(--ink)' : 'var(--paper-warm)' }}
       >
         {name}
       </p>
       <code
         className="text-xs font-mono w-20 shrink-0"
-        style={{ color: textDark ? '#475578' : '#D5DAE5' }}
+        style={{ color: textDark ? 'var(--forest-mid)' : 'var(--rule-light)' }}
       >
         {hex}
       </code>
       <code
         className="text-[11px] font-mono w-36 shrink-0 hidden sm:block"
-        style={{ color: textDark ? '#7B8AAD' : '#BCC3D4' }}
+        style={{ color: textDark ? 'var(--slate-mid)' : 'var(--rule)' }}
       >
         {variable}
       </code>
       <p
         className="text-xs flex-1 hidden md:block"
-        style={{ color: textDark ? '#7B8AAD' : '#BCC3D4' }}
+        style={{ color: textDark ? 'var(--slate-mid)' : 'var(--rule)' }}
       >
         {usage}
       </p>
