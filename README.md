@@ -128,6 +128,35 @@ npm run build    # production build (Vite)
 
 ---
 
+## Development → Production Pipeline
+
+| Stage | Host | Purpose |
+|---|---|---|
+| **Local** | `localhost:5173` | Runtime UI evolution, continuity flow refinement |
+| **Preview** | Cloudflare Pages preview branch deploys | Branch previews, stakeholder review |
+| **Production** | Cloudflare Pages | `spine-org.integratewise.ai` / `spine-org.pages.dev` — canonical continuity interface |
+
+### GitHub Actions deployment pipeline
+
+This repository now includes a Cloudflare Pages deployment workflow at:
+
+- `.github/workflows/cloudflare-pages-deploy.yml`
+
+Behavior:
+- push to `main` → production Pages deploy
+- pull request to `main` → preview Pages deploy
+- manual run (`workflow_dispatch`) → preview or production deploy, depending on input
+
+Required GitHub repository secrets:
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+
+Cloudflare Pages assumptions:
+- Pages project name: `spine-org`
+- build output directory: `dist`
+
+---
+
 ## Core Files to Know
 
 | File | Purpose |
