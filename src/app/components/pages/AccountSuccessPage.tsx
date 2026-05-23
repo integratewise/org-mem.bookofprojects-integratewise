@@ -50,7 +50,7 @@ function SectionNav({ active }: { active: string }) {
       style={{ background: 'var(--paper-warm)', borderRight: '1px solid var(--rule)' }}
     >
       <p
-        className="text-[10px] font-bold tracking-[0.2em] mb-4"
+        className="text-xs font-bold tracking-[0.2em] mb-4"
         style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}
       >
         ACCOUNT SUCCESS
@@ -407,7 +407,7 @@ export function AccountSuccessPage() {
           {/* The Problem */}
           <section id="problem">
             <p
-              className="text-[10px] font-bold tracking-[0.2em] mb-3"
+              className="text-xs font-bold tracking-[0.2em] mb-3"
               style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}
             >
               THE PROBLEM
@@ -437,7 +437,7 @@ export function AccountSuccessPage() {
           {/* The Solution */}
           <section id="solution">
             <p
-              className="text-[10px] font-bold tracking-[0.2em] mb-3"
+              className="text-xs font-bold tracking-[0.2em] mb-3"
               style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}
             >
               THE SOLUTION
@@ -488,7 +488,7 @@ export function AccountSuccessPage() {
           {/* 15 Layers */}
           <section id="layers">
             <p
-              className="text-[10px] font-bold tracking-[0.2em] mb-3"
+              className="text-xs font-bold tracking-[0.2em] mb-3"
               style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}
             >
               THE 15 LAYERS
@@ -514,7 +514,7 @@ export function AccountSuccessPage() {
           {/* Intelligence Graph */}
           <section id="graph">
             <p
-              className="text-[10px] font-bold tracking-[0.2em] mb-3"
+              className="text-xs font-bold tracking-[0.2em] mb-3"
               style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}
             >
               THE INTELLIGENCE GRAPH
@@ -546,7 +546,7 @@ export function AccountSuccessPage() {
                   style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}
                 >
                   <p
-                    className="text-[10px] font-bold tracking-widest mb-2"
+                    className="text-xs font-bold tracking-widest mb-2"
                     style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}
                   >
                     {item.title.toUpperCase()}
@@ -566,7 +566,7 @@ export function AccountSuccessPage() {
           {/* Who It Is For */}
           <section id="roles">
             <p
-              className="text-[10px] font-bold tracking-[0.2em] mb-3"
+              className="text-xs font-bold tracking-[0.2em] mb-3"
               style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}
             >
               WHO IT IS FOR
@@ -604,7 +604,7 @@ export function AccountSuccessPage() {
             </div>
 
             <p
-              className="text-[10px] font-bold tracking-[0.2em] mb-3"
+              className="text-xs font-bold tracking-[0.2em] mb-3"
               style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}
             >
               ACROSS EVERY INDUSTRY
@@ -630,7 +630,7 @@ export function AccountSuccessPage() {
           {/* Proactive AI */}
           <section id="ai">
             <p
-              className="text-[10px] font-bold tracking-[0.2em] mb-3"
+              className="text-xs font-bold tracking-[0.2em] mb-3"
               style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}
             >
               PROACTIVE AI
@@ -691,7 +691,7 @@ export function AccountSuccessPage() {
                     <div className="flex items-center gap-2 mb-2">
                       <insight.icon className="w-4 h-4" style={{ color: s.border }} />
                       <p
-                        className="text-[10px] font-bold tracking-widest"
+                        className="text-xs font-bold tracking-widest"
                         style={{ color: s.border, fontFamily: 'var(--font-mono)' }}
                       >
                         {s.label}
@@ -716,7 +716,7 @@ export function AccountSuccessPage() {
           {/* Proof */}
           <section id="proof">
             <p
-              className="text-[10px] font-bold tracking-[0.2em] mb-3"
+              className="text-xs font-bold tracking-[0.2em] mb-3"
               style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}
             >
               THE PROOF

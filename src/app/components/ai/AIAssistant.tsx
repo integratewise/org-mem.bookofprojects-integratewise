@@ -257,19 +257,19 @@ export function AIAssistant({ initialContext, pageTitle }: AIAssistantProps) {
               </div>
               <div className="flex items-center gap-1">
                 <button onClick={() => setIsExpanded(!isExpanded)}
-                        className="p-2 rounded-lg transition-colors hover:bg-white/10"
+                        className="p-2 rounded-lg transition-colors hover:bg-[var(--paper)]/10"
                         title={isExpanded ? 'Collapse' : 'Expand'}>
                   {isExpanded
                     ? <PanelRightClose className="w-5 h-5" style={{ color: 'var(--paper)' }} />
                     : <PanelRight      className="w-5 h-5" style={{ color: 'var(--paper)' }} />}
                 </button>
                 <button onClick={() => setShowSettings(!showSettings)}
-                        className="p-2 rounded-lg transition-colors hover:bg-white/10"
+                        className="p-2 rounded-lg transition-colors hover:bg-[var(--paper)]/10"
                         title="Settings">
                   <Settings className="w-5 h-5" style={{ color: 'var(--paper)' }} />
                 </button>
                 <button onClick={() => setIsOpen(false)}
-                        className="p-2 rounded-lg transition-colors hover:bg-white/10"
+                        className="p-2 rounded-lg transition-colors hover:bg-[var(--paper)]/10"
                         title="Close">
                   <X className="w-5 h-5" style={{ color: 'var(--paper)' }} />
                 </button>

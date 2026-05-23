@@ -49,7 +49,7 @@ function AnimatedNode({
           ringColor: color
         }}
       >
-        <Icon className="w-6 h-6 text-white" />
+        <Icon className="w-6 h-6 text-[var(--paper)]" />
         
         {/* Animated pulse ring */}
         {pulse && (
@@ -152,7 +152,7 @@ function AnimatedLayerCard({
       {/* Layer badge */}
       <motion.div
         whileHover={{ scale: 1.1, rotate: 5 }}
-        className="absolute left-0 top-0 w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold shadow-lg"
+        className="absolute left-0 top-0 w-10 h-10 rounded-xl flex items-center justify-center text-[var(--paper)] font-bold shadow-lg"
         style={{ background: color }}
       >
         <span className="text-sm">L{number}</span>
@@ -311,14 +311,14 @@ function FlowDiagram({
         <motion.div
           whileHover={{ rotate: 360 }}
           transition={{ duration: 0.5 }}
-          className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg"
+          className="w-12 h-12 rounded-xl flex items-center justify-center text-[var(--paper)] font-bold text-lg shadow-lg"
           style={{ background: color }}
         >
           <FlowIcon className="w-6 h-6" />
         </motion.div>
         <div>
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold px-2 py-0.5 rounded text-white" style={{ background: color }}>Flow {letter}</span>
+            <span className="text-xs font-bold px-2 py-0.5 rounded text-[var(--paper)]" style={{ background: color }}>Flow {letter}</span>
           </div>
           <h4 className="font-semibold text-[var(--text-color)]">{title}</h4>
         </div>
@@ -354,7 +354,7 @@ function FlowDiagram({
                 >
                   {/* Step number indicator */}
                   <div 
-                    className="absolute top-2 left-2 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold"
+                    className="absolute top-2 left-2 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
                     style={{ 
                       background: isActive ? color : isCompleted ? color : 'var(--border-subtle)',
                       color: isActive || isCompleted ? 'white' : 'var(--text-faint)'
@@ -494,7 +494,7 @@ function SpineVisualization() {
         }}
         transition={{ duration: 3, repeat: Infinity }}
       >
-        <Database className="w-12 h-12 text-white" />
+        <Database className="w-12 h-12 text-[var(--paper)]" />
         
         {/* Orbiting rings */}
         {[0, 1, 2].map((i) => (
@@ -551,7 +551,7 @@ function CognitiveLoopViz() {
             >
               <motion.div
                 whileHover={{ scale: 1.2 }}
-                className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg"
+                className="w-12 h-12 rounded-full flex items-center justify-center text-[var(--paper)] shadow-lg"
                 style={{ background: step.color }}
               >
                 <step.icon className="w-5 h-5" />
@@ -569,7 +569,7 @@ function CognitiveLoopViz() {
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         >
-          <Activity className="w-8 h-8 text-white" />
+          <Activity className="w-8 h-8 text-[var(--paper)]" />
         </motion.div>
         
         {/* Connecting lines */}
@@ -818,13 +818,13 @@ export function ArchitecturePage() {
                         background: [stage.color, 'var(--paper)', stage.color]
                       } : {}}
                       transition={{ duration: 2 }}
-                      className="w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg"
+                      className="w-14 h-14 rounded-xl flex items-center justify-center text-[var(--paper)] shadow-lg"
                       style={{ background: stage.color }}
                     >
                       <stage.icon className="w-6 h-6" />
                     </motion.div>
                     <span className="mt-2 text-xs font-medium text-[var(--text-color)]">{stage.title}</span>
-                    <span className="text-[10px] text-[var(--text-faint)]">{i + 1}</span>
+                    <span className="text-xs text-[var(--text-faint)]">{i + 1}</span>
                   </motion.div>
                   
                   {i < pipelineStages.length - 1 && (
@@ -861,7 +861,7 @@ export function ArchitecturePage() {
           >
             <div className="flex items-center gap-3">
               <div 
-                className="w-10 h-10 rounded-lg flex items-center justify-center text-white"
+                className="w-10 h-10 rounded-lg flex items-center justify-center text-[var(--paper)]"
                 style={{ background: pipelineStages[activePipelineStage].color }}
               >
                 {(() => {
@@ -951,7 +951,7 @@ export function ArchitecturePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="mt-4 p-4 bg-gradient-to-r from-[rgba(184,148,63,0.08)] to-transparent rounded-xl border border-[rgba(184,148,63,0.2)]"
+          className="mt-4 p-4 bg-gradient-to-r from-[color-mix(in srgb, var(--gold) 8%, transparent)] to-transparent rounded-xl border border-[color-mix(in srgb, var(--gold) 20%, transparent)]"
         >
           <p className="text-sm text-[var(--text-color)]">
             <strong className="text-[var(--accent-color)]">Critical Rule:</strong> Flow C never writes directly to Spine truth. All AI content passes through governance.

@@ -566,21 +566,21 @@ export function DocumentationPage() {
           <CheckCircle2 className="w-5 h-5 shrink-0" style={{ color: 'var(--status-success)' }} />
           <div>
             <p className="text-xl font-bold leading-none" style={{ color: 'var(--status-success)' }}>{completeDocs}</p>
-            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-faint)' }}>Complete</p>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--text-faint)' }}>Complete</p>
           </div>
         </div>
         <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--surface)', border: '1px solid var(--border-base)' }}>
           <Clock className="w-5 h-5 shrink-0" style={{ color: 'var(--status-warning)' }} />
           <div>
             <p className="text-xl font-bold leading-none" style={{ color: 'var(--status-warning)' }}>{inProgressDocs}</p>
-            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-faint)' }}>In Progress</p>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--text-faint)' }}>In Progress</p>
           </div>
         </div>
         <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--surface)', border: '1px solid var(--border-base)' }}>
-          <Circle className="w-5 h-5 shrink-0" style={{ color: 'var(--text-faint)' }} />
+          <Circle className="w-5 h-5 shrink-0" style={{ color: 'var(--slate)' }} />
           <div>
-            <p className="text-xl font-bold leading-none" style={{ color: 'var(--text-faint)' }}>{plannedDocs}</p>
-            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-faint)' }}>Planned</p>
+            <p className="text-xl font-bold leading-none" style={{ color: 'var(--slate)' }}>{plannedDocs}</p>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--text-faint)' }}>Planned</p>
           </div>
         </div>
       </div>
@@ -744,13 +744,13 @@ export function DocumentationPage() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-0.5">
                     <h3 className="text-sm font-semibold truncate" style={{ color: 'var(--text-strong)' }}>{pack.name}</h3>
-                    <span className="text-[10px] px-1.5 py-0.5 rounded-full shrink-0" style={{ background: `color-mix(in srgb, ${pack.color} 12%, transparent)`, color: pack.color }}>{total}</span>
+                    <span className="text-xs px-1.5 py-0.5 rounded-full shrink-0" style={{ background: `color-mix(in srgb, ${pack.color} 12%, transparent)`, color: pack.color }}>{total}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="flex-1 h-1.5 rounded-full" style={{ background: 'var(--surface-2)' }}>
                       <div className="h-full rounded-full" style={{ width: `${progress}%`, background: pack.color }} />
                     </div>
-                    <span className="text-[10px] shrink-0" style={{ color: 'var(--text-faint)' }}>{complete}/{total}</span>
+                    <span className="text-xs shrink-0" style={{ color: 'var(--text-faint)' }}>{complete}/{total}</span>
                   </div>
                 </div>
                 <ChevronDown className="w-4 h-4 shrink-0 transition-transform" style={{ color: 'var(--text-faint)', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
@@ -775,7 +775,7 @@ export function DocumentationPage() {
                         <StatusIcon className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: getStatusColor(doc.status) }} />
                         <div className="flex-1 min-w-0">
                           <p className="text-xs font-medium" style={{ color: isSelected ? 'var(--primary-color)' : 'var(--text-strong)' }}>{doc.title}</p>
-                          <p className="text-[10px] mt-0.5" style={{ color: 'var(--text-faint)' }}>{doc.owner} · {getPriorityLabel(doc.priority)}</p>
+                          <p className="text-xs mt-0.5" style={{ color: 'var(--text-faint)' }}>{doc.owner} · {getPriorityLabel(doc.priority)}</p>
                         </div>
                         <ChevronRight className="w-3 h-3 shrink-0 mt-0.5" style={{ color: 'var(--text-faint)' }} />
                       </button>
@@ -799,7 +799,7 @@ export function DocumentationPage() {
               <div key={tier} className="flex items-center gap-4">
                 <div className="w-20 shrink-0">
                   <p className="text-xs font-semibold" style={{ color: 'var(--text-strong)' }}>{tier === 'tier1' ? 'Tier 1' : tier === 'tier2' ? 'Tier 2' : 'Tier 3'}</p>
-                  <p className="text-[10px]" style={{ color: 'var(--text-faint)' }}>{tier === 'tier1' ? 'Immediate' : tier === 'tier2' ? 'Next' : 'Future'}</p>
+                  <p className="text-xs" style={{ color: 'var(--text-faint)' }}>{tier === 'tier1' ? 'Immediate' : tier === 'tier2' ? 'Next' : 'Future'}</p>
                 </div>
                 <div className="flex-1 h-2 rounded-full" style={{ background: 'var(--surface-2)' }}>
                   <div className="h-full rounded-full" style={{ width: `${(tierComplete / tierDocs.length) * 100}%`, background: tier === 'tier1' ? 'var(--status-success)' : tier === 'tier2' ? 'var(--status-warning)' : 'var(--text-faint)' }} />

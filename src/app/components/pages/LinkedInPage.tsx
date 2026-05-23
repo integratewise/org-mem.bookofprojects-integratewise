@@ -24,13 +24,13 @@ import { autoSyncContent, loadConnections } from '../../services/sync';
 import { loadJson, saveJson } from '../../lib/storage';
 
 const LIGHT_LINKEDIN_BANNER_BACKGROUND =
-  'linear-gradient(135deg, var(--surface-raised) 0%, color-mix(in srgb, var(--primary-soft) 72%, white) 56%, var(--accent-soft) 100%)';
+  'linear-gradient(135deg, var(--surface-raised) 0%, color-mix(in srgb, var(--primary-soft) 72%, var(--paper)) 56%, var(--accent-soft) 100%)';
 
 const LIGHT_LINKEDIN_PREVIEW_BACKGROUNDS: Record<string, string> = {
   'soft-contrast':
     'linear-gradient(135deg, var(--surface-raised) 0%, var(--surface-subtle) 54%, var(--primary-soft) 100%)',
   'gradient-ocean':
-    'linear-gradient(135deg, var(--surface-raised) 0%, color-mix(in srgb, var(--primary-soft) 74%, white) 58%, var(--accent-soft) 100%)',
+    'linear-gradient(135deg, var(--surface-raised) 0%, color-mix(in srgb, var(--primary-soft) 74%, var(--paper)) 58%, var(--accent-soft) 100%)',
   'gradient-sunset':
     'linear-gradient(135deg, var(--surface-raised) 0%, var(--accent-soft) 58%, color-mix(in srgb, var(--primary-soft) 44%, var(--accent-soft)) 100%)'
 };
@@ -93,7 +93,7 @@ const avatarStyle: CSSProperties = {
 
 const noticePanelStyle: CSSProperties = {
   background:
-    'linear-gradient(135deg, color-mix(in srgb, var(--primary-soft) 64%, white) 0%, var(--surface-raised) 100%)',
+    'linear-gradient(135deg, color-mix(in srgb, var(--primary-soft) 64%, var(--paper)) 0%, var(--surface-raised) 100%)',
   borderColor: 'var(--border-subtle)'
 };
 
@@ -344,7 +344,7 @@ function BannerPreview({
           }}
         />
         <div
-          className="absolute left-6 top-6 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em]"
+          className="absolute left-6 top-6 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em]"
           style={{
             backgroundColor: 'color-mix(in srgb, var(--surface-raised) 92%, transparent)',
             border: '1px solid var(--border-subtle)',

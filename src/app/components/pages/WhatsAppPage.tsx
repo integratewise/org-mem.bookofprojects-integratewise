@@ -285,7 +285,7 @@ function MessageTemplate({
             ) : (
               <p className="text-sm text-[var(--text-color)] whitespace-pre-wrap">{template.text}</p>
             )}
-            <p className="text-[10px] text-[var(--text-faint)] mt-1 text-right">10:30 AM ✓✓</p>
+            <p className="text-xs text-[var(--text-faint)] mt-1 text-right">10:30 AM ✓✓</p>
           </div>
         </div>
       </div>

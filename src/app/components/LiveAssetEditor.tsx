@@ -218,7 +218,7 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
             <div style={{ color: secondaryTextColor }}>
               <p className="text-xs font-medium" style={{ color: textColor }}>{settings.subtext}</p>
               {settings.showContact && (
-                <div className="mt-2 text-[10px] space-y-0.5">
+                <div className="mt-2 text-xs space-y-0.5">
                   {settings.contactInfo.split('\n').map((line, i) => (
                     <p key={i}>{line}</p>
                   ))}
@@ -253,7 +253,7 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
                 <p className="mt-4">[Your message here]</p>
               </div>
             </div>
-            <div className="p-6 text-center text-[10px]" style={{ color: secondaryTextColor }}>
+            <div className="p-6 text-center text-xs" style={{ color: secondaryTextColor }}>
               {BRAND.legalName} · {BRAND.location} · {CONTACT.general}
             </div>
           </div>
@@ -324,7 +324,7 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
   if (!isOpen) return null;
   
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--ink)]/60 p-4">
       <motion.div
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

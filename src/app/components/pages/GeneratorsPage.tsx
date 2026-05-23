@@ -117,7 +117,7 @@ const WhiteLogo = ({ size = 48 }: { size?: number }) => (
     <path d="M53.3869 0.205832C56.4977 -0.576671 63.4297 1.01864 66.3725 2.52462C69.871 4.04071 71.9883 6.25793 74.6863 8.91175C84.375 18.4419 81.0411 32.3964 81.633 44.6777C81.8388 48.951 81.5688 51.7248 83.1143 55.9223C84.8443 60.6378 88.3266 64.4456 92.7883 66.5011C98.0756 68.9515 103.206 68.7867 108.666 66.6229C129.922 58.1978 115.428 31.3403 123.311 14.7929C126.397 8.31589 130.804 4.48288 137.294 1.73574C139.334 0.872409 145.307 -0.448249 147.23 0.510005C148.115 0.94792 148.786 1.74212 149.086 2.70596C150.558 7.44326 142.588 6.26724 139.669 7.43049C114.438 17.485 136.673 50.6827 119.605 66.5817C115.621 70.2929 112.567 72.2206 107.31 73.8465C103.676 74.8999 99.8548 75.0664 96.1478 74.3325C91.6881 73.424 88.0153 71.1711 84.5567 68.2956C67.5173 55.219 81.3248 30.3531 71.634 15.0771C60.4727 -2.51684 33.6193 8.45363 35.7726 29.0271C36.1874 32.9917 36.5927 37.9705 33.2395 40.3015L26.0875 40.327C25.1155 42.5913 24.3717 44.5206 22.8061 46.4445C20.5773 49.1478 17.3943 50.8205 13.9648 51.0909C10.6706 51.3608 6.96223 50.0882 4.45978 47.8705C1.87388 45.5791 0.28158 42.3172 0.0364112 38.8091C-0.229912 35.0356 0.972845 31.3087 3.37836 28.4533C5.59506 25.8835 8.7141 24.3326 12.0434 24.1452C16.9115 23.8269 21.9568 26.1207 23.9305 30.6889C24.7193 32.5147 25.2537 34.2087 27.5492 34.1281C30.3194 34.3326 30.1673 30.77 29.9671 28.4424C28.7826 14.6815 38.3905 1.44619 53.3869 0.205832Z" fill="var(--paper)" />
     <path d="M54.4289 24.0981C57.2918 23.9117 60.1534 24.5081 62.6015 26.0896C65.4302 27.9537 67.4361 30.8902 68.1869 34.2659C69.8061 41.6067 66.1104 48.8144 58.7958 50.4793C58.2895 57.3078 58.9545 64.3443 58.5307 71.1759C58.4181 72.9914 57.9205 73.9957 56.5214 75.0978C56.3931 75.1081 56.2648 75.1145 56.1359 75.1174C51.0795 75.2217 52.6041 66.0946 52.6752 62.4761C52.7507 58.5825 52.737 54.6875 52.6345 50.7944C50.5873 50.0704 49.4134 49.7003 47.6489 48.343C39.5366 42.1034 41.3196 28.6442 50.8118 24.9543C52.215 24.4087 52.9705 24.2882 54.4289 24.0981Z" fill="var(--paper)" />
     <path d="M99.962 0.0385742C100.777 0.0494756 101.729 0.0622401 102.446 0.511322C104.346 1.70249 103.266 20.6982 104.036 24.2648C105.743 24.8311 106.854 25.2996 108.355 26.3919C111.142 28.4403 113.01 31.5636 113.534 35.0534C114.896 43.6881 110.083 49.5955 101.937 50.9023C91.7734 51.1206 85.498 42.8928 88.6263 32.6878C90.1022 27.8734 93.8406 25.7758 97.9669 23.7354C97.7641 21.2334 97.8914 17.3462 97.8638 14.7078C97.8249 10.9673 97.5441 6.60225 98.0138 2.93355C98.2122 1.38582 98.8007 0.848198 99.962 0.0385742Z" fill="var(--paper)" />
-    <path d="M143.213 24.2366C150.341 22.5523 157.437 27.1675 159.04 34.5294C160.642 41.8912 156.14 49.1946 148.999 50.8173C141.9 52.4304 134.874 47.8178 133.281 40.4996C131.688 33.1813 136.128 25.9112 143.213 24.2366Z" fill="rgba(255,255,255,0.85)" />
+    <path d="M143.213 24.2366C150.341 22.5523 157.437 27.1675 159.04 34.5294C160.642 41.8912 156.14 49.1946 148.999 50.8173C141.9 52.4304 134.874 47.8178 133.281 40.4996C131.688 33.1813 136.128 25.9112 143.213 24.2366Z" fill="color-mix(in srgb, var(--paper) 85%, transparent)" />
   </svg>
 );
 
@@ -159,7 +159,7 @@ function CopyBtn({ id, text, copiedId, copy, label }: {
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <p className="text-[11px] tracking-wider mb-2" style={{ color: 'var(--text-faint)' }}>{children}</p>;
+  return <p className="text-xs tracking-wider mb-2" style={{ color: 'var(--text-faint)' }}>{children}</p>;
 }
 
 function addToLog(setLog: React.Dispatch<React.SetStateAction<ExportLogEntry[]>>, entry: Omit<ExportLogEntry, 'id' | 'timestamp'>) {
@@ -200,7 +200,7 @@ const DEFAULT_EDIT_STATE: AdvancedEditState = {
   bgGradEnd: BRAND.colors.navy,
   bgGradAngle: 135,
   textColor: 'var(--paper)',
-  subTextColor: 'rgba(255,255,255,0.75)',
+  subTextColor: 'color-mix(in srgb, var(--paper) 75%, transparent)',
   fontSize: 100,
   subFontSize: 100,
   textAlign: 'center',
@@ -259,7 +259,7 @@ function AdvancedEditPanel({
         <Settings className="w-3.5 h-3.5" style={{ color: 'var(--primary-color)' }} />
         <span className="text-xs font-semibold" style={{ color: 'var(--text-color)' }}>Advanced Edit</span>
         <button onClick={() => onChange({ ...DEFAULT_EDIT_STATE })}
-          className="ml-auto text-[10px] px-2 py-0.5 rounded font-medium" style={{ color: 'var(--text-faint)' }}>
+          className="ml-auto text-xs px-2 py-0.5 rounded font-medium" style={{ color: 'var(--text-faint)' }}>
           Reset
         </button>
       </div>
@@ -279,11 +279,11 @@ function AdvancedEditPanel({
               {sec.id === 'colors' && (
                 <>
                   <div>
-                    <label className="text-[11px] font-medium block mb-1.5" style={{ color: 'var(--text-muted)' }}>Background Mode</label>
+                    <label className="text-xs font-medium block mb-1.5" style={{ color: 'var(--text-muted)' }}>Background Mode</label>
                     <div className="flex gap-1.5">
                       {(['preset', 'solid', 'gradient'] as const).map(t => (
                         <button key={t} onClick={() => set('bgType', t)}
-                          className="flex-1 px-2 py-1.5 rounded text-[11px] font-medium transition-colors"
+                          className="flex-1 px-2 py-1.5 rounded text-xs font-medium transition-colors"
                           style={state.bgType === t ? { background: 'var(--primary-color)', color: 'var(--paper)' } : { background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
                           {t.charAt(0).toUpperCase() + t.slice(1)}
                         </button>
@@ -310,7 +310,7 @@ function AdvancedEditPanel({
                   <SliderInput label="Headline Size" value={state.fontSize} min={50} max={200} unit="%" onChange={v => set('fontSize', v)} />
                   <SliderInput label="Subtext Size" value={state.subFontSize} min={50} max={200} unit="%" onChange={v => set('subFontSize', v)} />
                   <div>
-                    <label className="text-[11px] font-medium block mb-1.5" style={{ color: 'var(--text-muted)' }}>Text Align</label>
+                    <label className="text-xs font-medium block mb-1.5" style={{ color: 'var(--text-muted)' }}>Text Align</label>
                     <div className="flex gap-1.5">
                       {([
                         { val: 'left' as const, icon: AlignLeft },
@@ -331,9 +331,9 @@ function AdvancedEditPanel({
               {sec.id === 'layout' && (
                 <>
                   <div className="flex items-center justify-between">
-                    <label className="text-[11px] font-medium" style={{ color: 'var(--text-muted)' }}>Show Logo</label>
+                    <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Show Logo</label>
                     <button onClick={() => set('logoVisible', !state.logoVisible)}
-                      className="flex items-center gap-1 px-2 py-1 rounded text-[11px] font-medium"
+                      className="flex items-center gap-1 px-2 py-1 rounded text-xs font-medium"
                       style={{ background: state.logoVisible ? 'color-mix(in srgb, var(--forest) 10%, transparent)' : 'var(--surface-raised)', color: state.logoVisible ? 'var(--forest-mid)' : 'var(--text-faint)' }}>
                       {state.logoVisible ? <Eye className="w-3 h-3" /> : <EyeOff className="w-3 h-3" />}
                       {state.logoVisible ? 'Visible' : 'Hidden'}
@@ -351,9 +351,9 @@ function AdvancedEditPanel({
                 <>
                   <SliderInput label="Overlay Darken" value={state.overlayOpacity} min={0} max={80} unit="%" onChange={v => set('overlayOpacity', v)} />
                   <div className="flex items-center justify-between">
-                    <label className="text-[11px] font-medium" style={{ color: 'var(--text-muted)' }}>Drop Shadow</label>
+                    <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Drop Shadow</label>
                     <button onClick={() => set('shadowEnabled', !state.shadowEnabled)}
-                      className="px-2 py-1 rounded text-[11px] font-medium"
+                      className="px-2 py-1 rounded text-xs font-medium"
                       style={{ background: state.shadowEnabled ? 'var(--primary-color)' : 'var(--surface-2)', color: state.shadowEnabled ? 'var(--paper)' : 'var(--text-faint)' }}>
                       {state.shadowEnabled ? 'On' : 'Off'}
                     </button>
@@ -380,11 +380,11 @@ function AdvancedEditPanel({
                       </div>
                       <SliderInput label="Image Opacity" value={state.imageOpacity} min={5} max={100} unit="%" onChange={v => set('imageOpacity', v)} />
                       <div>
-                        <label className="text-[11px] font-medium block mb-1.5" style={{ color: 'var(--text-muted)' }}>Position</label>
+                        <label className="text-xs font-medium block mb-1.5" style={{ color: 'var(--text-muted)' }}>Position</label>
                         <div className="flex gap-1.5">
                           {(['cover', 'right', 'left'] as const).map(p => (
                             <button key={p} onClick={() => set('imagePosition', p)}
-                              className="flex-1 px-2 py-1.5 rounded text-[11px] font-medium"
+                              className="flex-1 px-2 py-1.5 rounded text-xs font-medium"
                               style={state.imagePosition === p ? { background: 'var(--primary-color)', color: 'var(--paper)' } : { background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
                               {p.charAt(0).toUpperCase() + p.slice(1)}
                             </button>
@@ -412,12 +412,12 @@ function AdvancedEditPanel({
 function ColorPicker({ label, value, onChange }: { label: string; value: string; onChange: (v: string) => void }) {
   return (
     <div>
-      <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>{label}</label>
+      <label className="text-xs font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>{label}</label>
       <div className="flex items-center gap-2">
         <input type="color" value={value.startsWith('rgba') ? 'var(--paper)' : value} onChange={e => onChange(e.target.value)}
           className="w-8 h-7 rounded border-0 cursor-pointer" style={{ padding: 0 }} />
         <input type="text" value={value} onChange={e => onChange(e.target.value)}
-          className="flex-1 px-2 py-1 text-[11px] rounded focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)]/30"
+          className="flex-1 px-2 py-1 text-xs rounded focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)]/30"
           style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
       </div>
     </div>
@@ -430,8 +430,8 @@ function SliderInput({ label, value, min, max, unit, onChange }: {
   return (
     <div>
       <div className="flex items-center justify-between mb-1">
-        <label className="text-[11px] font-medium" style={{ color: 'var(--text-muted)' }}>{label}</label>
-        <span className="text-[10px] font-mono" style={{ color: 'var(--text-faint)' }}>{value}{unit}</span>
+        <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>{label}</label>
+        <span className="text-xs font-mono" style={{ color: 'var(--text-faint)' }}>{value}{unit}</span>
       </div>
       <input type="range" min={min} max={max} value={value} onChange={e => onChange(Number(e.target.value))}
         className="w-full h-1.5 rounded-full appearance-none cursor-pointer"
@@ -571,7 +571,7 @@ function CampaignKitGenerator({ team, setExportLog }: {
 
   return (
     <div className="space-y-5">
-      <div className="rounded-xl p-5" style={{ background: 'linear-gradient(135deg, color-mix(in srgb, var(--forest-mid) 6%, transparent), rgba(235,67,121,0.06))', border: '1px solid color-mix(in srgb, var(--forest-mid) 12%, transparent)' }}>
+      <div className="rounded-xl p-5" style={{ background: 'linear-gradient(135deg, color-mix(in srgb, var(--forest-mid) 6%, transparent), color-mix(in srgb, var(--mark-pink) 6%, transparent))', border: '1px solid color-mix(in srgb, var(--forest-mid) 12%, transparent)' }}>
         <div className="flex items-center gap-2 mb-1">
           <Package className="w-4 h-4" style={{ color: 'var(--accent-color)' }} />
           <p className="text-sm font-semibold" style={{ color: 'var(--text-color)' }}>One-Click Campaign Kit</p>
@@ -596,7 +596,7 @@ function CampaignKitGenerator({ team, setExportLog }: {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xs font-medium" style={{ color: 'var(--text-color)' }}>{item.label}</p>
-              <p className="text-[10px]" style={{ color: 'var(--text-faint)' }}>{item.count}</p>
+              <p className="text-xs" style={{ color: 'var(--text-faint)' }}>{item.count}</p>
             </div>
           </button>
         ))}
@@ -628,8 +628,8 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
   const styleData = BANNER_STYLES[style];
   const dark = editState.bgType === 'preset' ? !styleData.isLight : isDarkBg(editState);
   const textColor = editState.bgType !== 'preset' ? editState.textColor : (dark ? 'var(--paper)' : BRAND.colors.navy);
-  const subColor = editState.bgType !== 'preset' ? editState.subTextColor : (dark ? 'rgba(255,255,255,0.75)' : 'var(--text-muted)');
-  const tagColor = dark ? 'rgba(255,255,255,0.6)' : BRAND.colors.primary;
+  const subColor = editState.bgType !== 'preset' ? editState.subTextColor : (dark ? 'color-mix(in srgb, var(--paper) 75%, transparent)' : 'var(--text-muted)');
+  const tagColor = dark ? 'color-mix(in srgb, var(--paper) 60%, transparent)' : BRAND.colors.primary;
   const nodeColor = dark ? 'var(--paper)' : BRAND.colors.primary;
   const bgStyle = computeBgStyle(editState, styleData.bg);
   const baseFontScale = editState.fontSize / 100;
@@ -688,19 +688,19 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
       {/* Editable Text Fields */}
       <div className="grid sm:grid-cols-3 gap-3 p-4 rounded-lg" style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)' }}>
         <div>
-          <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Title</label>
+          <label className="text-xs font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Title</label>
           <input value={editTitle} onChange={e => setEditTitle(e.target.value)}
             className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/30"
             style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
         </div>
         <div>
-          <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Subtitle</label>
+          <label className="text-xs font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Subtitle</label>
           <input value={editSubtitle} onChange={e => setEditSubtitle(e.target.value)}
             className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/30"
             style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
         </div>
         <div>
-          <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Tagline</label>
+          <label className="text-xs font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Tagline</label>
           <input value={editTagline} onChange={e => setEditTagline(e.target.value)}
             className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/30"
             style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
@@ -714,7 +714,7 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
             width: 1128, height: 191, ...bgStyle,
             position: 'relative', display: 'flex', alignItems: 'center',
             padding: `0 ${editState.paddingX}px`,
-            fontFamily: 'system-ui, -apple-system, sans-serif',
+            fontFamily: 'var(--font-sans)',
             borderRadius: editState.cornerRadius,
             overflow: 'hidden',
           }}>
@@ -874,13 +874,13 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
       {/* Editable text — available for ALL templates */}
       <div className="grid sm:grid-cols-2 gap-3 p-4 rounded-lg" style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)' }}>
         <div>
-          <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Headline</label>
+          <label className="text-xs font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Headline</label>
           <input value={headline} onChange={e => setHeadline(e.target.value)}
             className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/30"
             style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
         </div>
         <div>
-          <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Supporting Text</label>
+          <label className="text-xs font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Supporting Text</label>
           <input value={subline} onChange={e => setSubline(e.target.value)}
             className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/30"
             style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
@@ -908,7 +908,7 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
                 display: 'flex', flexDirection: 'column', justifyContent: 'center',
                 alignItems: editState.textAlign === 'left' ? 'flex-start' : editState.textAlign === 'right' ? 'flex-end' : 'center',
                 padding: `${editState.paddingY}px ${editState.paddingX}px`,
-                fontFamily: 'system-ui, -apple-system, sans-serif',
+                fontFamily: 'var(--font-sans)',
                 position: 'relative', overflow: 'hidden',
                 borderRadius: editState.cornerRadius,
               }}>
@@ -926,7 +926,7 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
                 {editState.overlayOpacity > 0 && (
                   <div style={{ position: 'absolute', inset: 0, background: `rgba(0,0,0,${editState.overlayOpacity / 100})` }} />
                 )}
-                <div style={{ position: 'absolute', top: -100, right: -100, width: 300, height: 300, borderRadius: '50%', background: 'rgba(255,255,255,0.05)' }} />
+                <div style={{ position: 'absolute', top: -100, right: -100, width: 300, height: 300, borderRadius: '50%', background: 'color-mix(in srgb, var(--paper) 5%, transparent)' }} />
 
                 {editState.logoVisible && (
                   <div style={{ marginBottom: 32, transform: `scale(${logoScale})`, transformOrigin: editState.textAlign === 'left' ? 'left center' : editState.textAlign === 'right' ? 'right center' : 'center', zIndex: 1 }}>
@@ -934,8 +934,8 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
                   </div>
                 )}
                 <p style={{ fontSize: (size.w > 1100 ? 52 : 44) * baseFontScale, fontWeight: 700, color: editState.bgType !== 'preset' ? editState.textColor : 'var(--paper)', textAlign: editState.textAlign, lineHeight: 1.2, position: 'relative', zIndex: 1 }}>{headline}</p>
-                <p style={{ fontSize: (size.w > 1100 ? 20 : 18) * subFontScale, color: editState.bgType !== 'preset' ? editState.subTextColor : 'rgba(255,255,255,0.75)', textAlign: editState.textAlign, marginTop: 16, lineHeight: 1.5, position: 'relative', zIndex: 1 }}>{subline}</p>
-                <p style={{ position: 'absolute', bottom: 30, left: 0, right: 0, textAlign: 'center', fontSize: 13, color: 'rgba(255,255,255,0.4)', letterSpacing: 1, zIndex: 1 }}>integratewise.ai</p>
+                <p style={{ fontSize: (size.w > 1100 ? 20 : 18) * subFontScale, color: editState.bgType !== 'preset' ? editState.subTextColor : 'color-mix(in srgb, var(--paper) 75%, transparent)', textAlign: editState.textAlign, marginTop: 16, lineHeight: 1.5, position: 'relative', zIndex: 1 }}>{subline}</p>
+                <p style={{ position: 'absolute', bottom: 30, left: 0, right: 0, textAlign: 'center', fontSize: 13, color: 'color-mix(in srgb, var(--paper) 40%, transparent)', letterSpacing: 1, zIndex: 1 }}>integratewise.ai</p>
               </div>
             </div>
           </div>
@@ -1020,7 +1020,7 @@ function TeamRosterManager({ team, setTeam }: { team: TeamMember[]; setTeam: Rea
                 ) : (
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium truncate" style={{ color: 'var(--text-color)' }}>{member.name}</p>
-                    <p className="text-[11px]" style={{ color: 'var(--text-faint)' }}>{member.title} · {emailAddr}</p>
+                    <p className="text-xs" style={{ color: 'var(--text-faint)' }}>{member.title} · {emailAddr}</p>
                   </div>
                 )}
                 <div className="flex gap-1 shrink-0">
@@ -1100,7 +1100,7 @@ function CopyLibrary() {
             {g.items.map(item => (
               <div key={item.id} className="flex items-center gap-3 px-3 py-2 rounded-lg" style={{ background: 'var(--surface-2)' }}>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[11px] font-medium" style={{ color: 'var(--text-faint)' }}>{item.label}</p>
+                  <p className="text-xs font-medium" style={{ color: 'var(--text-faint)' }}>{item.label}</p>
                   <p className="text-sm mt-0.5 truncate" style={{ color: 'var(--text-color)' }}>{item.text}</p>
                 </div>
                 <CopyBtn id={item.id} text={item.text} copiedId={copiedId} copy={copy} />
@@ -1195,8 +1195,8 @@ export function GeneratorsPage() {
               <div key={e.id} className="flex items-center gap-3 px-4 py-2.5">
                 <CircleCheck className="w-3.5 h-3.5 shrink-0" style={{ color: 'var(--success-color)' }} />
                 <p className="text-xs flex-1" style={{ color: 'var(--text-color)' }}>{e.name}</p>
-                <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'var(--surface-2)', color: 'var(--text-faint)' }}>{e.type}</span>
-                <span className="text-[10px]" style={{ color: 'var(--border-subtle)' }}>
+                <span className="text-xs px-2 py-0.5 rounded-full font-medium" style={{ background: 'var(--surface-2)', color: 'var(--text-faint)' }}>{e.type}</span>
+                <span className="text-xs" style={{ color: 'var(--border-subtle)' }}>
                   {new Date(e.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </span>
               </div>
@@ -1224,13 +1224,13 @@ export function GeneratorsPage() {
                 <div className="flex items-center gap-1.5">
                   <p className="text-sm font-medium truncate">{tool.label}</p>
                   {tool.badge && (
-                    <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full"
+                    <span className="text-xs font-bold px-1.5 py-0.5 rounded-full"
                       style={{ background: activeTool === tool.id ? 'rgba(244,240,232,0.25)' : 'var(--accent-color)', color: 'var(--paper)' }}>
                       {tool.badge}
                     </span>
                   )}
                 </div>
-                <p className="text-[11px] opacity-70 truncate">{tool.desc}</p>
+                <p className="text-xs opacity-70 truncate">{tool.desc}</p>
               </div>
             </button>
           ))}

@@ -81,7 +81,7 @@ export function BlogPage() {
                 <BookOpen className="w-4 h-4" />
               </div>
               <div>
-                <p className="text-[10px] font-bold tracking-widest" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PILLAR {String(i + 1).padStart(2, '0')}</p>
+                <p className="text-xs font-bold tracking-widest" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PILLAR {String(i + 1).padStart(2, '0')}</p>
                 <h2 className="text-lg font-bold" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>{pillar.title}</h2>
               </div>
             </div>

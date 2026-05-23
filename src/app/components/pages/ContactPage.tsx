@@ -46,7 +46,7 @@ export function ContactPage() {
 
             {/* Name */}
             <div>
-              <label className="block text-[10px] font-bold tracking-widest mb-2" style={labelStyle}>NAME</label>
+              <label className="block text-xs font-bold tracking-widest mb-2" style={labelStyle}>NAME</label>
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={inputStyle}>
                 <User className="w-4 h-4 shrink-0" style={{ color: 'var(--text-faint)' }} />
                 <input type="text" value={form.name} onChange={e => update('name', e.target.value)} placeholder="Your name" className="flex-1 bg-transparent outline-none text-sm" style={{ color: 'var(--ink)' }} required />
@@ -55,7 +55,7 @@ export function ContactPage() {
 
             {/* Email */}
             <div>
-              <label className="block text-[10px] font-bold tracking-widest mb-2" style={labelStyle}>EMAIL</label>
+              <label className="block text-xs font-bold tracking-widest mb-2" style={labelStyle}>EMAIL</label>
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={inputStyle}>
                 <Mail className="w-4 h-4 shrink-0" style={{ color: 'var(--text-faint)' }} />
                 <input type="email" value={form.email} onChange={e => update('email', e.target.value)} placeholder="you@company.com" className="flex-1 bg-transparent outline-none text-sm" style={{ color: 'var(--ink)' }} required />
@@ -65,14 +65,14 @@ export function ContactPage() {
             {/* Company + Role */}
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-[10px] font-bold tracking-widest mb-2" style={labelStyle}>COMPANY</label>
+                <label className="block text-xs font-bold tracking-widest mb-2" style={labelStyle}>COMPANY</label>
                 <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={inputStyle}>
                   <Building2 className="w-4 h-4 shrink-0" style={{ color: 'var(--text-faint)' }} />
                   <input type="text" value={form.company} onChange={e => update('company', e.target.value)} placeholder="Company" className="flex-1 bg-transparent outline-none text-sm" style={{ color: 'var(--ink)' }} />
                 </div>
               </div>
               <div>
-                <label className="block text-[10px] font-bold tracking-widest mb-2" style={labelStyle}>ROLE</label>
+                <label className="block text-xs font-bold tracking-widest mb-2" style={labelStyle}>ROLE</label>
                 <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={inputStyle}>
                   <Briefcase className="w-4 h-4 shrink-0" style={{ color: 'var(--text-faint)' }} />
                   <input type="text" value={form.role} onChange={e => update('role', e.target.value)} placeholder="Your role" className="flex-1 bg-transparent outline-none text-sm" style={{ color: 'var(--ink)' }} />
@@ -82,7 +82,7 @@ export function ContactPage() {
 
             {/* Team Size */}
             <div>
-              <label className="block text-[10px] font-bold tracking-widest mb-2" style={labelStyle}>TEAM SIZE</label>
+              <label className="block text-xs font-bold tracking-widest mb-2" style={labelStyle}>TEAM SIZE</label>
               <div className="flex items-center gap-3 px-4 py-3 rounded-xl" style={inputStyle}>
                 <Users className="w-4 h-4 shrink-0" style={{ color: 'var(--text-faint)' }} />
                 <input type="text" value={form.teamSize} onChange={e => update('teamSize', e.target.value)} placeholder="e.g. 10-50" className="flex-1 bg-transparent outline-none text-sm" style={{ color: 'var(--ink)' }} />
@@ -91,7 +91,7 @@ export function ContactPage() {
 
             {/* Interest */}
             <div>
-              <label className="block text-[10px] font-bold tracking-widest mb-3" style={labelStyle}>PRIMARY INTEREST</label>
+              <label className="block text-xs font-bold tracking-widest mb-3" style={labelStyle}>PRIMARY INTEREST</label>
               <div className="flex gap-3">
                 {['Account Success', 'Business Intelligence', 'Both'].map(opt => (
                   <button key={opt} type="button" onClick={() => update('interest', opt)} className="flex-1 px-4 py-3 rounded-xl text-sm font-medium transition-all" style={{ background: form.interest === opt ? 'var(--forest)' : 'var(--surface-raised)', color: form.interest === opt ? 'var(--paper)' : 'var(--text-muted)', border: `1px solid ${form.interest === opt ? 'var(--forest)' : 'var(--border-subtle)'}` }}>
@@ -103,7 +103,7 @@ export function ContactPage() {
 
             {/* Challenge */}
             <div>
-              <label className="block text-[10px] font-bold tracking-widest mb-2" style={labelStyle}>BIGGEST OPERATIONAL CHALLENGE</label>
+              <label className="block text-xs font-bold tracking-widest mb-2" style={labelStyle}>BIGGEST OPERATIONAL CHALLENGE</label>
               <div className="flex items-start gap-3 px-4 py-3 rounded-xl" style={inputStyle}>
                 <MessageSquare className="w-4 h-4 shrink-0 mt-1" style={{ color: 'var(--text-faint)' }} />
                 <textarea value={form.challenge} onChange={e => update('challenge', e.target.value)} placeholder="What is the biggest operational challenge your team faces?" rows={4} className="flex-1 bg-transparent outline-none text-sm resize-none" style={{ color: 'var(--ink)' }} />

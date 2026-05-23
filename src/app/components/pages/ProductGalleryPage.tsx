@@ -328,7 +328,7 @@ export function ProductGalleryPage() {
         <button
           onClick={downloadAll}
           disabled={downloading === 'all'}
-          className="px-4 py-2 text-white rounded-lg text-sm font-medium flex items-center gap-2 disabled:opacity-50"
+          className="px-4 py-2 text-[var(--paper)] rounded-lg text-sm font-medium flex items-center gap-2 disabled:opacity-50"
           style={{ background: 'var(--text-strong)' }}
         >
           <Package className="w-4 h-4" />
@@ -344,7 +344,7 @@ export function ProductGalleryPage() {
             onClick={() => setActiveCategory(cat.id)}
             className={`px-4 py-2 rounded-xl text-sm font-medium flex items-center gap-2 transition-colors ${
               activeCategory === cat.id
-                ? 'text-white'
+                ? 'text-[var(--paper)]'
                 : 'bg-[var(--surface-2)] text-[var(--text-muted)] hover:bg-[var(--surface)]'
             }`}
             style={activeCategory === cat.id ? { background: 'var(--primary-color)' } : {}}
@@ -460,7 +460,7 @@ export function ProductGalleryPage() {
       {/* Detail Modal */}
       <AnimatePresence>
         {selectedItem && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--ink)]/60 p-4">
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -501,7 +501,7 @@ export function ProductGalleryPage() {
                       {selectedItem.component}
                     </div>
                   ) : (
-                    <div className="aspect-video flex items-center justify-center text-white p-8" style={{ background: 'linear-gradient(to bottom right, var(--primary-hover), var(--primary-color))' }}>
+                    <div className="aspect-video flex items-center justify-center text-[var(--paper)] p-8" style={{ background: 'linear-gradient(to bottom right, var(--primary-hover), var(--primary-color))' }}>
                       <div className="text-center">
                         <IntegrateWiseLogo variant="icon-only" className="h-16 w-auto mx-auto mb-4" />
                         <h3 className="text-2xl font-bold">{BRAND.name}</h3>
@@ -518,7 +518,7 @@ export function ProductGalleryPage() {
                   {selectedItem.type === 'editable' ? (
                     <button
                       onClick={() => { setSelectedItem(null); openEditor(selectedItem); }}
-                      className="px-6 py-3 text-white rounded-xl font-medium flex items-center gap-2"
+                      className="px-6 py-3 text-[var(--paper)] rounded-xl font-medium flex items-center gap-2"
                       style={{ background: 'var(--primary-color)' }}
                     >
                       <Palette className="w-5 h-5" />
@@ -528,7 +528,7 @@ export function ProductGalleryPage() {
                     <>
                       <button
                         onClick={() => downloadAsPNG(selectedItem)}
-                        className="px-4 py-2 text-white rounded-lg text-sm font-medium flex items-center gap-2"
+                        className="px-4 py-2 text-[var(--paper)] rounded-lg text-sm font-medium flex items-center gap-2"
                         style={{ background: 'var(--text-strong)' }}
                       >
                         <Download className="w-4 h-4" />

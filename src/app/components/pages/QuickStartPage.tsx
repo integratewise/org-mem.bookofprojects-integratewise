@@ -88,7 +88,7 @@ function AIEditModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--ink)]/50">
       <motion.div 
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -129,7 +129,7 @@ function AIEditModal({
               <button
                 onClick={generateSuggestion}
                 disabled={loading || !prompt}
-                className="px-6 py-3 text-white rounded-xl font-medium disabled:opacity-50 flex items-center gap-2"
+                className="px-6 py-3 text-[var(--paper)] rounded-xl font-medium disabled:opacity-50 flex items-center gap-2"
                 style={{ background: 'var(--forest-bright)' }}
               >
                 {loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Wand2 className="w-4 h-4" />}
@@ -155,7 +155,7 @@ function AIEditModal({
           {suggestion && (
             <button 
               onClick={() => { onApply(suggestion); onClose(); }}
-              className="px-6 py-2 text-white rounded-xl font-medium flex items-center gap-2"
+              className="px-6 py-2 text-[var(--paper)] rounded-xl font-medium flex items-center gap-2"
               style={{ background: 'var(--forest-bright)' }}
             >
               <Check className="w-4 h-4" />
@@ -206,7 +206,7 @@ function ExportItem({
         </div>
         <button
           onClick={onExport}
-          className="px-4 py-2 text-white rounded-lg text-sm font-medium hover:bg-[var(--forest)] flex items-center gap-2"
+          className="px-4 py-2 text-[var(--paper)] rounded-lg text-sm font-medium hover:bg-[var(--forest)] flex items-center gap-2"
           style={{ background: 'var(--ink)' }}
         >
           <Download className="w-4 h-4" />
@@ -324,7 +324,7 @@ export function QuickStartPage() {
           <div className="flex gap-4 mt-6">
             <button
               onClick={handleSave}
-              className="px-6 py-3 text-white rounded-xl font-medium flex items-center gap-2 hover:bg-[var(--forest-mid)] transition-colors"
+              className="px-6 py-3 text-[var(--paper)] rounded-xl font-medium flex items-center gap-2 hover:bg-[var(--forest-mid)] transition-colors"
               style={{ background: 'var(--forest-bright)' }}
             >
               <Save className="w-5 h-5" />
@@ -379,7 +379,7 @@ export function QuickStartPage() {
                   rows={3}
                 />
                 <div className="flex gap-2">
-                  <button onClick={saveEdit} className="px-4 py-2 text-white rounded-lg text-sm" style={{ background: 'var(--forest-bright)' }}>Save</button>
+                  <button onClick={saveEdit} className="px-4 py-2 text-[var(--paper)] rounded-lg text-sm" style={{ background: 'var(--forest-bright)' }}>Save</button>
                   <button onClick={() => setIsEditing(null)} className="px-4 py-2 text-sm" style={{ color: 'var(--text-muted)' }}>Cancel</button>
                 </div>
               </div>
@@ -420,7 +420,7 @@ export function QuickStartPage() {
                   rows={4}
                 />
                 <div className="flex gap-2">
-                  <button onClick={saveEdit} className="px-4 py-2 text-white rounded-lg text-sm" style={{ background: 'var(--forest-bright)' }}>Save</button>
+                  <button onClick={saveEdit} className="px-4 py-2 text-[var(--paper)] rounded-lg text-sm" style={{ background: 'var(--forest-bright)' }}>Save</button>
                   <button onClick={() => setIsEditing(null)} className="px-4 py-2 text-sm" style={{ color: 'var(--text-muted)' }}>Cancel</button>
                 </div>
               </div>
@@ -462,7 +462,7 @@ export function QuickStartPage() {
                   rows={6}
                 />
                 <div className="flex gap-2">
-                  <button onClick={saveEdit} className="px-4 py-2 text-white rounded-lg text-sm" style={{ background: 'var(--forest-bright)' }}>Save</button>
+                  <button onClick={saveEdit} className="px-4 py-2 text-[var(--paper)] rounded-lg text-sm" style={{ background: 'var(--forest-bright)' }}>Save</button>
                   <button onClick={() => setIsEditing(null)} className="px-4 py-2 text-sm" style={{ color: 'var(--text-muted)' }}>Cancel</button>
                 </div>
               </div>
@@ -510,7 +510,7 @@ export function QuickStartPage() {
                   style={{ border: '1px solid var(--border-base)', background: 'var(--surface-raised)', color: 'var(--text-strong)' }}
                 />
                 <div className="flex gap-2">
-                  <button onClick={saveEdit} className="px-4 py-2 text-white rounded-lg text-sm" style={{ background: 'var(--forest-bright)' }}>Save</button>
+                  <button onClick={saveEdit} className="px-4 py-2 text-[var(--paper)] rounded-lg text-sm" style={{ background: 'var(--forest-bright)' }}>Save</button>
                   <button onClick={() => setIsEditing(null)} className="px-4 py-2 text-sm" style={{ color: 'var(--text-muted)' }}>Cancel</button>
                 </div>
               </div>
@@ -609,7 +609,7 @@ export function QuickStartPage() {
           </a>
 
           {/* Quick Copy */}
-          <div className="rounded-xl p-5 text-white" style={{ background: 'var(--ink)' }}>
+          <div className="rounded-xl p-5 text-[var(--paper)]" style={{ background: 'var(--ink)' }}>
             <h3 className="font-semibold mb-4">Quick Copy</h3>
             <div className="space-y-3">
               {[
@@ -621,13 +621,13 @@ export function QuickStartPage() {
                 <button
                   key={item.label}
                   onClick={() => copyToClipboard(item.value)}
-                  className="w-full flex items-center justify-between p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-left"
+                  className="w-full flex items-center justify-between p-3 bg-[var(--paper)]/10 rounded-lg hover:bg-[var(--paper)]/20 transition-colors text-left"
                 >
                   <div>
-                    <p className="text-xs text-white/60">{item.label}</p>
+                    <p className="text-xs text-[var(--paper)]/60">{item.label}</p>
                     <p className="text-sm truncate max-w-[200px]">{item.value}</p>
                   </div>
-                  <Copy className="w-4 h-4 text-white/60" />
+                  <Copy className="w-4 h-4 text-[var(--paper)]/60" />
                 </button>
               ))}
             </div>

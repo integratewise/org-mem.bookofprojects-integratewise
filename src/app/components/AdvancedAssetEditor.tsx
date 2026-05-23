@@ -219,7 +219,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-[var(--ink)]/50 backdrop-blur-sm" onClick={onClose} />
       <div className="relative rounded-2xl shadow-2xl w-[95vw] max-w-7xl max-h-[95vh] flex flex-col overflow-hidden" style={{ background: 'var(--paper)' }}>
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: '1px solid var(--rule-light)' }}>
@@ -281,7 +281,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                         onClick={() => setLogoVariant(variant)}
                         className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
                           logoVariant === variant
-                            ? 'bg-[var(--primary-color)] text-white'
+                            ? 'bg-[var(--primary-color)] text-[var(--paper)]'
                             : 'bg-[var(--paper)] text-[var(--text-color)] border border-[var(--border-subtle)]'
                         }`}
                       >
@@ -306,7 +306,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                           onClick={() => setColorVariant(theme.id as any)}
                           className={`text-left px-2 py-1.5 rounded-md text-xs transition-colors ${
                             colorVariant === theme.id
-                              ? 'bg-[var(--primary-color)] text-white'
+                              ? 'bg-[var(--primary-color)] text-[var(--paper)]'
                               : 'bg-[var(--paper)] text-[var(--text-color)] border border-[var(--border-subtle)]'
                           }`}
                         >
@@ -382,7 +382,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                           onClick={() => setBgType(type)}
                           className={`flex-1 px-3 py-2 rounded-md text-xs font-medium transition-colors ${
                             bgType === type
-                              ? 'bg-[var(--primary-color)] text-white'
+                              ? 'bg-[var(--primary-color)] text-[var(--paper)]'
                               : 'bg-[var(--paper)] text-[var(--text-color)] border border-[var(--border-subtle)]'
                           }`}
                         >
@@ -601,13 +601,13 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                     <div className="flex gap-2">
                       <button
                         onClick={() => handleQuickExport('png')}
-                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium bg-[var(--primary-color)] text-white hover:opacity-90"
+                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium bg-[var(--primary-color)] text-[var(--paper)] hover:opacity-90"
                       >
                         <FileImage className="w-3.5 h-3.5" /> PNG
                       </button>
                       <button
                         onClick={() => handleQuickExport('svg')}
-                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium bg-[var(--primary-color)] text-white hover:opacity-90"
+                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium bg-[var(--primary-color)] text-[var(--paper)] hover:opacity-90"
                       >
                         <FileCode className="w-3.5 h-3.5" /> SVG
                       </button>

@@ -27,25 +27,25 @@ interface SalesAssetContent {
 function SalesThumbnail({ title, gradient, Icon }: { title: string; gradient: string; Icon: any }) {
   return (
     <div className="w-full h-full relative overflow-hidden" style={{ background: gradient }}>
-      <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white/10" />
-      <div className="absolute right-3 bottom-3 h-16 w-16 rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm" />
-      <div className="flex h-full flex-col justify-between p-4 text-white">
+      <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[var(--paper)]/10" />
+      <div className="absolute right-3 bottom-3 h-16 w-16 rounded-2xl border border-white/15 bg-[var(--paper)]/10 backdrop-blur-sm" />
+      <div className="flex h-full flex-col justify-between p-4 text-[var(--paper)]">
         <div className="flex items-center justify-between">
-          <div className="rounded-xl border border-white/15 bg-white/10 p-2 backdrop-blur-sm">
+          <div className="rounded-xl border border-white/15 bg-[var(--paper)]/10 p-2 backdrop-blur-sm">
             <Icon className="h-5 w-5" />
           </div>
-          <div className="text-[10px] uppercase tracking-[0.3em] text-white/70">IW</div>
+          <div className="text-xs uppercase tracking-[0.3em] text-[var(--paper)]/70">IW</div>
         </div>
         <div>
           <div className="mb-2 flex gap-2">
-            <div className="h-2 w-12 rounded-full bg-white/30" />
-            <div className="h-2 w-8 rounded-full bg-white/20" />
+            <div className="h-2 w-12 rounded-full bg-[var(--paper)]/30" />
+            <div className="h-2 w-8 rounded-full bg-[var(--paper)]/20" />
           </div>
           <div className="text-sm font-semibold opacity-95">{title}</div>
           <div className="mt-2 grid grid-cols-3 gap-1">
-            <div className="h-8 rounded-lg bg-white/12" />
-            <div className="h-8 rounded-lg bg-white/10" />
-            <div className="h-8 rounded-lg bg-white/14" />
+            <div className="h-8 rounded-lg bg-[var(--paper)]/12" />
+            <div className="h-8 rounded-lg bg-[var(--paper)]/10" />
+            <div className="h-8 rounded-lg bg-[var(--paper)]/14" />
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ function createSalesSvg(content: SalesAssetContent, gradient: string) {
       <text x="80" y="390" font-family="Arial, sans-serif" font-size="24" fill="white" opacity="0.95">${content.bullets[0]}</text>
       <text x="80" y="435" font-family="Arial, sans-serif" font-size="24" fill="white" opacity="0.9">${content.bullets[1]}</text>
       <text x="80" y="480" font-family="Arial, sans-serif" font-size="24" fill="white" opacity="0.85">${content.bullets[2]}</text>
-      <rect x="80" y="550" width="260" height="48" rx="24" fill="rgba(255,255,255,0.16)" />
+      <rect x="80" y="550" width="260" height="48" rx="24" fill="color-mix(in srgb, var(--paper) 16%, transparent)" />
       <text x="110" y="582" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="white">${content.footerTitle}</text>
     </svg>
   `.trim();
@@ -131,11 +131,11 @@ function createSalesHtml(content: SalesAssetContent, gradient: string) {
     h1 { font-size: 64px; margin: 24px 0 0; }
     .subtitle { font-size: 24px; line-height: 1.5; max-width: 900px; opacity: 0.86; margin-top: 16px; }
     .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
-    .card { border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.10); border-radius: 24px; padding: 20px; font-size: 18px; line-height: 1.6; }
+    .card { border: 1px solid color-mix(in srgb, var(--paper) 15%, transparent); background: color-mix(in srgb, var(--paper) 10%, transparent); border-radius: 24px; padding: 20px; font-size: 18px; line-height: 1.6; }
     .footer { margin-top: auto; padding-top: 48px; display: flex; justify-content: space-between; align-items: end; gap: 24px; }
     .footer-title { font-size: 16px; font-weight: 700; }
     .footer-copy { font-size: 16px; opacity: 0.75; margin-top: 8px; }
-    .pill { border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.12); border-radius: 999px; padding: 14px 20px; font-size: 16px; font-weight: 600; }
+    .pill { border: 1px solid color-mix(in srgb, var(--paper) 15%, transparent); background: color-mix(in srgb, var(--paper) 12%, transparent); border-radius: 999px; padding: 14px 20px; font-size: 16px; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -174,24 +174,24 @@ function downloadSalesThumbnail(item: Deliverable, gradient: string) {
 
 function SalesAssetPreview({ content, gradient }: { content: SalesAssetContent; gradient: string }) {
   return (
-    <div className="w-full min-h-[520px] rounded-2xl overflow-hidden text-white" style={{ background: gradient }}>
+    <div className="w-full min-h-[520px] rounded-2xl overflow-hidden text-[var(--paper)]" style={{ background: gradient }}>
       <div className="p-10 flex flex-col h-full">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 h-full">
           <div className="flex flex-col">
             <div className="flex items-center gap-3">
-              <div className="rounded-2xl border border-white/15 bg-white/10 p-3 backdrop-blur-sm">
+              <div className="rounded-2xl border border-white/15 bg-[var(--paper)]/10 p-3 backdrop-blur-sm">
                 <Sparkles className="h-6 w-6" />
               </div>
-              <p className="text-sm uppercase tracking-[0.35em] text-white/70">Sales Enablement</p>
+              <p className="text-sm uppercase tracking-[0.35em] text-[var(--paper)]/70">Sales Enablement</p>
             </div>
             <h2 className="text-4xl font-bold mt-6 leading-tight">{content.title}</h2>
-            <p className="text-lg text-white/80 mt-4 max-w-2xl leading-8">{content.subtitle}</p>
+            <p className="text-lg text-[var(--paper)]/80 mt-4 max-w-2xl leading-8">{content.subtitle}</p>
             <div className="grid md:grid-cols-3 gap-4 mt-10">
               {content.bullets.map((bullet, index) => (
-                <div key={bullet} className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm">
+                <div key={bullet} className="rounded-2xl border border-white/15 bg-[var(--paper)]/10 p-5 backdrop-blur-sm">
                   <div className="mb-3 flex items-center justify-between">
-                    <div className="rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold">0{index + 1}</div>
-                    <ArrowUpRight className="h-4 w-4 text-white/70" />
+                    <div className="rounded-full bg-[var(--paper)]/15 px-2.5 py-1 text-xs font-semibold">0{index + 1}</div>
+                    <ArrowUpRight className="h-4 w-4 text-[var(--paper)]/70" />
                   </div>
                   <p className="text-sm leading-6">{bullet}</p>
                 </div>
@@ -199,36 +199,36 @@ function SalesAssetPreview({ content, gradient }: { content: SalesAssetContent; 
             </div>
             <div className="mt-auto pt-10 flex items-end justify-between gap-6">
               <div>
-                <p className="text-sm font-semibold text-white">{content.footerTitle}</p>
-                <p className="text-sm text-white/70 mt-1">{content.footerBody}</p>
+                <p className="text-sm font-semibold text-[var(--paper)]">{content.footerTitle}</p>
+                <p className="text-sm text-[var(--paper)]/70 mt-1">{content.footerBody}</p>
               </div>
-              <div className="rounded-full bg-white/12 px-5 py-3 text-sm font-medium border border-white/15">
+              <div className="rounded-full bg-[var(--paper)]/12 px-5 py-3 text-sm font-medium border border-white/15">
                 {content.website}
               </div>
             </div>
           </div>
           <div className="relative flex items-center">
-            <div className="absolute inset-0 rounded-[32px] bg-black/10 blur-2xl" />
-            <div className="relative w-full rounded-[28px] border border-white/15 bg-white/10 p-5 backdrop-blur-md shadow-2xl">
+            <div className="absolute inset-0 rounded-[32px] bg-[var(--ink)]/10 blur-2xl" />
+            <div className="relative w-full rounded-[28px] border border-white/15 bg-[var(--paper)]/10 p-5 backdrop-blur-md shadow-2xl">
               <div className="rounded-[22px] bg-[var(--paper)] p-5 text-[var(--text-color)]">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs uppercase tracking-[0.25em] text-[var(--text-faint)]">Executive Snapshot</p>
                     <h3 className="mt-2 text-2xl font-bold">Board-Ready Asset</h3>
                   </div>
-                  <div className="rounded-2xl bg-[var(--primary-color)] p-3 text-white">
+                  <div className="rounded-2xl bg-[var(--primary-color)] p-3 text-[var(--paper)]">
                     <Shield className="h-6 w-6" />
                   </div>
                 </div>
                 <div className="mt-6 grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl bg-white p-4 shadow-sm">
+                  <div className="rounded-2xl bg-[var(--paper)] p-4 shadow-sm">
                     <p className="text-xs text-[var(--text-faint)]">Pipeline Impact</p>
                     <p className="mt-2 text-3xl font-bold">38%</p>
                     <div className="mt-3 h-2 rounded-full bg-[var(--border-subtle)]">
                       <div className="h-2 w-2/3 rounded-full bg-[var(--primary-color)]" />
                     </div>
                   </div>
-                  <div className="rounded-2xl bg-white p-4 shadow-sm">
+                  <div className="rounded-2xl bg-[var(--paper)] p-4 shadow-sm">
                     <p className="text-xs text-[var(--text-faint)]">Approval Coverage</p>
                     <p className="mt-2 text-3xl font-bold">100%</p>
                     <div className="mt-3 flex gap-1">
@@ -238,7 +238,7 @@ function SalesAssetPreview({ content, gradient }: { content: SalesAssetContent; 
                     </div>
                   </div>
                 </div>
-                <div className="mt-5 rounded-2xl bg-white p-4 shadow-sm">
+                <div className="mt-5 rounded-2xl bg-[var(--paper)] p-4 shadow-sm">
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-semibold">Narrative Flow</p>
                     <p className="text-xs text-[var(--text-faint)]">Ready to present</p>
@@ -303,7 +303,7 @@ function PreviewModal({ item, gradient, onClose }: { item: Deliverable; gradient
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[var(--ink)]/70">
       <div className="rounded-xl max-w-3xl w-full max-h-[90vh] overflow-hidden flex flex-col" style={{ background: 'var(--surface-raised)' }}>
         <div className="flex items-center justify-between p-4 border-b">
           <h3 className="font-semibold">{item.title}</h3>

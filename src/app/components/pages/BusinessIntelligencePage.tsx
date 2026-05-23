@@ -192,7 +192,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         gap: '8px',
         padding: '6px 16px',
         borderRadius: '999px',
-        background: 'rgba(7, 94, 84, 0.08)',
+        background: 'color-mix(in srgb, var(--forest) 8%, transparent)',
         color: 'var(--forest)',
         fontFamily: 'var(--font-mono)',
         fontSize: '12px',
@@ -209,8 +209,8 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function SeverityBadge({ severity }: { severity: string }) {
   const colors: Record<string, { bg: string; text: string }> = {
-    critical: { bg: 'rgba(139, 32, 32, 0.1)', text: 'var(--red)' },
-    warning: { bg: 'rgba(184, 148, 63, 0.1)', text: 'var(--gold)' },
+    critical: { bg: 'color-mix(in srgb, var(--red) 10%, transparent)', text: 'var(--red)' },
+    warning: { bg: 'color-mix(in srgb, var(--gold) 10%, transparent)', text: 'var(--gold)' },
     info: { bg: 'var(--primary-soft)', text: 'var(--forest)' },
   };
   const c = colors[severity] || colors.info;
@@ -371,7 +371,7 @@ export function BusinessIntelligencePage() {
                 gap: '8px',
                 padding: '6px 16px',
                 borderRadius: '999px',
-                background: 'rgba(139, 32, 32, 0.15)',
+                background: 'color-mix(in srgb, var(--red) 15%, transparent)',
                 color: 'var(--gold-light)',
                 fontFamily: 'var(--font-mono)',
                 fontSize: '12px',
@@ -1132,7 +1132,7 @@ export function BusinessIntelligencePage() {
               style={{
                 fontSize: '18px',
                 lineHeight: 1.6,
-                color: 'rgba(255,255,255,0.7)',
+                color: 'color-mix(in srgb, var(--paper) 70%, transparent)',
                 maxWidth: '520px',
                 margin: '0 auto 40px',
               }}

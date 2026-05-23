@@ -20,7 +20,7 @@ const sections = [
 function SectionNav({ active }: { active: string }) {
   return (
     <nav className="hidden lg:block fixed left-0 top-0 h-screen w-56 pt-20 pb-8 px-4 overflow-y-auto" style={{ background: 'var(--paper-warm)', borderRight: '1px solid var(--rule)' }}>
-      <p className="text-[10px] font-bold tracking-[0.2em] mb-4" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>PRODUCT WRITEUP</p>
+      <p className="text-xs font-bold tracking-[0.2em] mb-4" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>PRODUCT WRITEUP</p>
       <div className="space-y-1">
         {sections.map(s => (
           <a key={s.id} href={`#${s.id}`} className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-all ${active === s.id ? 'font-semibold' : ''}`} style={{ background: active === s.id ? 'var(--forest)' : 'transparent', color: active === s.id ? 'var(--paper)' : 'var(--text-muted)' }}>
@@ -63,9 +63,9 @@ function LayerCard({ num, title, what, whatUser, whatSolves, whatNot }: { num: n
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
             <div className="px-5 pb-5 space-y-3" style={{ borderTop: '1px solid var(--border-subtle)' }}>
               <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>{what}</p>
-              {whatUser && <div><p className="text-[10px] font-bold tracking-widest mb-1" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>WHAT THE USER DOES</p><p className="text-sm" style={{ color: 'var(--ink)' }}>{whatUser}</p></div>}
-              <div><p className="text-[10px] font-bold tracking-widest mb-1" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>WHAT THIS SOLVES</p><p className="text-sm" style={{ color: 'var(--ink)' }}>{whatSolves}</p></div>
-              {whatNot && <div><p className="text-[10px] font-bold tracking-widest mb-1" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>WHAT THIS DOES NOT SOLVE</p><p className="text-sm" style={{ color: 'var(--text-muted)' }}>{whatNot}</p></div>}
+              {whatUser && <div><p className="text-xs font-bold tracking-widest mb-1" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>WHAT THE USER DOES</p><p className="text-sm" style={{ color: 'var(--ink)' }}>{whatUser}</p></div>}
+              <div><p className="text-xs font-bold tracking-widest mb-1" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>WHAT THIS SOLVES</p><p className="text-sm" style={{ color: 'var(--ink)' }}>{whatSolves}</p></div>
+              {whatNot && <div><p className="text-xs font-bold tracking-widest mb-1" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>WHAT THIS DOES NOT SOLVE</p><p className="text-sm" style={{ color: 'var(--text-muted)' }}>{whatNot}</p></div>}
             </div>
           </motion.div>
         )}
@@ -102,7 +102,7 @@ export function ProductWriteupPage() {
 
           {/* THE PROBLEM */}
           <section id="problem">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE PROBLEM</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE PROBLEM</p>
             <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>People juggle multiple tabs, multiple apps, multiple tools.</h2>
             <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               <p>Every 30 minutes, AI loses context. Every 30 minutes the human has to re-inject context into the AI. Without that reinjection, AI drifts. Workflows break. Scripted automations do not help because they are blind — they follow rules but carry no understanding. The human becomes the integration layer. The human becomes the router. The human becomes the memory.</p>
@@ -115,7 +115,7 @@ export function ProductWriteupPage() {
 
           {/* THE ORIGIN */}
           <section id="origin">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE ORIGIN</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE ORIGIN</p>
             <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Built during the work, not after it.</h2>
             <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               <p>Nirmal was a Customer Success Manager and a MuleSoft Architect. The CSM side gave him the operational pain — managing 30+ accounts across six tools that refused to talk to each other, being the human API who shuttled context between systems because no system would connect them. The MuleSoft Architect side gave him the architectural discipline — years of designing enterprise integration platforms, building secure data flows between systems that were never meant to connect.</p>
@@ -145,15 +145,15 @@ export function ProductWriteupPage() {
 
           {/* FOUNDER'S EXPERIENCE */}
           <section id="founder">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE FOUNDER'S EXPERIENCE</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE FOUNDER'S EXPERIENCE</p>
             <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Two roles. One product.</h2>
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="p-5 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
-                <p className="text-[10px] font-bold tracking-widest mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>AS A CSM</p>
+                <p className="text-xs font-bold tracking-widest mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>AS A CSM</p>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>He was the human API. He managed 30+ accounts across CRM, support desk, communication platform, documentation tools, and email. He tracked a renewal in the CRM while the customer's technical issue lived in the support desk while the internal coordination happened in the communication platform. He rebuilt context every morning because overnight everything moved.</p>
               </div>
               <div className="p-5 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
-                <p className="text-[10px] font-bold tracking-widest mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>AS A MULESOFT ARCHITECT</p>
+                <p className="text-xs font-bold tracking-widest mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>AS A MULESOFT ARCHITECT</p>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>He designed enterprise integration platforms. He built secure data flows between systems that were never meant to connect. He enforced security policies. He applied architectural best practices at scale. He understood data transformation, schema mapping, API governance, and the principles that make enterprise integrations reliable.</p>
               </div>
             </div>
@@ -169,7 +169,7 @@ export function ProductWriteupPage() {
 
           {/* METHODOLOGY */}
           <section id="methodology">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE INTEGRATEWISE METHODOLOGY</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE INTEGRATEWISE METHODOLOGY</p>
             <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Six principles. One system.</h2>
             <div className="space-y-4">
               {[
@@ -193,7 +193,7 @@ export function ProductWriteupPage() {
 
           {/* THE ROUND TRIP */}
           <section id="roundtrip">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE COMPLETE DATA FLOW</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE COMPLETE DATA FLOW</p>
             <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>The Round Trip</h2>
             <div className="space-y-6">
               {[
@@ -221,7 +221,7 @@ export function ProductWriteupPage() {
 
           {/* SEVEN LAYERS */}
           <section id="layers">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE SEVEN LAYERS</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE SEVEN LAYERS</p>
             <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Seven layers. One system.</h2>
             <div className="space-y-3">
               <LayerCard num={1} title="User's Workbench" what="The operational surface where the user works on normalized data from all connected tools. BookStack-like interface for canonical knowledge and operational data." whatUser="Sees normalized data from all connected tools in one view. Modifies records, adds entries, restructures information, prioritizes actions." whatSolves="Tool switching. Instead of opening six tools, the user opens one surface." whatNot="Context reinjection. The User Workbench shows data but does not remember why the user made certain decisions." />
@@ -233,7 +233,7 @@ export function ProductWriteupPage() {
               <LayerCard num={7} title="Conversational Memory" what="The intermediate layer. The staging area between raw interaction and permanent knowledge. Everything flows here first, then gets promoted to the right permanent layer." whatSolves="The gap between talking and knowing. Every conversation is captured. Important items get promoted. The rest stays available as operational context." />
             </div>
             <div className="mt-6 p-5 rounded-xl" style={{ background: 'color-mix(in srgb, var(--gold) 6%, var(--paper))', border: '1px solid var(--gold)' }}>
-              <p className="text-[10px] font-bold tracking-widest mb-2" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>LAYER 8 — UNDERNEATH</p>
+              <p className="text-xs font-bold tracking-widest mb-2" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>LAYER 8 — UNDERNEATH</p>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>Entity Relationship Context</p>
               <p className="text-sm" style={{ color: 'var(--text-muted)' }}>The connective tissue. The relational graph that connects every entity to every other entity across all seven layers. Not a user-facing view. The graph that makes all other layers intelligent. Without it, seven layers are seven separate databases. With it, they are one system.</p>
             </div>
@@ -241,7 +241,7 @@ export function ProductWriteupPage() {
 
           {/* 14 COGNITIVE LAYERS */}
           <section id="cognitive">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE 14 COGNITIVE LAYERS</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE 14 COGNITIVE LAYERS</p>
             <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>The intelligence capabilities.</h2>
             <div className="space-y-2">
               {[
@@ -261,7 +261,7 @@ export function ProductWriteupPage() {
                 { num: 14, name: 'Learned Workflows', desc: 'Workflows that get smarter with every execution.' },
               ].map(item => (
                 <div key={item.num} className="flex items-center gap-3 px-4 py-3 rounded-lg" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
-                  <div className="w-7 h-7 rounded flex items-center justify-center text-[10px] font-bold shrink-0" style={{ background: 'var(--forest)', color: 'var(--paper)', fontFamily: 'var(--font-mono)' }}>{item.num}</div>
+                  <div className="w-7 h-7 rounded flex items-center justify-center text-xs font-bold shrink-0" style={{ background: 'var(--forest)', color: 'var(--paper)', fontFamily: 'var(--font-mono)' }}>{item.num}</div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>{item.name}</p>
                     <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{item.desc}</p>
@@ -273,15 +273,15 @@ export function ProductWriteupPage() {
 
           {/* TWO PRODUCTS */}
           <section id="products">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE TWO PRODUCTS</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE TWO PRODUCTS</p>
             <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Two products. One architecture.</h2>
 
             {/* Account Success */}
             <div className="mb-8 p-6 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
-              <p className="text-[10px] font-bold tracking-widest mb-2" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PRODUCT 1</p>
+              <p className="text-xs font-bold tracking-widest mb-2" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PRODUCT 1</p>
               <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Account Success</h3>
               <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>A tool-organistic and platform-organistic system for managing complex relationships across any tool, any role, any industry, and any department. Born from a CSM's need to connect dots that no tool would connect. Built with an architect's discipline. Proven by an $8 million save.</p>
-              <p className="text-[10px] font-bold tracking-widest mb-3" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>THE 15 LAYERS</p>
+              <p className="text-xs font-bold tracking-widest mb-3" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>THE 15 LAYERS</p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                 {['Account Master', 'People / Team', 'Business Context', 'Strategic Objectives', 'Capabilities', 'Value Streams', 'API Portfolio', 'Platform Health', 'Initiatives', 'Risk Register', 'Stakeholder Outcomes', 'Engagement Log', 'Success Plan', 'Task Manager', 'Generated Insights'].map((layer, i) => (
                   <div key={layer} className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs" style={{ background: 'var(--paper)', border: '1px solid var(--border-subtle)' }}>
@@ -294,10 +294,10 @@ export function ProductWriteupPage() {
 
             {/* Business Intelligence */}
             <div className="p-6 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
-              <p className="text-[10px] font-bold tracking-widest mb-2" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PRODUCT 2</p>
+              <p className="text-xs font-bold tracking-widest mb-2" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PRODUCT 2</p>
               <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Business Intelligence (Business Ops)</h3>
               <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>A complete operational nervous system for running any organization from one surface. Born from a founder's need to run his own company from one surface. Proven by IntegrateWise running on IntegrateWise.</p>
-              <p className="text-[10px] font-bold tracking-widest mb-3" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>ALL FUNCTIONAL DEPARTMENTS</p>
+              <p className="text-xs font-bold tracking-widest mb-3" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>ALL FUNCTIONAL DEPARTMENTS</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {['Strategy & Leadership', 'Marketing', 'Sales', 'Customer Success', 'Product', 'Engineering', 'Operations', 'Finance', 'Human Resources', 'Legal & Compliance', 'BI / Analytics', 'IT & Infrastructure', 'Partnerships & BD', 'Knowledge Management'].map(dept => (
                   <div key={dept} className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs" style={{ background: 'var(--paper)', border: '1px solid var(--border-subtle)' }}>
@@ -311,7 +311,7 @@ export function ProductWriteupPage() {
 
           {/* MEMORY CONTINUITY */}
           <section id="memory">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>MEMORY CONTINUITY</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>MEMORY CONTINUITY</p>
             <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>The model is a variable. The memory is a constant.</h2>
             <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               <p>The memory lives in the Spine. Not in the model. Not in the provider. Not in the session context window. The Spine.</p>
@@ -327,7 +327,7 @@ export function ProductWriteupPage() {
 
           {/* GOVERNANCE */}
           <section id="governance">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE GOVERNANCE MODEL</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE GOVERNANCE MODEL</p>
             <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Human in the Loop. Nothing runs without approval.</h2>
             <div className="space-y-4">
               {[
@@ -350,7 +350,7 @@ export function ProductWriteupPage() {
 
           {/* INFRASTRUCTURE */}
           <section id="infrastructure">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE INFRASTRUCTURE</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE INFRASTRUCTURE</p>
             <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Enterprise-grade by default.</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -360,7 +360,7 @@ export function ProductWriteupPage() {
                 { title: 'Security', items: ['Supabase via Worker only', 'Infisical secrets management', 'Docker network isolation', 'CF Access on every call'] },
               ].map(card => (
                 <div key={card.title} className="p-5 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
-                  <p className="text-[10px] font-bold tracking-widest mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>{card.title.toUpperCase()}</p>
+                  <p className="text-xs font-bold tracking-widest mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>{card.title.toUpperCase()}</p>
                   <ul className="space-y-1.5">
                     {card.items.map(item => (
                       <li key={item} className="flex items-center gap-2 text-sm" style={{ color: 'var(--ink)' }}>
@@ -376,7 +376,7 @@ export function ProductWriteupPage() {
 
           {/* CONVERGENCE */}
           <section id="convergence">
-            <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE CONVERGENCE</p>
+            <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE CONVERGENCE</p>
             <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Every morning. One surface. The whole company.</h2>
             <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               <p>Nirmal opens one surface every morning and operates the company from it. Connected system data is normalized. The Twin carries complete context. The Operator executes approved actions. The Spine grows. The system learns. The user never re-explains. The AI never starts cold. The drift never happens.</p>

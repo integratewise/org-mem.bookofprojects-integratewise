@@ -353,7 +353,7 @@ export function RootLayout() {
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/20 z-40 lg:hidden"
+          className="fixed inset-0 bg-[var(--ink)]/20 z-40 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
@@ -377,7 +377,7 @@ export function RootLayout() {
           <IntegrateWiseLogo variant="icon-only" className="scale-75 origin-left" />
           <div className="ml-2">
             <p className="text-sm font-semibold" style={{ color: 'var(--text-strong)' }}>IntegrateWise</p>
-            <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>Continuity Documentation System</p>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Continuity Documentation System</p>
           </div>
           <button
             className="ml-auto lg:hidden p-1 rounded-md"
@@ -473,7 +473,7 @@ export function RootLayout() {
                   />
                   <span className="text-[13px] font-medium flex-1">{group.label}</span>
                     <span
-                      className="text-[10px] px-1.5 py-0.5 rounded-full"
+                      className="text-xs px-1.5 py-0.5 rounded-full"
                       style={{
                         background: `color-mix(in srgb, ${group.color} 12%, var(--paper))`,
                         color: group.color,
@@ -559,7 +559,7 @@ export function RootLayout() {
             <p className="text-xs font-medium" style={{ color: 'var(--text-strong)' }}>
               Continuity Documentation System v1.0
             </p>
-            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
               6 Doctrine Packs &middot; 40 Documents
             </p>
           </div>

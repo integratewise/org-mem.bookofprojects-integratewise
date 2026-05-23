@@ -426,36 +426,36 @@ export function DesignTokensPage() {
           <TokenCard title="Status Badges">
             <div className="flex flex-wrap gap-3">
               <span
-                className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full"
-                style={{ background: 'rgba(61,122,80,0.12)', color: 'var(--forest-bright)' }}
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
+                style={{ background: 'color-mix(in srgb, var(--forest-bright) 12%, transparent)', color: 'var(--forest-bright)' }}
               >
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--forest-bright)' }} />
                 Ready
               </span>
               <span
-                className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full"
-                style={{ background: 'rgba(184,148,63,0.14)', color: 'var(--gold)' }}
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
+                style={{ background: 'color-mix(in srgb, var(--gold) 14%, transparent)', color: 'var(--gold)' }}
               >
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--gold)' }} />
                 In Review
               </span>
               <span
-                className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full"
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
                 style={{ background: 'var(--paper-warm)', color: 'var(--slate-mid)' }}
               >
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--slate-mid)' }} />
                 Draft
               </span>
               <span
-                className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full"
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
                 style={{ background: 'rgba(26,58,42,0.08)', color: 'var(--forest)' }}
               >
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--forest)' }} />
                 Active
               </span>
               <span
-                className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full"
-                style={{ background: 'rgba(184,148,63,0.10)', color: 'var(--gold)' }}
+                className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
+                style={{ background: 'color-mix(in srgb, var(--gold) 10%, transparent)', color: 'var(--gold)' }}
               >
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--gold)' }} />
                 Canonical Accent
@@ -531,7 +531,7 @@ function ColorToken({
           {hex}
         </p>
         <p
-          className="text-[10px] font-mono mt-0.5"
+          className="text-xs font-mono mt-0.5"
           style={{ color: 'var(--slate-mid)' }}
         >
           {variable}
@@ -576,7 +576,7 @@ function NeutralRow({
         {hex}
       </code>
       <code
-        className="text-[11px] font-mono w-36 shrink-0 hidden sm:block"
+        className="text-xs font-mono w-36 shrink-0 hidden sm:block"
         style={{ color: textDark ? 'var(--slate-mid)' : 'var(--rule)' }}
       >
         {variable}

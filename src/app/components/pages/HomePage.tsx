@@ -249,7 +249,7 @@ export function HomePage() {
             <div>
               <div className="flex items-center gap-2">
                 <p className="text-sm font-semibold" style={{ color: 'var(--text-strong)' }}>Generate Full Campaign Kit</p>
-                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'var(--accent-soft)', color: 'var(--warning-color)' }}>ONE CLICK</span>
+                <span className="text-xs font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'var(--accent-soft)', color: 'var(--warning-color)' }}>ONE CLICK</span>
               </div>
               <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>LinkedIn banners + social posts + team signatures + contact blocks + copy library in one ZIP</p>
             </div>
@@ -275,7 +275,7 @@ export function HomePage() {
               </div>
               <div>
                 <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>{action.label}</p>
-                <p className="text-[11px]" style={{ color: 'var(--slate-mid)' }}>{action.desc}</p>
+                <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>{action.desc}</p>
               </div>
             </button>
           ))}
@@ -324,7 +324,7 @@ export function HomePage() {
                 <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>Canonical Mark & Wordmark</p>
                 <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Forest + Paper — the IntegrateWise design language</p>
               </div>
-              <span className="text-[10px] px-2 py-1 rounded-full font-medium" style={{ background: 'rgba(184,148,63,0.12)', color: 'var(--forest)' }}>
+              <span className="text-xs px-2 py-1 rounded-full font-medium" style={{ background: 'color-mix(in srgb, var(--gold) 12%, transparent)', color: 'var(--forest)' }}>
                 Current Canonical
               </span>
             </div>
@@ -341,19 +341,19 @@ export function HomePage() {
             </div>
             <div className="space-y-4">
               <div>
-                <p className="text-[10px] tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>CANONICAL STATEMENT</p>
+                <p className="text-xs tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>CANONICAL STATEMENT</p>
                 <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>{TAGLINES.descriptor}</p>
               </div>
               <div>
-                <p className="text-[10px] tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>PRIMARY TAGLINE</p>
+                <p className="text-xs tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>PRIMARY TAGLINE</p>
                 <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>{TAGLINES.primary}</p>
               </div>
               <div>
-                <p className="text-[10px] tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>SHORT VERSION</p>
+                <p className="text-xs tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>SHORT VERSION</p>
                 <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>Context-Aware AI. Approval-Controlled Work.</p>
               </div>
               <div>
-                <p className="text-[10px] tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>FOOTER LINE</p>
+                <p className="text-xs tracking-widest mb-1" style={{ color: 'var(--slate-mid)' }}>FOOTER LINE</p>
                 <p className="text-sm font-medium" style={{ color: 'var(--ink)' }}>{FOOTER_LINE}</p>
               </div>
             </div>
@@ -373,8 +373,8 @@ export function HomePage() {
                 <div key={c.name} className="flex flex-col gap-2">
                   <div className="h-14 rounded-lg" style={{ background: c.color, border: c.name.startsWith('Paper') ? '1px solid var(--rule-light)' : undefined }} />
                   <div>
-                    <p className="text-[10px] font-medium" style={{ color: 'var(--ink)' }}>{c.name}</p>
-                    <p className="text-[10px] font-mono" style={{ color: 'var(--slate-mid)' }}>{c.color}</p>
+                    <p className="text-xs font-medium" style={{ color: 'var(--ink)' }}>{c.name}</p>
+                    <p className="text-xs font-mono" style={{ color: 'var(--slate-mid)' }}>{c.color}</p>
                   </div>
                 </div>
               ))}
@@ -408,7 +408,7 @@ export function HomePage() {
 
           {/* Product Essence */}
           <div className="rounded-xl p-6" style={{ background: 'linear-gradient(135deg, var(--surface) 0%, var(--accent-soft) 100%)', border: '1px solid var(--border-subtle)' }}>
-            <p className="text-[10px] tracking-widest mb-2" style={{ color: 'var(--slate-mid)' }}>PRODUCT ESSENCE</p>
+            <p className="text-xs tracking-widest mb-2" style={{ color: 'var(--slate-mid)' }}>PRODUCT ESSENCE</p>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               IntegrateWise is a continuity workspace where the Adaptive Spine continuously hydrates
               from connected systems and operational behavior, while AI proposes actions with evidence

@@ -529,11 +529,11 @@ function BannerPreview({ config }: { config: typeof CONTENT_LIBRARY.linkedin.ban
           >
             {/* Subtle radial glow */}
             <div className="absolute inset-0 pointer-events-none"
-                 style={{ background: 'radial-gradient(ellipse 40% 80% at 80% 50%, rgba(184,148,63,0.18) 0%, transparent 70%)' }} />
+                 style={{ background: 'radial-gradient(ellipse 40% 80% at 80% 50%, color-mix(in srgb, var(--gold) 18%, transparent) 0%, transparent 70%)' }} />
 
             {/* Left: text */}
             <div className="relative z-10">
-              <h3 className="text-4xl font-black tracking-wide" style={{ color: 'var(--paper)', fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.04em' }}>
+              <h3 className="text-4xl font-black tracking-wide" style={{ color: 'var(--paper)', fontFamily: 'var(--font-display)', letterSpacing: '0.04em' }}>
                 {config.content.headline}
               </h3>
               <p className="mt-1 text-base" style={{ color: 'var(--gold-light)' }}>
@@ -547,8 +547,8 @@ function BannerPreview({ config }: { config: typeof CONTENT_LIBRARY.linkedin.ban
             {/* Right: IW mark */}
             <div className="relative z-10 flex flex-col items-center gap-2">
               <div className="flex h-20 w-20 items-center justify-center rounded-full"
-                   style={{ background: 'rgba(244,240,232,0.12)', border: '1.5px solid rgba(184,148,63,0.5)' }}>
-                <span className="text-3xl font-black" style={{ color: 'var(--paper)', fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>IW</span>
+                   style={{ background: 'color-mix(in srgb, var(--paper) 12%, transparent)', border: '1.5px solid color-mix(in srgb, var(--gold) 50%, transparent)' }}>
+                <span className="text-3xl font-black" style={{ color: 'var(--paper)', fontFamily: 'var(--font-display)', letterSpacing: '0.05em' }}>IW</span>
               </div>
             </div>
           </div>
