@@ -815,7 +815,7 @@ export function ArchitecturePage() {
                     <motion.div
                       animate={activePipelineStage === i ? { 
                         rotate: [0, 360],
-                        background: [stage.color, '#F4F0E8', stage.color]
+                        background: [stage.color, 'var(--paper)', stage.color]
                       } : {}}
                       transition={{ duration: 2 }}
                       className="w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg"

@@ -3,6 +3,28 @@
 
 The canonical IntegrateWise documentation and product narrative system. One doctrine, one architecture story, one navigation model, one coherent product identity.
 
+> **Ecosystem role:** This repo is the **front door** for all documentation and operations visibility. The canonical source of organisational truth lives in `IntegrateWise - Memory` (flat files). This repo surfaces that truth. `integratewise-ops` is the middleware that operationalizes it.
+
+---
+
+## Ecosystem Position
+
+```
+IntegrateWise - Memory (canonical source)
+    │
+    ├─→ Organisational memory ──→ BrandDocumentations (this repo — front door)
+    │                                      │
+    │                                      ├─→ integratewise-docs (published docs)
+    │                                      └─→ integratewise-live (product surfaces)
+    │
+    └─→ Conversation memory ──→ integratewise-ops (middleware + dashboard)
+                                      │
+                                      └─→ connects back to BrandDocumentations
+```
+
+**What lives here:** Master doctrine, brand assets, design tokens, documentation packs, image gallery.
+**What does NOT live here:** Operational state (leads, clients, tasks — that's `integratewise-ops`). Session logs and transcripts (that's `IntegrateWise - Memory/Conversation memory/`).
+
 ---
 
 ## What IntegrateWise Is

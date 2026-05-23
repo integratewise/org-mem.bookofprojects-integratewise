@@ -139,7 +139,7 @@ function ConnectionCard({
                     ? ''
                     : ''
                }`}
-               style={connection.status === 'connected' ? { background: 'color-mix(in srgb, var(--error-color, #B33A3A) 10%, var(--surface-raised))', color: 'var(--error-color, #B33A3A)' } : { background: 'color-mix(in srgb, var(--forest-bright) 10%, var(--surface-raised))', color: 'var(--forest-bright)' }}
+               style={connection.status === 'connected' ? { background: 'color-mix(in srgb, var(--error-color, var(--red)) 10%, var(--surface-raised))', color: 'var(--error-color, var(--red))' } : { background: 'color-mix(in srgb, var(--forest-bright) 10%, var(--surface-raised))', color: 'var(--forest-bright)' }}
               >
                 {connection.status === 'connected' ? 'Disconnect' : 'Connect'}
               </button>
@@ -262,7 +262,7 @@ function SyncJobItem({ job, connection }: { job: SyncJob; connection?: SyncConne
           {connection?.name || 'Unknown'} • {job.action} • {new Date(job.createdAt).toLocaleTimeString()}
         </p>
         {job.error && (
-          <p className="text-xs mt-1" style={{ color: 'var(--error-color, #B33A3A)' }}>{job.error}</p>
+          <p className="text-xs mt-1" style={{ color: 'var(--error-color, var(--red))' }}>{job.error}</p>
         )}
       </div>
     </div>

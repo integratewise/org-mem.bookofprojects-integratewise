@@ -98,11 +98,11 @@ IntegrateWise`,
   signatures: {
     standard: {
       name: "Standard",
-      html: `<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 13px; color: #2F3D5E;">
+      html: `<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 13px; color: var(--slate);">
   <tr>
     <td style="padding-right: 16px; border-right: 2px solid var(--primary-color);">
       <p style="margin: 0; font-size: 18px; font-weight: 600; color: var(--primary-color);">IntegrateWise</p>
-      <p style="margin: 4px 0 0; font-size: 11px; color: #636A82;">Adaptive Continuity Workspace — Hydrated by the Spine</p>
+      <p style="margin: 4px 0 0; font-size: 11px; color: var(--ink-ghost);">Adaptive Continuity Workspace — Hydrated by the Spine</p>
     </td>
     <td style="padding-left: 16px;">
       <p style="margin: 0; font-weight: 600; color: var(--text-color);">[Your Name]</p>
@@ -126,7 +126,7 @@ IntegrateWise`,
     },
     minimal: {
       name: "Minimal",
-      html: `<div style="font-family: Arial, sans-serif; font-size: 13px; color: #2F3D5E;">
+      html: `<div style="font-family: Arial, sans-serif; font-size: 13px; color: var(--slate);">
   <p style="margin: 0; font-weight: 600; color: var(--text-color);">[Your Name]</p>
   <p style="margin: 2px 0; font-size: 12px; color: var(--primary-color);">IntegrateWise — Adaptive Continuity Workspace</p>
   <p style="margin: 4px 0 0; font-size: 11px; color: var(--text-muted);">

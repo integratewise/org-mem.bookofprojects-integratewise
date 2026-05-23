@@ -42,7 +42,7 @@ function Callout({ children, type = 'insight' }: { children: React.ReactNode; ty
   const c = colors[type];
   return (
     <div className="my-6 px-5 py-4 rounded-xl" style={{ background: c.bg, borderLeft: `3px solid ${c.border}` }}>
-      <p className="text-sm leading-relaxed" style={{ color: c.text, fontStyle: 'italic', fontFamily: 'var(--font-display)' }}>{children}</p>
+      <p className="text-sm leading-relaxed" style={{ color: c.text, fontStyle: 'italic', fontFamily: 'var(--font-serif)' }}>{children}</p>
     </div>
   );
 }
@@ -89,7 +89,7 @@ export function ProductWriteupPage() {
           </div>
           <div className="relative z-10 max-w-3xl">
             <p className="text-xs font-bold tracking-[0.2em] mb-4" style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>INTEGRATEWISE — COMPLETE PRODUCT WRITEUP</p>
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: 'var(--paper)', fontFamily: 'var(--font-display)' }}>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: 'var(--paper)', fontFamily: 'var(--font-serif)' }}>
               The Memory-Native Operating System
             </h1>
             <p className="text-lg leading-relaxed" style={{ color: 'var(--paper)', opacity: 0.8 }}>
@@ -103,7 +103,7 @@ export function ProductWriteupPage() {
           {/* THE PROBLEM */}
           <section id="problem">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE PROBLEM</p>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>People juggle multiple tabs, multiple apps, multiple tools.</h2>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>People juggle multiple tabs, multiple apps, multiple tools.</h2>
             <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               <p>Every 30 minutes, AI loses context. Every 30 minutes the human has to re-inject context into the AI. Without that reinjection, AI drifts. Workflows break. Scripted automations do not help because they are blind — they follow rules but carry no understanding. The human becomes the integration layer. The human becomes the router. The human becomes the memory.</p>
               <p>This is not a productivity problem. This is an operating model problem. Every existing tool — CRM, support desk, communication platform, project management, documentation — solves one piece. None of them connect the pieces. The human shuttles context between tools. The human re-explains the same context to AI every session. The human holds the full picture — and if the human leaves, the picture leaves with them.</p>
@@ -116,7 +116,7 @@ export function ProductWriteupPage() {
           {/* THE ORIGIN */}
           <section id="origin">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE ORIGIN</p>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Built during the work, not after it.</h2>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Built during the work, not after it.</h2>
             <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               <p>Nirmal was a Customer Success Manager and a MuleSoft Architect. The CSM side gave him the operational pain — managing 30+ accounts across six tools that refused to talk to each other, being the human API who shuttled context between systems because no system would connect them. The MuleSoft Architect side gave him the architectural discipline — years of designing enterprise integration platforms, building secure data flows between systems that were never meant to connect.</p>
               <p>These two experiences converged in one person. The CSM knew what needed to exist. The architect knew how to build it. And because the architect had spent years building integration platforms for enterprises, every architectural principle, every best practice, every security policy that governs enterprise-grade integration is embedded in IntegrateWise by default. Not bolted on. Inherent in the foundation.</p>
@@ -146,7 +146,7 @@ export function ProductWriteupPage() {
           {/* FOUNDER'S EXPERIENCE */}
           <section id="founder">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE FOUNDER'S EXPERIENCE</p>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Two roles. One product.</h2>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Two roles. One product.</h2>
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="p-5 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
                 <p className="text-[10px] font-bold tracking-widest mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>AS A CSM</p>
@@ -170,7 +170,7 @@ export function ProductWriteupPage() {
           {/* METHODOLOGY */}
           <section id="methodology">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE INTEGRATEWISE METHODOLOGY</p>
-            <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Six principles. One system.</h2>
+            <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Six principles. One system.</h2>
             <div className="space-y-4">
               {[
                 { title: 'One Work Surface', desc: 'Not six tabs. Not four tools. One surface that shows normalized data from every connected tool, ready to be acted on.' },
@@ -194,7 +194,7 @@ export function ProductWriteupPage() {
           {/* THE ROUND TRIP */}
           <section id="roundtrip">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE COMPLETE DATA FLOW</p>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>The Round Trip</h2>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>The Round Trip</h2>
             <div className="space-y-6">
               {[
                 { phase: 'Phase 1', title: 'Inbound — Loader and Normalizer', desc: 'The Loader connects to external tools through APIs, webhooks, MCPs, and connectors. It pulls data in. The Normalizer takes raw data and reformats it into a common shape. One coherent representation regardless of source.' },
@@ -222,7 +222,7 @@ export function ProductWriteupPage() {
           {/* SEVEN LAYERS */}
           <section id="layers">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE SEVEN LAYERS</p>
-            <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Seven layers. One system.</h2>
+            <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Seven layers. One system.</h2>
             <div className="space-y-3">
               <LayerCard num={1} title="User's Workbench" what="The operational surface where the user works on normalized data from all connected tools. BookStack-like interface for canonical knowledge and operational data." whatUser="Sees normalized data from all connected tools in one view. Modifies records, adds entries, restructures information, prioritizes actions." whatSolves="Tool switching. Instead of opening six tools, the user opens one surface." whatNot="Context reinjection. The User Workbench shows data but does not remember why the user made certain decisions." />
               <LayerCard num={2} title="Cognitive Workbench" what="The knowledge and intelligence surface. Where the organizational brain is visible and operable. An Open WebUI-based interface that is the Spine surface." whatSolves="The absence of organizational memory. Workflows, conversations, evidence, and approval gates live here." />
@@ -242,7 +242,7 @@ export function ProductWriteupPage() {
           {/* 14 COGNITIVE LAYERS */}
           <section id="cognitive">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE 14 COGNITIVE LAYERS</p>
-            <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>The intelligence capabilities.</h2>
+            <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>The intelligence capabilities.</h2>
             <div className="space-y-2">
               {[
                 { num: 1, name: 'Continuity Core', desc: 'Keeps context alive across sessions, models, providers.' },
@@ -274,12 +274,12 @@ export function ProductWriteupPage() {
           {/* TWO PRODUCTS */}
           <section id="products">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE TWO PRODUCTS</p>
-            <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Two products. One architecture.</h2>
+            <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Two products. One architecture.</h2>
 
             {/* Account Success */}
             <div className="mb-8 p-6 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
               <p className="text-[10px] font-bold tracking-widest mb-2" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PRODUCT 1</p>
-              <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Account Success</h3>
+              <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Account Success</h3>
               <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>A tool-organistic and platform-organistic system for managing complex relationships across any tool, any role, any industry, and any department. Born from a CSM's need to connect dots that no tool would connect. Built with an architect's discipline. Proven by an $8 million save.</p>
               <p className="text-[10px] font-bold tracking-widest mb-3" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>THE 15 LAYERS</p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
@@ -295,7 +295,7 @@ export function ProductWriteupPage() {
             {/* Business Intelligence */}
             <div className="p-6 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
               <p className="text-[10px] font-bold tracking-widest mb-2" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PRODUCT 2</p>
-              <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Business Intelligence (Business Ops)</h3>
+              <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Business Intelligence (Business Ops)</h3>
               <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>A complete operational nervous system for running any organization from one surface. Born from a founder's need to run his own company from one surface. Proven by IntegrateWise running on IntegrateWise.</p>
               <p className="text-[10px] font-bold tracking-widest mb-3" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>ALL FUNCTIONAL DEPARTMENTS</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -312,7 +312,7 @@ export function ProductWriteupPage() {
           {/* MEMORY CONTINUITY */}
           <section id="memory">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>MEMORY CONTINUITY</p>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>The model is a variable. The memory is a constant.</h2>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>The model is a variable. The memory is a constant.</h2>
             <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               <p>The memory lives in the Spine. Not in the model. Not in the provider. Not in the session context window. The Spine.</p>
               <p>When the model changes — from GPT-4 to Claude to Gemini to MiMo — the new model inherits all the memory. It does not start cold. It does not need to be told who the user is. The memory was there before it arrived. The memory will be there after it leaves.</p>
@@ -328,7 +328,7 @@ export function ProductWriteupPage() {
           {/* GOVERNANCE */}
           <section id="governance">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE GOVERNANCE MODEL</p>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Human in the Loop. Nothing runs without approval.</h2>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Human in the Loop. Nothing runs without approval.</h2>
             <div className="space-y-4">
               {[
                 { step: '1', title: 'The Twin suggests', desc: 'Operating on the user\'s full memory and context, the Twin identifies an action, insight, risk, or opportunity and presents it.' },
@@ -351,7 +351,7 @@ export function ProductWriteupPage() {
           {/* INFRASTRUCTURE */}
           <section id="infrastructure">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE INFRASTRUCTURE</p>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Enterprise-grade by default.</h2>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Enterprise-grade by default.</h2>
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 { title: 'VPS Stack', items: ['Hostinger VPS', '5 directories, 4 containers', '3 Docker networks', 'operations.integratewise.ai'] },
@@ -377,7 +377,7 @@ export function ProductWriteupPage() {
           {/* CONVERGENCE */}
           <section id="convergence">
             <p className="text-[10px] font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE CONVERGENCE</p>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Every morning. One surface. The whole company.</h2>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Every morning. One surface. The whole company.</h2>
             <div className="space-y-4 text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               <p>Nirmal opens one surface every morning and operates the company from it. Connected system data is normalized. The Twin carries complete context. The Operator executes approved actions. The Spine grows. The system learns. The user never re-explains. The AI never starts cold. The drift never happens.</p>
               <p>IntegrateWise was born from two roles held by one person. A CSM who was the human API. An architect who designed enterprise integrations. These two experiences converged. The CSM knew what needed to exist. The architect knew how to build it.</p>

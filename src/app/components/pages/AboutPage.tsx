@@ -66,8 +66,8 @@ function Hero() {
           { stat: '1', label: 'person fully committed to building' },
         ].map(({ stat, label }) => (
           <div key={stat}>
-            <p className="font-display mb-1"
-               style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1, color: 'var(--forest)', letterSpacing: '0.01em' }}>
+            <p className="font-serif mb-1"
+               style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1, color: 'var(--forest)', letterSpacing: '0.01em' }}>
               {stat}
             </p>
             <p className="iw-body" style={{ color: 'var(--text-muted)' }}>{label}</p>
@@ -100,7 +100,7 @@ function Story() {
             <div className="rounded-xl p-3" style={{ background: 'var(--forest)', color: 'var(--paper)' }}>
               <Users className="w-5 h-5" />
             </div>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--ink)' }}>
+            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: 'var(--ink)' }}>
               Customer Success Manager
             </h3>
           </div>
@@ -123,7 +123,7 @@ function Story() {
             <div className="rounded-xl p-3" style={{ background: 'var(--gold)', color: 'var(--paper)' }}>
               <Code className="w-5 h-5" />
             </div>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--ink)' }}>
+            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: 'var(--ink)' }}>
               MuleSoft Architect
             </h3>
           </div>
@@ -163,7 +163,7 @@ function TheMoment() {
             THE TURNING POINT
           </p>
         </div>
-        <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 3vw, 36px)', lineHeight: 1.4, fontWeight: 600, maxWidth: 700 }}>
+        <p style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 3vw, 36px)', lineHeight: 1.4, fontWeight: 600, maxWidth: 700 }}>
           One implementation. One memory system. Eight million dollars saved.
         </p>
         <p className="mt-6" style={{ fontSize: 16, lineHeight: 1.7, opacity: 0.85, maxWidth: 600 }}>
@@ -198,7 +198,7 @@ function TheCommitment() {
             <Heart className="w-5 h-5" />
           </div>
           <div>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--ink)', marginBottom: 12 }}>
+            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: 'var(--ink)', marginBottom: 12 }}>
               No side projects. No consulting. No distractions.
             </h3>
             <p className="iw-body" style={{ color: 'var(--text-muted)' }}>
@@ -280,7 +280,7 @@ function Principles() {
                  style={{ background: index % 2 === 0 ? 'var(--forest)' : 'var(--gold)', color: 'var(--paper)' }}>
               <Icon className="w-5 h-5" />
             </div>
-            <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 18, color: 'var(--ink)', marginBottom: 12, lineHeight: 1.3 }}>
+            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 18, color: 'var(--ink)', marginBottom: 12, lineHeight: 1.3 }}>
               {title}
             </h3>
             <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--text-muted)' }}>
@@ -316,7 +316,7 @@ export function AboutPage() {
           className="max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6"
         >
           <div>
-            <p style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 600, color: 'var(--ink)' }}>
+            <p style={{ fontFamily: 'var(--font-serif)', fontSize: 18, fontWeight: 600, color: 'var(--ink)' }}>
               IntegrateWise
             </p>
             <p style={{ fontSize: 14, color: 'var(--text-muted)', marginTop: 4 }}>

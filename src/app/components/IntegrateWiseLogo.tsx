@@ -14,35 +14,35 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
   let subtitleColorClass = 'text-[var(--text-muted)]';
 
   if (colorVariant === 'white') {
-    primaryFill = '#FFFFFF';
-    accentFill = 'rgba(255,255,255,0.86)';
-    textColor = '#FFFFFF';
-    titleColorClass = 'text-white';
-    subtitleColorClass = 'text-white/80';
+    primaryFill = 'var(--paper)';
+    accentFill = 'color-mix(in srgb, var(--paper) 86%, transparent)';
+    textColor = 'var(--paper)';
+    titleColorClass = 'text-[var(--paper)]';
+    subtitleColorClass = 'text-[var(--paper)]/80';
   } else if (colorVariant === 'monochrome-white') {
-    primaryFill = '#FFFFFF';
-    accentFill = '#FFFFFF';
-    textColor = '#FFFFFF';
-    titleColorClass = 'text-white';
-    subtitleColorClass = 'text-white/80';
+    primaryFill = 'var(--paper)';
+    accentFill = 'var(--paper)';
+    textColor = 'var(--paper)';
+    titleColorClass = 'text-[var(--paper)]';
+    subtitleColorClass = 'text-[var(--paper)]/80';
   } else if (colorVariant === 'monochrome-dark') {
-    primaryFill = 'var(--text-color)';
-    accentFill = 'var(--text-color)';
-    textColor = 'var(--text-color)';
-    titleColorClass = 'text-[var(--text-color)]';
-    subtitleColorClass = 'text-[var(--text-color)]';
+    primaryFill = 'var(--ink)';
+    accentFill = 'var(--ink)';
+    textColor = 'var(--ink)';
+    titleColorClass = 'text-[var(--ink)]';
+    subtitleColorClass = 'text-[var(--ink)]';
   } else if (colorVariant === 'blue-only') {
-    primaryFill = 'var(--primary-color)';
-    accentFill = 'var(--primary-color)';
-    textColor = 'var(--primary-color)';
-    titleColorClass = 'text-[var(--primary-color)]';
-    subtitleColorClass = 'text-[var(--primary-color)]';
+    primaryFill = 'var(--forest)';
+    accentFill = 'var(--forest)';
+    textColor = 'var(--forest)';
+    titleColorClass = 'text-[var(--forest)]';
+    subtitleColorClass = 'text-[var(--forest)]';
   } else if (colorVariant === 'print-safe-black') {
-    primaryFill = '#000000';
-    accentFill = '#000000';
-    textColor = '#000000';
-    titleColorClass = 'text-black';
-    subtitleColorClass = 'text-black';
+    primaryFill = 'var(--ink)';
+    accentFill = 'var(--ink)';
+    textColor = 'var(--ink)';
+    titleColorClass = 'text-[var(--ink)]';
+    subtitleColorClass = 'text-[var(--ink)]';
   }
 
   const iconClasses = variant === 'full' ? 'h-16 w-auto' : 'h-12 w-auto';
@@ -59,7 +59,7 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
             x="93"
             y="120"
             fill={textColor}
-            fontFamily="Inter, system-ui, sans-serif"
+            fontFamily="var(--font-sans), system-ui, sans-serif"
             fontWeight="500"
             fontSize="14"
           >

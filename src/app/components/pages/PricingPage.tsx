@@ -19,7 +19,7 @@ export function PricingPage() {
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <p className="text-xs font-bold tracking-[0.2em] mb-4" style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>PRICING</p>
-          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: 'var(--paper)', fontFamily: 'var(--font-display)' }}>
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: 'var(--paper)', fontFamily: 'var(--font-serif)' }}>
             Simple. Transparent. Based on value.
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: 'var(--paper)', opacity: 0.8 }}>
@@ -36,7 +36,7 @@ export function PricingPage() {
               <div className="rounded-xl p-3" style={{ background: 'color-mix(in srgb, var(--gold) 12%, transparent)', color: 'var(--gold)' }}>
                 <TrendingUp className="w-5 h-5" />
               </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--ink)' }}>What it costs without it</h3>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: 'var(--ink)' }}>What it costs without it</h3>
             </div>
             <div className="space-y-4">
               {costs.map(item => (
@@ -54,7 +54,7 @@ export function PricingPage() {
               <div className="rounded-xl p-3" style={{ background: 'var(--forest)', color: 'var(--paper)' }}>
                 <TrendingUp className="w-5 h-5" />
               </div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 20, color: 'var(--ink)' }}>What IntegrateWise saves</h3>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: 'var(--ink)' }}>What IntegrateWise saves</h3>
             </div>
             <div className="space-y-4">
               {[
@@ -76,7 +76,7 @@ export function PricingPage() {
         {/* Statement */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-12 text-center p-8 rounded-2xl" style={{ background: 'color-mix(in srgb, var(--forest) 6%, var(--paper))', border: '1px solid color-mix(in srgb, var(--forest) 12%, transparent)' }}>
           <p className="text-sm mb-2" style={{ color: 'var(--text-muted)' }}>The cost of not having persistent AI memory is 30 to 40 percent of every knowledge worker's time.</p>
-          <p className="text-lg font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>IntegrateWise will be priced to be a fraction of what it costs to not have it.</p>
+          <p className="text-lg font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>IntegrateWise will be priced to be a fraction of what it costs to not have it.</p>
           <a href="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all hover:opacity-90" style={{ background: 'var(--forest)', color: 'var(--paper)' }}>
             Contact us for early access pricing
             <ArrowRight className="w-4 h-4" />

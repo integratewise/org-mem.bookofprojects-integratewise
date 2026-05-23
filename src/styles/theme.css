@@ -26,6 +26,11 @@
   --red:           #8B2020;
   --slate:         #1A2E4A;
   --slate-mid:     #2A4A6A;
+  --red-pale:      #F5E0E0;
+  --ink-muted:     #5A5550;
+  --ink-ghost:     #8A8580;
+  --mark-indigo:   #4154A3;
+  --mark-pink:     #EB4379;
 
   /* ── Typography ── */
   --font-display: 'Bebas Neue', sans-serif;
@@ -41,8 +46,8 @@
   --border-base:        var(--rule);
   --border-subtle:      var(--rule-light);
   --text-color:         var(--ink);
-  --text-muted-color:   #5A5040;
-  --text-faint-color:   #8A8070;
+  --text-muted-color:   var(--ink-muted);
+  --text-faint-color:   var(--ink-ghost);
   --text-inverse-color: var(--paper);
   --primary-color:      var(--forest);
   --primary-hover:      var(--forest-mid);
@@ -56,8 +61,8 @@
   /* ── App token aliases ── */
   --text-strong:        var(--ink);
   --text-default:       var(--ink);
-  --text-muted:         #5A5040;
-  --text-faint:         #8A8070;
+  --text-muted:         var(--ink-muted);
+  --text-faint:         var(--ink-ghost);
   --text-inverse:       var(--paper);
   --text-accent:        var(--forest-mid);
   --text-highlight:     var(--gold);
@@ -96,8 +101,8 @@
   --brand-gray-200:       var(--paper-deep);
   --brand-gray-300:       var(--rule-light);
   --brand-gray-400:       var(--rule);
-  --brand-gray-500:       #8A8070;
-  --brand-gray-600:       #5A5040;
+  --brand-gray-500:       var(--ink-ghost);
+  --brand-gray-600:       var(--ink-muted);
   --brand-gray-700:       #3A3028;
   --brand-gray-800:       #1E1810;
   --brand-gray-900:       var(--ink);
@@ -123,11 +128,11 @@
   --space-2xl: 3rem;
   --space-3xl: 4rem;
 
-  /* ── Type scale — matches product_doctrine.html ── */
-  --text-xs:        0.6875rem;   /* 11px — labels, masthead */
-  --text-sm:        0.875rem;    /* 14px — body copy */
-  --text-base:      0.90625rem;  /* 14.5px — p-text */
-  --text-md:        1rem;        /* 16px */
+  /* ── Type scale ── */
+  --text-xs:        0.75rem;     /* 12px — labels, masthead (minimum for web) */
+  --text-sm:        0.875rem;    /* 14px — secondary body, captions */
+  --text-base:      1rem;        /* 16px — standard body copy */
+  --text-md:        1rem;        /* 16px — emphasized body */
   --text-lg:        1.1875rem;   /* 19px — ms-name */
   --text-xl:        1.3125rem;   /* 21px — s-title */
   --text-2xl:       1.5rem;      /* 24px — twin-def-main */
@@ -182,7 +187,7 @@
   --secondary:               var(--paper-deep);
   --secondary-foreground:    var(--ink);
   --muted:                   var(--paper-deep);
-  --muted-foreground:        #5A5040;
+  --muted-foreground:        var(--ink-muted);
   --accent:                  var(--gold);
   --accent-foreground:       var(--ink);
   --destructive:             var(--red);
@@ -329,6 +334,12 @@
   --color-chart-4:             var(--chart-4);
   --color-chart-5:             var(--chart-5);
 
+  --color-ink-muted:           var(--ink-muted);
+  --color-ink-ghost:           var(--ink-ghost);
+  --color-red-pale:            var(--red-pale);
+  --color-mark-indigo:         var(--mark-indigo);
+  --color-mark-pink:           var(--mark-pink);
+
   --color-surface-canvas:      var(--surface-canvas);
   --color-surface-default:     var(--surface-default);
   --color-surface-subtle:      var(--surface-subtle);
@@ -398,9 +409,20 @@
     pointer-events: none; z-index: 999; opacity: 0.5;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  /* ── Font-family boundaries ──
+     DM Serif Display  → h1–h3 display headings ONLY
+     Instrument Sans   → h4–h6, body, UI chrome (default)
+     Bebas Neue        → rare campaign callouts / hero display ONLY
+     IBM Plex Mono     → technical labels, code, data strings ONLY
+  ── */
+  h1, h2, h3 {
     font-family: var(--font-serif);
     letter-spacing: -0.02em;
+  }
+
+  h4, h5, h6 {
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
   }
 
   h1 {
@@ -512,7 +534,7 @@
   .iw-body {
     font-size: var(--text-base);
     line-height: 1.7;
-    color: #2C2C2C;
+    color: var(--ink);
   }
 
   /* Mono label in forest */
@@ -550,6 +572,6 @@
     font-family: var(--font-mono);
     font-size: 12px;
     line-height: 1.7;
-    color: #5A4010;
+    color: var(--forest-mid);
   }
 }

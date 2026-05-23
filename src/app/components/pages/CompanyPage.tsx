@@ -85,8 +85,8 @@ function Hero() {
           { stat: '$0', label: 'institutional memory when someone leaves' },
         ].map(({ stat, label }) => (
           <div key={stat}>
-            <p className="font-display mb-1"
-               style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1, color: 'var(--forest)', letterSpacing: '0.01em' }}>
+            <p className="font-serif mb-1"
+               style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1, color: 'var(--forest)', letterSpacing: '0.01em' }}>
               {stat}
             </p>
             <p className="iw-body" style={{ color: 'var(--text-muted)' }}>{label}</p>

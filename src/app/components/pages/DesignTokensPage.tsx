@@ -83,6 +83,8 @@ export function DesignTokensPage() {
               { shade: 'slate-mid', hex: '#2A4A6A', variable: '--slate-mid', usage: 'Secondary text, metadata, technical accents' },
               { shade: 'slate', hex: '#1A2E4A', variable: '--slate', usage: 'Structured technical emphasis' },
               { shade: 'ink', hex: '#0C0C0C', variable: '--ink', usage: 'Maximum contrast text and marks' },
+              { shade: 'ink-muted', hex: '#5A5550', variable: '--ink-muted', usage: 'Secondary body text, captions, metadata' },
+              { shade: 'ink-ghost', hex: '#8A8580', variable: '--ink-ghost', usage: 'Tertiary text, placeholders, disabled states' },
             ] as const).map((t) => (
               <NeutralRow
                 key={t.shade}
@@ -103,6 +105,19 @@ export function DesignTokensPage() {
             <ColorToken name="Warning" hex="var(--gold)" variable="--brand-warning" usage="Caution states" />
             <ColorToken name="Error" hex="var(--red)" variable="--brand-error" usage="Error states" />
             <ColorToken name="Info" hex="var(--slate-mid)" variable="--brand-info" usage="Informational" />
+          </div>
+        </TokenCard>
+
+        {/* Core Palette & Brand Marks */}
+        <TokenCard title="Core Palette & Brand Marks">
+          <p className="text-xs mb-5" style={{ color: 'var(--slate-mid)' }}>
+            Base tokens referenced by semantic aliases. <strong>--mark-indigo</strong> and <strong>--mark-pink</strong> are reserved exclusively for the IntegrateWise hand-logo brand mark SVG.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            <ColorToken name="Red" hex="#8B2020" variable="--red" usage="Error base, danger states, destructive actions" />
+            <ColorToken name="Red Pale" hex="#F5E0E0" variable="--red-pale" usage="Soft error backgrounds, validation hints" />
+            <ColorToken name="Mark Indigo" hex="#4154A3" variable="--mark-indigo" usage="Logo mark ONLY — never for UI surfaces" />
+            <ColorToken name="Mark Pink" hex="#EB4379" variable="--mark-pink" usage="Logo mark ONLY — never for UI surfaces" />
           </div>
         </TokenCard>
 
@@ -138,7 +153,7 @@ export function DesignTokensPage() {
             </div>
             <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>DM Serif Display</p>
-              <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Editorial and display headings for the paper-like continuity voice.</p>
+              <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>h1–h3 display headings ONLY. Not for UI chrome or body text.</p>
             </div>
             <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>IBM Plex Mono</p>
@@ -146,7 +161,7 @@ export function DesignTokensPage() {
             </div>
             <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>Bebas Neue</p>
-              <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Condensed emphasis for posters, section marks, and high-contrast callouts.</p>
+              <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Rare campaign callouts and hero display ONLY. Never for section headings or UI labels.</p>
             </div>
           </div>
           <div className="space-y-5">
@@ -157,9 +172,9 @@ export function DesignTokensPage() {
               { name: 'xl',      rem: '1.3125rem',             px: '21px',     variable: '--text-xl' },
               { name: 'lg',      rem: '1.1875rem',             px: '19px',     variable: '--text-lg' },
               { name: 'md',      rem: '1rem',                  px: '16px',     variable: '--text-md' },
-              { name: 'base',    rem: '0.90625rem',            px: '14.5px',   variable: '--text-base' },
+              { name: 'base',    rem: '1rem',                  px: '16px',     variable: '--text-base' },
               { name: 'sm',      rem: '0.875rem',              px: '14px',     variable: '--text-sm' },
-              { name: 'xs',      rem: '0.6875rem',             px: '11px',     variable: '--text-xs' },
+              { name: 'xs',      rem: '0.75rem',               px: '12px',     variable: '--text-xs' },
             ] as const).map((t) => (
               <div
                 key={t.name}

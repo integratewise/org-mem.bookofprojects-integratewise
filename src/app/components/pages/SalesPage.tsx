@@ -117,7 +117,7 @@ function createSalesHtml(content: SalesAssetContent, gradient: string) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${content.title}</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f3f5fb; padding: 24px; }
+    body { margin: 0; font-family: Arial, sans-serif; background: var(--paper); padding: 24px; }
     .asset {
       width: 1200px;
       min-height: 675px;
@@ -210,7 +210,7 @@ function SalesAssetPreview({ content, gradient }: { content: SalesAssetContent; 
           <div className="relative flex items-center">
             <div className="absolute inset-0 rounded-[32px] bg-black/10 blur-2xl" />
             <div className="relative w-full rounded-[28px] border border-white/15 bg-white/10 p-5 backdrop-blur-md shadow-2xl">
-              <div className="rounded-[22px] bg-[#F7F9FD] p-5 text-[var(--text-color)]">
+              <div className="rounded-[22px] bg-[var(--paper)] p-5 text-[var(--text-color)]">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs uppercase tracking-[0.25em] text-[var(--text-faint)]">Executive Snapshot</p>
@@ -232,8 +232,8 @@ function SalesAssetPreview({ content, gradient }: { content: SalesAssetContent; 
                     <p className="text-xs text-[var(--text-faint)]">Approval Coverage</p>
                     <p className="mt-2 text-3xl font-bold">100%</p>
                     <div className="mt-3 flex gap-1">
-                      <div className="h-10 flex-1 rounded-xl bg-[#DCE4FB]" />
-                      <div className="h-10 flex-1 rounded-xl bg-[#B9C8F4]" />
+                      <div className="h-10 flex-1 rounded-xl bg-[var(--paper-deep)]" />
+                      <div className="h-10 flex-1 rounded-xl bg-[var(--rule-light)]" />
                       <div className="h-10 flex-1 rounded-xl bg-[var(--primary-color)]" />
                     </div>
                   </div>
@@ -244,15 +244,15 @@ function SalesAssetPreview({ content, gradient }: { content: SalesAssetContent; 
                     <p className="text-xs text-[var(--text-faint)]">Ready to present</p>
                   </div>
                   <div className="mt-4 grid grid-cols-3 gap-3">
-                    <div className="rounded-xl bg-[#F4F6FB] p-3">
+                    <div className="rounded-xl bg-[var(--paper-warm)] p-3">
                       <p className="text-xs text-[var(--text-faint)]">Problem</p>
                       <p className="mt-2 text-sm font-medium">Fragmented work</p>
                     </div>
-                    <div className="rounded-xl bg-[#F4F6FB] p-3">
+                    <div className="rounded-xl bg-[var(--paper-warm)] p-3">
                       <p className="text-xs text-[var(--text-faint)]">System</p>
                       <p className="mt-2 text-sm font-medium">Spine + AI</p>
                     </div>
-                    <div className="rounded-xl bg-[#F4F6FB] p-3">
+                    <div className="rounded-xl bg-[var(--paper-warm)] p-3">
                       <p className="text-xs text-[var(--text-faint)]">Outcome</p>
                       <p className="mt-2 text-sm font-medium">Governed action</p>
                     </div>

@@ -131,7 +131,7 @@ function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) 
       whileTap={{ scale: 0.98 }}
       onClick={handleCopy}
       className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all"
-      style={{ background: copied ? 'var(--success-color)' : 'rgba(7,94,84,0.08)', color: copied ? '#fff' : '#075E54' }}
+      style={{ background: copied ? 'var(--success-color)' : 'color-mix(in srgb, var(--forest) 8%, transparent)', color: copied ? 'var(--paper)' : 'var(--forest)' }}
     >
       {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
       {copied ? 'Copied!' : label}
@@ -166,10 +166,10 @@ function CatalogItem({
           <input
             value={item.emoji}
             onChange={(e) => onChange({ ...item, emoji: e.target.value })}
-            className="w-12 h-12 rounded-full bg-[#25D366]/10 flex items-center justify-center text-center text-2xl border border-[var(--border-base)]"
+            className="w-12 h-12 rounded-full bg-[var(--forest-bright)]/10 flex items-center justify-center text-center text-2xl border border-[var(--border-base)]"
           />
         ) : (
-          <div className="w-12 h-12 rounded-full bg-[#25D366]/10 flex items-center justify-center text-2xl">
+          <div className="w-12 h-12 rounded-full bg-[var(--forest-bright)]/10 flex items-center justify-center text-2xl">
             {item.emoji}
           </div>
         )}
@@ -189,14 +189,14 @@ function CatalogItem({
               <input
                 value={item.price}
                 onChange={(e) => onChange({ ...item, price: e.target.value })}
-                className="text-sm font-medium text-[#075E54] w-full px-2 py-1 border border-[var(--border-base)] rounded"
+                className="text-sm font-medium text-[var(--forest)] w-full px-2 py-1 border border-[var(--border-base)] rounded"
               />
             </>
           ) : (
             <>
               <h4 className="font-semibold text-[var(--text-color)]">{item.name}</h4>
               <p className="text-sm text-[var(--text-muted)] mt-1">{item.description}</p>
-              <p className="text-sm font-medium text-[#075E54] mt-2">{item.price}</p>
+              <p className="text-sm font-medium text-[var(--forest)] mt-2">{item.price}</p>
             </>
           )}
         </div>
@@ -237,9 +237,9 @@ function MessageTemplate({
       style={{ background: 'var(--surface-raised)' }}
     >
       {/* Phone Preview Header */}
-      <div className="bg-[#075E54] px-4 py-3 flex items-center gap-3">
+      <div className="bg-[var(--forest)] px-4 py-3 flex items-center gap-3">
         <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: 'rgba(244,240,232,0.2)' }}>
-          <MessageCircle className="w-4 h-4 text-white" />
+          <MessageCircle className="w-4 h-4 text-[var(--paper)]" />
         </div>
         {isEditing ? (
           <input
@@ -249,7 +249,7 @@ function MessageTemplate({
             style={{ color: 'var(--paper)', background: 'rgba(244,240,232,0.2)' }}
           />
         ) : (
-          <p className="text-sm font-medium text-white">IntegrateWise</p>
+          <p className="text-sm font-medium text-[var(--paper)]">IntegrateWise</p>
         )}
         {isEditing && (
           <button
@@ -263,7 +263,7 @@ function MessageTemplate({
       </div>
       
       {/* Chat Bubble */}
-      <div className="p-4 bg-[#E5DDD5] min-h-[200px]">
+      <div className="p-4 bg-[var(--paper-warm)] min-h-[200px]">
         <div className="flex justify-center mb-4">
           <span className="text-xs text-[var(--text-muted)] px-3 py-1 rounded-full"
                 style={{ background: 'rgba(244,240,232,0.5)' }}>
@@ -271,7 +271,7 @@ function MessageTemplate({
           </span>
         </div>
         <div className="flex gap-2">
-          <div className="w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center text-white text-xs font-bold shrink-0">
+          <div className="w-8 h-8 rounded-full bg-[var(--forest-bright)] flex items-center justify-center text-[var(--paper)] text-xs font-bold shrink-0">
             IW
           </div>
           <div className="rounded-lg rounded-tl-none p-3 max-w-[80%] shadow-sm flex-1"
@@ -316,7 +316,7 @@ function MessageTemplate({
           <select
             value={template.type}
             onChange={(e) => onChange({ ...template, type: e.target.value })}
-            className="text-xs px-2 py-1 rounded-full bg-[#25D366]/10 text-[#075E54] border border-[var(--border-base)]"
+            className="text-xs px-2 py-1 rounded-full bg-[var(--forest-bright)]/10 text-[var(--forest)] border border-[var(--border-base)]"
           >
             <option value="greeting">Greeting</option>
             <option value="conversion">Conversion</option>
@@ -324,7 +324,7 @@ function MessageTemplate({
             <option value="sales">Sales</option>
           </select>
         ) : (
-          <span className="text-xs px-2 py-1 rounded-full bg-[#25D366]/10 text-[#075E54]">
+          <span className="text-xs px-2 py-1 rounded-full bg-[var(--forest-bright)]/10 text-[var(--forest)]">
             {template.type}
           </span>
         )}
@@ -351,7 +351,7 @@ function QuickReplies({
   return (
     <div className="rounded-xl border border-[var(--border-subtle)] p-6" style={{ background: 'var(--surface-raised)' }}>
       <h3 className="text-lg font-semibold text-[var(--text-color)] mb-4 flex items-center gap-2">
-        <Send className="w-5 h-5 text-[#25D366]" />
+        <Send className="w-5 h-5 text-[var(--forest-bright)]" />
         Quick Reply Buttons
       </h3>
       <p className="text-sm text-[var(--text-muted)] mb-4">
@@ -378,7 +378,7 @@ function QuickReplies({
                     newReplies[i] = { ...reply, label: e.target.value };
                     onChange(newReplies);
                   }}
-                  className="px-3 py-2 rounded-lg bg-[#25D366]/10 text-[#075E54] border border-[var(--border-base)] text-sm"
+                  className="px-3 py-2 rounded-lg bg-[var(--forest-bright)]/10 text-[var(--forest)] border border-[var(--border-base)] text-sm"
                 />
                 <button
                   onClick={() => {
@@ -392,7 +392,7 @@ function QuickReplies({
                 </button>
               </>
             ) : (
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#25D366]/10 text-[#075E54]">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--forest-bright)]/10 text-[var(--forest)]">
                 <span>{reply.emoji}</span>
                 <span className="text-sm font-medium">{reply.label}</span>
               </div>
@@ -402,7 +402,7 @@ function QuickReplies({
         {isEditing && (
           <button
             onClick={() => onChange([...replies, { label: "New", emoji: "✨" }])}
-            className="flex items-center gap-2 px-4 py-2 rounded-full border border-dashed border-[#25D366] text-[#25D366] hover:bg-[#25D366]/5"
+            className="flex items-center gap-2 px-4 py-2 rounded-full border border-dashed border-[var(--forest-bright)] text-[var(--forest-bright)] hover:bg-[var(--forest-bright)]/5"
           >
             <Plus className="w-4 h-4" />
             Add
@@ -466,8 +466,8 @@ export function WhatsAppPage() {
       >
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <MessageCircle className="w-5 h-5 text-[#25D366]" />
-            <span className="text-xs font-semibold text-[#25D366] uppercase tracking-wider">Messaging</span>
+            <MessageCircle className="w-5 h-5 text-[var(--forest-bright)]" />
+            <span className="text-xs font-semibold text-[var(--forest-bright)] uppercase tracking-wider">Messaging</span>
           </div>
           <h1 className="text-3xl font-bold text-[var(--text-color)] mb-2">WhatsApp Business Assets</h1>
           <p className="text-[var(--text-muted)]">Catalog items, message templates, and quick replies for WhatsApp Business</p>
@@ -528,7 +528,7 @@ export function WhatsAppPage() {
             transition={{ delay: i * 0.1 }}
             className="p-4 rounded-xl border border-[var(--border-subtle)] text-center" style={{ background: 'var(--surface-raised)' }}
           >
-            <stat.icon className="w-5 h-5 text-[#25D366] mx-auto mb-2" />
+            <stat.icon className="w-5 h-5 text-[var(--forest-bright)] mx-auto mb-2" />
             <p className="text-2xl font-bold text-[var(--text-color)]">{stat.count}</p>
             <p className="text-xs text-[var(--text-muted)]">{stat.label}</p>
           </motion.div>
@@ -541,13 +541,13 @@ export function WhatsAppPage() {
         <section>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <ShoppingBag className="w-5 h-5 text-[#075E54]" />
+              <ShoppingBag className="w-5 h-5 text-[var(--forest)]" />
               <h2 className="text-xl font-bold text-[var(--text-color)]">Business Catalog</h2>
             </div>
             {isEditing && (
               <button
                 onClick={addNewCatalogItem}
-                className="flex items-center gap-2 px-4 py-2 bg-[#25D366] text-white rounded-lg text-sm font-medium hover:bg-[#128C7E]"
+                className="flex items-center gap-2 px-4 py-2 bg-[var(--forest-bright)] text-[var(--paper)] rounded-lg text-sm font-medium hover:bg-[var(--forest-mid)]"
               >
                 <Plus className="w-4 h-4" />
                 Add Item
@@ -579,13 +579,13 @@ export function WhatsAppPage() {
         <section>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <MessageCircle className="w-5 h-5 text-[#075E54]" />
+              <MessageCircle className="w-5 h-5 text-[var(--forest)]" />
               <h2 className="text-xl font-bold text-[var(--text-color)]">Message Templates</h2>
             </div>
             {isEditing && (
               <button
                 onClick={addNewTemplate}
-                className="flex items-center gap-2 px-4 py-2 bg-[#25D366] text-white rounded-lg text-sm font-medium hover:bg-[#128C7E]"
+                className="flex items-center gap-2 px-4 py-2 bg-[var(--forest-bright)] text-[var(--paper)] rounded-lg text-sm font-medium hover:bg-[var(--forest-mid)]"
               >
                 <Plus className="w-4 h-4" />
                 Add Template
@@ -626,10 +626,10 @@ export function WhatsAppPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="mt-10 p-4 bg-gradient-to-r from-[#25D366]/10 to-transparent rounded-xl border border-[#25D366]/20"
+        className="mt-10 p-4 bg-gradient-to-r from-[var(--forest-bright)]/10 to-transparent rounded-xl border border-[var(--forest-bright)]/20"
       >
         <p className="text-sm text-[var(--text-color)]">
-          <strong className="text-[#075E54]">Pro Tip:</strong> Keep messages under 400 characters for better readability. 
+          <strong className="text-[var(--forest)]">Pro Tip:</strong> Keep messages under 400 characters for better readability. 
           Use emojis sparingly to maintain professionalism while adding warmth.
         </p>
       </motion.div>

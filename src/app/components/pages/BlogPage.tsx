@@ -64,7 +64,7 @@ export function BlogPage() {
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <p className="text-xs font-bold tracking-[0.2em] mb-4" style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>THOUGHT LEADERSHIP</p>
-          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: 'var(--paper)', fontFamily: 'var(--font-display)' }}>
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: 'var(--paper)', fontFamily: 'var(--font-serif)' }}>
             Blog
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: 'var(--paper)', opacity: 0.8 }}>
@@ -82,7 +82,7 @@ export function BlogPage() {
               </div>
               <div>
                 <p className="text-[10px] font-bold tracking-widest" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PILLAR {String(i + 1).padStart(2, '0')}</p>
-                <h2 className="text-lg font-bold" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>{pillar.title}</h2>
+                <h2 className="text-lg font-bold" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>{pillar.title}</h2>
               </div>
             </div>
             <p className="text-sm mb-4 ml-11" style={{ color: 'var(--text-muted)' }}>{pillar.desc}</p>

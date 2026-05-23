@@ -20,7 +20,7 @@ export function ContactPage() {
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <p className="text-xs font-bold tracking-[0.2em] mb-4" style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>CONTACT</p>
-          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: 'var(--paper)', fontFamily: 'var(--font-display)' }}>
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: 'var(--paper)', fontFamily: 'var(--font-serif)' }}>
             See IntegrateWise in action.
           </h1>
           <p className="text-lg leading-relaxed" style={{ color: 'var(--paper)', opacity: 0.8 }}>
@@ -35,7 +35,7 @@ export function ContactPage() {
             <div className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--forest-bright) 12%, transparent)' }}>
               <Send className="w-7 h-7" style={{ color: 'var(--forest-bright)' }} />
             </div>
-            <h2 className="text-2xl font-bold mb-3" style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}>Request received.</h2>
+            <h2 className="text-2xl font-bold mb-3" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Request received.</h2>
             <p className="text-sm" style={{ color: 'var(--text-muted)' }}>We will be in touch within 48 hours.</p>
           </motion.div>
         ) : (

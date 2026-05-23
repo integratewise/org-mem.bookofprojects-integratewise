@@ -109,7 +109,7 @@ function Callout({
     >
       <p
         className="text-sm leading-relaxed"
-        style={{ color: c.text, fontStyle: 'italic', fontFamily: 'var(--font-display)' }}
+        style={{ color: c.text, fontStyle: 'italic', fontFamily: 'var(--font-serif)' }}
       >
         {children}
       </p>
@@ -384,7 +384,7 @@ export function AccountSuccessPage() {
             </p>
             <h1
               className="text-4xl lg:text-5xl font-bold leading-tight mb-6"
-              style={{ color: 'var(--paper)', fontFamily: 'var(--font-display)' }}
+              style={{ color: 'var(--paper)', fontFamily: 'var(--font-serif)' }}
             >
               Every account detail. Every conversation. Every decision. Remembered.
             </h1>
@@ -414,7 +414,7 @@ export function AccountSuccessPage() {
             </p>
             <h2
               className="text-3xl font-bold mb-6"
-              style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}
+              style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}
             >
               You are the memory. We are building the machine.
             </h2>
@@ -444,7 +444,7 @@ export function AccountSuccessPage() {
             </p>
             <h2
               className="text-3xl font-bold mb-6"
-              style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}
+              style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}
             >
               One customer view. Persistent AI memory. The round trip.
             </h2>
@@ -495,7 +495,7 @@ export function AccountSuccessPage() {
             </p>
             <h2
               className="text-3xl font-bold mb-8"
-              style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}
+              style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}
             >
               Fifteen layers of account intelligence.
             </h2>
@@ -521,7 +521,7 @@ export function AccountSuccessPage() {
             </p>
             <h2
               className="text-3xl font-bold mb-6"
-              style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}
+              style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}
             >
               Not fifteen tables. One living intelligence graph.
             </h2>
@@ -573,7 +573,7 @@ export function AccountSuccessPage() {
             </p>
             <h2
               className="text-3xl font-bold mb-8"
-              style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}
+              style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}
             >
               Built for every role that manages relationships.
             </h2>
@@ -637,7 +637,7 @@ export function AccountSuccessPage() {
             </p>
             <h2
               className="text-3xl font-bold mb-6"
-              style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}
+              style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}
             >
               AI that tells you what you need to know before you ask.
             </h2>
@@ -651,8 +651,8 @@ export function AccountSuccessPage() {
               {proactiveInsights.map((insight) => {
                 const severityColors: Record<string, { bg: string; border: string; label: string }> = {
                   high: {
-                    bg: 'color-mix(in srgb, var(--risk, #dc2626) 6%, var(--paper))',
-                    border: 'var(--risk, #dc2626)',
+                    bg: 'color-mix(in srgb, var(--risk, var(--red)) 6%, var(--paper))',
+                    border: 'var(--risk, var(--red))',
                     label: 'HIGH RISK',
                   },
                   opportunity: {
@@ -676,8 +676,8 @@ export function AccountSuccessPage() {
                     label: 'INSIGHT',
                   },
                   critical: {
-                    bg: 'color-mix(in srgb, var(--risk, #dc2626) 8%, var(--paper))',
-                    border: 'var(--risk, #dc2626)',
+                    bg: 'color-mix(in srgb, var(--risk, var(--red)) 8%, var(--paper))',
+                    border: 'var(--risk, var(--red))',
                     label: 'CRITICAL',
                   },
                 };
@@ -723,7 +723,7 @@ export function AccountSuccessPage() {
             </p>
             <h2
               className="text-3xl font-bold mb-6"
-              style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}
+              style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}
             >
               $8 million saved. One account. One Spine.
             </h2>
@@ -745,7 +745,7 @@ export function AccountSuccessPage() {
             >
               <p
                 className="text-5xl font-bold mb-2"
-                style={{ color: 'var(--gold)', fontFamily: 'var(--font-display)' }}
+                style={{ color: 'var(--gold)', fontFamily: 'var(--font-serif)' }}
               >
                 $8M
               </p>
@@ -767,7 +767,7 @@ export function AccountSuccessPage() {
             >
               <p
                 className="text-3xl font-bold mb-4"
-                style={{ color: 'var(--ink)', fontFamily: 'var(--font-display)' }}
+                style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}
               >
                 Stop rebuilding context every morning.
               </p>

@@ -642,7 +642,7 @@ export function DocumentationPage() {
             className="px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5"
             style={{
               background: selectedPack === pack.id ? pack.color : 'var(--surface)',
-              color: selectedPack === pack.id ? '#fff' : 'var(--text-muted)',
+              color: selectedPack === pack.id ? 'var(--paper)' : 'var(--text-muted)',
               border: `1px solid ${selectedPack === pack.id ? pack.color : 'var(--border-base)'}`,
             }}
           >

@@ -264,7 +264,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontFamily: 'var(--font-display)',
+            fontFamily: 'var(--font-serif)',
             fontSize: '1.25rem',
             letterSpacing: '0.02em',
             flexShrink: 0,
@@ -275,7 +275,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
         <div style={{ flex: 1, minWidth: 0 }}>
           <h3
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontSize: 'var(--text-xl)',
               color: 'var(--ink)',
               letterSpacing: '0.015em',
@@ -452,7 +452,7 @@ export function HowItWorksPage() {
 
           <h1
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontSize: 'var(--text-display)',
               lineHeight: 0.92,
               letterSpacing: '0.015em',
@@ -499,7 +499,7 @@ export function HowItWorksPage() {
           <SectionEyebrow>The Complete Flow</SectionEyebrow>
           <h2
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontSize: 'clamp(2rem, 4vw, 2.75rem)',
               letterSpacing: '0.015em',
               color: 'var(--ink)',
@@ -563,7 +563,7 @@ export function HowItWorksPage() {
           <SectionEyebrow>Architecture Deep Dive</SectionEyebrow>
           <h2
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontSize: 'clamp(2rem, 4vw, 2.75rem)',
               letterSpacing: '0.015em',
               color: 'var(--ink)',
@@ -624,7 +624,7 @@ export function HowItWorksPage() {
                 <div>
                   <h4
                     style={{
-                      fontFamily: 'var(--font-display)',
+                      fontFamily: 'var(--font-serif)',
                       fontSize: 'var(--text-md)',
                       color: 'var(--ink)',
                       letterSpacing: '0.01em',
@@ -659,7 +659,7 @@ export function HowItWorksPage() {
           <SectionEyebrow>14 Cognitive Capabilities</SectionEyebrow>
           <h3
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontSize: 'var(--text-2xl)',
               letterSpacing: '0.015em',
               color: 'var(--ink)',
@@ -735,7 +735,7 @@ export function HowItWorksPage() {
           <SectionEyebrow>The Governance Model</SectionEyebrow>
           <h3
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontSize: 'var(--text-2xl)',
               letterSpacing: '0.015em',
               color: 'var(--ink)',
@@ -768,7 +768,7 @@ export function HowItWorksPage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-serif)',
                     fontSize: '0.875rem',
                     flexShrink: 0,
                   }}
@@ -812,7 +812,7 @@ export function HowItWorksPage() {
           <SectionEyebrow>Infrastructure Summary</SectionEyebrow>
           <h3
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontSize: 'var(--text-2xl)',
               letterSpacing: '0.015em',
               color: 'var(--ink)',

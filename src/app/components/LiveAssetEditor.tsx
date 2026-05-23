@@ -618,7 +618,7 @@ function generateHTML(assetType: AssetType, settings: EditorSettings): string {
   <meta charset="UTF-8">
 </head>
 <body>
-  <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; color: ${settings.backgroundType === 'gradient' ? '#fff' : 'var(--text-color)'};">
+  <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; color: ${settings.backgroundType === 'gradient' ? 'var(--paper)' : 'var(--text-color)'};">
     <tr>
       <td style="padding: 10px;">
         <strong>${settings.headline}</strong><br>

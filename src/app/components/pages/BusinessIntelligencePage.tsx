@@ -274,7 +274,7 @@ export function BusinessIntelligencePage() {
 
           <h1
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontSize: 'clamp(36px, 5vw, 56px)',
               fontWeight: 700,
               lineHeight: 1.15,
@@ -318,7 +318,7 @@ export function BusinessIntelligencePage() {
                 fontSize: '16px',
                 fontWeight: 600,
                 cursor: 'pointer',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-serif)',
               }}
             >
               Request a demo
@@ -339,7 +339,7 @@ export function BusinessIntelligencePage() {
                 fontSize: '16px',
                 fontWeight: 600,
                 cursor: 'pointer',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-serif)',
               }}
             >
               Explore departments
@@ -354,7 +354,7 @@ export function BusinessIntelligencePage() {
         style={{
           padding: '80px 40px',
           background: 'var(--ink)',
-          color: '#fff',
+          color: 'var(--paper)',
         }}
       >
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
@@ -387,7 +387,7 @@ export function BusinessIntelligencePage() {
 
             <h2
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-serif)',
                 fontSize: 'clamp(28px, 4vw, 44px)',
                 fontWeight: 700,
                 lineHeight: 1.2,
@@ -436,7 +436,7 @@ export function BusinessIntelligencePage() {
 
             <h2
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-serif)',
                 fontSize: 'clamp(28px, 4vw, 44px)',
                 fontWeight: 700,
                 lineHeight: 1.2,
@@ -488,7 +488,7 @@ export function BusinessIntelligencePage() {
 
           <h2
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 700,
               color: 'var(--ink)',
@@ -555,7 +555,7 @@ export function BusinessIntelligencePage() {
 
                 <h3
                   style={{
-                    fontFamily: 'var(--font-display)',
+                    fontFamily: 'var(--font-serif)',
                     fontSize: '17px',
                     fontWeight: 700,
                     color: 'var(--ink)',
@@ -602,7 +602,7 @@ export function BusinessIntelligencePage() {
 
             <h2
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-serif)',
                 fontSize: 'clamp(28px, 4vw, 44px)',
                 fontWeight: 700,
                 lineHeight: 1.2,
@@ -674,7 +674,7 @@ export function BusinessIntelligencePage() {
                     </div>
                     <h4
                       style={{
-                        fontFamily: 'var(--font-display)',
+                        fontFamily: 'var(--font-serif)',
                         fontSize: '16px',
                         fontWeight: 700,
                         color: 'var(--ink)',
@@ -723,7 +723,7 @@ export function BusinessIntelligencePage() {
 
           <h2
             style={{
-              fontFamily: 'var(--font-display)',
+              fontFamily: 'var(--font-serif)',
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 700,
               color: 'var(--ink)',
@@ -817,7 +817,7 @@ export function BusinessIntelligencePage() {
         style={{
           padding: '80px 40px',
           background: 'var(--forest)',
-          color: '#fff',
+          color: 'var(--paper)',
         }}
       >
         <div style={{ maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
@@ -850,7 +850,7 @@ export function BusinessIntelligencePage() {
 
             <h2
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-serif)',
                 fontSize: 'clamp(28px, 4vw, 44px)',
                 fontWeight: 700,
                 lineHeight: 1.2,
@@ -900,7 +900,7 @@ export function BusinessIntelligencePage() {
 
             <h2
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-serif)',
                 fontSize: 'clamp(28px, 4vw, 40px)',
                 fontWeight: 700,
                 color: 'var(--ink)',
@@ -934,7 +934,7 @@ export function BusinessIntelligencePage() {
             <div>
               <h3
                 style={{
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-serif)',
                   fontSize: '18px',
                   fontWeight: 700,
                   color: 'var(--ink)',
@@ -990,7 +990,7 @@ export function BusinessIntelligencePage() {
             <div>
               <h3
                 style={{
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-serif)',
                   fontSize: '18px',
                   fontWeight: 700,
                   color: 'var(--ink)',
@@ -1046,7 +1046,7 @@ export function BusinessIntelligencePage() {
             <div>
               <h3
                 style={{
-                  fontFamily: 'var(--font-display)',
+                  fontFamily: 'var(--font-serif)',
                   fontSize: '18px',
                   fontWeight: 700,
                   color: 'var(--ink)',
@@ -1106,7 +1106,7 @@ export function BusinessIntelligencePage() {
         style={{
           padding: '100px 40px',
           background: `linear-gradient(135deg, var(--ink) 0%, var(--forest) 100%)`,
-          color: '#fff',
+          color: 'var(--paper)',
         }}
       >
         <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
@@ -1118,7 +1118,7 @@ export function BusinessIntelligencePage() {
           >
             <h2
               style={{
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-serif)',
                 fontSize: 'clamp(32px, 5vw, 52px)',
                 fontWeight: 700,
                 lineHeight: 1.15,
@@ -1156,7 +1156,7 @@ export function BusinessIntelligencePage() {
                 fontSize: '18px',
                 fontWeight: 700,
                 cursor: 'pointer',
-                fontFamily: 'var(--font-display)',
+                fontFamily: 'var(--font-serif)',
               }}
             >
               Request a demo
