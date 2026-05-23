@@ -16,7 +16,7 @@ const TOKENS = {
   error: 'var(--error-color)',
 };
 
-const tint = (color: string, amount = 16) => `color-mix(in srgb, ${color} ${amount}%, white)`;
+const tint = (color: string, amount = 16) => `color-mix(in srgb, ${color} ${amount}%, var(--paper))`;
 const shade = (color: string, amount = 20) => `color-mix(in srgb, ${color} ${amount}%, var(--text-strong))`;
 
 function DiagramFrame({ width, height, title }: { width: number; height: number; title: string }) {

@@ -1,0 +1,446 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: IntegrateWise
+        - paragraph [ref=e14]: Continuity Documentation System
+    - generic [ref=e16]:
+      - img [ref=e17]
+      - textbox "Search navigation..." [ref=e20]
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - button "00 Company Strategy 2" [ref=e23]:
+          - img [ref=e24]
+          - img [ref=e26]
+          - generic [ref=e30]: 00 Company Strategy
+          - generic [ref=e31]: "2"
+        - generic [ref=e32]:
+          - link "Strategic Planning" [ref=e33] [cursor=pointer]:
+            - /url: /company
+            - img [ref=e34]
+            - generic [ref=e38]: Strategic Planning
+          - button "Doctrine & Continuity" [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Doctrine & Continuity
+      - generic [ref=e43]:
+        - button "01 Product & Engineering 3" [ref=e44]:
+          - img [ref=e45]
+          - img [ref=e47]
+          - generic [ref=e51]: 01 Product & Engineering
+          - generic [ref=e52]: "3"
+        - generic [ref=e53]:
+          - link "Adaptive Spine & Architecture" [ref=e54] [cursor=pointer]:
+            - /url: /architecture
+            - img [ref=e55]
+            - generic [ref=e59]: Adaptive Spine & Architecture
+          - button "Product Narrative & Continuity" [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: Product Narrative & Continuity
+          - button "Technical System" [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e68]: Technical System
+      - generic [ref=e69]:
+        - button "02 Marketing & Creative 10" [ref=e70]:
+          - img [ref=e71]
+          - img [ref=e73]
+          - generic [ref=e76]: 02 Marketing & Creative
+          - generic [ref=e77]: "10"
+        - generic [ref=e78]:
+          - link "Brand Assets" [ref=e79] [cursor=pointer]:
+            - /url: /brand-assets
+            - img [ref=e80]
+            - generic [ref=e86]: Brand Assets
+          - link "Design Tokens" [ref=e87] [cursor=pointer]:
+            - /url: /design-tokens
+            - img [ref=e88]
+            - generic [ref=e92]: Design Tokens
+          - link "Stationery" [ref=e93] [cursor=pointer]:
+            - /url: /stationery
+            - img [ref=e94]
+            - generic [ref=e97]: Stationery
+          - link "Marketing" [ref=e98] [cursor=pointer]:
+            - /url: /marketing
+            - img [ref=e99]
+            - generic [ref=e102]: Marketing
+          - link "LinkedIn" [ref=e103] [cursor=pointer]:
+            - /url: /linkedin
+            - img [ref=e104]
+            - generic [ref=e107]: LinkedIn
+          - link "WhatsApp" [ref=e108] [cursor=pointer]:
+            - /url: /whatsapp
+            - img [ref=e109]
+            - generic [ref=e111]: WhatsApp
+          - link "Email" [ref=e112] [cursor=pointer]:
+            - /url: /email
+            - img [ref=e113]
+            - generic [ref=e116]: Email
+          - link "Presentations" [ref=e117] [cursor=pointer]:
+            - /url: /presentations
+            - img [ref=e118]
+            - generic [ref=e121]: Presentations
+          - link "Quick Generators" [ref=e122] [cursor=pointer]:
+            - /url: /generators
+            - img [ref=e123]
+            - generic [ref=e125]: Quick Generators
+          - button "Category & Positioning" [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e131]: Category & Positioning
+      - generic [ref=e132]:
+        - button "03 Sales 2" [ref=e133]:
+          - img [ref=e134]
+          - img [ref=e136]
+          - generic [ref=e142]: 03 Sales
+          - generic [ref=e143]: "2"
+        - generic [ref=e144]:
+          - link "Sales Enablement" [ref=e145] [cursor=pointer]:
+            - /url: /sales
+            - img [ref=e146]
+            - generic [ref=e152]: Sales Enablement
+          - button "GTM & Customer Success" [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e157]: GTM & Customer Success
+      - button "04 Customer Success 2" [ref=e159]:
+        - img [ref=e160]
+        - img [ref=e162]
+        - generic [ref=e167]: 04 Customer Success
+        - generic [ref=e168]: "2"
+      - button "05 Operations 2" [ref=e170]:
+        - img [ref=e171]
+        - img [ref=e173]
+        - generic [ref=e175]: 05 Operations
+        - generic [ref=e176]: "2"
+      - button "06 Finance, Legal, HR 2" [ref=e178]:
+        - img [ref=e179]
+        - img [ref=e181]
+        - generic [ref=e185]: 06 Finance, Legal, HR
+        - generic [ref=e186]: "2"
+      - button "07 Resources & Knowledge Base 4" [ref=e188]:
+        - img [ref=e189]
+        - img [ref=e191]
+        - generic [ref=e193]: 07 Resources & Knowledge Base
+        - generic [ref=e194]: "4"
+      - button "08 External Communications 2" [ref=e196]:
+        - img [ref=e197]
+        - img [ref=e199]
+        - generic [ref=e202]: 08 External Communications
+        - generic [ref=e203]: "2"
+      - button "09 Archives & Retention 1" [ref=e205]:
+        - img [ref=e206]
+        - img [ref=e208]
+        - generic [ref=e211]: 09 Archives & Retention
+        - generic [ref=e212]: "1"
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - paragraph [ref=e216]: Continuity Documentation System v1.0
+        - paragraph [ref=e217]: 6 Doctrine Packs · 40 Documents
+      - button "Switch to dark mode" [ref=e218]:
+        - img [ref=e219]
+  - generic [ref=e221]:
+    - banner [ref=e222]:
+      - heading "Continuity Documentation System" [level=1] [ref=e224]
+    - main [ref=e225]:
+      - generic [ref=e226]:
+        - generic [ref=e227]:
+          - img [ref=e231]
+          - generic [ref=e239]:
+            - generic [ref=e240]:
+              - img [ref=e242]
+              - generic [ref=e244]:
+                - paragraph [ref=e245]: IntegrateWise
+                - paragraph [ref=e246]: Adaptive continuity workspace hydrated by the Spine
+            - generic [ref=e247]:
+              - heading "The system that holds context, governs execution, and never forgets" [level=2] [ref=e248]
+              - paragraph [ref=e249]: "Doctrine, architecture, and execution language stay aligned in one bright system: continuity is the primitive, connectors hydrate the Spine, and every workspace stays readable, structured, and human-trustworthy."
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - img [ref=e252]
+                - generic [ref=e255]:
+                  - paragraph [ref=e256]: "40"
+                  - paragraph [ref=e257]: Core Docs
+              - generic [ref=e258]:
+                - img [ref=e259]
+                - generic [ref=e262]:
+                  - paragraph [ref=e263]: "26"
+                  - paragraph [ref=e264]: Templates
+              - generic [ref=e265]:
+                - img [ref=e266]
+                - generic [ref=e270]:
+                  - paragraph [ref=e271]: "5"
+                  - paragraph [ref=e272]: Categories
+        - generic [ref=e273]:
+          - generic [ref=e274]:
+            - img [ref=e275]
+            - heading "Core Value Propositions" [level=3] [ref=e279]
+          - img [ref=e280]:
+            - generic [ref=e283]: Core Value Propositions
+            - generic [ref=e284]:
+              - generic [ref=e288]: Context
+              - generic [ref=e289]: AI understands your
+              - generic [ref=e290]: unique business context
+              - generic [ref=e291]: ◌
+              - generic [ref=e292]: Entity 360 views
+            - generic [ref=e293]:
+              - generic [ref=e297]: Governance
+              - generic [ref=e298]: Human approval required
+              - generic [ref=e299]: for every action
+              - generic [ref=e300]: ✓
+              - generic [ref=e301]: Approval-first design
+            - generic [ref=e302]:
+              - generic [ref=e306]: Intelligence
+              - generic [ref=e307]: Continuous learning from
+              - generic [ref=e308]: every decision made
+              - generic [ref=e309]: ↺
+              - generic [ref=e310]: Adaptive learning loop
+        - generic [ref=e311]:
+          - generic [ref=e312]:
+            - generic [ref=e313]:
+              - img [ref=e314]
+              - heading "Daily Quick Actions" [level=3] [ref=e316]
+            - button "All Generators" [ref=e317]:
+              - text: All Generators
+              - img [ref=e318]
+          - button "Generate Full Campaign Kit ONE CLICK LinkedIn banners + social posts + team signatures + contact blocks + copy library in one ZIP" [ref=e320]:
+            - generic [ref=e322]:
+              - img [ref=e324]
+              - generic [ref=e328]:
+                - generic [ref=e329]:
+                  - paragraph [ref=e330]: Generate Full Campaign Kit
+                  - generic [ref=e331]: ONE CLICK
+                - paragraph [ref=e332]: LinkedIn banners + social posts + team signatures + contact blocks + copy library in one ZIP
+              - img [ref=e333]
+          - generic [ref=e335]:
+            - button "LinkedIn Banners Batch export all 4 styles" [ref=e336]:
+              - img [ref=e338]
+              - generic [ref=e342]:
+                - paragraph [ref=e343]: LinkedIn Banners
+                - paragraph [ref=e344]: Batch export all 4 styles
+            - button "Team & Signatures Manage roster, copy HTML" [ref=e345]:
+              - img [ref=e347]
+              - generic [ref=e352]:
+                - paragraph [ref=e353]: Team & Signatures
+                - paragraph [ref=e354]: Manage roster, copy HTML
+            - button "Social Posts Editable, all platforms" [ref=e355]:
+              - img [ref=e357]
+              - generic [ref=e361]:
+                - paragraph [ref=e362]: Social Posts
+                - paragraph [ref=e363]: Editable, all platforms
+            - button "Copy Library One-click copy all" [ref=e364]:
+              - img [ref=e366]
+              - generic [ref=e368]:
+                - paragraph [ref=e369]: Copy Library
+                - paragraph [ref=e370]: One-click copy all
+        - generic [ref=e371]:
+          - paragraph [ref=e372]: One-Click Copy
+          - generic [ref=e373]:
+            - button "Tagline" [ref=e374]:
+              - img [ref=e375]
+              - text: Tagline
+            - button "Descriptor" [ref=e378]:
+              - img [ref=e379]
+              - text: Descriptor
+            - button "Short" [ref=e382]:
+              - img [ref=e383]
+              - text: Short
+            - button "Website" [ref=e386]:
+              - img [ref=e387]
+              - text: Website
+            - button "Email" [ref=e390]:
+              - img [ref=e391]
+              - text: Email
+        - generic [ref=e394]:
+          - generic [ref=e395]:
+            - heading "Brand Identity System" [level=3] [ref=e398]
+            - generic [ref=e399]:
+              - generic [ref=e400]:
+                - generic [ref=e401]:
+                  - paragraph [ref=e402]: Canonical Mark & Wordmark
+                  - paragraph [ref=e403]: Forest + Paper — the IntegrateWise design language
+                - generic [ref=e404]: Current Canonical
+              - generic [ref=e406]:
+                - img [ref=e407]:
+                  - generic [ref=e413]: Adaptive continuity workspace hydrated by the Spine
+                - generic [ref=e414]:
+                  - heading "IntegrateWise" [level=1] [ref=e415]
+                  - paragraph [ref=e416]: Adaptive continuity workspace hydrated by the Spine
+            - generic [ref=e417]:
+              - generic [ref=e418]:
+                - img [ref=e419]
+                - paragraph [ref=e422]: Brand Positioning
+              - generic [ref=e423]:
+                - generic [ref=e424]:
+                  - paragraph [ref=e425]: CANONICAL STATEMENT
+                  - paragraph [ref=e426]: Adaptive continuity workspace hydrated by the Spine
+                - generic [ref=e427]:
+                  - paragraph [ref=e428]: PRIMARY TAGLINE
+                  - paragraph [ref=e429]: AI Thinks in Context — and Waits for Approval
+                - generic [ref=e430]:
+                  - paragraph [ref=e431]: SHORT VERSION
+                  - paragraph [ref=e432]: Context-Aware AI. Approval-Controlled Work.
+                - generic [ref=e433]:
+                  - paragraph [ref=e434]: FOOTER LINE
+                  - paragraph [ref=e435]: IntegrateWise LLP · Bengaluru, India · hello@integratewise.ai
+            - generic [ref=e436]:
+              - paragraph [ref=e437]: Forest + Paper Palette
+              - generic [ref=e438]:
+                - generic [ref=e441]:
+                  - paragraph [ref=e442]: Paper
+                  - paragraph [ref=e443]: var(--paper)
+                - generic [ref=e446]:
+                  - paragraph [ref=e447]: Paper Warm
+                  - paragraph [ref=e448]: var(--paper-warm)
+                - generic [ref=e451]:
+                  - paragraph [ref=e452]: Forest
+                  - paragraph [ref=e453]: var(--forest)
+                - generic [ref=e456]:
+                  - paragraph [ref=e457]: Gold
+                  - paragraph [ref=e458]: var(--gold)
+                - generic [ref=e461]:
+                  - paragraph [ref=e462]: Ink
+                  - paragraph [ref=e463]: var(--ink)
+          - generic [ref=e464]:
+            - heading "Product Architecture System" [level=3] [ref=e467]
+            - generic [ref=e469]:
+              - img [ref=e471]
+              - generic [ref=e475]:
+                - heading "Adaptive Spine" [level=4] [ref=e476]
+                - paragraph [ref=e477]: Continuity core that hydrates organizational truth, relationships, signals, and decisions.
+            - generic [ref=e479]:
+              - img [ref=e481]
+              - generic [ref=e483]:
+                - heading "AI Context Engine" [level=4] [ref=e484]
+                - paragraph [ref=e485]: AI operates on top of the Spine context — thinking, proposing, and learning while every action remains under human approval.
+            - generic [ref=e487]:
+              - img [ref=e489]
+              - generic [ref=e491]:
+                - heading "Approval Governance" [level=4] [ref=e492]
+                - paragraph [ref=e493]: Every AI-initiated action passes through human-controlled checkpoints. Nothing executes without explicit approval.
+            - generic [ref=e495]:
+              - img [ref=e497]
+              - generic [ref=e501]:
+                - heading "Workspace Projection" [level=4] [ref=e502]
+                - paragraph [ref=e503]: Work surfaces continuously adapt to the current continuity topology understood by the Spine.
+            - generic [ref=e504]:
+              - paragraph [ref=e505]: PRODUCT ESSENCE
+              - paragraph [ref=e506]: IntegrateWise is a continuity workspace where the Adaptive Spine continuously hydrates from connected systems and operational behavior, while AI proposes actions with evidence and every execution path remains human-approved.
+        - generic [ref=e507]:
+          - heading "Browse Categories" [level=3] [ref=e508]
+          - generic [ref=e509]:
+            - button "Doctrine & Product Continuity doctrine, company narrative, mission, and whole-system operating model 8 sections" [ref=e510]:
+              - generic [ref=e511]:
+                - img [ref=e513]
+                - img [ref=e517]
+              - heading "Doctrine & Product" [level=4] [ref=e519]
+              - paragraph [ref=e520]: Continuity doctrine, company narrative, mission, and whole-system operating model
+              - generic [ref=e522]: 8 sections
+            - button "Adaptive Architecture Adaptive Spine, hydration flows, continuity pipeline, and execution architecture 12 sections" [ref=e523]:
+              - generic [ref=e524]:
+                - img [ref=e526]
+                - img [ref=e530]
+              - heading "Adaptive Architecture" [level=4] [ref=e532]
+              - paragraph [ref=e533]: Adaptive Spine, hydration flows, continuity pipeline, and execution architecture
+              - generic [ref=e535]: 12 sections
+            - button "Brand Assets Logo system, brand messaging, taglines, and visual identity guidelines 5 assets" [ref=e536]:
+              - generic [ref=e537]:
+                - img [ref=e539]
+                - img [ref=e545]
+              - heading "Brand Assets" [level=4] [ref=e547]
+              - paragraph [ref=e548]: Logo system, brand messaging, taglines, and visual identity guidelines
+              - generic [ref=e550]: 5 assets
+            - button "Design Tokens Forest + Paper tokens, typography, spacing, and component foundations 8 token groups" [ref=e551]:
+              - generic [ref=e552]:
+                - img [ref=e554]
+                - img [ref=e558]
+              - heading "Design Tokens" [level=4] [ref=e560]
+              - paragraph [ref=e561]: Forest + Paper tokens, typography, spacing, and component foundations
+              - generic [ref=e563]: 8 token groups
+            - button "Stationery Letterhead, invoice, proposal, seal, business card, email signature 8 templates" [ref=e564]:
+              - generic [ref=e565]:
+                - img [ref=e567]
+                - img [ref=e570]
+              - heading "Stationery" [level=4] [ref=e572]
+              - paragraph [ref=e573]: Letterhead, invoice, proposal, seal, business card, email signature
+              - generic [ref=e575]: 8 templates
+            - button "Marketing Social templates, LinkedIn assets, WhatsApp catalog, marketing one-pagers 14 deliverables" [ref=e576]:
+              - generic [ref=e577]:
+                - img [ref=e579]
+                - img [ref=e582]
+              - heading "Marketing" [level=4] [ref=e584]
+              - paragraph [ref=e585]: Social templates, LinkedIn assets, WhatsApp catalog, marketing one-pagers
+              - generic [ref=e587]: 14 deliverables
+            - button "Sales Pitch decks, one-pagers, case studies, battlecards, and proposals 10 deliverables" [ref=e588]:
+              - generic [ref=e589]:
+                - img [ref=e591]
+                - img [ref=e597]
+              - heading "Sales" [level=4] [ref=e599]
+              - paragraph [ref=e600]: Pitch decks, one-pagers, case studies, battlecards, and proposals
+              - generic [ref=e602]: 10 deliverables
+            - 'button "Documentation 6 doctrine packs: continuity, category, product, architecture, governance, and GTM 40 documents" [ref=e603]':
+              - generic [ref=e604]:
+                - img [ref=e606]
+                - img [ref=e609]
+              - heading "Documentation" [level=4] [ref=e611]
+              - paragraph [ref=e612]: "6 doctrine packs: continuity, category, product, architecture, governance, and GTM"
+              - generic [ref=e614]: 40 documents
+        - generic [ref=e615]:
+          - heading "Official Contact System" [level=3] [ref=e616]
+          - generic [ref=e617]:
+            - generic [ref=e618]:
+              - generic [ref=e619]:
+                - paragraph [ref=e620]: General
+                - paragraph [ref=e621]: hello@integratewise.ai
+                - paragraph [ref=e622]: connect@integratewise.ai
+              - generic [ref=e623]:
+                - paragraph [ref=e624]: Sales
+                - paragraph [ref=e625]: sales@integratewise.ai
+              - generic [ref=e626]:
+                - paragraph [ref=e627]: Support
+                - paragraph [ref=e628]: support@integratewise.ai
+              - generic [ref=e629]:
+                - paragraph [ref=e630]: Billing
+                - paragraph [ref=e631]: billing@integratewise.ai
+            - generic [ref=e632]:
+              - generic [ref=e633]:
+                - paragraph [ref=e634]: Marketing
+                - paragraph [ref=e635]: marketing@integratewise.ai
+              - generic [ref=e636]:
+                - paragraph [ref=e637]: Careers
+                - paragraph [ref=e638]: careers@integratewise.ai
+              - generic [ref=e639]:
+                - paragraph [ref=e640]: Security
+                - paragraph [ref=e641]: security@integratewise.ai
+              - generic [ref=e642]:
+                - paragraph [ref=e643]: Website
+                - paragraph [ref=e644]: integratewise.ai
+        - generic [ref=e645]:
+          - heading "Recent Updates" [level=3] [ref=e646]
+          - generic [ref=e647]:
+            - generic [ref=e648]:
+              - generic [ref=e650]:
+                - paragraph [ref=e651]: Logo Mark v2 Updated
+                - paragraph [ref=e652]: Brand Assets
+              - generic [ref=e653]: Mar 14, 2026
+            - generic [ref=e654]:
+              - generic [ref=e656]:
+                - paragraph [ref=e657]: Corporate Stationery Suite Published
+                - paragraph [ref=e658]: Stationery
+              - generic [ref=e659]: Mar 13, 2026
+            - generic [ref=e660]:
+              - generic [ref=e662]:
+                - paragraph [ref=e663]: Q1 Sales Deck Published
+                - paragraph [ref=e664]: Sales
+              - generic [ref=e665]: Mar 12, 2026
+            - generic [ref=e666]:
+              - generic [ref=e668]:
+                - paragraph [ref=e669]: LinkedIn & WhatsApp Assets Added
+                - paragraph [ref=e670]: Marketing
+              - generic [ref=e671]: Mar 10, 2026
+            - generic [ref=e672]:
+              - generic [ref=e674]:
+                - paragraph [ref=e675]: Design Tokens v1.0 Finalized
+                - paragraph [ref=e676]: Design Tokens
+              - generic [ref=e677]: Mar 8, 2026
+  - button "AI Assistant" [ref=e678]:
+    - img [ref=e679]
+    - generic [ref=e682]: AI Assistant
+    - img [ref=e683]

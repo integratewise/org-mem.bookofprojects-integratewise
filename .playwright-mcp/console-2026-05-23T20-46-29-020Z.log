@@ -1,0 +1,2 @@
+[     196ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:3001/node_modules/.vite/deps/chunk-VHHETPVR.js?v=2cee00a8:21608
+[    1239ms] [LOG] [AuthProvider] Auth state change: INITIAL_SESSION @ http://localhost:3001/src/components/core/auth/auth-provider.tsx:61

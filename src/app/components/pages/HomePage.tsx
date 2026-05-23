@@ -270,7 +270,7 @@ export function HomePage() {
               style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}
             >
               <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform"
-                style={{ background: `${action.color}12` }}>
+                style={{ background: `color-mix(in srgb, ${action.color} 12%, transparent)` }}>
                 <action.icon className="w-5 h-5" style={{ color: action.color }} />
               </div>
               <div>
@@ -394,7 +394,7 @@ export function HomePage() {
               <div className="flex items-start gap-4">
                 <div
                   className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0"
-                  style={{ background: `${item.color}10` }}
+                  style={{ background: `color-mix(in srgb, ${item.color} 10%, transparent)` }}
                 >
                   <item.icon className="w-5 h-5" style={{ color: item.color }} />
                 </div>
@@ -432,7 +432,7 @@ export function HomePage() {
               <div className="flex items-start justify-between">
                 <div
                   className="w-12 h-12 rounded-lg flex items-center justify-center"
-                  style={{ background: `${section.color}10` }}
+                  style={{ background: `color-mix(in srgb, ${section.color} 10%, transparent)` }}
                 >
                   <section.icon className="w-6 h-6" style={{ color: section.color }} />
                 </div>
@@ -443,7 +443,7 @@ export function HomePage() {
               <div className="mt-4 flex items-center gap-2">
                 <span
                   className="text-xs font-medium px-2.5 py-1 rounded-full"
-                  style={{ background: `${section.color}10`, color: section.color }}
+                  style={{ background: `color-mix(in srgb, ${section.color} 10%, transparent)`, color: section.color }}
                 >
                   {section.count} {section.label}
                 </span>

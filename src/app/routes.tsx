@@ -91,8 +91,9 @@ export const router = createBrowserRouter([
       </div>
     ),
     children: [
-      { index: true, Component: HomePage },
+      { index: true, Component: CompanyPage },
       { path: "quick-start", Component: QuickStartPage },
+      { path: "home", Component: HomePage },
       { path: "company", Component: CompanyPage },
       { path: "architecture", Component: ArchitecturePage },
       { path: "brand-assets", Component: BrandAssetsPage },

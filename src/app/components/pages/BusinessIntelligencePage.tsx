@@ -543,7 +543,7 @@ export function BusinessIntelligencePage() {
                     width: '44px',
                     height: '44px',
                     borderRadius: '12px',
-                    background: `${dept.color}15`,
+                    background: `color-mix(in srgb, ${dept.color} 15%, transparent)`,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

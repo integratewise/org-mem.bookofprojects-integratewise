@@ -76,7 +76,7 @@ function ConnectionCard({
           <div className="flex items-center gap-3">
             <div
               className="w-12 h-12 rounded-xl flex items-center justify-center"
-              style={{ background: `${color}15` }}
+              style={{ background: `color-mix(in srgb, ${color} 15%, transparent)` }}
             >
               <Icon className="w-6 h-6" style={{ color }} />
             </div>
@@ -93,7 +93,7 @@ function ConnectionCard({
               <div className="flex items-center gap-2 mt-1">
                 <span
                   className="text-xs px-2 py-0.5 rounded-full uppercase font-medium"
-                  style={{ background: `${color}15`, color }}
+                  style={{ background: `color-mix(in srgb, ${color} 15%, transparent)`, color }}
                 >
                   {connection.type}
                 </span>
@@ -241,7 +241,7 @@ function SyncJobItem({ job, connection }: { job: SyncJob; connection?: SyncConne
     <div className="flex items-center gap-4 p-4 rounded-lg border border-[var(--border-subtle)]" style={{ background: 'var(--surface-raised)' }}>
       <div
         className="w-10 h-10 rounded-lg flex items-center justify-center"
-        style={{ background: `${statusColors[job.status]}15` }}
+        style={{ background: `color-mix(in srgb, ${statusColors[job.status]} 15%, transparent)` }}
       >
         <Icon
           className={`w-5 h-5 ${job.status === 'syncing' ? 'animate-spin' : ''}`}
@@ -288,7 +288,7 @@ function QuickSyncActions({ onSync }: { onSync: (type: string) => void }) {
         >
           <div
             className="w-10 h-10 rounded-lg flex items-center justify-center"
-            style={{ background: `${action.color}15` }}
+            style={{ background: `color-mix(in srgb, ${action.color} 15%, transparent)` }}
           >
             <action.icon className="w-5 h-5" style={{ color: action.color }} />
           </div>

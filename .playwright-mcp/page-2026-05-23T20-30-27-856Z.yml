@@ -1,0 +1,526 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: IntegrateWise
+        - paragraph [ref=e14]: Continuity Documentation System
+    - generic [ref=e16]:
+      - img [ref=e17]
+      - textbox "Search navigation..." [ref=e20]
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - button "00 Company Strategy 2" [ref=e23]:
+          - img [ref=e24]
+          - img [ref=e26]
+          - generic [ref=e30]: 00 Company Strategy
+          - generic [ref=e31]: "2"
+        - generic [ref=e32]:
+          - link "Strategic Planning" [ref=e33] [cursor=pointer]:
+            - /url: /company
+            - img [ref=e34]
+            - generic [ref=e38]: Strategic Planning
+          - button "Doctrine & Continuity" [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Doctrine & Continuity
+      - generic [ref=e43]:
+        - button "01 Product & Engineering 3" [ref=e44]:
+          - img [ref=e45]
+          - img [ref=e47]
+          - generic [ref=e51]: 01 Product & Engineering
+          - generic [ref=e52]: "3"
+        - generic [ref=e53]:
+          - link "Adaptive Spine & Architecture" [ref=e54] [cursor=pointer]:
+            - /url: /architecture
+            - img [ref=e55]
+            - generic [ref=e59]: Adaptive Spine & Architecture
+          - button "Product Narrative & Continuity" [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: Product Narrative & Continuity
+          - button "Technical System" [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e68]: Technical System
+      - generic [ref=e69]:
+        - button "02 Marketing & Creative 10" [ref=e70]:
+          - img [ref=e71]
+          - img [ref=e73]
+          - generic [ref=e76]: 02 Marketing & Creative
+          - generic [ref=e77]: "10"
+        - generic [ref=e78]:
+          - link "Brand Assets" [ref=e79] [cursor=pointer]:
+            - /url: /brand-assets
+            - img [ref=e80]
+            - generic [ref=e86]: Brand Assets
+          - link "Design Tokens" [ref=e87] [cursor=pointer]:
+            - /url: /design-tokens
+            - img [ref=e88]
+            - generic [ref=e92]: Design Tokens
+          - link "Stationery" [ref=e93] [cursor=pointer]:
+            - /url: /stationery
+            - img [ref=e94]
+            - generic [ref=e97]: Stationery
+          - link "Marketing" [ref=e98] [cursor=pointer]:
+            - /url: /marketing
+            - img [ref=e99]
+            - generic [ref=e102]: Marketing
+          - link "LinkedIn" [ref=e103] [cursor=pointer]:
+            - /url: /linkedin
+            - img [ref=e104]
+            - generic [ref=e107]: LinkedIn
+          - link "WhatsApp" [ref=e108] [cursor=pointer]:
+            - /url: /whatsapp
+            - img [ref=e109]
+            - generic [ref=e111]: WhatsApp
+          - link "Email" [ref=e112] [cursor=pointer]:
+            - /url: /email
+            - img [ref=e113]
+            - generic [ref=e116]: Email
+          - link "Presentations" [ref=e117] [cursor=pointer]:
+            - /url: /presentations
+            - img [ref=e118]
+            - generic [ref=e121]: Presentations
+          - link "Quick Generators" [ref=e122] [cursor=pointer]:
+            - /url: /generators
+            - img [ref=e123]
+            - generic [ref=e125]: Quick Generators
+          - button "Category & Positioning" [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e131]: Category & Positioning
+      - generic [ref=e132]:
+        - button "03 Sales 2" [ref=e133]:
+          - img [ref=e134]
+          - img [ref=e136]
+          - generic [ref=e142]: 03 Sales
+          - generic [ref=e143]: "2"
+        - generic [ref=e144]:
+          - link "Sales Enablement" [ref=e145] [cursor=pointer]:
+            - /url: /sales
+            - img [ref=e146]
+            - generic [ref=e152]: Sales Enablement
+          - button "GTM & Customer Success" [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e157]: GTM & Customer Success
+      - button "04 Customer Success 2" [ref=e159]:
+        - img [ref=e160]
+        - img [ref=e162]
+        - generic [ref=e167]: 04 Customer Success
+        - generic [ref=e168]: "2"
+      - button "05 Operations 2" [ref=e170]:
+        - img [ref=e171]
+        - img [ref=e173]
+        - generic [ref=e175]: 05 Operations
+        - generic [ref=e176]: "2"
+      - button "06 Finance, Legal, HR 2" [ref=e178]:
+        - img [ref=e179]
+        - img [ref=e181]
+        - generic [ref=e185]: 06 Finance, Legal, HR
+        - generic [ref=e186]: "2"
+      - button "07 Resources & Knowledge Base 4" [ref=e188]:
+        - img [ref=e189]
+        - img [ref=e191]
+        - generic [ref=e193]: 07 Resources & Knowledge Base
+        - generic [ref=e194]: "4"
+      - button "08 External Communications 2" [ref=e196]:
+        - img [ref=e197]
+        - img [ref=e199]
+        - generic [ref=e202]: 08 External Communications
+        - generic [ref=e203]: "2"
+      - button "09 Archives & Retention 1" [ref=e205]:
+        - img [ref=e206]
+        - img [ref=e208]
+        - generic [ref=e211]: 09 Archives & Retention
+        - generic [ref=e212]: "1"
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - paragraph [ref=e216]: Continuity Documentation System v1.0
+        - paragraph [ref=e217]: 6 Doctrine Packs · 40 Documents
+      - button "Switch to dark mode" [ref=e218]:
+        - img [ref=e219]
+  - generic [ref=e221]:
+    - banner [ref=e222]:
+      - generic [ref=e223]:
+        - generic [ref=e224]: 02 Marketing & Creative
+        - img [ref=e225]
+        - heading "Brand Assets" [level=1] [ref=e227]
+    - main [ref=e228]:
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - generic [ref=e231]:
+            - heading "Brand Assets" [level=2] [ref=e232]
+            - paragraph [ref=e233]: Canonical mark system, lighter brand language, descriptor usage, and runtime-safe brand assets
+          - generic [ref=e234]:
+            - button "Advanced Editor" [ref=e235]:
+              - img [ref=e236]
+              - text: Advanced Editor
+            - button "Download Full Kit (.zip)" [ref=e238]:
+              - img [ref=e239]
+              - text: Download Full Kit (.zip)
+        - generic [ref=e243]:
+          - img [ref=e246]
+          - generic [ref=e248]:
+            - heading "Advanced Asset Editor Now Available" [level=3] [ref=e249]
+            - paragraph [ref=e250]: Create canonical lighter-system brand assets with adjustable layouts, governed descriptor usage, and export workflows across social, documentation, and print formats.
+            - generic [ref=e251]:
+              - generic [ref=e252]: Custom Colors
+              - generic [ref=e253]: Gradients & Effects
+              - generic [ref=e254]: Batch Export
+              - generic [ref=e255]: Social Media Presets
+          - button "Open Editor" [ref=e256]:
+            - img [ref=e257]
+            - text: Open Editor
+        - generic [ref=e260]:
+          - paragraph [ref=e261]: Canonical asset rule
+          - paragraph [ref=e262]: Historical SVG source exports may still preserve earlier palette references, but all live-rendered brand assets and runtime-facing surfaces should use the current lighter documentation system and the descriptor "Adaptive continuity workspace hydrated by the Spine."
+        - generic [ref=e263]:
+          - heading "Interactive Brand Studio" [level=3] [ref=e266]
+          - generic [ref=e268]:
+            - generic [ref=e269]:
+              - generic [ref=e270]:
+                - img [ref=e271]
+                - heading "Customizer" [level=4] [ref=e272]
+              - generic [ref=e273]:
+                - text: Logo Layout
+                - generic [ref=e274]:
+                  - button "Full Layout" [ref=e275]
+                  - button "Compact" [ref=e276]
+                  - button "Icon Only" [ref=e277]
+              - generic [ref=e278]:
+                - text: Color Theme
+                - generic [ref=e279]:
+                  - button "Default" [ref=e280]
+                  - button "White" [ref=e281]
+                  - button "Mono Dark" [ref=e282]
+                  - button "Mono White" [ref=e283]
+                  - button "Primary Only" [ref=e284]
+                  - button "Print Black" [ref=e285]
+              - generic [ref=e286]:
+                - text: Background Canvas
+                - generic [ref=e287]:
+                  - button "transparent" [ref=e288]
+                  - button "white" [ref=e289]
+                  - button "grey" [ref=e290]
+                  - button "dark" [ref=e291]
+                  - button "checker" [ref=e292]
+            - generic [ref=e293]:
+              - generic [ref=e294]:
+                - generic [ref=e295]:
+                  - paragraph [ref=e296]: Live Preview
+                  - paragraph [ref=e297]: Rendered in high-resolution
+                - button "Export" [ref=e299]:
+                  - img [ref=e300]
+                  - text: Export
+                  - img [ref=e303]
+              - generic [ref=e307]:
+                - img [ref=e308]:
+                  - generic [ref=e314]: Adaptive continuity workspace hydrated by the Spine
+                - generic [ref=e315]:
+                  - heading "IntegrateWise" [level=1] [ref=e316]
+                  - paragraph [ref=e317]: Adaptive continuity workspace hydrated by the Spine
+        - generic [ref=e318]:
+          - heading "Brand Messaging System" [level=3] [ref=e321]
+          - generic [ref=e322]:
+            - generic [ref=e323]:
+              - generic [ref=e324]:
+                - paragraph [ref=e325]: PRIMARY PRODUCT DESCRIPTION
+                - paragraph [ref=e326]: IntegrateWise
+                - paragraph [ref=e327]: IntegrateWise is an adaptive continuity workspace where connectors, workflows, conversations, and artifacts continuously hydrate the Spine; workspace and knowledge then project from current continuity with human-governed AI execution.
+                - paragraph [ref=e328]: AI Thinks in Context — and Waits for Approval
+              - generic [ref=e329]:
+                - paragraph [ref=e330]: SPINE EXPLANATION (USE CONSISTENTLY)
+                - generic [ref=e331]:
+                  - generic [ref=e332]:
+                    - paragraph [ref=e333]: The Spine (SSOT)
+                    - button [ref=e334]:
+                      - img [ref=e335]
+                  - generic [ref=e338]:
+                    - paragraph [ref=e339]: The Spine — Unified Intelligence Layer
+                    - button [ref=e340]:
+                      - img [ref=e341]
+                  - generic [ref=e344]:
+                    - paragraph [ref=e345]: The Spine — Single Source of Truth and Unified Intelligence Layer
+                    - button [ref=e346]:
+                      - img [ref=e347]
+            - generic [ref=e350]:
+              - paragraph [ref=e351]: TAGLINE SYSTEM
+              - generic [ref=e352]:
+                - generic [ref=e353]:
+                  - paragraph [ref=e354]: Primary Tagline
+                  - paragraph [ref=e355]: AI Thinks in Context — and Waits for Approval
+                - generic [ref=e356]:
+                  - paragraph [ref=e357]: Short Version
+                  - paragraph [ref=e358]: Context-Aware AI. Approval-Controlled Work.
+                - generic [ref=e359]:
+                  - paragraph [ref=e360]: Extended (Marketing)
+                  - paragraph [ref=e361]: AI Thinks in Context. Humans Stay in Control. Every Action Waits for Approval.
+            - generic [ref=e362]:
+              - paragraph [ref=e363]: APPROVED COPY FOR SPECIFIC ASSETS
+              - generic [ref=e364]:
+                - generic [ref=e365]:
+                  - img [ref=e366]
+                  - generic [ref=e369]:
+                    - paragraph [ref=e370]: Letterhead
+                    - paragraph [ref=e371]: IntegrateWise LLP · The adaptive continuity workspace hydrated by the Spine
+                - generic [ref=e372]:
+                  - img [ref=e373]
+                  - generic [ref=e376]:
+                    - paragraph [ref=e377]: Invoice Footer
+                    - paragraph [ref=e378]: IntegrateWise — AI Thinks in Context — and Waits for Approval
+                - generic [ref=e379]:
+                  - img [ref=e380]
+                  - generic [ref=e383]:
+                    - paragraph [ref=e384]: Business Card
+                    - paragraph [ref=e385]: The adaptive continuity workspace hydrated by the Spine
+                - generic [ref=e386]:
+                  - img [ref=e387]
+                  - generic [ref=e390]:
+                    - paragraph [ref=e391]: Profile Headline
+                    - paragraph [ref=e392]: The Adaptive Continuity Workspace Where AI Thinks in Context
+                - generic [ref=e393]:
+                  - img [ref=e394]
+                  - generic [ref=e397]:
+                    - paragraph [ref=e398]: Brochure Headline
+                    - paragraph [ref=e399]: Bring Work, Knowledge, and Decisions Together Through the Spine
+                - generic [ref=e400]:
+                  - img [ref=e401]
+                  - generic [ref=e404]:
+                    - paragraph [ref=e405]: Marketing Headline
+                    - paragraph [ref=e406]: Work Becomes Smarter When AI Understands Context
+            - generic [ref=e407]:
+              - paragraph [ref=e408]: PRODUCT ESSENCE (FOR MARKETING, DECKS, COMPANY DOCS)
+              - paragraph [ref=e410]: IntegrateWise is a knowledge workspace where the Spine becomes the single source of truth and AI operates on top of that context — thinking, proposing, and learning while every action remains under human approval.
+        - generic [ref=e411]:
+          - img [ref=e412]
+          - generic [ref=e414]:
+            - paragraph [ref=e415]: Brand Descriptor Update
+            - paragraph [ref=e416]:
+              - text: The original logo subtitle says "Enterprise integrations" — the brand now clearly now uses the canonical descriptor
+              - strong [ref=e417]: Adaptive continuity workspace hydrated by the Spine
+              - text: ". All stationery and marketing materials should use the updated descriptor: \"IntegrateWise — Adaptive continuity workspace hydrated by the Spine.\""
+        - generic [ref=e418]:
+          - generic [ref=e419]:
+            - heading "Logo Variants" [level=3] [ref=e422]
+            - generic [ref=e423]:
+              - generic [ref=e424]: "Background:"
+              - button "White" [ref=e425]
+              - button "Grey" [ref=e426]
+              - button "Dark" [ref=e427]
+          - generic [ref=e428]:
+            - generic [ref=e429]:
+              - generic [ref=e430]:
+                - generic [ref=e431]:
+                  - paragraph [ref=e432]: Full Logo
+                  - paragraph [ref=e433]: Logo mark + wordmark + descriptor
+                - generic [ref=e434]:
+                  - button "Preview" [ref=e435]:
+                    - img [ref=e436]
+                    - text: Preview
+                  - button "Export" [ref=e440]:
+                    - img [ref=e441]
+                    - text: Export
+                    - img [ref=e444]
+              - generic [ref=e447]:
+                - img [ref=e448]:
+                  - generic [ref=e454]: Adaptive continuity workspace hydrated by the Spine
+                - generic [ref=e455]:
+                  - heading "IntegrateWise" [level=1] [ref=e456]
+                  - paragraph [ref=e457]: Adaptive continuity workspace hydrated by the Spine
+            - generic [ref=e458]:
+              - generic [ref=e459]:
+                - generic [ref=e460]:
+                  - paragraph [ref=e461]: Compact Logo
+                  - paragraph [ref=e462]: Logo mark + wordmark
+                - generic [ref=e463]:
+                  - button "Preview" [ref=e464]:
+                    - img [ref=e465]
+                    - text: Preview
+                  - button "Export" [ref=e469]:
+                    - img [ref=e470]
+                    - text: Export
+                    - img [ref=e473]
+              - generic [ref=e476]:
+                - img [ref=e477]:
+                  - generic [ref=e483]: Adaptive continuity workspace hydrated by the Spine
+                - generic [ref=e484]:
+                  - heading "IntegrateWise" [level=1] [ref=e485]
+                  - paragraph [ref=e486]: Adaptive continuity workspace hydrated by the Spine
+            - generic [ref=e487]:
+              - generic [ref=e488]:
+                - generic [ref=e489]:
+                  - paragraph [ref=e490]: Icon Only
+                  - paragraph [ref=e491]: Logo mark for favicons & avatars
+                - generic [ref=e492]:
+                  - button "Preview" [ref=e493]:
+                    - img [ref=e494]
+                    - text: Preview
+                  - button "Export" [ref=e498]:
+                    - img [ref=e499]
+                    - text: Export
+                    - img [ref=e502]
+              - img [ref=e506]
+        - generic [ref=e511]:
+          - heading "SVG Source Files" [level=3] [ref=e514]
+          - generic [ref=e515]:
+            - generic [ref=e516]:
+              - generic [ref=e517]:
+                - img "Logo Frame Original"
+              - generic [ref=e518]:
+                - generic [ref=e519]:
+                  - paragraph [ref=e520]: Logo Frame Original
+                  - paragraph [ref=e521]: Frame_1.svg
+                - generic [ref=e522]:
+                  - button "Preview" [ref=e523]:
+                    - img [ref=e524]
+                  - link "Download SVG" [ref=e527] [cursor=pointer]:
+                    - /url: /assets/Frame_1-CNBW74nJ.svg
+                    - img [ref=e528]
+            - generic [ref=e531]:
+              - generic [ref=e532]:
+                - img "Logo Frame v2"
+              - generic [ref=e533]:
+                - generic [ref=e534]:
+                  - paragraph [ref=e535]: Logo Frame v2
+                  - paragraph [ref=e536]: Frame_1-1.svg
+                - generic [ref=e537]:
+                  - button "Preview" [ref=e538]:
+                    - img [ref=e539]
+                  - link "Download SVG" [ref=e542] [cursor=pointer]:
+                    - /url: /assets/Frame_1-CNBW74nJ.svg
+                    - img [ref=e543]
+            - generic [ref=e546]:
+              - generic [ref=e547]:
+                - img "Logo Frame v3"
+              - generic [ref=e548]:
+                - generic [ref=e549]:
+                  - paragraph [ref=e550]: Logo Frame v3
+                  - paragraph [ref=e551]: Frame_1-2.svg
+                - generic [ref=e552]:
+                  - button "Preview" [ref=e553]:
+                    - img [ref=e554]
+                  - link "Download SVG" [ref=e557] [cursor=pointer]:
+                    - /url: /assets/Frame_1-CNBW74nJ.svg
+                    - img [ref=e558]
+            - generic [ref=e561]:
+              - img "Icon Mark Original" [ref=e563]
+              - generic [ref=e564]:
+                - generic [ref=e565]:
+                  - paragraph [ref=e566]: Icon Mark Original
+                  - paragraph [ref=e567]: Frame_4.svg
+                - generic [ref=e568]:
+                  - button "Preview" [ref=e569]:
+                    - img [ref=e570]
+                  - link "Download SVG" [ref=e573] [cursor=pointer]:
+                    - /url: data:image/svg+xml,%3csvg%20width='160'%20height='76'%20viewBox='0%200%20160%2076'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M53.3869%200.205832C56.4977%20-0.576671%2063.4297%201.01864%2066.3725%202.52462C69.871%204.04071%2071.9883%206.25793%2074.6863%208.91175C84.375%2018.4419%2081.0411%2032.3964%2081.633%2044.6777C81.8388%2048.951%2081.5688%2051.7248%2083.1143%2055.9223C84.8443%2060.6378%2088.3266%2064.4456%2092.7883%2066.5011C98.0756%2068.9515%20103.206%2068.7867%20108.666%2066.6229C129.922%2058.1978%20115.428%2031.3403%20123.311%2014.7929C126.397%208.31589%20130.804%204.48288%20137.294%201.73574C139.334%200.872409%20145.307%20-0.448249%20147.23%200.510005C148.115%200.94792%20148.786%201.74212%20149.086%202.70596C150.558%207.44326%20142.588%206.26724%20139.669%207.43049C114.438%2017.485%20136.673%2050.6827%20119.605%2066.5817C115.621%2070.2929%20112.567%2072.2206%20107.31%2073.8465C103.676%2074.8999%2099.8548%2075.0664%2096.1478%2074.3325C91.6881%2073.424%2088.0153%2071.1711%2084.5567%2068.2956C67.5173%2055.219%2081.3248%2030.3531%2071.634%2015.0771C60.4727%20-2.51684%2033.6193%208.45363%2035.7726%2029.0271C36.1874%2032.9917%2036.5927%2037.9705%2033.2395%2040.3015L26.0875%2040.327C25.1155%2042.5913%2024.3717%2044.5206%2022.8061%2046.4445C20.5773%2049.1478%2017.3943%2050.8205%2013.9648%2051.0909C10.6706%2051.3608%206.96223%2050.0882%204.45978%2047.8705C1.87388%2045.5791%200.28158%2042.3172%200.0364112%2038.8091C-0.229912%2035.0356%200.972845%2031.3087%203.37836%2028.4533C5.59506%2025.8835%208.7141%2024.3326%2012.0434%2024.1452C16.9115%2023.8269%2021.9568%2026.1207%2023.9305%2030.6889C24.7193%2032.5147%2025.2537%2034.2087%2027.5492%2034.1281C30.3194%2034.3326%2030.1673%2030.77%2029.9671%2028.4424C28.7826%2014.6815%2038.3905%201.44619%2053.3869%200.205832Z'%20fill='%234154A3'/%3e%3cpath%20d='M54.4289%2024.0981C57.2918%2023.9117%2060.1534%2024.5081%2062.6015%2026.0896C65.4302%2027.9537%2067.4361%2030.8902%2068.1869%2034.2659C69.8061%2041.6067%2066.1104%2048.8144%2058.7958%2050.4793C58.2895%2057.3078%2058.9545%2064.3443%2058.5307%2071.1759C58.4181%2072.9914%2057.9205%2073.9957%2056.5214%2075.0978C56.3931%2075.1081%2056.2648%2075.1145%2056.1359%2075.1174C51.0795%2075.2217%2052.6041%2066.0946%2052.6752%2062.4761C52.7507%2058.5825%2052.737%2054.6875%2052.6345%2050.7944C50.5873%2050.0704%2049.4134%2049.7003%2047.6489%2048.343C39.5366%2042.1034%2041.3196%2028.6442%2050.8118%2024.9543C52.215%2024.4087%2052.9705%2024.2882%2054.4289%2024.0981Z'%20fill='%234154A3'/%3e%3cpath%20d='M99.962%200.0385742C100.777%200.0494756%20101.729%200.0622401%20102.446%200.511322C104.346%201.70249%20103.266%2020.6982%20104.036%2024.2648C105.743%2024.8311%20106.854%2025.2996%20108.355%2026.3919C111.142%2028.4403%20113.01%2031.5636%20113.534%2035.0534C114.896%2043.6881%20110.083%2049.5955%20101.937%2050.9023C91.7734%2051.1206%2085.498%2042.8928%2088.6263%2032.6878C90.1022%2027.8734%2093.8406%2025.7758%2097.9669%2023.7354C97.7641%2021.2334%2097.8914%2017.3462%2097.8638%2014.7078C97.8249%2010.9673%2097.5441%206.60225%2098.0138%202.93355C98.2122%201.38582%2098.8007%200.848198%2099.962%200.0385742Z'%20fill='%234154A3'/%3e%3cpath%20d='M143.213%2024.2366C150.341%2022.5523%20157.437%2027.1675%20159.04%2034.5294C160.642%2041.8912%20156.14%2049.1946%20148.999%2050.8173C141.9%2052.4304%20134.874%2047.8178%20133.281%2040.4996C131.688%2033.1813%20136.128%2025.9112%20143.213%2024.2366Z'%20fill='%23EB4379'/%3e%3c/svg%3e
+                    - img [ref=e574]
+            - generic [ref=e577]:
+              - img "Icon Mark v2" [ref=e579]
+              - generic [ref=e580]:
+                - generic [ref=e581]:
+                  - paragraph [ref=e582]: Icon Mark v2
+                  - paragraph [ref=e583]: Frame_4-1.svg
+                - generic [ref=e584]:
+                  - button "Preview" [ref=e585]:
+                    - img [ref=e586]
+                  - link "Download SVG" [ref=e589] [cursor=pointer]:
+                    - /url: data:image/svg+xml,%3csvg%20width='160'%20height='76'%20viewBox='0%200%20160%2076'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M53.3869%200.205832C56.4977%20-0.576671%2063.4297%201.01864%2066.3725%202.52462C69.871%204.04071%2071.9883%206.25793%2074.6863%208.91175C84.375%2018.4419%2081.0411%2032.3964%2081.633%2044.6777C81.8388%2048.951%2081.5688%2051.7248%2083.1143%2055.9223C84.8443%2060.6378%2088.3266%2064.4456%2092.7883%2066.5011C98.0756%2068.9515%20103.206%2068.7867%20108.666%2066.6229C129.922%2058.1978%20115.428%2031.3403%20123.311%2014.7929C126.397%208.31589%20130.804%204.48288%20137.294%201.73574C139.334%200.872409%20145.307%20-0.448249%20147.23%200.510005C148.115%200.94792%20148.786%201.74212%20149.086%202.70596C150.558%207.44326%20142.588%206.26724%20139.669%207.43049C114.438%2017.485%20136.673%2050.6827%20119.605%2066.5817C115.621%2070.2929%20112.567%2072.2206%20107.31%2073.8465C103.676%2074.8999%2099.8548%2075.0664%2096.1478%2074.3325C91.6881%2073.424%2088.0153%2071.1711%2084.5567%2068.2956C67.5173%2055.219%2081.3248%2030.3531%2071.634%2015.0771C60.4727%20-2.51684%2033.6193%208.45363%2035.7726%2029.0271C36.1874%2032.9917%2036.5927%2037.9705%2033.2395%2040.3015L26.0875%2040.327C25.1155%2042.5913%2024.3717%2044.5206%2022.8061%2046.4445C20.5773%2049.1478%2017.3943%2050.8205%2013.9648%2051.0909C10.6706%2051.3608%206.96223%2050.0882%204.45978%2047.8705C1.87388%2045.5791%200.28158%2042.3172%200.0364112%2038.8091C-0.229912%2035.0356%200.972845%2031.3087%203.37836%2028.4533C5.59506%2025.8835%208.7141%2024.3326%2012.0434%2024.1452C16.9115%2023.8269%2021.9568%2026.1207%2023.9305%2030.6889C24.7193%2032.5147%2025.2537%2034.2087%2027.5492%2034.1281C30.3194%2034.3326%2030.1673%2030.77%2029.9671%2028.4424C28.7826%2014.6815%2038.3905%201.44619%2053.3869%200.205832Z'%20fill='%234154A3'/%3e%3cpath%20d='M54.4289%2024.0981C57.2918%2023.9117%2060.1534%2024.5081%2062.6015%2026.0896C65.4302%2027.9537%2067.4361%2030.8902%2068.1869%2034.2659C69.8061%2041.6067%2066.1104%2048.8144%2058.7958%2050.4793C58.2895%2057.3078%2058.9545%2064.3443%2058.5307%2071.1759C58.4181%2072.9914%2057.9205%2073.9957%2056.5214%2075.0978C56.3931%2075.1081%2056.2648%2075.1145%2056.1359%2075.1174C51.0795%2075.2217%2052.6041%2066.0946%2052.6752%2062.4761C52.7507%2058.5825%2052.737%2054.6875%2052.6345%2050.7944C50.5873%2050.0704%2049.4134%2049.7003%2047.6489%2048.343C39.5366%2042.1034%2041.3196%2028.6442%2050.8118%2024.9543C52.215%2024.4087%2052.9705%2024.2882%2054.4289%2024.0981Z'%20fill='%234154A3'/%3e%3cpath%20d='M99.962%200.0385742C100.777%200.0494756%20101.729%200.0622401%20102.446%200.511322C104.346%201.70249%20103.266%2020.6982%20104.036%2024.2648C105.743%2024.8311%20106.854%2025.2996%20108.355%2026.3919C111.142%2028.4403%20113.01%2031.5636%20113.534%2035.0534C114.896%2043.6881%20110.083%2049.5955%20101.937%2050.9023C91.7734%2051.1206%2085.498%2042.8928%2088.6263%2032.6878C90.1022%2027.8734%2093.8406%2025.7758%2097.9669%2023.7354C97.7641%2021.2334%2097.8914%2017.3462%2097.8638%2014.7078C97.8249%2010.9673%2097.5441%206.60225%2098.0138%202.93355C98.2122%201.38582%2098.8007%200.848198%2099.962%200.0385742Z'%20fill='%234154A3'/%3e%3cpath%20d='M143.213%2024.2366C150.341%2022.5523%20157.437%2027.1675%20159.04%2034.5294C160.642%2041.8912%20156.14%2049.1946%20148.999%2050.8173C141.9%2052.4304%20134.874%2047.8178%20133.281%2040.4996C131.688%2033.1813%20136.128%2025.9112%20143.213%2024.2366Z'%20fill='%23EB4379'/%3e%3c/svg%3e
+                    - img [ref=e590]
+        - generic [ref=e593]:
+          - heading "Brand Motifs" [level=3] [ref=e596]
+          - generic [ref=e597]:
+            - generic [ref=e598]:
+              - heading "Spine Node Line" [level=4] [ref=e599]
+              - paragraph [ref=e600]: Connected circles and lines inspired by the logo symbol. Used for backgrounds and decorative elements.
+            - generic [ref=e601]:
+              - heading "Approval Checkpoint" [level=4] [ref=e602]
+              - paragraph [ref=e603]: Small rounded rectangle or node used as a visual approval stage marker.
+            - generic [ref=e604]:
+              - heading "Context Card" [level=4] [ref=e605]
+              - paragraph [ref=e606]: Soft-edged box representing structured knowledge/context blocks.
+            - generic [ref=e607]:
+              - heading "Layer Bands" [level=4] [ref=e608]
+              - paragraph [ref=e609]: Subtle layered strips suggesting workspace, intelligence, and governance layers.
+        - generic [ref=e610]:
+          - heading "Usage Guidelines" [level=3] [ref=e613]
+          - generic [ref=e614]:
+            - generic [ref=e615]:
+              - generic [ref=e616]:
+                - img [ref=e618]
+                - heading "Do" [level=4] [ref=e620]
+              - list [ref=e621]:
+                - listitem [ref=e622]:
+                  - img [ref=e623]
+                  - text: Use the full logo on light backgrounds
+                - listitem [ref=e625]:
+                  - img [ref=e626]
+                  - text: Maintain minimum clear space (height of one icon node)
+                - listitem [ref=e628]:
+                  - img [ref=e629]
+                  - text: Use icon-only variant for small spaces (< 32px)
+                - listitem [ref=e631]:
+                  - img [ref=e632]
+                  - text: Use monochrome white version on dark backgrounds
+                - listitem [ref=e634]:
+                  - img [ref=e635]
+                  - text: "Print: minimum 25mm width. Digital: minimum 120px width"
+                - listitem [ref=e637]:
+                  - img [ref=e638]
+                  - text: Scale proportionally — never stretch
+            - generic [ref=e640]:
+              - generic [ref=e641]:
+                - img [ref=e643]
+                - heading "Don't" [level=4] [ref=e646]
+              - list [ref=e647]:
+                - listitem [ref=e648]:
+                  - img [ref=e649]
+                  - text: Alter the logo colors outside brand palette
+                - listitem [ref=e652]:
+                  - img [ref=e653]
+                  - text: Add effects like drop shadows or outlines
+                - listitem [ref=e656]:
+                  - img [ref=e657]
+                  - text: Place the logo on busy or low-contrast backgrounds
+                - listitem [ref=e660]:
+                  - img [ref=e661]
+                  - text: Rotate or skew the logo in any direction
+                - listitem [ref=e664]:
+                  - img [ref=e665]
+                  - text: Use full-color logo on dark backgrounds
+                - listitem [ref=e668]:
+                  - img [ref=e669]
+                  - text: Use deck-only or legacy accent palettes in canonical product/runtime surfaces
+        - generic [ref=e672]:
+          - heading "Overall Design Style" [level=3] [ref=e675]
+          - generic [ref=e676]:
+            - paragraph [ref=e677]: Enterprise Minimal + Intelligent Systems Aesthetic
+            - generic [ref=e678]:
+              - generic [ref=e679]:
+                - paragraph [ref=e680]:
+                  - img [ref=e681]
+                  - text: Trusted enterprise platform
+                - paragraph [ref=e683]:
+                  - img [ref=e684]
+                  - text: Not flashy startup graphics
+              - generic [ref=e687]:
+                - paragraph [ref=e688]:
+                  - img [ref=e689]
+                  - text: Modern SaaS product
+                - paragraph [ref=e691]:
+                  - img [ref=e692]
+                  - text: Not old-fashioned corporate stationery
+              - generic [ref=e695]:
+                - paragraph [ref=e696]:
+                  - img [ref=e697]
+                  - text: Structured intelligence system
+                - paragraph [ref=e699]:
+                  - img [ref=e700]
+                  - text: Not crowded marketing layouts
+              - generic [ref=e703]:
+                - paragraph [ref=e704]:
+                  - img [ref=e705]
+                  - text: Human-governed AI
+                - paragraph [ref=e707]:
+                  - img [ref=e708]
+                  - text: Not generic tech templates
+  - button "AI Assistant" [ref=e711]:
+    - img [ref=e712]
+    - generic [ref=e715]: AI Assistant
+    - img [ref=e716]

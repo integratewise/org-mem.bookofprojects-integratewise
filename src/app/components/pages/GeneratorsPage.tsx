@@ -1217,7 +1217,7 @@ export function GeneratorsPage() {
                 : { background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }
               }>
               <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: activeTool === tool.id ? 'rgba(244,240,232,0.15)' : `${tool.color}12` }}>
+                style={{ background: activeTool === tool.id ? 'rgba(244,240,232,0.15)' : `color-mix(in srgb, ${tool.color} 12%, transparent)` }}>
                 <tool.icon className="w-4 h-4" style={{ color: activeTool === tool.id ? 'var(--paper)' : tool.color }} />
               </div>
               <div className="flex-1 min-w-0">
@@ -1241,7 +1241,7 @@ export function GeneratorsPage() {
           <div className="rounded-xl p-6 lg:p-8" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)' }}>
             <div className="flex items-center gap-3 mb-6 pb-5" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
               <div className="w-10 h-10 rounded-lg flex items-center justify-center"
-                style={{ background: `${activeToolData.color}12` }}>
+                style={{ background: `color-mix(in srgb, ${activeToolData.color} 12%, transparent)` }}>
                 <ActiveIcon className="w-5 h-5" style={{ color: activeToolData.color }} />
               </div>
               <div>

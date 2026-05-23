@@ -1,0 +1,369 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: IntegrateWise
+        - paragraph [ref=e14]: Continuity Documentation System
+    - generic [ref=e16]:
+      - img [ref=e17]
+      - textbox "Search navigation..." [ref=e20]
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - button "00 Company Strategy 2" [ref=e23]:
+          - img [ref=e24]
+          - img [ref=e26]
+          - generic [ref=e30]: 00 Company Strategy
+          - generic [ref=e31]: "2"
+        - generic [ref=e32]:
+          - link "Strategic Planning" [ref=e33] [cursor=pointer]:
+            - /url: /company
+            - img [ref=e34]
+            - generic [ref=e38]: Strategic Planning
+          - button "Doctrine & Continuity" [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Doctrine & Continuity
+      - generic [ref=e43]:
+        - button "01 Product & Engineering 3" [ref=e44]:
+          - img [ref=e45]
+          - img [ref=e47]
+          - generic [ref=e51]: 01 Product & Engineering
+          - generic [ref=e52]: "3"
+        - generic [ref=e53]:
+          - link "Adaptive Spine & Architecture" [ref=e54] [cursor=pointer]:
+            - /url: /architecture
+            - img [ref=e55]
+            - generic [ref=e59]: Adaptive Spine & Architecture
+          - button "Product Narrative & Continuity" [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: Product Narrative & Continuity
+          - button "Technical System" [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e68]: Technical System
+      - generic [ref=e69]:
+        - button "02 Marketing & Creative 10" [ref=e70]:
+          - img [ref=e71]
+          - img [ref=e73]
+          - generic [ref=e76]: 02 Marketing & Creative
+          - generic [ref=e77]: "10"
+        - generic [ref=e78]:
+          - link "Brand Assets" [ref=e79] [cursor=pointer]:
+            - /url: /brand-assets
+            - img [ref=e80]
+            - generic [ref=e86]: Brand Assets
+          - link "Design Tokens" [ref=e87] [cursor=pointer]:
+            - /url: /design-tokens
+            - img [ref=e88]
+            - generic [ref=e92]: Design Tokens
+          - link "Stationery" [ref=e93] [cursor=pointer]:
+            - /url: /stationery
+            - img [ref=e94]
+            - generic [ref=e97]: Stationery
+          - link "Marketing" [ref=e98] [cursor=pointer]:
+            - /url: /marketing
+            - img [ref=e99]
+            - generic [ref=e102]: Marketing
+          - link "LinkedIn" [ref=e103] [cursor=pointer]:
+            - /url: /linkedin
+            - img [ref=e104]
+            - generic [ref=e107]: LinkedIn
+          - link "WhatsApp" [ref=e108] [cursor=pointer]:
+            - /url: /whatsapp
+            - img [ref=e109]
+            - generic [ref=e111]: WhatsApp
+          - link "Email" [ref=e112] [cursor=pointer]:
+            - /url: /email
+            - img [ref=e113]
+            - generic [ref=e116]: Email
+          - link "Presentations" [ref=e117] [cursor=pointer]:
+            - /url: /presentations
+            - img [ref=e118]
+            - generic [ref=e121]: Presentations
+          - link "Quick Generators" [ref=e122] [cursor=pointer]:
+            - /url: /generators
+            - img [ref=e123]
+            - generic [ref=e125]: Quick Generators
+          - button "Category & Positioning" [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e131]: Category & Positioning
+      - generic [ref=e132]:
+        - button "03 Sales 2" [ref=e133]:
+          - img [ref=e134]
+          - img [ref=e136]
+          - generic [ref=e142]: 03 Sales
+          - generic [ref=e143]: "2"
+        - generic [ref=e144]:
+          - link "Sales Enablement" [ref=e145] [cursor=pointer]:
+            - /url: /sales
+            - img [ref=e146]
+            - generic [ref=e152]: Sales Enablement
+          - button "GTM & Customer Success" [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e157]: GTM & Customer Success
+      - button "04 Customer Success 2" [ref=e159]:
+        - img [ref=e160]
+        - img [ref=e162]
+        - generic [ref=e167]: 04 Customer Success
+        - generic [ref=e168]: "2"
+      - button "05 Operations 2" [ref=e170]:
+        - img [ref=e171]
+        - img [ref=e173]
+        - generic [ref=e175]: 05 Operations
+        - generic [ref=e176]: "2"
+      - button "06 Finance, Legal, HR 2" [ref=e178]:
+        - img [ref=e179]
+        - img [ref=e181]
+        - generic [ref=e185]: 06 Finance, Legal, HR
+        - generic [ref=e186]: "2"
+      - generic [ref=e187]:
+        - button "07 Resources & Knowledge Base 4" [ref=e188]:
+          - img [ref=e189]
+          - img [ref=e191]
+          - generic [ref=e193]: 07 Resources & Knowledge Base
+          - generic [ref=e194]: "4"
+        - generic [ref=e195]:
+          - link "Quick Start" [ref=e196] [cursor=pointer]:
+            - /url: /quick-start
+            - img [ref=e197]
+            - generic [ref=e202]: Quick Start
+          - link "Product Gallery" [ref=e203] [cursor=pointer]:
+            - /url: /gallery
+            - img [ref=e204]
+            - generic [ref=e208]: Product Gallery
+          - link "Documentation Library" [ref=e209] [cursor=pointer]:
+            - /url: /documentation
+            - img [ref=e210]
+            - generic [ref=e212]: Documentation Library
+          - button "AI Governance & Trust" [ref=e213]:
+            - img [ref=e214]
+            - generic [ref=e216]: AI Governance & Trust
+      - button "08 External Communications 2" [ref=e218]:
+        - img [ref=e219]
+        - img [ref=e221]
+        - generic [ref=e224]: 08 External Communications
+        - generic [ref=e225]: "2"
+      - button "09 Archives & Retention 1" [ref=e227]:
+        - img [ref=e228]
+        - img [ref=e230]
+        - generic [ref=e233]: 09 Archives & Retention
+        - generic [ref=e234]: "1"
+    - generic [ref=e236]:
+      - generic [ref=e237]:
+        - paragraph [ref=e238]: Continuity Documentation System v1.0
+        - paragraph [ref=e239]: 6 Doctrine Packs · 40 Documents
+      - button "Switch to dark mode" [ref=e240]:
+        - img [ref=e241]
+  - generic [ref=e243]:
+    - banner [ref=e244]:
+      - generic [ref=e245]:
+        - generic [ref=e246]: 00 Company Strategy
+        - img [ref=e247]
+        - heading "Doctrine & Continuity" [level=1] [ref=e249]
+    - main [ref=e250]:
+      - generic [ref=e251]:
+        - generic [ref=e252]:
+          - generic [ref=e253]:
+            - img [ref=e255]
+            - heading "Documentation Library" [level=1] [ref=e257]
+          - paragraph [ref=e258]: 6 doctrine packs · 40 documents across continuity strategy, product, architecture, governance, and go-to-market.
+        - generic [ref=e259]:
+          - generic [ref=e260]:
+            - img [ref=e261]
+            - generic [ref=e264]:
+              - paragraph [ref=e265]: "14"
+              - paragraph [ref=e266]: Complete
+          - generic [ref=e267]:
+            - img [ref=e268]
+            - generic [ref=e271]:
+              - paragraph [ref=e272]: "11"
+              - paragraph [ref=e273]: In Progress
+          - generic [ref=e274]:
+            - img [ref=e275]
+            - generic [ref=e277]:
+              - paragraph [ref=e278]: "15"
+              - paragraph [ref=e279]: Planned
+        - generic [ref=e280]:
+          - generic [ref=e281]:
+            - img [ref=e282]
+            - textbox "Search documents..." [ref=e285]
+          - combobox [ref=e286]:
+            - option "All Status" [selected]
+            - option "Complete"
+            - option "In Progress"
+            - option "Planned"
+          - combobox [ref=e287]:
+            - option "All Priority" [selected]
+            - option "Tier 1"
+            - option "Tier 2"
+            - option "Tier 3"
+        - generic [ref=e288]:
+          - button "All Packs" [ref=e289]
+          - button "Doctrine" [ref=e290]
+          - button "Category," [ref=e291]
+          - button "Product" [ref=e292]
+          - button "Adaptive" [ref=e293]
+          - button "AI," [ref=e294]
+          - button "GTM," [ref=e295]
+        - generic [ref=e297]:
+          - generic [ref=e298]:
+            - generic [ref=e299]:
+              - generic [ref=e300]:
+                - heading "Company Introduction" [level=2] [ref=e301]
+                - paragraph [ref=e302]: Comprehensive introduction to IntegrateWise as a company
+              - button "Close" [ref=e303]
+            - generic [ref=e304]:
+              - generic [ref=e305]:
+                - img [ref=e306]
+                - text: complete
+              - generic [ref=e309]:
+                - img [ref=e310]
+                - text: High Priority
+              - generic [ref=e314]:
+                - img [ref=e315]
+                - text: "Owner: Founder"
+            - generic [ref=e320]:
+              - button "Download Markdown" [ref=e321]:
+                - img [ref=e322]
+                - text: Download Markdown
+              - button "Download TXT" [ref=e325]:
+                - img [ref=e326]
+                - text: Download TXT
+          - article [ref=e330]:
+            - heading "1. IntegrateWise in One View" [level=2] [ref=e331]
+            - paragraph [ref=e332]:
+              - text: "IntegrateWise is building a continuity-native category of enterprise software: an"
+              - strong [ref=e333]: Adaptive Knowledge Workspace powered by continuity and the Spine
+              - text: .
+            - paragraph [ref=e334]: It is designed for organizations that struggle with disconnected tools, fragmented knowledge, scattered workflows, weak operational visibility, and AI systems that are powerful but lack grounded business context.
+            - paragraph [ref=e335]:
+              - text: At the heart of IntegrateWise is the
+              - strong [ref=e336]: Adaptive Spine
+              - text: —the continuity core and single source of organizational truth that connects tools, data, conversations, signals, and decisions across the organization.
+            - paragraph [ref=e337]: By organizing operational truth into the Spine, IntegrateWise creates a workspace where AI can understand context, reason across systems, and propose actions responsibly—while humans remain in control through approval-driven workflows.
+            - paragraph [ref=e338]: "The defining principle of IntegrateWise is simple:"
+            - paragraph [ref=e339]:
+              - strong [ref=e340]: Continuity is the primitive. AI thinks in continuity context — and waits for approval.
+            - paragraph [ref=e341]: That means intelligence is grounded in business truth, recommendations are evidence-linked, policy and permissions shape what is allowed, and meaningful actions do not execute until the right human approvals are in place.
+            - paragraph [ref=e342]: IntegrateWise is not just a copilot, workflow automation layer, CRM overlay, knowledge base, or dashboard system. It is a continuity operating model—one that unifies truth, context, intelligence, and governed execution in a single adaptive environment.
+            - separator [ref=e343]
+        - generic [ref=e344]:
+          - generic [ref=e345]:
+            - button "Doctrine & Continuity Strategy 8 2/8" [ref=e346]:
+              - img [ref=e348]
+              - generic [ref=e352]:
+                - generic [ref=e353]:
+                  - heading "Doctrine & Continuity Strategy" [level=3] [ref=e354]
+                  - generic [ref=e355]: "8"
+                - generic [ref=e359]: 2/8
+              - img [ref=e360]
+            - generic [ref=e362]:
+              - button "Company Introduction Founder · High Priority" [ref=e363]:
+                - img [ref=e364]
+                - generic [ref=e367]:
+                  - paragraph [ref=e368]: Company Introduction
+                  - paragraph [ref=e369]: Founder · High Priority
+                - img [ref=e370]
+              - button "Company Profile Founder · High Priority" [ref=e372]:
+                - img [ref=e373]
+                - generic [ref=e376]:
+                  - paragraph [ref=e377]: Company Profile
+                  - paragraph [ref=e378]: Founder · High Priority
+                - img [ref=e379]
+              - button "Vision, Mission, and Belief System Founder · High Priority" [ref=e381]:
+                - img [ref=e382]
+                - generic [ref=e385]:
+                  - paragraph [ref=e386]: Vision, Mission, and Belief System
+                  - paragraph [ref=e387]: Founder · High Priority
+                - img [ref=e388]
+              - button "Founder Narrative / Origin Story Founder · Medium" [ref=e390]:
+                - img [ref=e391]
+                - generic [ref=e393]:
+                  - paragraph [ref=e394]: Founder Narrative / Origin Story
+                  - paragraph [ref=e395]: Founder · Medium
+                - img [ref=e396]
+              - button "Business Model Overview Founder · Medium" [ref=e398]:
+                - img [ref=e399]
+                - generic [ref=e401]:
+                  - paragraph [ref=e402]: Business Model Overview
+                  - paragraph [ref=e403]: Founder · Medium
+                - img [ref=e404]
+              - button "Strategic Priorities Document Founder · Medium" [ref=e406]:
+                - img [ref=e407]
+                - generic [ref=e409]:
+                  - paragraph [ref=e410]: Strategic Priorities Document
+                  - paragraph [ref=e411]: Founder · Medium
+                - img [ref=e412]
+              - button "Market Opportunity Overview Strategy · Medium" [ref=e414]:
+                - img [ref=e415]
+                - generic [ref=e417]:
+                  - paragraph [ref=e418]: Market Opportunity Overview
+                  - paragraph [ref=e419]: Strategy · Medium
+                - img [ref=e420]
+              - button "Go-to-Market Strategy GTM · Medium" [ref=e422]:
+                - img [ref=e423]
+                - generic [ref=e425]:
+                  - paragraph [ref=e426]: Go-to-Market Strategy
+                  - paragraph [ref=e427]: GTM · Medium
+                - img [ref=e428]
+          - button "Category, Positioning & Brand 7 3/7" [ref=e431]:
+            - img [ref=e433]
+            - generic [ref=e437]:
+              - generic [ref=e438]:
+                - heading "Category, Positioning & Brand" [level=3] [ref=e439]
+                - generic [ref=e440]: "7"
+              - generic [ref=e444]: 3/7
+            - img [ref=e445]
+          - button "Product Narrative & Continuity System 6 1/6" [ref=e448]:
+            - img [ref=e450]
+            - generic [ref=e453]:
+              - generic [ref=e454]:
+                - heading "Product Narrative & Continuity System" [level=3] [ref=e455]
+                - generic [ref=e456]: "6"
+              - generic [ref=e460]: 1/6
+            - img [ref=e461]
+          - button "Adaptive Spine & Technical System 7 3/7" [ref=e464]:
+            - img [ref=e466]
+            - generic [ref=e470]:
+              - generic [ref=e471]:
+                - heading "Adaptive Spine & Technical System" [level=3] [ref=e472]
+                - generic [ref=e473]: "7"
+              - generic [ref=e477]: 3/7
+            - img [ref=e478]
+          - button "AI, Governance & Trust 5 2/5" [ref=e481]:
+            - img [ref=e483]
+            - generic [ref=e485]:
+              - generic [ref=e486]:
+                - heading "AI, Governance & Trust" [level=3] [ref=e487]
+                - generic [ref=e488]: "5"
+              - generic [ref=e492]: 2/5
+            - img [ref=e493]
+          - button "GTM, Sales & Customer Success 7 3/7" [ref=e496]:
+            - img [ref=e498]
+            - generic [ref=e501]:
+              - generic [ref=e502]:
+                - heading "GTM, Sales & Customer Success" [level=3] [ref=e503]
+                - generic [ref=e504]: "7"
+              - generic [ref=e508]: 3/7
+            - img [ref=e509]
+        - generic [ref=e511]:
+          - heading "Priority Roadmap" [level=3] [ref=e512]
+          - generic [ref=e513]:
+            - generic [ref=e514]:
+              - generic [ref=e515]:
+                - paragraph [ref=e516]: Tier 1
+                - paragraph [ref=e517]: Immediate
+              - paragraph [ref=e520]: 14/21 done
+            - generic [ref=e521]:
+              - generic [ref=e522]:
+                - paragraph [ref=e523]: Tier 2
+                - paragraph [ref=e524]: Next
+              - paragraph [ref=e526]: 0/16 done
+            - generic [ref=e527]:
+              - generic [ref=e528]:
+                - paragraph [ref=e529]: Tier 3
+                - paragraph [ref=e530]: Future
+              - paragraph [ref=e532]: 0/3 done
+  - button "AI Assistant" [ref=e533]:
+    - img [ref=e534]
+    - generic [ref=e537]: AI Assistant
+    - img [ref=e538]
