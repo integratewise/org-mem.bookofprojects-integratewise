@@ -66,7 +66,7 @@ const DOCUMENTATION_PACKS: DocumentPack[] = [
     id: 'pack-a',
     name: 'Doctrine & Continuity Strategy',
     icon: Building2,
-    color: '#4356A9',
+    color: 'var(--slate)',
     description: 'Defines continuity doctrine, company direction, and strategic business framing.',
     primaryAudience: 'Investors, partners, strategic hires, ecosystem stakeholders',
     documents: [
@@ -140,7 +140,7 @@ const DOCUMENTATION_PACKS: DocumentPack[] = [
     id: 'pack-b',
     name: 'Category, Positioning & Brand',
     icon: Target,
-    color: '#EB4F72',
+    color: 'var(--red)',
     description: 'Defines the market category, language, positioning, and narrative architecture.',
     primaryAudience: 'Marketing, founders, sales, web/brand teams, investors',
     documents: [
@@ -206,7 +206,7 @@ const DOCUMENTATION_PACKS: DocumentPack[] = [
     id: 'pack-c',
     name: 'Product Narrative & Continuity System',
     icon: Box,
-    color: '#55608C',
+    color: 'var(--slate)',
     description: 'Defines the continuity-native product model, users, and capability architecture.',
     primaryAudience: 'Product, design, GTM, implementation, engineering',
     documents: [
@@ -264,7 +264,7 @@ const DOCUMENTATION_PACKS: DocumentPack[] = [
     id: 'pack-d',
     name: 'Adaptive Spine & Technical System',
     icon: GitBranch,
-    color: '#636A82',
+    color: 'var(--slate)',
     description: 'Defines hydration flows and how the Adaptive Spine operates as core infrastructure.',
     primaryAudience: 'Engineering, product, solution architecture, investors, enterprise buyers',
     documents: [
@@ -330,7 +330,7 @@ const DOCUMENTATION_PACKS: DocumentPack[] = [
     id: 'pack-e',
     name: 'AI, Governance & Trust',
     icon: Shield,
-    color: '#232D42',
+    color: 'var(--ink)',
     description: 'Defines how AI is governed, how actions are controlled, and why the system is trustworthy.',
     primaryAudience: 'Enterprise buyers, security teams, compliance, product, leadership',
     documents: [
@@ -380,7 +380,7 @@ const DOCUMENTATION_PACKS: DocumentPack[] = [
     id: 'pack-f',
     name: 'GTM, Sales & Customer Success',
     icon: Megaphone,
-    color: '#D9637F',
+    color: 'var(--red)',
     description: 'Defines how IntegrateWise is sold, deployed, adopted, and supported.',
     primaryAudience: 'Sales, CS, implementation, partners, customer teams',
     documents: [
@@ -495,9 +495,9 @@ export function DocumentationPage() {
 
   const getStatusColor = (status: DocStatus) => {
     switch (status) {
-      case 'complete': return '#10B981';
-      case 'in-progress': return '#F59E0B';
-      case 'planned': return '#808CA9';
+      case 'complete': return 'var(--success-color)';
+      case 'in-progress': return 'var(--warning-color)';
+      case 'planned': return 'var(--slate)';
     }
   };
 
@@ -545,396 +545,270 @@ export function DocumentationPage() {
   };
 
   return (
-    <div className="h-full flex">
-      {/* Left sidebar - Documentation tree */}
-      <div className="w-80 flex flex-col" style={{ background: '#F8F9FB', borderRight: '1px solid #E5E8F4' }}>
-        {/* Header */}
-        <div className="p-6 shrink-0" style={{ borderBottom: '1px solid #E5E8F4' }}>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: '#4356A9' }}>
-              <BookOpen className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h2 className="text-lg font-semibold" style={{ color: '#232D42' }}>Documentation Library</h2>
-              <p className="text-xs" style={{ color: '#808CA9' }}>6 Master Packs</p>
-            </div>
-          </div>
+    <div className="min-h-full p-6 lg:p-8 max-w-5xl mx-auto">
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-2">
-            <div className="px-3 py-2 rounded-lg" style={{ background: '#fff', border: '1px solid #E5E8F4' }}>
-              <p className="text-lg font-bold" style={{ color: '#10B981' }}>{completeDocs}</p>
-              <p className="text-[10px]" style={{ color: '#808CA9' }}>Complete</p>
-            </div>
-            <div className="px-3 py-2 rounded-lg" style={{ background: '#fff', border: '1px solid #E5E8F4' }}>
-              <p className="text-lg font-bold" style={{ color: '#F59E0B' }}>{inProgressDocs}</p>
-              <p className="text-[10px]" style={{ color: '#808CA9' }}>In Progress</p>
-            </div>
-            <div className="px-3 py-2 rounded-lg" style={{ background: '#fff', border: '1px solid #E5E8F4' }}>
-              <p className="text-lg font-bold" style={{ color: '#808CA9' }}>{plannedDocs}</p>
-              <p className="text-[10px]" style={{ color: '#808CA9' }}>Planned</p>
-            </div>
+      {/* Header */}
+      <div className="mb-6">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: 'var(--primary-soft)' }}>
+            <BookOpen className="w-4 h-4" style={{ color: 'var(--primary-color)' }} />
           </div>
+          <h1 className="text-2xl font-bold" style={{ color: 'var(--text-strong)' }}>Documentation Library</h1>
+        </div>
+        <p className="text-sm ml-12" style={{ color: 'var(--text-muted)' }}>
+          6 doctrine packs · {allDocs.length} documents across continuity strategy, product, architecture, governance, and go-to-market.
+        </p>
+      </div>
 
-          {/* Search */}
-          <div className="relative mt-4">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#808CA9' }} />
-            <input
-              type="text"
-              placeholder="Search documents..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 rounded-lg text-sm"
-              style={{ background: '#fff', border: '1px solid #E5E8F4', color: '#232D42' }}
-            />
-          </div>
-
-          {/* Filters */}
-          <div className="flex gap-2 mt-3">
-            <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value as DocStatus | 'all')}
-              className="flex-1 px-2 py-1.5 rounded-md text-xs"
-              style={{ background: '#fff', border: '1px solid #E5E8F4', color: '#636A82' }}
-            >
-              <option value="all">All Status</option>
-              <option value="complete">Complete</option>
-              <option value="in-progress">In Progress</option>
-              <option value="planned">Planned</option>
-            </select>
-            <select
-              value={priorityFilter}
-              onChange={(e) => setPriorityFilter(e.target.value as DocPriority | 'all')}
-              className="flex-1 px-2 py-1.5 rounded-md text-xs"
-              style={{ background: '#fff', border: '1px solid #E5E8F4', color: '#636A82' }}
-            >
-              <option value="all">All Priority</option>
-              <option value="tier1">Tier 1</option>
-              <option value="tier2">Tier 2</option>
-              <option value="tier3">Tier 3</option>
-            </select>
+      {/* Stats row */}
+      <div className="grid grid-cols-3 gap-3 mb-6">
+        <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--surface)', border: '1px solid var(--border-base)' }}>
+          <CheckCircle2 className="w-5 h-5 shrink-0" style={{ color: 'var(--status-success)' }} />
+          <div>
+            <p className="text-xl font-bold leading-none" style={{ color: 'var(--status-success)' }}>{completeDocs}</p>
+            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-faint)' }}>Complete</p>
           </div>
         </div>
-
-        {/* Documentation tree */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-2">
-          {filteredPacks.map(pack => {
-            const isExpanded = expandedPacks.has(pack.id);
-            const Icon = pack.icon;
-
-            return (
-              <div key={pack.id} className="space-y-1">
-                <button
-                  onClick={() => togglePack(pack.id)}
-                  className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-left hover:bg-white/60 transition-colors"
-                  style={{ background: isExpanded ? '#fff' : 'transparent' }}
-                >
-                  {isExpanded ? <ChevronDown className="w-4 h-4" style={{ color: pack.color }} /> : <ChevronRight className="w-4 h-4" style={{ color: pack.color }} />}
-                  <Icon className="w-4 h-4" style={{ color: pack.color }} />
-                  <span className="text-sm font-medium flex-1" style={{ color: '#232D42' }}>{pack.name}</span>
-                  <span className="text-xs px-1.5 py-0.5 rounded-full" style={{ background: `${pack.color}15`, color: pack.color }}>
-                    {pack.documents.length}
-                  </span>
-                </button>
-
-                {isExpanded && (
-                  <div className="ml-6 space-y-1">
-                    {pack.documents.map(doc => {
-                      const StatusIcon = getStatusIcon(doc.status);
-                      const isSelected = selectedDoc?.id === doc.id;
-
-                      return (
-                        <button
-                          key={doc.id}
-                          onClick={() => setSelectedDoc(doc)}
-                          className="w-full flex items-start gap-2 px-3 py-2 rounded-lg text-left hover:bg-white transition-colors"
-                          style={{ background: isSelected ? '#fff' : 'transparent', border: isSelected ? '1px solid #E5E8F4' : '1px solid transparent' }}
-                        >
-                          <StatusIcon className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: getStatusColor(doc.status) }} />
-                          <div className="flex-1 min-w-0">
-                            <p className="text-xs font-medium truncate" style={{ color: '#232D42' }}>{doc.title}</p>
-                            <p className="text-[10px] mt-0.5" style={{ color: '#808CA9' }}>{doc.owner}</p>
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--surface)', border: '1px solid var(--border-base)' }}>
+          <Clock className="w-5 h-5 shrink-0" style={{ color: 'var(--status-warning)' }} />
+          <div>
+            <p className="text-xl font-bold leading-none" style={{ color: 'var(--status-warning)' }}>{inProgressDocs}</p>
+            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-faint)' }}>In Progress</p>
+          </div>
+        </div>
+        <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--surface)', border: '1px solid var(--border-base)' }}>
+          <Circle className="w-5 h-5 shrink-0" style={{ color: 'var(--text-faint)' }} />
+          <div>
+            <p className="text-xl font-bold leading-none" style={{ color: 'var(--text-faint)' }}>{plannedDocs}</p>
+            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-faint)' }}>Planned</p>
+          </div>
         </div>
       </div>
 
-      {/* Main content area */}
-      <div className="flex-1 overflow-y-auto">
-        {selectedDoc ? (
-          // Document detail view
-          <div className="p-8 max-w-4xl mx-auto">
-            {/* Document header */}
-            <div className="mb-6">
-              <div className="flex items-start justify-between mb-4">
+      {/* Search + Filters */}
+      <div className="flex flex-wrap gap-3 mb-6">
+        <div className="relative flex-1 min-w-[200px]">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'var(--text-faint)' }} />
+          <input
+            type="text"
+            placeholder="Search documents..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-9 pr-3 py-2 rounded-lg text-sm"
+            style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-strong)' }}
+          />
+        </div>
+        <select
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value as DocStatus | 'all')}
+          className="px-3 py-2 rounded-lg text-xs"
+          style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }}
+        >
+          <option value="all">All Status</option>
+          <option value="complete">Complete</option>
+          <option value="in-progress">In Progress</option>
+          <option value="planned">Planned</option>
+        </select>
+        <select
+          value={priorityFilter}
+          onChange={(e) => setPriorityFilter(e.target.value as DocPriority | 'all')}
+          className="px-3 py-2 rounded-lg text-xs"
+          style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }}
+        >
+          <option value="all">All Priority</option>
+          <option value="tier1">Tier 1</option>
+          <option value="tier2">Tier 2</option>
+          <option value="tier3">Tier 3</option>
+        </select>
+      </div>
+
+      {/* Pack tabs */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        <button
+          onClick={() => { setSelectedPack(null); setSelectedDoc(null); }}
+          className="px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
+          style={{
+            background: selectedPack === null ? 'var(--primary-color)' : 'var(--surface)',
+            color: selectedPack === null ? 'var(--text-inverse)' : 'var(--text-muted)',
+            border: '1px solid var(--border-base)',
+          }}
+        >
+          All Packs
+        </button>
+        {DOCUMENTATION_PACKS.map(pack => (
+          <button
+            key={pack.id}
+            onClick={() => { setSelectedPack(pack.id); setSelectedDoc(pack.documents[0] || null); }}
+            className="px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5"
+            style={{
+              background: selectedPack === pack.id ? pack.color : 'var(--surface)',
+              color: selectedPack === pack.id ? '#fff' : 'var(--text-muted)',
+              border: `1px solid ${selectedPack === pack.id ? pack.color : 'var(--border-base)'}`,
+            }}
+          >
+            {pack.name.split(' ')[0]}
+          </button>
+        ))}
+      </div>
+
+      {/* Selected doc detail */}
+      {selectedDoc ? (
+        <div className="mb-8">
+          <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid var(--border-base)' }}>
+            {/* Doc header */}
+            <div className="p-6" style={{ background: 'var(--surface)', borderBottom: '1px solid var(--border-base)' }}>
+              <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
-                  <h1 className="text-2xl font-bold mb-2" style={{ color: '#232D42' }}>{selectedDoc.title}</h1>
-                  <p className="text-sm" style={{ color: '#636A82' }}>{selectedDoc.description}</p>
+                  <h2 className="text-xl font-bold mb-1" style={{ color: 'var(--text-strong)' }}>{selectedDoc.title}</h2>
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{selectedDoc.description}</p>
                 </div>
                 <button
                   onClick={() => setSelectedDoc(null)}
-                  className="text-sm px-3 py-1.5 rounded-lg hover:bg-gray-100"
-                  style={{ color: '#636A82' }}
+                  className="text-xs px-3 py-1.5 rounded-lg"
+                  style={{ color: 'var(--text-muted)', background: 'var(--surface-2)', border: '1px solid var(--border-base)' }}
                 >
                   Close
                 </button>
               </div>
-
-              {/* Meta info */}
-              <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg" style={{ background: `${getStatusColor(selectedDoc.status)}15` }}>
-                  {(() => {
-                    const StatusIcon = getStatusIcon(selectedDoc.status);
-                    return <StatusIcon className="w-3.5 h-3.5" style={{ color: getStatusColor(selectedDoc.status) }} />;
-                  })()}
-                  <span className="text-xs font-medium capitalize" style={{ color: getStatusColor(selectedDoc.status) }}>
-                    {selectedDoc.status.replace('-', ' ')}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg" style={{ background: '#F0F2F7' }}>
-                  <Layers className="w-3.5 h-3.5" style={{ color: '#636A82' }} />
-                  <span className="text-xs font-medium" style={{ color: '#636A82' }}>
-                    {getPriorityLabel(selectedDoc.priority)}
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg" style={{ background: '#F0F2F7' }}>
-                  <Users className="w-3.5 h-3.5" style={{ color: '#636A82' }} />
-                  <span className="text-xs font-medium" style={{ color: '#636A82' }}>
-                    Owner: {selectedDoc.owner}
-                  </span>
-                </div>
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium" style={{ background: `color-mix(in srgb, ${getStatusColor(selectedDoc.status)} 12%, transparent)`, color: getStatusColor(selectedDoc.status) }}>
+                  {(() => { const S = getStatusIcon(selectedDoc.status); return <S className="w-3 h-3" />; })()}
+                  {selectedDoc.status.replace('-', ' ')}
+                </span>
+                <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium" style={{ background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
+                  <Layers className="w-3 h-3" />{getPriorityLabel(selectedDoc.priority)}
+                </span>
+                <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium" style={{ background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
+                  <Users className="w-3 h-3" />Owner: {selectedDoc.owner}
+                </span>
               </div>
+              {getDocumentContent(selectedDoc.id) && (
+                <div className="flex gap-2 mt-4">
+                  <button
+                    onClick={() => handleDownloadDoc(selectedDoc, 'md')}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium"
+                    style={{ background: 'var(--primary-color)', color: 'var(--text-inverse)' }}
+                  >
+                    <Download className="w-3.5 h-3.5" />Download Markdown
+                  </button>
+                  <button
+                    onClick={() => handleDownloadDoc(selectedDoc, 'txt')}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium"
+                    style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }}
+                  >
+                    <Download className="w-3.5 h-3.5" />Download TXT
+                  </button>
+                </div>
+              )}
             </div>
-
-            {/* Actions */}
-            {getDocumentContent(selectedDoc.id) && (
-              <div className="mb-6 flex gap-2">
-                <button
-                  onClick={() => handleDownloadDoc(selectedDoc, 'md')}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                  style={{ background: '#4356A9', color: '#fff' }}
-                >
-                  <Download className="w-4 h-4" />
-                  Download Markdown
-                </button>
-                <button
-                  onClick={() => handleDownloadDoc(selectedDoc, 'txt')}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                  style={{ background: '#fff', border: '1px solid #E5E8F4', color: '#636A82' }}
-                >
-                  <Download className="w-4 h-4" />
-                  Download TXT
-                </button>
-              </div>
-            )}
-
-            {/* Content */}
-            {getDocumentContent(selectedDoc.id) ? (
-              <div className="prose prose-sm max-w-none">
-                <div className="bg-white rounded-xl p-8" style={{ border: '1px solid #E5E8F4' }}>
-                  <article className="markdown-content">
-                    <ReactMarkdown
-                      remarkPlugins={[remarkGfm]}
-                      components={{
-                        img: ({node, ...props}) => (
-                          <span className="my-8 flex justify-center w-full">
-                            <img
-                              {...props}
-                              className="rounded-xl shadow-lg border max-h-[400px] object-cover"
-                              style={{ borderColor: '#E5E8F4' }}
-                            />
-                          </span>
-                        )
-                      }}
-                    >
-                      {getDocumentContent(selectedDoc.id)!}
-                    </ReactMarkdown>
-                  </article>
+            {/* Doc content */}
+            <div className="p-6" style={{ background: 'var(--surface-raised)' }}>
+              {getDocumentContent(selectedDoc.id) ? (
+                <article className="markdown-content prose prose-sm max-w-none">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{getDocumentContent(selectedDoc.id)!}</ReactMarkdown>
+                </article>
+              ) : (
+                <div className="py-12 text-center">
+                  <FileText className="w-10 h-10 mx-auto mb-3" style={{ color: 'var(--text-faint)' }} />
+                  <h3 className="text-base font-semibold mb-1" style={{ color: 'var(--text-strong)' }}>Document In Progress</h3>
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+                    This document is {selectedDoc.status === 'in-progress' ? 'currently being worked on' : 'planned for future development'}.
+                  </p>
                 </div>
-              </div>
-            ) : (
-              <div className="bg-white rounded-xl p-8 text-center" style={{ border: '1px solid #E5E8F4' }}>
-                <FileText className="w-12 h-12 mx-auto mb-4" style={{ color: '#808CA9' }} />
-                <h3 className="text-lg font-semibold mb-2" style={{ color: '#232D42' }}>Document In Progress</h3>
-                <p className="text-sm" style={{ color: '#636A82' }}>
-                  This document is {selectedDoc.status === 'in-progress' ? 'currently being worked on' : 'planned for future development'}.
-                </p>
-              </div>
-            )}
-
-            {/* Pack context */}
-            <div className="mt-8 p-6 rounded-xl" style={{ background: '#F8F9FB', border: '1px solid #E5E8F4' }}>
-              <p className="text-xs font-semibold mb-2" style={{ color: '#808CA9' }}>PART OF</p>
-              {(() => {
-                const pack = DOCUMENTATION_PACKS.find(p => p.documents.some(d => d.id === selectedDoc.id));
-                if (!pack) return null;
-                const Icon = pack.icon;
-                return (
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: `${pack.color}15` }}>
-                      <Icon className="w-5 h-5" style={{ color: pack.color }} />
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold" style={{ color: '#232D42' }}>{pack.name}</h4>
-                      <p className="text-xs mt-1" style={{ color: '#636A82' }}>{pack.description}</p>
-                      <p className="text-[10px] mt-2" style={{ color: '#808CA9' }}>
-                        <strong>Primary Audience:</strong> {pack.primaryAudience}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })()}
+              )}
             </div>
           </div>
-        ) : (
-          // Overview / landing state
-          <div className="p-8 max-w-5xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold mb-3" style={{ color: '#232D42' }}>IntegrateWise Continuity Documentation System</h1>
-              <p className="text-base" style={{ color: '#636A82' }}>
-                Unified doctrine documentation organized into 6 packs covering continuity strategy,
-                category narrative, product system, adaptive architecture, governance, and go-to-market.
-              </p>
-            </div>
+        </div>
+      ) : null}
 
-            {/* Quick stats */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-              <div className="bg-white rounded-xl p-5" style={{ border: '1px solid #E5E8F4' }}>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: '#10B98115' }}>
-                    <CheckCircle2 className="w-5 h-5" style={{ color: '#10B981' }} />
-                  </div>
-                  <p className="text-2xl font-bold" style={{ color: '#10B981' }}>{completeDocs}</p>
-                </div>
-                <p className="text-sm font-medium" style={{ color: '#636A82' }}>Complete Documents</p>
-              </div>
-              <div className="bg-white rounded-xl p-5" style={{ border: '1px solid #E5E8F4' }}>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: '#F59E0B15' }}>
-                    <Clock className="w-5 h-5" style={{ color: '#F59E0B' }} />
-                  </div>
-                  <p className="text-2xl font-bold" style={{ color: '#F59E0B' }}>{inProgressDocs}</p>
-                </div>
-                <p className="text-sm font-medium" style={{ color: '#636A82' }}>In Progress</p>
-              </div>
-              <div className="bg-white rounded-xl p-5" style={{ border: '1px solid #E5E8F4' }}>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: '#808CA915' }}>
-                    <Circle className="w-5 h-5" style={{ color: '#808CA9' }} />
-                  </div>
-                  <p className="text-2xl font-bold" style={{ color: '#808CA9' }}>{plannedDocs}</p>
-                </div>
-                <p className="text-sm font-medium" style={{ color: '#636A82' }}>Planned</p>
-              </div>
-              <div className="bg-white rounded-xl p-5" style={{ border: '1px solid #E5E8F4' }}>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: '#4356A915' }}>
-                    <Layers className="w-5 h-5" style={{ color: '#4356A9' }} />
-                  </div>
-                  <p className="text-2xl font-bold" style={{ color: '#4356A9' }}>{allDocs.length}</p>
-                </div>
-                <p className="text-sm font-medium" style={{ color: '#636A82' }}>Total Documents</p>
-              </div>
-            </div>
+      {/* Pack cards */}
+      <div className="space-y-3">
+        {filteredPacks.map(pack => {
+          const Icon = pack.icon;
+          const isOpen = expandedPacks.has(pack.id);
+          const complete = pack.documents.filter(d => d.status === 'complete').length;
+          const total = pack.documents.length;
+          const progress = (complete / total) * 100;
 
-            {/* Pack overview cards */}
-            <div className="space-y-4">
-              <h2 className="text-xl font-semibold mb-4" style={{ color: '#232D42' }}>Documentation Packs</h2>
-              {DOCUMENTATION_PACKS.map(pack => {
-                const Icon = pack.icon;
-                const complete = pack.documents.filter(d => d.status === 'complete').length;
-                const total = pack.documents.length;
-                const progress = (complete / total) * 100;
+          return (
+            <div key={pack.id} className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border-base)' }}>
+              {/* Pack header */}
+              <button
+                onClick={() => togglePack(pack.id)}
+                className="w-full flex items-center gap-3 p-5 text-left transition-colors"
+                style={{ background: isOpen ? 'var(--surface)' : 'var(--surface-raised)' }}
+              >
+                <div className="w-9 h-9 rounded-lg shrink-0 flex items-center justify-center" style={{ background: `color-mix(in srgb, ${pack.color} 14%, transparent)` }}>
+                  <Icon className="w-4 h-4" style={{ color: pack.color }} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <h3 className="text-sm font-semibold truncate" style={{ color: 'var(--text-strong)' }}>{pack.name}</h3>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded-full shrink-0" style={{ background: `color-mix(in srgb, ${pack.color} 12%, transparent)`, color: pack.color }}>{total}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="flex-1 h-1.5 rounded-full" style={{ background: 'var(--surface-2)' }}>
+                      <div className="h-full rounded-full" style={{ width: `${progress}%`, background: pack.color }} />
+                    </div>
+                    <span className="text-[10px] shrink-0" style={{ color: 'var(--text-faint)' }}>{complete}/{total}</span>
+                  </div>
+                </div>
+                <ChevronDown className="w-4 h-4 shrink-0 transition-transform" style={{ color: 'var(--text-faint)', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+              </button>
 
-                return (
-                  <div key={pack.id} className="bg-white rounded-xl p-6" style={{ border: '1px solid #E5E8F4' }}>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0" style={{ background: `${pack.color}15` }}>
-                        <Icon className="w-6 h-6" style={{ color: pack.color }} />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold mb-1" style={{ color: '#232D42' }}>{pack.name}</h3>
-                        <p className="text-sm mb-3" style={{ color: '#636A82' }}>{pack.description}</p>
-                        <div className="flex items-center gap-4 mb-3">
-                          <div className="flex items-center gap-2">
-                            <Users className="w-4 h-4" style={{ color: '#808CA9' }} />
-                            <p className="text-xs" style={{ color: '#808CA9' }}>
-                              <strong>Audience:</strong> {pack.primaryAudience}
-                            </p>
-                          </div>
-                        </div>
-                        {/* Progress bar */}
-                        <div className="flex items-center gap-3">
-                          <div className="flex-1 h-2 rounded-full" style={{ background: '#F0F2F7' }}>
-                            <div className="h-full rounded-full transition-all" style={{ width: `${progress}%`, background: pack.color }} />
-                          </div>
-                          <p className="text-xs font-medium shrink-0" style={{ color: pack.color }}>
-                            {complete}/{total} complete
-                          </p>
-                        </div>
-                      </div>
+              {/* Doc list */}
+              {isOpen && (
+                <div style={{ borderTop: '1px solid var(--border-base)' }}>
+                  {pack.documents.map((doc, i) => {
+                    const StatusIcon = getStatusIcon(doc.status);
+                    const isSelected = selectedDoc?.id === doc.id;
+                    return (
                       <button
-                        onClick={() => {
-                          setExpandedPacks(new Set([pack.id]));
-                          if (pack.documents[0]) {
-                            setSelectedDoc(pack.documents[0]);
-                          }
+                        key={doc.id}
+                        onClick={() => setSelectedDoc(isSelected ? null : doc)}
+                        className="w-full flex items-start gap-3 px-5 py-3 text-left transition-colors"
+                        style={{
+                          background: isSelected ? 'var(--primary-soft)' : i % 2 === 0 ? 'var(--surface-raised)' : 'var(--surface)',
+                          borderTop: i > 0 ? '1px solid var(--border-subtle)' : 'none',
                         }}
-                        className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium hover:bg-gray-50"
-                        style={{ color: pack.color, border: `1px solid ${pack.color}30` }}
                       >
-                        View <ChevronRight className="w-3 h-3" />
+                        <StatusIcon className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: getStatusColor(doc.status) }} />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-medium" style={{ color: isSelected ? 'var(--primary-color)' : 'var(--text-strong)' }}>{doc.title}</p>
+                          <p className="text-[10px] mt-0.5" style={{ color: 'var(--text-faint)' }}>{doc.owner} · {getPriorityLabel(doc.priority)}</p>
+                        </div>
+                        <ChevronRight className="w-3 h-3 shrink-0 mt-0.5" style={{ color: 'var(--text-faint)' }} />
                       </button>
-                    </div>
-                  </div>
-                );
-              })}
+                    );
+                  })}
+                </div>
+              )}
             </div>
+          );
+        })}
+      </div>
 
-            {/* Priority tiers */}
-            <div className="mt-8 bg-white rounded-xl p-6" style={{ border: '1px solid #E5E8F4' }}>
-              <h3 className="text-lg font-semibold mb-4" style={{ color: '#232D42' }}>Priority Roadmap</h3>
-              <div className="space-y-4">
-                {(['tier1', 'tier2', 'tier3'] as const).map(tier => {
-                  const tierDocs = allDocs.filter(d => d.priority === tier);
-                  const tierComplete = tierDocs.filter(d => d.status === 'complete').length;
-                  
-                  return (
-                    <div key={tier} className="flex items-center gap-4">
-                      <div className="w-24 shrink-0">
-                        <p className="text-sm font-semibold" style={{ color: '#232D42' }}>
-                          {tier === 'tier1' ? 'Tier 1' : tier === 'tier2' ? 'Tier 2' : 'Tier 3'}
-                        </p>
-                        <p className="text-xs" style={{ color: '#808CA9' }}>
-                          {tier === 'tier1' ? 'Immediate' : tier === 'tier2' ? 'Next' : 'Future'}
-                        </p>
-                      </div>
-                      <div className="flex-1 h-2 rounded-full" style={{ background: '#F0F2F7' }}>
-                        <div
-                          className="h-full rounded-full"
-                          style={{
-                            width: `${(tierComplete / tierDocs.length) * 100}%`,
-                            background: tier === 'tier1' ? '#10B981' : tier === 'tier2' ? '#F59E0B' : '#808CA9'
-                          }}
-                        />
-                      </div>
-                      <p className="text-xs font-medium w-24 text-right" style={{ color: '#636A82' }}>
-                        {tierComplete}/{tierDocs.length} done
-                      </p>
-                    </div>
-                  );
-                })}
+      {/* Priority roadmap */}
+      <div className="mt-8 rounded-xl p-6" style={{ background: 'var(--surface)', border: '1px solid var(--border-base)' }}>
+        <h3 className="text-base font-semibold mb-4" style={{ color: 'var(--text-strong)' }}>Priority Roadmap</h3>
+        <div className="space-y-3">
+          {(['tier1', 'tier2', 'tier3'] as const).map(tier => {
+            const tierDocs = allDocs.filter(d => d.priority === tier);
+            const tierComplete = tierDocs.filter(d => d.status === 'complete').length;
+            return (
+              <div key={tier} className="flex items-center gap-4">
+                <div className="w-20 shrink-0">
+                  <p className="text-xs font-semibold" style={{ color: 'var(--text-strong)' }}>{tier === 'tier1' ? 'Tier 1' : tier === 'tier2' ? 'Tier 2' : 'Tier 3'}</p>
+                  <p className="text-[10px]" style={{ color: 'var(--text-faint)' }}>{tier === 'tier1' ? 'Immediate' : tier === 'tier2' ? 'Next' : 'Future'}</p>
+                </div>
+                <div className="flex-1 h-2 rounded-full" style={{ background: 'var(--surface-2)' }}>
+                  <div className="h-full rounded-full" style={{ width: `${(tierComplete / tierDocs.length) * 100}%`, background: tier === 'tier1' ? 'var(--status-success)' : tier === 'tier2' ? 'var(--status-warning)' : 'var(--text-faint)' }} />
+                </div>
+                <p className="text-xs font-medium w-16 text-right shrink-0" style={{ color: 'var(--text-muted)' }}>{tierComplete}/{tierDocs.length} done</p>
               </div>
-            </div>
-          </div>
-        )}
+            );
+          })}
+        </div>
       </div>
     </div>
   );

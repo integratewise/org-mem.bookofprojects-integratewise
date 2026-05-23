@@ -100,24 +100,24 @@ IntegrateWise`,
       name: "Standard",
       html: `<table cellpadding="0" cellspacing="0" style="font-family: Arial, sans-serif; font-size: 13px; color: #2F3D5E;">
   <tr>
-    <td style="padding-right: 16px; border-right: 2px solid #4154A3;">
-      <p style="margin: 0; font-size: 18px; font-weight: 600; color: #4154A3;">IntegrateWise</p>
+    <td style="padding-right: 16px; border-right: 2px solid var(--primary-color);">
+      <p style="margin: 0; font-size: 18px; font-weight: 600; color: var(--primary-color);">IntegrateWise</p>
       <p style="margin: 4px 0 0; font-size: 11px; color: #636A82;">Adaptive Continuity Workspace — Hydrated by the Spine</p>
     </td>
     <td style="padding-left: 16px;">
-      <p style="margin: 0; font-weight: 600; color: #1B2544;">[Your Name]</p>
-      <p style="margin: 2px 0; font-size: 12px; color: #5F6E93;">[Your Title]</p>
+      <p style="margin: 0; font-weight: 600; color: var(--text-color);">[Your Name]</p>
+      <p style="margin: 2px 0; font-size: 12px; color: var(--text-muted);">[Your Title]</p>
       <p style="margin: 8px 0 0; font-size: 11px;">
-        <a href="mailto:hello@integratewise.ai" style="color: #4154A3; text-decoration: none;">hello@integratewise.ai</a>
+        <a href="mailto:hello@integratewise.ai" style="color: var(--primary-color); text-decoration: none;">hello@integratewise.ai</a>
       </p>
       <p style="margin: 2px 0; font-size: 11px;">
-        <a href="https://integratewise.ai" style="color: #4154A3; text-decoration: none;">integratewise.ai</a>
+        <a href="https://integratewise.ai" style="color: var(--primary-color); text-decoration: none;">integratewise.ai</a>
       </p>
     </td>
   </tr>
   <tr>
-    <td colspan="2" style="padding-top: 12px; border-top: 1px solid #E8ECF2;">
-      <p style="margin: 0; font-size: 10px; color: #9BA8C2; font-style: italic;">
+    <td colspan="2" style="padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+      <p style="margin: 0; font-size: 10px; color: var(--text-faint); font-style: italic;">
         AI Thinks in Context — and Waits for Approval
       </p>
     </td>
@@ -127,9 +127,9 @@ IntegrateWise`,
     minimal: {
       name: "Minimal",
       html: `<div style="font-family: Arial, sans-serif; font-size: 13px; color: #2F3D5E;">
-  <p style="margin: 0; font-weight: 600; color: #1B2544;">[Your Name]</p>
-  <p style="margin: 2px 0; font-size: 12px; color: #4154A3;">IntegrateWise — Adaptive Continuity Workspace</p>
-  <p style="margin: 4px 0 0; font-size: 11px; color: #5F6E93;">
+  <p style="margin: 0; font-weight: 600; color: var(--text-color);">[Your Name]</p>
+  <p style="margin: 2px 0; font-size: 12px; color: var(--primary-color);">IntegrateWise — Adaptive Continuity Workspace</p>
+  <p style="margin: 4px 0 0; font-size: 11px; color: var(--text-muted);">
     hello@integratewise.ai | integratewise.ai
   </p>
 </div>`,
@@ -161,7 +161,7 @@ function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) 
       whileTap={{ scale: 0.98 }}
       onClick={handleCopy}
       className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all"
-      style={{ background: copied ? '#10B981' : 'rgba(65,84,163,0.08)', color: copied ? '#fff' : '#4154A3' }}
+      style={{ background: copied ? 'var(--success-color)' : 'color-mix(in srgb, var(--forest) 8%, transparent)', color: copied ? 'var(--paper)' : 'var(--forest-mid)' }}
     >
       {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
       {copied ? 'Copied!' : label}
@@ -188,31 +188,31 @@ function SubjectLineCard({
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="bg-white rounded-lg border border-[#E8ECF2] p-4 hover:border-[#4154A3]/30 transition-colors"
+      className="rounded-lg border border-[var(--border-subtle)] p-4 hover:border-[var(--primary-color)]/30 transition-colors" style={{ background: 'var(--surface-raised)' }}
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-1">
-            <Mail className="w-4 h-4 text-[#9BA8C2]" />
-            <span className="text-xs text-[#9BA8C2]">SUBJECT LINE</span>
+            <Mail className="w-4 h-4 text-[var(--text-faint)]" />
+            <span className="text-xs text-[var(--text-faint)]">SUBJECT LINE</span>
           </div>
           {isEditing ? (
             <>
               <input
                 value={item.subject}
                 onChange={(e) => onChange({ ...item, subject: e.target.value })}
-                className="font-semibold text-[#1B2544] text-sm w-full px-2 py-1 border border-[#D5DAE5] rounded mb-1"
+                className="font-semibold text-[var(--text-color)] text-sm w-full px-2 py-1 border border-[var(--border-base)] rounded mb-1"
               />
               <input
                 value={item.preview}
                 onChange={(e) => onChange({ ...item, preview: e.target.value })}
-                className="text-xs text-[#5F6E93] w-full px-2 py-1 border border-[#D5DAE5] rounded"
+                className="text-xs text-[var(--text-muted)] w-full px-2 py-1 border border-[var(--border-base)] rounded"
               />
             </>
           ) : (
             <>
-              <h4 className="font-semibold text-[#1B2544] text-sm">{item.subject}</h4>
-              <p className="text-xs text-[#5F6E93] mt-1 line-clamp-2">{item.preview}</p>
+              <h4 className="font-semibold text-[var(--text-color)] text-sm">{item.subject}</h4>
+              <p className="text-xs text-[var(--text-muted)] mt-1 line-clamp-2">{item.preview}</p>
             </>
           )}
         </div>
@@ -221,7 +221,8 @@ function SubjectLineCard({
           {isEditing && (
             <button
               onClick={onDelete}
-              className="p-2 text-red-500 hover:bg-red-50 rounded-lg"
+              className="p-2 rounded-lg"
+              style={{ color: 'var(--red)' }}
             >
               <Trash2 className="w-4 h-4" />
             </button>
@@ -250,23 +251,24 @@ function EmailTemplateCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white rounded-xl border border-[#E8ECF2] overflow-hidden"
+      className="rounded-xl border border-[var(--border-subtle)] overflow-hidden"
+      style={{ background: 'var(--surface-raised)' }}
     >
       {/* Header */}
-      <div className="px-5 py-4 border-b border-[#E8ECF2] flex items-center justify-between">
+      <div className="px-5 py-4 border-b border-[var(--border-subtle)] flex items-center justify-between">
         <div className="flex items-center gap-2 flex-1">
-          <Send className="w-4 h-4 text-[#4154A3]" />
+          <Send className="w-4 h-4 text-[var(--primary-color)]" />
           {isEditing ? (
             <input
               value={template.name}
               onChange={(e) => onChange({ ...template, name: e.target.value })}
-              className="font-semibold text-[#1B2544] px-2 py-1 border border-[#D5DAE5] rounded flex-1"
+              className="font-semibold text-[var(--text-color)] px-2 py-1 border border-[var(--border-base)] rounded flex-1"
             />
           ) : (
-            <span className="font-semibold text-[#1B2544]">{template.name}</span>
+            <span className="font-semibold text-[var(--text-color)]">{template.name}</span>
           )}
         </div>
-        <span className="text-xs px-2 py-1 rounded-full bg-[#4154A3]/10 text-[#4154A3]">
+        <span className="text-xs px-2 py-1 rounded-full bg-[var(--primary-color)]/10 text-[var(--primary-color)]">
           {type}
         </span>
       </div>
@@ -274,25 +276,25 @@ function EmailTemplateCard({
       {/* Preview */}
       <div className="p-5">
         <div className="mb-4">
-          <p className="text-xs text-[#9BA8C2] mb-1">SUBJECT</p>
+          <p className="text-xs text-[var(--text-faint)] mb-1">SUBJECT</p>
           {isEditing ? (
             <input
               value={template.subject}
               onChange={(e) => onChange({ ...template, subject: e.target.value })}
-              className="text-sm text-[#1B2544] font-medium w-full px-2 py-1 border border-[#D5DAE5] rounded"
+              className="text-sm text-[var(--text-color)] font-medium w-full px-2 py-1 border border-[var(--border-base)] rounded"
             />
           ) : (
-            <p className="text-sm text-[#1B2544] font-medium">{template.subject}</p>
+            <p className="text-sm text-[var(--text-color)] font-medium">{template.subject}</p>
           )}
         </div>
         
         <div>
           <div className="flex items-center justify-between mb-1">
-            <p className="text-xs text-[#9BA8C2]">BODY</p>
+            <p className="text-xs text-[var(--text-faint)]">BODY</p>
             {!isEditing && (
               <button
                 onClick={() => setExpanded(!expanded)}
-                className="text-xs text-[#4154A3] flex items-center gap-1"
+                className="text-xs text-[var(--primary-color)] flex items-center gap-1"
               >
                 {expanded ? (
                   <><ChevronUp className="w-3 h-3" /> Show less</>
@@ -306,10 +308,10 @@ function EmailTemplateCard({
             <textarea
               value={template.body}
               onChange={(e) => onChange({ ...template, body: e.target.value })}
-              className={`w-full text-sm text-[#475578] whitespace-pre-wrap p-3 border border-[#D5DAE5] rounded-lg min-h-[300px]`}
+              className={`w-full text-sm text-[var(--text-color)] whitespace-pre-wrap p-3 border border-[var(--border-base)] rounded-lg min-h-[300px]`}
             />
           ) : (
-            <div className={`bg-[#F8FAFC] rounded-lg p-3 text-sm text-[#475578] whitespace-pre-wrap ${expanded ? '' : 'line-clamp-4'}`}>
+            <div className={`bg-[var(--surface)] rounded-lg p-3 text-sm text-[var(--text-color)] whitespace-pre-wrap ${expanded ? '' : 'line-clamp-4'}`}>
               {template.body}
             </div>
           )}
@@ -317,7 +319,7 @@ function EmailTemplateCard({
       </div>
       
       {/* Actions */}
-      <div className="px-5 py-3 border-t border-[#E8ECF2] bg-[#F8FAFC] flex gap-2">
+      <div className="px-5 py-3 border-t border-[var(--border-subtle)] bg-[var(--surface)] flex gap-2">
         <CopyButton text={`Subject: ${template.subject}\n\n${template.body}`} label="Copy Full Email" />
         <CopyButton text={template.subject} label="Copy Subject" />
       </div>
@@ -338,16 +340,16 @@ function SignaturePreview({
   const [activeSig, setActiveSig] = useState<'standard' | 'minimal'>('standard');
   
   return (
-    <div className="bg-white rounded-xl border border-[#E8ECF2] overflow-hidden">
-      <div className="flex border-b border-[#E8ECF2]">
+    <div className="rounded-xl border border-[var(--border-subtle)] overflow-hidden" style={{ background: 'var(--surface-raised)' }}>
+      <div className="flex border-b border-[var(--border-subtle)]">
         {(['standard', 'minimal'] as const).map((sig) => (
           <button
             key={sig}
             onClick={() => setActiveSig(sig)}
             className={`flex-1 px-4 py-3 text-sm font-medium capitalize transition-colors ${
               activeSig === sig
-                ? 'bg-[#4154A3] text-white'
-                : 'text-[#5F6E93] hover:bg-[#F8FAFC]'
+                ? 'bg-[var(--primary-color)] text-[var(--paper)]'
+                : 'text-[var(--text-muted)] hover:bg-[var(--surface)]'
             }`}
           >
             {sig}
@@ -364,11 +366,12 @@ function SignaturePreview({
               newSigs[activeSig] = { ...newSigs[activeSig], html: e.target.value };
               onChange(newSigs);
             }}
-            className="w-full h-48 text-xs font-mono p-3 border border-[#D5DAE5] rounded-lg mb-4"
+            className="w-full h-48 text-xs font-mono p-3 border border-[var(--border-base)] rounded-lg mb-4"
           />
         ) : (
           <div 
-            className="mb-4 p-4 border border-[#E8ECF2] rounded-lg bg-white"
+            className="mb-4 p-4 border border-[var(--border-subtle)] rounded-lg"
+            style={{ background: 'var(--paper)' }}
             dangerouslySetInnerHTML={{ __html: signatures[activeSig].html }}
           />
         )}
@@ -439,11 +442,11 @@ export function EmailPage() {
       >
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <Mail className="w-5 h-5 text-[#4154A3]" />
-            <span className="text-xs font-semibold text-[#4154A3] uppercase tracking-wider">Communication</span>
+            <Mail className="w-5 h-5 text-[var(--primary-color)]" />
+            <span className="text-xs font-semibold text-[var(--primary-color)] uppercase tracking-wider">Communication</span>
           </div>
-          <h1 className="text-3xl font-bold text-[#1B2544] mb-2">Email Templates</h1>
-          <p className="text-[#5F6E93]">Subject lines, email templates, and signatures for all communication</p>
+          <h1 className="text-3xl font-bold text-[var(--text-color)] mb-2">Email Templates</h1>
+          <p className="text-[var(--text-muted)]">Subject lines, email templates, and signatures for all communication</p>
         </div>
         
         {/* Edit Controls */}
@@ -452,14 +455,15 @@ export function EmailPage() {
             <>
               <button
                 onClick={handleSave}
-                className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+                style={{ background: "var(--forest)", color: "var(--paper)" }}
               >
                 <Save className="w-4 h-4" />
                 Save
               </button>
               <button
                 onClick={() => setIsEditing(false)}
-                className="flex items-center gap-2 px-4 py-2 border border-[#D5DAE5] text-[#475578] rounded-lg text-sm font-medium hover:bg-[#F8FAFC]"
+                className="flex items-center gap-2 px-4 py-2 border border-[var(--border-base)] text-[var(--text-color)] rounded-lg text-sm font-medium hover:bg-[var(--surface)]"
               >
                 <X className="w-4 h-4" />
                 Cancel
@@ -469,14 +473,14 @@ export function EmailPage() {
             <>
               <button
                 onClick={() => setIsEditing(true)}
-                className="flex items-center gap-2 px-4 py-2 bg-[#4154A3] text-white rounded-lg text-sm font-medium hover:bg-[#364789]"
+                className="flex items-center gap-2 px-4 py-2 bg-[var(--primary-color)] text-[var(--paper)] rounded-lg text-sm font-medium hover:bg-[var(--primary-hover)]"
               >
                 <Edit2 className="w-4 h-4" />
                 Edit
               </button>
               <button
                 onClick={handleReset}
-                className="flex items-center gap-2 px-4 py-2 border border-[#D5DAE5] text-[#475578] rounded-lg text-sm font-medium hover:bg-[#F8FAFC]"
+                className="flex items-center gap-2 px-4 py-2 border border-[var(--border-base)] text-[var(--text-color)] rounded-lg text-sm font-medium hover:bg-[var(--surface)]"
               >
                 <RotateCcw className="w-4 h-4" />
               </button>
@@ -498,11 +502,11 @@ export function EmailPage() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: i * 0.1 }}
-            className="p-4 bg-white rounded-xl border border-[#E8ECF2] text-center"
+            className="p-4 rounded-xl border border-[var(--border-subtle)] text-center" style={{ background: 'var(--surface-raised)' }}
           >
-            <stat.icon className="w-5 h-5 text-[#4154A3] mx-auto mb-2" />
-            <p className="text-2xl font-bold text-[#1B2544]">{stat.count}</p>
-            <p className="text-xs text-[#5F6E93]">{stat.label}</p>
+            <stat.icon className="w-5 h-5 text-[var(--primary-color)] mx-auto mb-2" />
+            <p className="text-2xl font-bold text-[var(--text-color)]">{stat.count}</p>
+            <p className="text-xs text-[var(--text-muted)]">{stat.label}</p>
           </motion.div>
         ))}
       </div>
@@ -511,19 +515,19 @@ export function EmailPage() {
       <div className="space-y-10">
         {/* Subject Lines */}
         <section>
-          <h2 className="text-xl font-bold text-[#1B2544] mb-4 flex items-center gap-2">
-            <Inbox className="w-5 h-5 text-[#4154A3]" />
+          <h2 className="text-xl font-bold text-[var(--text-color)] mb-4 flex items-center gap-2">
+            <Inbox className="w-5 h-5 text-[var(--primary-color)]" />
             Subject Lines by Category
           </h2>
           
           <div className="space-y-6">
             <div>
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-[#5F6E93] uppercase tracking-wider">Newsletters</h3>
+                <h3 className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider">Newsletters</h3>
                 {isEditing && (
                   <button
                     onClick={() => addSubjectLine('newsletters')}
-                    className="flex items-center gap-1 px-3 py-1 bg-[#4154A3] text-white rounded text-xs"
+                    className="flex items-center gap-1 px-3 py-1 bg-[var(--primary-color)] text-[var(--paper)] rounded text-xs"
                   >
                     <Plus className="w-3 h-3" />
                     Add
@@ -546,11 +550,11 @@ export function EmailPage() {
             
             <div>
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-[#5F6E93] uppercase tracking-wider">Sales Outreach</h3>
+                <h3 className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider">Sales Outreach</h3>
                 {isEditing && (
                   <button
                     onClick={() => addSubjectLine('sales')}
-                    className="flex items-center gap-1 px-3 py-1 bg-[#4154A3] text-white rounded text-xs"
+                    className="flex items-center gap-1 px-3 py-1 bg-[var(--primary-color)] text-[var(--paper)] rounded text-xs"
                   >
                     <Plus className="w-3 h-3" />
                     Add
@@ -573,11 +577,11 @@ export function EmailPage() {
             
             <div>
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-[#5F6E93] uppercase tracking-wider">Onboarding</h3>
+                <h3 className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider">Onboarding</h3>
                 {isEditing && (
                   <button
                     onClick={() => addSubjectLine('onboarding')}
-                    className="flex items-center gap-1 px-3 py-1 bg-[#4154A3] text-white rounded text-xs"
+                    className="flex items-center gap-1 px-3 py-1 bg-[var(--primary-color)] text-[var(--paper)] rounded text-xs"
                   >
                     <Plus className="w-3 h-3" />
                     Add
@@ -602,8 +606,8 @@ export function EmailPage() {
 
         {/* Email Templates */}
         <section>
-          <h2 className="text-xl font-bold text-[#1B2544] mb-4 flex items-center gap-2">
-            <Send className="w-5 h-5 text-[#4154A3]" />
+          <h2 className="text-xl font-bold text-[var(--text-color)] mb-4 flex items-center gap-2">
+            <Send className="w-5 h-5 text-[var(--primary-color)]" />
             Email Templates
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -621,8 +625,8 @@ export function EmailPage() {
 
         {/* Email Signatures */}
         <section>
-          <h2 className="text-xl font-bold text-[#1B2544] mb-4 flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-[#4154A3]" />
+          <h2 className="text-xl font-bold text-[var(--text-color)] mb-4 flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-[var(--primary-color)]" />
             Email Signatures
           </h2>
           <div className="max-w-2xl">
@@ -640,10 +644,10 @@ export function EmailPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="mt-10 p-4 bg-gradient-to-r from-[#4154A3]/10 to-transparent rounded-xl border border-[#4154A3]/20"
+        className="mt-10 p-4 bg-gradient-to-r from-[var(--primary-color)]/10 to-transparent rounded-xl border border-[var(--primary-color)]/20"
       >
-        <p className="text-sm text-[#475578]">
-          <strong className="text-[#4154A3]">Email Best Practices:</strong> Keep subject lines under 50 characters, 
+        <p className="text-sm text-[var(--text-color)]">
+          <strong className="text-[var(--primary-color)]">Email Best Practices:</strong> Keep subject lines under 50 characters, 
           personalize with recipient's name and company, and always include a clear call-to-action.
         </p>
       </motion.div>

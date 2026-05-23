@@ -63,12 +63,12 @@ const deliverables: Deliverable[] = [
 ];
 
 const gradients = [
-  "linear-gradient(135deg, #4154A3 0%, #1B2544 100%)",
-  "linear-gradient(135deg, #EB4379 0%, #4154A3 100%)",
-  "linear-gradient(135deg, #1B2544 0%, #4154A3 50%, #EB4379 100%)",
-  "linear-gradient(135deg, #4154A3 0%, #6B7DC4 100%)",
-  "linear-gradient(135deg, #F59E0B 0%, #EB4379 100%)",
-  "linear-gradient(135deg, #10B981 0%, #4154A3 100%)",
+  "linear-gradient(135deg, var(--primary-color) 0%, var(--text-color) 100%)",
+  "linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%)",
+  "linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 50%, var(--accent-color) 100%)",
+  "linear-gradient(135deg, var(--primary-color) 0%, var(--brand-primary-light) 100%)",
+  "linear-gradient(135deg, var(--warning-color) 0%, var(--accent-color) 100%)",
+  "linear-gradient(135deg, var(--success-color) 0%, var(--primary-color) 100%)",
 ];
 
 function getSalesAssetContent(item: Deliverable): SalesAssetContent {
@@ -87,8 +87,8 @@ function createSalesSvg(content: SalesAssetContent, gradient: string) {
     <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
       <defs>
         <linearGradient id="salesGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="${gradient.match(/#[0-9A-Fa-f]{6}/g)?.[0] ?? "#4154A3"}" />
-          <stop offset="100%" stop-color="${gradient.match(/#[0-9A-Fa-f]{6}/g)?.slice(-1)[0] ?? "#1B2544"}" />
+          <stop offset="0%" stop-color="${gradient.match(/#[0-9A-Fa-f]{6}/g)?.[0] ?? "var(--primary-color)"}" />
+          <stop offset="100%" stop-color="${gradient.match(/#[0-9A-Fa-f]{6}/g)?.slice(-1)[0] ?? "var(--text-color)"}" />
         </linearGradient>
       </defs>
       <rect width="1200" height="675" fill="url(#salesGradient)" rx="32" />
@@ -106,9 +106,9 @@ function createSalesSvg(content: SalesAssetContent, gradient: string) {
 }
 
 function createSalesHtml(content: SalesAssetContent, gradient: string) {
-  const colors = gradient.match(/#[0-9A-Fa-f]{6}/g) ?? ["#4154A3", "#1B2544"];
-  const start = colors[0] ?? "#4154A3";
-  const end = colors[colors.length - 1] ?? "#1B2544";
+  const colors = gradient.match(/#[0-9A-Fa-f]{6}/g) ?? ["var(--primary-color)", "var(--text-color)"];
+  const start = colors[0] ?? "var(--primary-color)";
+  const end = colors[colors.length - 1] ?? "var(--text-color)";
 
   return `<!DOCTYPE html>
 <html>
@@ -210,50 +210,50 @@ function SalesAssetPreview({ content, gradient }: { content: SalesAssetContent; 
           <div className="relative flex items-center">
             <div className="absolute inset-0 rounded-[32px] bg-black/10 blur-2xl" />
             <div className="relative w-full rounded-[28px] border border-white/15 bg-white/10 p-5 backdrop-blur-md shadow-2xl">
-              <div className="rounded-[22px] bg-[#F7F9FD] p-5 text-[#1B2544]">
+              <div className="rounded-[22px] bg-[#F7F9FD] p-5 text-[var(--text-color)]">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.25em] text-[#7B8AAD]">Executive Snapshot</p>
+                    <p className="text-xs uppercase tracking-[0.25em] text-[var(--text-faint)]">Executive Snapshot</p>
                     <h3 className="mt-2 text-2xl font-bold">Board-Ready Asset</h3>
                   </div>
-                  <div className="rounded-2xl bg-[#4154A3] p-3 text-white">
+                  <div className="rounded-2xl bg-[var(--primary-color)] p-3 text-white">
                     <Shield className="h-6 w-6" />
                   </div>
                 </div>
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   <div className="rounded-2xl bg-white p-4 shadow-sm">
-                    <p className="text-xs text-[#7B8AAD]">Pipeline Impact</p>
+                    <p className="text-xs text-[var(--text-faint)]">Pipeline Impact</p>
                     <p className="mt-2 text-3xl font-bold">38%</p>
-                    <div className="mt-3 h-2 rounded-full bg-[#E8ECF2]">
-                      <div className="h-2 w-2/3 rounded-full bg-[#4154A3]" />
+                    <div className="mt-3 h-2 rounded-full bg-[var(--border-subtle)]">
+                      <div className="h-2 w-2/3 rounded-full bg-[var(--primary-color)]" />
                     </div>
                   </div>
                   <div className="rounded-2xl bg-white p-4 shadow-sm">
-                    <p className="text-xs text-[#7B8AAD]">Approval Coverage</p>
+                    <p className="text-xs text-[var(--text-faint)]">Approval Coverage</p>
                     <p className="mt-2 text-3xl font-bold">100%</p>
                     <div className="mt-3 flex gap-1">
                       <div className="h-10 flex-1 rounded-xl bg-[#DCE4FB]" />
                       <div className="h-10 flex-1 rounded-xl bg-[#B9C8F4]" />
-                      <div className="h-10 flex-1 rounded-xl bg-[#4154A3]" />
+                      <div className="h-10 flex-1 rounded-xl bg-[var(--primary-color)]" />
                     </div>
                   </div>
                 </div>
                 <div className="mt-5 rounded-2xl bg-white p-4 shadow-sm">
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-semibold">Narrative Flow</p>
-                    <p className="text-xs text-[#7B8AAD]">Ready to present</p>
+                    <p className="text-xs text-[var(--text-faint)]">Ready to present</p>
                   </div>
                   <div className="mt-4 grid grid-cols-3 gap-3">
                     <div className="rounded-xl bg-[#F4F6FB] p-3">
-                      <p className="text-xs text-[#7B8AAD]">Problem</p>
+                      <p className="text-xs text-[var(--text-faint)]">Problem</p>
                       <p className="mt-2 text-sm font-medium">Fragmented work</p>
                     </div>
                     <div className="rounded-xl bg-[#F4F6FB] p-3">
-                      <p className="text-xs text-[#7B8AAD]">System</p>
+                      <p className="text-xs text-[var(--text-faint)]">System</p>
                       <p className="mt-2 text-sm font-medium">Spine + AI</p>
                     </div>
                     <div className="rounded-xl bg-[#F4F6FB] p-3">
-                      <p className="text-xs text-[#7B8AAD]">Outcome</p>
+                      <p className="text-xs text-[var(--text-faint)]">Outcome</p>
                       <p className="mt-2 text-sm font-medium">Governed action</p>
                     </div>
                   </div>
@@ -304,11 +304,11 @@ function PreviewModal({ item, gradient, onClose }: { item: Deliverable; gradient
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70">
-      <div className="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+      <div className="rounded-xl max-w-3xl w-full max-h-[90vh] overflow-hidden flex flex-col" style={{ background: 'var(--surface-raised)' }}>
         <div className="flex items-center justify-between p-4 border-b">
           <h3 className="font-semibold">{item.title}</h3>
           <div className="flex gap-2">
-            <button onClick={handleDownload} className="px-4 py-2 bg-blue-600 text-white rounded-lg">
+            <button onClick={handleDownload} className="px-4 py-2 bg-[var(--forest)] text-[var(--paper)] rounded-lg">
               {isExporting ? "Exporting..." : "Download PNG"}
             </button>
             {item.format.includes("HTML") ? (
@@ -319,28 +319,28 @@ function PreviewModal({ item, gradient, onClose }: { item: Deliverable; gradient
             <button onClick={onClose} className="p-2"><X size={20} /></button>
           </div>
         </div>
-        <div ref={contentRef} className="flex-1 p-6 bg-gray-50">
+        <div ref={contentRef} className="flex-1 p-6" style={{ background: 'var(--surface)' }}>
           <div className="grid lg:grid-cols-[320px_minmax(0,1fr)] gap-6">
-            <div className="bg-white rounded-xl border border-[#E8ECF2] p-4 space-y-4">
+            <div className="rounded-xl border border-[var(--border-subtle)] p-4 space-y-4" style={{ background: 'var(--surface-raised)' }}>
               <div>
-                <label className="text-xs font-medium text-[#5F6E93]">Title</label>
+                <label className="text-xs font-medium text-[var(--text-muted)]">Title</label>
                 <input
                   value={content.title}
                   onChange={(e) => setContent((prev) => ({ ...prev, title: e.target.value }))}
-                  className="mt-1 w-full rounded-lg border border-[#D5DAE5] px-3 py-2 text-sm"
+                  className="mt-1 w-full rounded-lg border border-[var(--border-base)] px-3 py-2 text-sm"
                 />
               </div>
               <div>
-                <label className="text-xs font-medium text-[#5F6E93]">Subtitle</label>
+                <label className="text-xs font-medium text-[var(--text-muted)]">Subtitle</label>
                 <textarea
                   value={content.subtitle}
                   onChange={(e) => setContent((prev) => ({ ...prev, subtitle: e.target.value }))}
-                  className="mt-1 w-full rounded-lg border border-[#D5DAE5] px-3 py-2 text-sm min-h-20"
+                  className="mt-1 w-full rounded-lg border border-[var(--border-base)] px-3 py-2 text-sm min-h-20"
                 />
               </div>
               {content.bullets.map((bullet, index) => (
                 <div key={index}>
-                  <label className="text-xs font-medium text-[#5F6E93]">Bullet {index + 1}</label>
+                  <label className="text-xs font-medium text-[var(--text-muted)]">Bullet {index + 1}</label>
                   <textarea
                     value={bullet}
                     onChange={(e) =>
@@ -351,32 +351,32 @@ function PreviewModal({ item, gradient, onClose }: { item: Deliverable; gradient
                         ),
                       }))
                     }
-                    className="mt-1 w-full rounded-lg border border-[#D5DAE5] px-3 py-2 text-sm min-h-16"
+                    className="mt-1 w-full rounded-lg border border-[var(--border-base)] px-3 py-2 text-sm min-h-16"
                   />
                 </div>
               ))}
               <div>
-                <label className="text-xs font-medium text-[#5F6E93]">Footer Title</label>
+                <label className="text-xs font-medium text-[var(--text-muted)]">Footer Title</label>
                 <input
                   value={content.footerTitle}
                   onChange={(e) => setContent((prev) => ({ ...prev, footerTitle: e.target.value }))}
-                  className="mt-1 w-full rounded-lg border border-[#D5DAE5] px-3 py-2 text-sm"
+                  className="mt-1 w-full rounded-lg border border-[var(--border-base)] px-3 py-2 text-sm"
                 />
               </div>
               <div>
-                <label className="text-xs font-medium text-[#5F6E93]">Footer Copy</label>
+                <label className="text-xs font-medium text-[var(--text-muted)]">Footer Copy</label>
                 <textarea
                   value={content.footerBody}
                   onChange={(e) => setContent((prev) => ({ ...prev, footerBody: e.target.value }))}
-                  className="mt-1 w-full rounded-lg border border-[#D5DAE5] px-3 py-2 text-sm min-h-20"
+                  className="mt-1 w-full rounded-lg border border-[var(--border-base)] px-3 py-2 text-sm min-h-20"
                 />
               </div>
               <div>
-                <label className="text-xs font-medium text-[#5F6E93]">Website / CTA</label>
+                <label className="text-xs font-medium text-[var(--text-muted)]">Website / CTA</label>
                 <input
                   value={content.website}
                   onChange={(e) => setContent((prev) => ({ ...prev, website: e.target.value }))}
-                  className="mt-1 w-full rounded-lg border border-[#D5DAE5] px-3 py-2 text-sm"
+                  className="mt-1 w-full rounded-lg border border-[var(--border-base)] px-3 py-2 text-sm"
                 />
               </div>
             </div>
@@ -395,8 +395,8 @@ export function SalesPage() {
     <div className="p-6 lg:p-10 max-w-7xl mx-auto">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-[#1B2544] mb-2">Sales Enablement</h1>
-        <p className="text-[#5F6E93]">Pitch decks, battlecards, case studies, and proposal templates</p>
+        <h1 className="text-3xl font-bold text-[var(--text-color)] mb-2">Sales Enablement</h1>
+        <p className="text-[var(--text-muted)]">Pitch decks, battlecards, case studies, and proposal templates</p>
       </div>
       
       {/* Stats */}
@@ -407,9 +407,9 @@ export function SalesPage() {
           { label: 'Formats', value: 'PNG/SVG/HTML' },
           { label: 'Last Updated', value: 'Mar 14' },
         ].map((stat) => (
-          <div key={stat.label} className="p-4 bg-white rounded-xl border border-[#E8ECF2] text-center">
-            <p className="text-2xl font-bold text-[#1B2544]">{stat.value}</p>
-            <p className="text-xs text-[#5F6E93]">{stat.label}</p>
+          <div key={stat.label} className="p-4 rounded-xl border border-[var(--border-subtle)] text-center" style={{ background: 'var(--surface-raised)' }}>
+            <p className="text-2xl font-bold text-[var(--text-color)]">{stat.value}</p>
+            <p className="text-xs text-[var(--text-muted)]">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -417,29 +417,29 @@ export function SalesPage() {
       {/* Grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {deliverables.map((item, index) => (
-          <div key={item.id} className="bg-white rounded-xl border border-[#E8ECF2] overflow-hidden hover:shadow-lg transition-shadow">
+          <div key={item.id} className="rounded-xl border border-[var(--border-subtle)] overflow-hidden hover:shadow-lg transition-shadow" style={{ background: 'var(--surface-raised)' }}>
             <div className="h-40">
               <SalesThumbnail title={item.title} gradient={gradients[index % gradients.length]} Icon={item.icon} />
             </div>
             <div className="p-5">
               <div className="flex items-center gap-2 mb-2">
-                <item.icon className="w-4 h-4 text-[#4154A3]" />
-                <span className="text-xs text-[#5F6E93] uppercase">{item.category}</span>
+                <item.icon className="w-4 h-4 text-[var(--primary-color)]" />
+                <span className="text-xs text-[var(--text-muted)] uppercase">{item.category}</span>
               </div>
-              <h4 className="font-semibold text-[#1B2544]">{item.title}</h4>
-              <p className="text-sm text-[#5F6E93] mt-1">{item.description}</p>
+              <h4 className="font-semibold text-[var(--text-color)]">{item.title}</h4>
+              <p className="text-sm text-[var(--text-muted)] mt-1">{item.description}</p>
               <div className="flex items-center justify-between mt-4">
-                <span className="text-xs text-[#9BA8C2]">{item.format}</span>
+                <span className="text-xs text-[var(--text-faint)]">{item.format}</span>
                 <div className="flex gap-2">
                   <button 
                     onClick={() => setPreviewItem(item)} 
-                    className="flex items-center gap-1 px-3 py-1.5 bg-[#4154A3] text-white rounded-lg text-sm"
+                    className="flex items-center gap-1 px-3 py-1.5 bg-[var(--primary-color)] text-[var(--paper)] rounded-lg text-sm"
                   >
                     <Eye className="w-4 h-4" /> Preview
                   </button>
                   <button
                     onClick={() => downloadSalesThumbnail(item, gradients[index % gradients.length])}
-                    className="flex items-center gap-1 px-3 py-1.5 border border-[#D5DAE5] text-[#475578] rounded-lg text-sm"
+                    className="flex items-center gap-1 px-3 py-1.5 border border-[var(--border-base)] text-[var(--text-color)] rounded-lg text-sm"
                     aria-label={`Download ${item.title}`}
                   >
                     <Download className="w-4 h-4" />

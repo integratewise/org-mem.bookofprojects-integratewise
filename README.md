@@ -89,11 +89,27 @@ src/
 
 ## Canonical Doctrine Source
 
-`src/imports/pasted_text/integratewise-overview.md` is the **single master document** for all doctrine, architecture, product narrative, and company content.
+`src/imports/pasted_text/integratewise-overview.md` is the app-import doctrine source for the BrandDocumentations runtime surface.
+It must align upward to:
+- Company OS v1.0 (`book:iw:company-os-v1`)
+- `/Users/nirmal/.hermes/skills/software-development/integratewise-architecture/references/may2026-doctrine-consolidation.md`
+- `/Users/nirmal/Github/integratewise-live/docs/tech/DOCTRINE_SYNC_AND_SOURCE_MAP.md`
+
+Cross-surface taxonomy rule:
+- 00 Company Strategy
+- 01 Product & Engineering
+- 02 Marketing & Creative
+- 03 Sales
+- 04 Customer Success
+- 05 Operations
+- 06 Finance, Legal, HR
+- 07 Resources & Knowledge Base
+- 08 External Communications
+- 09 Archives & Retention
 
 All 6 documentation packs (40+ documents) are extracted from sections of this file via `src/app/lib/sectionExtractor.ts` and mapped in `src/app/lib/documentationContent.ts`.
 
-**To update any doctrine or product content → edit `integratewise-overview.md` only.**
+**To update doctrine or product content shown in the app, edit `integratewise-overview.md` — but keep it aligned to the current canon hierarchy above.**
 
 ---
 

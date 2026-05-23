@@ -132,34 +132,34 @@ export function DesignTokensPage() {
 
         <TokenCard title="Type Scale & Families">
           <div className="mb-6 grid md:grid-cols-2 gap-4">
-            <div className="rounded-xl p-4" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
+            <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>Instrument Sans</p>
               <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Primary UI and body family for readable product and documentation surfaces.</p>
             </div>
-            <div className="rounded-xl p-4" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
+            <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>DM Serif Display</p>
               <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Editorial and display headings for the paper-like continuity voice.</p>
             </div>
-            <div className="rounded-xl p-4" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
+            <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>IBM Plex Mono</p>
               <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Tokens, technical labels, code, schemas, and system references.</p>
             </div>
-            <div className="rounded-xl p-4" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
+            <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>Bebas Neue</p>
               <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Condensed emphasis for posters, section marks, and high-contrast callouts.</p>
             </div>
           </div>
           <div className="space-y-5">
             {([
-              { name: '5xl', rem: '3rem', px: '48px', variable: '--text-5xl' },
-              { name: '4xl', rem: '2.25rem', px: '36px', variable: '--text-4xl' },
-              { name: '3xl', rem: '1.875rem', px: '30px', variable: '--text-3xl' },
-              { name: '2xl', rem: '1.5rem', px: '24px', variable: '--text-2xl' },
-              { name: 'xl', rem: '1.25rem', px: '20px', variable: '--text-xl' },
-              { name: 'lg', rem: '1.125rem', px: '18px', variable: '--text-lg' },
-              { name: 'base', rem: '1rem', px: '16px', variable: '--text-base' },
-              { name: 'sm', rem: '0.875rem', px: '14px', variable: '--text-sm' },
-              { name: 'xs', rem: '0.75rem', px: '12px', variable: '--text-xs' },
+              { name: 'display', rem: 'clamp(64px,9vw,128px)', px: '64–128px', variable: '--text-display' },
+              { name: '3xl',     rem: '1.6875rem',             px: '27px',     variable: '--text-3xl' },
+              { name: '2xl',     rem: '1.5rem',                px: '24px',     variable: '--text-2xl' },
+              { name: 'xl',      rem: '1.3125rem',             px: '21px',     variable: '--text-xl' },
+              { name: 'lg',      rem: '1.1875rem',             px: '19px',     variable: '--text-lg' },
+              { name: 'md',      rem: '1rem',                  px: '16px',     variable: '--text-md' },
+              { name: 'base',    rem: '0.90625rem',            px: '14.5px',   variable: '--text-base' },
+              { name: 'sm',      rem: '0.875rem',              px: '14px',     variable: '--text-sm' },
+              { name: 'xs',      rem: '0.6875rem',             px: '11px',     variable: '--text-xs' },
             ] as const).map((t) => (
               <div
                 key={t.name}
@@ -305,8 +305,8 @@ export function DesignTokensPage() {
             ] as const).map((s) => (
               <div key={s.name} className="flex flex-col gap-3">
                 <div
-                  className="h-32 bg-white rounded-xl flex items-center justify-center"
-                  style={{ boxShadow: s.value }}
+                  className="h-32 rounded-xl flex items-center justify-center"
+                  style={{ boxShadow: s.value, background: 'var(--paper)' }}
                 >
                   <p className="font-medium" style={{ color: 'var(--slate)' }}>
                     shadow-{s.name}
@@ -337,14 +337,14 @@ export function DesignTokensPage() {
           <TokenCard title="Buttons">
             <div className="flex flex-wrap gap-3">
               <button
-                className="px-6 py-3 rounded-lg font-medium text-white transition-colors"
-                style={{ background: 'var(--forest)' }}
+                className="px-6 py-3 rounded-lg font-medium transition-colors"
+                style={{ background: 'var(--forest)', color: 'var(--paper)' }}
               >
                 Primary
               </button>
               <button
-                className="px-6 py-3 rounded-lg font-medium text-white transition-colors"
-                style={{ background: 'var(--gold)' }}
+                className="px-6 py-3 rounded-lg font-medium transition-colors"
+                style={{ background: 'var(--gold)', color: 'var(--forest)' }}
               >
                 Gold Accent
               </button>
@@ -378,13 +378,11 @@ export function DesignTokensPage() {
                 </p>
               </div>
               <div
-                className="p-6 rounded-xl text-white"
-                style={{ background: 'var(--forest)' }}
+                className="p-6 rounded-xl"
+                style={{ background: 'var(--forest)', color: 'var(--paper)' }}
               >
                 <h4 className="font-semibold">Canonical Accent Card</h4>
-                <p className="text-sm mt-2 opacity-80">
-                  Primary brand color background
-                </p>
+                <p className="text-sm mt-2 opacity-80">Primary brand color background</p>
               </div>
             </div>
           </TokenCard>
@@ -396,14 +394,14 @@ export function DesignTokensPage() {
                 type="text"
                 placeholder="Default input"
                 className="w-full px-4 py-2.5 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--forest)]/30"
-                style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)', color: 'var(--ink)' }}
+                style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)', color: 'var(--ink)' }}
                 readOnly
               />
               <input
                 type="text"
                 placeholder="Focused input"
                 className="w-full px-4 py-2.5 rounded-lg text-sm focus:outline-none"
-                style={{ background: 'white', border: '2px solid var(--forest)', color: 'var(--ink)' }}
+                style={{ background: 'var(--paper-warm)', border: '2px solid var(--forest)', color: 'var(--ink)' }}
                 readOnly
               />
             </div>
@@ -478,7 +476,7 @@ function TokenCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-white rounded-xl p-8" style={{ border: '1px solid var(--rule-light)' }}>
+    <div className="rounded-xl p-8" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)', boxShadow: '0 1px 4px 0 rgba(12,12,12,0.06)' }}>
       {title && (
         <h3 className="text-base font-semibold mb-6" style={{ color: 'var(--ink)' }}>
           {title}

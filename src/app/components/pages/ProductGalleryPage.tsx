@@ -285,8 +285,8 @@ export function ProductGalleryPage() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
-          <h1 className="text-3xl font-bold text-gray-900">Product Gallery</h1>
-          <p className="text-gray-500 mt-2">
+          <h1 className="text-3xl font-bold" style={{ color: 'var(--text-strong)' }}>Product Gallery</h1>
+          <p className="mt-2" style={{ color: 'var(--text-muted)' }}>
             All brand assets in one place. Preview, customize, and download.
           </p>
         </motion.div>
@@ -296,27 +296,29 @@ export function ProductGalleryPage() {
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
         {/* Search */}
         <div className="relative flex-1 min-w-[200px] max-w-md">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5" style={{ color: 'var(--text-faint)' }} />
           <input
             type="text"
             placeholder="Search assets..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-10 pr-4 py-2 border border-[var(--border-base)] rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
           />
         </div>
 
         {/* View Toggle */}
-        <div className="flex items-center gap-2 bg-gray-100 p-1 rounded-lg">
+        <div className="flex items-center gap-2 bg-[var(--surface-2)] p-1 rounded-lg">
           <button
             onClick={() => setViewMode('grid')}
-            className={`p-2 rounded-md transition-colors ${viewMode === 'grid' ? 'bg-white shadow-sm' : 'text-gray-500'}`}
+            className={`p-2 rounded-md transition-colors ${viewMode === 'grid' ? 'shadow-sm' : ''}`}
+            style={viewMode === 'grid' ? { background: 'var(--surface-raised)' } : { color: 'var(--text-muted)' }}
           >
             <Grid className="w-4 h-4" />
           </button>
           <button
             onClick={() => setViewMode('list')}
-            className={`p-2 rounded-md transition-colors ${viewMode === 'list' ? 'bg-white shadow-sm' : 'text-gray-500'}`}
+            className={`p-2 rounded-md transition-colors ${viewMode === 'list' ? 'shadow-sm' : ''}`}
+            style={viewMode === 'list' ? { background: 'var(--surface-raised)' } : { color: 'var(--text-muted)' }}
           >
             <List className="w-4 h-4" />
           </button>
@@ -326,7 +328,8 @@ export function ProductGalleryPage() {
         <button
           onClick={downloadAll}
           disabled={downloading === 'all'}
-          className="px-4 py-2 bg-gray-900 text-white rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-gray-800 disabled:opacity-50"
+          className="px-4 py-2 text-white rounded-lg text-sm font-medium flex items-center gap-2 disabled:opacity-50"
+          style={{ background: 'var(--text-strong)' }}
         >
           <Package className="w-4 h-4" />
           {downloading === 'all' ? 'Preparing...' : 'Download All'}
@@ -341,9 +344,10 @@ export function ProductGalleryPage() {
             onClick={() => setActiveCategory(cat.id)}
             className={`px-4 py-2 rounded-xl text-sm font-medium flex items-center gap-2 transition-colors ${
               activeCategory === cat.id
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'text-white'
+                : 'bg-[var(--surface-2)] text-[var(--text-muted)] hover:bg-[var(--surface)]'
             }`}
+            style={activeCategory === cat.id ? { background: 'var(--primary-color)' } : {}}
           >
             <cat.icon className="w-4 h-4" />
             {cat.label}
@@ -352,7 +356,7 @@ export function ProductGalleryPage() {
       </div>
 
       {/* Results Count */}
-      <p className="text-sm text-gray-500 mb-4">
+      <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>
         Showing {filteredItems.length} of {galleryItems.length} assets
       </p>
 
@@ -366,11 +370,12 @@ export function ProductGalleryPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ y: -4 }}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all cursor-pointer"
+              className="rounded-xl border border-[var(--border-base)] overflow-hidden hover:shadow-lg transition-all cursor-pointer"
+              style={{ background: 'var(--surface-raised)' }}
               onClick={() => setSelectedItem(item)}
             >
               {/* Preview */}
-              <div className="aspect-square bg-gray-50 flex items-center justify-center p-4 overflow-hidden">
+              <div className="aspect-square flex items-center justify-center p-4 overflow-hidden" style={{ background: 'var(--surface)' }}>
                 {item.type === 'svg' && item.src ? (
                   <div className="w-full h-full flex items-center justify-center">
                     <img 
@@ -386,19 +391,19 @@ export function ProductGalleryPage() {
                   </div>
                 ) : (
                   <div className="text-center">
-                    <Image className="w-12 h-12 text-gray-300 mx-auto mb-2" />
-                    <span className="text-xs text-gray-400">Click to customize</span>
+                    <Image className="w-12 h-12 mx-auto mb-2" style={{ color: 'var(--text-faint)' }} />
+                    <span className="text-xs" style={{ color: 'var(--text-faint)' }}>Click to customize</span>
                   </div>
                 )}
               </div>
               
               {/* Info */}
               <div className="p-4">
-                <h3 className="font-semibold text-gray-900 text-sm">{item.title}</h3>
-                <p className="text-xs text-gray-500 mt-1 line-clamp-2">{item.description}</p>
+                <h3 className="font-semibold text-sm" style={{ color: 'var(--text-strong)' }}>{item.title}</h3>
+                <p className="text-xs mt-1 line-clamp-2" style={{ color: 'var(--text-muted)' }}>{item.description}</p>
                 <div className="flex items-center justify-between mt-3">
-                  <span className="text-xs text-gray-400">{item.size}</span>
-                  <span className="text-xs bg-gray-100 px-2 py-1 rounded">
+                  <span className="text-xs" style={{ color: 'var(--text-faint)' }}>{item.size}</span>
+                  <span className="text-xs bg-[var(--surface-2)] px-2 py-1 rounded">
                     {item.formats[0]}
                   </span>
                 </div>
@@ -415,28 +420,29 @@ export function ProductGalleryPage() {
               layout
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="bg-white rounded-xl border border-gray-200 p-4 flex items-center gap-4 hover:shadow-md transition-all cursor-pointer"
+              className="rounded-xl border border-[var(--border-base)] p-4 flex items-center gap-4 hover:shadow-md transition-all cursor-pointer"
+              style={{ background: 'var(--surface-raised)' }}
               onClick={() => setSelectedItem(item)}
             >
-              <div className="w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center shrink-0">
+              <div className="w-16 h-16 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'var(--surface)' }}>
                 {item.type === 'svg' && item.src ? (
                   <img src={item.src} alt={item.title} className="max-w-full max-h-full p-2" />
                 ) : (
-                  <FileImage className="w-6 h-6 text-gray-400" />
+                  <FileImage className="w-6 h-6" style={{ color: 'var(--text-faint)' }} />
                 )}
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-semibold text-gray-900">{item.title}</h3>
-                <p className="text-sm text-gray-500">{item.description}</p>
+                <h3 className="font-semibold" style={{ color: 'var(--text-strong)' }}>{item.title}</h3>
+                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{item.description}</p>
                 <div className="flex gap-2 mt-1">
                   {item.tags.map(tag => (
-                    <span key={tag} className="text-xs text-gray-400">#{tag}</span>
+                    <span key={tag} className="text-xs" style={{ color: 'var(--text-faint)' }}>#{tag}</span>
                   ))}
                 </div>
               </div>
               <div className="text-right shrink-0">
-                <p className="text-sm text-gray-500">{item.size}</p>
-                <p className="text-xs text-gray-400">{item.formats.join(', ')}</p>
+                <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{item.size}</p>
+                <p className="text-xs" style={{ color: 'var(--text-faint)' }}>{item.formats.join(', ')}</p>
               </div>
             </motion.div>
           ))}
@@ -446,8 +452,8 @@ export function ProductGalleryPage() {
       {/* Empty State */}
       {filteredItems.length === 0 && (
         <div className="text-center py-20">
-          <Image className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500">No assets found matching your search.</p>
+          <Image className="w-16 h-16 mx-auto mb-4" style={{ color: 'var(--text-faint)' }} />
+          <p style={{ color: 'var(--text-muted)' }}>No assets found matching your search.</p>
         </div>
       )}
 
@@ -459,25 +465,27 @@ export function ProductGalleryPage() {
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col"
+              className="rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col"
+              style={{ background: 'var(--surface-raised)' }}
             >
               {/* Header */}
-              <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+              <div className="p-6 border-b border-[var(--border-base)] flex items-center justify-between">
                 <div>
-                  <h2 className="text-xl font-bold text-gray-900">{selectedItem.title}</h2>
-                  <p className="text-sm text-gray-500">{selectedItem.description}</p>
+                  <h2 className="text-xl font-bold" style={{ color: 'var(--text-strong)' }}>{selectedItem.title}</h2>
+                  <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{selectedItem.description}</p>
                 </div>
-                <button onClick={() => setSelectedItem(null)} className="p-2 hover:bg-gray-100 rounded-lg">
+                <button onClick={() => setSelectedItem(null)} className="p-2 hover:bg-[var(--surface-2)] rounded-lg">
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Preview */}
-              <div className="flex-1 overflow-auto p-8 bg-gray-50">
+              <div className="flex-1 overflow-auto p-8" style={{ background: 'var(--surface)' }}>
                 <div 
                   ref={previewRef}
-                  className="bg-white rounded-xl shadow-lg mx-auto"
+                  className="rounded-xl shadow-lg mx-auto"
                   style={{ 
+                    background: 'var(--surface-raised)',
                     width: selectedItem.category === 'logos' ? '400px' : '600px',
                     maxWidth: '100%'
                   }}
@@ -493,7 +501,7 @@ export function ProductGalleryPage() {
                       {selectedItem.component}
                     </div>
                   ) : (
-                    <div className="aspect-video bg-gradient-to-br from-blue-900 to-blue-600 flex items-center justify-center text-white p-8">
+                    <div className="aspect-video flex items-center justify-center text-white p-8" style={{ background: 'linear-gradient(to bottom right, var(--primary-hover), var(--primary-color))' }}>
                       <div className="text-center">
                         <IntegrateWiseLogo variant="icon-only" className="h-16 w-auto mx-auto mb-4" />
                         <h3 className="text-2xl font-bold">{BRAND.name}</h3>
@@ -505,12 +513,13 @@ export function ProductGalleryPage() {
               </div>
 
               {/* Actions */}
-              <div className="p-6 border-t border-gray-200 bg-gray-50">
+              <div className="p-6 border-t border-[var(--border-base)]" style={{ background: 'var(--surface)' }}>
                 <div className="flex flex-wrap gap-3">
                   {selectedItem.type === 'editable' ? (
                     <button
                       onClick={() => { setSelectedItem(null); openEditor(selectedItem); }}
-                      className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium flex items-center gap-2 hover:bg-blue-700"
+                      className="px-6 py-3 text-white rounded-xl font-medium flex items-center gap-2"
+                      style={{ background: 'var(--primary-color)' }}
                     >
                       <Palette className="w-5 h-5" />
                       Customize & Export
@@ -519,7 +528,8 @@ export function ProductGalleryPage() {
                     <>
                       <button
                         onClick={() => downloadAsPNG(selectedItem)}
-                        className="px-4 py-2 bg-gray-900 text-white rounded-lg text-sm font-medium flex items-center gap-2"
+                        className="px-4 py-2 text-white rounded-lg text-sm font-medium flex items-center gap-2"
+                        style={{ background: 'var(--text-strong)' }}
                       >
                         <Download className="w-4 h-4" />
                         PNG
@@ -527,7 +537,8 @@ export function ProductGalleryPage() {
                       {selectedItem.formats.includes('SVG') && (
                         <button
                           onClick={() => downloadAsSVG(selectedItem)}
-                          className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium flex items-center gap-2"
+                          className="px-4 py-2 bg-[var(--surface-2)] rounded-lg text-sm font-medium flex items-center gap-2"
+                          style={{ color: 'var(--text-muted)' }}
                         >
                           <FileImage className="w-4 h-4" />
                           SVG
@@ -539,7 +550,7 @@ export function ProductGalleryPage() {
                   {/* Format tags */}
                   <div className="flex gap-2 ml-auto">
                     {selectedItem.formats.map(format => (
-                      <span key={format} className="px-3 py-1 bg-white border border-gray-200 rounded-lg text-sm text-gray-600">
+                      <span key={format} className="px-3 py-1 border border-[var(--border-base)] rounded-lg text-sm" style={{ background: 'var(--surface-raised)', color: 'var(--text-muted)' }}>
                         {format}
                       </span>
                     ))}

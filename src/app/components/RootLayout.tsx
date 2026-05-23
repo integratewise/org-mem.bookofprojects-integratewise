@@ -24,9 +24,16 @@ import {
   Mail,
   Presentation,
   LayoutDashboard,
-  Sparkles,
   Rocket,
   Image,
+  Users,
+  Wrench,
+  Scale,
+  Globe,
+  Archive,
+  HeartHandshake,
+  Sun,
+  Moon,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -53,79 +60,153 @@ interface NavGroup {
 type NavEntry = { type: 'item'; item: NavItem } | { type: 'group'; group: NavGroup };
 
 const NAV_STRUCTURE: NavEntry[] = [
-  {
-    type: 'item',
-    item: { to: '/quick-start', icon: Rocket, label: 'Quick Start', color: 'var(--gold)' },
-  },
-  {
-    type: 'item',
-    item: { to: '/gallery', icon: Image, label: 'Product Gallery', color: 'var(--slate-mid)' },
-  },
+  // ── 00 Company Strategy ──────────────────────────────────────────────
   {
     type: 'group',
     group: {
-      id: 'brand-system',
-      label: 'Brand System',
-      icon: Palette,
-      color: 'var(--forest)',
+      id: '00-company-strategy',
+      label: '00 Company Strategy',
+      icon: Building2,
+      color: 'var(--brand-primary)',
       children: [
-        { to: '/brand-assets', icon: Palette, label: 'Brand Assets', color: 'var(--forest)' },
-        { to: '/design-tokens', icon: SwatchBook, label: 'Design Tokens', color: 'var(--gold-light)' },
-        { to: '/stationery', icon: Stamp, label: 'Stationery', color: 'var(--forest-mid)' },
+        { to: '/company', icon: Target, label: 'Strategic Planning', color: 'var(--brand-primary)' },
+        { to: '/documentation?pack=pack-a', icon: BookOpen, label: 'Doctrine & Continuity', color: 'var(--brand-primary-dark)' },
       ],
     },
   },
+  // ── 01 Product & Engineering ─────────────────────────────────────────
   {
     type: 'group',
     group: {
-      id: 'company-system',
-      label: 'Company & Product',
-      icon: Building2,
+      id: '01-product-engineering',
+      label: '01 Product & Engineering',
+      icon: GitBranch,
       color: 'var(--slate)',
       children: [
-        { to: '/company', icon: Target, label: 'Strategy & Execution', color: 'var(--slate-mid)' },
-        { to: '/architecture', icon: GitBranch, label: 'Architecture', color: 'var(--slate)' },
+        { to: '/architecture', icon: GitBranch, label: 'Adaptive Spine & Architecture', color: 'var(--slate)' },
+        { to: '/documentation?pack=pack-c', icon: Box, label: 'Product Narrative & Continuity', color: 'var(--brand-accent-dark)' },
+        { to: '/documentation?pack=pack-d', icon: Shield, label: 'Technical System', color: 'var(--slate-mid)' },
       ],
     },
   },
-  // Top level items
+  // ── 02 Marketing & Creative ──────────────────────────────────────────
   {
     type: 'group',
     group: {
-      id: 'marketing-gtm',
-      label: 'Marketing & GTM',
+      id: '02-marketing-creative',
+      label: '02 Marketing & Creative',
       icon: Megaphone,
-      color: 'var(--gold)',
+      color: 'var(--brand-accent)',
       children: [
-        { to: '/generators', icon: Zap, label: 'Quick Generators', color: 'var(--gold)' },
-        { to: '/marketing', icon: Megaphone, label: 'Marketing', color: 'var(--gold)' },
+        { to: '/brand-assets', icon: Palette, label: 'Brand Assets', color: 'var(--brand-primary)' },
+        { to: '/design-tokens', icon: SwatchBook, label: 'Design Tokens', color: 'var(--brand-accent)' },
+        { to: '/stationery', icon: Stamp, label: 'Stationery', color: 'var(--brand-primary-dark)' },
+        { to: '/marketing', icon: Megaphone, label: 'Marketing', color: 'var(--brand-accent)' },
         { to: '/linkedin', icon: Megaphone, label: 'LinkedIn', color: 'var(--slate-mid)' },
-        { to: '/whatsapp', icon: MessageCircle, label: 'WhatsApp', color: 'var(--forest-bright)' },
+        { to: '/whatsapp', icon: MessageCircle, label: 'WhatsApp', color: 'var(--brand-primary-light)' },
         { to: '/email', icon: Mail, label: 'Email', color: 'var(--slate-mid)' },
         { to: '/presentations', icon: Presentation, label: 'Presentations', color: 'var(--slate)' },
-        { to: '/sales', icon: HandCoins, label: 'Sales', color: 'var(--red)' },
+        { to: '/generators', icon: Zap, label: 'Quick Generators', color: 'var(--brand-accent)' },
+        { to: '/documentation?pack=pack-b', icon: Target, label: 'Category & Positioning', color: 'var(--brand-accent)' },
       ],
     },
   },
-  {
-    type: 'item',
-    item: { to: '/control-panel', icon: LayoutDashboard, label: 'Control Panel', color: 'var(--slate-mid)' },
-  },
-  // Documentation Library (6 items)
+  // ── 03 Sales ─────────────────────────────────────────────────────────
   {
     type: 'group',
     group: {
-      id: 'documentation',
-      label: 'Documentation Library',
-      icon: BookOpen,
+      id: '03-sales',
+      label: '03 Sales',
+      icon: HandCoins,
+      color: 'var(--brand-error)',
+      children: [
+        { to: '/sales', icon: HandCoins, label: 'Sales Enablement', color: 'var(--brand-error)' },
+        { to: '/documentation?pack=pack-f', icon: Megaphone, label: 'GTM & Customer Success', color: 'var(--brand-error)' },
+      ],
+    },
+  },
+  // ── 04 Customer Success ──────────────────────────────────────────────
+  {
+    type: 'group',
+    group: {
+      id: '04-customer-success',
+      label: '04 Customer Success',
+      icon: HeartHandshake,
+      color: 'var(--brand-primary-light)',
+      children: [
+        { to: '/coming-soon?section=04', icon: HeartHandshake, label: 'Onboarding & Implementation', color: 'var(--brand-primary-light)' },
+        { to: '/coming-soon?section=04', icon: HeartHandshake, label: 'Support & Health', color: 'var(--brand-primary-light)' },
+      ],
+    },
+  },
+  // ── 05 Operations ────────────────────────────────────────────────────
+  {
+    type: 'group',
+    group: {
+      id: '05-operations',
+      label: '05 Operations',
+      icon: Wrench,
+      color: 'var(--slate-mid)',
+      children: [
+        { to: '/control-panel', icon: LayoutDashboard, label: 'Control Panel', color: 'var(--slate-mid)' },
+        { to: '/coming-soon?section=05', icon: Wrench, label: 'Runbooks & DR', color: 'var(--slate-mid)' },
+      ],
+    },
+  },
+  // ── 06 Finance, Legal, HR ────────────────────────────────────────────
+  {
+    type: 'group',
+    group: {
+      id: '06-finance-legal-hr',
+      label: '06 Finance, Legal, HR',
+      icon: Scale,
       color: 'var(--slate)',
-        children: [
-        { to: '/documentation?pack=pack-a', icon: Building2, label: 'Doctrine & Continuity Strategy', color: 'var(--forest)' },
-        { to: '/documentation?pack=pack-b', icon: Target, label: 'Category & Positioning', color: 'var(--gold)' },
-        { to: '/documentation?pack=pack-c', icon: Box, label: 'Product Narrative & Continuity', color: 'var(--gold-light)' },
-        { to: '/documentation?pack=pack-d', icon: GitBranch, label: 'Adaptive Spine & Technical System', color: 'var(--slate)' },
-        { to: '/documentation?pack=pack-e', icon: Shield, label: 'AI Governance & Trust', color: 'var(--forest-mid)' },
-        { to: '/documentation?pack=pack-f', icon: Megaphone, label: 'GTM, Sales & Customer Success', color: 'var(--red)' },
+      children: [
+        { to: '/coming-soon?section=06', icon: Scale, label: 'Finance & Legal', color: 'var(--slate)' },
+        { to: '/coming-soon?section=06', icon: Users, label: 'HR & People Ops', color: 'var(--slate)' },
+      ],
+    },
+  },
+  // ── 07 Resources & Knowledge Base ────────────────────────────────────
+  {
+    type: 'group',
+    group: {
+      id: '07-resources-kb',
+      label: '07 Resources & Knowledge Base',
+      icon: BookOpen,
+      color: 'var(--brand-accent-dark)',
+      children: [
+        { to: '/quick-start', icon: Rocket, label: 'Quick Start', color: 'var(--brand-accent)' },
+        { to: '/gallery', icon: Image, label: 'Product Gallery', color: 'var(--slate-mid)' },
+        { to: '/documentation', icon: BookOpen, label: 'Documentation Library', color: 'var(--brand-accent-dark)' },
+        { to: '/documentation?pack=pack-e', icon: Shield, label: 'AI Governance & Trust', color: 'var(--brand-primary-dark)' },
+      ],
+    },
+  },
+  // ── 08 External Communications ───────────────────────────────────────
+  {
+    type: 'group',
+    group: {
+      id: '08-external-comms',
+      label: '08 External Communications',
+      icon: Globe,
+      color: 'var(--brand-accent)',
+      children: [
+        { to: '/coming-soon?section=08', icon: Globe, label: 'Website & Public Narrative', color: 'var(--brand-accent)' },
+        { to: '/coming-soon?section=08', icon: Megaphone, label: 'Press & Events', color: 'var(--slate-mid)' },
+      ],
+    },
+  },
+  // ── 09 Archives & Retention ──────────────────────────────────────────
+  {
+    type: 'group',
+    group: {
+      id: '09-archives',
+      label: '09 Archives & Retention',
+      icon: Archive,
+      color: 'var(--slate-mid)',
+      children: [
+        { to: '/coming-soon?section=09', icon: Archive, label: 'Archives', color: 'var(--slate-mid)' },
       ],
     },
   },
@@ -135,10 +216,36 @@ const NAV_STRUCTURE: NavEntry[] = [
 
 export function RootLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set(['brand-system', 'company-system', 'marketing-gtm', 'documentation']));
+  const [isDark, setIsDark] = useState(false);
+  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set(['00-company-strategy', '01-product-engineering', '02-marketing-creative', '03-sales']));
   const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Dark mode init
+  useEffect(() => {
+    const stored = localStorage.getItem('iw-theme');
+    const shouldBeDark = stored === 'dark';
+    if (shouldBeDark) {
+      document.documentElement.classList.add('dark');
+      setIsDark(true);
+    } else {
+      document.documentElement.classList.remove('dark');
+      setIsDark(false);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    setIsDark(next);
+    if (next) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('iw-theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('iw-theme', 'light');
+    }
+  };
 
   // Auto-expand group containing the current route
   useEffect(() => {
@@ -230,8 +337,19 @@ export function RootLayout() {
     }
   };
 
+  const activeNavStyle = {
+    background: 'var(--sidebar-primary)',
+    color: 'var(--sidebar-primary-foreground)',
+    border: '1px solid var(--border-subtle)',
+  };
+
+  const inactiveNavStyle = {
+    color: 'var(--text-muted)',
+    border: '1px solid transparent',
+  };
+
   return (
-    <div className="flex h-screen overflow-hidden" style={{ background: 'var(--paper-warm)' }}>
+    <div className="flex h-screen overflow-hidden" style={{ background: 'var(--surface-canvas)' }}>
       {/* Mobile overlay */}
       {sidebarOpen && (
         <div
@@ -245,7 +363,11 @@ export function RootLayout() {
         className={`fixed lg:static inset-y-0 left-0 z-50 w-72 flex flex-col transition-transform duration-200 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
-        style={{ background: 'var(--forest)', borderRight: '1px solid var(--sidebar-border)' }}
+        style={{
+          background: 'var(--sidebar)',
+          borderRight: '1px solid var(--sidebar-border)',
+          boxShadow: '0 20px 40px -32px rgb(23 28 24 / 0.28)',
+        }}
       >
         {/* Sidebar header */}
         <div
@@ -254,12 +376,12 @@ export function RootLayout() {
         >
           <IntegrateWiseLogo variant="icon-only" className="scale-75 origin-left" />
           <div className="ml-2">
-            <p className="text-sm font-semibold text-white">IntegrateWise</p>
-              <p className="text-[11px]" style={{ color: 'rgba(244,240,232,0.72)' }}>Continuity Documentation System</p>
+            <p className="text-sm font-semibold" style={{ color: 'var(--text-strong)' }}>IntegrateWise</p>
+            <p className="text-[11px]" style={{ color: 'var(--text-muted)' }}>Continuity Documentation System</p>
           </div>
           <button
             className="ml-auto lg:hidden p-1 rounded-md"
-            style={{ color: 'rgba(244,240,232,0.72)' }}
+            style={{ color: 'var(--text-muted)' }}
             onClick={() => setSidebarOpen(false)}
           >
             <X className="w-5 h-5" />
@@ -271,7 +393,7 @@ export function RootLayout() {
           <div className="relative">
             <Search
               className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5"
-              style={{ color: 'rgba(244,240,232,0.72)' }}
+              style={{ color: 'var(--text-faint)' }}
             />
             <input
               type="text"
@@ -280,9 +402,10 @@ export function RootLayout() {
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-9 pr-3 py-2 rounded-lg text-xs"
               style={{
-                background: 'rgba(244,240,232,0.08)',
-                border: '1px solid var(--sidebar-border)',
-                color: 'rgba(244,240,232,0.82)',
+                background: 'var(--surface-raised)',
+                border: '1px solid var(--border-subtle)',
+                color: 'var(--text-default)',
+                boxShadow: 'inset 0 1px 2px rgb(23 28 24 / 0.03)',
               }}
             />
           </div>
@@ -299,22 +422,18 @@ export function RootLayout() {
                   to={item.to}
                   end={item.end}
                   onClick={() => setSidebarOpen(false)}
-                  className={({ isActive }) =>
-                    `flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-colors ${
-                      isActive ? 'text-white' : ''
-                    }`
-                  }
+                  className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-colors"
                   style={({ isActive }) =>
                     isActive
-                      ? { background: 'var(--gold)', color: 'var(--ink)' }
-                      : { color: 'rgba(244,240,232,0.82)' }
+                      ? activeNavStyle
+                      : inactiveNavStyle
                   }
                 >
                   {({ isActive }) => (
                     <>
                       <item.icon
                         className="w-5 h-5 shrink-0"
-                        style={!isActive ? { color: 'rgba(244,240,232,0.56)' } : undefined}
+                        style={{ color: isActive ? 'currentColor' : item.color || 'var(--text-faint)' }}
                       />
                       <span>{item.label}</span>
                     </>
@@ -338,8 +457,9 @@ export function RootLayout() {
                   onClick={() => toggleGroup(group.id)}
                   className="w-full flex items-center gap-2.5 px-4 py-2 rounded-lg text-left transition-colors"
                   style={{
-                    background: isExpanded ? 'rgba(244,240,232,0.06)' : 'transparent',
-                    color: hasActiveChild ? 'var(--paper)' : 'rgba(244,240,232,0.82)',
+                    background: isExpanded ? 'var(--sidebar-accent)' : 'transparent',
+                    color: hasActiveChild ? 'var(--text-strong)' : 'var(--text-muted)',
+                    border: '1px solid transparent',
                   }}
                 >
                   {isExpanded ? (
@@ -349,23 +469,23 @@ export function RootLayout() {
                   )}
                   <group.icon
                     className="w-4 h-4 shrink-0"
-                    style={{ color: hasActiveChild ? group.color : 'var(--brand-navy-500)' }}
+                    style={{ color: hasActiveChild ? group.color : 'var(--text-faint)' }}
                   />
                   <span className="text-[13px] font-medium flex-1">{group.label}</span>
-                  <span
-                    className="text-[10px] px-1.5 py-0.5 rounded-full"
-                    style={{
-                      background: `${group.color}20`,
-                      color: group.color,
-                    }}
-                  >
+                    <span
+                      className="text-[10px] px-1.5 py-0.5 rounded-full"
+                      style={{
+                        background: `color-mix(in srgb, ${group.color} 12%, var(--paper))`,
+                        color: group.color,
+                      }}
+                    >
                     {group.children.length}
                   </span>
                 </button>
 
                 {/* Group children */}
                 {isExpanded && (
-                  <div className="ml-4 pl-3 space-y-0.5" style={{ borderLeft: `2px solid ${group.color}25` }}>
+                  <div className="ml-4 pl-3 space-y-0.5" style={{ borderLeft: `2px solid color-mix(in srgb, ${group.color} 18%, white)` }}>
                     {group.children.map((child) => {
                       // For doc pack links with query params, use button + navigate
                       if (child.to.includes('?')) {
@@ -377,14 +497,14 @@ export function RootLayout() {
                             className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-left transition-colors text-sm"
                             style={
                               isActive
-                                ? { background: 'var(--gold)', color: 'var(--ink)' }
-                                : { color: 'rgba(244,240,232,0.82)' }
+                                ? activeNavStyle
+                                : inactiveNavStyle
                             }
                           >
                             <child.icon
                               className="w-4 h-4 shrink-0"
                               style={{
-                                color: isActive ? 'var(--ink)' : child.color || 'rgba(244,240,232,0.56)',
+                                color: isActive ? 'currentColor' : child.color || 'var(--text-faint)',
                               }}
                             />
                             <span className="text-xs">{child.label}</span>
@@ -398,15 +518,11 @@ export function RootLayout() {
                           key={child.to}
                           to={child.to}
                           onClick={() => setSidebarOpen(false)}
-                          className={({ isActive }) =>
-                            `flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors ${
-                              isActive ? 'text-white' : ''
-                            }`
-                          }
+                          className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-colors"
                           style={({ isActive }) =>
                             isActive
-                              ? { background: 'var(--gold)', color: 'var(--ink)' }
-                              : { color: 'rgba(244,240,232,0.82)' }
+                              ? activeNavStyle
+                              : inactiveNavStyle
                           }
                         >
                           {({ isActive }) => (
@@ -414,7 +530,7 @@ export function RootLayout() {
                               <child.icon
                                 className="w-4 h-4 shrink-0"
                                 style={{
-                                  color: isActive ? 'var(--ink)' : child.color || 'rgba(244,240,232,0.56)',
+                                  color: isActive ? 'currentColor' : child.color || 'var(--text-faint)',
                                 }}
                               />
                               <span className="text-xs">{child.label}</span>
@@ -432,11 +548,29 @@ export function RootLayout() {
 
         {/* Sidebar footer */}
         <div className="p-4 shrink-0" style={{ borderTop: '1px solid var(--sidebar-border)' }}>
-          <div className="px-4 py-3 rounded-lg" style={{ background: 'rgba(184,148,63,0.18)' }}>
-            <p className="text-xs font-medium text-white">Continuity Documentation System v1.0</p>
-            <p className="text-[11px] mt-0.5" style={{ color: 'rgba(244,240,232,0.72)' }}>
+          <div className="flex items-center gap-2">
+          <div
+            className="px-4 py-3 rounded-lg flex-1"
+            style={{
+              background: 'var(--accent-soft)',
+              border: '1px solid var(--border-subtle)',
+            }}
+          >
+            <p className="text-xs font-medium" style={{ color: 'var(--text-strong)' }}>
+              Continuity Documentation System v1.0
+            </p>
+            <p className="text-[11px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
               6 Doctrine Packs &middot; 40 Documents
             </p>
+          </div>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg shrink-0 transition-colors"
+            style={{ color: 'var(--text-muted)', border: '1px solid var(--border-subtle)', background: 'var(--surface-raised)' }}
+            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
           </div>
         </div>
       </aside>
@@ -446,11 +580,14 @@ export function RootLayout() {
         {/* Top bar */}
         <header
           className="h-16 flex items-center px-6 shrink-0"
-          style={{ background: 'var(--paper)', borderBottom: '1px solid var(--rule-light)' }}
+          style={{
+            background: 'var(--surface)',
+            borderBottom: '1px solid var(--border-subtle)',
+          }}
         >
           <button
             className="lg:hidden p-2 -ml-2 mr-3 rounded-md"
-            style={{ color: 'var(--slate)' }}
+            style={{ color: 'var(--text-muted)' }}
             onClick={() => setSidebarOpen(true)}
           >
             <Menu className="w-5 h-5" />
@@ -470,10 +607,10 @@ export function RootLayout() {
                     if (isMatch) {
                       return (
                         <>
-                          <span className="text-sm" style={{ color: 'var(--slate-mid)' }}>
+                          <span className="text-sm" style={{ color: 'var(--text-muted)' }}>
                             {entry.group.label}
                           </span>
-                          <ChevronRight className="w-3.5 h-3.5" style={{ color: 'var(--rule)' }} />
+                          <ChevronRight className="w-3.5 h-3.5" style={{ color: 'var(--text-faint)' }} />
                         </>
                       );
                     }
@@ -482,7 +619,7 @@ export function RootLayout() {
               }
               return null;
             })()}
-            <h1 className="text-lg font-semibold" style={{ color: 'var(--ink)' }}>
+            <h1 className="text-lg font-semibold" style={{ color: 'var(--text-strong)' }}>
               {currentPage}
             </h1>
           </div>

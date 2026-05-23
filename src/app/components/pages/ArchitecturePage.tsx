@@ -20,7 +20,7 @@ import {
 function AnimatedNode({ 
   icon: Icon, 
   label, 
-  color = "#4154A3", 
+  color = "var(--primary-color)", 
   delay = 0,
   isActive = false,
   pulse = false
@@ -44,8 +44,8 @@ function AnimatedNode({
         whileTap={{ scale: 0.95 }}
         className={`w-14 h-14 rounded-xl flex items-center justify-center shadow-lg ${isActive ? 'ring-2 ring-offset-2' : ''}`}
         style={{ 
-          background: `linear-gradient(135deg, ${color}, ${color}dd)`,
-          boxShadow: `0 4px 14px ${color}40`,
+          background: 'linear-gradient(135deg, ' + color + ', ' + color + 'dd)',
+          boxShadow: '0 4px 14px ' + color + '40',
           ringColor: color
         }}
       >
@@ -61,13 +61,13 @@ function AnimatedNode({
           />
         )}
       </motion.div>
-      <span className="mt-2 text-xs font-medium text-[#475578] text-center max-w-[80px]">{label}</span>
+      <span className="mt-2 text-xs font-medium text-[var(--text-color)] text-center max-w-[80px]">{label}</span>
       
       {/* Active indicator */}
       {isActive && (
         <motion.div
           layoutId="activeIndicator"
-          className="absolute -bottom-1 w-2 h-2 rounded-full bg-[#10B981]"
+          className="absolute -bottom-1 w-2 h-2 rounded-full bg-[var(--success-color)]"
         />
       )}
     </motion.div>
@@ -78,7 +78,7 @@ function AnimatedNode({
 function AnimatedConnector({ 
   direction = "horizontal", 
   delay = 0, 
-  color = "#4154A3",
+  color = "var(--primary-color)",
   animated = false
 }: { 
   direction?: "horizontal" | "vertical"; 
@@ -95,7 +95,7 @@ function AnimatedConnector({
         animate={{ scaleX: 1, scaleY: 1 }}
         transition={{ delay, duration: 0.5 }}
         className={`${isHorizontal ? 'w-full h-0.5' : 'w-0.5 h-full'}`}
-        style={{ background: `linear-gradient(${isHorizontal ? '90deg' : '180deg'}, transparent, ${color}, transparent)` }}
+        style={{ background: 'linear-gradient(' + (isHorizontal ? '90deg' : '180deg') + ', transparent, ' + color + ', transparent)' }}
       />
       
       {animated && (
@@ -113,7 +113,7 @@ function AnimatedConnector({
       )}
       
       <ArrowRight 
-        className={`absolute ${isHorizontal ? '' : 'rotate-90'} text-[#9BA8C2]`} 
+        className={`absolute ${isHorizontal ? '' : 'rotate-90'} text-[var(--text-faint)]`} 
         size={14}
       />
     </div>
@@ -145,7 +145,7 @@ function AnimatedLayerCard({
           animate={{ scaleY: 1 }}
           transition={{ delay: number * 0.15 + 0.3, duration: 0.5 }}
           className="absolute left-5 top-12 w-0.5 h-full origin-top"
-          style={{ background: `linear-gradient(180deg, ${color}, ${color}40)` }}
+          style={{ background: 'linear-gradient(180deg, ' + color + ', ' + color + '40)' }}
         />
       )}
       
@@ -161,7 +161,7 @@ function AnimatedLayerCard({
       {/* Content card */}
       <motion.div
         whileHover={{ y: -2, boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
-        className="bg-white rounded-xl border border-[#D5DAE5] p-5 shadow-sm transition-all"
+        className="rounded-xl border border-[var(--border-base)] p-5 shadow-sm transition-all" style={{ background: 'var(--surface-raised)' }}
       >
         <div className="flex items-center gap-3 mb-3">
           <motion.div
@@ -170,7 +170,7 @@ function AnimatedLayerCard({
           >
             <Icon className="w-5 h-5" style={{ color }} />
           </motion.div>
-          <h4 className="font-semibold text-[#1B2544]">{title}</h4>
+          <h4 className="font-semibold text-[var(--text-color)]">{title}</h4>
         </div>
         
         <motion.p 
@@ -183,7 +183,7 @@ function AnimatedLayerCard({
           {subtitle}
         </motion.p>
         
-        <p className="text-sm text-[#5F6E93] mb-4">{description}</p>
+        <p className="text-sm text-[var(--text-muted)] mb-4">{description}</p>
         
         <ul className="space-y-2">
           {features.map((f: string, i: number) => (
@@ -192,14 +192,14 @@ function AnimatedLayerCard({
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: number * 0.15 + 0.3 + i * 0.1 }}
-              className="flex items-start gap-2 text-sm text-[#475578]"
+              className="flex items-start gap-2 text-sm text-[var(--text-color)]"
             >
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: number * 0.15 + 0.4 + i * 0.1, type: "spring" }}
               >
-                <CheckCircle className="w-4 h-4 text-[#10B981] shrink-0 mt-0.5" />
+                <CheckCircle className="w-4 h-4 text-[var(--success-color)] shrink-0 mt-0.5" />
               </motion.div>
               {f}
             </motion.li>
@@ -235,23 +235,27 @@ function PipelineStage({
     >
       <motion.div
         whileHover={{ scale: 1.02 }}
-        className={`p-4 rounded-xl border-2 transition-all ${isActive ? 'border-[#4154A3] bg-[rgba(65,84,163,0.05)]' : 'border-[#E8ECF2] bg-white'}`}
+        className="p-4 rounded-xl border-2 transition-all"
+        style={{ 
+          borderColor: isActive ? 'var(--primary-color)' : 'var(--border-subtle)',
+          background: isActive ? 'var(--primary-soft)' : 'var(--surface-raised)'
+        }}
       >
         <div className="flex items-center gap-3 mb-2">
           <motion.div
             animate={isActive ? { rotate: 360 } : {}}
             transition={{ duration: 2, repeat: isActive ? Infinity : 0, ease: "linear" }}
             className="w-10 h-10 rounded-lg flex items-center justify-center"
-            style={{ background: isActive ? color : '#F0F2F7' }}
+            style={{ background: isActive ? color : 'var(--surface-2)' }}
           >
-            <Icon className="w-5 h-5" style={{ color: isActive ? 'white' : '#5F6E93' }} />
+            <Icon className="w-5 h-5" style={{ color: isActive ? 'white' : 'var(--text-muted)' }} />
           </motion.div>
           <div>
-            <span className="text-xs font-bold text-[#9BA8C2]">Stage {number}</span>
-            <h4 className="font-semibold text-[#1B2544] text-sm">{title}</h4>
+            <span className="text-xs font-bold text-[var(--text-faint)]">Stage {number}</span>
+            <h4 className="font-semibold text-[var(--text-color)] text-sm">{title}</h4>
           </div>
         </div>
-        <p className="text-xs text-[#5F6E93]">{description}</p>
+        <p className="text-xs text-[var(--text-muted)]">{description}</p>
       </motion.div>
       
       {number < 8 && (
@@ -259,7 +263,7 @@ function PipelineStage({
           initial={{ scaleY: 0 }}
           animate={{ scaleY: 1 }}
           transition={{ delay: number * 0.1 + 0.2 }}
-          className="absolute left-1/2 -bottom-4 w-0.5 h-4 origin-top bg-gradient-to-b from-[#4154A3] to-transparent"
+          className="absolute left-1/2 -bottom-4 w-0.5 h-4 origin-top bg-gradient-to-b from-[var(--primary-color)] to-transparent"
         />
       )}
     </motion.div>
@@ -300,7 +304,7 @@ function FlowDiagram({
       initial={{ y: 30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       whileHover={{ scale: 1.01 }}
-      className="bg-white rounded-xl p-6 border border-[#D5DAE5] shadow-sm hover:shadow-lg transition-all"
+      className="rounded-xl p-6 border border-[var(--border-base)] shadow-sm hover:shadow-lg transition-all" style={{ background: 'var(--surface-raised)' }}
     >
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
@@ -316,11 +320,11 @@ function FlowDiagram({
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold px-2 py-0.5 rounded text-white" style={{ background: color }}>Flow {letter}</span>
           </div>
-          <h4 className="font-semibold text-[#1B2544]">{title}</h4>
+          <h4 className="font-semibold text-[var(--text-color)]">{title}</h4>
         </div>
       </div>
       
-      <p className="text-sm text-[#5F6E93] mb-6">{description}</p>
+      <p className="text-sm text-[var(--text-muted)] mb-6">{description}</p>
       
       {/* Redesigned Flow Steps - 3-column Grid Layout */}
       <div className="relative">
@@ -339,22 +343,21 @@ function FlowDiagram({
                 className="relative"
               >
                 <motion.div
-                  animate={{
-                    scale: isActive ? 1.05 : 1,
-                    boxShadow: isActive ? `0 0 20px ${color}40` : isCompleted ? `0 0 10px ${color}20` : '0 2px 8px rgba(0,0,0,0.06)'
+                  animate={{ scale: isActive ? 1.05 : 1 }}
+                  className="flex flex-col items-center p-4 rounded-xl min-h-[100px] transition-all border"
+                  style={{ 
+                    borderWidth: isActive ? '2px' : '1px',
+                    borderColor: isActive ? color : isCompleted ? color + '40' : 'var(--border-subtle)',
+                    background: isActive ? 'var(--surface-raised)' : 'var(--surface-raised)',
+                    boxShadow: isActive ? '0 0 20px ' + color + '40' : isCompleted ? '0 0 10px ' + color + '20' : '0 2px 8px rgb(0 0 0 / 0.06)'
                   }}
-                  className={`flex flex-col items-center p-4 rounded-xl min-h-[100px] transition-all ${
-                    isActive ? 'bg-[rgba(65,84,163,0.08)] border-2' : 
-                    isCompleted ? 'bg-[rgba(65,84,163,0.04)] border' : 'bg-[#F8FAFC] border'
-                  }`}
-                  style={{ borderColor: isActive ? color : isCompleted ? `${color}40` : '#E8ECF2' }}
                 >
                   {/* Step number indicator */}
                   <div 
                     className="absolute top-2 left-2 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold"
                     style={{ 
-                      background: isActive ? color : isCompleted ? color : '#E8ECF2',
-                      color: isActive || isCompleted ? 'white' : '#9BA8C2'
+                      background: isActive ? color : isCompleted ? color : 'var(--border-subtle)',
+                      color: isActive || isCompleted ? 'white' : 'var(--text-faint)'
                     }}
                   >
                     {i + 1}
@@ -366,18 +369,20 @@ function FlowDiagram({
                       y: [0, -3, 0],
                     } : {}}
                     transition={{ duration: 0.5 }}
-                    className={`w-11 h-11 rounded-xl flex items-center justify-center mb-2 mt-1 ${
-                      isActive ? 'text-white' : isCompleted ? 'text-white' : 'text-[#5F6E93]'
-                    }`}
-                    style={{ background: isActive ? color : isCompleted ? `${color}cc` : '#F0F2F7' }}
+                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-2 mt-1"
+                    style={{ 
+                      background: isActive ? color : isCompleted ? color + 'cc' : 'var(--surface-2)',
+                      color: isActive || isCompleted ? 'white' : 'var(--text-muted)'
+                    }}
                   >
                     <step.icon className="w-5 h-5" />
                   </motion.div>
                   
                   {/* Label */}
-                  <span className={`text-xs text-center font-medium leading-tight ${
-                    isActive ? 'text-[#1B2544]' : 'text-[#5F6E93]'
-                  }`}>
+                  <span 
+                    className="text-xs text-center font-medium leading-tight"
+                    style={{ color: isActive ? 'var(--text-color)' : 'var(--text-muted)' }}
+                  >
                     {step.label}
                   </span>
                   
@@ -396,7 +401,7 @@ function FlowDiagram({
                     >
                       <ArrowRight 
                         className="w-4 h-4" 
-                        style={{ color: isCompleted ? color : '#E8ECF2' }}
+                        style={{ color: isCompleted ? color : 'var(--border-subtle)' }}
                       />
                     </motion.div>
                   )}
@@ -406,7 +411,7 @@ function FlowDiagram({
                 {isActive && (
                   <motion.div
                     className="absolute inset-0 rounded-xl pointer-events-none"
-                    style={{ border: `2px solid ${color}` }}
+                    style={{ border: '2px solid ' + color }}
                     animate={{ opacity: [0.5, 1, 0.5] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   />
@@ -418,16 +423,16 @@ function FlowDiagram({
         
         {/* Progress indicator at bottom */}
         <div className="mt-4 flex items-center gap-2">
-          <div className="flex-1 h-1.5 bg-[#E8ECF2] rounded-full overflow-hidden">
+          <div className="flex-1 h-1.5 bg-[var(--border-subtle)] rounded-full overflow-hidden">
             <motion.div
               className="h-full rounded-full"
               style={{ background: color }}
               initial={{ width: '0%' }}
-              animate={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
+              animate={{ width: String(((activeStep + 1) / steps.length) * 100) + '%' }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             />
           </div>
-          <span className="text-xs font-medium text-[#5F6E93] min-w-[40px] text-right">
+          <span className="text-xs font-medium text-[var(--text-muted)] min-w-[40px] text-right">
             {activeStep + 1}/{steps.length}
           </span>
         </div>
@@ -438,8 +443,8 @@ function FlowDiagram({
           style={{ background: color }}
           animate={{
             // Calculate position based on active step in 3-column grid
-            top: `${Math.floor(activeStep / 3) * 116 + 50}px`,
-            left: `${(activeStep % 3) * 33.33 + 16.5}%`,
+            top: String(Math.floor(activeStep / 3) * 116 + 50) + 'px',
+            left: String((activeStep % 3) * 33.33 + 16.5) + '%',
             opacity: [0, 1, 1, 0]
           }}
           transition={{
@@ -457,10 +462,10 @@ function SpineVisualization() {
   const [activeNode, setActiveNode] = useState(0);
   
   const nodes = [
-    { icon: Box, label: 'Entities', color: '#4154A3' },
-    { icon: Link2, label: 'Relationships', color: '#6B7DC4' },
-    { icon: FileText, label: 'Schema', color: '#364789' },
-    { icon: Database, label: 'Truth', color: '#1B2544' },
+    { icon: Box, label: 'Entities', color: 'var(--primary-color)' },
+    { icon: Link2, label: 'Relationships', color: 'var(--brand-primary-light)' },
+    { icon: FileText, label: 'Schema', color: 'var(--primary-hover)' },
+    { icon: Database, label: 'Truth', color: 'var(--text-color)' },
   ];
 
   useEffect(() => {
@@ -476,15 +481,15 @@ function SpineVisualization() {
       <motion.div
         className="w-32 h-32 mx-auto rounded-full flex items-center justify-center"
         style={{ 
-          background: 'linear-gradient(135deg, #4154A3, #1B2544)',
-          boxShadow: '0 0 40px rgba(65, 84, 163, 0.4)'
+          background: 'linear-gradient(135deg, var(--primary-color), var(--text-color))',
+          boxShadow: '0 0 40px color-mix(in srgb, var(--forest-mid) 40%, transparent)'
         }}
         animate={{ 
           scale: [1, 1.05, 1],
           boxShadow: [
-            '0 0 40px rgba(65, 84, 163, 0.4)',
-            '0 0 60px rgba(65, 84, 163, 0.6)',
-            '0 0 40px rgba(65, 84, 163, 0.4)'
+            '0 0 40px color-mix(in srgb, var(--forest-mid) 40%, transparent)',
+            '0 0 60px color-mix(in srgb, var(--forest-mid) 60%, transparent)',
+            '0 0 40px color-mix(in srgb, var(--forest-mid) 40%, transparent)'
           ]
         }}
         transition={{ duration: 3, repeat: Infinity }}
@@ -495,7 +500,7 @@ function SpineVisualization() {
         {[0, 1, 2].map((i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full border-2 border-white/20"
+            className="absolute rounded-full border-2 border-[var(--paper)]/20"
             style={{ 
               width: 160 + i * 40, 
               height: 160 + i * 40,
@@ -510,8 +515,8 @@ function SpineVisualization() {
         ))}
       </motion.div>
       
-      <p className="text-center mt-4 font-medium text-[#1B2544]">The Spine (SSOT)</p>
-      <p className="text-center text-xs text-[#5F6E93]">Canonical Truth Boundary</p>
+      <p className="text-center mt-4 font-medium text-[var(--text-color)]">The Spine (SSOT)</p>
+      <p className="text-center text-xs text-[var(--text-muted)]">Canonical Truth Boundary</p>
     </div>
   );
 }
@@ -519,12 +524,12 @@ function SpineVisualization() {
 // Cognitive loop visualization
 function CognitiveLoopViz() {
   const steps = [
-    { icon: Eye, label: 'Entity 360', color: '#4154A3' },
-    { icon: Brain, label: 'Think', color: '#6B7DC4' },
-    { icon: Shield, label: 'Govern', color: '#364789' },
-    { icon: Users, label: 'HITL', color: '#EB4379' },
-    { icon: Zap, label: 'Act', color: '#F54476' },
-    { icon: RefreshCw, label: 'Adjust', color: '#10B981' },
+    { icon: Eye, label: 'Entity 360', color: 'var(--primary-color)' },
+    { icon: Brain, label: 'Think', color: 'var(--brand-primary-light)' },
+    { icon: Shield, label: 'Govern', color: 'var(--primary-hover)' },
+    { icon: Users, label: 'HITL', color: 'var(--accent-color)' },
+    { icon: Zap, label: 'Act', color: 'var(--error-color)' },
+    { icon: RefreshCw, label: 'Adjust', color: 'var(--success-color)' },
   ];
 
   return (
@@ -551,7 +556,7 @@ function CognitiveLoopViz() {
               >
                 <step.icon className="w-5 h-5" />
               </motion.div>
-              <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs font-medium text-[#475578] whitespace-nowrap">
+              <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-xs font-medium text-[var(--text-color)] whitespace-nowrap">
                 {step.label}
               </span>
             </motion.div>
@@ -560,7 +565,7 @@ function CognitiveLoopViz() {
         
         {/* Center hub */}
         <motion.div
-          className="absolute left-1/2 top-1/2 -ml-8 -mt-8 w-16 h-16 rounded-full bg-gradient-to-br from-[#4154A3] to-[#1B2544] flex items-center justify-center"
+          className="absolute left-1/2 top-1/2 -ml-8 -mt-8 w-16 h-16 rounded-full bg-gradient-to-br from-[var(--primary-color)] to-[var(--text-color)] flex items-center justify-center"
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         >
@@ -611,14 +616,14 @@ export function ArchitecturePage() {
   }, []);
 
   const pipelineStages = [
-    { icon: Cloud, title: 'Ingest', desc: 'External data enters via connectors, uploads, webhooks', color: '#4154A3' },
-    { icon: Settings, title: 'Normalize', desc: 'All data passes through 8-stage pipeline', color: '#6B7DC4' },
-    { icon: Database, title: 'Store', desc: 'Canonical truth written to Spine', color: '#364789' },
-    { icon: Eye, title: 'Render', desc: 'Workspace reads Spine projections', color: '#1B2544' },
-    { icon: Brain, title: 'Think', desc: 'AI reasons over Entity 360', color: '#4154A3' },
-    { icon: Shield, title: 'Govern/HITL', desc: 'Approval gates enforced', color: '#6B7DC4' },
-    { icon: Zap, title: 'Act', desc: 'Approved actions executed', color: '#364789' },
-    { icon: RefreshCw, title: 'Re-ingest', desc: 'Outcomes return to Spine', color: '#10B981' },
+    { icon: Cloud, title: 'Ingest', desc: 'External data enters via connectors, uploads, webhooks', color: 'var(--primary-color)' },
+    { icon: Settings, title: 'Normalize', desc: 'All data passes through 8-stage pipeline', color: 'var(--brand-primary-light)' },
+    { icon: Database, title: 'Store', desc: 'Canonical truth written to Spine', color: 'var(--primary-hover)' },
+    { icon: Eye, title: 'Render', desc: 'Workspace reads Spine projections', color: 'var(--text-color)' },
+    { icon: Brain, title: 'Think', desc: 'AI reasons over Entity 360', color: 'var(--primary-color)' },
+    { icon: Shield, title: 'Govern/HITL', desc: 'Approval gates enforced', color: 'var(--brand-primary-light)' },
+    { icon: Zap, title: 'Act', desc: 'Approved actions executed', color: 'var(--primary-hover)' },
+    { icon: RefreshCw, title: 'Re-ingest', desc: 'Outcomes return to Spine', color: 'var(--success-color)' },
   ];
 
   return (
@@ -627,23 +632,24 @@ export function ArchitecturePage() {
       <motion.div 
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="mb-10 text-center"
+        className="mb-8"
       >
         <motion.div 
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 200 }}
-          className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-[rgba(65,84,163,0.08)] rounded-full"
+          className="inline-flex items-center gap-2 mb-3 px-3 py-1.5 rounded-full"
+          style={{ background: 'var(--surface-2)', border: '1px solid var(--border-subtle)' }}
         >
-          <Layers className="w-4 h-4 text-[#4154A3]" />
-          <span className="text-xs font-semibold text-[#4154A3] uppercase tracking-wider">Technical System</span>
+          <Layers className="w-4 h-4 text-[var(--primary-color)]" />
+          <span className="text-xs font-semibold text-[var(--primary-color)] uppercase tracking-wider">Technical System</span>
         </motion.div>
         
         <motion.h1 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1 }}
-          className="text-4xl font-bold text-[#1B2544] mb-4"
+          className="text-3xl lg:text-4xl font-bold text-[var(--text-color)] mb-3"
         >
           IntegrateWise Architecture
         </motion.h1>
@@ -652,9 +658,9 @@ export function ArchitecturePage() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-lg text-[#5F6E93] leading-relaxed max-w-2xl mx-auto"
+          className="text-base lg:text-lg text-[var(--text-muted)] leading-relaxed max-w-3xl"
         >
-          An <strong className="text-[#1B2544]">Adaptive Continuity Workspace</strong>, hydrated from the Spine and governed by human approvals.
+          An <strong className="text-[var(--text-color)]">Adaptive Continuity Workspace</strong>, hydrated from the Spine and governed by human approvals.
         </motion.p>
       </motion.div>
 
@@ -670,18 +676,18 @@ export function ArchitecturePage() {
             animate={{ rotate: [0, 10, -10, 0] }}
             transition={{ duration: 5, repeat: Infinity }}
           >
-            <Layers className="w-6 h-6 text-[#4154A3]" />
+            <Layers className="w-6 h-6 text-[var(--primary-color)]" />
           </motion.div>
-          <h2 className="text-2xl font-bold text-[#1B2544]">Layer Architecture (L0-L5)</h2>
+          <h2 className="text-2xl font-bold text-[var(--text-color)]">Layer Architecture (L0-L5)</h2>
         </div>
         
-        <div className="bg-white rounded-2xl border border-[#D5DAE5] p-6 shadow-sm">
+        <div className="rounded-2xl border border-[var(--border-base)] p-6 shadow-sm" style={{ background: 'var(--surface)' }}>
           <AnimatedLayerCard 
             number={0}
             title="Connection Layer"
             subtitle="Data Ingestion & Connectivity"
             description="Gateways, connectors, webhooks — raw data entering the system."
-            color="#6B7DC4"
+            color="var(--brand-primary-light)"
             icon={Cloud}
             features={[
               "API gateways and connectors",
@@ -696,7 +702,7 @@ export function ArchitecturePage() {
             title="Adaptive Continuity Workspace (projected from Spine)"
             subtitle="Human Interface Layer"
             description="Adaptive Continuity Workspace — the UI where humans see truth, signals, and approval cards projected from current continuity."
-            color="#4154A3"
+            color="var(--primary-color)"
             icon={Globe}
             features={[
               "Unified dashboard interface",
@@ -711,7 +717,7 @@ export function ArchitecturePage() {
             title="Cognitive Intelligence Overlay"
             subtitle="AI Reasoning & Detection"
             description="Entity 360, Depth Matrix, signal detection, proposal generation."
-            color="#EB4379"
+            color="var(--accent-color)"
             icon={Brain}
             features={[
               "Entity 360 construction",
@@ -726,7 +732,7 @@ export function ArchitecturePage() {
             title="Canonical Truth & Memory Layer"
             subtitle="Spine & Knowledge Store"
             description="Spine + Knowledge + Memory Accumulator — normalized entities, relationships, AI memory."
-            color="#1B2544"
+            color="var(--text-color)"
             icon={Database}
             features={[
               "Spine truth boundary",
@@ -741,7 +747,7 @@ export function ArchitecturePage() {
             title="Orchestration & Middleware"
             subtitle="Routing & Coordination"
             description="Workflow/BFF, pipelines, queueing — everything that routes and coordinates between L0–L3."
-            color="#F59E0B"
+            color="var(--warning-color)"
             icon={Workflow}
             features={[
               "Workflow engine",
@@ -756,7 +762,7 @@ export function ArchitecturePage() {
             title="Infrastructure Services"
             subtitle="Core Platform Infrastructure"
             description="Compute, storage, networking, and security services that power the platform."
-            color="#10B981"
+            color="var(--success-color)"
             icon={Server}
             features={[
               "Compute and container orchestration",
@@ -767,8 +773,8 @@ export function ArchitecturePage() {
           />
           
           {/* Layer Architecture Diagram */}
-          <div className="mt-8 pt-8 border-t border-[#E8ECF2]">
-            <p className="text-sm text-[#5F6E93] mb-4 text-center">Visual Overview of Layer Architecture</p>
+          <div className="mt-8 pt-8 border-t border-[var(--border-subtle)]">
+            <p className="text-sm text-[var(--text-muted)] mb-4 text-center">Visual Overview of Layer Architecture</p>
             <LayerArchitectureDiagram />
           </div>
         </div>
@@ -786,12 +792,12 @@ export function ArchitecturePage() {
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <Workflow className="w-6 h-6 text-[#4154A3]" />
+            <Workflow className="w-6 h-6 text-[var(--primary-color)]" />
           </motion.div>
-          <h2 className="text-2xl font-bold text-[#1B2544]">8-Stage Data Pipeline</h2>
+          <h2 className="text-2xl font-bold text-[var(--text-color)]">8-Stage Data Pipeline</h2>
         </div>
         
-        <div className="bg-gradient-to-br from-[#F8FAFC] to-white rounded-2xl border border-[#D5DAE5] p-6">
+        <div className="rounded-2xl border border-[var(--border-base)] p-6" style={{ background: 'linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%)' }}>
           {/* Horizontal pipeline visualization */}
           <div className="relative mb-8 overflow-x-auto">
             <div className="flex items-center min-w-max px-4">
@@ -801,15 +807,15 @@ export function ArchitecturePage() {
                     animate={{
                       scale: activePipelineStage === i ? 1.1 : 1,
                       boxShadow: activePipelineStage === i 
-                        ? `0 0 20px ${stage.color}60` 
-                        : '0 2px 8px rgba(0,0,0,0.08)'
+                        ? '0 0 20px ' + stage.color + '60' 
+                        : 'var(--shadow-sm)'
                     }}
                     className="flex flex-col items-center"
                   >
                     <motion.div
                       animate={activePipelineStage === i ? { 
                         rotate: [0, 360],
-                        background: [stage.color, '#fff', stage.color]
+                        background: [stage.color, '#F4F0E8', stage.color]
                       } : {}}
                       transition={{ duration: 2 }}
                       className="w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg"
@@ -817,8 +823,8 @@ export function ArchitecturePage() {
                     >
                       <stage.icon className="w-6 h-6" />
                     </motion.div>
-                    <span className="mt-2 text-xs font-medium text-[#475578]">{stage.title}</span>
-                    <span className="text-[10px] text-[#9BA8C2]">{i + 1}</span>
+                    <span className="mt-2 text-xs font-medium text-[var(--text-color)]">{stage.title}</span>
+                    <span className="text-[10px] text-[var(--text-faint)]">{i + 1}</span>
                   </motion.div>
                   
                   {i < pipelineStages.length - 1 && (
@@ -826,8 +832,8 @@ export function ArchitecturePage() {
                       className="w-12 h-0.5 mx-1"
                       style={{ 
                         background: activePipelineStage > i 
-                          ? `linear-gradient(90deg, ${stage.color}, ${pipelineStages[i + 1].color})`
-                          : '#E8ECF2'
+                          ? 'linear-gradient(90deg, ' + stage.color + ', ' + pipelineStages[i + 1].color + ')'
+                          : 'var(--border-subtle)'
                       }}
                     >
                       {/* Animated flow particle */}
@@ -851,7 +857,7 @@ export function ArchitecturePage() {
             key={activePipelineStage}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="p-4 rounded-xl bg-white border border-[#E8ECF2]"
+            className="p-4 rounded-xl border border-[var(--border-subtle)]" style={{ background: 'var(--surface-raised)' }}
           >
             <div className="flex items-center gap-3">
               <div 
@@ -864,17 +870,17 @@ export function ArchitecturePage() {
                 })()}
               </div>
               <div>
-                <h4 className="font-semibold text-[#1B2544]">
+                <h4 className="font-semibold text-[var(--text-color)]">
                   Stage {activePipelineStage + 1}: {pipelineStages[activePipelineStage].title}
                 </h4>
-                <p className="text-sm text-[#5F6E93]">{pipelineStages[activePipelineStage].desc}</p>
+                <p className="text-sm text-[var(--text-muted)]">{pipelineStages[activePipelineStage].desc}</p>
               </div>
             </div>
           </motion.div>
           
           {/* Pipeline Diagram */}
-          <div className="mt-8 pt-8 border-t border-[#E8ECF2]">
-            <p className="text-sm text-[#5F6E93] mb-4 text-center">Complete Pipeline Flow</p>
+          <div className="mt-8 pt-8 border-t border-[var(--border-subtle)]">
+            <p className="text-sm text-[var(--text-muted)] mb-4 text-center">Complete Pipeline Flow</p>
             <PipelineDiagram />
           </div>
         </div>
@@ -888,8 +894,8 @@ export function ArchitecturePage() {
         className="mb-12"
       >
         <div className="flex items-center gap-3 mb-6">
-          <GitBranch className="w-6 h-6 text-[#4154A3]" />
-          <h2 className="text-2xl font-bold text-[#1B2544]">The Three Flows</h2>
+          <GitBranch className="w-6 h-6 text-[var(--primary-color)]" />
+          <h2 className="text-2xl font-bold text-[var(--text-color)]">The Three Flows</h2>
         </div>
         
         <div className="grid lg:grid-cols-3 gap-6">
@@ -897,7 +903,7 @@ export function ArchitecturePage() {
             letter="A"
             title="Structured Operational Truth"
             description="CRM, finance, support, project systems"
-            color="#4154A3"
+            color="var(--primary-color)"
             icon={Database}
             steps={[
               { icon: Cloud, label: 'Connector' },
@@ -913,7 +919,7 @@ export function ArchitecturePage() {
             letter="B"
             title="Unstructured Context"
             description="Documents, emails, chats, files"
-            color="#6B7DC4"
+            color="var(--brand-primary-light)"
             icon={FileText}
             steps={[
               { icon: Cloud, label: 'Ingest' },
@@ -928,7 +934,7 @@ export function ArchitecturePage() {
             letter="C"
             title="AI / MCP Flow"
             description="AI sessions, MCP, governed memory"
-            color="#EB4379"
+            color="var(--accent-color)"
             icon={Brain}
             steps={[
               { icon: Cloud, label: 'Capture' },
@@ -945,16 +951,16 @@ export function ArchitecturePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="mt-4 p-4 bg-gradient-to-r from-[rgba(235,67,121,0.08)] to-transparent rounded-xl border border-[rgba(235,67,121,0.2)]"
+          className="mt-4 p-4 bg-gradient-to-r from-[rgba(184,148,63,0.08)] to-transparent rounded-xl border border-[rgba(184,148,63,0.2)]"
         >
-          <p className="text-sm text-[#475578]">
-            <strong className="text-[#EB4379]">Critical Rule:</strong> Flow C never writes directly to Spine truth. All AI content passes through governance.
+          <p className="text-sm text-[var(--text-color)]">
+            <strong className="text-[var(--accent-color)]">Critical Rule:</strong> Flow C never writes directly to Spine truth. All AI content passes through governance.
           </p>
         </motion.div>
         
         {/* Three Flows Diagram */}
         <div className="mt-8">
-          <p className="text-sm text-[#5F6E93] mb-4 text-center">Complete Flow Architecture</p>
+          <p className="text-sm text-[var(--text-muted)] mb-4 text-center">Complete Flow Architecture</p>
           <ThreeFlowsDiagram />
         </div>
       </motion.section>
@@ -966,11 +972,12 @@ export function ArchitecturePage() {
           initial={{ x: -40, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="bg-white rounded-2xl border border-[#D5DAE5] p-6"
+          className="rounded-2xl border border-[var(--border-base)] p-6"
+          style={{ background: 'var(--surface)' }}
         >
           <div className="flex items-center gap-3 mb-6">
-            <Database className="w-5 h-5 text-[#4154A3]" />
-            <h2 className="text-xl font-bold text-[#1B2544]">The Spine (SSOT)</h2>
+            <Database className="w-5 h-5 text-[var(--primary-color)]" />
+            <h2 className="text-xl font-bold text-[var(--text-color)]">The Spine (SSOT)</h2>
           </div>
           
           <SpineVisualization />
@@ -993,10 +1000,10 @@ export function ArchitecturePage() {
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.8 + i * 0.1, type: "spring" }}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-2 p-2 bg-[#F8FAFC] rounded-lg"
+                className="flex items-center gap-2 p-2 bg-[var(--surface)] rounded-lg"
               >
-                <item.icon className="w-4 h-4 text-[#4154A3]" />
-                <span className="text-xs font-medium text-[#475578]">{item.label}</span>
+                <item.icon className="w-4 h-4 text-[var(--primary-color)]" />
+                <span className="text-xs font-medium text-[var(--text-color)]">{item.label}</span>
               </motion.div>
             ))}
           </div>
@@ -1007,11 +1014,12 @@ export function ArchitecturePage() {
           initial={{ x: 40, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.7 }}
-          className="bg-white rounded-2xl border border-[#D5DAE5] p-6"
+          className="rounded-2xl border border-[var(--border-base)] p-6"
+          style={{ background: 'var(--surface)' }}
         >
           <div className="flex items-center gap-3 mb-2">
-            <Brain className="w-5 h-5 text-[#EB4379]" />
-            <h2 className="text-xl font-bold text-[#1B2544]">Cognitive Loop</h2>
+            <Brain className="w-5 h-5 text-[var(--accent-color)]" />
+            <h2 className="text-xl font-bold text-[var(--text-color)]">Cognitive Loop</h2>
           </div>
           
           <CognitiveLoopViz />
@@ -1022,7 +1030,7 @@ export function ArchitecturePage() {
           </div>
           
           <div className="text-center mt-4">
-            <p className="text-xs text-[#5F6E93]">
+            <p className="text-xs text-[var(--text-muted)]">
               Entity 360 → Think → Govern → HITL → Act → Adjust
             </p>
           </div>
@@ -1030,21 +1038,22 @@ export function ArchitecturePage() {
       </div>
 
       {/* Summary */}
-      <motion.div
-        initial={{ y: 40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.9 }}
-        className="bg-gradient-to-r from-[#1B2544] via-[#2d3561] to-[#4154A3] rounded-2xl p-8 text-white relative overflow-hidden"
-      >
+        <motion.div
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.9 }}
+          className="rounded-2xl p-8 relative overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, var(--surface) 0%, var(--primary-soft) 58%, var(--accent-soft) 100%)', border: '1px solid var(--border-subtle)' }}
+        >
         {/* Animated background particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 rounded-full bg-white/10"
+              className="absolute w-2 h-2 rounded-full bg-[var(--paper)]/10"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                left: String(Math.random() * 100) + '%',
+                top: String(Math.random() * 100) + '%',
               }}
               animate={{
                 y: [0, -100, 0],
@@ -1066,11 +1075,11 @@ export function ArchitecturePage() {
             transition={{ delay: 1, type: "spring" }}
             className="inline-flex items-center gap-2 mb-4"
           >
-            <Sparkles className="w-5 h-5 text-[#F54476]" />
-            <span className="text-sm font-medium text-white/80">Executive Summary</span>
+            <Sparkles className="w-5 h-5 text-[var(--accent-color)]" />
+            <span className="text-sm font-medium text-[var(--text-muted)]">Executive Summary</span>
           </motion.div>
           
-          <h3 className="text-2xl font-bold mb-4">Workspace-First, Spine-Based, Approval-Governed</h3>
+          <h3 className="text-2xl font-bold mb-4 text-[var(--text-color)]">Workspace-First, Spine-Based, Approval-Governed</h3>
           
           <div className="grid sm:grid-cols-2 gap-4">
             {[
@@ -1091,9 +1100,9 @@ export function ArchitecturePage() {
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
                 >
-                  <CheckCircle className="w-5 h-5 text-[#10B981] shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-[var(--success-color)] shrink-0" />
                 </motion.div>
-                <span className="text-sm text-white/80">{item}</span>
+                <span className="text-sm text-[var(--text-muted)]">{item}</span>
               </motion.div>
             ))}
           </div>
@@ -1107,13 +1116,13 @@ export function ArchitecturePage() {
         transition={{ delay: 1.5 }}
         className="mt-12 text-center"
       >
-        <p className="text-xs text-[#9BA8C2]">
+        <p className="text-xs text-[var(--text-faint)]">
           IntegrateWise LLP · Bengaluru, India · integratewise.ai
         </p>
         <motion.p 
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 3, repeat: Infinity }}
-          className="text-xs text-[#9BA8C2] mt-1"
+          className="text-xs text-[var(--text-faint)] mt-1"
         >
           AI Thinks in Context — and Waits for Approval
         </motion.p>

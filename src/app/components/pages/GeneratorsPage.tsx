@@ -51,11 +51,11 @@ const BRAND = {
   website: 'integratewise.ai',
   location: 'Bengaluru, India',
   colors: {
-    primary: '#4154A3',
-    primaryDark: '#364789',
-    primaryLight: '#6B7DC4',
-    accent: '#EB4379',
-    navy: '#1B2544',
+    primary: 'var(--primary-color)',
+    primaryDark: 'var(--primary-hover)',
+    primaryLight: 'var(--brand-primary-light)',
+    accent: 'var(--accent-color)',
+    navy: 'var(--text-color)',
   },
   emails: {
     general: 'hello@integratewise.ai',
@@ -83,11 +83,11 @@ const DEFAULT_TEAM: TeamMember[] = [
 ];
 
 const POST_TEMPLATES = [
-  { id: 'thought', name: 'Thought Leadership', headline: 'AI Thinks in Context', subline: 'Workflows Should Too', bg: `linear-gradient(135deg, #1a1f36 0%, #2d3561 25%, #4154A3 50%, #5a6bc4 75%, #7b8ad4 100%)` },
-  { id: 'problem', name: 'Problem Statement', headline: 'Modern Work Is Fragmented', subline: 'Tools disconnected · Knowledge scattered · AI without context', bg: `linear-gradient(135deg, #0f1419 0%, #1B2544 40%, #2d3a5c 70%, #3d4d75 100%)` },
-  { id: 'solution', name: 'Solution', headline: 'IntegrateWise', subline: 'One Workspace · One Spine · Context-Aware AI · Human Approvals', bg: `linear-gradient(135deg, #4154A3 0%, #5a3d8a 30%, #8b2f6b 60%, #EB4379 100%)` },
-  { id: 'announce', name: 'Announcement', headline: 'The Spine is Live', subline: 'A unified intelligence layer connecting tools, context, and decisions', bg: `linear-gradient(135deg, #0d1f33 0%, #1e3a5f 25%, #2d5a8b 50%, #4a7ab8 75%, #6b9ad4 100%)` },
-  { id: 'custom', name: 'Custom', headline: 'Your Headline Here', subline: 'Your supporting text here', bg: `linear-gradient(135deg, #2d3561 0%, #4154A3 50%, #5a6bc4 100%)` },
+  { id: 'thought', name: 'Thought Leadership', headline: 'AI Thinks in Context', subline: 'Workflows Should Too', bg: `linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 25%, var(--primary-color) 50%, var(--forest-mid) 75%, var(--forest-bright) 100%)` },
+  { id: 'problem', name: 'Problem Statement', headline: 'Modern Work Is Fragmented', subline: 'Tools disconnected · Knowledge scattered · AI without context', bg: `linear-gradient(135deg, var(--ink) 0%, var(--text-color) 40%, var(--slate) 70%, var(--slate-mid) 100%)` },
+  { id: 'solution', name: 'Solution', headline: 'IntegrateWise', subline: 'One Workspace · One Spine · Context-Aware AI · Human Approvals', bg: `linear-gradient(135deg, var(--primary-color) 0%, var(--slate-mid) 30%, var(--slate) 60%, var(--accent-color) 100%)` },
+  { id: 'announce', name: 'Announcement', headline: 'The Spine is Live', subline: 'A unified intelligence layer connecting tools, context, and decisions', bg: `linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 25%, var(--forest-mid) 50%, var(--forest-bright) 75%, var(--gold-light) 100%)` },
+  { id: 'custom', name: 'Custom', headline: 'Your Headline Here', subline: 'Your supporting text here', bg: `linear-gradient(135deg, var(--slate-mid) 0%, var(--primary-color) 50%, var(--forest-bright) 100%)` },
 ];
 
 const PLATFORMS = {
@@ -98,12 +98,12 @@ const PLATFORMS = {
 } as const;
 
 const BANNER_STYLES: Record<string, { bg: string; isLight: boolean; label: string }> = {
-  ocean: { bg: `linear-gradient(135deg, #0d1f33 0%, #1e3a5f 20%, #2d5a8b 40%, #4154A3 60%, #5a6bc4 80%, #7b8ad4 100%)`, isLight: false, label: 'Ocean' },
-  midnight: { bg: `linear-gradient(135deg, #0a0e1a 0%, #1B2544 30%, #2d3561 60%, #3d4d75 100%)`, isLight: false, label: 'Midnight' },
-  sunset: { bg: `linear-gradient(135deg, #1a1f36 0%, #2d3561 20%, #5a3d8a 50%, #8b2f6b 75%, #EB4379 100%)`, isLight: false, label: 'Sunset' },
-  professional: { bg: `linear-gradient(135deg, #f8fafc 0%, #e2e8f0 30%, #cbd5e1 60%, #94a3b8 100%)`, isLight: true, label: 'Professional' },
-  cosmic: { bg: `linear-gradient(135deg, #0f172a 0%, #1e1b4b 25%, #312e81 50%, #4338ca 75%, #6366f1 100%)`, isLight: false, label: 'Cosmic' },
-  emerald: { bg: `linear-gradient(135deg, #064e3b 0%, #065f46 25%, #047857 50%, #059669 75%, #10b981 100%)`, isLight: false, label: 'Emerald' },
+  ocean: { bg: `linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 20%, var(--forest-mid) 40%, var(--primary-color) 60%, var(--forest-bright) 80%, var(--gold-light) 100%)`, isLight: false, label: 'Ocean' },
+  midnight: { bg: `linear-gradient(135deg, var(--ink) 0%, var(--text-color) 30%, var(--slate-mid) 60%, var(--slate) 100%)`, isLight: false, label: 'Midnight' },
+  sunset: { bg: `linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 20%, var(--forest-mid) 50%, var(--forest) 75%, var(--accent-color) 100%)`, isLight: false, label: 'Sunset' },
+  professional: { bg: `linear-gradient(135deg, var(--paper) 0%, var(--paper-warm) 30%, var(--paper-deep) 60%, var(--rule) 100%)`, isLight: true, label: 'Professional' },
+  cosmic: { bg: `linear-gradient(135deg, var(--ink) 0%, var(--slate) 25%, var(--slate-mid) 50%, var(--forest-mid) 75%, var(--forest-bright) 100%)`, isLight: false, label: 'Cosmic' },
+  emerald: { bg: `linear-gradient(135deg, var(--forest) 0%, var(--forest-mid) 25%, var(--forest-bright) 50%, var(--gold) 75%, var(--gold-light) 100%)`, isLight: false, label: 'Emerald' },
 };
 
 interface TeamMember { id: string; name: string; title: string; email: string; }
@@ -123,10 +123,10 @@ const WhiteLogo = ({ size = 48 }: { size?: number }) => (
 
 const ColorLogo = ({ size = 48 }: { size?: number }) => (
   <svg width={size * (160 / 76)} height={size} viewBox="0 0 160 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M53.3869 0.205832C56.4977 -0.576671 63.4297 1.01864 66.3725 2.52462C69.871 4.04071 71.9883 6.25793 74.6863 8.91175C84.375 18.4419 81.0411 32.3964 81.633 44.6777C81.8388 48.951 81.5688 51.7248 83.1143 55.9223C84.8443 60.6378 88.3266 64.4456 92.7883 66.5011C98.0756 68.9515 103.206 68.7867 108.666 66.6229C129.922 58.1978 115.428 31.3403 123.311 14.7929C126.397 8.31589 130.804 4.48288 137.294 1.73574C139.334 0.872409 145.307 -0.448249 147.23 0.510005C148.115 0.94792 148.786 1.74212 149.086 2.70596C150.558 7.44326 142.588 6.26724 139.669 7.43049C114.438 17.485 136.673 50.6827 119.605 66.5817C115.621 70.2929 112.567 72.2206 107.31 73.8465C103.676 74.8999 99.8548 75.0664 96.1478 74.3325C91.6881 73.424 88.0153 71.1711 84.5567 68.2956C67.5173 55.219 81.3248 30.3531 71.634 15.0771C60.4727 -2.51684 33.6193 8.45363 35.7726 29.0271C36.1874 32.9917 36.5927 37.9705 33.2395 40.3015L26.0875 40.327C25.1155 42.5913 24.3717 44.5206 22.8061 46.4445C20.5773 49.1478 17.3943 50.8205 13.9648 51.0909C10.6706 51.3608 6.96223 50.0882 4.45978 47.8705C1.87388 45.5791 0.28158 42.3172 0.0364112 38.8091C-0.229912 35.0356 0.972845 31.3087 3.37836 28.4533C5.59506 25.8835 8.7141 24.3326 12.0434 24.1452C16.9115 23.8269 21.9568 26.1207 23.9305 30.6889C24.7193 32.5147 25.2537 34.2087 27.5492 34.1281C30.3194 34.3326 30.1673 30.77 29.9671 28.4424C28.7826 14.6815 38.3905 1.44619 53.3869 0.205832Z" fill="#4154A3" />
-    <path d="M54.4289 24.0981C57.2918 23.9117 60.1534 24.5081 62.6015 26.0896C65.4302 27.9537 67.4361 30.8902 68.1869 34.2659C69.8061 41.6067 66.1104 48.8144 58.7958 50.4793C58.2895 57.3078 58.9545 64.3443 58.5307 71.1759C58.4181 72.9914 57.9205 73.9957 56.5214 75.0978C56.3931 75.1081 56.2648 75.1145 56.1359 75.1174C51.0795 75.2217 52.6041 66.0946 52.6752 62.4761C52.7507 58.5825 52.737 54.6875 52.6345 50.7944C50.5873 50.0704 49.4134 49.7003 47.6489 48.343C39.5366 42.1034 41.3196 28.6442 50.8118 24.9543C52.215 24.4087 52.9705 24.2882 54.4289 24.0981Z" fill="#4154A3" />
-    <path d="M99.962 0.0385742C100.777 0.0494756 101.729 0.0622401 102.446 0.511322C104.346 1.70249 103.266 20.6982 104.036 24.2648C105.743 24.8311 106.854 25.2996 108.355 26.3919C111.142 28.4403 113.01 31.5636 113.534 35.0534C114.896 43.6881 110.083 49.5955 101.937 50.9023C91.7734 51.1206 85.498 42.8928 88.6263 32.6878C90.1022 27.8734 93.8406 25.7758 97.9669 23.7354C97.7641 21.2334 97.8914 17.3462 97.8638 14.7078C97.8249 10.9673 97.5441 6.60225 98.0138 2.93355C98.2122 1.38582 98.8007 0.848198 99.962 0.0385742Z" fill="#4154A3" />
-    <path d="M143.213 24.2366C150.341 22.5523 157.437 27.1675 159.04 34.5294C160.642 41.8912 156.14 49.1946 148.999 50.8173C141.9 52.4304 134.874 47.8178 133.281 40.4996C131.688 33.1813 136.128 25.9112 143.213 24.2366Z" fill="#EB4379" />
+    <path d="M53.3869 0.205832C56.4977 -0.576671 63.4297 1.01864 66.3725 2.52462C69.871 4.04071 71.9883 6.25793 74.6863 8.91175C84.375 18.4419 81.0411 32.3964 81.633 44.6777C81.8388 48.951 81.5688 51.7248 83.1143 55.9223C84.8443 60.6378 88.3266 64.4456 92.7883 66.5011C98.0756 68.9515 103.206 68.7867 108.666 66.6229C129.922 58.1978 115.428 31.3403 123.311 14.7929C126.397 8.31589 130.804 4.48288 137.294 1.73574C139.334 0.872409 145.307 -0.448249 147.23 0.510005C148.115 0.94792 148.786 1.74212 149.086 2.70596C150.558 7.44326 142.588 6.26724 139.669 7.43049C114.438 17.485 136.673 50.6827 119.605 66.5817C115.621 70.2929 112.567 72.2206 107.31 73.8465C103.676 74.8999 99.8548 75.0664 96.1478 74.3325C91.6881 73.424 88.0153 71.1711 84.5567 68.2956C67.5173 55.219 81.3248 30.3531 71.634 15.0771C60.4727 -2.51684 33.6193 8.45363 35.7726 29.0271C36.1874 32.9917 36.5927 37.9705 33.2395 40.3015L26.0875 40.327C25.1155 42.5913 24.3717 44.5206 22.8061 46.4445C20.5773 49.1478 17.3943 50.8205 13.9648 51.0909C10.6706 51.3608 6.96223 50.0882 4.45978 47.8705C1.87388 45.5791 0.28158 42.3172 0.0364112 38.8091C-0.229912 35.0356 0.972845 31.3087 3.37836 28.4533C5.59506 25.8835 8.7141 24.3326 12.0434 24.1452C16.9115 23.8269 21.9568 26.1207 23.9305 30.6889C24.7193 32.5147 25.2537 34.2087 27.5492 34.1281C30.3194 34.3326 30.1673 30.77 29.9671 28.4424C28.7826 14.6815 38.3905 1.44619 53.3869 0.205832Z" fill="var(--primary-color)" />
+    <path d="M54.4289 24.0981C57.2918 23.9117 60.1534 24.5081 62.6015 26.0896C65.4302 27.9537 67.4361 30.8902 68.1869 34.2659C69.8061 41.6067 66.1104 48.8144 58.7958 50.4793C58.2895 57.3078 58.9545 64.3443 58.5307 71.1759C58.4181 72.9914 57.9205 73.9957 56.5214 75.0978C56.3931 75.1081 56.2648 75.1145 56.1359 75.1174C51.0795 75.2217 52.6041 66.0946 52.6752 62.4761C52.7507 58.5825 52.737 54.6875 52.6345 50.7944C50.5873 50.0704 49.4134 49.7003 47.6489 48.343C39.5366 42.1034 41.3196 28.6442 50.8118 24.9543C52.215 24.4087 52.9705 24.2882 54.4289 24.0981Z" fill="var(--primary-color)" />
+    <path d="M99.962 0.0385742C100.777 0.0494756 101.729 0.0622401 102.446 0.511322C104.346 1.70249 103.266 20.6982 104.036 24.2648C105.743 24.8311 106.854 25.2996 108.355 26.3919C111.142 28.4403 113.01 31.5636 113.534 35.0534C114.896 43.6881 110.083 49.5955 101.937 50.9023C91.7734 51.1206 85.498 42.8928 88.6263 32.6878C90.1022 27.8734 93.8406 25.7758 97.9669 23.7354C97.7641 21.2334 97.8914 17.3462 97.8638 14.7078C97.8249 10.9673 97.5441 6.60225 98.0138 2.93355C98.2122 1.38582 98.8007 0.848198 99.962 0.0385742Z" fill="var(--primary-color)" />
+    <path d="M143.213 24.2366C150.341 22.5523 157.437 27.1675 159.04 34.5294C160.642 41.8912 156.14 49.1946 148.999 50.8173C141.9 52.4304 134.874 47.8178 133.281 40.4996C131.688 33.1813 136.128 25.9112 143.213 24.2366Z" fill="var(--accent-color)" />
   </svg>
 );
 
@@ -151,7 +151,7 @@ function CopyBtn({ id, text, copiedId, copy, label }: {
   return (
     <button onClick={() => copy(id, text)}
       className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all shrink-0"
-      style={{ background: isCopied ? '#10B981' : 'rgba(65,84,163,0.08)', color: isCopied ? '#fff' : '#4154A3' }}>
+      style={{ background: isCopied ? 'var(--success-color)' : 'color-mix(in srgb, var(--forest) 8%, transparent)', color: isCopied ? 'var(--paper)' : 'var(--forest-mid)' }}>
       {isCopied ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
       {label || (isCopied ? 'Copied!' : 'Copy')}
     </button>
@@ -159,7 +159,7 @@ function CopyBtn({ id, text, copiedId, copy, label }: {
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <p className="text-[11px] tracking-wider mb-2" style={{ color: '#9BA8C2' }}>{children}</p>;
+  return <p className="text-[11px] tracking-wider mb-2" style={{ color: 'var(--text-faint)' }}>{children}</p>;
 }
 
 function addToLog(setLog: React.Dispatch<React.SetStateAction<ExportLogEntry[]>>, entry: Omit<ExportLogEntry, 'id' | 'timestamp'>) {
@@ -199,7 +199,7 @@ const DEFAULT_EDIT_STATE: AdvancedEditState = {
   bgGradStart: BRAND.colors.primary,
   bgGradEnd: BRAND.colors.navy,
   bgGradAngle: 135,
-  textColor: '#ffffff',
+  textColor: 'var(--paper)',
   subTextColor: 'rgba(255,255,255,0.75)',
   fontSize: 100,
   subFontSize: 100,
@@ -254,12 +254,12 @@ function AdvancedEditPanel({
   const toggleSection = (id: string) => setOpenSection(openSection === id ? null : id);
 
   return (
-    <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #E8ECF2', background: '#FAFBFD' }}>
-      <div className="px-4 py-3 flex items-center gap-2" style={{ background: '#F0F2F7', borderBottom: '1px solid #E8ECF2' }}>
-        <Settings className="w-3.5 h-3.5" style={{ color: '#4154A3' }} />
-        <span className="text-xs font-semibold" style={{ color: '#1B2544' }}>Advanced Edit</span>
+    <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border-subtle)', background: 'var(--surface)' }}>
+      <div className="px-4 py-3 flex items-center gap-2" style={{ background: 'var(--surface-2)', borderBottom: '1px solid var(--border-subtle)' }}>
+        <Settings className="w-3.5 h-3.5" style={{ color: 'var(--primary-color)' }} />
+        <span className="text-xs font-semibold" style={{ color: 'var(--text-color)' }}>Advanced Edit</span>
         <button onClick={() => onChange({ ...DEFAULT_EDIT_STATE })}
-          className="ml-auto text-[10px] px-2 py-0.5 rounded font-medium" style={{ color: '#9BA8C2' }}>
+          className="ml-auto text-[10px] px-2 py-0.5 rounded font-medium" style={{ color: 'var(--text-faint)' }}>
           Reset
         </button>
       </div>
@@ -267,24 +267,24 @@ function AdvancedEditPanel({
       {sections.map(sec => (
         <div key={sec.id}>
           <button onClick={() => toggleSection(sec.id)}
-            className="w-full flex items-center gap-2 px-4 py-2.5 text-xs font-medium transition-colors hover:bg-[#F0F2F7]"
-            style={{ borderBottom: '1px solid #E8ECF2', color: openSection === sec.id ? '#4154A3' : '#5F6E93' }}>
+            className="w-full flex items-center gap-2 px-4 py-2.5 text-xs font-medium transition-colors hover:bg-[var(--surface-2)]"
+            style={{ borderBottom: '1px solid var(--border-subtle)', color: openSection === sec.id ? 'var(--primary-color)' : 'var(--text-muted)' }}>
             <sec.icon className="w-3.5 h-3.5" />
             <span className="flex-1 text-left">{sec.label}</span>
             {openSection === sec.id ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
           </button>
 
           {openSection === sec.id && (
-            <div className="px-4 py-3 space-y-3" style={{ borderBottom: '1px solid #E8ECF2' }}>
+            <div className="px-4 py-3 space-y-3" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
               {sec.id === 'colors' && (
                 <>
                   <div>
-                    <label className="text-[11px] font-medium block mb-1.5" style={{ color: '#5F6E93' }}>Background Mode</label>
+                    <label className="text-[11px] font-medium block mb-1.5" style={{ color: 'var(--text-muted)' }}>Background Mode</label>
                     <div className="flex gap-1.5">
                       {(['preset', 'solid', 'gradient'] as const).map(t => (
                         <button key={t} onClick={() => set('bgType', t)}
                           className="flex-1 px-2 py-1.5 rounded text-[11px] font-medium transition-colors"
-                          style={state.bgType === t ? { background: '#4154A3', color: '#fff' } : { background: '#F0F2F7', color: '#5F6E93' }}>
+                          style={state.bgType === t ? { background: 'var(--primary-color)', color: 'var(--paper)' } : { background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
                           {t.charAt(0).toUpperCase() + t.slice(1)}
                         </button>
                       ))}
@@ -310,7 +310,7 @@ function AdvancedEditPanel({
                   <SliderInput label="Headline Size" value={state.fontSize} min={50} max={200} unit="%" onChange={v => set('fontSize', v)} />
                   <SliderInput label="Subtext Size" value={state.subFontSize} min={50} max={200} unit="%" onChange={v => set('subFontSize', v)} />
                   <div>
-                    <label className="text-[11px] font-medium block mb-1.5" style={{ color: '#5F6E93' }}>Text Align</label>
+                    <label className="text-[11px] font-medium block mb-1.5" style={{ color: 'var(--text-muted)' }}>Text Align</label>
                     <div className="flex gap-1.5">
                       {([
                         { val: 'left' as const, icon: AlignLeft },
@@ -319,7 +319,7 @@ function AdvancedEditPanel({
                       ]).map(a => (
                         <button key={a.val} onClick={() => set('textAlign', a.val)}
                           className="flex-1 flex items-center justify-center py-1.5 rounded transition-colors"
-                          style={state.textAlign === a.val ? { background: '#4154A3', color: '#fff' } : { background: '#F0F2F7', color: '#5F6E93' }}>
+                          style={state.textAlign === a.val ? { background: 'var(--primary-color)', color: 'var(--paper)' } : { background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
                           <a.icon className="w-3.5 h-3.5" />
                         </button>
                       ))}
@@ -331,10 +331,10 @@ function AdvancedEditPanel({
               {sec.id === 'layout' && (
                 <>
                   <div className="flex items-center justify-between">
-                    <label className="text-[11px] font-medium" style={{ color: '#5F6E93' }}>Show Logo</label>
+                    <label className="text-[11px] font-medium" style={{ color: 'var(--text-muted)' }}>Show Logo</label>
                     <button onClick={() => set('logoVisible', !state.logoVisible)}
                       className="flex items-center gap-1 px-2 py-1 rounded text-[11px] font-medium"
-                      style={{ background: state.logoVisible ? 'rgba(65,84,163,0.1)' : '#F0F2F7', color: state.logoVisible ? '#4154A3' : '#9BA8C2' }}>
+                      style={{ background: state.logoVisible ? 'color-mix(in srgb, var(--forest) 10%, transparent)' : 'var(--surface-raised)', color: state.logoVisible ? 'var(--forest-mid)' : 'var(--text-faint)' }}>
                       {state.logoVisible ? <Eye className="w-3 h-3" /> : <EyeOff className="w-3 h-3" />}
                       {state.logoVisible ? 'Visible' : 'Hidden'}
                     </button>
@@ -351,10 +351,10 @@ function AdvancedEditPanel({
                 <>
                   <SliderInput label="Overlay Darken" value={state.overlayOpacity} min={0} max={80} unit="%" onChange={v => set('overlayOpacity', v)} />
                   <div className="flex items-center justify-between">
-                    <label className="text-[11px] font-medium" style={{ color: '#5F6E93' }}>Drop Shadow</label>
+                    <label className="text-[11px] font-medium" style={{ color: 'var(--text-muted)' }}>Drop Shadow</label>
                     <button onClick={() => set('shadowEnabled', !state.shadowEnabled)}
                       className="px-2 py-1 rounded text-[11px] font-medium"
-                      style={{ background: state.shadowEnabled ? '#4154A3' : '#F0F2F7', color: state.shadowEnabled ? '#fff' : '#9BA8C2' }}>
+                      style={{ background: state.shadowEnabled ? 'var(--primary-color)' : 'var(--surface-2)', color: state.shadowEnabled ? 'var(--paper)' : 'var(--text-faint)' }}>
                       {state.shadowEnabled ? 'On' : 'Off'}
                     </button>
                   </div>
@@ -370,21 +370,22 @@ function AdvancedEditPanel({
                   <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
                   {state.customImage ? (
                     <div className="space-y-2">
-                      <div className="relative rounded-lg overflow-hidden" style={{ border: '1px solid #D5DAE5' }}>
+                      <div className="relative rounded-lg overflow-hidden" style={{ border: '1px solid var(--border-base)' }}>
                         <img src={state.customImage} alt="" className="w-full h-20 object-cover" />
                         <button onClick={() => set('customImage', null)}
-                          className="absolute top-1 right-1 p-1 rounded-full bg-black/50 text-white">
+                          className="absolute top-1 right-1 p-1 rounded-full"
+                          style={{ background: 'rgba(12,12,12,0.5)', color: 'var(--paper)' }}>
                           <X className="w-3 h-3" />
                         </button>
                       </div>
                       <SliderInput label="Image Opacity" value={state.imageOpacity} min={5} max={100} unit="%" onChange={v => set('imageOpacity', v)} />
                       <div>
-                        <label className="text-[11px] font-medium block mb-1.5" style={{ color: '#5F6E93' }}>Position</label>
+                        <label className="text-[11px] font-medium block mb-1.5" style={{ color: 'var(--text-muted)' }}>Position</label>
                         <div className="flex gap-1.5">
                           {(['cover', 'right', 'left'] as const).map(p => (
                             <button key={p} onClick={() => set('imagePosition', p)}
                               className="flex-1 px-2 py-1.5 rounded text-[11px] font-medium"
-                              style={state.imagePosition === p ? { background: '#4154A3', color: '#fff' } : { background: '#F0F2F7', color: '#5F6E93' }}>
+                              style={state.imagePosition === p ? { background: 'var(--primary-color)', color: 'var(--paper)' } : { background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
                               {p.charAt(0).toUpperCase() + p.slice(1)}
                             </button>
                           ))}
@@ -394,7 +395,7 @@ function AdvancedEditPanel({
                   ) : (
                     <button onClick={() => fileRef.current?.click()}
                       className="w-full flex items-center justify-center gap-2 px-4 py-6 rounded-lg text-xs font-medium transition-colors"
-                      style={{ border: '2px dashed #D5DAE5', color: '#9BA8C2' }}>
+                      style={{ border: '2px dashed var(--border-base)', color: 'var(--text-faint)' }}>
                       <Upload className="w-4 h-4" /> Upload Background Image
                     </button>
                   )}
@@ -411,13 +412,13 @@ function AdvancedEditPanel({
 function ColorPicker({ label, value, onChange }: { label: string; value: string; onChange: (v: string) => void }) {
   return (
     <div>
-      <label className="text-[11px] font-medium block mb-1" style={{ color: '#5F6E93' }}>{label}</label>
+      <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>{label}</label>
       <div className="flex items-center gap-2">
-        <input type="color" value={value.startsWith('rgba') ? '#ffffff' : value} onChange={e => onChange(e.target.value)}
+        <input type="color" value={value.startsWith('rgba') ? 'var(--paper)' : value} onChange={e => onChange(e.target.value)}
           className="w-8 h-7 rounded border-0 cursor-pointer" style={{ padding: 0 }} />
         <input type="text" value={value} onChange={e => onChange(e.target.value)}
-          className="flex-1 px-2 py-1 text-[11px] rounded focus:outline-none focus:ring-1 focus:ring-[#4154A3]/30"
-          style={{ border: '1px solid #D5DAE5', color: '#1B2544' }} />
+          className="flex-1 px-2 py-1 text-[11px] rounded focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)]/30"
+          style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
       </div>
     </div>
   );
@@ -429,12 +430,12 @@ function SliderInput({ label, value, min, max, unit, onChange }: {
   return (
     <div>
       <div className="flex items-center justify-between mb-1">
-        <label className="text-[11px] font-medium" style={{ color: '#5F6E93' }}>{label}</label>
-        <span className="text-[10px] font-mono" style={{ color: '#9BA8C2' }}>{value}{unit}</span>
+        <label className="text-[11px] font-medium" style={{ color: 'var(--text-muted)' }}>{label}</label>
+        <span className="text-[10px] font-mono" style={{ color: 'var(--text-faint)' }}>{value}{unit}</span>
       </div>
       <input type="range" min={min} max={max} value={value} onChange={e => onChange(Number(e.target.value))}
         className="w-full h-1.5 rounded-full appearance-none cursor-pointer"
-        style={{ accentColor: '#4154A3' }} />
+        style={{ accentColor: 'var(--primary-color)' }} />
     </div>
   );
 }
@@ -496,17 +497,17 @@ function CampaignKitGenerator({ team, setExportLog }: {
             const grad = ctx.createLinearGradient(0, 0, 1128, 191);
             if (styleName === 'gradient') { grad.addColorStop(0, BRAND.colors.primary); grad.addColorStop(0.5, BRAND.colors.primaryDark); grad.addColorStop(1, BRAND.colors.navy); }
             else if (styleName === 'accent') { grad.addColorStop(0, BRAND.colors.primary); grad.addColorStop(1, BRAND.colors.accent); }
-            else { grad.addColorStop(0, '#EDF0F5'); grad.addColorStop(1, '#D5DAE5'); }
+            else { grad.addColorStop(0, 'var(--paper)'); grad.addColorStop(1, 'var(--rule)'); }
             ctx.fillStyle = grad;
           }
           ctx.fillRect(0, 0, 1128, 191);
-          ctx.fillStyle = styleData.isLight ? BRAND.colors.navy : '#fff';
+          ctx.fillStyle = styleData.isLight ? 'var(--ink)' : 'var(--paper)';
           ctx.font = '700 42px system-ui, sans-serif'; ctx.fillText('IntegrateWise', 80, 180);
           ctx.globalAlpha = styleData.isLight ? 1 : 0.75;
-          ctx.fillStyle = styleData.isLight ? '#5F6E93' : '#fff';
+          ctx.fillStyle = styleData.isLight ? 'var(--text-muted)' : 'var(--paper)';
           ctx.font = '400 18px system-ui, sans-serif'; ctx.fillText(BRAND.descriptor, 80, 212);
           ctx.globalAlpha = styleData.isLight ? 1 : 0.6;
-          ctx.fillStyle = styleData.isLight ? BRAND.colors.primary : '#fff';
+          ctx.fillStyle = styleData.isLight ? 'var(--forest)' : 'var(--paper)';
           ctx.font = '400 14px system-ui, sans-serif'; ctx.fillText(BRAND.tagline, 80, 260);
           ctx.globalAlpha = 1;
           const blob = await new Promise<Blob>(r => canvas.toBlob(b => r(b!), 'image/png'));
@@ -524,7 +525,7 @@ function CampaignKitGenerator({ team, setExportLog }: {
             const grad = ctx.createLinearGradient(0, 0, pVal.w, pVal.h);
             grad.addColorStop(0, BRAND.colors.primary); grad.addColorStop(1, BRAND.colors.primaryDark);
             ctx.fillStyle = grad; ctx.fillRect(0, 0, pVal.w, pVal.h);
-            ctx.fillStyle = '#fff'; ctx.textAlign = 'center';
+            ctx.fillStyle = 'var(--paper)'; ctx.textAlign = 'center';
             ctx.font = `700 ${pVal.w > 1100 ? 52 : 44}px system-ui, sans-serif`;
             ctx.fillText(tmpl.headline, pVal.w / 2, pVal.h / 2 - 20);
             ctx.globalAlpha = 0.75; ctx.font = `400 ${pVal.w > 1100 ? 20 : 18}px system-ui, sans-serif`;
@@ -570,12 +571,12 @@ function CampaignKitGenerator({ team, setExportLog }: {
 
   return (
     <div className="space-y-5">
-      <div className="rounded-xl p-5" style={{ background: 'linear-gradient(135deg, rgba(65,84,163,0.06), rgba(235,67,121,0.06))', border: '1px solid rgba(65,84,163,0.12)' }}>
+      <div className="rounded-xl p-5" style={{ background: 'linear-gradient(135deg, color-mix(in srgb, var(--forest-mid) 6%, transparent), rgba(235,67,121,0.06))', border: '1px solid color-mix(in srgb, var(--forest-mid) 12%, transparent)' }}>
         <div className="flex items-center gap-2 mb-1">
-          <Package className="w-4 h-4" style={{ color: '#EB4379' }} />
-          <p className="text-sm font-semibold" style={{ color: '#1B2544' }}>One-Click Campaign Kit</p>
+          <Package className="w-4 h-4" style={{ color: 'var(--accent-color)' }} />
+          <p className="text-sm font-semibold" style={{ color: 'var(--text-color)' }}>One-Click Campaign Kit</p>
         </div>
-        <p className="text-xs" style={{ color: '#5F6E93' }}>
+        <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
           Complete ZIP: banners ({Object.keys(BANNER_STYLES).length} styles), social posts ({(POST_TEMPLATES.length - 1) * Object.keys(PLATFORMS).length} images), signatures ({team.length} members), contact blocks, and copy library.
         </p>
       </div>
@@ -589,20 +590,20 @@ function CampaignKitGenerator({ team, setExportLog }: {
         ]).map(item => (
           <button key={item.key} onClick={() => toggle(item.key)}
             className="flex items-center gap-3 p-3 rounded-lg text-left transition-all"
-            style={{ background: selectedItems[item.key] ? 'rgba(65,84,163,0.06)' : '#F0F2F7', border: selectedItems[item.key] ? '1.5px solid #4154A3' : '1.5px solid transparent' }}>
-            <div className="w-5 h-5 rounded flex items-center justify-center shrink-0" style={{ background: selectedItems[item.key] ? '#4154A3' : '#D5DAE5' }}>
-              {selectedItems[item.key] && <Check className="w-3 h-3 text-white" />}
+            style={{ background: selectedItems[item.key] ? 'color-mix(in srgb, var(--forest-mid) 6%, transparent)' : 'var(--surface-2)', border: selectedItems[item.key] ? '1.5px solid var(--primary-color)' : '1.5px solid transparent' }}>
+            <div className="w-5 h-5 rounded flex items-center justify-center shrink-0" style={{ background: selectedItems[item.key] ? 'var(--primary-color)' : 'var(--border-base)' }}>
+              {selectedItems[item.key] && <Check className="w-3 h-3 text-[var(--paper)]" />}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-medium" style={{ color: '#1B2544' }}>{item.label}</p>
-              <p className="text-[10px]" style={{ color: '#9BA8C2' }}>{item.count}</p>
+              <p className="text-xs font-medium" style={{ color: 'var(--text-color)' }}>{item.label}</p>
+              <p className="text-[10px]" style={{ color: 'var(--text-faint)' }}>{item.count}</p>
             </div>
           </button>
         ))}
       </div>
       <button onClick={generateKit} disabled={isGenerating || selectedCount === 0}
-        className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-white transition-all w-full justify-center"
-        style={{ background: isGenerating ? '#9BA8C2' : 'linear-gradient(135deg, #4154A3, #EB4379)' }}>
+        className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-[var(--paper)] transition-all w-full justify-center"
+        style={{ background: isGenerating ? 'var(--text-faint)' : 'linear-gradient(135deg, var(--primary-color), var(--accent-color))' }}>
         {isGenerating ? <RotateCw className="w-4 h-4 animate-spin" /> : <Package className="w-4 h-4" />}
         {isGenerating ? progress || 'Generating...' : `Generate Campaign Kit (${selectedCount} categories)`}
       </button>
@@ -626,10 +627,10 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
 
   const styleData = BANNER_STYLES[style];
   const dark = editState.bgType === 'preset' ? !styleData.isLight : isDarkBg(editState);
-  const textColor = editState.bgType !== 'preset' ? editState.textColor : (dark ? '#ffffff' : BRAND.colors.navy);
-  const subColor = editState.bgType !== 'preset' ? editState.subTextColor : (dark ? 'rgba(255,255,255,0.75)' : '#5F6E93');
+  const textColor = editState.bgType !== 'preset' ? editState.textColor : (dark ? 'var(--paper)' : BRAND.colors.navy);
+  const subColor = editState.bgType !== 'preset' ? editState.subTextColor : (dark ? 'rgba(255,255,255,0.75)' : 'var(--text-muted)');
   const tagColor = dark ? 'rgba(255,255,255,0.6)' : BRAND.colors.primary;
-  const nodeColor = dark ? '#ffffff' : BRAND.colors.primary;
+  const nodeColor = dark ? 'var(--paper)' : BRAND.colors.primary;
   const bgStyle = computeBgStyle(editState, styleData.bg);
   const baseFontScale = editState.fontSize / 100;
   const subFontScale = editState.subFontSize / 100;
@@ -654,13 +655,13 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
         const canvas = document.createElement('canvas'); canvas.width = 1128; canvas.height = 191;
         const ctx = canvas.getContext('2d')!;
         if (sn === 'dark') { ctx.fillStyle = BRAND.colors.navy; }
-        else { const g = ctx.createLinearGradient(0,0,1128,191); if(sn==='gradient'){g.addColorStop(0,BRAND.colors.primary);g.addColorStop(.5,BRAND.colors.primaryDark);g.addColorStop(1,BRAND.colors.navy)}else if(sn==='accent'){g.addColorStop(0,BRAND.colors.primary);g.addColorStop(1,BRAND.colors.accent)}else{g.addColorStop(0,'#EDF0F5');g.addColorStop(1,'#D5DAE5')}ctx.fillStyle=g; }
+        else { const g = ctx.createLinearGradient(0,0,1128,191); if(sn==='gradient'){g.addColorStop(0,BRAND.colors.primary);g.addColorStop(.5,BRAND.colors.primaryDark);g.addColorStop(1,BRAND.colors.navy)}else if(sn==='accent'){g.addColorStop(0,BRAND.colors.primary);g.addColorStop(1,BRAND.colors.accent)}else{g.addColorStop(0,'var(--paper)');g.addColorStop(1,'var(--rule)')}ctx.fillStyle=g; }
         ctx.fillRect(0,0,1128,191);
-        ctx.fillStyle = sd.isLight ? BRAND.colors.navy : '#fff';
+        ctx.fillStyle = sd.isLight ? 'var(--ink)' : 'var(--paper)';
         ctx.font = '700 42px system-ui'; ctx.fillText(editTitle, 80, 180);
-        ctx.globalAlpha = sd.isLight ? 1 : .75; ctx.fillStyle = sd.isLight ? '#5F6E93' : '#fff';
+        ctx.globalAlpha = sd.isLight ? 1 : .75; ctx.fillStyle = sd.isLight ? 'var(--text-muted)' : 'var(--paper)';
         ctx.font = '400 18px system-ui'; ctx.fillText(editSubtitle, 80, 212);
-        ctx.globalAlpha = sd.isLight ? 1 : .6; ctx.fillStyle = sd.isLight ? BRAND.colors.primary : '#fff';
+        ctx.globalAlpha = sd.isLight ? 1 : .6; ctx.fillStyle = sd.isLight ? 'var(--forest)' : 'var(--paper)';
         ctx.font = '400 14px system-ui'; ctx.fillText(editTagline, 80, 260); ctx.globalAlpha = 1;
         const blob = await new Promise<Blob>(r => canvas.toBlob(b => r(b!), 'image/png'));
         zip.file(`linkedin-banner-${sn}.png`, blob);
@@ -674,40 +675,40 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
     <div className="space-y-4">
       {/* Style Selector */}
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-xs font-medium" style={{ color: '#7B8AAD' }}>Style:</span>
+        <span className="text-xs font-medium" style={{ color: 'var(--text-faint)' }}>Style:</span>
         {(Object.entries(BANNER_STYLES)).map(([k, v]) => (
           <button key={k} onClick={() => setStyle(k as any)}
             className="px-3 py-1.5 rounded-md text-xs font-medium transition-colors"
-            style={style === k ? { background: '#4154A3', color: '#fff' } : { background: '#F0F2F7', color: '#5F6E93' }}>
+            style={style === k ? { background: 'var(--primary-color)', color: 'var(--paper)' } : { background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
             {v.label}
           </button>
         ))}
       </div>
 
       {/* Editable Text Fields */}
-      <div className="grid sm:grid-cols-3 gap-3 p-4 rounded-lg" style={{ background: '#F7F8FB', border: '1px solid #E8ECF2' }}>
+      <div className="grid sm:grid-cols-3 gap-3 p-4 rounded-lg" style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)' }}>
         <div>
-          <label className="text-[11px] font-medium block mb-1" style={{ color: '#5F6E93' }}>Title</label>
+          <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Title</label>
           <input value={editTitle} onChange={e => setEditTitle(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#4154A3]/30"
-            style={{ border: '1px solid #D5DAE5', color: '#1B2544' }} />
+            className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/30"
+            style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
         </div>
         <div>
-          <label className="text-[11px] font-medium block mb-1" style={{ color: '#5F6E93' }}>Subtitle</label>
+          <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Subtitle</label>
           <input value={editSubtitle} onChange={e => setEditSubtitle(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#4154A3]/30"
-            style={{ border: '1px solid #D5DAE5', color: '#1B2544' }} />
+            className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/30"
+            style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
         </div>
         <div>
-          <label className="text-[11px] font-medium block mb-1" style={{ color: '#5F6E93' }}>Tagline</label>
+          <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Tagline</label>
           <input value={editTagline} onChange={e => setEditTagline(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#4154A3]/30"
-            style={{ border: '1px solid #D5DAE5', color: '#1B2544' }} />
+            className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/30"
+            style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
         </div>
       </div>
 
       {/* Preview */}
-      <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #D5DAE5', boxShadow: editState.shadowEnabled ? `0 4px ${editState.shadowBlur}px rgba(0,0,0,0.1)` : undefined }}>
+      <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border-base)', boxShadow: editState.shadowEnabled ? `0 4px ${editState.shadowBlur}px rgba(0,0,0,0.1)` : undefined }}>
         <div style={{ transform: 'scale(0.5)', transformOrigin: 'top left', width: '200%', height: 0, paddingBottom: '12.5%' }}>
           <div ref={ref} style={{
             width: 1128, height: 191, ...bgStyle,
@@ -755,7 +756,7 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
                 )}
                 <circle cx="140" cy="140" r="50" fill="none" stroke={nodeColor} strokeWidth="1" opacity="0.15" />
                 <circle cx="140" cy="140" r="20" fill={nodeColor} opacity="0.4" />
-                <circle cx="140" cy="140" r="8" fill="#EB4379" opacity="0.9" />
+                <circle cx="140" cy="140" r="8" fill="var(--accent-color)" opacity="0.9" />
               </svg>
             </div>
           </div>
@@ -765,7 +766,7 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
       {/* Advanced Edit Toggle */}
       <button onClick={() => setShowAdvanced(!showAdvanced)}
         className="flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-lg transition-colors"
-        style={{ background: showAdvanced ? 'rgba(65,84,163,0.1)' : '#F0F2F7', color: showAdvanced ? '#4154A3' : '#5F6E93' }}>
+        style={{ background: showAdvanced ? 'color-mix(in srgb, var(--forest-mid) 10%, transparent)' : 'var(--surface-2)', color: showAdvanced ? 'var(--primary-color)' : 'var(--text-muted)' }}>
         <Settings className="w-3.5 h-3.5" /> Advanced Edit
         {showAdvanced ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
       </button>
@@ -774,13 +775,13 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
       {/* Actions */}
       <div className="flex gap-2 flex-wrap">
         <button onClick={handleExport} disabled={isExporting}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold text-white transition-all"
-          style={{ background: isExporting ? '#9BA8C2' : '#4154A3' }}>
+          className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold text-[var(--paper)] transition-all"
+          style={{ background: isExporting ? 'var(--text-faint)' : 'var(--primary-color)' }}>
           <Download className="w-3.5 h-3.5" /> {isExporting ? 'Exporting...' : 'Download This Style (1128x191)'}
         </button>
         <button onClick={batchExport} disabled={isBatch}
           className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold transition-all"
-          style={{ background: isBatch ? '#9BA8C2' : '#F0F2F7', color: isBatch ? '#fff' : '#4154A3' }}>
+          style={{ background: isBatch ? 'var(--text-faint)' : 'var(--surface-2)', color: isBatch ? 'var(--paper)' : 'var(--primary-color)' }}>
           <Layers className="w-3.5 h-3.5" /> {isBatch ? 'Zipping...' : 'Batch Export All 4 Styles (.zip)'}
         </button>
       </div>
@@ -838,7 +839,7 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
         const g = ctx.createLinearGradient(0, 0, pVal.w, pVal.h);
         g.addColorStop(0, BRAND.colors.primary); g.addColorStop(1, BRAND.colors.primaryDark);
         ctx.fillStyle = g; ctx.fillRect(0, 0, pVal.w, pVal.h);
-        ctx.fillStyle = '#fff'; ctx.textAlign = 'center';
+        ctx.fillStyle = 'var(--paper)'; ctx.textAlign = 'center';
         ctx.font = `700 ${pVal.w > 1100 ? 52 : 44}px system-ui`;
         ctx.fillText(headline, pVal.w / 2, pVal.h / 2 - 20);
         ctx.globalAlpha = .75; ctx.font = `400 ${pVal.w > 1100 ? 20 : 18}px system-ui`;
@@ -864,25 +865,25 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
         {POST_TEMPLATES.map((t, i) => (
           <button key={t.id} onClick={() => setTemplateIdx(i)}
             className="px-3 py-1.5 rounded-md text-xs font-medium transition-all"
-            style={templateIdx === i ? { background: '#4154A3', color: '#fff' } : { background: '#F0F2F7', color: '#5F6E93' }}>
+            style={templateIdx === i ? { background: 'var(--primary-color)', color: 'var(--paper)' } : { background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
             {t.name}
           </button>
         ))}
       </div>
 
       {/* Editable text — available for ALL templates */}
-      <div className="grid sm:grid-cols-2 gap-3 p-4 rounded-lg" style={{ background: '#F7F8FB', border: '1px solid #E8ECF2' }}>
+      <div className="grid sm:grid-cols-2 gap-3 p-4 rounded-lg" style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)' }}>
         <div>
-          <label className="text-[11px] font-medium block mb-1" style={{ color: '#5F6E93' }}>Headline</label>
+          <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Headline</label>
           <input value={headline} onChange={e => setHeadline(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#4154A3]/30"
-            style={{ border: '1px solid #D5DAE5', color: '#1B2544' }} />
+            className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/30"
+            style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
         </div>
         <div>
-          <label className="text-[11px] font-medium block mb-1" style={{ color: '#5F6E93' }}>Supporting Text</label>
+          <label className="text-[11px] font-medium block mb-1" style={{ color: 'var(--text-muted)' }}>Supporting Text</label>
           <input value={subline} onChange={e => setSubline(e.target.value)}
-            className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#4154A3]/30"
-            style={{ border: '1px solid #D5DAE5', color: '#1B2544' }} />
+            className="w-full px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]/30"
+            style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} />
         </div>
       </div>
 
@@ -891,14 +892,14 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
         {(Object.entries(PLATFORMS) as [keyof typeof PLATFORMS, typeof PLATFORMS[keyof typeof PLATFORMS]][]).map(([k, v]) => (
           <button key={k} onClick={() => setPlatform(k)}
             className="px-3 py-1.5 rounded-md text-xs font-medium transition-colors"
-            style={platform === k ? { background: '#4154A3', color: '#fff' } : { background: '#F0F2F7', color: '#5F6E93' }}>
+            style={platform === k ? { background: 'var(--primary-color)', color: 'var(--paper)' } : { background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
             {v.label} ({v.w}x{v.h})
           </button>
         ))}
       </div>
 
       {/* Preview */}
-      <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #D5DAE5', boxShadow: editState.shadowEnabled ? `0 4px ${editState.shadowBlur}px rgba(0,0,0,0.1)` : undefined }}>
+      <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border-base)', boxShadow: editState.shadowEnabled ? `0 4px ${editState.shadowBlur}px rgba(0,0,0,0.1)` : undefined }}>
         <div style={{ position: 'relative', width: '100%', paddingBottom: `${(size.h / size.w) * 100}%` }}>
           <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
             <div style={{ transform: `scale(${1 / (size.w / 580)})`, transformOrigin: 'top left', width: size.w, height: size.h }}>
@@ -932,7 +933,7 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
                     {dark ? <WhiteLogo size={40} /> : <ColorLogo size={40} />}
                   </div>
                 )}
-                <p style={{ fontSize: (size.w > 1100 ? 52 : 44) * baseFontScale, fontWeight: 700, color: editState.bgType !== 'preset' ? editState.textColor : '#fff', textAlign: editState.textAlign, lineHeight: 1.2, position: 'relative', zIndex: 1 }}>{headline}</p>
+                <p style={{ fontSize: (size.w > 1100 ? 52 : 44) * baseFontScale, fontWeight: 700, color: editState.bgType !== 'preset' ? editState.textColor : 'var(--paper)', textAlign: editState.textAlign, lineHeight: 1.2, position: 'relative', zIndex: 1 }}>{headline}</p>
                 <p style={{ fontSize: (size.w > 1100 ? 20 : 18) * subFontScale, color: editState.bgType !== 'preset' ? editState.subTextColor : 'rgba(255,255,255,0.75)', textAlign: editState.textAlign, marginTop: 16, lineHeight: 1.5, position: 'relative', zIndex: 1 }}>{subline}</p>
                 <p style={{ position: 'absolute', bottom: 30, left: 0, right: 0, textAlign: 'center', fontSize: 13, color: 'rgba(255,255,255,0.4)', letterSpacing: 1, zIndex: 1 }}>integratewise.ai</p>
               </div>
@@ -944,7 +945,7 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
       {/* Advanced Edit */}
       <button onClick={() => setShowAdvanced(!showAdvanced)}
         className="flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-lg transition-colors"
-        style={{ background: showAdvanced ? 'rgba(65,84,163,0.1)' : '#F0F2F7', color: showAdvanced ? '#4154A3' : '#5F6E93' }}>
+        style={{ background: showAdvanced ? 'color-mix(in srgb, var(--forest-mid) 10%, transparent)' : 'var(--surface-2)', color: showAdvanced ? 'var(--primary-color)' : 'var(--text-muted)' }}>
         <Settings className="w-3.5 h-3.5" /> Advanced Edit
         {showAdvanced ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
       </button>
@@ -953,13 +954,13 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
       {/* Actions */}
       <div className="flex gap-2 flex-wrap">
         <button onClick={exportSingle} disabled={isExporting}
-          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold text-white transition-all"
-          style={{ background: isExporting ? '#9BA8C2' : '#4154A3' }}>
+          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold text-[var(--paper)] transition-all"
+          style={{ background: isExporting ? 'var(--text-faint)' : 'var(--primary-color)' }}>
           <Download className="w-3.5 h-3.5" /> {isExporting ? 'Exporting...' : `Download ${size.label}`}
         </button>
         <button onClick={batchExport} disabled={isBatch}
           className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-semibold transition-all"
-          style={{ background: isBatch ? '#9BA8C2' : '#F0F2F7', color: isBatch ? '#fff' : '#4154A3' }}>
+          style={{ background: isBatch ? 'var(--text-faint)' : 'var(--surface-2)', color: isBatch ? 'var(--paper)' : 'var(--primary-color)' }}>
           <Layers className="w-3.5 h-3.5" /> {isBatch ? 'Zipping...' : 'Batch All 4 Platforms (.zip)'}
         </button>
       </div>
@@ -989,7 +990,7 @@ function TeamRosterManager({ team, setTeam }: { team: TeamMember[]; setTeam: Rea
         <SectionLabel>TEAM MEMBERS ({team.length})</SectionLabel>
         <div className="flex gap-2">
           <CopyBtn id="all-sigs" text="" copiedId={copiedId} copy={() => copyAllSignatures()} label={copiedId === 'all-sigs' ? 'Copied All!' : 'Copy All Sigs'} />
-          <button onClick={addMember} className="flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium" style={{ background: '#F0F2F7', color: '#4154A3' }}>
+          <button onClick={addMember} className="flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium" style={{ background: 'var(--surface-2)', color: 'var(--primary-color)' }}>
             <Plus className="w-3 h-3" /> Add
           </button>
         </div>
@@ -1000,43 +1001,43 @@ function TeamRosterManager({ team, setTeam }: { team: TeamMember[]; setTeam: Rea
           const emailAddr = BRAND.emails[member.email] || member.email;
           const isEditing = editingId === member.id;
           return (
-            <div key={member.id} className="rounded-lg overflow-hidden" style={{ border: '1px solid #E8ECF2' }}>
-              <div className="flex items-center gap-3 px-4 py-3" style={{ background: isEditing ? '#F0F2F7' : '#fff' }}>
-                <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold text-white shrink-0" style={{ background: '#4154A3' }}>
+            <div key={member.id} className="rounded-lg overflow-hidden" style={{ border: '1px solid var(--border-subtle)' }}>
+              <div className="flex items-center gap-3 px-4 py-3" style={{ background: isEditing ? 'var(--surface-2)' : 'var(--surface-raised)' }}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold text-[var(--paper)] shrink-0" style={{ background: 'var(--primary-color)' }}>
                   {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                 </div>
                 {isEditing ? (
                   <div className="flex-1 grid sm:grid-cols-3 gap-2">
                     <input value={member.name} onChange={e => updateMember(member.id, 'name', e.target.value)}
-                      className="px-2 py-1 rounded text-xs focus:outline-none focus:ring-1 focus:ring-[#4154A3]/30" style={{ border: '1px solid #D5DAE5', color: '#1B2544' }} placeholder="Name" />
+                      className="px-2 py-1 rounded text-xs focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)]/30" style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} placeholder="Name" />
                     <input value={member.title} onChange={e => updateMember(member.id, 'title', e.target.value)}
-                      className="px-2 py-1 rounded text-xs focus:outline-none focus:ring-1 focus:ring-[#4154A3]/30" style={{ border: '1px solid #D5DAE5', color: '#1B2544' }} placeholder="Title" />
+                      className="px-2 py-1 rounded text-xs focus:outline-none focus:ring-1 focus:ring-[var(--primary-color)]/30" style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)' }} placeholder="Title" />
                     <select value={member.email} onChange={e => updateMember(member.id, 'email', e.target.value)}
-                      className="px-2 py-1 rounded text-xs bg-white focus:outline-none" style={{ border: '1px solid #D5DAE5', color: '#1B2544' }}>
+                      className="px-2 py-1 rounded text-xs focus:outline-none" style={{ border: '1px solid var(--border-base)', color: 'var(--text-color)', background: 'var(--surface-raised)' }}>
                       {Object.keys(BRAND.emails).map(k => <option key={k} value={k}>{k}@integratewise.ai</option>)}
                     </select>
                   </div>
                 ) : (
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium truncate" style={{ color: '#1B2544' }}>{member.name}</p>
-                    <p className="text-[11px]" style={{ color: '#7B8AAD' }}>{member.title} · {emailAddr}</p>
+                    <p className="text-sm font-medium truncate" style={{ color: 'var(--text-color)' }}>{member.name}</p>
+                    <p className="text-[11px]" style={{ color: 'var(--text-faint)' }}>{member.title} · {emailAddr}</p>
                   </div>
                 )}
                 <div className="flex gap-1 shrink-0">
-                  <button onClick={() => setEditingId(isEditing ? null : member.id)} className="p-1.5 rounded hover:bg-[#F0F2F7]">
-                    <Pencil className="w-3.5 h-3.5" style={{ color: isEditing ? '#4154A3' : '#9BA8C2' }} />
+                  <button onClick={() => setEditingId(isEditing ? null : member.id)} className="p-1.5 rounded hover:bg-[var(--surface-2)]">
+                    <Pencil className="w-3.5 h-3.5" style={{ color: isEditing ? 'var(--primary-color)' : 'var(--text-faint)' }} />
                   </button>
                   <CopyBtn id={`sig-${member.id}`} text={buildSignatureHtml(member.name, member.title, emailAddr)} copiedId={copiedId} copy={copy} label="HTML" />
                   {team.length > 1 && (
-                    <button onClick={() => removeMember(member.id)} className="p-1.5 rounded hover:bg-red-50">
-                      <Trash2 className="w-3.5 h-3.5" style={{ color: '#EF4444' }} />
+                    <button onClick={() => removeMember(member.id)} className="p-1.5 rounded hover:bg-[var(--surface-2)]">
+                      <Trash2 className="w-3.5 h-3.5" style={{ color: 'var(--red)' }} />
                     </button>
                   )}
                 </div>
               </div>
               {isEditing && (
                 <div className="px-4 pb-3">
-                  <div className="rounded-lg bg-white p-4 mt-2" style={{ border: '1px solid #D5DAE5' }}>
+                  <div className="rounded-lg p-4 mt-2" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)' }}>
                     <div dangerouslySetInnerHTML={{ __html: buildSignatureHtml(member.name, member.title, emailAddr) }} />
                   </div>
                 </div>
@@ -1097,10 +1098,10 @@ function CopyLibrary() {
           <SectionLabel>{g.name}</SectionLabel>
           <div className="space-y-1.5">
             {g.items.map(item => (
-              <div key={item.id} className="flex items-center gap-3 px-3 py-2 rounded-lg" style={{ background: '#F0F2F7' }}>
+              <div key={item.id} className="flex items-center gap-3 px-3 py-2 rounded-lg" style={{ background: 'var(--surface-2)' }}>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[11px] font-medium" style={{ color: '#7B8AAD' }}>{item.label}</p>
-                  <p className="text-sm mt-0.5 truncate" style={{ color: '#2F3D5E' }}>{item.text}</p>
+                  <p className="text-[11px] font-medium" style={{ color: 'var(--text-faint)' }}>{item.label}</p>
+                  <p className="text-sm mt-0.5 truncate" style={{ color: 'var(--text-color)' }}>{item.text}</p>
                 </div>
                 <CopyBtn id={item.id} text={item.text} copiedId={copiedId} copy={copy} />
               </div>
@@ -1116,24 +1117,24 @@ function CopyLibrary() {
    SIGNATURE BUILDERS
    ═══════════════════════════════════════ */
 function buildSignatureHtml(name: string, title: string, email: string) {
-  return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#2F3D5E;">
+  return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:var(--text-color);">
   <tr>
     <td style="padding-right:16px;vertical-align:top;">
       <img src="https://branding.integratewise.ai/logo-icon.png" width="48" height="48" alt="IntegrateWise" style="display:block;" />
     </td>
     <td style="vertical-align:top;">
-      <p style="margin:0;font-size:15px;font-weight:600;color:#1B2544;">${name}</p>
-      <p style="margin:2px 0 0;font-size:12px;color:#5F6E93;">${title}</p>
-      <p style="margin:8px 0 0;font-size:13px;font-weight:500;color:#2F3D5E;">${BRAND.company}</p>
-      <p style="margin:2px 0 0;font-size:11px;color:#7B8AAD;">${BRAND.descriptor}</p>
+      <p style="margin:0;font-size:15px;font-weight:600;color:var(--text-color);">${name}</p>
+      <p style="margin:2px 0 0;font-size:12px;color:var(--text-muted);">${title}</p>
+      <p style="margin:8px 0 0;font-size:13px;font-weight:500;color:var(--text-color);">${BRAND.company}</p>
+      <p style="margin:2px 0 0;font-size:11px;color:var(--text-faint);">${BRAND.descriptor}</p>
       <table cellpadding="0" cellspacing="0" border="0" style="margin-top:8px;">
         <tr>
-          <td style="font-size:11px;color:#5F6E93;padding-right:12px;"><a href="mailto:${email}" style="color:#4154A3;text-decoration:none;">${email}</a></td>
-          <td style="font-size:11px;color:#5F6E93;padding-right:12px;"><a href="https://${BRAND.website}" style="color:#4154A3;text-decoration:none;">${BRAND.website}</a></td>
-          <td style="font-size:11px;color:#7B8AAD;">${BRAND.location}</td>
+          <td style="font-size:11px;color:var(--text-muted);padding-right:12px;"><a href="mailto:${email}" style="color:var(--primary-color);text-decoration:none;">${email}</a></td>
+          <td style="font-size:11px;color:var(--text-muted);padding-right:12px;"><a href="https://${BRAND.website}" style="color:var(--primary-color);text-decoration:none;">${BRAND.website}</a></td>
+          <td style="font-size:11px;color:var(--text-faint);">${BRAND.location}</td>
         </tr>
       </table>
-      <p style="margin:8px 0 0;padding-top:8px;border-top:1px solid #4154A3;font-size:11px;color:#9BA8C2;font-style:italic;">${BRAND.tagline}</p>
+      <p style="margin:8px 0 0;padding-top:8px;border-top:1px solid var(--primary-color);font-size:11px;color:var(--text-faint);font-style:italic;">${BRAND.tagline}</p>
     </td>
   </tr>
 </table>`;
@@ -1149,11 +1150,11 @@ function buildSignaturePlain(name: string, title: string, email: string) {
 type Tool = 'campaign-kit' | 'linkedin-banner' | 'social-post' | 'team-roster' | 'copy-library';
 
 const tools: { id: Tool; icon: typeof Package; label: string; desc: string; color: string; badge?: string }[] = [
-  { id: 'campaign-kit', icon: Package, label: 'Campaign Kit', desc: 'One-click full export', color: '#EB4379', badge: 'NEW' },
-  { id: 'linkedin-banner', icon: Linkedin, label: 'LinkedIn Banners', desc: '1128x191, 4 styles', color: '#0A66C2' },
-  { id: 'social-post', icon: ImageIcon, label: 'Social Posts', desc: 'Editable, all platforms', color: '#4154A3' },
-  { id: 'team-roster', icon: Users, label: 'Team & Signatures', desc: 'Manage team, copy HTML', color: '#364789' },
-  { id: 'copy-library', icon: Type, label: 'Copy Library', desc: 'All approved copy', color: '#6B7DC4' },
+  { id: 'campaign-kit', icon: Package, label: 'Campaign Kit', desc: 'One-click full export', color: 'var(--accent-color)', badge: 'NEW' },
+  { id: 'linkedin-banner', icon: Linkedin, label: 'LinkedIn Banners', desc: '1128x191, 4 styles', color: 'var(--slate-mid)' },
+  { id: 'social-post', icon: ImageIcon, label: 'Social Posts', desc: 'Editable, all platforms', color: 'var(--primary-color)' },
+  { id: 'team-roster', icon: Users, label: 'Team & Signatures', desc: 'Manage team, copy HTML', color: 'var(--primary-hover)' },
+  { id: 'copy-library', icon: Type, label: 'Copy Library', desc: 'All approved copy', color: 'var(--brand-primary-light)' },
 ];
 
 export function GeneratorsPage() {
@@ -1170,13 +1171,13 @@ export function GeneratorsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold" style={{ color: '#1B2544' }}>Quick Generators</h2>
-          <p className="mt-1" style={{ color: '#7B8AAD' }}>Reusable, automatable brand asset generation. One click, zero design work.</p>
+          <h2 className="text-2xl font-bold" style={{ color: 'var(--text-color)' }}>Quick Generators</h2>
+          <p className="mt-1" style={{ color: 'var(--text-faint)' }}>Reusable, automatable brand asset generation. One click, zero design work.</p>
         </div>
         {exportLog.length > 0 && (
           <button onClick={() => setShowLog(!showLog)}
             className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium self-start"
-            style={{ background: '#F0F2F7', color: '#5F6E93' }}>
+            style={{ background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
             <Clock className="w-3.5 h-3.5" /> Export Log ({exportLog.length})
             {showLog ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
           </button>
@@ -1185,17 +1186,17 @@ export function GeneratorsPage() {
 
       {/* Export Log */}
       {showLog && exportLog.length > 0 && (
-        <div className="bg-white rounded-xl overflow-hidden" style={{ border: '1px solid #D5DAE5' }}>
-          <div className="px-4 py-3" style={{ borderBottom: '1px solid #E8ECF2' }}>
-            <p className="text-xs font-semibold" style={{ color: '#475578' }}>Recent Exports</p>
+        <div className="rounded-xl overflow-hidden" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)' }}>
+          <div className="px-4 py-3" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+            <p className="text-xs font-semibold" style={{ color: 'var(--text-color)' }}>Recent Exports</p>
           </div>
-          <div className="divide-y" style={{ borderColor: '#E8ECF2' }}>
+          <div className="divide-y" style={{ borderColor: 'var(--border-subtle)' }}>
             {exportLog.map(e => (
               <div key={e.id} className="flex items-center gap-3 px-4 py-2.5">
-                <CircleCheck className="w-3.5 h-3.5 shrink-0" style={{ color: '#10B981' }} />
-                <p className="text-xs flex-1" style={{ color: '#2F3D5E' }}>{e.name}</p>
-                <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: '#F0F2F7', color: '#7B8AAD' }}>{e.type}</span>
-                <span className="text-[10px]" style={{ color: '#BCC3D4' }}>
+                <CircleCheck className="w-3.5 h-3.5 shrink-0" style={{ color: 'var(--success-color)' }} />
+                <p className="text-xs flex-1" style={{ color: 'var(--text-color)' }}>{e.name}</p>
+                <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: 'var(--surface-2)', color: 'var(--text-faint)' }}>{e.type}</span>
+                <span className="text-[10px]" style={{ color: 'var(--border-subtle)' }}>
                   {new Date(e.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </span>
               </div>
@@ -1212,19 +1213,19 @@ export function GeneratorsPage() {
             <button key={tool.id} onClick={() => setActiveTool(tool.id)}
               className="w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl transition-all"
               style={activeTool === tool.id
-                ? { background: '#4154A3', color: '#fff' }
-                : { background: '#fff', border: '1px solid #D5DAE5', color: '#5F6E93' }
+                ? { background: 'var(--primary-color)', color: 'var(--paper)' }
+                : { background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }
               }>
               <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: activeTool === tool.id ? 'rgba(255,255,255,0.15)' : `${tool.color}12` }}>
-                <tool.icon className="w-4 h-4" style={{ color: activeTool === tool.id ? '#fff' : tool.color }} />
+                style={{ background: activeTool === tool.id ? 'rgba(244,240,232,0.15)' : `${tool.color}12` }}>
+                <tool.icon className="w-4 h-4" style={{ color: activeTool === tool.id ? 'var(--paper)' : tool.color }} />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5">
                   <p className="text-sm font-medium truncate">{tool.label}</p>
                   {tool.badge && (
                     <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full"
-                      style={{ background: activeTool === tool.id ? 'rgba(255,255,255,0.25)' : '#EB4379', color: '#fff' }}>
+                      style={{ background: activeTool === tool.id ? 'rgba(244,240,232,0.25)' : 'var(--accent-color)', color: 'var(--paper)' }}>
                       {tool.badge}
                     </span>
                   )}
@@ -1237,15 +1238,15 @@ export function GeneratorsPage() {
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <div className="bg-white rounded-xl p-6 lg:p-8" style={{ border: '1px solid #D5DAE5' }}>
-            <div className="flex items-center gap-3 mb-6 pb-5" style={{ borderBottom: '1px solid #E8ECF2' }}>
+          <div className="rounded-xl p-6 lg:p-8" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)' }}>
+            <div className="flex items-center gap-3 mb-6 pb-5" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
               <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                 style={{ background: `${activeToolData.color}12` }}>
                 <ActiveIcon className="w-5 h-5" style={{ color: activeToolData.color }} />
               </div>
               <div>
-                <h3 className="text-base font-semibold" style={{ color: '#1B2544' }}>{activeToolData.label}</h3>
-                <p className="text-xs" style={{ color: '#7B8AAD' }}>{activeToolData.desc}</p>
+                <h3 className="text-base font-semibold" style={{ color: 'var(--text-color)' }}>{activeToolData.label}</h3>
+                <p className="text-xs" style={{ color: 'var(--text-faint)' }}>{activeToolData.desc}</p>
               </div>
             </div>
 

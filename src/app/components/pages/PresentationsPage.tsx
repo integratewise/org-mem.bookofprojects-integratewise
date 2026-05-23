@@ -1,11 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Presentation, Download, Copy, Check, ChevronLeft, ChevronRight,
-  Sparkles, Edit2, Save, X, Plus, Trash2, RotateCcw, Play, Pause,
-  FileText, Image as ImageIcon, Type, Layout, Grid
+import {
+  Presentation,
+  Download,
+  Copy,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Edit2,
+  Save,
+  X,
+  RotateCcw,
+  Layout,
+  Grid,
 } from 'lucide-react';
-import { toPng, toBlob } from 'html-to-image';
+import { toBlob } from 'html-to-image';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { loadJson, saveJson } from '../../lib/storage';
@@ -16,61 +25,66 @@ const DEFAULT_SLIDES = [
   {
     id: '1',
     type: 'title',
-    title: "IntegrateWise",
-    subtitle: "Adaptive Continuity Workspace — Hydrated by the Spine",
-    tagline: "AI Thinks in Context — and Waits for Approval",
-    layout: 'center'
+    title: 'IntegrateWise',
+    subtitle: 'Adaptive Continuity Workspace — Hydrated by the Spine',
+    tagline: 'AI Thinks in Context — and Waits for Approval',
+    layout: 'center',
   },
   {
     id: '2',
     type: 'problem',
-    title: "The $8M Lesson",
-    content: "A support ticket spiked. Product adoption dropped. An executive warning sat in a personal note.\n\nThree signals. Three systems. Zero connection.\n\nThe account was nearly lost.",
-    stat: "$8M",
-    statLabel: "At Risk",
-    layout: 'split'
+    title: 'The $8M Lesson',
+    content:
+      'A support ticket spiked. Product adoption dropped. An executive warning sat in a personal note.\n\nThree signals. Three systems. Zero connection.\n\nThe account was nearly lost.',
+    stat: '$8M',
+    statLabel: 'At Risk',
+    layout: 'split',
   },
   {
     id: '3',
     type: 'solution',
-    title: "The Adaptive Continuity Workspace",
-    content: "Where your entire tech stack connects into one Adaptive Spine. Continuity hydrates continuously. AI surfaces what matters. Humans approve every action.",
+    title: 'The Adaptive Continuity Workspace',
+    content:
+      'Where your entire tech stack connects into one Adaptive Spine. Continuity hydrates continuously. AI surfaces what matters. Humans approve every action.',
     features: [
-      "Unified Intelligence Layer",
-      "Context-Aware AI",
-      "Human-Governed Execution",
-      "Continuous Learning"
+      'Unified Intelligence Layer',
+      'Context-Aware AI',
+      'Human-Governed Execution',
+      'Continuous Learning',
     ],
-    layout: 'features'
+    layout: 'features',
   },
   {
     id: '4',
     type: 'architecture',
-    title: "The Spine (SSOT)",
-    content: "Single Source of Truth connecting tools, context, and decisions across the workspace.",
+    title: 'The Spine (SSOT)',
+    content:
+      'Single Source of Truth connecting tools, context, and decisions across the workspace.',
     layers: [
-      { name: "Workspace Layer", desc: "Human interface to the Spine" },
-      { name: "Cognitive Layer", desc: "AI reasoning & proposals" },
-      { name: "Spine Layer", desc: "Canonical truth & memory" }
+      { name: 'Workspace Layer', desc: 'Human interface to the Spine' },
+      { name: 'Cognitive Layer', desc: 'AI reasoning & proposals' },
+      { name: 'Spine Layer', desc: 'Canonical truth & memory' },
     ],
-    layout: 'layers'
+    layout: 'layers',
   },
   {
     id: '5',
     type: 'governance',
-    title: "Approval-First Execution",
-    content: "Every AI-initiated action passes through human-controlled checkpoints. Nothing executes without explicit approval.",
-    layout: 'center'
+    title: 'Approval-First Execution',
+    content:
+      'Every AI-initiated action passes through human-controlled checkpoints. Nothing executes without explicit approval.',
+    layout: 'center',
   },
   {
     id: '6',
     type: 'cta',
-    title: "Ready to See More?",
-    content: "Book a personalized demo and see how IntegrateWise can transform your workspace.",
-    cta: "Book Demo",
-    ctaLink: "https://integratewise.ai/demo",
-    layout: 'center'
-  }
+    title: 'Ready to See More?',
+    content:
+      'Book a personalized demo and see how IntegrateWise can transform your workspace.',
+    cta: 'Book Demo',
+    ctaLink: 'https://integratewise.ai/demo',
+    layout: 'center',
+  },
 ];
 
 // Default LinkedIn Carousel Slides
@@ -78,102 +92,158 @@ const DEFAULT_CAROUSEL_SLIDES = [
   {
     id: 'c1',
     type: 'cover',
-    title: "The $8M Lesson in Disconnected Tools",
-    subtitle: "A thread 🧵",
-    author: "IntegrateWise"
+    title: 'The $8M Lesson in Disconnected Tools',
+    subtitle: 'A thread 🧵',
+    author: 'IntegrateWise',
   },
   {
     id: 'c2',
     type: 'content',
     number: 1,
-    title: "The Warning Signs",
-    content: "A support ticket spiked. No one noticed it was from their biggest enterprise customer.",
-    highlight: "Signal #1"
+    title: 'The Warning Signs',
+    content:
+      'A support ticket spiked. No one noticed it was from their biggest enterprise customer.',
+    highlight: 'Signal #1',
   },
   {
     id: 'c3',
     type: 'content',
     number: 2,
-    title: "Scattered Context",
-    content: "Product adoption dropped in the analytics tool. The connection to the support ticket? Invisible.",
-    highlight: "Signal #2"
+    title: 'Scattered Context',
+    content:
+      'Product adoption dropped in the analytics tool. The connection to the support ticket? Invisible.',
+    highlight: 'Signal #2',
   },
   {
     id: 'c4',
     type: 'content',
     number: 3,
-    title: "The Silent Alert",
-    content: "An executive had flagged concerns in a private note. It never reached the account team.",
-    highlight: "Signal #3"
+    title: 'The Silent Alert',
+    content:
+      'An executive had flagged concerns in a private note. It never reached the account team.',
+    highlight: 'Signal #3',
   },
   {
     id: 'c5',
     type: 'content',
     number: 4,
-    title: "The Cost of Silos",
-    content: "Three systems. Three signals. Zero connection. The account was nearly lost. $8M at risk.",
-    highlight: "The Problem"
+    title: 'The Cost of Silos',
+    content:
+      'Three systems. Three signals. Zero connection. The account was nearly lost. $8M at risk.',
+    highlight: 'The Problem',
   },
   {
     id: 'c6',
     type: 'content',
     number: 5,
-    title: "The Solution",
-    content: "What if every signal fed into one place — and that place could think? That's IntegrateWise.",
-    highlight: "The Answer"
+    title: 'The Solution',
+    content:
+      "What if every signal fed into one place — and that place could think? That's IntegrateWise.",
+    highlight: 'The Answer',
   },
   {
     id: 'c7',
     type: 'cta',
-    title: "Stop Losing Accounts to Disconnected Tools",
-    content: "See how the Spine unifies your signals →",
-    cta: "Learn More"
-  }
+    title: 'Stop Losing Accounts to Disconnected Tools',
+    content: 'See how the Spine unifies your signals →',
+    cta: 'Learn More',
+  },
 ];
+
+const RETHEMED_BANNER_PRESETS = {
+  b1: {
+    name: 'Forest Light',
+    bg: 'linear-gradient(135deg, var(--surface-raised) 0%, color-mix(in srgb, var(--primary-soft) 78%, var(--surface-raised)) 52%, color-mix(in srgb, var(--accent-soft) 68%, var(--surface-raised)) 100%)',
+    textColor: 'var(--text-strong)',
+  },
+  b2: {
+    name: 'Continuity Glow',
+    bg: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-soft) 82%, var(--surface-raised)) 0%, color-mix(in srgb, var(--surface) 60%, var(--accent-soft)) 100%)',
+    textColor: 'var(--text-strong)',
+  },
+  b3: {
+    name: 'Warm Accent',
+    bg: 'linear-gradient(135deg, color-mix(in srgb, var(--accent-soft) 80%, var(--surface-raised)) 0%, color-mix(in srgb, var(--primary-soft) 46%, var(--surface-raised)) 100%)',
+    textColor: 'var(--text-strong)',
+  },
+  b4: {
+    name: 'Clean White',
+    bg: 'linear-gradient(135deg, var(--surface-raised) 0%, var(--surface) 58%, color-mix(in srgb, var(--accent-soft) 44%, var(--surface-raised)) 100%)',
+    textColor: 'var(--text-strong)',
+  },
+} as const;
 
 // Default Banner Styles
 const DEFAULT_BANNERS = [
   {
     id: 'b1',
-    name: 'Classic Blue',
-    bg: 'linear-gradient(135deg, #0d1f33 0%, #1e3a5f 30%, #4154A3 60%, #5a6bc4 100%)',
+    ...RETHEMED_BANNER_PRESETS.b1,
     headline: 'IntegrateWise',
     tagline: 'AI Thinks in Context — and Waits for Approval',
-    cta: 'integratewise.ai'
+    cta: 'integratewise.ai',
   },
   {
     id: 'b2',
-    name: 'Dark Mode',
-    bg: 'linear-gradient(135deg, #1B2544 0%, #2d3561 50%, #4154A3 100%)',
+    ...RETHEMED_BANNER_PRESETS.b2,
     headline: 'The Adaptive Continuity Workspace',
     tagline: 'Unified Intelligence. Human-Governed.',
-    cta: 'integratewise.ai'
+    cta: 'integratewise.ai',
   },
   {
     id: 'b3',
-    name: 'Sunset Pink',
-    bg: 'linear-gradient(135deg, #1a1f36 0%, #4154A3 30%, #8b2f6b 60%, #EB4379 100%)',
+    ...RETHEMED_BANNER_PRESETS.b3,
     headline: 'Context-Aware AI',
     tagline: 'Thinks First. Waits for Approval.',
-    cta: 'Book a Demo →'
+    cta: 'Book a Demo →',
   },
   {
     id: 'b4',
-    name: 'Clean White',
-    bg: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%)',
+    ...RETHEMED_BANNER_PRESETS.b4,
     headline: 'IntegrateWise',
     tagline: 'Adaptive Continuity Workspace — Hydrated by the Spine',
     cta: 'integratewise.ai',
-    textColor: '#1B2544'
-  }
+  },
 ];
+
+const LEGACY_BANNER_BACKGROUNDS: Record<string, keyof typeof RETHEMED_BANNER_PRESETS> = {
+  'linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 30%, var(--primary-color) 60%, var(--forest-bright) 100%)': 'b1',
+  'linear-gradient(135deg, var(--text-color) 0%, var(--slate-mid) 50%, var(--primary-color) 100%)': 'b2',
+  'linear-gradient(135deg, var(--slate) 0%, var(--primary-color) 30%, var(--forest-mid) 60%, var(--accent-color) 100%)': 'b3',
+  'linear-gradient(135deg, var(--paper) 0%, var(--paper-warm) 50%, var(--paper-deep) 100%)': 'b4',
+};
+
+const LEGACY_BANNER_NAMES: Record<keyof typeof RETHEMED_BANNER_PRESETS, string> = {
+  b1: 'Soft Primary',
+  b2: 'Soft Contrast',
+  b3: 'Warm Accent',
+  b4: 'Clean White',
+};
+
+function normalizeBanners(banners: typeof DEFAULT_BANNERS) {
+  return banners.map((banner) => {
+    const presetId = LEGACY_BANNER_BACKGROUNDS[banner.bg];
+
+    if (!presetId) {
+      return banner;
+    }
+
+    const preset = RETHEMED_BANNER_PRESETS[presetId];
+
+    return {
+      ...banner,
+      bg: preset.bg,
+      textColor: preset.textColor,
+      name: banner.name === LEGACY_BANNER_NAMES[presetId] ? preset.name : banner.name,
+    };
+  });
+}
 
 // Load from localStorage
 function loadData() {
   return {
     slides: loadJson('presentation_slides', DEFAULT_SLIDES),
     carousel: loadJson('carousel_slides', DEFAULT_CAROUSEL_SLIDES),
-    banners: loadJson('linkedin_banners', DEFAULT_BANNERS)
+    banners: normalizeBanners(loadJson('linkedin_banners', DEFAULT_BANNERS)),
   };
 }
 
@@ -182,21 +252,59 @@ function saveData(key: string, data: any) {
   saveJson(key, data);
 }
 
+const tintSurface = (tone: string, strength = 14, base = 'var(--surface-raised)') =>
+  `color-mix(in srgb, ${tone} ${strength}%, ${base})`;
+
+const slideBackgrounds: Record<string, string> = {
+  title: `linear-gradient(135deg, ${tintSurface('var(--primary-color)', 14, 'var(--surface)')} 0%, ${tintSurface('var(--accent-color)', 18)} 100%)`,
+  problem: `linear-gradient(135deg, ${tintSurface('var(--accent-color)', 14)} 0%, var(--surface-raised) 100%)`,
+  solution: `linear-gradient(135deg, ${tintSurface('var(--primary-color)', 16)} 0%, ${tintSurface('var(--accent-color)', 14, 'var(--surface)')} 100%)`,
+  architecture: `linear-gradient(135deg, var(--surface-raised) 0%, ${tintSurface('var(--primary-color)', 10)} 100%)`,
+  governance: `linear-gradient(135deg, var(--surface) 0%, ${tintSurface('var(--accent-color)', 10)} 100%)`,
+  cta: `linear-gradient(135deg, ${tintSurface('var(--accent-color)', 18)} 0%, ${tintSurface('var(--primary-color)', 12)} 100%)`,
+};
+
+const carouselBackgrounds: Record<string, string> = {
+  cover: `linear-gradient(145deg, ${tintSurface('var(--primary-color)', 16)} 0%, ${tintSurface('var(--accent-color)', 14)} 100%)`,
+  content: `linear-gradient(145deg, var(--surface-raised) 0%, ${tintSurface('var(--primary-color)', 10)} 100%)`,
+  cta: `linear-gradient(145deg, ${tintSurface('var(--accent-color)', 18)} 0%, ${tintSurface('var(--primary-color)', 12)} 100%)`,
+};
+
+const previewFieldStyle = {
+  background: 'var(--surface-raised)',
+  color: 'var(--text-strong)',
+  border: '1px solid var(--border-subtle)',
+  boxShadow: 'var(--shadow-sm)',
+};
+
+const shellCardStyle = {
+  background: 'var(--surface-raised)',
+  border: '1px solid var(--border-subtle)',
+  boxShadow: 'var(--shadow-sm)',
+};
+
 // Copy Button
-function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) {
+function CopyButton({ text, label = 'Copy' }: { text: string; label?: string }) {
   const [copied, setCopied] = useState(false);
+
   const handleCopy = () => {
     copyToClipboard(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
   return (
     <motion.button
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       onClick={handleCopy}
       className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all"
-      style={{ background: copied ? '#10B981' : 'rgba(65,84,163,0.08)', color: copied ? '#fff' : '#4154A3' }}
+      style={{
+        background: copied ? 'var(--success-color)' : 'var(--primary-soft)',
+        color: copied ? 'var(--text-inverse)' : 'var(--primary-color)',
+        border: copied ? '1px solid transparent' : '1px solid var(--border-subtle)',
+        boxShadow: copied ? 'var(--shadow-sm)' : 'none',
+      }}
     >
       {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
       {copied ? 'Copied!' : label}
@@ -205,7 +313,15 @@ function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) 
 }
 
 // Slide Preview Component
-function SlidePreview({ slide, isEditing, onChange }: { slide: typeof DEFAULT_SLIDES[0], isEditing: boolean, onChange: (s: typeof DEFAULT_SLIDES[0]) => void }) {
+function SlidePreview({
+  slide,
+  isEditing,
+  onChange,
+}: {
+  slide: typeof DEFAULT_SLIDES[0];
+  isEditing: boolean;
+  onChange: (s: typeof DEFAULT_SLIDES[0]) => void;
+}) {
   const slideRef = useRef<HTMLDivElement>(null);
   const [isExporting, setIsExporting] = useState(false);
 
@@ -222,50 +338,79 @@ function SlidePreview({ slide, isEditing, onChange }: { slide: typeof DEFAULT_SL
     }
   };
 
-  const gradients: Record<string, string> = {
-    primary: 'linear-gradient(135deg, #4154A3 0%, #1B2544 100%)',
-    dark: 'linear-gradient(135deg, #1B2544 0%, #0d1220 100%)',
-    accent: 'linear-gradient(135deg, #EB4379 0%, #4154A3 100%)'
-  };
+  const background = slideBackgrounds[slide.type] || slideBackgrounds.title;
 
   return (
     <div className="space-y-4">
-      <div 
+      <div
         ref={slideRef}
-        className="w-full aspect-[16/9] rounded-xl overflow-hidden relative flex items-center justify-center p-12"
-        style={{ background: gradients.primary }}
+        className="w-full aspect-[16/9] rounded-2xl overflow-hidden relative flex items-center justify-center p-12"
+        style={{
+          background,
+          border: '1px solid var(--border-subtle)',
+          boxShadow: 'var(--shadow-lg)',
+        }}
       >
-        <div className="text-center text-white max-w-3xl">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--surface) 22%, transparent) 100%)',
+          }}
+        />
+        <div className="relative text-center max-w-3xl" style={{ color: 'var(--text-strong)' }}>
           {isEditing ? (
             <>
               <input
                 value={slide.title}
                 onChange={(e) => onChange({ ...slide, title: e.target.value })}
-                className="text-4xl font-bold bg-white/20 text-white text-center w-full px-4 py-2 rounded mb-4"
+                className="text-4xl font-bold text-center w-full px-4 py-2 rounded-xl mb-4"
+                style={previewFieldStyle}
               />
               {slide.subtitle && (
                 <input
                   value={slide.subtitle}
                   onChange={(e) => onChange({ ...slide, subtitle: e.target.value })}
-                  className="text-xl bg-white/20 text-white text-center w-full px-4 py-2 rounded mb-4"
+                  className="text-xl text-center w-full px-4 py-2 rounded-xl mb-4"
+                  style={previewFieldStyle}
                 />
               )}
               {slide.content && (
                 <textarea
                   value={slide.content}
                   onChange={(e) => onChange({ ...slide, content: e.target.value })}
-                  className="text-base bg-white/20 text-white text-center w-full px-4 py-2 rounded min-h-[100px]"
+                  className="text-base text-center w-full px-4 py-2 rounded-xl min-h-[100px]"
+                  style={previewFieldStyle}
                 />
               )}
             </>
           ) : (
             <>
               <h2 className="text-4xl font-bold mb-4">{slide.title}</h2>
-              {slide.subtitle && <p className="text-xl opacity-90 mb-4">{slide.subtitle}</p>}
-              {slide.content && <p className="text-base opacity-80 whitespace-pre-wrap">{slide.content}</p>}
-              {slide.tagline && <p className="text-lg mt-6 opacity-70">{slide.tagline}</p>}
+              {slide.subtitle && (
+                <p className="text-xl mb-4" style={{ color: 'var(--text-muted)' }}>
+                  {slide.subtitle}
+                </p>
+              )}
+              {slide.content && (
+                <p className="text-base whitespace-pre-wrap leading-relaxed" style={{ color: 'var(--slate)' }}>
+                  {slide.content}
+                </p>
+              )}
+              {slide.tagline && (
+                <p className="text-lg mt-6" style={{ color: 'var(--primary-color)' }}>
+                  {slide.tagline}
+                </p>
+              )}
               {slide.cta && (
-                <button className="mt-8 px-8 py-3 bg-white text-[#4154A3] rounded-full font-semibold">
+                <button
+                  className="mt-8 px-8 py-3 rounded-full font-semibold"
+                  style={{
+                    background: 'var(--primary-color)',
+                    color: 'var(--text-inverse)',
+                    boxShadow: 'var(--shadow-sm)',
+                  }}
+                >
                   {slide.cta}
                 </button>
               )}
@@ -277,7 +422,12 @@ function SlidePreview({ slide, isEditing, onChange }: { slide: typeof DEFAULT_SL
         <button
           onClick={handleDownload}
           disabled={isExporting}
-          className="flex items-center gap-2 px-4 py-2 bg-[#4154A3] text-white rounded-lg text-sm font-medium disabled:opacity-50"
+          className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium disabled:opacity-50"
+          style={{
+            background: 'var(--primary-color)',
+            color: 'var(--text-inverse)',
+            boxShadow: 'var(--shadow-sm)',
+          }}
         >
           <Download className="w-4 h-4" />
           {isExporting ? 'Exporting...' : 'Download PNG'}
@@ -289,7 +439,15 @@ function SlidePreview({ slide, isEditing, onChange }: { slide: typeof DEFAULT_SL
 }
 
 // Carousel Slide Component
-function CarouselSlide({ slide, isEditing, onChange }: { slide: typeof DEFAULT_CAROUSEL_SLIDES[0], isEditing: boolean, onChange: (s: typeof DEFAULT_CAROUSEL_SLIDES[0]) => void }) {
+function CarouselSlide({
+  slide,
+  isEditing,
+  onChange,
+}: {
+  slide: typeof DEFAULT_CAROUSEL_SLIDES[0];
+  isEditing: boolean;
+  onChange: (s: typeof DEFAULT_CAROUSEL_SLIDES[0]) => void;
+}) {
   const slideRef = useRef<HTMLDivElement>(null);
 
   const handleDownload = async () => {
@@ -300,11 +458,14 @@ function CarouselSlide({ slide, isEditing, onChange }: { slide: typeof DEFAULT_C
     }
   };
 
+  const background = carouselBackgrounds[slide.type] || carouselBackgrounds.content;
+
   return (
-    <div className="bg-white rounded-xl border border-[#E8ECF2] overflow-hidden">
-      <div 
+    <div className="rounded-xl overflow-hidden" style={shellCardStyle}>
+      <div
         ref={slideRef}
-        className="w-full aspect-square bg-gradient-to-br from-[#1B2544] to-[#4154A3] p-8 flex flex-col justify-center text-white"
+        className="w-full aspect-square p-8 flex flex-col justify-center"
+        style={{ background, color: 'var(--text-strong)' }}
       >
         {slide.type === 'cover' && (
           <div className="text-center">
@@ -313,59 +474,78 @@ function CarouselSlide({ slide, isEditing, onChange }: { slide: typeof DEFAULT_C
                 <input
                   value={slide.title}
                   onChange={(e) => onChange({ ...slide, title: e.target.value })}
-                  className="text-3xl font-bold bg-white/20 text-white text-center w-full px-4 py-2 rounded mb-4"
+                  className="text-3xl font-bold text-center w-full px-4 py-2 rounded-xl mb-4"
+                  style={previewFieldStyle}
                 />
                 <input
                   value={slide.subtitle || ''}
                   onChange={(e) => onChange({ ...slide, subtitle: e.target.value })}
-                  className="text-lg bg-white/20 text-white text-center w-full px-4 py-2 rounded"
+                  className="text-lg text-center w-full px-4 py-2 rounded-xl"
+                  style={previewFieldStyle}
                 />
               </>
             ) : (
               <>
                 <h3 className="text-3xl font-bold mb-4">{slide.title}</h3>
-                <p className="text-lg opacity-80">{slide.subtitle}</p>
+                <p className="text-lg" style={{ color: 'var(--text-muted)' }}>
+                  {slide.subtitle}
+                </p>
               </>
             )}
           </div>
         )}
-        
+
         {slide.type === 'content' && (
           <div>
             {isEditing ? (
               <>
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-4xl font-bold text-white/30">{slide.number}</span>
+                  <span className="text-4xl font-bold" style={{ color: 'var(--text-faint)' }}>
+                    {slide.number}
+                  </span>
                   <input
                     value={slide.highlight || ''}
                     onChange={(e) => onChange({ ...slide, highlight: e.target.value })}
-                    className="text-xs font-semibold uppercase tracking-wider bg-white/20 text-white px-2 py-1 rounded"
+                    className="text-xs font-semibold uppercase tracking-wider px-2 py-1 rounded-lg"
+                    style={{
+                      ...previewFieldStyle,
+                      background: tintSurface('var(--primary-color)', 10),
+                      color: 'var(--primary-color)',
+                    }}
                   />
                 </div>
                 <input
                   value={slide.title}
                   onChange={(e) => onChange({ ...slide, title: e.target.value })}
-                  className="text-xl font-bold bg-white/20 text-white w-full px-4 py-2 rounded mb-3"
+                  className="text-xl font-bold w-full px-4 py-2 rounded-xl mb-3"
+                  style={previewFieldStyle}
                 />
                 <textarea
                   value={slide.content || ''}
                   onChange={(e) => onChange({ ...slide, content: e.target.value })}
-                  className="text-base bg-white/20 text-white w-full px-4 py-2 rounded min-h-[100px]"
+                  className="text-base w-full px-4 py-2 rounded-xl min-h-[100px]"
+                  style={previewFieldStyle}
                 />
               </>
             ) : (
               <>
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-4xl font-bold text-white/30">{slide.number}</span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60">{slide.highlight}</span>
+                  <span className="text-4xl font-bold" style={{ color: 'var(--text-faint)' }}>
+                    {slide.number}
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--primary-color)' }}>
+                    {slide.highlight}
+                  </span>
                 </div>
                 <h3 className="text-xl font-bold mb-3">{slide.title}</h3>
-                <p className="text-base opacity-80">{slide.content}</p>
+                <p className="text-base leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                  {slide.content}
+                </p>
               </>
             )}
           </div>
         )}
-        
+
         {slide.type === 'cta' && (
           <div className="text-center">
             {isEditing ? (
@@ -373,34 +553,51 @@ function CarouselSlide({ slide, isEditing, onChange }: { slide: typeof DEFAULT_C
                 <input
                   value={slide.title}
                   onChange={(e) => onChange({ ...slide, title: e.target.value })}
-                  className="text-2xl font-bold bg-white/20 text-white text-center w-full px-4 py-2 rounded mb-4"
+                  className="text-2xl font-bold text-center w-full px-4 py-2 rounded-xl mb-4"
+                  style={previewFieldStyle}
                 />
                 <input
                   value={slide.content || ''}
                   onChange={(e) => onChange({ ...slide, content: e.target.value })}
-                  className="text-base bg-white/20 text-white text-center w-full px-4 py-2 rounded mb-4"
+                  className="text-base text-center w-full px-4 py-2 rounded-xl mb-4"
+                  style={previewFieldStyle}
                 />
                 <input
                   value={slide.cta || ''}
                   onChange={(e) => onChange({ ...slide, cta: e.target.value })}
-                  className="text-sm font-semibold bg-white/20 text-white text-center w-full px-4 py-2 rounded"
+                  className="text-sm font-semibold text-center w-full px-4 py-2 rounded-xl"
+                  style={{
+                    ...previewFieldStyle,
+                    background: tintSurface('var(--accent-color)', 12),
+                    color: 'var(--accent-color)',
+                  }}
                 />
               </>
             ) : (
               <>
                 <h3 className="text-2xl font-bold mb-4">{slide.title}</h3>
-                <p className="text-base opacity-80 mb-4">{slide.content}</p>
-                <span className="text-sm font-semibold text-[#EB4379]">{slide.cta}</span>
+                <p className="text-base mb-4 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                  {slide.content}
+                </p>
+                <span className="text-sm font-semibold" style={{ color: 'var(--accent-color)' }}>
+                  {slide.cta}
+                </span>
               </>
             )}
           </div>
         )}
       </div>
-      <div className="p-4 border-t border-[#E8ECF2] flex items-center justify-between">
-        <span className="text-xs text-[#5F6E93]">Slide {slide.number || 'Cover'}</span>
+      <div
+        className="p-4 flex items-center justify-between"
+        style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--surface)' }}
+      >
+        <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
+          Slide {slide.number || 'Cover'}
+        </span>
         <button
           onClick={handleDownload}
-          className="flex items-center gap-2 px-3 py-1.5 bg-[#4154A3] text-white rounded-lg text-xs font-medium"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium"
+          style={{ background: 'var(--primary-color)', color: 'var(--text-inverse)' }}
         >
           <Download className="w-3 h-3" />
           PNG
@@ -411,7 +608,15 @@ function CarouselSlide({ slide, isEditing, onChange }: { slide: typeof DEFAULT_C
 }
 
 // Banner Preview Component
-function BannerPreview({ banner, isEditing, onChange }: { banner: typeof DEFAULT_BANNERS[0], isEditing: boolean, onChange: (b: typeof DEFAULT_BANNERS[0]) => void }) {
+function BannerPreview({
+  banner,
+  isEditing,
+  onChange,
+}: {
+  banner: typeof DEFAULT_BANNERS[0];
+  isEditing: boolean;
+  onChange: (b: typeof DEFAULT_BANNERS[0]) => void;
+}) {
   const bannerRef = useRef<HTMLDivElement>(null);
 
   const handleDownload = async () => {
@@ -422,35 +627,41 @@ function BannerPreview({ banner, isEditing, onChange }: { banner: typeof DEFAULT
     }
   };
 
-  const textColor = banner.textColor || '#ffffff';
+  const textColor = banner.textColor || 'var(--text-strong)';
+  const bannerInputStyle = {
+    background: 'color-mix(in srgb, var(--surface-raised) 82%, transparent)',
+    color: textColor,
+    border: '1px solid var(--border-subtle)',
+    boxShadow: 'var(--shadow-sm)',
+  };
 
   return (
-    <div className="bg-white rounded-xl border border-[#E8ECF2] overflow-hidden">
-      <div 
+    <div className="rounded-xl overflow-hidden" style={shellCardStyle}>
+      <div
         ref={bannerRef}
         className="w-full aspect-[1128/191] flex items-center justify-center p-6"
         style={{ background: banner.bg }}
       >
-        <div className="text-center" style={{ color: textColor }}>
+        <div className="text-center max-w-2xl" style={{ color: textColor }}>
           {isEditing ? (
             <>
               <input
                 value={banner.headline}
                 onChange={(e) => onChange({ ...banner, headline: e.target.value })}
-                className="text-2xl font-bold bg-white/20 text-center w-full px-4 py-1 rounded mb-2"
-                style={{ color: textColor }}
+                className="text-2xl font-bold text-center w-full px-4 py-1 rounded-xl mb-2"
+                style={bannerInputStyle}
               />
               <input
                 value={banner.tagline}
                 onChange={(e) => onChange({ ...banner, tagline: e.target.value })}
-                className="text-sm bg-white/20 text-center w-full px-4 py-1 rounded mb-1"
-                style={{ color: textColor }}
+                className="text-sm text-center w-full px-4 py-1 rounded-xl mb-1"
+                style={bannerInputStyle}
               />
               <input
                 value={banner.cta}
                 onChange={(e) => onChange({ ...banner, cta: e.target.value })}
-                className="text-xs bg-white/20 text-center w-full px-4 py-1 rounded"
-                style={{ color: textColor }}
+                className="text-xs text-center w-full px-4 py-1 rounded-xl"
+                style={bannerInputStyle}
               />
             </>
           ) : (
@@ -462,19 +673,26 @@ function BannerPreview({ banner, isEditing, onChange }: { banner: typeof DEFAULT
           )}
         </div>
       </div>
-      <div className="p-4 border-t border-[#E8ECF2] flex items-center justify-between">
+      <div
+        className="p-4 flex items-center justify-between"
+        style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--surface)' }}
+      >
         {isEditing ? (
           <input
             value={banner.name}
             onChange={(e) => onChange({ ...banner, name: e.target.value })}
-            className="text-sm font-medium text-[#1B2544] px-2 py-1 border border-[#D5DAE5] rounded"
+            className="text-sm font-medium px-2 py-1 rounded-lg"
+            style={previewFieldStyle}
           />
         ) : (
-          <span className="text-sm font-medium text-[#1B2544]">{banner.name}</span>
+          <span className="text-sm font-medium" style={{ color: 'var(--text-strong)' }}>
+            {banner.name}
+          </span>
         )}
         <button
           onClick={handleDownload}
-          className="flex items-center gap-2 px-3 py-1.5 bg-[#0A66C2] text-white rounded-lg text-xs font-medium"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium"
+          style={{ background: 'var(--primary-color)', color: 'var(--text-inverse)' }}
         >
           <Download className="w-3 h-3" />
           PNG
@@ -506,15 +724,20 @@ export function PresentationsPage() {
 
   const handleReset = () => {
     if (confirm('Reset all content to defaults? This cannot be undone.')) {
-      setData({ slides: DEFAULT_SLIDES, carousel: DEFAULT_CAROUSEL_SLIDES, banners: DEFAULT_BANNERS });
+      setData({
+        slides: DEFAULT_SLIDES,
+        carousel: DEFAULT_CAROUSEL_SLIDES,
+        banners: DEFAULT_BANNERS,
+      });
     }
   };
 
   const downloadAll = async () => {
     const zip = new JSZip();
-    
+
     if (activeTab === 'carousel') {
       for (const slide of data.carousel) {
+        void slide;
         // In real implementation, would capture each slide
       }
       const content = await zip.generateAsync({ type: 'blob' });
@@ -525,36 +748,66 @@ export function PresentationsPage() {
   };
 
   return (
-    <div className="p-6 lg:p-10 max-w-6xl mx-auto">
+    <div className="p-6 lg:p-10 max-w-6xl mx-auto space-y-8">
       {/* Header */}
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="mb-8 flex items-start justify-between"
+        className="rounded-2xl p-6 lg:p-8 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between"
+        style={{
+          background:
+            'linear-gradient(135deg, var(--surface) 0%, var(--primary-soft) 58%, color-mix(in srgb, var(--accent-soft) 70%, var(--surface-raised)) 100%)',
+          border: '1px solid var(--border-subtle)',
+          boxShadow: 'var(--shadow-md)',
+        }}
       >
         <div>
-          <div className="flex items-center gap-2 mb-2">
-            <Presentation className="w-5 h-5 text-[#4154A3]" />
-            <span className="text-xs font-semibold text-[#4154A3] uppercase tracking-wider">Presentations</span>
+          <div className="flex items-center gap-3 mb-4">
+            <div
+              className="w-11 h-11 rounded-xl flex items-center justify-center"
+              style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}
+            >
+              <Presentation className="w-5 h-5" style={{ color: 'var(--primary-color)' }} />
+            </div>
+            <span
+              className="text-xs font-semibold uppercase"
+              style={{ color: 'var(--primary-color)', letterSpacing: '0.18em' }}
+            >
+              Presentations
+            </span>
           </div>
-          <h1 className="text-3xl font-bold text-[#1B2544] mb-2">Slide Decks & Assets</h1>
-          <p className="text-[#5F6E93]">Pitch decks, LinkedIn carousels, and banner variations</p>
+          <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--text-strong)' }}>
+            Slide Decks & Assets
+          </h1>
+          <p className="max-w-2xl" style={{ color: 'var(--text-muted)' }}>
+            Pitch decks, LinkedIn carousels, and banner variations rethemed to the brighter documentation surface.
+          </p>
         </div>
-        
+
         {/* Edit Controls */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           {isEditing ? (
             <>
               <button
                 onClick={handleSave}
-                className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+                style={{
+                  background: 'var(--success-color)',
+                  color: 'var(--text-inverse)',
+                  boxShadow: 'var(--shadow-sm)',
+                }}
               >
                 <Save className="w-4 h-4" />
                 Save
               </button>
               <button
                 onClick={() => setIsEditing(false)}
-                className="flex items-center gap-2 px-4 py-2 border border-[#D5DAE5] text-[#475578] rounded-lg text-sm font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+                style={{
+                  background: 'var(--surface-raised)',
+                  color: 'var(--text-muted)',
+                  border: '1px solid var(--border-subtle)',
+                }}
               >
                 <X className="w-4 h-4" />
                 Cancel
@@ -564,14 +817,24 @@ export function PresentationsPage() {
             <>
               <button
                 onClick={() => setIsEditing(true)}
-                className="flex items-center gap-2 px-4 py-2 bg-[#4154A3] text-white rounded-lg text-sm font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+                style={{
+                  background: 'var(--primary-color)',
+                  color: 'var(--text-inverse)',
+                  boxShadow: 'var(--shadow-sm)',
+                }}
               >
                 <Edit2 className="w-4 h-4" />
                 Edit
               </button>
               <button
                 onClick={handleReset}
-                className="flex items-center gap-2 px-4 py-2 border border-[#D5DAE5] text-[#475578] rounded-lg text-sm font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+                style={{
+                  background: 'var(--surface-raised)',
+                  color: 'var(--text-muted)',
+                  border: '1px solid var(--border-subtle)',
+                }}
               >
                 <RotateCcw className="w-4 h-4" />
               </button>
@@ -581,7 +844,10 @@ export function PresentationsPage() {
       </motion.div>
 
       {/* Tabs */}
-      <div className="flex gap-2 mb-8 border-b border-[#E8ECF2]">
+      <div
+        className="flex flex-wrap gap-2 p-2 rounded-2xl"
+        style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)' }}
+      >
         {[
           { key: 'slides', label: 'Pitch Deck', icon: Presentation },
           { key: 'carousel', label: 'LinkedIn Carousel', icon: Grid },
@@ -590,11 +856,20 @@ export function PresentationsPage() {
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key as typeof activeTab)}
-            className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all ${
+            className="flex items-center gap-2 px-4 py-3 text-sm font-medium rounded-xl transition-all"
+            style={
               activeTab === tab.key
-                ? 'border-[#4154A3] text-[#4154A3]'
-                : 'border-transparent text-[#5F6E93] hover:text-[#4154A3]'
-            }`}
+                ? {
+                    background: 'var(--surface-raised)',
+                    color: 'var(--primary-color)',
+                    border: '1px solid var(--border-subtle)',
+                    boxShadow: 'var(--shadow-sm)',
+                  }
+                : {
+                    color: 'var(--text-muted)',
+                    border: '1px solid transparent',
+                  }
+            }
           >
             <tab.icon className="w-4 h-4" />
             {tab.label}
@@ -613,29 +888,31 @@ export function PresentationsPage() {
             className="space-y-6"
           >
             {/* Slide Navigator */}
-            <div className="flex items-center justify-between bg-white rounded-xl border border-[#E8ECF2] p-4">
+            <div className="flex items-center justify-between rounded-xl p-4" style={shellCardStyle}>
               <button
                 onClick={() => setCurrentSlide(Math.max(0, currentSlide - 1))}
                 disabled={currentSlide === 0}
-                className="p-2 hover:bg-[#F8FAFC] rounded-lg disabled:opacity-50"
+                className="p-2 rounded-lg disabled:opacity-50"
+                style={{ color: 'var(--text-muted)' }}
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
-              <span className="text-sm font-medium text-[#1B2544]">
+              <span className="text-sm font-medium" style={{ color: 'var(--text-strong)' }}>
                 Slide {currentSlide + 1} of {data.slides.length}
               </span>
               <button
                 onClick={() => setCurrentSlide(Math.min(data.slides.length - 1, currentSlide + 1))}
                 disabled={currentSlide === data.slides.length - 1}
-                className="p-2 hover:bg-[#F8FAFC] rounded-lg disabled:opacity-50"
+                className="p-2 rounded-lg disabled:opacity-50"
+                style={{ color: 'var(--text-muted)' }}
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>
 
             {/* Current Slide */}
-            <SlidePreview 
-              slide={data.slides[currentSlide]} 
+            <SlidePreview
+              slide={data.slides[currentSlide]}
               isEditing={isEditing}
               onChange={(updated) => {
                 const newSlides = [...data.slides];
@@ -650,12 +927,16 @@ export function PresentationsPage() {
                 <button
                   key={slide.id}
                   onClick={() => setCurrentSlide(i)}
-                  className={`aspect-video rounded-lg border-2 overflow-hidden ${
-                    currentSlide === i ? 'border-[#4154A3]' : 'border-[#E8ECF2]'
-                  }`}
-                  style={{ background: 'linear-gradient(135deg, #4154A3 0%, #1B2544 100%)' }}
+                  className="aspect-video rounded-lg border-2 overflow-hidden"
+                  style={{
+                    background: slideBackgrounds[slide.type] || slideBackgrounds.title,
+                    borderColor: currentSlide === i ? 'var(--primary-color)' : 'var(--border-subtle)',
+                    boxShadow: currentSlide === i ? 'var(--shadow-sm)' : 'none',
+                  }}
                 >
-                  <span className="text-white text-xs font-bold">{i + 1}</span>
+                  <span className="text-xs font-bold" style={{ color: 'var(--text-strong)' }}>
+                    {i + 1}
+                  </span>
                 </button>
               ))}
             </div>
@@ -670,13 +951,14 @@ export function PresentationsPage() {
             exit={{ opacity: 0, y: -20 }}
             className="space-y-6"
           >
-            <div className="flex items-center justify-between">
-              <p className="text-sm text-[#5F6E93]">
+            <div className="flex items-center justify-between gap-4 flex-wrap">
+              <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
                 LinkedIn carousel posts. Download each slide individually or all as a ZIP.
               </p>
               <button
                 onClick={downloadAll}
-                className="flex items-center gap-2 px-4 py-2 bg-[#0A66C2] text-white rounded-lg text-sm font-medium"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+                style={{ background: 'var(--primary-color)', color: 'var(--text-inverse)' }}
               >
                 <Download className="w-4 h-4" />
                 Download All
@@ -707,7 +989,7 @@ export function PresentationsPage() {
             exit={{ opacity: 0, y: -20 }}
             className="space-y-6"
           >
-            <p className="text-sm text-[#5F6E93]">
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
               LinkedIn company page banners (1128×191 px). Multiple styles for different campaigns.
             </p>
             <div className="grid md:grid-cols-2 gap-6">

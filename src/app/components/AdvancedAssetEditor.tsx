@@ -57,13 +57,13 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
   
   // Custom colors
   const [customPrimaryColor, setCustomPrimaryColor] = useState('#1A3A2A');
-  const [customAccentColor, setCustomAccentColor] = useState('#B8943F');
+  const [customAccentColor, setCustomAccentColor] = useState('#b0894f');
   const [useCustomColors, setUseCustomColors] = useState(false);
   
   // Background settings
   const [bgType, setBgType] = useState<'solid' | 'gradient' | 'transparent'>('solid');
   const [bgColor, setBgColor] = useState('#ffffff');
-  const [bgGradientStart, setBgGradientStart] = useState('#EBE5D8');
+  const [bgGradientStart, setBgGradientStart] = useState('#f0eee8');
   const [bgGradientEnd, setBgGradientEnd] = useState('#ffffff');
   const [bgGradientAngle, setBgGradientAngle] = useState(135);
   
@@ -220,7 +220,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center">
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white rounded-2xl shadow-2xl w-[95vw] max-w-7xl max-h-[95vh] flex flex-col overflow-hidden">
+      <div className="relative rounded-2xl shadow-2xl w-[95vw] max-w-7xl max-h-[95vh] flex flex-col overflow-hidden" style={{ background: 'var(--paper)' }}>
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: '1px solid var(--rule-light)' }}>
           <div>
@@ -259,7 +259,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors"
                   style={
                     activeTab === tab.id
-                      ? { background: 'var(--forest)', color: 'var(--paper)' }
+                      ? { background: 'var(--primary-soft)', color: 'var(--primary-hover)', border: '1px solid rgb(31 107 87 / 0.12)' }
                       : { background: 'white', color: 'var(--slate)', border: '1px solid var(--rule-light)' }
                   }
                 >
@@ -274,15 +274,15 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
               {activeTab === 'basic' && (
                 <>
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-brand-gray-700">Logo Variant</label>
+                    <label className="text-xs font-medium text-[var(--text-color)]">Logo Variant</label>
                     {(['full', 'compact', 'icon-only'] as const).map(variant => (
                       <button
                         key={variant}
                         onClick={() => setLogoVariant(variant)}
                         className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
                           logoVariant === variant
-                            ? 'bg-brand-primary text-white'
-                            : 'bg-white text-brand-gray-700 border border-brand-gray-200'
+                            ? 'bg-[var(--primary-color)] text-white'
+                            : 'bg-[var(--paper)] text-[var(--text-color)] border border-[var(--border-subtle)]'
                         }`}
                       >
                         {variant === 'full' ? 'Full Logo' : variant === 'compact' ? 'Compact' : 'Icon Only'}
@@ -291,14 +291,14 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-brand-gray-700">Color Theme</label>
+                    <label className="text-xs font-medium text-[var(--text-color)]">Color Theme</label>
                     <div className="grid grid-cols-2 gap-2">
                       {[
                         { id: 'default', label: 'Default' },
                         { id: 'white', label: 'White' },
                         { id: 'monochrome-dark', label: 'Mono Dark' },
                         { id: 'monochrome-white', label: 'Mono White' },
-                        { id: 'blue-only', label: 'Forest Only' },
+                        { id: 'blue-only', label: 'Primary Only' },
                         { id: 'print-safe-black', label: 'Print Black' },
                       ].map(theme => (
                         <button
@@ -306,8 +306,8 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                           onClick={() => setColorVariant(theme.id as any)}
                           className={`text-left px-2 py-1.5 rounded-md text-xs transition-colors ${
                             colorVariant === theme.id
-                              ? 'bg-brand-primary text-white'
-                              : 'bg-white text-brand-gray-700 border border-brand-gray-200'
+                              ? 'bg-[var(--primary-color)] text-white'
+                              : 'bg-[var(--paper)] text-[var(--text-color)] border border-[var(--border-subtle)]'
                           }`}
                         >
                           {theme.label}
@@ -329,43 +329,43 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                         onChange={(e) => setUseCustomColors(e.target.checked)}
                         className="w-4 h-4 rounded"
                       />
-                      <label htmlFor="use-custom" className="text-sm font-medium text-brand-gray-700">
+                      <label htmlFor="use-custom" className="text-sm font-medium text-[var(--text-color)]">
                         Use Custom Colors
                       </label>
                     </div>
                     {useCustomColors && (
                       <div className="space-y-3 p-3 rounded-lg" style={{ background: 'var(--paper)' }}>
                         <div>
-                          <label className="text-xs font-medium text-brand-gray-700">Primary Color</label>
+                          <label className="text-xs font-medium text-[var(--text-color)]">Primary Color</label>
                           <div className="flex items-center gap-2 mt-1">
                             <input
                               type="color"
                               value={customPrimaryColor}
                               onChange={(e) => setCustomPrimaryColor(e.target.value)}
-                              className="w-12 h-8 rounded border border-brand-gray-300"
+                              className="w-12 h-8 rounded border border-[var(--border-base)]"
                             />
                             <input
                               type="text"
                               value={customPrimaryColor}
                               onChange={(e) => setCustomPrimaryColor(e.target.value)}
-                              className="flex-1 px-2 py-1 text-xs rounded border border-brand-gray-300"
+                              className="flex-1 px-2 py-1 text-xs rounded border border-[var(--border-base)]"
                             />
                           </div>
                         </div>
                         <div>
-                          <label className="text-xs font-medium text-brand-gray-700">Accent Color</label>
+                          <label className="text-xs font-medium text-[var(--text-color)]">Accent Color</label>
                           <div className="flex items-center gap-2 mt-1">
                             <input
                               type="color"
                               value={customAccentColor}
                               onChange={(e) => setCustomAccentColor(e.target.value)}
-                              className="w-12 h-8 rounded border border-brand-gray-300"
+                              className="w-12 h-8 rounded border border-[var(--border-base)]"
                             />
                             <input
                               type="text"
                               value={customAccentColor}
                               onChange={(e) => setCustomAccentColor(e.target.value)}
-                              className="flex-1 px-2 py-1 text-xs rounded border border-brand-gray-300"
+                              className="flex-1 px-2 py-1 text-xs rounded border border-[var(--border-base)]"
                             />
                           </div>
                         </div>
@@ -374,7 +374,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-xs font-medium text-brand-gray-700">Background Type</label>
+                    <label className="text-xs font-medium text-[var(--text-color)]">Background Type</label>
                     <div className="flex gap-2">
                       {(['solid', 'gradient', 'transparent'] as const).map(type => (
                         <button
@@ -382,8 +382,8 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                           onClick={() => setBgType(type)}
                           className={`flex-1 px-3 py-2 rounded-md text-xs font-medium transition-colors ${
                             bgType === type
-                              ? 'bg-brand-primary text-white'
-                              : 'bg-white text-brand-gray-700 border border-brand-gray-200'
+                              ? 'bg-[var(--primary-color)] text-white'
+                              : 'bg-[var(--paper)] text-[var(--text-color)] border border-[var(--border-subtle)]'
                           }`}
                         >
                           {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -393,19 +393,19 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
 
                     {bgType === 'solid' && (
                       <div>
-                        <label className="text-xs font-medium text-brand-gray-700">Background Color</label>
+                        <label className="text-xs font-medium text-[var(--text-color)]">Background Color</label>
                         <div className="flex items-center gap-2 mt-1">
                           <input
                             type="color"
                             value={bgColor}
                             onChange={(e) => setBgColor(e.target.value)}
-                            className="w-12 h-8 rounded border border-brand-gray-300"
+                            className="w-12 h-8 rounded border border-[var(--border-base)]"
                           />
                           <input
                             type="text"
                             value={bgColor}
                             onChange={(e) => setBgColor(e.target.value)}
-                            className="flex-1 px-2 py-1 text-xs rounded border border-brand-gray-300"
+                            className="flex-1 px-2 py-1 text-xs rounded border border-[var(--border-base)]"
                           />
                         </div>
                       </div>
@@ -414,41 +414,41 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                     {bgType === 'gradient' && (
                       <div className="space-y-3">
                         <div>
-                          <label className="text-xs font-medium text-brand-gray-700">Start Color</label>
+                          <label className="text-xs font-medium text-[var(--text-color)]">Start Color</label>
                           <div className="flex items-center gap-2 mt-1">
                             <input
                               type="color"
                               value={bgGradientStart}
                               onChange={(e) => setBgGradientStart(e.target.value)}
-                              className="w-12 h-8 rounded border border-brand-gray-300"
+                              className="w-12 h-8 rounded border border-[var(--border-base)]"
                             />
                             <input
                               type="text"
                               value={bgGradientStart}
                               onChange={(e) => setBgGradientStart(e.target.value)}
-                              className="flex-1 px-2 py-1 text-xs rounded border border-brand-gray-300"
+                              className="flex-1 px-2 py-1 text-xs rounded border border-[var(--border-base)]"
                             />
                           </div>
                         </div>
                         <div>
-                          <label className="text-xs font-medium text-brand-gray-700">End Color</label>
+                          <label className="text-xs font-medium text-[var(--text-color)]">End Color</label>
                           <div className="flex items-center gap-2 mt-1">
                             <input
                               type="color"
                               value={bgGradientEnd}
                               onChange={(e) => setBgGradientEnd(e.target.value)}
-                              className="w-12 h-8 rounded border border-brand-gray-300"
+                              className="w-12 h-8 rounded border border-[var(--border-base)]"
                             />
                             <input
                               type="text"
                               value={bgGradientEnd}
                               onChange={(e) => setBgGradientEnd(e.target.value)}
-                              className="flex-1 px-2 py-1 text-xs rounded border border-brand-gray-300"
+                              className="flex-1 px-2 py-1 text-xs rounded border border-[var(--border-base)]"
                             />
                           </div>
                         </div>
                         <div>
-                          <label className="text-xs font-medium text-brand-gray-700">
+                          <label className="text-xs font-medium text-[var(--text-color)]">
                             Angle: {bgGradientAngle}°
                           </label>
                           <input
@@ -469,7 +469,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
               {activeTab === 'dimensions' && (
                 <>
                   <div>
-                    <label className="text-xs font-medium text-brand-gray-700">
+                    <label className="text-xs font-medium text-[var(--text-color)]">
                       Scale: {scale}%
                     </label>
                     <input
@@ -483,7 +483,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                   </div>
 
                   <div>
-                    <label className="text-xs font-medium text-brand-gray-700">
+                    <label className="text-xs font-medium text-[var(--text-color)]">
                       Padding X: {paddingX}px
                     </label>
                     <input
@@ -497,7 +497,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                   </div>
 
                   <div>
-                    <label className="text-xs font-medium text-brand-gray-700">
+                    <label className="text-xs font-medium text-[var(--text-color)]">
                       Padding Y: {paddingY}px
                     </label>
                     <input
@@ -512,21 +512,21 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
 
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="text-xs font-medium text-brand-gray-700">Width (px)</label>
+                      <label className="text-xs font-medium text-[var(--text-color)]">Width (px)</label>
                       <input
                         type="number"
                         value={customWidth}
                         onChange={(e) => setCustomWidth(Number(e.target.value))}
-                        className="w-full px-2 py-1.5 text-sm rounded border border-brand-gray-300 mt-1"
+                        className="w-full px-2 py-1.5 text-sm rounded border border-[var(--border-base)] mt-1"
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-medium text-brand-gray-700">Height (px)</label>
+                      <label className="text-xs font-medium text-[var(--text-color)]">Height (px)</label>
                       <input
                         type="number"
                         value={customHeight}
                         onChange={(e) => setCustomHeight(Number(e.target.value))}
-                        className="w-full px-2 py-1.5 text-sm rounded border border-brand-gray-300 mt-1"
+                        className="w-full px-2 py-1.5 text-sm rounded border border-[var(--border-base)] mt-1"
                       />
                     </div>
                   </div>
@@ -536,7 +536,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
               {activeTab === 'effects' && (
                 <>
                   <div>
-                    <label className="text-xs font-medium text-brand-gray-700">
+                    <label className="text-xs font-medium text-[var(--text-color)]">
                       Opacity: {opacity}%
                     </label>
                     <input
@@ -558,7 +558,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                         onChange={(e) => setShadowEnabled(e.target.checked)}
                         className="w-4 h-4 rounded"
                       />
-                      <label htmlFor="shadow-enabled" className="text-sm font-medium text-brand-gray-700">
+                      <label htmlFor="shadow-enabled" className="text-sm font-medium text-[var(--text-color)]">
                         Enable Shadow
                       </label>
                     </div>
@@ -566,7 +566,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                     {shadowEnabled && (
                       <div className="space-y-3 p-3 rounded-lg" style={{ background: 'var(--paper)' }}>
                         <div>
-                          <label className="text-xs font-medium text-brand-gray-700">
+                          <label className="text-xs font-medium text-[var(--text-color)]">
                             Blur: {shadowBlur}px
                           </label>
                           <input
@@ -579,12 +579,12 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                           />
                         </div>
                         <div>
-                          <label className="text-xs font-medium text-brand-gray-700">Shadow Color</label>
+                          <label className="text-xs font-medium text-[var(--text-color)]">Shadow Color</label>
                           <input
                             type="text"
                             value={shadowColor}
                             onChange={(e) => setShadowColor(e.target.value)}
-                            className="w-full px-2 py-1.5 text-xs rounded border border-brand-gray-300 mt-1"
+                            className="w-full px-2 py-1.5 text-xs rounded border border-[var(--border-base)] mt-1"
                             placeholder="rgba(0,0,0,0.1)"
                           />
                         </div>
@@ -597,17 +597,17 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
               {activeTab === 'export' && (
                 <>
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-brand-gray-700">Quick Export</label>
+                    <label className="text-xs font-medium text-[var(--text-color)]">Quick Export</label>
                     <div className="flex gap-2">
                       <button
                         onClick={() => handleQuickExport('png')}
-                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium bg-brand-primary text-white hover:opacity-90"
+                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium bg-[var(--primary-color)] text-white hover:opacity-90"
                       >
                         <FileImage className="w-3.5 h-3.5" /> PNG
                       </button>
                       <button
                         onClick={() => handleQuickExport('svg')}
-                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium bg-brand-primary text-white hover:opacity-90"
+                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium bg-[var(--primary-color)] text-white hover:opacity-90"
                       >
                         <FileCode className="w-3.5 h-3.5" /> SVG
                       </button>
@@ -615,7 +615,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-brand-gray-700">
+                    <label className="text-xs font-medium text-[var(--text-color)]">
                       Export Quality: {exportQuality}%
                     </label>
                     <input
@@ -636,13 +636,13 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                       onChange={(e) => setIncludeTransparent(e.target.checked)}
                       className="w-4 h-4 rounded"
                     />
-                    <label htmlFor="include-transparent" className="text-xs text-brand-gray-700">
+                    <label htmlFor="include-transparent" className="text-xs text-[var(--text-color)]">
                       Include transparent versions
                     </label>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-brand-gray-700">
+                    <label className="text-xs font-medium text-[var(--text-color)]">
                       Batch Export Presets ({selectedPresets.length} selected)
                     </label>
                     <div className="space-y-1.5 max-h-64 overflow-y-auto p-2 rounded-lg" style={{ background: 'var(--paper)' }}>
@@ -653,7 +653,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                           className="w-full flex items-center justify-between px-3 py-2 rounded-md text-xs transition-colors"
                           style={
                             selectedPresets.includes(preset.id)
-                              ? { background: 'var(--forest)', color: 'var(--paper)' }
+                              ? { background: 'var(--primary-soft)', color: 'var(--primary-hover)', border: '1px solid rgb(31 107 87 / 0.12)' }
                               : { background: 'white', color: 'var(--slate)' }
                           }
                         >
@@ -668,7 +668,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
                     onClick={handleBatchExport}
                     disabled={isExporting || selectedPresets.length === 0}
                     className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                    style={{ background: 'var(--gold)', color: 'var(--ink)' }}
+                    style={{ background: 'var(--primary-color)', color: 'var(--text-inverse)' }}
                   >
                     {isExporting ? (
                       <>

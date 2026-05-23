@@ -23,7 +23,7 @@ import {
   SlidersHorizontal 
 } from 'lucide-react';
 import { IntegrateWiseLogo } from '../IntegrateWiseLogo';
-import { TAGLINES, BRAND, CONTACT } from '../../lib/brand';
+import { TAGLINES, BRAND } from '../../lib/brand';
 
 // Import SVG files as URLs for preview display
 import logoFrame1 from '../../../imports/Frame_1.svg';
@@ -48,6 +48,64 @@ const LOGO_VARIANTS = [
   { label: 'Icon Only', variant: 'icon-only' as const, desc: 'Logo mark for favicons & avatars' },
 ] as const;
 
+const checkerboardStyle: React.CSSProperties = {
+  backgroundImage:
+    'linear-gradient(45deg, var(--border-subtle) 25%, transparent 25%), linear-gradient(-45deg, var(--border-subtle) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, var(--border-subtle) 75%), linear-gradient(-45deg, transparent 75%, var(--border-subtle) 75%)',
+  backgroundSize: '20px 20px',
+  backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
+  backgroundColor: 'var(--surface-raised)',
+};
+
+const raisedPanelStyle: React.CSSProperties = {
+  background: 'var(--surface-raised)',
+  border: '1px solid var(--border-subtle)',
+  boxShadow: 'var(--shadow-sm)',
+};
+
+const softPanelStyle: React.CSSProperties = {
+  background: 'var(--surface)',
+  border: '1px solid var(--border-subtle)',
+};
+
+const heroPanelStyle: React.CSSProperties = {
+  background: 'linear-gradient(135deg, var(--surface) 0%, var(--primary-soft) 58%, var(--accent-soft) 100%)',
+  border: '1px solid var(--border-subtle)',
+  boxShadow: 'var(--shadow-md)',
+};
+
+const getCanvasStyle = (
+  tone: 'white' | 'grey' | 'dark' | 'checker' | 'transparent' | 'light',
+): React.CSSProperties => {
+  switch (tone) {
+    case 'grey':
+      return { background: 'var(--surface-2)' };
+    case 'dark':
+      return { background: 'var(--surface-inverse)' };
+    case 'checker':
+      return checkerboardStyle;
+    case 'transparent':
+      return { background: 'transparent' };
+    case 'light':
+    case 'white':
+    default:
+      return { background: 'var(--surface-raised)' };
+  }
+};
+
+const getSelectionButtonStyle = (active: boolean): React.CSSProperties =>
+  active
+    ? {
+        background: 'var(--primary-soft)',
+        color: 'var(--primary-hover)',
+        border: '1px solid color-mix(in srgb, var(--primary-color) 18%, white)',
+        boxShadow: 'var(--shadow-sm)',
+      }
+    : {
+        background: 'var(--surface-raised)',
+        color: 'var(--text-muted)',
+        border: '1px solid var(--border-subtle)',
+      };
+
 /* ── Preview Modal ── */
 function PreviewModal({
   open,
@@ -66,24 +124,11 @@ function PreviewModal({
 
   if (!open) return null;
 
-  const bgClass: Record<string, string> = {
-    white: 'bg-white',
-    grey: '',
-    dark: '',
-    checker: '',
-  };
-  
   const bgStyle: Record<string, React.CSSProperties | undefined> = {
-    white: { background: '#ffffff' },
-    grey: { background: 'var(--paper-warm)' },
-    dark: { background: 'var(--forest)' },
-    checker: {
-      backgroundImage:
-        'linear-gradient(45deg, var(--rule-light) 25%, transparent 25%), linear-gradient(-45deg, var(--rule-light) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, var(--rule-light) 75%), linear-gradient(-45deg, transparent 75%, var(--rule-light) 75%)',
-      backgroundSize: '20px 20px',
-      backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px',
-      backgroundColor: '#ffffff'
-    },
+    white: getCanvasStyle('white'),
+    grey: getCanvasStyle('grey'),
+    dark: getCanvasStyle('dark'),
+    checker: getCanvasStyle('checker'),
   };
 
   const handleModalDownload = async () => {
@@ -114,13 +159,24 @@ function PreviewModal({
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white rounded-2xl shadow-2xl w-[90vw] max-w-4xl max-h-[90vh] flex flex-col overflow-hidden">
+      <div
+        className="absolute inset-0 backdrop-blur-sm"
+        style={{ background: 'var(--overlay-medium)' }}
+        onClick={onClose}
+      />
+      <div
+        className="relative w-[90vw] max-w-4xl max-h-[90vh] flex flex-col overflow-hidden rounded-2xl"
+        style={{
+          background: 'var(--surface-raised)',
+          border: '1px solid var(--border-subtle)',
+          boxShadow: 'var(--shadow-2xl)',
+        }}
+      >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: '1px solid var(--rule-light)' }}>
+        <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
           <div>
-            <p className="text-base font-semibold" style={{ color: 'var(--forest)' }}>{label}</p>
-            <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Preview Mode</p>
+            <p className="text-base font-semibold" style={{ color: 'var(--text-strong)' }}>{label}</p>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Preview Mode</p>
           </div>
           <div className="flex items-center gap-2">
             {(['white', 'grey', 'dark', 'checker'] as const).map((bg) => (
@@ -129,67 +185,69 @@ function PreviewModal({
                 onClick={() => setPreviewBg(bg)}
                 className="w-6 h-6 rounded-md transition-colors"
                 style={{
-                  border: previewBg === bg ? '2px solid var(--forest)' : '2px solid var(--rule)',
-                  background:
-                    bg === 'white'
-                      ? '#fff'
-                      : bg === 'grey'
-                      ? 'var(--paper-warm)'
-                      : bg === 'dark'
-                      ? 'var(--forest)'
-                      : 'repeating-conic-gradient(var(--rule-light) 0% 25%, transparent 0% 50%) 50% / 10px 10px',
+                  ...getCanvasStyle(bg),
+                  border: previewBg === bg ? '2px solid var(--primary-color)' : '1px solid var(--border-subtle)',
+                  boxShadow: previewBg === bg ? 'var(--shadow-sm)' : 'none',
                 }}
                 title={bg.charAt(0).toUpperCase() + bg.slice(1)}
               />
             ))}
-            <div className="w-px h-6 mx-1" style={{ background: 'var(--rule-light)' }} />
+            <div className="w-px h-6 mx-1" style={{ background: 'var(--border-subtle)' }} />
             <button
               onClick={() => setZoom((z) => Math.max(0.25, z - 0.25))}
-              className="p-1.5 rounded-md hover:bg-[var(--paper-warm)]"
+              className="p-1.5 rounded-md hover:bg-[var(--surface)]"
             >
-              <ZoomOut className="w-4 h-4" style={{ color: 'var(--slate)' }} />
+              <ZoomOut className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />
             </button>
-            <span className="text-xs font-mono w-10 text-center" style={{ color: 'var(--slate-mid)' }}>{Math.round(zoom * 100)}%</span>
+            <span className="text-xs font-mono w-10 text-center" style={{ color: 'var(--text-faint)' }}>{Math.round(zoom * 100)}%</span>
             <button
               onClick={() => setZoom((z) => Math.min(3, z + 0.25))}
-              className="p-1.5 rounded-md hover:bg-[var(--paper-warm)]"
+              className="p-1.5 rounded-md hover:bg-[var(--surface)]"
             >
-              <ZoomIn className="w-4 h-4" style={{ color: 'var(--slate)' }} />
+              <ZoomIn className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />
             </button>
             <button
               onClick={() => setZoom(1)}
-              className="p-1.5 rounded-md hover:bg-[var(--paper-warm)]"
+              className="p-1.5 rounded-md hover:bg-[var(--surface)]"
               title="Reset zoom"
             >
-              <Maximize2 className="w-4 h-4" style={{ color: 'var(--slate)' }} />
+              <Maximize2 className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />
             </button>
             
-            <div className="w-px h-6 mx-1" style={{ background: 'var(--rule-light)' }} />
+            <div className="w-px h-6 mx-1" style={{ background: 'var(--border-subtle)' }} />
             
             <button
               onClick={handleModalDownload}
               disabled={isDownloading}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium text-white transition-colors"
-              style={{ background: isDownloading ? 'var(--slate-mid)' : 'var(--forest)' }}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors"
+              style={{
+                background: isDownloading ? 'var(--surface-2)' : 'var(--primary-color)',
+                color: isDownloading ? 'var(--text-muted)' : 'var(--text-inverse)',
+                border: isDownloading ? '1px solid var(--border-subtle)' : '1px solid var(--primary-color)',
+                boxShadow: 'var(--shadow-sm)',
+              }}
             >
               <Download className="w-3.5 h-3.5" /> 
               {isDownloading ? 'Saving...' : 'Download'}
             </button>
 
-            <div className="w-px h-6 mx-1" style={{ background: 'var(--rule-light)' }} />
+            <div className="w-px h-6 mx-1" style={{ background: 'var(--border-subtle)' }} />
             
-            <button onClick={onClose} className="p-1.5 rounded-md hover:bg-[var(--paper-warm)]">
-              <X className="w-5 h-5" style={{ color: 'var(--slate)' }} />
+            <button onClick={onClose} className="p-1.5 rounded-md hover:bg-[var(--surface)]">
+              <X className="w-5 h-5" style={{ color: 'var(--text-muted)' }} />
             </button>
           </div>
         </div>
         
         {/* Canvas Area */}
-        <div className="flex-1 overflow-auto flex items-center justify-center p-12 min-h-[400px] bg-gray-50/50">
+        <div
+          className="flex-1 overflow-auto flex items-center justify-center p-12 min-h-[400px]"
+          style={{ background: 'linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%)' }}
+        >
           <div style={{ transform: `scale(${zoom})`, transformOrigin: 'center', transition: 'transform 0.2s ease' }}>
             <div
               id="preview-modal-content"
-              className={`flex items-center justify-center ${bgClass[previewBg]}`}
+              className="flex items-center justify-center"
               style={{
                 ...bgStyle[previewBg],
                 padding: '64px',
@@ -222,14 +280,26 @@ function ExportDropdown({ label, onExport }: { label: string; onExport: (format:
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium bg-brand-gray-100 text-brand-gray-700 hover:bg-brand-gray-200 transition-colors"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors hover:bg-[var(--surface)]"
+        style={{
+          background: 'var(--surface)',
+          color: 'var(--text-muted)',
+          border: '1px solid var(--border-subtle)',
+        }}
       >
         <Download className="w-3.5 h-3.5" /> Export <ChevronDown className="w-3 h-3" />
       </button>
       {open && (
         <>
           <div className="fixed inset-0 z-10" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-full mt-1 z-20 bg-white rounded-lg border border-brand-gray-200 shadow-lg py-1 w-48">
+          <div
+            className="absolute right-0 top-full mt-1 z-20 rounded-lg py-1 w-48"
+            style={{
+              background: 'var(--surface-raised)',
+              border: '1px solid var(--border-subtle)',
+              boxShadow: 'var(--shadow-lg)',
+            }}
+          >
             {formats.map((fmt) => (
               <button
                 key={fmt.id}
@@ -237,12 +307,12 @@ function ExportDropdown({ label, onExport }: { label: string; onExport: (format:
                   onExport(fmt.id);
                   setOpen(false);
                 }}
-                className="flex items-center gap-3 w-full px-3 py-2 text-left hover:bg-brand-gray-50 transition-colors"
+                className="flex items-center gap-3 w-full px-3 py-2 text-left transition-colors hover:bg-[var(--surface)]"
               >
-                <fmt.icon className="w-4 h-4 text-brand-gray-400" />
+                <fmt.icon className="w-4 h-4 text-[var(--text-faint)]" />
                 <div>
-                  <p className="text-sm font-medium text-brand-gray-700">{fmt.label}</p>
-                  <p className="text-[10px] text-brand-gray-400">{fmt.desc}</p>
+                  <p className="text-sm font-medium text-[var(--text-strong)]">{fmt.label}</p>
+                  <p className="text-[10px] text-[var(--text-faint)]">{fmt.desc}</p>
                 </div>
               </button>
             ))}
@@ -377,14 +447,14 @@ export function BrandAssetsPage() {
         <div>
           <h2 className="text-2xl font-bold" style={{ color: 'var(--forest-mid)' }}>Brand Assets</h2>
           <p className="mt-1" style={{ color: 'var(--slate-mid)' }}>
-            Canonical mark system, Forest + Paper brand language, descriptor usage, and runtime-safe brand assets
+            Canonical mark system, lighter brand language, descriptor usage, and runtime-safe brand assets
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-2">
           <button
             onClick={() => setShowAdvancedEditor(true)}
             className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-white transition-all shadow-sm hover:shadow"
-            style={{ background: 'linear-gradient(135deg, var(--forest), var(--gold))' }}
+            style={{ background: 'linear-gradient(135deg, var(--primary-color), var(--accent-color))' }}
           >
             <Sparkles className="w-4 h-4" />
             Advanced Editor
@@ -394,8 +464,8 @@ export function BrandAssetsPage() {
             disabled={isDownloadingAll}
             className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all shadow-sm hover:shadow"
             style={{ 
-              background: isDownloadingAll ? 'var(--slate-mid)' : '#fff',
-              color: isDownloadingAll ? '#fff' : 'var(--forest)',
+              background: isDownloadingAll ? 'var(--slate-mid)' : 'var(--surface-raised)',
+              color: isDownloadingAll ? 'var(--text-inverse)' : 'var(--forest)',
               border: isDownloadingAll ? 'none' : '1px solid var(--rule-light)'
             }}
           >
@@ -407,8 +477,8 @@ export function BrandAssetsPage() {
 
       {/* Feature Highlight Card */}
       <div className="relative overflow-hidden rounded-2xl p-6 lg:p-8" style={{ 
-        background: 'linear-gradient(135deg, rgba(26,58,42,0.07), rgba(184,148,63,0.12))',
-        border: '1px solid rgba(196,186,168,0.7)' 
+        background: 'linear-gradient(135deg, var(--surface) 0%, var(--primary-soft) 55%, var(--accent-soft) 100%)',
+        border: '1px solid var(--border-subtle)' 
       }}>
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
           <div className="flex-shrink-0">
@@ -419,7 +489,7 @@ export function BrandAssetsPage() {
           <div className="flex-1">
             <h3 className="text-lg font-bold mb-1" style={{ color: 'var(--forest)' }}>Advanced Asset Editor Now Available</h3>
             <p className="text-sm mb-3" style={{ color: 'var(--slate)' }}>
-              Create canonical Forest + Paper brand assets with adjustable layouts, governed descriptor usage, and export workflows across social, documentation, and print formats.
+              Create canonical lighter-system brand assets with adjustable layouts, governed descriptor usage, and export workflows across social, documentation, and print formats.
             </p>
             <div className="flex flex-wrap gap-2">
               {['Custom Colors', 'Gradients & Effects', 'Batch Export', 'Social Media Presets'].map((feature) => (
@@ -444,9 +514,9 @@ export function BrandAssetsPage() {
         </div>
       </div>
 
-      <div className="rounded-xl p-5" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
+      <div className="rounded-xl p-5" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
         <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>Canonical asset rule</p>
-        <p className="text-sm mt-2" style={{ color: 'var(--slate)' }}>Historical SVG source exports may still preserve earlier palette references, but all live-rendered brand assets and runtime-facing surfaces should use the current Forest + Paper system and the descriptor "Adaptive continuity workspace hydrated by the Spine."</p>
+        <p className="text-sm mt-2" style={{ color: 'var(--slate)' }}>Historical SVG source exports may still preserve earlier palette references, but all live-rendered brand assets and runtime-facing surfaces should use the current lighter documentation system and the descriptor "Adaptive continuity workspace hydrated by the Spine."</p>
       </div>
 
       {/* Asset Studio */}
@@ -456,23 +526,23 @@ export function BrandAssetsPage() {
           <h3 className="text-lg font-semibold" style={{ color: 'var(--forest)' }}>Interactive Brand Studio</h3>
         </div>
         
-        <div className="bg-white rounded-xl overflow-hidden shadow-sm" style={{ border: '1px solid var(--rule-light)' }}>
+        <div className="rounded-xl overflow-hidden shadow-sm" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
           <div className="flex flex-col lg:flex-row">
             {/* Controls */}
             <div className="w-full lg:w-80 p-6 space-y-6" style={{ borderRight: '1px solid var(--paper-deep)', background: 'var(--paper-warm)' }}>
               <div className="flex items-center gap-2 mb-2">
-                <SlidersHorizontal className="w-4 h-4 text-brand-gray-600" />
-                <h4 className="text-sm font-semibold text-brand-gray-900">Customizer</h4>
+                <SlidersHorizontal className="w-4 h-4 text-[var(--text-muted)]" />
+                <h4 className="text-sm font-semibold text-[var(--text-color)]">Customizer</h4>
               </div>
               
               <div className="space-y-3">
-                <label className="text-xs font-medium text-brand-gray-700">Logo Layout</label>
+                <label className="text-xs font-medium text-[var(--text-color)]">Logo Layout</label>
                 <div className="flex flex-col gap-2">
                   {(['full', 'compact', 'icon-only'] as const).map(variant => (
                     <button
                       key={variant}
                       onClick={() => setStudioVariant(variant)}
-                      className={`text-left px-3 py-2 rounded-md text-sm transition-colors ${studioVariant === variant ? 'bg-brand-primary text-white' : 'bg-white text-brand-gray-700 border border-brand-gray-200 hover:bg-brand-gray-50'}`}
+                      className={`text-left px-3 py-2 rounded-md text-sm transition-colors ${studioVariant === variant ? 'bg-[var(--primary-color)] text-[var(--paper)]' : 'bg-[var(--surface-raised)] text-[var(--text-color)] border border-[var(--border-subtle)] hover:bg-[var(--surface)]'}`}
                     >
                       {variant === 'full' ? 'Full Layout' : variant === 'compact' ? 'Compact' : 'Icon Only'}
                     </button>
@@ -481,20 +551,20 @@ export function BrandAssetsPage() {
               </div>
 
               <div className="space-y-3">
-                <label className="text-xs font-medium text-brand-gray-700">Color Theme</label>
+                <label className="text-xs font-medium text-[var(--text-color)]">Color Theme</label>
                 <div className="grid grid-cols-2 gap-2">
                   {[
                     { id: 'default', label: 'Default' },
                     { id: 'white', label: 'White' },
                     { id: 'monochrome-dark', label: 'Mono Dark' },
                     { id: 'monochrome-white', label: 'Mono White' },
-                    { id: 'blue-only', label: 'Forest Only' },
+                    { id: 'blue-only', label: 'Primary Only' },
                     { id: 'print-safe-black', label: 'Print Black' },
                   ].map(theme => (
                     <button
                       key={theme.id}
                       onClick={() => setStudioColor(theme.id as any)}
-                      className={`text-left px-2 py-1.5 rounded-md text-xs transition-colors ${studioColor === theme.id ? 'bg-brand-primary text-white' : 'bg-white text-brand-gray-700 border border-brand-gray-200 hover:bg-brand-gray-50'}`}
+                      className={`text-left px-2 py-1.5 rounded-md text-xs transition-colors ${studioColor === theme.id ? 'bg-[var(--primary-color)] text-[var(--paper)]' : 'bg-[var(--surface-raised)] text-[var(--text-color)] border border-[var(--border-subtle)] hover:bg-[var(--surface)]'}`}
                     >
                       {theme.label}
                     </button>
@@ -503,7 +573,7 @@ export function BrandAssetsPage() {
               </div>
 
               <div className="space-y-3">
-                <label className="text-xs font-medium text-brand-gray-700">Background Canvas</label>
+                <label className="text-xs font-medium text-[var(--text-color)]">Background Canvas</label>
                 <div className="flex items-center gap-2">
                   {(['transparent', 'white', 'grey', 'dark', 'checker'] as const).map((bg) => (
                     <button
@@ -513,12 +583,12 @@ export function BrandAssetsPage() {
                       style={{
                         border: studioBg === bg ? '2px solid var(--forest)' : '1px solid var(--rule-light)',
                         background:
-                          bg === 'white' ? '#fff' :
+                          bg === 'white' ? 'var(--paper)' :
                           bg === 'grey' ? 'var(--paper-warm)' :
                           bg === 'dark' ? 'var(--forest)' :
                           bg === 'transparent' ? 'transparent' :
                           'repeating-conic-gradient(var(--rule-light) 0% 25%, transparent 0% 50%) 50% / 10px 10px',
-                        backgroundColor: bg === 'checker' ? '#ffffff' : undefined
+                        backgroundColor: bg === 'checker' ? 'var(--paper)' : undefined
                       }}
                       title={bg}
                     />
@@ -531,8 +601,8 @@ export function BrandAssetsPage() {
             <div className="flex-1 flex flex-col min-h-[400px]">
               <div className="px-6 py-4 flex items-center justify-between" style={{ borderBottom: '1px solid var(--paper-deep)' }}>
                 <div>
-                  <p className="text-sm font-semibold text-brand-gray-900">Live Preview</p>
-                  <p className="text-xs text-brand-gray-500">Rendered in high-resolution</p>
+                  <p className="text-sm font-semibold text-[var(--text-color)]">Live Preview</p>
+                  <p className="text-xs text-[var(--text-faint)]">Rendered in high-resolution</p>
                 </div>
                 <ExportDropdown 
                   label="Custom Logo Export" 
@@ -543,7 +613,7 @@ export function BrandAssetsPage() {
                 className="flex-1 overflow-hidden flex items-center justify-center p-8 relative"
                 style={{ 
                   background: 'repeating-conic-gradient(var(--rule-light) 0% 25%, transparent 0% 50%) 50% / 20px 20px',
-                  backgroundColor: '#ffffff'
+                  backgroundColor: 'var(--paper)'
                 }}
               >
                 {/* The actual exportable node */}
@@ -552,12 +622,12 @@ export function BrandAssetsPage() {
                   className="flex items-center justify-center p-16 transition-all duration-300"
                   style={{
                     background:
-                      studioBg === 'white' ? '#fff' :
+                      studioBg === 'white' ? 'var(--paper)' :
                       studioBg === 'grey' ? 'var(--paper-warm)' :
                       studioBg === 'dark' ? 'var(--forest)' :
                       studioBg === 'transparent' ? 'transparent' :
                       'repeating-conic-gradient(var(--rule-light) 0% 25%, transparent 0% 50%) 50% / 20px 20px',
-                    backgroundColor: studioBg === 'checker' ? '#ffffff' : undefined,
+                    backgroundColor: studioBg === 'checker' ? 'var(--paper)' : undefined,
                     minWidth: '400px',
                     minHeight: '200px'
                   }}
@@ -580,7 +650,7 @@ export function BrandAssetsPage() {
           <h3 className="text-lg font-semibold" style={{ color: 'var(--forest-mid)' }}>Brand Messaging System</h3>
         </div>
 
-        <div className="bg-white rounded-xl p-6 lg:p-8 space-y-6" style={{ border: '1px solid var(--rule-light)' }}>
+        <div className="rounded-xl p-6 lg:p-8 space-y-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
           <div className="grid lg:grid-cols-2 gap-8">
             <div>
               <p className="text-[11px] tracking-wide mb-2" style={{ color: 'var(--slate-mid)' }}>PRIMARY PRODUCT DESCRIPTION</p>
@@ -649,7 +719,7 @@ export function BrandAssetsPage() {
                 <div key={item.asset} className="flex items-start gap-3 p-3 rounded-lg" style={{ background: 'var(--paper-warm)' }}>
                   <Quote className="w-4 h-4 shrink-0 mt-0.5" style={{ color: 'var(--slate-mid)' }} />
                   <div>
-                    <p className="text-[11px] font-medium" style={{ color: '#808CA9' }}>{item.asset}</p>
+                    <p className="text-[11px] font-medium" style={{ color: 'var(--slate-mid)' }}>{item.asset}</p>
                     <p className="text-sm mt-0.5" style={{ color: 'var(--ink)' }}>{item.line}</p>
                   </div>
                 </div>
@@ -659,7 +729,7 @@ export function BrandAssetsPage() {
 
           <div className="pt-6" style={{ borderTop: '1px solid var(--rule-light)' }}>
             <p className="text-[11px] tracking-wide mb-2" style={{ color: 'var(--slate-mid)' }}>PRODUCT ESSENCE (FOR MARKETING, DECKS, COMPANY DOCS)</p>
-            <div className="p-4 rounded-lg" style={{ background: 'linear-gradient(135deg, rgba(26,58,42,0.06), rgba(184,148,63,0.10))', border: '1px solid rgba(196,186,168,0.75)' }}>
+            <div className="p-4 rounded-lg" style={{ background: 'linear-gradient(135deg, var(--surface) 0%, var(--accent-soft) 100%)', border: '1px solid var(--border-subtle)' }}>
               <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
                 IntegrateWise is a knowledge workspace where the Spine becomes the single source
                 of truth and AI operates on top of that context — thinking, proposing, and
@@ -698,8 +768,8 @@ export function BrandAssetsPage() {
                 className="px-2.5 py-1 rounded-md text-xs font-medium transition-colors"
                 style={
                   bgMode === mode
-                    ? { border: '1px solid var(--forest)', background: 'rgba(184,148,63,0.12)', color: 'var(--forest)' }
-                    : { border: '1px solid var(--rule-light)', background: 'white', color: 'var(--slate)' }
+                    ? { border: '1px solid var(--primary-color)', background: 'var(--primary-soft)', color: 'var(--primary-color)' }
+                    : { border: '1px solid var(--rule-light)', background: 'var(--surface-raised)', color: 'var(--slate)' }
                 }
               >
                 {mode === 'light' ? 'White' : mode === 'grey' ? 'Grey' : 'Dark'}
@@ -710,7 +780,7 @@ export function BrandAssetsPage() {
 
         <div className="grid gap-6">
           {LOGO_VARIANTS.map((v) => (
-            <div key={v.variant} className="bg-white rounded-xl overflow-hidden" style={{ border: '1px solid var(--rule-light)' }}>
+            <div key={v.variant} className="rounded-xl overflow-hidden" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
               <div className="px-6 py-3 flex items-center justify-between" style={{ borderBottom: '1px solid var(--paper-deep)' }}>
                 <div>
                   <p className="text-sm font-semibold" style={{ color: 'var(--forest)' }}>{v.label}</p>
@@ -739,7 +809,7 @@ export function BrandAssetsPage() {
                 id={`logo-${v.variant}`}
                 className="flex items-center justify-center p-12 transition-colors duration-200"
                 style={{
-                  background: bgMode === 'light' ? '#fff' : bgMode === 'grey' ? 'var(--paper-warm)' : 'var(--forest)'
+                  background: bgMode === 'light' ? 'var(--paper)' : bgMode === 'grey' ? 'var(--paper-warm)' : 'var(--forest)'
                 }}
               >
                 <IntegrateWiseLogo variant={v.variant} colorVariant={bgMode === 'dark' ? 'white' : 'default'} />
@@ -757,11 +827,11 @@ export function BrandAssetsPage() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SVG_SOURCE_ASSETS.map((asset) => (
-            <div key={asset.name} className="bg-white rounded-xl overflow-hidden group" style={{ border: '1px solid var(--rule-light)' }}>
+            <div key={asset.name} className="rounded-xl overflow-hidden group" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
               <div
                 className="flex items-center justify-center p-6 h-44 transition-colors duration-200"
                 style={{
-                  background: bgMode === 'light' ? '#fff' : bgMode === 'grey' ? 'var(--paper-warm)' : 'var(--forest)'
+                  background: bgMode === 'light' ? 'var(--paper)' : bgMode === 'grey' ? 'var(--paper-warm)' : 'var(--forest)'
                 }}
               >
                 <img
@@ -822,7 +892,7 @@ export function BrandAssetsPage() {
             { name: 'Context Card', desc: 'Soft-edged box representing structured knowledge/context blocks.' },
             { name: 'Layer Bands', desc: 'Subtle layered strips suggesting workspace, intelligence, and governance layers.' },
           ].map((motif) => (
-            <div key={motif.name} className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
+            <div key={motif.name} className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
               <h4 className="text-sm font-semibold" style={{ color: 'var(--forest)' }}>{motif.name}</h4>
               <p className="text-xs mt-1" style={{ color: 'var(--slate-mid)' }}>{motif.desc}</p>
             </div>
@@ -837,7 +907,7 @@ export function BrandAssetsPage() {
           <h3 className="text-lg font-semibold" style={{ color: 'var(--forest)' }}>Usage Guidelines</h3>
         </div>
         <div className="grid sm:grid-cols-2 gap-6">
-          <div className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
+          <div className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'rgba(61,122,80,0.12)' }}>
                 <Check className="w-4 h-4" style={{ color: 'var(--forest-bright)' }} />
@@ -860,7 +930,7 @@ export function BrandAssetsPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
+          <div className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'rgba(139,32,32,0.10)' }}>
                 <X className="w-4 h-4" style={{ color: 'var(--gold)' }} />
@@ -892,7 +962,7 @@ export function BrandAssetsPage() {
           <div className="h-1 w-12 rounded-full" style={{ background: 'var(--brand-primary)' }} />
           <h3 className="text-lg font-semibold" style={{ color: 'var(--forest)' }}>Overall Design Style</h3>
         </div>
-        <div className="bg-white rounded-xl p-6" style={{ border: '1px solid var(--rule-light)' }}>
+        <div className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
           <p className="text-sm font-semibold mb-3" style={{ color: 'var(--forest)' }}>Enterprise Minimal + Intelligent Systems Aesthetic</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
@@ -924,7 +994,7 @@ function MessagingCard({ label, text, highlight }: { label: string; text: string
       style={
         highlight
           ? { border: '1px solid rgba(184,148,63,0.35)', background: 'rgba(184,148,63,0.10)' }
-          : { border: '1px solid var(--paper-deep)', background: 'var(--paper-warm)' }
+          : { border: '1px solid var(--paper-deep)', background: 'var(--surface-raised)' }
       }
     >
       <p className="text-[11px] font-medium mb-1" style={{ color: 'var(--slate-mid)' }}>{label}</p>

@@ -7,17 +7,15 @@ interface IntegrateWiseLogoProps {
 }
 
 export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', className = '' }: IntegrateWiseLogoProps) {
-  
-  // Determine fill colors based on colorVariant
-  let primaryFill = 'var(--forest)';
-  let accentFill = 'var(--gold)';
-  let textColor = 'var(--ink)';
-  let titleColorClass = 'text-brand-gray-900';
-  let subtitleColorClass = 'text-brand-gray-600';
+  let primaryFill = 'var(--primary-color)';
+  let accentFill = 'var(--accent-color)';
+  let textColor = 'var(--text-color)';
+  let titleColorClass = 'text-[var(--text-color)]';
+  let subtitleColorClass = 'text-[var(--text-muted)]';
 
   if (colorVariant === 'white') {
     primaryFill = '#FFFFFF';
-    accentFill = 'var(--gold-light)';
+    accentFill = 'rgba(255,255,255,0.86)';
     textColor = '#FFFFFF';
     titleColorClass = 'text-white';
     subtitleColorClass = 'text-white/80';
@@ -28,17 +26,17 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
     titleColorClass = 'text-white';
     subtitleColorClass = 'text-white/80';
   } else if (colorVariant === 'monochrome-dark') {
-    primaryFill = 'var(--ink)';
-    accentFill = 'var(--ink)';
-    textColor = 'var(--ink)';
-    titleColorClass = 'text-brand-gray-900';
-    subtitleColorClass = 'text-brand-gray-900';
+    primaryFill = 'var(--text-color)';
+    accentFill = 'var(--text-color)';
+    textColor = 'var(--text-color)';
+    titleColorClass = 'text-[var(--text-color)]';
+    subtitleColorClass = 'text-[var(--text-color)]';
   } else if (colorVariant === 'blue-only') {
-    primaryFill = 'var(--forest)';
-    accentFill = 'var(--forest)';
-    textColor = 'var(--forest)';
-    titleColorClass = 'text-brand-primary';
-    subtitleColorClass = 'text-brand-primary';
+    primaryFill = 'var(--primary-color)';
+    accentFill = 'var(--primary-color)';
+    textColor = 'var(--primary-color)';
+    titleColorClass = 'text-[var(--primary-color)]';
+    subtitleColorClass = 'text-[var(--primary-color)]';
   } else if (colorVariant === 'print-safe-black') {
     primaryFill = '#000000';
     accentFill = '#000000';
@@ -51,18 +49,18 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
 
   const logoSvg = (
     <svg className={iconClasses} viewBox="0 0 160 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M53.3869 0.205832C56.4977 -0.576671 63.4297 1.01864 66.3725 2.52462C69.871 4.04071 71.9883 6.25793 74.6863 8.91175C84.375 18.4419 81.0411 32.3964 81.633 44.6777C81.8388 48.951 81.5688 51.7248 83.1143 55.9223C84.8443 60.6378 88.3266 64.4456 92.7883 66.5011C98.0756 68.9515 103.206 68.7867 108.666 66.6229C129.922 58.1978 115.428 31.3403 123.311 14.7929C126.397 8.31589 130.804 4.48288 137.294 1.73574C139.334 0.872409 145.307 -0.448249 147.23 0.510005C148.115 0.94792 148.786 1.74212 149.086 2.70596C150.558 7.44326 142.588 6.26724 139.669 7.43049C114.438 17.485 136.673 50.6827 119.605 66.5817C115.621 70.2929 112.567 72.2206 107.31 73.8465C103.676 74.8999 99.8548 75.0664 96.1478 74.3325C91.6881 73.424 88.0153 71.1711 84.5567 68.2956C67.5173 55.219 81.3248 30.3531 71.634 15.0771C60.4727 -2.51684 33.6193 8.45363 35.7726 29.0271C36.1874 32.9917 36.5927 37.9705 33.2395 40.3015L26.0875 40.327C25.1155 42.5913 24.3717 44.5206 22.8061 46.4445C20.5773 49.1478 17.3943 50.8205 13.9648 51.0909C10.6706 51.3608 6.96223 50.0882 4.45978 47.8705C1.87388 45.5791 0.28158 42.3172 0.0364112 38.8091C-0.229912 35.0356 0.972845 31.3087 3.37836 28.4533C5.59506 25.8835 8.7141 24.3326 12.0434 24.1452C16.9115 23.8269 21.9568 26.1207 23.9305 30.6889C24.7193 32.5147 25.2537 34.2087 27.5492 34.1281C30.3194 34.3326 30.1673 30.77 29.9671 28.4424C28.7826 14.6815 38.3905 1.44619 53.3869 0.205832Z" fill={primaryFill}/>
-      <path d="M54.4289 24.0981C57.2918 23.9117 60.1534 24.5081 62.6015 26.0896C65.4302 27.9537 67.4361 30.8902 68.1869 34.2659C69.8061 41.6067 66.1104 48.8144 58.7958 50.4793C58.2895 57.3078 58.9545 64.3443 58.5307 71.1759C58.4181 72.9914 57.9205 73.9957 56.5214 75.0978C56.3931 75.1081 56.2648 75.1145 56.1359 75.1174C51.0795 75.2217 52.6041 66.0946 52.6752 62.4761C52.7507 58.5825 52.737 54.6875 52.6345 50.7944C50.5873 50.0704 49.4134 49.7003 47.6489 48.343C39.5366 42.1034 41.3196 28.6442 50.8118 24.9543C52.215 24.4087 52.9705 24.2882 54.4289 24.0981Z" fill={primaryFill}/>
-      <path d="M99.962 0.0385742C100.777 0.0494756 101.729 0.0622401 102.446 0.511322C104.346 1.70249 103.266 20.6982 104.036 24.2648C105.743 24.8311 106.854 25.2996 108.355 26.3919C111.142 28.4403 113.01 31.5636 113.534 35.0534C114.896 43.6881 110.083 49.5955 101.937 50.9023C91.7734 51.1206 85.498 42.8928 88.6263 32.6878C90.1022 27.8734 93.8406 25.7758 97.9669 23.7354C97.7641 21.2334 97.8914 17.3462 97.8638 14.7078C97.8249 10.9673 97.5441 6.60225 98.0138 2.93355C98.2122 1.38582 98.8007 0.848198 99.962 0.0385742Z" fill={primaryFill}/>
-      <path d="M143.213 24.2366C150.341 22.5523 157.437 27.1675 159.04 34.5294C160.642 41.8912 156.14 49.1946 148.999 50.8173C141.9 52.4304 134.874 47.8178 133.281 40.4996C131.688 33.1813 136.128 25.9112 143.213 24.2366Z" fill={accentFill}/>
+      <path d="M53.3869 0.205832C56.4977 -0.576671 63.4297 1.01864 66.3725 2.52462C69.871 4.04071 71.9883 6.25793 74.6863 8.91175C84.375 18.4419 81.0411 32.3964 81.633 44.6777C81.8388 48.951 81.5688 51.7248 83.1143 55.9223C84.8443 60.6378 88.3266 64.4456 92.7883 66.5011C98.0756 68.9515 103.206 68.7867 108.666 66.6229C129.922 58.1978 115.428 31.3403 123.311 14.7929C126.397 8.31589 130.804 4.48288 137.294 1.73574C139.334 0.872409 145.307 -0.448249 147.23 0.510005C148.115 0.94792 148.786 1.74212 149.086 2.70596C150.558 7.44326 142.588 6.26724 139.669 7.43049C114.438 17.485 136.673 50.6827 119.605 66.5817C115.621 70.2929 112.567 72.2206 107.31 73.8465C103.676 74.8999 99.8548 75.0664 96.1478 74.3325C91.6881 73.424 88.0153 71.1711 84.5567 68.2956C67.5173 55.219 81.3248 30.3531 71.634 15.0771C60.4727 -2.51684 33.6193 8.45363 35.7726 29.0271C36.1874 32.9917 36.5927 37.9705 33.2395 40.3015L26.0875 40.327C25.1155 42.5913 24.3717 44.5206 22.8061 46.4445C20.5773 49.1478 17.3943 50.8205 13.9648 51.0909C10.6706 51.3608 6.96223 50.0882 4.45978 47.8705C1.87388 45.5791 0.28158 42.3172 0.0364112 38.8091C-0.229912 35.0356 0.972845 31.3087 3.37836 28.4533C5.59506 25.8835 8.7141 24.3326 12.0434 24.1452C16.9115 23.8269 21.9568 26.1207 23.9305 30.6889C24.7193 32.5147 25.2537 34.2087 27.5492 34.1281C30.3194 34.3326 30.1673 30.77 29.9671 28.4424C28.7826 14.6815 38.3905 1.44619 53.3869 0.205832Z" fill={primaryFill} />
+      <path d="M54.4289 24.0981C57.2918 23.9117 60.1534 24.5081 62.6015 26.0896C65.4302 27.9537 67.4361 30.8902 68.1869 34.2659C69.8061 41.6067 66.1104 48.8144 58.7958 50.4793C58.2895 57.3078 58.9545 64.3443 58.5307 71.1759C58.4181 72.9914 57.9205 73.9957 56.5214 75.0978C56.3931 75.1081 56.2648 75.1145 56.1359 75.1174C51.0795 75.2217 52.6041 66.0946 52.6752 62.4761C52.7507 58.5825 52.737 54.6875 52.6345 50.7944C50.5873 50.0704 49.4134 49.7003 47.6489 48.343C39.5366 42.1034 41.3196 28.6442 50.8118 24.9543C52.215 24.4087 52.9705 24.2882 54.4289 24.0981Z" fill={primaryFill} />
+      <path d="M99.962 0.0385742C100.777 0.0494756 101.729 0.0622401 102.446 0.511322C104.346 1.70249 103.266 20.6982 104.036 24.2648C105.743 24.8311 106.854 25.2996 108.355 26.3919C111.142 28.4403 113.01 31.5636 113.534 35.0534C114.896 43.6881 110.083 49.5955 101.937 50.9023C91.7734 51.1206 85.498 42.8928 88.6263 32.6878C90.1022 27.8734 93.8406 25.7758 97.9669 23.7354C97.7641 21.2334 97.8914 17.3462 97.8638 14.7078C97.8249 10.9673 97.5441 6.60225 98.0138 2.93355C98.2122 1.38582 98.8007 0.848198 99.962 0.0385742Z" fill={primaryFill} />
+      <path d="M143.213 24.2366C150.341 22.5523 157.437 27.1675 159.04 34.5294C160.642 41.8912 156.14 49.1946 148.999 50.8173C141.9 52.4304 134.874 47.8178 133.281 40.4996C131.688 33.1813 136.128 25.9112 143.213 24.2366Z" fill={accentFill} />
       {variant !== 'icon-only' && (
         <g>
-          <text 
-            x="93" 
-            y="120" 
-            fill={textColor} 
-            fontFamily="Instrument Sans, system-ui, sans-serif" 
-            fontWeight="normal" 
+          <text
+            x="93"
+            y="120"
+            fill={textColor}
+            fontFamily="Inter, system-ui, sans-serif"
+            fontWeight="500"
             fontSize="14"
           >
             Adaptive continuity workspace hydrated by the Spine
@@ -73,21 +71,23 @@ export function IntegrateWiseLogo({ variant = 'full', colorVariant = 'default', 
   );
 
   if (variant === 'icon-only') {
-    return (
-      <div className={clsx("flex items-center", className)}>
-        {logoSvg}
-      </div>
-    );
+    return <div className={clsx('flex items-center', className)}>{logoSvg}</div>;
   }
 
   return (
-    <div className={clsx("flex items-center gap-4", className)}>
+    <div className={clsx('flex items-center gap-4', className)}>
       {logoSvg}
       <div className="flex flex-col gap-0.5">
-        <h1 className={clsx("tracking-tight", titleColorClass, variant === 'full' ? 'text-5xl font-bold' : 'text-3xl font-semibold')} style={{ color: colorVariant === 'default' ? 'var(--foreground)' : undefined }}>
+        <h1
+          className={clsx('tracking-tight', titleColorClass, variant === 'full' ? 'text-5xl font-bold' : 'text-3xl font-semibold')}
+          style={{ color: colorVariant === 'default' ? 'var(--foreground)' : undefined }}
+        >
           IntegrateWise
         </h1>
-        <p className={clsx("tracking-wide", subtitleColorClass, variant === 'full' ? 'text-lg' : 'text-base')} style={{ color: colorVariant === 'default' ? 'var(--muted-foreground)' : undefined }}>
+        <p
+          className={clsx('tracking-wide', subtitleColorClass, variant === 'full' ? 'text-lg' : 'text-base')}
+          style={{ color: colorVariant === 'default' ? 'var(--muted-foreground)' : undefined }}
+        >
           Adaptive continuity workspace hydrated by the Spine
         </p>
       </div>

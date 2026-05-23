@@ -2,11 +2,28 @@
 
 ## Primary Source of Truth
 
-**`integratewise-overview.md`** — the single canonical end-to-end master document for IntegrateWise.
+**`integratewise-overview.md`** — the app-import doctrine source for BrandDocumentations.
 
-This is the only file imported by the application (`documentationContent.ts`). All 6 documentation packs and their 40+ documents are extracted from sections of this file via `sectionExtractor.ts`.
+Within the BrandDocumentations app surface, this is the only file imported by the application (`documentationContent.ts`). All 6 documentation packs and their 40+ documents are extracted from sections of this file via `sectionExtractor.ts`.
 
-To update any doctrine, product narrative, or architecture content displayed in the app, edit **`integratewise-overview.md`** only.
+It must stay aligned upward to:
+- Company OS v1.0 (`book:iw:company-os-v1`)
+- `/Users/nirmal/.hermes/skills/software-development/integratewise-architecture/references/may2026-doctrine-consolidation.md`
+- `/Users/nirmal/Github/integratewise-live/docs/tech/DOCTRINE_SYNC_AND_SOURCE_MAP.md`
+
+Cross-surface taxonomy rule:
+- 00 Company Strategy
+- 01 Product & Engineering
+- 02 Marketing & Creative
+- 03 Sales
+- 04 Customer Success
+- 05 Operations
+- 06 Finance, Legal, HR
+- 07 Resources & Knowledge Base
+- 08 External Communications
+- 09 Archives & Retention
+
+To update doctrine, product narrative, or architecture content displayed in the app, edit **`integratewise-overview.md`** and keep those upstream canon sources in sync.
 
 ---
 

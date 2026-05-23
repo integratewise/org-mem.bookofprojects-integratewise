@@ -129,27 +129,48 @@ This is why the product is designed around the Spine, layered work surfaces, a c
 
 ## 7. What the Product Is
 
-IntegrateWise is a continuity-first platform built in layers.
+IntegrateWise is a continuity-first system with a clear final component model.
 
-### Layer 0 — External Reality and Setup
+### 7.1 Adaptive Spine
 
-This layer covers onboarding, tenancy, identity, connectors, source-system relationships, permissions setup, and external systems.
+The Adaptive Spine is the substrate, continuity core, truth base, routing base, and memory foundation.
+It is the system layer that holds and governs the connected operational reality.
 
-### Layer 1 — Workspace Layer
+### 7.2 User Workbench
 
-This is the visible user workspace. It contains the actual surfaces where people work: accounts, opportunities, tasks, meetings, documents, knowledge, metrics, operational records, and role-specific work environments.
+The User Workbench is the projection-native customer and operator shell.
+It is the primary human operating surface where users work with records, tasks, documents, workflows, and role-shaped views without reconstructing context across disconnected tools.
 
-Layer 1 is a projection of current continuity state. It must remain clean: a work surface, not a noisy AI screen.
+### 7.3 Twin Workbench
 
-### Layer 2 — Cognitive Intelligence Layer
+The Twin Workbench is the cognitive workbench.
+Its primary runtime surface is OpenWebUI.
+This is where reasoning, evidence, tools, retrieval, synthesis, and action proposals are assembled.
+OpenWebUI is not the customer-facing product shell; it is the primary Twin surface.
 
-This layer contains reasoning, evidence, recommendations, policy checks, action proposals, approvals, and governance interactions. It is where the system thinks, explains, and prepares action without forcing cognitive overlays into the workspace itself.
+### 7.4 Governance Workbench
 
-### Layer 3 — Platform and Services Layer
+The Governance Workbench is the separate approval, policy, trust, audit, lineage, and truth-mutation surface.
+It exists so consequential changes remain visible, bounded, and reviewable.
 
-This layer contains ingestion, normalization, memory, orchestration, workflows, policy evaluation, audit logging, connector logic, sync orchestration, and execution services.
+### 7.5 Operating Surface Ecosystem
 
-Together, these layers allow IntegrateWise to preserve clarity in work while delivering depth in intelligence and control in action.
+The Operating Surface Ecosystem includes the external tools, templates, packs, adapters, and publication surfaces through which IntegrateWise extends into the systems customers already use.
+These are not the core workbenches themselves.
+
+### 7.6 Execution Layer (Claw)
+
+The Execution Layer, Claw, is the deterministic execution path.
+Operational flow remains:
+
+Twin → Governance → Claw → workflows/tools → evidence
+
+Claw is distinct from the Twin. The Twin reasons and proposes. Claw executes approved actions.
+
+### Product boundary rule
+
+Together, these components preserve a clean separation between substrate, cognition, governance, execution, and external operating surfaces.
+This model supersedes earlier generic layer language when there is a conflict.
 
 ---
 

@@ -39,3 +39,15 @@ coverage
 *.tmp
 *.temp
 .cache
+
+# AI Runtime State — NEVER commit
+.claude/
+.cursor/
+.kimi/
+.kiro/
+.opencode/
+.aider*
+.agent-browser/
+.agent-zero/
+.logs/
+

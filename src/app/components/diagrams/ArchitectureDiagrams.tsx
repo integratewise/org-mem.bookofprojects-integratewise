@@ -1,94 +1,118 @@
-// SVG-based Architectural Diagrams for IntegrateWise
-// These are scalable, editable vector diagrams
-
 import React from 'react';
+
+const TOKENS = {
+  surface: 'var(--surface)',
+  surfaceRaised: 'var(--surface-raised)',
+  surfaceMuted: 'var(--surface-2)',
+  border: 'var(--border-subtle)',
+  text: 'var(--text-strong)',
+  muted: 'var(--text-muted)',
+  faint: 'var(--text-faint)',
+  inverse: 'var(--text-inverse)',
+  primary: 'var(--primary-color)',
+  accent: 'var(--accent-color)',
+  success: 'var(--success-color)',
+  warning: 'var(--warning-color)',
+  error: 'var(--error-color)',
+};
+
+const tint = (color: string, amount = 16) => `color-mix(in srgb, ${color} ${amount}%, white)`;
+const shade = (color: string, amount = 20) => `color-mix(in srgb, ${color} ${amount}%, var(--text-strong))`;
+
+function DiagramFrame({ width, height, title }: { width: number; height: number; title: string }) {
+  return (
+    <>
+      <rect width={width} height={height} fill={TOKENS.surface} rx="18" />
+      <rect x="1" y="1" width={width - 2} height={height - 2} fill="none" stroke={TOKENS.border} rx="17" />
+      <text x={width / 2} y="38" textAnchor="middle" fontSize="22" fontWeight="700" fill={TOKENS.text}>
+        {title}
+      </text>
+    </>
+  );
+}
 
 // L0-L5 Layer Architecture Diagram
 export function LayerArchitectureDiagram() {
+  const layers = [
+    {
+      y: 82,
+      height: 62,
+      color: TOKENS.success,
+      title: 'L0 · Connection Layer',
+      detail: 'Gateways • Connectors • Webhooks • Raw ingress',
+      badge: 'Hydration',
+    },
+    {
+      y: 162,
+      height: 68,
+      color: TOKENS.primary,
+      title: 'L1 · Adaptive Continuity Workspace',
+      detail: 'Dashboards • Approvals • Entity 360 • Human interface',
+      badge: 'Workspace',
+    },
+    {
+      y: 248,
+      height: 68,
+      color: TOKENS.accent,
+      title: 'L2 · Cognitive Intelligence Overlay',
+      detail: 'Depth matrix • Signal detection • AI proposals',
+      badge: 'Reasoning',
+    },
+    {
+      y: 334,
+      height: 74,
+      color: shade(TOKENS.primary, 40),
+      title: 'L3 · Canonical Truth & Memory',
+      detail: 'Spine • Entities • Relationships • Memory accumulator',
+      badge: 'SSOT',
+    },
+  ];
+
   return (
     <svg viewBox="0 0 800 600" className="w-full h-auto">
-      {/* Background */}
-      <rect width="800" height="600" fill="#f8fafc" rx="12" />
-      
-      {/* Title */}
-      <text x="400" y="40" textAnchor="middle" fontSize="24" fontWeight="bold" fill="#1B2544">
-        IntegrateWise Layer Architecture (L0-L5)
-      </text>
-      
-      {/* L0 - Connection Layer */}
-      <g transform="translate(50, 80)">
-        <rect width="700" height="70" fill="#6B7DC4" rx="8" />
-        <text x="20" y="30" fontSize="18" fontWeight="bold" fill="white">L0 - Connection Layer</text>
-        <text x="20" y="50" fontSize="12" fill="white" opacity="0.9">Gateways • Connectors • Webhooks • Raw Data Ingress</text>
-        <g transform="translate(550, 20)">
-          <circle cx="15" cy="15" r="12" fill="white" opacity="0.2" />
-          <text x="15" y="20" textAnchor="middle" fontSize="14" fill="white">→</text>
+      <DiagramFrame width={800} height={600} title="IntegrateWise Layer Architecture (L0–L5)" />
+
+      {layers.map((layer, index) => (
+        <g key={layer.title} transform={`translate(54, ${layer.y})`}>
+          <rect width="692" height={layer.height} fill={tint(layer.color, 16)} rx="14" />
+          <rect width="692" height={layer.height} fill="none" stroke={tint(layer.color, 55)} rx="14" />
+          <rect x="18" y="14" width="84" height="22" fill={layer.color} rx="11" />
+          <text x="60" y="29" textAnchor="middle" fontSize="10" fontWeight="700" fill={TOKENS.inverse}>
+            {layer.badge}
+          </text>
+          <text x="20" y="54" fontSize="18" fontWeight="700" fill={TOKENS.text}>
+            {layer.title}
+          </text>
+          <text x="20" y={layer.height - 14} fontSize="12" fill={TOKENS.muted}>
+            {layer.detail}
+          </text>
+          {index < layers.length - 1 && (
+            <path d={`M346 ${layer.height + 8} L346 ${layer.height + 24}`} stroke={TOKENS.border} strokeWidth="2.5" markerEnd="url(#layerArrow)" />
+          )}
         </g>
+      ))}
+
+      <g transform="translate(54, 434)">
+        <rect width="332" height="96" fill={tint(TOKENS.warning, 16)} rx="14" />
+        <rect width="332" height="96" fill="none" stroke={tint(TOKENS.warning, 52)} rx="14" />
+        <rect x="20" y="18" width="86" height="24" fill={TOKENS.warning} rx="12" />
+        <text x="63" y="34" textAnchor="middle" fontSize="10" fontWeight="700" fill={TOKENS.inverse}>Orchestration</text>
+        <text x="20" y="62" fontSize="17" fontWeight="700" fill={TOKENS.text}>L4 · Workflow & Middleware</text>
+        <text x="20" y="82" fontSize="11.5" fill={TOKENS.muted}>Workflow • BFF • Pipelines • Queues • Routing</text>
       </g>
-      
-      {/* Arrow Down */}
-      <path d="M400 155 L400 170" stroke="#D5DAE5" strokeWidth="3" markerEnd="url(#arrowhead)" />
-      
-      {/* L1 - Unified Workspace */}
-      <g transform="translate(50, 175)">
-        <rect width="700" height="70" fill="#4154A3" rx="8" />
-        <text x="20" y="30" fontSize="18" fontWeight="bold" fill="white">L1 - Unified Workspace (over the Spine)</text>
-        <text x="20" y="50" fontSize="12" fill="white" opacity="0.9">Human Interface • Dashboards • Approvals • Entity 360</text>
-        <g transform="translate(550, 20)">
-          <rect width="100" height="30" fill="white" opacity="0.2" rx="4" />
-          <text x="50" y="21" textAnchor="middle" fontSize="11" fill="white">Knowledge UI</text>
-        </g>
+
+      <g transform="translate(414, 434)">
+        <rect width="332" height="96" fill={tint(TOKENS.success, 12)} rx="14" />
+        <rect width="332" height="96" fill="none" stroke={tint(TOKENS.success, 48)} rx="14" />
+        <rect x="20" y="18" width="86" height="24" fill={TOKENS.success} rx="12" />
+        <text x="63" y="34" textAnchor="middle" fontSize="10" fontWeight="700" fill={TOKENS.inverse}>Platform</text>
+        <text x="20" y="62" fontSize="17" fontWeight="700" fill={TOKENS.text}>L5 · Infrastructure Services</text>
+        <text x="20" y="82" fontSize="11.5" fill={TOKENS.muted}>Compute • Storage • Network • Security • Observability</text>
       </g>
-      
-      {/* Arrow Down */}
-      <path d="M400 250 L400 265" stroke="#D5DAE5" strokeWidth="3" markerEnd="url(#arrowhead)" />
-      
-      {/* L2 - Cognitive Intelligence */}
-      <g transform="translate(50, 270)">
-        <rect width="700" height="70" fill="#EB4379" rx="8" />
-        <text x="20" y="30" fontSize="18" fontWeight="bold" fill="white">L2 - Cognitive Intelligence Overlay</text>
-        <text x="20" y="50" fontSize="12" fill="white" opacity="0.9">Entity 360 • Depth Matrix • Signal Detection • AI Proposals</text>
-        <g transform="translate(550, 20)">
-          <circle cx="50" cy="15" r="20" fill="white" opacity="0.2" />
-          <text x="50" y="21" textAnchor="middle" fontSize="16" fill="white">🧠</text>
-        </g>
-      </g>
-      
-      {/* Arrow Down */}
-      <path d="M400 345 L400 360" stroke="#D5DAE5" strokeWidth="3" markerEnd="url(#arrowhead)" />
-      
-      {/* L3 - Canonical Truth (Spine) */}
-      <g transform="translate(50, 365)">
-        <rect width="700" height="70" fill="#1B2544" rx="8" />
-        <text x="20" y="30" fontSize="18" fontWeight="bold" fill="white">L3 - Canonical Truth & Memory (Spine)</text>
-        <text x="20" y="50" fontSize="12" fill="white" opacity="0.9">SSOT • Normalized Entities • Relationships • Memory Accumulator</text>
-        <g transform="translate(550, 20)">
-          <rect width="100" height="30" fill="#4154A3" rx="4" />
-          <text x="50" y="21" textAnchor="middle" fontSize="11" fill="white">The Spine</text>
-        </g>
-      </g>
-      
-      {/* Arrow Down */}
-      <path d="M400 440 L400 455" stroke="#D5DAE5" strokeWidth="3" markerEnd="url(#arrowhead)" />
-      
-      {/* L4 - Orchestration */}
-      <g transform="translate(50, 460)">
-        <rect width="340" height="60" fill="#F59E0B" rx="8" />
-        <text x="15" y="25" fontSize="16" fontWeight="bold" fill="white">L4 - Orchestration</text>
-        <text x="15" y="45" fontSize="11" fill="white" opacity="0.9">Workflow • BFF • Pipelines • Queues</text>
-      </g>
-      
-      {/* L5 - Infrastructure */}
-      <g transform="translate(410, 460)">
-        <rect width="340" height="60" fill="#10B981" rx="8" />
-        <text x="15" y="25" fontSize="16" fontWeight="bold" fill="white">L5 - Infrastructure</text>
-        <text x="15" y="45" fontSize="11" fill="white" opacity="0.9">Compute • Storage • Network • Security</text>
-      </g>
-      
-      {/* Arrow marker definition */}
+
       <defs>
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-          <polygon points="0 0, 10 3.5, 0 7" fill="#D5DAE5" />
+        <marker id="layerArrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+          <polygon points="0 0, 10 4, 0 8" fill={TOKENS.border} />
         </marker>
       </defs>
     </svg>
@@ -98,61 +122,51 @@ export function LayerArchitectureDiagram() {
 // Data Pipeline Diagram
 export function PipelineDiagram() {
   const stages = [
-    { name: 'Ingest', color: '#4154A3', icon: '↓' },
-    { name: 'Normalize', color: '#6B7DC4', icon: '⚙' },
-    { name: 'Store', color: '#364789', icon: '💾' },
-    { name: 'Render', color: '#1B2544', icon: '👁' },
-    { name: 'Think', color: '#4154A3', icon: '🧠' },
-    { name: 'Govern', color: '#6B7DC4', icon: '✓' },
-    { name: 'Act', color: '#364789', icon: '⚡' },
-    { name: 'Re-ingest', color: '#10B981', icon: '↻' },
+    { name: 'Ingest', color: TOKENS.primary, icon: '↓' },
+    { name: 'Normalize', color: TOKENS.success, icon: '⚙' },
+    { name: 'Store', color: shade(TOKENS.primary, 36), icon: '⌂' },
+    { name: 'Render', color: TOKENS.warning, icon: '◌' },
+    { name: 'Think', color: TOKENS.accent, icon: '✦' },
+    { name: 'Govern', color: TOKENS.primary, icon: '✓' },
+    { name: 'Act', color: shade(TOKENS.accent, 32), icon: '⚡' },
+    { name: 'Re-ingest', color: TOKENS.success, icon: '↺' },
   ];
-  
+
   return (
-    <svg viewBox="0 0 900 200" className="w-full h-auto">
-      <rect width="900" height="200" fill="#f8fafc" rx="12" />
-      <text x="450" y="30" textAnchor="middle" fontSize="20" fontWeight="bold" fill="#1B2544">
-        8-Stage Data Pipeline
-      </text>
-      
+    <svg viewBox="0 0 900 220" className="w-full h-auto">
+      <DiagramFrame width={900} height={220} title="8-Stage Data Pipeline" />
+
       {stages.map((stage, i) => (
-        <g key={stage.name} transform={`translate(${50 + i * 100}, 60)`}>
-          {/* Stage box */}
-          <rect width="80" height="100" fill={stage.color} rx="8" opacity="0.9" />
-          {/* Icon */}
-          <text x="40" y="45" textAnchor="middle" fontSize="24" fill="white">{stage.icon}</text>
-          {/* Name */}
-          <text x="40" y="75" textAnchor="middle" fontSize="11" fontWeight="600" fill="white">
-            {stage.name}
-          </text>
-          {/* Number */}
-          <text x="40" y="92" textAnchor="middle" fontSize="10" fill="white" opacity="0.7">
-            Stage {i + 1}
-          </text>
-          
-          {/* Arrow to next stage */}
+        <g key={stage.name} transform={`translate(${38 + i * 106}, 70)`}>
+          <rect width="88" height="102" fill={TOKENS.surfaceRaised} rx="14" />
+          <rect width="88" height="102" fill="none" stroke={TOKENS.border} rx="14" />
+          <rect x="12" y="12" width="64" height="10" fill={tint(stage.color, 22)} rx="5" />
+          <circle cx="44" cy="46" r="20" fill={tint(stage.color, 18)} />
+          <circle cx="44" cy="46" r="20" fill="none" stroke={tint(stage.color, 56)} />
+          <text x="44" y="52" textAnchor="middle" fontSize="20" fontWeight="700" fill={stage.color}>{stage.icon}</text>
+          <text x="44" y="78" textAnchor="middle" fontSize="11" fontWeight="700" fill={TOKENS.text}>{stage.name}</text>
+          <text x="44" y="94" textAnchor="middle" fontSize="10" fill={TOKENS.faint}>Stage {i + 1}</text>
           {i < stages.length - 1 && (
-            <path d="M85 110 L95 110" stroke={stage.color} strokeWidth="2" markerEnd="url(#arrowSmall)" />
+            <path d="M90 52 L102 52" stroke={TOKENS.border} strokeWidth="2.5" markerEnd="url(#pipelineArrow)" />
           )}
         </g>
       ))}
-      
-      {/* Flow line at bottom */}
-      <path 
-        d="M90 180 Q450 160 810 180" 
-        stroke="#4154A3" 
-        strokeWidth="2" 
-        fill="none" 
-        strokeDasharray="5,5"
-        opacity="0.3"
+
+      <path
+        d="M76 192 Q450 168 824 192"
+        stroke={TOKENS.primary}
+        strokeWidth="2"
+        fill="none"
+        strokeDasharray="5,7"
+        opacity="0.28"
       />
-      <text x="450" y="195" textAnchor="middle" fontSize="10" fill="#5F6E93">
-        Continuous Flow — All data cycles through the pipeline
+      <text x="450" y="208" textAnchor="middle" fontSize="10.5" fill={TOKENS.muted}>
+        Continuous cycle — data returns through governance and re-ingestion
       </text>
-      
+
       <defs>
-        <marker id="arrowSmall" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
-          <polygon points="0 0, 6 2, 0 4" fill="#4154A3" />
+        <marker id="pipelineArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill={TOKENS.border} />
         </marker>
       </defs>
     </svg>
@@ -161,67 +175,62 @@ export function PipelineDiagram() {
 
 // Three Flows Diagram
 export function ThreeFlowsDiagram() {
+  const flows = [
+    {
+      x: 44,
+      title: 'Flow A',
+      subtitle: 'Structured operational truth',
+      color: TOKENS.primary,
+      steps: ['Connector', 'Pipeline', 'Spine', 'Workspace', 'Entity 360', 'Signals'],
+    },
+    {
+      x: 326,
+      title: 'Flow B',
+      subtitle: 'Unstructured context',
+      color: TOKENS.success,
+      steps: ['Ingest', 'Extract', 'Knowledge Graph', 'Link', 'Entity 360'],
+    },
+    {
+      x: 608,
+      title: 'Flow C',
+      subtitle: 'AI / MCP flow',
+      color: TOKENS.accent,
+      steps: ['Capture', 'Triage', 'Approve', 'Action', 'Re-ingest', 'Spine'],
+    },
+  ];
+
   return (
-    <svg viewBox="0 0 900 400" className="w-full h-auto">
-      <rect width="900" height="400" fill="#f8fafc" rx="12" />
-      <text x="450" y="30" textAnchor="middle" fontSize="20" fontWeight="bold" fill="#1B2544">
-        The Three Data Flows
-      </text>
-      
-      {/* Flow A - Structured */}
-      <g transform="translate(50, 60)">
-        <rect width="250" height="300" fill="#4154A3" opacity="0.1" rx="12" stroke="#4154A3" strokeWidth="2" />
-        <text x="125" y="35" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#4154A3">Flow A</text>
-        <text x="125" y="55" textAnchor="middle" fontSize="12" fill="#5F6E93">Structured Operational Truth</text>
-        
-        <g transform="translate(25, 80)">
-          {['Connector', 'Pipeline', 'Spine', 'Workspace', 'Entity 360', 'Signals'].map((step, i) => (
-            <g key={step} transform={`translate(0, ${i * 35})`}>
-              <rect width="200" height="28" fill="#4154A3" rx="4" opacity={0.7 + i * 0.05} />
-              <text x="100" y="19" textAnchor="middle" fontSize="11" fill="white">{step}</text>
-              {i < 5 && <path d="M100 30 L100 33" stroke="#4154A3" strokeWidth="2" />}
-            </g>
-          ))}
+    <svg viewBox="0 0 900 410" className="w-full h-auto">
+      <DiagramFrame width={900} height={410} title="The Three Data Flows" />
+
+      {flows.map((flow) => (
+        <g key={flow.title} transform={`translate(${flow.x}, 64)`}>
+          <rect width="248" height="304" fill={tint(flow.color, 10)} rx="18" />
+          <rect width="248" height="304" fill="none" stroke={tint(flow.color, 42)} rx="18" />
+          <rect x="18" y="18" width="72" height="24" fill={flow.color} rx="12" />
+          <text x="54" y="34" textAnchor="middle" fontSize="11" fontWeight="700" fill={TOKENS.inverse}>{flow.title}</text>
+          <text x="18" y="62" fontSize="15" fontWeight="700" fill={TOKENS.text}>{flow.subtitle}</text>
+
+          <g transform="translate(24, 88)">
+            {flow.steps.map((step, i) => {
+              const y = i * 36;
+              const isApproval = flow.title === 'Flow C' && step === 'Approve';
+              const stepColor = isApproval ? TOKENS.warning : flow.color;
+              return (
+                <g key={step} transform={`translate(0, ${y})`}>
+                  <rect width="200" height="26" fill={tint(stepColor, 14)} rx="8" />
+                  <rect width="200" height="26" fill="none" stroke={tint(stepColor, 42)} rx="8" />
+                  <text x="100" y="17" textAnchor="middle" fontSize="11" fontWeight="600" fill={TOKENS.text}>{step}</text>
+                  {i < flow.steps.length - 1 && <path d="M100 28 L100 34" stroke={TOKENS.border} strokeWidth="2" />}
+                </g>
+              );
+            })}
+          </g>
         </g>
-      </g>
-      
-      {/* Flow B - Unstructured */}
-      <g transform="translate(325, 60)">
-        <rect width="250" height="300" fill="#6B7DC4" opacity="0.1" rx="12" stroke="#6B7DC4" strokeWidth="2" />
-        <text x="125" y="35" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#6B7DC4">Flow B</text>
-        <text x="125" y="55" textAnchor="middle" fontSize="12" fill="#5F6E93">Unstructured Context</text>
-        
-        <g transform="translate(25, 80)">
-          {['Ingest', 'Extract', 'Knowledge Graph', 'Link', 'Entity 360'].map((step, i) => (
-            <g key={step} transform={`translate(0, ${i * 40})`}>
-              <rect width="200" height="28" fill="#6B7DC4" rx="4" opacity={0.7 + i * 0.05} />
-              <text x="100" y="19" textAnchor="middle" fontSize="11" fill="white">{step}</text>
-              {i < 4 && <path d="M100 30 L100 37" stroke="#6B7DC4" strokeWidth="2" />}
-            </g>
-          ))}
-        </g>
-      </g>
-      
-      {/* Flow C - AI/MCP */}
-      <g transform="translate(600, 60)">
-        <rect width="250" height="300" fill="#EB4379" opacity="0.1" rx="12" stroke="#EB4379" strokeWidth="2" />
-        <text x="125" y="35" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#EB4379">Flow C</text>
-        <text x="125" y="55" textAnchor="middle" fontSize="12" fill="#5F6E93">AI / MCP Flow</text>
-        
-        <g transform="translate(25, 80)">
-          {['Capture', 'Triage', 'Approve', 'Action', 'Re-ingest', 'Spine'].map((step, i) => (
-            <g key={step} transform={`translate(0, ${i * 35})`}>
-              <rect width="200" height="28" fill={step === 'Approve' ? '#F59E0B' : '#EB4379'} rx="4" opacity="0.8" />
-              <text x="100" y="19" textAnchor="middle" fontSize="11" fill="white">{step}</text>
-              {i < 5 && <path d="M100 30 L100 33" stroke="#EB4379" strokeWidth="2" />}
-            </g>
-          ))}
-        </g>
-      </g>
-      
-      {/* Warning note */}
-      <text x="725" y="385" textAnchor="middle" fontSize="10" fill="#EB4379" fontWeight="600">
-        ⚠ Flow C never writes directly to Spine
+      ))}
+
+      <text x="730" y="392" textAnchor="middle" fontSize="10.5" fontWeight="700" fill={TOKENS.accent}>
+        Flow C never writes directly to Spine truth
       </text>
     </svg>
   );
@@ -230,65 +239,61 @@ export function ThreeFlowsDiagram() {
 // Cognitive Loop Diagram
 export function CognitiveLoopDiagram() {
   const steps = [
-    { name: 'Entity 360', angle: -90, color: '#4154A3' },
-    { name: 'Think', angle: -30, color: '#6B7DC4' },
-    { name: 'Govern', angle: 30, color: '#364789' },
-    { name: 'HITL', angle: 90, color: '#EB4379' },
-    { name: 'Act', angle: 150, color: '#F54476' },
-    { name: 'Adjust', angle: 210, color: '#10B981' },
+    { name: 'Entity 360', angle: -90, color: TOKENS.primary },
+    { name: 'Think', angle: -30, color: TOKENS.accent },
+    { name: 'Govern', angle: 30, color: TOKENS.warning },
+    { name: 'HITL', angle: 90, color: shade(TOKENS.primary, 32) },
+    { name: 'Act', angle: 150, color: shade(TOKENS.accent, 28) },
+    { name: 'Adjust', angle: 210, color: TOKENS.success },
   ];
-  
+
   const centerX = 400;
-  const centerY = 250;
+  const centerY = 252;
   const radius = 150;
-  
+
   return (
     <svg viewBox="0 0 800 500" className="w-full h-auto">
-      <rect width="800" height="500" fill="#f8fafc" rx="12" />
-      <text x="400" y="40" textAnchor="middle" fontSize="20" fontWeight="bold" fill="#1B2544">
-        Cognitive Loop
-      </text>
-      
-      {/* Central hub */}
-      <circle cx={centerX} cy={centerY} r="60" fill="#4154A3" />
-      <text x={centerX} y={centerY - 5} textAnchor="middle" fontSize="14" fontWeight="bold" fill="white">The Spine</text>
-      <text x={centerX} y={centerY + 15} textAnchor="middle" fontSize="10" fill="white" opacity="0.8">SSOT</text>
-      
-      {/* Orbital steps */}
+      <DiagramFrame width={800} height={500} title="Cognitive Loop" />
+
+      <circle cx={centerX} cy={centerY} r="68" fill={tint(TOKENS.primary, 18)} />
+      <circle cx={centerX} cy={centerY} r="68" fill="none" stroke={tint(TOKENS.primary, 56)} />
+      <circle cx={centerX} cy={centerY} r="44" fill={TOKENS.primary} />
+      <text x={centerX} y={centerY - 4} textAnchor="middle" fontSize="14" fontWeight="700" fill={TOKENS.inverse}>The Spine</text>
+      <text x={centerX} y={centerY + 16} textAnchor="middle" fontSize="10" fill={TOKENS.inverse}>SSOT</text>
+
       {steps.map((step, i) => {
         const angle = (step.angle * Math.PI) / 180;
         const x = centerX + Math.cos(angle) * radius;
         const y = centerY + Math.sin(angle) * radius;
-        
+
         return (
           <g key={step.name}>
-            {/* Connection line */}
-            <line x1={centerX} y1={centerY} x2={x} y2={y} stroke={step.color} strokeWidth="2" strokeDasharray="4,4" opacity="0.5" />
-            
-            {/* Step circle */}
-            <circle cx={x} cy={y} r="45" fill={step.color} opacity="0.9" />
-            <text x={x} y={y + 5} textAnchor="middle" fontSize="14" fontWeight="bold" fill="white">{step.name}</text>
-            
-            {/* Step number */}
-            <circle cx={x + 35} cy={y - 35} r="15" fill="white" />
-            <text x={x + 35} y={y - 30} textAnchor="middle" fontSize="12" fontWeight="bold" fill={step.color}>{i + 1}</text>
+            <line x1={centerX} y1={centerY} x2={x} y2={y} stroke={tint(step.color, 55)} strokeWidth="2" strokeDasharray="5,6" />
+            <circle cx={x} cy={y} r="42" fill={tint(step.color, 14)} />
+            <circle cx={x} cy={y} r="42" fill="none" stroke={tint(step.color, 44)} />
+            <text x={x} y={y + 5} textAnchor="middle" fontSize="13" fontWeight="700" fill={TOKENS.text}>{step.name}</text>
+            <circle cx={x + 31} cy={y - 31} r="13" fill={TOKENS.surfaceRaised} stroke={TOKENS.border} />
+            <text x={x + 31} y={y - 27} textAnchor="middle" fontSize="11" fontWeight="700" fill={step.color}>{i + 1}</text>
           </g>
         );
       })}
-      
-      {/* Direction arrows */}
-      <path 
-        d={`M ${centerX + radius + 60} ${centerY} A ${radius + 60} ${radius + 60} 0 0 1 ${centerX} ${centerY - radius - 60}`}
-        fill="none" stroke="#4154A3" strokeWidth="3" markerEnd="url(#arrowLoop)" opacity="0.3"
+
+      <path
+        d={`M ${centerX + radius + 58} ${centerY} A ${radius + 58} ${radius + 58} 0 0 1 ${centerX} ${centerY - radius - 58}`}
+        fill="none"
+        stroke={TOKENS.primary}
+        strokeWidth="3"
+        markerEnd="url(#loopArrow)"
+        opacity="0.28"
       />
-      
-      <text x="400" y="480" textAnchor="middle" fontSize="12" fill="#5F6E93">
-        Continuous feedback loop — AI learns from every human decision
+
+      <text x="400" y="480" textAnchor="middle" fontSize="11.5" fill={TOKENS.muted}>
+        Continuous learning loop — every approved decision enriches continuity context
       </text>
-      
+
       <defs>
-        <marker id="arrowLoop" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-          <polygon points="0 0, 10 3.5, 0 7" fill="#4154A3" />
+        <marker id="loopArrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+          <polygon points="0 0, 10 4, 0 8" fill={TOKENS.primary} />
         </marker>
       </defs>
     </svg>
@@ -297,47 +302,54 @@ export function CognitiveLoopDiagram() {
 
 // Spine Visualization
 export function SpineVisualizationDiagram() {
+  const orbitItems = [
+    { name: 'Entities', angle: 0, color: TOKENS.primary },
+    { name: 'Relations', angle: 72, color: TOKENS.success },
+    { name: 'Schema', angle: 144, color: TOKENS.warning },
+    { name: 'Truth', angle: 216, color: shade(TOKENS.primary, 40) },
+    { name: 'Memory', angle: 288, color: TOKENS.accent },
+  ];
+
   return (
     <svg viewBox="0 0 400 400" className="w-full h-auto">
-      <rect width="400" height="400" fill="#f8fafc" rx="12" />
-      
-      {/* Outer rings */}
-      <circle cx="200" cy="200" r="180" fill="none" stroke="#4154A3" strokeWidth="1" opacity="0.2" />
-      <circle cx="200" cy="200" r="150" fill="none" stroke="#4154A3" strokeWidth="1" opacity="0.3" />
-      <circle cx="200" cy="200" r="120" fill="none" stroke="#4154A3" strokeWidth="2" opacity="0.4" />
-      
-      {/* Central Spine */}
-      <circle cx="200" cy="200" r="80" fill="#1B2544" />
-      <circle cx="200" cy="200" r="70" fill="#4154A3" />
-      <circle cx="200" cy="200" r="60" fill="#1B2544" />
-      
-      {/* Spine label */}
-      <text x="200" y="195" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white">THE SPINE</text>
-      <text x="200" y="215" textAnchor="middle" fontSize="10" fill="white" opacity="0.8">SSOT</text>
-      
-      {/* Orbiting elements */}
-      {[
-        { name: 'Entities', angle: 0, color: '#4154A3' },
-        { name: 'Relations', angle: 72, color: '#6B7DC4' },
-        { name: 'Schema', angle: 144, color: '#364789' },
-        { name: 'Truth', angle: 216, color: '#1B2544' },
-        { name: 'Memory', angle: 288, color: '#EB4379' },
-      ].map((item) => {
+      <DiagramFrame width={400} height={400} title="" />
+      <text x="200" y="40" textAnchor="middle" fontSize="20" fontWeight="700" fill={TOKENS.text}>The Spine</text>
+
+      {[180, 150, 120].map((r, i) => (
+        <circle
+          key={r}
+          cx="200"
+          cy="200"
+          r={r}
+          fill="none"
+          stroke={TOKENS.primary}
+          strokeWidth={i === 2 ? 2 : 1}
+          opacity={0.12 + i * 0.08}
+        />
+      ))}
+
+      <circle cx="200" cy="200" r="84" fill={tint(TOKENS.primary, 16)} />
+      <circle cx="200" cy="200" r="68" fill={TOKENS.surfaceRaised} stroke={TOKENS.border} />
+      <circle cx="200" cy="200" r="52" fill={TOKENS.primary} />
+      <text x="200" y="196" textAnchor="middle" fontSize="16" fontWeight="700" fill={TOKENS.inverse}>THE SPINE</text>
+      <text x="200" y="216" textAnchor="middle" fontSize="10" fill={TOKENS.inverse}>SSOT</text>
+
+      {orbitItems.map((item) => {
         const angle = (item.angle * Math.PI) / 180;
         const x = 200 + Math.cos(angle) * 140;
         const y = 200 + Math.sin(angle) * 140;
-        
         return (
           <g key={item.name}>
-            <line x1="200" y1="200" x2={x} y2={y} stroke={item.color} strokeWidth="1" opacity="0.4" />
-            <circle cx={x} cy={y} r="25" fill={item.color} opacity="0.9" />
-            <text x={x} y={y + 4} textAnchor="middle" fontSize="10" fontWeight="600" fill="white">{item.name}</text>
+            <line x1="200" y1="200" x2={x} y2={y} stroke={tint(item.color, 48)} strokeWidth="1.5" />
+            <circle cx={x} cy={y} r="27" fill={tint(item.color, 12)} />
+            <circle cx={x} cy={y} r="27" fill="none" stroke={tint(item.color, 40)} />
+            <text x={x} y={y + 4} textAnchor="middle" fontSize="10" fontWeight="700" fill={TOKENS.text}>{item.name}</text>
           </g>
         );
       })}
-      
-      <text x="200" y="380" textAnchor="middle" fontSize="12" fill="#5F6E93">
-        Everything orbits the Spine — the single source of truth
+
+      <text x="200" y="380" textAnchor="middle" fontSize="11.5" fill={TOKENS.muted}>
+        Everything orbits the Spine — continuity truth first, projections second
       </text>
     </svg>
   );
@@ -345,40 +357,50 @@ export function SpineVisualizationDiagram() {
 
 // Value Prop Diagram
 export function ValuePropDiagram() {
+  const pillars = [
+    {
+      x: 50,
+      color: TOKENS.primary,
+      title: 'Context',
+      lines: ['AI understands your', 'unique business context'],
+      icon: '◌',
+      foot: 'Entity 360 views',
+    },
+    {
+      x: 290,
+      color: TOKENS.accent,
+      title: 'Governance',
+      lines: ['Human approval required', 'for every action'],
+      icon: '✓',
+      foot: 'Approval-first design',
+    },
+    {
+      x: 530,
+      color: TOKENS.success,
+      title: 'Intelligence',
+      lines: ['Continuous learning from', 'every decision made'],
+      icon: '↺',
+      foot: 'Adaptive learning loop',
+    },
+  ];
+
   return (
     <svg viewBox="0 0 800 300" className="w-full h-auto">
-      <rect width="800" height="300" fill="#f8fafc" rx="12" />
-      
-      {/* Three pillars */}
-      <g transform="translate(50, 50)">
-        {/* Pillar 1: Context */}
-        <rect width="220" height="200" fill="#4154A3" rx="12" />
-        <text x="110" y="40" textAnchor="middle" fontSize="18" fontWeight="bold" fill="white">Context</text>
-        <text x="110" y="70" textAnchor="middle" fontSize="12" fill="white" opacity="0.9">AI understands your</text>
-        <text x="110" y="90" textAnchor="middle" fontSize="12" fill="white" opacity="0.9">unique business context</text>
-        <text x="110" y="130" textAnchor="middle" fontSize="40" fill="white" opacity="0.3">🧠</text>
-        <text x="110" y="170" textAnchor="middle" fontSize="11" fill="white" opacity="0.7">Entity 360° Views</text>
-      </g>
-      
-      <g transform="translate(290, 50)">
-        {/* Pillar 2: Governance */}
-        <rect width="220" height="200" fill="#EB4379" rx="12" />
-        <text x="110" y="40" textAnchor="middle" fontSize="18" fontWeight="bold" fill="white">Governance</text>
-        <text x="110" y="70" textAnchor="middle" fontSize="12" fill="white" opacity="0.9">Human approval required</text>
-        <text x="110" y="90" textAnchor="middle" fontSize="12" fill="white" opacity="0.9">for every action</text>
-        <text x="110" y="130" textAnchor="middle" fontSize="40" fill="white" opacity="0.3">✓</text>
-        <text x="110" y="170" textAnchor="middle" fontSize="11" fill="white" opacity="0.7">Approval-First Design</text>
-      </g>
-      
-      <g transform="translate(530, 50)">
-        {/* Pillar 3: Intelligence */}
-        <rect width="220" height="200" fill="#10B981" rx="12" />
-        <text x="110" y="40" textAnchor="middle" fontSize="18" fontWeight="bold" fill="white">Intelligence</text>
-        <text x="110" y="70" textAnchor="middle" fontSize="12" fill="white" opacity="0.9">Continuous learning from</text>
-        <text x="110" y="90" textAnchor="middle" fontSize="12" fill="white" opacity="0.9">every decision made</text>
-        <text x="110" y="130" textAnchor="middle" fontSize="40" fill="white" opacity="0.3">↻</text>
-        <text x="110" y="170" textAnchor="middle" fontSize="11" fill="white" opacity="0.7">Adaptive Learning Loop</text>
-      </g>
+      <DiagramFrame width={800} height={300} title="" />
+      <text x="400" y="36" textAnchor="middle" fontSize="20" fontWeight="700" fill={TOKENS.text}>Core Value Propositions</text>
+
+      {pillars.map((pillar) => (
+        <g key={pillar.title} transform={`translate(${pillar.x}, 58)`}>
+          <rect width="220" height="188" fill={tint(pillar.color, 12)} rx="18" />
+          <rect width="220" height="188" fill="none" stroke={tint(pillar.color, 40)} rx="18" />
+          <rect x="18" y="18" width="80" height="24" fill={pillar.color} rx="12" />
+          <text x="58" y="34" textAnchor="middle" fontSize="11" fontWeight="700" fill={TOKENS.inverse}>{pillar.title}</text>
+          <text x="110" y="86" textAnchor="middle" fontSize="12" fill={TOKENS.muted}>{pillar.lines[0]}</text>
+          <text x="110" y="104" textAnchor="middle" fontSize="12" fill={TOKENS.muted}>{pillar.lines[1]}</text>
+          <text x="110" y="144" textAnchor="middle" fontSize="34" fontWeight="700" fill={pillar.color}>{pillar.icon}</text>
+          <text x="110" y="170" textAnchor="middle" fontSize="11" fontWeight="600" fill={TOKENS.text}>{pillar.foot}</text>
+        </g>
+      ))}
     </svg>
   );
 }

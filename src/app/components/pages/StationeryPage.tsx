@@ -75,17 +75,17 @@ function generateSealSVG() {
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
   <defs>
     <linearGradient id="sealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4154A3" />
-      <stop offset="100%" stop-color="#1B2544" />
+      <stop offset="0%" stop-color="var(--primary-color)" />
+      <stop offset="100%" stop-color="var(--text-color)" />
     </linearGradient>
   </defs>
   <rect width="1200" height="1200" fill="#ffffff" />
   <circle cx="600" cy="600" r="420" fill="none" stroke="url(#sealGradient)" stroke-width="28" />
-  <circle cx="600" cy="600" r="350" fill="none" stroke="#EB4379" stroke-width="10" stroke-dasharray="12 18" />
-  <text x="600" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="8" fill="#4154A3">INTEGRATEWISE LLP</text>
-  <text x="600" y="870" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="600" letter-spacing="6" fill="#4154A3">OFFICIAL SEAL</text>
+  <circle cx="600" cy="600" r="350" fill="none" stroke="var(--accent-color)" stroke-width="10" stroke-dasharray="12 18" />
+  <text x="600" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="8" fill="var(--primary-color)">INTEGRATEWISE LLP</text>
+  <text x="600" y="870" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="600" letter-spacing="6" fill="var(--primary-color)">OFFICIAL SEAL</text>
   <circle cx="600" cy="600" r="180" fill="url(#sealGradient)" opacity="0.1" />
-  <text x="600" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="70" font-weight="700" fill="#1B2544">IW</text>
+  <text x="600" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="70" font-weight="700" fill="var(--text-color)">IW</text>
   <text x="600" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#636A82">${TAGLINES.split.top}</text>
   <text x="600" y="675" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#636A82">${TAGLINES.split.bottom}</text>
 </svg>`.trim();
@@ -103,7 +103,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         subject: 'Strategic rollout proposal',
         body: `Thank you for exploring ${BRAND.name}.\n\nWe are sharing a governed AI rollout proposal for your team.\n\nPlease review the enclosed scope, timeline, and approval checkpoints.`,
         footer: TAGLINES.primary,
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'invoice':
       return {
@@ -116,7 +116,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         dueDate: 'April 10, 2026',
         lineItem: `${BRAND.name} Platform - Growth Plan`,
         total: '$1,178.82',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'proposal':
       return {
@@ -131,7 +131,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         timeline: '4-week setup, 2-week pilot, 30-day success review with measurable adoption milestones.',
         preparedBy: BRAND.legalName,
         acceptedBy: 'Client Representative',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'memo':
       return {
@@ -141,7 +141,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         memoTo: 'Recipient Name',
         memoSubject: 'Project Update',
         memoBody: 'Please review the following important update regarding our current projects.',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'report-cover':
       return {
@@ -150,7 +150,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         reportDate: 'March 2026',
         companyName: BRAND.name,
         preparedBy: 'Strategy Office',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'fax-cover':
       return {
@@ -163,7 +163,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         numberOfPages: '1',
         subject: 'Fax Transmission',
         message: 'Please find the requested documents attached.',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'seal':
       return {
@@ -172,7 +172,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         initials: 'IW',
         taglineTop: TAGLINES.split.top,
         taglineBottom: TAGLINES.split.bottom,
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'business-card':
       return {
@@ -185,7 +185,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         phone: '+91 [Phone]',
         location: BRAND.location,
         footer: TAGLINES.primary,
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'email-signature':
       return {
@@ -196,7 +196,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         email: CONTACT.general,
         website: BRAND.website,
         footer: TAGLINES.primary,
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'document-cover':
       return {
@@ -208,7 +208,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         preparedBy: 'Strategy Office',
         documentDate: 'March 2026',
         version: 'v1.0',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'envelope':
       return {
@@ -222,28 +222,28 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         recipientCity: 'City, State, ZIP',
         recipientCountry: 'Country',
         footer: TAGLINES.primary,
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'notepad':
       return {
         companyName: BRAND.name,
         tagline: TAGLINES.descriptor,
         footerText: TAGLINES.primary,
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'folder':
       return {
         companyName: BRAND.name,
         tagline: TAGLINES.descriptorExtended,
         folderText: 'Project Folder',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'sticker':
       return {
         companyName: BRAND.name,
         tagline: TAGLINES.descriptor,
         stickerText: 'Made with IntegrateWise',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'sales-deck':
       return {
@@ -253,14 +253,14 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         tagline: TAGLINES.descriptorExtended,
         mainMessage: 'Unify tools. Govern AI. Scale impact.',
         ctaText: 'Get Started Today',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'presentation-bg':
       return {
         companyName: BRAND.name,
         tagline: TAGLINES.descriptorExtended,
         backgroundText: 'Presentation',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'whatsapp-banner':
       return {
@@ -268,7 +268,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         tagline: TAGLINES.descriptor,
         bannerMessage: 'Connect with us on WhatsApp',
         ctaText: 'Chat Now',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'linkedin-banner':
       return {
@@ -276,7 +276,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         tagline: TAGLINES.descriptorExtended,
         bannerHeading: 'Governed Intelligence Platform',
         bannerText: TAGLINES.primary,
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     case 'poster':
       return {
@@ -285,10 +285,10 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         posterSubtitle: 'The Governed AI Platform',
         posterMessage: TAGLINES.descriptorExtended,
         posterCTA: 'Learn More',
-        brandColor: '#4154A3',
+        brandColor: 'var(--primary-color)',
       };
     default:
-      return { brandColor: '#4154A3' };
+      return { brandColor: 'var(--primary-color)' };
   }
 }
 
@@ -507,7 +507,7 @@ function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) 
       whileTap={{ scale: 0.98 }}
       onClick={handleCopy}
       className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
-      style={{ background: copied ? '#10B981' : 'rgba(65,84,163,0.08)', color: copied ? '#fff' : '#4154A3' }}
+      style={{ background: copied ? 'var(--success-color)' : 'color-mix(in srgb, var(--forest) 8%, transparent)', color: copied ? 'var(--paper)' : 'var(--forest-mid)' }}
     >
       {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
       {copied ? 'Copied!' : label}
@@ -625,25 +625,25 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="bg-white rounded-xl max-w-5xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+        className="rounded-xl max-w-5xl w-full max-h-[90vh] overflow-hidden flex flex-col" style={{ background: 'var(--paper)' }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-[#E8ECF2]">
+        <div className="flex items-center justify-between p-6 border-b border-[var(--border-subtle)]">
           <div>
-            <h3 className="font-semibold text-[#1B2544]">{item.title}</h3>
-            <p className="text-xs text-[#7B8AAD]">{item.specs} • {item.format}</p>
+            <h3 className="font-semibold text-[var(--text-color)]">{item.title}</h3>
+            <p className="text-xs text-[var(--text-faint)]">{item.specs} • {item.format}</p>
           </div>
-          <button onClick={onClose} className="p-2 hover:bg-[#F0F2F7] rounded-lg">
-            <X className="w-5 h-5 text-[#5F6E93]" />
+          <button onClick={onClose} className="p-2 hover:bg-[var(--surface-2)] rounded-lg">
+            <X className="w-5 h-5 text-[var(--text-muted)]" />
           </button>
         </div>
 
         {/* Tabs */}
-        <div className="flex border-b border-[#E8ECF2]">
+        <div className="flex border-b border-[var(--border-subtle)]">
           <button
             onClick={() => setActiveTab('preview')}
             className={`px-4 py-2 text-sm font-medium border-b-2 transition-all ${
-              activeTab === 'preview' ? 'border-[#4154A3] text-[#4154A3]' : 'border-transparent text-[#5F6E93]'
+              activeTab === 'preview' ? 'border-[var(--primary-color)] text-[var(--primary-color)]' : 'border-transparent text-[var(--text-muted)]'
             }`}
           >
             Preview & Edit
@@ -651,7 +651,7 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
           <button
             onClick={() => setActiveTab('html')}
             className={`px-4 py-2 text-sm font-medium border-b-2 transition-all ${
-              activeTab === 'html' ? 'border-[#4154A3] text-[#4154A3]' : 'border-transparent text-[#5F6E93]'
+              activeTab === 'html' ? 'border-[var(--primary-color)] text-[var(--primary-color)]' : 'border-transparent text-[var(--text-muted)]'
             }`}
           >
             HTML Code
@@ -659,42 +659,42 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-auto p-6 bg-[#F8FAFC]">
+        <div className="flex-1 overflow-auto p-6 bg-[var(--surface)]">
           {activeTab === 'preview' ? (
             <div className="flex justify-center">
               <div className="grid lg:grid-cols-[300px_minmax(0,1fr)] gap-6 items-start">
                 {/* Edit Panel */}
-                <div className="bg-white rounded-xl border border-[#E8ECF2] p-5 space-y-4 max-h-[70vh] overflow-y-auto">
-                  <h4 className="font-semibold text-[#1B2544] text-sm">Edit Content</h4>
+                <div className="rounded-xl border border-[var(--border-subtle)] p-5 space-y-4 max-h-[70vh] overflow-y-auto" style={{ background: 'var(--paper)' }}>
+                  <h4 className="font-semibold text-[var(--text-color)] text-sm">Edit Content</h4>
                   {getStationeryFields(item.id).map((field) => (
                     <div key={field.key}>
-                      <label className="text-xs font-medium text-[#5F6E93]">{field.label}</label>
+                      <label className="text-xs font-medium text-[var(--text-muted)]">{field.label}</label>
                       {field.type === 'color' ? (
                         <div className="mt-2 flex items-center gap-2">
                           <input
                             type="color"
-                            value={content[field.key] ?? '#4154A3'}
+                            value={content[field.key]?.startsWith('var(') ? '#1A3A2A' : (content[field.key] ?? '#1A3A2A')}
                             onChange={(e) => setContent((prev) => ({ ...prev, [field.key]: e.target.value }))}
-                            className="w-12 h-10 rounded-lg border border-[#D5DAE5] cursor-pointer"
+                            className="w-12 h-10 rounded-lg border border-[var(--border-base)] cursor-pointer"
                           />
                           <input
                             type="text"
-                            value={content[field.key] ?? '#4154A3'}
+                            value={content[field.key]?.startsWith('var(') ? '#1A3A2A' : (content[field.key] ?? '#1A3A2A')}
                             onChange={(e) => setContent((prev) => ({ ...prev, [field.key]: e.target.value }))}
-                            className="flex-1 rounded-lg border border-[#D5DAE5] px-2 py-2 text-xs font-mono"
+                            className="flex-1 rounded-lg border border-[var(--border-base)] px-2 py-2 text-xs font-mono"
                           />
                         </div>
                       ) : field.multiline ? (
                         <textarea
                           value={content[field.key] ?? ''}
                           onChange={(e) => setContent((prev) => ({ ...prev, [field.key]: e.target.value }))}
-                          className="mt-1 w-full rounded-lg border border-[#D5DAE5] px-3 py-2 text-sm min-h-20"
+                          className="mt-1 w-full rounded-lg border border-[var(--border-base)] px-3 py-2 text-sm min-h-20"
                         />
                       ) : (
                         <input
                           value={content[field.key] ?? ''}
                           onChange={(e) => setContent((prev) => ({ ...prev, [field.key]: e.target.value }))}
-                          className="mt-1 w-full rounded-lg border border-[#D5DAE5] px-3 py-2 text-sm"
+                          className="mt-1 w-full rounded-lg border border-[var(--border-base)] px-3 py-2 text-sm"
                         />
                       )}
                     </div>
@@ -708,19 +708,19 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
               </div>
             </div>
           ) : (
-            <div className="bg-[#1B2544] rounded-lg p-4 overflow-x-auto">
+            <div className="bg-[var(--text-color)] rounded-lg p-4 overflow-x-auto">
               <pre className="text-sm text-white/90 whitespace-pre-wrap">{generateHTML(item.id, content)}</pre>
             </div>
           )}
         </div>
 
         {/* Actions */}
-        <div className="flex items-center justify-between p-6 border-t border-[#E8ECF2] bg-white gap-4">
+        <div className="flex items-center justify-between p-6 border-t border-[var(--border-subtle)] gap-4" style={{ background: 'var(--paper)' }}>
           <div className="flex gap-2 flex-wrap">
             <select
               value={exportFormat}
               onChange={(e) => setExportFormat(e.target.value as any)}
-              className="px-3 py-2 rounded-lg border border-[#D5DAE5] text-sm font-medium text-[#1B2544]"
+              className="px-3 py-2 rounded-lg border border-[var(--border-base)] text-sm font-medium text-[var(--text-color)]"
             >
               <option value="png">PNG Image</option>
               <option value="pdf">PDF Document</option>
@@ -731,7 +731,7 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
             <button
               onClick={handleDownload}
               disabled={isExporting}
-              className="flex items-center gap-2 px-4 py-2 bg-[#4154A3] text-white rounded-lg text-sm font-medium disabled:opacity-50"
+              className="flex items-center gap-2 px-4 py-2 bg-[var(--primary-color)] text-[var(--paper)] rounded-lg text-sm font-medium disabled:opacity-50"
             >
               {isExporting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
               {isExporting ? 'Exporting...' : 'Download'}
@@ -746,7 +746,7 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
 
 // Preview Content Component
 function PreviewContent({ id, content }: { id: string; content: StationeryContent }) {
-  const brandColor = content.brandColor || '#4154A3';
+  const brandColor = content.brandColor || 'var(--primary-color)';
   
   switch (id) {
     case 'letterhead':
@@ -768,14 +768,14 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
             <p className="text-sm mb-2">To:</p>
             <p className="text-sm mb-8 ml-4">{content.recipient}</p>
             <p className="text-sm mb-4">Subject: {content.subject}</p>
-            <div className="h-64 border border-[#E8ECF2] rounded-lg p-6">
+            <div className="h-64 border border-[var(--border-subtle)] rounded-lg p-6">
               {content.body?.split('\n').map((line) => (
                 <p key={line} className="text-sm mb-3">{line}</p>
               ))}
             </div>
           </div>
-          <div className="absolute bottom-12 left-12 right-12 pt-4 border-t border-[#E8ECF2]">
-            <p className="text-xs text-[#9BA8C2] text-center">{content.footer}</p>
+          <div className="absolute bottom-12 left-12 right-12 pt-4 border-t border-[var(--border-subtle)]">
+            <p className="text-xs text-[var(--text-faint)] text-center">{content.footer}</p>
           </div>
         </div>
       );
@@ -791,14 +791,14 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           </div>
           <div className="mt-8 space-y-3">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="flex items-center border-b border-[#E8ECF2] pb-3">
+              <div key={i} className="flex items-center border-b border-[var(--border-subtle)] pb-3">
                 <div className="w-5 h-5 rounded-full border-2 mr-3" style={{ borderColor: brandColor }} />
-                <div className="flex-1 h-4 bg-[#F0F2F7] rounded" />
+                <div className="flex-1 h-4 bg-[var(--surface-2)] rounded" />
               </div>
             ))}
           </div>
-          <div className="absolute bottom-8 left-8 right-8 pt-4 border-t border-[#E8ECF2]">
-            <p className="text-xs text-[#9BA8C2] text-center">{content.footerText}</p>
+          <div className="absolute bottom-8 left-8 right-8 pt-4 border-t border-[var(--border-subtle)]">
+            <p className="text-xs text-[var(--text-faint)] text-center">{content.footerText}</p>
           </div>
         </div>
       );
@@ -824,7 +824,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4" style={{ color: brandColor }}>{content.companyName}</h2>
             <p className="text-sm text-[#636A82] mb-4">{content.tagline}</p>
-            <p className="text-lg font-semibold text-[#1B2544]">{content.stickerText}</p>
+            <p className="text-lg font-semibold text-[var(--text-color)]">{content.stickerText}</p>
           </div>
         </div>
       );
@@ -839,24 +839,24 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           <div className="mt-8 space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="text-xs font-semibold text-[#5F6E93]">TO:</p>
-                <p className="text-sm text-[#1B2544]">{content.memoTo}</p>
+                <p className="text-xs font-semibold text-[var(--text-muted)]">TO:</p>
+                <p className="text-sm text-[var(--text-color)]">{content.memoTo}</p>
               </div>
               <div>
-                <p className="text-xs font-semibold text-[#5F6E93]">DATE:</p>
-                <p className="text-sm text-[#1B2544]">{content.memoDate}</p>
+                <p className="text-xs font-semibold text-[var(--text-muted)]">DATE:</p>
+                <p className="text-sm text-[var(--text-color)]">{content.memoDate}</p>
               </div>
               <div>
-                <p className="text-xs font-semibold text-[#5F6E93]">FROM:</p>
-                <p className="text-sm text-[#1B2544]">{content.memoFrom}</p>
+                <p className="text-xs font-semibold text-[var(--text-muted)]">FROM:</p>
+                <p className="text-sm text-[var(--text-color)]">{content.memoFrom}</p>
               </div>
               <div>
-                <p className="text-xs font-semibold text-[#5F6E93]">SUBJECT:</p>
-                <p className="text-sm text-[#1B2544]">{content.memoSubject}</p>
+                <p className="text-xs font-semibold text-[var(--text-muted)]">SUBJECT:</p>
+                <p className="text-sm text-[var(--text-color)]">{content.memoSubject}</p>
               </div>
             </div>
             <div className="mt-6">
-              <div className="p-6 border border-[#E8ECF2] rounded-lg">
+              <div className="p-6 border border-[var(--border-subtle)] rounded-lg">
                 <p className="text-sm text-[#333944] whitespace-pre-wrap">{content.memoBody}</p>
               </div>
             </div>
@@ -866,7 +866,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'report-cover':
       return (
-        <div className="w-[800px] h-[1131px] p-12 bg-gradient-to-b text-white flex flex-col justify-between" style={{ background: `linear-gradient(135deg, ${content.brandColor || '#4154A3'} 0%, ${content.brandColor || '#1B2544'}99 100%)` }}>
+        <div className="w-[800px] h-[1131px] p-12 bg-gradient-to-b text-white flex flex-col justify-between" style={{ background: `linear-gradient(135deg, ${content.brandColor || 'var(--primary-color)'} 0%, ${content.brandColor || 'var(--text-color)'}99 100%)` }}>
           <div />
           <div className="text-center">
             <p className="text-lg opacity-80 mb-4">{content.reportDate}</p>
@@ -883,19 +883,19 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
     case 'fax-cover':
       return (
         <div className="w-[800px] h-[1131px] p-12 bg-white">
-          <div className="border-b-4 pb-6" style={{ borderColor: content.brandColor || '#4154A3' }}>
-            <h1 className="text-3xl font-bold" style={{ color: content.brandColor || '#4154A3' }}>FAX TRANSMISSION COVER SHEET</h1>
+          <div className="border-b-4 pb-6" style={{ borderColor: content.brandColor || 'var(--primary-color)' }}>
+            <h1 className="text-3xl font-bold" style={{ color: content.brandColor || 'var(--primary-color)' }}>FAX TRANSMISSION COVER SHEET</h1>
           </div>
           <div className="mt-8 space-y-6">
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <h3 className="text-sm font-bold text-[#1B2544] mb-4">FROM:</h3>
+                <h3 className="text-sm font-bold text-[var(--text-color)] mb-4">FROM:</h3>
                 <p className="text-sm">{content.senderCompany}</p>
                 <p className="text-sm">{content.senderName}</p>
                 <p className="text-sm">{content.senderPhone}</p>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[#1B2544] mb-4">TO:</h3>
+                <h3 className="text-sm font-bold text-[var(--text-color)] mb-4">TO:</h3>
                 <p className="text-sm">{content.recipientCompany}</p>
                 <p className="text-sm">{content.recipientName}</p>
                 <p className="text-sm">{content.recipientPhone}</p>
@@ -903,17 +903,17 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
             </div>
             <table className="w-full border-collapse">
               <tbody>
-                <tr className="border-b border-[#E8ECF2]">
-                  <td className="text-sm font-semibold text-[#1B2544] pb-2">Total Pages (including cover):</td>
+                <tr className="border-b border-[var(--border-subtle)]">
+                  <td className="text-sm font-semibold text-[var(--text-color)] pb-2">Total Pages (including cover):</td>
                   <td className="text-sm pb-2">{content.numberOfPages}</td>
                 </tr>
-                <tr className="border-b border-[#E8ECF2]">
-                  <td className="text-sm font-semibold text-[#1B2544] py-2">Subject:</td>
+                <tr className="border-b border-[var(--border-subtle)]">
+                  <td className="text-sm font-semibold text-[var(--text-color)] py-2">Subject:</td>
                   <td className="text-sm py-2">{content.subject}</td>
                 </tr>
                 <tr>
                   <td colSpan={2} className="pt-4">
-                    <p className="text-sm font-semibold text-[#1B2544] mb-2">Message:</p>
+                    <p className="text-sm font-semibold text-[var(--text-color)] mb-2">Message:</p>
                     <p className="text-sm text-[#636A82]">{content.message}</p>
                   </td>
                 </tr>
@@ -932,7 +932,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           </div>
           <div className="text-white">
             <p className="text-xl mb-4 opacity-90">{content.mainMessage}</p>
-            <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold text-lg">{content.ctaText}</button>
+            <button className="px-8 py-3 rounded-lg font-semibold text-lg" style={{ background: 'var(--paper)', color: 'var(--ink)' }}>{content.ctaText}</button>
           </div>
           <p className="text-white/60 text-sm">{content.companyName}</p>
         </div>
@@ -955,7 +955,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           <div className="text-white">
             <h2 className="text-4xl font-bold mb-4">{content.bannerMessage}</h2>
             <p className="text-lg opacity-90">{content.companyName}</p>
-            <button className="mt-6 px-6 py-2 bg-white text-gray-900 rounded-lg font-semibold">{content.ctaText}</button>
+            <button className="mt-6 px-6 py-2 rounded-lg font-semibold" style={{ background: 'var(--paper)', color: 'var(--ink)' }}>{content.ctaText}</button>
           </div>
           <div className="text-white text-6xl opacity-20">💬</div>
         </div>
@@ -981,47 +981,637 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           </div>
           <div className="text-center">
             <p className="text-lg mb-8 opacity-80">{content.posterMessage}</p>
-            <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-bold text-lg">{content.posterCTA}</button>
+            <button className="px-8 py-3 rounded-lg font-bold text-lg" style={{ background: 'var(--paper)', color: 'var(--ink)' }}>{content.posterCTA}</button>
           </div>
           <p className="text-center text-sm opacity-70">{content.companyName}</p>
         </div>
       );
 
     case 'invoice':
+      return (
+        <div className="w-[600px] bg-white p-10" style={{ fontFamily: 'Arial, sans-serif' }}>
+          {/* Header */}
+          <div className="flex justify-between items-start mb-8">
+            <div>
+              <h1 className="text-2xl font-bold" style={{ color: '#1A3A2A' }}>{content.companyName}</h1>
+              <p className="text-xs mt-1" style={{ color: '#2A4A6A' }}>{content.tagline}</p>
+            </div>
+            <div className="text-right">
+              <h2 className="text-3xl font-bold tracking-wide" style={{ color: '#1A3A2A' }}>INVOICE</h2>
+              <p className="text-sm mt-1" style={{ color: '#0C0C0C' }}>{content.invoiceNumber}</p>
+            </div>
+          </div>
+          {/* From / To */}
+          <div className="flex gap-12 mb-8">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#1A3A2A' }}>From</p>
+              <p className="text-sm font-semibold" style={{ color: '#0C0C0C' }}>{content.companyName}</p>
+              <p className="text-xs mt-1" style={{ color: '#2A4A6A' }}>Issued: {content.invoiceDate}</p>
+              <p className="text-xs" style={{ color: '#2A4A6A' }}>Due: {content.dueDate}</p>
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#1A3A2A' }}>Bill To</p>
+              <p className="text-sm font-semibold" style={{ color: '#0C0C0C' }}>{content.clientName}</p>
+              <p className="text-xs mt-1 whitespace-pre-wrap" style={{ color: '#2A4A6A' }}>{content.clientAddress}</p>
+            </div>
+          </div>
+          {/* Line Items Table */}
+          <table className="w-full border-collapse mb-4" style={{ fontSize: '13px' }}>
+            <thead>
+              <tr style={{ background: '#1A3A2A', color: '#F4F0E8' }}>
+                <th className="text-left p-3 font-semibold">Description</th>
+                <th className="text-right p-3 font-semibold">Qty</th>
+                <th className="text-right p-3 font-semibold">Rate</th>
+                <th className="text-right p-3 font-semibold">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                <td className="p-3" style={{ color: '#0C0C0C' }}>{content.lineItem}</td>
+                <td className="p-3 text-right" style={{ color: '#2A4A6A' }}>1</td>
+                <td className="p-3 text-right" style={{ color: '#2A4A6A' }}>{content.total}</td>
+                <td className="p-3 text-right font-medium" style={{ color: '#0C0C0C' }}>{content.total}</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                <td className="p-3" style={{ color: '#0C0C0C' }}>Onboarding & Setup Fee</td>
+                <td className="p-3 text-right" style={{ color: '#2A4A6A' }}>1</td>
+                <td className="p-3 text-right" style={{ color: '#2A4A6A' }}>$200.00</td>
+                <td className="p-3 text-right font-medium" style={{ color: '#0C0C0C' }}>$200.00</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #e5e7eb' }}>
+                <td className="p-3" style={{ color: '#0C0C0C' }}>Priority Support (Monthly)</td>
+                <td className="p-3 text-right" style={{ color: '#2A4A6A' }}>1</td>
+                <td className="p-3 text-right" style={{ color: '#2A4A6A' }}>$49.00</td>
+                <td className="p-3 text-right font-medium" style={{ color: '#0C0C0C' }}>$49.00</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr style={{ background: '#B8943F22' }}>
+                <td colSpan={3} className="p-3 text-right font-bold" style={{ color: '#1A3A2A' }}>Total</td>
+                <td className="p-3 text-right font-bold text-lg" style={{ color: '#B8943F' }}>{content.total}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      );
+
     case 'proposal':
+      return (
+        <div className="w-[800px] h-[1131px] p-12 bg-white relative">
+          <div className="flex justify-between items-start pb-4 border-b-2" style={{ borderColor: brandColor }}>
+            <h1 className="text-3xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
+            <p className="text-xs text-[#636A82] mt-1">{content.tagline}</p>
+          </div>
+          <div className="mt-10 space-y-6 text-[#333944]">
+            <h2 className="text-2xl font-semibold">{content.proposalTitle}</h2>
+            <p className="text-sm">Prepared for: <strong>{content.preparedFor}</strong></p>
+            <p className="text-sm">Date: {content.proposalDate} | Valid: {content.validUntil}</p>
+            <div><p className="text-xs font-bold uppercase text-[#636A82] mb-1">Summary</p><p className="text-sm">{content.summary}</p></div>
+            <div><p className="text-xs font-bold uppercase text-[#636A82] mb-1">Scope</p><p className="text-sm">{content.scope}</p></div>
+            <div><p className="text-xs font-bold uppercase text-[#636A82] mb-1">Timeline</p><p className="text-sm">{content.timeline}</p></div>
+          </div>
+        </div>
+      );
+
     case 'seal':
+      return (
+        <div className="w-[400px] h-[400px] bg-white flex items-center justify-center">
+          <svg viewBox="0 0 400 400" className="w-[360px] h-[360px]">
+            <circle cx="200" cy="200" r="170" fill="none" stroke="#1A3A2A" strokeWidth="10"/>
+            <circle cx="200" cy="200" r="140" fill="none" stroke="#B8943F" strokeWidth="4" strokeDasharray="8 12"/>
+            <text x="200" y="118" textAnchor="middle" fontFamily="Arial" fontSize="15" fontWeight="700" letterSpacing="4" fill="#1A3A2A">{content.companyName}</text>
+            <text x="200" y="290" textAnchor="middle" fontFamily="Arial" fontSize="13" fontWeight="600" letterSpacing="3" fill="#1A3A2A">{content.label}</text>
+            <circle cx="200" cy="200" r="70" fill="#1A3A2A" opacity="0.08"/>
+            <text x="200" y="187" textAnchor="middle" fontFamily="Arial" fontSize="36" fontWeight="700" fill="#0C0C0C">{content.initials}</text>
+            <text x="200" y="214" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#636A82">{content.taglineTop}</text>
+            <text x="200" y="228" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#636A82">{content.taglineBottom}</text>
+          </svg>
+        </div>
+      );
+
     case 'business-card':
+      return (
+        <div className="w-[340px] h-[212px] p-5 flex flex-col justify-between" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+          <div>
+            <p className="text-xl font-black tracking-widest" style={{ color: '#1A3A2A', fontFamily: '"Bebas Neue", "Arial Black", sans-serif' }}>{content.companyName}</p>
+            <p className="text-xs mt-1 font-medium" style={{ color: '#0C0C0C' }}>{content.personName}</p>
+            <p className="text-xs" style={{ color: '#2A4A6A' }}>{content.personTitle}</p>
+          </div>
+          <hr style={{ border: 'none', borderTop: '1px solid #B8943F' }} />
+          <div className="flex justify-between items-end">
+            <p className="text-[10px] font-mono" style={{ color: '#0C0C0C' }}>{content.email}</p>
+            <p className="text-[10px] font-mono" style={{ color: '#0C0C0C' }}>{content.phone}</p>
+            <p className="text-[10px] font-mono" style={{ color: '#0C0C0C' }}>{content.website}</p>
+          </div>
+        </div>
+      );
+
     case 'email-signature':
+      return (
+        <div className="w-[600px] bg-white p-4">
+          <div style={{ borderLeft: '4px solid #B8943F', paddingLeft: '16px', fontFamily: 'Arial, sans-serif' }}>
+            <p className="text-sm font-bold" style={{ color: '#1A3A2A' }}>{content.personName}</p>
+            <p className="text-xs" style={{ color: '#2A4A6A' }}>{content.personTitle}</p>
+            <p className="text-xs" style={{ color: '#0C0C0C' }}>{content.companyName}</p>
+            <hr style={{ border: 'none', borderTop: '1px solid #e5e7eb', margin: '8px 0' }} />
+            <p className="text-xs font-mono" style={{ color: '#0C0C0C' }}>
+              {content.email}&nbsp;|&nbsp;{content.website}
+            </p>
+            <p className="text-xs italic mt-2" style={{ color: '#2A4A6A' }}>{content.tagline}</p>
+          </div>
+        </div>
+      );
+
     case 'document-cover':
+      return (
+        <div className="w-[400px] h-[565px] flex flex-col overflow-hidden" style={{ fontFamily: 'Arial, sans-serif' }}>
+          {/* Top third — forest */}
+          <div className="flex-shrink-0 flex flex-col justify-center px-10 py-8" style={{ background: '#1A3A2A', height: '188px' }}>
+            <p className="text-2xl font-black tracking-widest" style={{ color: '#F4F0E8', fontFamily: '"Bebas Neue", "Arial Black", sans-serif' }}>{content.companyName}</p>
+            <p className="text-xs mt-2" style={{ color: '#B8943F' }}>{content.tagline}</p>
+          </div>
+          {/* Lower two thirds — white */}
+          <div className="flex-1 bg-white px-10 py-8 flex flex-col justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-widest mb-2" style={{ color: '#2A4A6A' }}>{content.documentType}</p>
+              <h2 className="text-xl font-bold leading-snug mb-3" style={{ color: '#0C0C0C', fontFamily: '"DM Serif Display", Georgia, serif' }}>{content.documentTitle}</h2>
+              <p className="text-sm" style={{ color: '#2A4A6A' }}>{content.documentSubtitle}</p>
+            </div>
+            <p className="text-xs font-mono text-right" style={{ color: '#2A4A6A' }}>{content.documentDate} · {content.version}</p>
+          </div>
+        </div>
+      );
+
     case 'envelope':
-      // Keep existing previews - they were working before
-      return <div className="w-[800px] p-4 text-center text-[#5F6E93]">Preview rendering...</div>;
+      return (
+        <div className="w-[560px] h-[400px] relative flex flex-col justify-between overflow-hidden" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+          {/* Return address top-left */}
+          <div className="p-8">
+            <p className="text-xs font-bold" style={{ color: '#1A3A2A' }}>{content.companyName}</p>
+            {content.returnAddress?.split('\n').map((line, i) => (
+              <p key={i} className="text-xs" style={{ color: '#0C0C0C' }}>{line}</p>
+            ))}
+          </div>
+          {/* Delivery address centered */}
+          <div className="flex-1 flex items-center justify-center text-center px-16">
+            <div>
+              <p className="text-sm font-semibold mb-1" style={{ color: '#0C0C0C' }}>{content.recipientName}</p>
+              <p className="text-sm" style={{ color: '#0C0C0C' }}>{content.recipientCompany}</p>
+              <p className="text-sm" style={{ color: '#0C0C0C' }}>{content.recipientStreet}</p>
+              <p className="text-sm" style={{ color: '#0C0C0C' }}>{content.recipientCity}</p>
+              <p className="text-sm" style={{ color: '#0C0C0C' }}>{content.recipientCountry}</p>
+            </div>
+          </div>
+          {/* Forest bar at bottom */}
+          <div className="flex items-center justify-center py-3" style={{ background: '#1A3A2A' }}>
+            <p className="text-sm font-black tracking-widest" style={{ color: '#B8943F', fontFamily: '"Bebas Neue", "Arial Black", sans-serif' }}>{content.companyName}</p>
+          </div>
+        </div>
+      );
+
+    case 'memo':
+      return (
+        <div className="w-[600px] p-10" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+          <div className="flex justify-between items-start pb-4 mb-6" style={{ borderBottom: '2px solid #1A3A2A' }}>
+            <p className="text-lg font-black tracking-widest" style={{ color: '#1A3A2A', fontFamily: '"Bebas Neue", Arial, sans-serif' }}>{content.companyName}</p>
+            <p className="text-xs uppercase tracking-widest font-bold" style={{ color: '#B8943F' }}>MEMORANDUM</p>
+          </div>
+          <table className="w-full mb-6" style={{ fontSize: '13px' }}>
+            <tbody>
+              {[['Date', content.memoDate], ['From', content.memoFrom], ['To', content.memoTo], ['Subject', content.memoSubject]].map(([label, val]) => (
+                <tr key={label} style={{ borderBottom: '1px solid #C4BAA8' }}>
+                  <td className="py-2 pr-4 font-bold uppercase text-xs tracking-widest" style={{ color: '#1A3A2A', width: '80px' }}>{label}</td>
+                  <td className="py-2 text-sm" style={{ color: '#0C0C0C' }}>{val}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="text-sm leading-relaxed" style={{ color: '#0C0C0C' }}>{content.memoBody}</div>
+        </div>
+      );
+
+    case 'report-cover':
+      return (
+        <div className="w-[400px] h-[565px] flex flex-col" style={{ fontFamily: 'Arial, sans-serif', background: '#F4F0E8' }}>
+          <div className="flex-1 flex flex-col justify-end px-10 pb-10 pt-16" style={{ background: '#1A3A2A' }}>
+            <p className="text-3xl font-black tracking-widest mb-3" style={{ color: '#F4F0E8', fontFamily: '"Bebas Neue", Arial, sans-serif' }}>{content.reportTitle}</p>
+            <p className="text-sm" style={{ color: '#B8943F' }}>{content.reportSubtitle}</p>
+          </div>
+          <div className="px-10 py-8" style={{ background: '#F4F0E8' }}>
+            <p className="text-xs uppercase tracking-widest mb-1" style={{ color: '#2A4A6A' }}>{content.companyName}</p>
+            <p className="text-xs font-mono" style={{ color: '#0C0C0C' }}>{content.reportDate} · {content.preparedBy}</p>
+          </div>
+        </div>
+      );
+
+    case 'fax-cover':
+      return (
+        <div className="w-[600px] p-10" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+          <div className="flex justify-between items-start pb-4 mb-6" style={{ borderBottom: '2px solid #1A3A2A' }}>
+            <p className="text-lg font-black tracking-widest" style={{ color: '#1A3A2A', fontFamily: '"Bebas Neue", Arial, sans-serif' }}>{content.senderCompany}</p>
+            <p className="text-xs uppercase tracking-widest font-bold" style={{ color: '#B8943F' }}>FAX COVER SHEET</p>
+          </div>
+          <div className="grid grid-cols-2 gap-6 mb-6">
+            {[['To', content.recipientName], ['From', content.senderName], ['Company', content.recipientCompany], ['Phone', content.senderPhone], ['Phone', content.recipientPhone], ['Pages', content.numberOfPages]].map(([label, val], i) => (
+              <div key={i}>
+                <p className="text-xs uppercase tracking-widest font-bold mb-1" style={{ color: '#1A3A2A' }}>{label}</p>
+                <p className="text-sm" style={{ color: '#0C0C0C' }}>{val}</p>
+              </div>
+            ))}
+          </div>
+          <div className="p-4 rounded" style={{ background: '#EBE5D8' }}>
+            <p className="text-xs uppercase tracking-widest font-bold mb-2" style={{ color: '#1A3A2A' }}>Message</p>
+            <p className="text-sm" style={{ color: '#0C0C0C' }}>{content.message}</p>
+          </div>
+        </div>
+      );
+
+    case 'notepad':
+      return (
+        <div className="w-[400px] h-[565px] flex flex-col" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+          <div className="px-8 py-5 flex items-center justify-between" style={{ borderBottom: '2px solid #1A3A2A' }}>
+            <p className="text-base font-black tracking-widest" style={{ color: '#1A3A2A', fontFamily: '"Bebas Neue", Arial, sans-serif' }}>{content.companyName}</p>
+            <p className="text-xs font-mono" style={{ color: '#B8943F' }}>{content.tagline}</p>
+          </div>
+          <div className="flex-1 px-8 py-4">
+            {Array.from({ length: 14 }).map((_, i) => (
+              <div key={i} className="w-full" style={{ borderBottom: '1px solid #C4BAA8', height: '32px' }} />
+            ))}
+          </div>
+          <div className="px-8 py-3 text-center" style={{ borderTop: '1px solid #C4BAA8' }}>
+            <p className="text-xs font-mono" style={{ color: '#2A4A6A' }}>{content.footerText}</p>
+          </div>
+        </div>
+      );
+
+    case 'folder':
+      return (
+        <div className="w-[560px] h-[420px] relative" style={{ fontFamily: 'Arial, sans-serif' }}>
+          <div className="absolute inset-0 rounded-br-xl rounded-bl-xl rounded-tr-xl" style={{ background: '#1A3A2A' }} />
+          <div className="absolute top-0 left-0 w-32 h-8 rounded-tl-xl rounded-tr-xl" style={{ background: '#2D5A3D' }} />
+          <div className="absolute inset-0 flex flex-col justify-end p-10">
+            <p className="text-4xl font-black tracking-widest mb-2" style={{ color: '#F4F0E8', fontFamily: '"Bebas Neue", Arial, sans-serif' }}>{content.companyName}</p>
+            <p className="text-sm mb-1" style={{ color: '#B8943F' }}>{content.folderText}</p>
+            <p className="text-xs" style={{ color: '#F4F0E8', opacity: 0.6 }}>{content.tagline}</p>
+          </div>
+        </div>
+      );
+
+    case 'sticker':
+      return (
+        <div className="flex gap-6 flex-wrap p-8" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+          {[{ w: 120, h: 120, round: '50%', label: 'Round' }, { w: 160, h: 60, round: '8px', label: 'Banner' }, { w: 100, h: 100, round: '12px', label: 'Square' }].map(({ w, h, round, label }) => (
+            <div key={label} className="flex flex-col items-center gap-2">
+              <div className="flex items-center justify-center" style={{ width: w, height: h, borderRadius: round, background: '#1A3A2A' }}>
+                <div className="text-center">
+                  <p className="text-xs font-black tracking-widest" style={{ color: '#F4F0E8', fontFamily: '"Bebas Neue", Arial, sans-serif', fontSize: h > 80 ? '14px' : '10px' }}>IW</p>
+                  {h > 80 && <p className="text-xs" style={{ color: '#B8943F', fontSize: '8px' }}>{content.stickerText}</p>}
+                </div>
+              </div>
+              <p className="text-xs font-mono" style={{ color: '#2A4A6A' }}>{label}</p>
+            </div>
+          ))}
+        </div>
+      );
 
     default:
-      return <div className="w-[800px] p-4 text-center text-[#5F6E93]">No preview available</div>;
+      return <div className="w-[800px] p-4 text-center text-[var(--text-muted)]">No preview available</div>;
   }
 }
 
 // Generate HTML Template
 function generateHTML(id: string, content: StationeryContent): string {
-  // Simplified HTML generation for brevity
-  return `<!DOCTYPE html>
-<html>
+  const forest = '#1A3A2A';
+  const gold = '#B8943F';
+  const paper = '#F4F0E8';
+  const ink = '#0C0C0C';
+  const slateMid = '#2A4A6A';
+
+  const wrap = (title: string, body: string) => `<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>${id}</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-    .container { max-width: 800px; margin: 0 auto; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${title}</title>
 </head>
-<body>
-  <div class="container">
-    <h1>${content.companyName || 'Document'}</h1>
-    <p>${Object.entries(content).filter(([k]) => !k.startsWith('brand')).map(([k, v]) => `<strong>${k}:</strong> ${v}`).join('<br>')}</p>
-  </div>
+<body style="margin:0;padding:0;font-family:Arial,sans-serif;background:#f9f9f9;">
+${body}
 </body>
 </html>`;
+
+  switch (id) {
+    case 'letterhead':
+      return wrap('Letterhead — ' + (content.companyName || ''), `
+<div style="width:794px;min-height:1123px;margin:0 auto;background:#fff;padding:60px 64px;box-sizing:border-box;position:relative;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:16px;border-bottom:2px solid ${forest};">
+    <div>
+      <h1 style="margin:0;font-size:28px;font-weight:700;color:${forest};">${content.companyName}</h1>
+      <p style="margin:4px 0 0;font-size:12px;color:#636A82;">${content.tagline}</p>
+    </div>
+    <div style="text-align:right;font-size:11px;color:#636A82;line-height:1.6;">
+      ${(content.companyDetails || '').split('\n').map(l => `<span style="display:block;">${l}</span>`).join('')}
+    </div>
+  </div>
+  <div style="margin-top:48px;color:#333944;">
+    <p style="font-size:13px;margin-bottom:8px;">Date: ${content.date}</p>
+    <p style="font-size:13px;margin-bottom:4px;">To:</p>
+    <p style="font-size:13px;margin-bottom:32px;margin-left:16px;">${content.recipient}</p>
+    <p style="font-size:13px;margin-bottom:16px;"><strong>Subject:</strong> ${content.subject}</p>
+    <div style="border:1px solid #e5e7eb;border-radius:6px;padding:24px;min-height:200px;">
+      ${(content.body || '').split('\n').map(l => `<p style="font-size:13px;margin:0 0 12px;">${l}</p>`).join('')}
+    </div>
+  </div>
+  <div style="position:absolute;bottom:48px;left:64px;right:64px;padding-top:16px;border-top:1px solid #e5e7eb;text-align:center;">
+    <p style="font-size:11px;color:#9ca3af;margin:0;">${content.footer}</p>
+  </div>
+</div>`);
+
+    case 'business-card':
+      return wrap('Business Card — ' + (content.companyName || ''), `
+<div style="width:340px;height:212px;background:${paper};padding:20px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;font-family:Arial,sans-serif;">
+  <div>
+    <p style="margin:0;font-size:20px;font-weight:900;letter-spacing:0.15em;color:${forest};">${content.companyName}</p>
+    <p style="margin:6px 0 0;font-size:12px;font-weight:600;color:${ink};">${content.personName}</p>
+    <p style="margin:2px 0 0;font-size:12px;color:${slateMid};">${content.personTitle}</p>
+  </div>
+  <hr style="border:none;border-top:1px solid ${gold};margin:0;">
+  <div style="display:flex;justify-content:space-between;">
+    <span style="font-size:10px;font-family:monospace;color:${ink};">${content.email}</span>
+    <span style="font-size:10px;font-family:monospace;color:${ink};">${content.phone}</span>
+    <span style="font-size:10px;font-family:monospace;color:${ink};">${content.website}</span>
+  </div>
+</div>`);
+
+    case 'email-signature':
+      return wrap('Email Signature — ' + (content.companyName || ''), `
+<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,sans-serif;max-width:600px;">
+  <tr>
+    <td style="border-left:4px solid ${gold};padding-left:16px;">
+      <p style="margin:0 0 2px;font-size:15px;font-weight:700;color:${forest};">${content.personName}</p>
+      <p style="margin:0 0 2px;font-size:12px;color:${slateMid};">${content.personTitle}</p>
+      <p style="margin:0 0 8px;font-size:12px;color:${ink};">${content.companyName}</p>
+      <hr style="border:none;border-top:1px solid #e5e7eb;margin:8px 0;">
+      <p style="margin:0 0 6px;font-size:11px;font-family:monospace;color:${ink};">${content.email} | ${content.website}</p>
+      <p style="margin:0;font-size:11px;font-style:italic;color:${slateMid};">${content.tagline}</p>
+    </td>
+  </tr>
+</table>`);
+
+    case 'invoice':
+      return wrap('Invoice — ' + (content.invoiceNumber || ''), `
+<div style="width:700px;margin:0 auto;background:#fff;padding:60px;box-sizing:border-box;font-family:Arial,sans-serif;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;">
+    <div>
+      <h1 style="margin:0;font-size:22px;font-weight:700;color:${forest};">${content.companyName}</h1>
+      <p style="margin:4px 0 0;font-size:11px;color:${slateMid};">${content.tagline}</p>
+    </div>
+    <div style="text-align:right;">
+      <h2 style="margin:0;font-size:30px;font-weight:700;color:${forest};letter-spacing:2px;">INVOICE</h2>
+      <p style="margin:4px 0 0;font-size:13px;color:${ink};">${content.invoiceNumber}</p>
+    </div>
+  </div>
+  <div style="display:flex;gap:60px;margin-bottom:40px;">
+    <div>
+      <p style="margin:0 0 6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:${forest};">From</p>
+      <p style="margin:0;font-size:13px;font-weight:600;color:${ink};">${content.companyName}</p>
+      <p style="margin:4px 0 0;font-size:12px;color:${slateMid};">Issued: ${content.invoiceDate}</p>
+      <p style="margin:2px 0 0;font-size:12px;color:${slateMid};">Due: ${content.dueDate}</p>
+    </div>
+    <div>
+      <p style="margin:0 0 6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:${forest};">Bill To</p>
+      <p style="margin:0;font-size:13px;font-weight:600;color:${ink};">${content.clientName}</p>
+      <p style="margin:4px 0 0;font-size:12px;color:${slateMid};">${(content.clientAddress || '').replace(/\n/g, '<br>')}</p>
+    </div>
+  </div>
+  <table style="width:100%;border-collapse:collapse;font-size:13px;">
+    <thead>
+      <tr style="background:${forest};color:${paper};">
+        <th style="text-align:left;padding:10px 12px;font-weight:600;">Description</th>
+        <th style="text-align:right;padding:10px 12px;font-weight:600;">Qty</th>
+        <th style="text-align:right;padding:10px 12px;font-weight:600;">Rate</th>
+        <th style="text-align:right;padding:10px 12px;font-weight:600;">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #e5e7eb;">
+        <td style="padding:10px 12px;color:${ink};">${content.lineItem}</td>
+        <td style="padding:10px 12px;text-align:right;color:${slateMid};">1</td>
+        <td style="padding:10px 12px;text-align:right;color:${slateMid};">${content.total}</td>
+        <td style="padding:10px 12px;text-align:right;font-weight:500;color:${ink};">${content.total}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr style="background:${gold}22;">
+        <td colspan="3" style="padding:10px 12px;text-align:right;font-weight:700;color:${forest};">Total</td>
+        <td style="padding:10px 12px;text-align:right;font-weight:700;font-size:16px;color:${gold};">${content.total}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>`);
+
+    case 'envelope':
+      return wrap('Envelope — ' + (content.companyName || ''), `
+<div style="width:560px;height:400px;background:${paper};display:flex;flex-direction:column;justify-content:space-between;font-family:Arial,sans-serif;overflow:hidden;">
+  <div style="padding:32px;">
+    <p style="margin:0;font-size:12px;font-weight:700;color:${forest};">${content.companyName}</p>
+    ${(content.returnAddress || '').split('\n').map(l => `<p style="margin:2px 0;font-size:11px;color:${ink};">${l}</p>`).join('')}
+  </div>
+  <div style="flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 60px;">
+    <div>
+      <p style="margin:0 0 4px;font-size:14px;font-weight:600;color:${ink};">${content.recipientName}</p>
+      <p style="margin:0 0 2px;font-size:13px;color:${ink};">${content.recipientCompany}</p>
+      <p style="margin:0 0 2px;font-size:13px;color:${ink};">${content.recipientStreet}</p>
+      <p style="margin:0 0 2px;font-size:13px;color:${ink};">${content.recipientCity}</p>
+      <p style="margin:0;font-size:13px;color:${ink};">${content.recipientCountry}</p>
+    </div>
+  </div>
+  <div style="background:${forest};padding:12px;text-align:center;">
+    <p style="margin:0;font-size:14px;font-weight:900;letter-spacing:0.15em;color:${gold};">${content.companyName}</p>
+  </div>
+</div>`);
+
+    case 'document-cover':
+      return wrap('Document Cover — ' + (content.documentTitle || ''), `
+<div style="width:595px;height:842px;display:flex;flex-direction:column;font-family:Arial,sans-serif;overflow:hidden;">
+  <div style="height:280px;background:${forest};display:flex;flex-direction:column;justify-content:center;padding:40px;box-sizing:border-box;">
+    <p style="margin:0;font-size:26px;font-weight:900;letter-spacing:0.15em;color:${paper};">${content.companyName}</p>
+    <p style="margin:8px 0 0;font-size:12px;color:${gold};">${content.tagline}</p>
+  </div>
+  <div style="flex:1;background:#fff;padding:40px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;">
+    <div>
+      <p style="margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:${slateMid};">${content.documentType}</p>
+      <h1 style="margin:0 0 12px;font-size:22px;font-weight:700;line-height:1.3;color:${ink};">${content.documentTitle}</h1>
+      <p style="margin:0;font-size:13px;color:${slateMid};">${content.documentSubtitle}</p>
+    </div>
+    <p style="margin:0;font-size:11px;font-family:monospace;color:${slateMid};text-align:right;">${content.documentDate} · ${content.version}</p>
+  </div>
+</div>`);
+
+    case 'proposal':
+      return wrap('Proposal — ' + (content.proposalTitle || ''), `
+<div style="width:700px;margin:0 auto;background:#fff;padding:60px;box-sizing:border-box;font-family:Arial,sans-serif;">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:16px;border-bottom:2px solid ${forest};margin-bottom:40px;">
+    <h1 style="margin:0;font-size:22px;font-weight:700;color:${forest};">${content.companyName}</h1>
+    <p style="margin:0;font-size:11px;color:${slateMid};">${content.tagline}</p>
+  </div>
+  <h2 style="margin:0 0 8px;font-size:20px;font-weight:600;color:${ink};">${content.proposalTitle}</h2>
+  <p style="margin:0 0 4px;font-size:13px;color:${slateMid};">Prepared for: <strong style="color:${ink};">${content.preparedFor}</strong></p>
+  <p style="margin:0 0 32px;font-size:13px;color:${slateMid};">Date: ${content.proposalDate} &nbsp;|&nbsp; Valid: ${content.validUntil}</p>
+  <div style="margin-bottom:24px;"><p style="margin:0 0 6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:${slateMid};">Executive Summary</p><p style="margin:0;font-size:13px;color:${ink};">${content.summary}</p></div>
+  <div style="margin-bottom:24px;"><p style="margin:0 0 6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:${slateMid};">Scope</p><p style="margin:0;font-size:13px;color:${ink};">${content.scope}</p></div>
+  <div style="margin-bottom:40px;"><p style="margin:0 0 6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:${slateMid};">Timeline</p><p style="margin:0;font-size:13px;color:${ink};">${content.timeline}</p></div>
+  <div style="display:flex;gap:40px;padding-top:32px;border-top:1px solid #e5e7eb;">
+    <div><p style="margin:0 0 24px;font-size:11px;color:${slateMid};">Prepared by</p><p style="margin:0;font-size:13px;font-weight:600;color:${forest};">${content.preparedBy}</p></div>
+    <div><p style="margin:0 0 24px;font-size:11px;color:${slateMid};">Accepted by</p><p style="margin:0;font-size:13px;font-weight:600;color:${forest};">${content.acceptedBy}</p></div>
+  </div>
+</div>`);
+
+    case 'memo':
+      return wrap('Memo — ' + (content.companyName || ''), `
+<div style="width:700px;margin:0 auto;background:${paper};padding:60px;box-sizing:border-box;font-family:Arial,sans-serif;">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:2px solid ${forest};margin-bottom:32px;">
+    <p style="margin:0;font-size:22px;font-weight:900;letter-spacing:0.15em;color:${forest};">${content.companyName}</p>
+    <p style="margin:0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:${gold};">MEMORANDUM</p>
+  </div>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:32px;">
+    ${[['Date', content.memoDate], ['From', content.memoFrom], ['To', content.memoTo], ['Subject', content.memoSubject]].map(([l, v]) => `<tr style="border-bottom:1px solid ${gold}22;"><td style="padding:10px 16px 10px 0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:${forest};width:80px;">${l}</td><td style="padding:10px 0;font-size:13px;color:${ink};">${v}</td></tr>`).join('')}
+  </table>
+  <p style="font-size:13px;line-height:1.7;color:${ink};">${(content.memoBody || '').replace(/\n/g, '<br>')}</p>
+</div>`);
+
+    case 'report-cover':
+      return wrap('Report — ' + (content.reportTitle || ''), `
+<div style="width:595px;height:842px;display:flex;flex-direction:column;font-family:Arial,sans-serif;overflow:hidden;">
+  <div style="flex:1;background:${forest};display:flex;flex-direction:column;justify-content:flex-end;padding:40px;box-sizing:border-box;">
+    <p style="margin:0 0 12px;font-size:32px;font-weight:900;letter-spacing:0.15em;color:${paper};">${content.reportTitle}</p>
+    <p style="margin:0;font-size:14px;color:${gold};">${content.reportSubtitle}</p>
+  </div>
+  <div style="background:${paper};padding:32px 40px;box-sizing:border-box;">
+    <p style="margin:0 0 4px;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:${slateMid};">${content.companyName}</p>
+    <p style="margin:0;font-size:11px;font-family:monospace;color:${ink};">${content.reportDate} &nbsp;·&nbsp; ${content.preparedBy}</p>
+  </div>
+</div>`);
+
+    case 'fax-cover':
+      return wrap('Fax Cover — ' + (content.senderCompany || ''), `
+<div style="width:700px;margin:0 auto;background:${paper};padding:60px;box-sizing:border-box;font-family:Arial,sans-serif;">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:2px solid ${forest};margin-bottom:32px;">
+    <p style="margin:0;font-size:22px;font-weight:900;letter-spacing:0.15em;color:${forest};">${content.senderCompany}</p>
+    <p style="margin:0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:${gold};">FAX COVER SHEET</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
+    ${[['To', content.recipientName], ['From', content.senderName], ['Company', content.recipientCompany], ['Phone', content.senderPhone], ['Recipient Phone', content.recipientPhone], ['Total Pages', content.numberOfPages]].map(([l, v]) => `<div><p style="margin:0 0 4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:${forest};">${l}</p><p style="margin:0;font-size:13px;color:${ink};">${v}</p></div>`).join('')}
+  </div>
+  <div style="background:#EBE5D8;padding:20px;border-radius:6px;">
+    <p style="margin:0 0 8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:${forest};">Message</p>
+    <p style="margin:0;font-size:13px;color:${ink};">${content.message}</p>
+  </div>
+</div>`);
+
+    case 'notepad':
+      return wrap('Notepad — ' + (content.companyName || ''), `
+<div style="width:420px;min-height:595px;background:${paper};padding:0;font-family:Arial,sans-serif;box-sizing:border-box;">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 32px;border-bottom:2px solid ${forest};">
+    <p style="margin:0;font-size:16px;font-weight:900;letter-spacing:0.15em;color:${forest};">${content.companyName}</p>
+    <p style="margin:0;font-size:10px;font-family:monospace;color:${gold};">${content.tagline}</p>
+  </div>
+  <div style="padding:8px 32px 16px;">
+    ${Array.from({ length: 18 }).map(() => `<div style="height:32px;border-bottom:1px solid ${gold}44;"></div>`).join('')}
+  </div>
+  <div style="padding:12px 32px;border-top:1px solid #C4BAA8;text-align:center;">
+    <p style="margin:0;font-size:10px;font-family:monospace;color:${slateMid};">${content.footerText}</p>
+  </div>
+</div>`);
+
+    case 'folder':
+      return wrap('Folder — ' + (content.companyName || ''), `
+<div style="width:560px;height:420px;position:relative;font-family:Arial,sans-serif;">
+  <div style="position:absolute;top:0;left:0;width:120px;height:32px;background:#2D5A3D;border-radius:8px 8px 0 0;"></div>
+  <div style="position:absolute;top:32px;left:0;right:0;bottom:0;background:${forest};border-radius:0 8px 8px 8px;display:flex;flex-direction:column;justify-content:flex-end;padding:40px;box-sizing:border-box;">
+    <p style="margin:0 0 8px;font-size:36px;font-weight:900;letter-spacing:0.15em;color:${paper};">${content.companyName}</p>
+    <p style="margin:0 0 4px;font-size:13px;color:${gold};">${content.folderText}</p>
+    <p style="margin:0;font-size:11px;color:${paper};opacity:0.6;">${content.tagline}</p>
+  </div>
+</div>`);
+
+    case 'sticker':
+      return wrap('Stickers — ' + (content.companyName || ''), `
+<div style="background:${paper};padding:40px;display:flex;gap:32px;align-items:center;font-family:Arial,sans-serif;">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="width:120px;height:120px;border-radius:50%;background:${forest};display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <p style="margin:0;font-size:18px;font-weight:900;letter-spacing:0.1em;color:${paper};">IW</p>
+      <p style="margin:0;font-size:8px;color:${gold};">${content.stickerText}</p>
+    </div>
+    <p style="margin:0;font-size:10px;font-family:monospace;color:${slateMid};">Round</p>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="width:180px;height:60px;border-radius:8px;background:${forest};display:flex;align-items:center;justify-content:center;">
+      <p style="margin:0;font-size:14px;font-weight:900;letter-spacing:0.15em;color:${paper};">INTEGRATEWISE</p>
+    </div>
+    <p style="margin:0;font-size:10px;font-family:monospace;color:${slateMid};">Banner</p>
+  </div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div style="width:100px;height:100px;border-radius:12px;background:${forest};display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <p style="margin:0;font-size:16px;font-weight:900;letter-spacing:0.1em;color:${paper};">IW</p>
+      <p style="margin:0;font-size:8px;color:${gold};">${content.stickerText}</p>
+    </div>
+    <p style="margin:0;font-size:10px;font-family:monospace;color:${slateMid};">Square</p>
+  </div>
+</div>`);
+
+    case 'sales-deck':
+      return wrap('Sales Deck — ' + (content.companyName || ''), `
+<div style="width:1280px;height:720px;background:linear-gradient(135deg,${forest} 0%,#2D5A3D 100%);padding:80px;box-sizing:border-box;font-family:Arial,sans-serif;display:flex;flex-direction:column;justify-content:space-between;">
+  <div><h1 style="margin:0 0 16px;font-size:52px;font-weight:900;color:${paper};">${content.slideTitle}</h1><p style="margin:0;font-size:24px;color:${paper};opacity:0.85;">${content.slideSubtitle}</p></div>
+  <div><p style="margin:0 0 24px;font-size:20px;color:${paper};opacity:0.9;">${content.mainMessage}</p><div style="display:inline-block;padding:14px 32px;background:${gold};border-radius:8px;font-size:16px;font-weight:700;color:${forest};">${content.ctaText}</div></div>
+  <p style="margin:0;font-size:13px;color:${paper};opacity:0.5;">${content.companyName}</p>
+</div>`);
+
+    case 'presentation-bg':
+      return wrap('Presentation Background — ' + (content.companyName || ''), `
+<div style="width:1920px;height:1080px;background:linear-gradient(135deg,${forest} 0%,#2D5A3D 60%,#B8943F 100%);display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;">
+  <div style="text-align:center;">
+    <p style="margin:0 0 16px;font-size:80px;font-weight:900;letter-spacing:0.15em;color:${paper};">${content.companyName}</p>
+    <p style="margin:0 0 32px;font-size:24px;color:${gold};">${content.backgroundText}</p>
+    <p style="margin:0;font-size:16px;color:${paper};opacity:0.7;">${content.tagline}</p>
+  </div>
+</div>`);
+
+    case 'whatsapp-banner':
+      return wrap('WhatsApp Banner — ' + (content.companyName || ''), `
+<div style="width:2048px;height:1024px;background:linear-gradient(to right,${forest},#2D5A3D);display:flex;align-items:center;justify-content:space-between;padding:80px;box-sizing:border-box;font-family:Arial,sans-serif;">
+  <div><h2 style="margin:0 0 16px;font-size:56px;font-weight:900;color:${paper};">${content.bannerMessage}</h2><p style="margin:0 0 32px;font-size:22px;color:${paper};opacity:0.85;">${content.companyName}</p><div style="display:inline-block;padding:16px 40px;background:${gold};border-radius:8px;font-size:18px;font-weight:700;color:${forest};">${content.ctaText}</div></div>
+  <div style="font-size:120px;opacity:0.15;">💬</div>
+</div>`);
+
+    case 'linkedin-banner':
+      return wrap('LinkedIn Banner — ' + (content.companyName || ''), `
+<div style="width:1200px;height:627px;background:linear-gradient(to right,${forest},#2D5A3D);display:flex;flex-direction:column;justify-content:center;padding:60px;box-sizing:border-box;font-family:Arial,sans-serif;">
+  <h1 style="margin:0 0 16px;font-size:48px;font-weight:900;color:${paper};">${content.bannerHeading}</h1>
+  <p style="margin:0 0 32px;font-size:20px;color:${paper};opacity:0.85;max-width:600px;">${content.bannerText}</p>
+  <p style="margin:0;font-size:16px;font-weight:700;color:${gold};">${content.companyName}</p>
+</div>`);
+
+    case 'poster':
+      return wrap('Poster — ' + (content.companyName || ''), `
+<div style="width:420px;height:594px;background:linear-gradient(135deg,${forest} 0%,#2D5A3D 100%);display:flex;flex-direction:column;justify-content:space-between;padding:48px;box-sizing:border-box;font-family:Arial,sans-serif;">
+  <div style="text-align:center;"><h1 style="margin:0 0 12px;font-size:42px;font-weight:900;color:${paper};">${content.posterTitle}</h1><p style="margin:0;font-size:20px;color:${gold};">${content.posterSubtitle}</p></div>
+  <div style="text-align:center;"><p style="margin:0 0 24px;font-size:14px;color:${paper};opacity:0.85;">${content.posterMessage}</p><div style="display:inline-block;padding:14px 32px;background:${gold};border-radius:8px;font-size:16px;font-weight:700;color:${forest};">${content.posterCTA}</div></div>
+  <p style="margin:0;text-align:center;font-size:12px;color:${paper};opacity:0.6;">${content.companyName}</p>
+</div>`);
+
+    default: {
+      const rows = Object.entries(content)
+        .filter(([k]) => !k.startsWith('brand') && !k.startsWith('accent') && !k.startsWith('font'))
+        .map(([k, v]) => `<tr><td style="padding:8px 12px;font-weight:600;color:${forest};border-bottom:1px solid #eee;white-space:nowrap;">${k}</td><td style="padding:8px 12px;color:${ink};border-bottom:1px solid #eee;">${(v || '').replace(/\n/g, '<br>')}</td></tr>`)
+        .join('');
+      return wrap((content.companyName || id), `
+<div style="width:700px;margin:0 auto;padding:40px;font-family:Arial,sans-serif;">
+  <h1 style="font-size:22px;font-weight:700;color:${forest};margin-bottom:24px;">${content.companyName || id}</h1>
+  <table style="width:100%;border-collapse:collapse;">${rows}</table>
+</div>`);
+    }
+  }
 }
 
 // Stationery Card Component
@@ -1036,9 +1626,10 @@ function StationeryCard({ item }: { item: StationeryItem }) {
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(0,0,0,0.1)" }}
-        className="bg-white rounded-xl border border-[#D5DAE5] overflow-hidden shadow-sm"
+        className="rounded-xl border border-[var(--border-base)] overflow-hidden"
+        style={{ background: 'var(--surface-raised)', boxShadow: '0 1px 4px rgba(12,12,12,0.06)' }}
       >
-        <div className="h-40 bg-[#F8FAFC] flex items-center justify-center p-4">
+        <div className="h-40 bg-[var(--surface)] flex items-center justify-center p-4">
           <div className="scale-50 origin-center">
             <PreviewContent id={item.id} content={getDefaultStationeryContent(item.id)} />
           </div>
@@ -1047,27 +1638,30 @@ function StationeryCard({ item }: { item: StationeryItem }) {
         <div className="p-5">
           <div className="flex items-start justify-between mb-3">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[rgba(65,84,163,0.08)] flex items-center justify-center">
-                <Icon className="w-5 h-5 text-[#4154A3]" />
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--forest) 10%, transparent)' }}>
+                <Icon className="w-5 h-5" style={{ color: 'var(--forest-mid)' }} />
               </div>
               <div>
-                <h3 className="font-semibold text-[#1B2544]">{item.title}</h3>
-                <p className="text-xs text-[#5F6E93]">{item.specs}</p>
+                <h3 className="font-semibold text-[var(--text-color)]">{item.title}</h3>
+                <p className="text-xs text-[var(--text-muted)]">{item.specs}</p>
               </div>
             </div>
-            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-              item.status === 'ready' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
-            }`}>
+            <span className="px-2 py-1 rounded-full text-xs font-medium"
+              style={item.status === 'ready'
+                ? { background: 'color-mix(in srgb, var(--forest-bright) 12%, transparent)', color: 'var(--forest-bright)' }
+                : { background: 'var(--paper-deep)', color: 'var(--slate-mid)' }
+              }>
               {item.status}
             </span>
           </div>
           
-          <p className="text-sm text-[#5F6E93] mb-4">{item.description}</p>
+          <p className="text-sm text-[var(--text-muted)] mb-4">{item.description}</p>
           
           <div className="flex gap-2">
             <button
               onClick={() => setIsPreviewOpen(true)}
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#4154A3] text-white rounded-lg text-sm font-medium hover:bg-[#364789]"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
+              style={{ background: 'var(--forest)', color: 'var(--paper)' }}
             >
               <Eye className="w-4 h-4" />
               Edit & Download
@@ -1100,20 +1694,21 @@ function CategorySection({ category, items }: { category: string; items: Station
     >
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between p-4 rounded-lg border border-[#E8ECF2] bg-white hover:bg-[#F8FAFC] transition-all"
+        className="w-full flex items-center justify-between p-4 rounded-lg border border-[var(--border-subtle)] hover:bg-[var(--paper-warm)] transition-all"
+        style={{ background: 'var(--surface-raised)' }}
       >
         <div className="flex items-center gap-3">
-          <Icon className="w-5 h-5 text-[#4154A3]" />
+          <Icon className="w-5 h-5 text-[var(--primary-color)]" />
           <div className="text-left">
-            <h3 className="font-semibold text-[#1B2544]">{category}</h3>
-            <p className="text-xs text-[#5F6E93]">{items.length} items</p>
+            <h3 className="font-semibold text-[var(--text-color)]">{category}</h3>
+            <p className="text-xs text-[var(--text-muted)]">{items.length} items</p>
           </div>
         </div>
         <motion.div
           animate={{ rotate: isExpanded ? 180 : 0 }}
           transition={{ duration: 0.2 }}
         >
-          <ChevronDown className="w-5 h-5 text-[#5F6E93]" />
+          <ChevronDown className="w-5 h-5 text-[var(--text-muted)]" />
         </motion.div>
       </button>
 
@@ -1169,21 +1764,21 @@ export function StationeryPage() {
         className="mb-8"
       >
         <div className="flex items-center gap-2 mb-2">
-          <Stamp className="w-5 h-5 text-[#4154A3]" />
-          <span className="text-xs font-semibold text-[#4154A3] uppercase tracking-wider">Brand Assets</span>
+          <Stamp className="w-5 h-5 text-[var(--primary-color)]" />
+          <span className="text-xs font-semibold text-[var(--primary-color)] uppercase tracking-wider">Brand Assets</span>
         </div>
-        <h1 className="text-4xl font-bold text-[#1B2544] mb-3">Corporate Stationery</h1>
-        <p className="text-[#5F6E93] mb-6">Complete suite of editable stationery templates with multiple export formats</p>
+        <h1 className="text-4xl font-bold text-[var(--text-color)] mb-3">Corporate Stationery</h1>
+        <p className="text-[var(--text-muted)] mb-6">Complete suite of editable stationery templates with multiple export formats</p>
 
         {/* Search Bar */}
         <div className="relative mb-6">
-          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#9BA8C2]" />
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[var(--text-faint)]" />
           <input
             type="text"
             placeholder="Search templates by name, type, or tag..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 rounded-lg border border-[#D5DAE5] text-sm focus:border-[#4154A3] focus:outline-none"
+            className="w-full pl-12 pr-4 py-3 rounded-lg border border-[var(--border-base)] text-sm focus:border-[var(--primary-color)] focus:outline-none"
           />
         </div>
       </motion.div>
@@ -1201,11 +1796,12 @@ export function StationeryPage() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: i * 0.1 }}
-            className="p-4 bg-white rounded-xl border border-[#E8ECF2] text-center"
+            className="p-4 rounded-xl border border-[var(--border-subtle)] text-center"
+            style={{ background: 'var(--surface-raised)' }}
           >
-            <stat.icon className="w-5 h-5 text-[#4154A3] mx-auto mb-2" />
-            <p className="text-2xl font-bold text-[#1B2544]">{stat.count}</p>
-            <p className="text-xs text-[#5F6E93]">{stat.label}</p>
+            <stat.icon className="w-5 h-5 text-[var(--primary-color)] mx-auto mb-2" />
+            <p className="text-2xl font-bold text-[var(--text-color)]">{stat.count}</p>
+            <p className="text-xs text-[var(--text-muted)]">{stat.label}</p>
           </motion.div>
         ))}
       </div>
@@ -1224,9 +1820,9 @@ export function StationeryPage() {
       {/* Empty State */}
       {filteredItems.length === 0 && (
         <div className="text-center py-12">
-          <Search className="w-12 h-12 text-[#D5DAE5] mx-auto mb-4" />
-          <p className="text-[#5F6E93] font-medium">No templates found</p>
-          <p className="text-sm text-[#9BA8C2]">Try adjusting your search query</p>
+          <Search className="w-12 h-12 text-[var(--border-base)] mx-auto mb-4" />
+          <p className="text-[var(--text-muted)] font-medium">No templates found</p>
+          <p className="text-sm text-[var(--text-faint)]">Try adjusting your search query</p>
         </div>
       )}
     </div>

@@ -101,12 +101,12 @@ const DEFAULT_SETTINGS: EditorSettings = {
   cta: CONTACT.demo,
   contactInfo: `${CONTACT.general}\n${BRAND.website}`,
   
-  primaryColor: '#4154A3',
-  secondaryColor: '#1B2544',
+  primaryColor: 'var(--primary-color)',
+  secondaryColor: 'var(--text-color)',
   backgroundType: 'gradient',
-  backgroundColor: '#ffffff',
-  gradientStart: '#0d1f33',
-  gradientEnd: '#4154A3',
+  backgroundColor: 'var(--paper)',
+  gradientStart: 'var(--slate)',
+  gradientEnd: 'var(--primary-color)',
   gradientAngle: 135,
   
   logoScale: 100,
@@ -198,9 +198,9 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
   };
   
   const renderPreview = () => {
-    const isDark = settings.backgroundType === 'gradient' || settings.backgroundColor === '#0d1f33';
-    const textColor = isDark ? '#ffffff' : '#1B2544';
-    const secondaryTextColor = isDark ? 'rgba(255,255,255,0.8)' : '#636A82';
+    const isDark = settings.backgroundType === 'gradient' || settings.backgroundColor === 'var(--slate)';
+    const textColor = isDark ? 'var(--paper)' : 'var(--text-color)';
+    const secondaryTextColor = isDark ? 'rgba(244,240,232,0.8)' : 'var(--text-muted)';
     
     switch (assetType) {
       case 'business-card':
@@ -287,7 +287,7 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
             )}
             <p className="text-sm font-medium mt-4 px-4" style={{ color: textColor }}>{settings.subtext}</p>
             <div className="mt-6 px-6 py-2 rounded-full text-sm font-semibold" 
-                 style={{ background: settings.primaryColor, color: '#fff' }}>
+                 style={{ background: settings.primaryColor, color: 'var(--paper)' }}>
               {settings.cta}
             </div>
           </div>
@@ -328,30 +328,32 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
       <motion.div
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="bg-white rounded-2xl shadow-2xl w-full max-w-6xl h-[90vh] flex overflow-hidden"
+        className="rounded-2xl shadow-2xl w-full max-w-6xl h-[90vh] flex overflow-hidden"
+        style={{ background: 'var(--surface-raised)' }}
       >
         {/* Sidebar - Controls */}
-        <div className="w-80 bg-gray-50 border-r border-gray-200 flex flex-col">
-          <div className="p-4 border-b border-gray-200">
+        <div className="w-80 flex flex-col" style={{ background: 'var(--surface-default)', borderRight: '1px solid var(--border-default)' }}>
+          <div className="p-4" style={{ borderBottom: '1px solid var(--border-default)' }}>
             <div className="flex items-center justify-between">
-              <h2 className="font-semibold text-gray-900">{config.name} Editor</h2>
-              <button onClick={onClose} className="p-1 hover:bg-gray-200 rounded">
+              <h2 className="font-semibold" style={{ color: 'var(--text-strong)' }}>{config.name} Editor</h2>
+              <button onClick={onClose} className="p-1 rounded" style={{ color: 'var(--text-muted)' }}>
                 <X className="w-5 h-5" />
               </button>
             </div>
           </div>
           
           {/* Tabs */}
-          <div className="flex border-b border-gray-200">
+          <div className="flex" style={{ borderBottom: '1px solid var(--border-default)' }}>
             {(['content', 'style', 'layout'] as const).map(tab => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`flex-1 py-3 text-sm font-medium capitalize ${
                   activeTab === tab 
-                    ? 'text-blue-600 border-b-2 border-blue-600' 
-                    : 'text-gray-500 hover:text-gray-700'
+                    ? 'border-b-2' 
+                    : ''
                 }`}
+                style={activeTab === tab ? { color: 'var(--forest)', borderColor: 'var(--forest)' } : { color: 'var(--text-muted)' }}
               >
                 {tab}
               </button>
@@ -363,48 +365,53 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
             {activeTab === 'content' && (
               <>
                 <div>
-                  <label className="text-xs font-medium text-gray-700">Headline</label>
+                  <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Headline</label>
                   <input
                     type="text"
                     value={settings.headline}
                     onChange={e => updateSetting('headline', e.target.value)}
-                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                    className="w-full mt-1 px-3 py-2 rounded-lg text-sm"
+                    style={{ border: '1px solid var(--border-default)', color: 'var(--text-color)', background: 'var(--surface-raised)' }}
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium text-gray-700">Tagline</label>
+                  <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Tagline</label>
                   <textarea
                     value={settings.tagline}
                     onChange={e => updateSetting('tagline', e.target.value)}
                     rows={2}
-                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                    className="w-full mt-1 px-3 py-2 rounded-lg text-sm"
+                    style={{ border: '1px solid var(--border-default)', color: 'var(--text-color)', background: 'var(--surface-raised)' }}
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium text-gray-700">Subtext/CTA</label>
+                  <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Subtext/CTA</label>
                   <input
                     type="text"
                     value={settings.subtext}
                     onChange={e => updateSetting('subtext', e.target.value)}
-                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                    className="w-full mt-1 px-3 py-2 rounded-lg text-sm"
+                    style={{ border: '1px solid var(--border-default)', color: 'var(--text-color)', background: 'var(--surface-raised)' }}
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium text-gray-700">Website/CTA Link</label>
+                  <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Website/CTA Link</label>
                   <input
                     type="text"
                     value={settings.cta}
                     onChange={e => updateSetting('cta', e.target.value)}
-                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                    className="w-full mt-1 px-3 py-2 rounded-lg text-sm"
+                    style={{ border: '1px solid var(--border-default)', color: 'var(--text-color)', background: 'var(--surface-raised)' }}
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-medium text-gray-700">Contact Info (one per line)</label>
+                  <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Contact Info (one per line)</label>
                   <textarea
                     value={settings.contactInfo}
                     onChange={e => updateSetting('contactInfo', e.target.value)}
                     rows={3}
-                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                    className="w-full mt-1 px-3 py-2 rounded-lg text-sm"
+                    style={{ border: '1px solid var(--border-default)', color: 'var(--text-color)', background: 'var(--surface-raised)' }}
                   />
                 </div>
               </>
@@ -413,11 +420,12 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
             {activeTab === 'style' && (
               <>
                 <div>
-                  <label className="text-xs font-medium text-gray-700">Background Type</label>
+                  <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Background Type</label>
                   <select
                     value={settings.backgroundType}
                     onChange={e => updateSetting('backgroundType', e.target.value as any)}
-                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                    className="w-full mt-1 px-3 py-2 rounded-lg text-sm"
+                    style={{ border: '1px solid var(--border-default)', color: 'var(--text-color)', background: 'var(--surface-raised)' }}
                   >
                     <option value="solid">Solid Color</option>
                     <option value="gradient">Gradient</option>
@@ -426,7 +434,7 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
                 
                 {settings.backgroundType === 'solid' ? (
                   <div>
-                    <label className="text-xs font-medium text-gray-700">Background Color</label>
+                    <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Background Color</label>
                     <input
                       type="color"
                       value={settings.backgroundColor}
@@ -437,7 +445,7 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
                 ) : (
                   <>
                     <div>
-                      <label className="text-xs font-medium text-gray-700">Gradient Start</label>
+                      <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Gradient Start</label>
                       <input
                         type="color"
                         value={settings.gradientStart}
@@ -446,7 +454,7 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-medium text-gray-700">Gradient End</label>
+                      <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Gradient End</label>
                       <input
                         type="color"
                         value={settings.gradientEnd}
@@ -455,7 +463,7 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
                       />
                     </div>
                     <div>
-                      <label className="text-xs font-medium text-gray-700">Angle: {settings.gradientAngle}°</label>
+                      <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Angle: {settings.gradientAngle}°</label>
                       <input
                         type="range"
                         min="0"
@@ -469,7 +477,7 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
                 )}
                 
                 <div>
-                  <label className="text-xs font-medium text-gray-700">Primary Color</label>
+                  <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Primary Color</label>
                   <input
                     type="color"
                     value={settings.primaryColor}
@@ -513,11 +521,12 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
                 </div>
                 
                 <div>
-                  <label className="text-xs font-medium text-gray-700">Text Align</label>
+                  <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Text Align</label>
                   <select
                     value={settings.textAlign}
                     onChange={e => updateSetting('textAlign', e.target.value as any)}
-                    className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                    className="w-full mt-1 px-3 py-2 rounded-lg text-sm"
+                    style={{ border: '1px solid var(--border-default)', color: 'var(--text-color)', background: 'var(--surface-raised)' }}
                   >
                     <option value="left">Left</option>
                     <option value="center">Center</option>
@@ -526,7 +535,7 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
                 </div>
                 
                 <div>
-                  <label className="text-xs font-medium text-gray-700">Padding: {settings.padding}px</label>
+                  <label className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Padding: {settings.padding}px</label>
                   <input
                     type="range"
                     min="0"
@@ -541,11 +550,12 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
           </div>
           
           {/* Export Buttons */}
-          <div className="p-4 border-t border-gray-200 space-y-2">
+          <div className="p-4 space-y-2" style={{ borderTop: '1px solid var(--border-default)' }}>
             <button
               onClick={exportAsPNG}
               disabled={isExporting}
-              className="w-full py-2 bg-blue-600 text-white rounded-lg text-sm font-medium flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2 disabled:opacity-50"
+              style={{ background: 'var(--forest)', color: 'var(--paper)' }}
             >
               <FileImage className="w-4 h-4" />
               {isExporting ? 'Exporting...' : 'Export as PNG'}
@@ -553,7 +563,8 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
             <div className="flex gap-2">
               <button
                 onClick={exportAsPDF}
-                className="flex-1 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-gray-200"
+                className="flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2"
+                style={{ background: 'var(--surface-2)', color: 'var(--text-color)' }}
               >
                 <Printer className="w-4 h-4" />
                 PDF
@@ -561,7 +572,8 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
               {assetType === 'email-signature' && (
                 <button
                   onClick={exportAsHTML}
-                  className="flex-1 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium flex items-center justify-center gap-2 hover:bg-gray-200"
+                  className="flex-1 py-2 rounded-lg text-sm font-medium flex items-center justify-center gap-2"
+                style={{ background: 'var(--surface-2)', color: 'var(--text-color)' }}
                 >
                   <Share2 className="w-4 h-4" />
                   HTML
@@ -572,8 +584,8 @@ export function LiveAssetEditor({ isOpen, onClose, assetType, initialContent }: 
         </div>
         
         {/* Preview Area */}
-        <div className="flex-1 bg-gray-100 flex items-center justify-center p-8 overflow-auto">
-          <div className="bg-white rounded-lg shadow-xl overflow-hidden" style={{
+        <div className="flex-1 flex items-center justify-center p-8 overflow-auto" style={{ background: 'var(--surface-subtle)' }}>
+          <div className="rounded-lg shadow-xl overflow-hidden" style={{ background: 'var(--paper)',
             width: config.unit === 'mm' ? `${config.width * 3}px` : `${config.width / 2}px`,
             height: config.unit === 'mm' ? `${config.height * 3}px` : `${config.height / 2}px`,
             maxWidth: '100%',
@@ -606,16 +618,16 @@ function generateHTML(assetType: AssetType, settings: EditorSettings): string {
   <meta charset="UTF-8">
 </head>
 <body>
-  <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; color: ${settings.backgroundType === 'gradient' ? '#fff' : '#1B2544'};">
+  <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; color: ${settings.backgroundType === 'gradient' ? '#fff' : 'var(--text-color)'};">
     <tr>
       <td style="padding: 10px;">
         <strong>${settings.headline}</strong><br>
-        <span style="color: #636A82; font-size: 12px;">${settings.tagline}</span><br>
+        <span style="color: var(--text-muted); font-size: 12px;">${settings.tagline}</span><br>
         <span style="font-size: 12px; color: ${settings.primaryColor};">${settings.subtext}</span>
       </td>
     </tr>
     <tr>
-      <td style="padding: 5px 10px; font-size: 11px; color: #636A82;">
+      <td style="padding: 5px 10px; font-size: 11px; color: var(--text-muted);">
         ${settings.contactInfo.replace(/\n/g, '<br>')}
       </td>
     </tr>
