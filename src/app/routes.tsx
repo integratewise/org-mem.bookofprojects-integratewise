@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import { RootLayout } from "./components/RootLayout";
 import { HomePage } from "./components/pages/HomePage";
+import { BrandHubPage } from "./components/pages/BrandHubPage";
 import { BrandAssetsPage } from "./components/pages/BrandAssetsPage";
 import { DesignTokensPage } from "./components/pages/DesignTokensPage";
 import { MarketingPage } from "./components/pages/MarketingPage";
@@ -25,6 +26,7 @@ import { AboutPage } from "./components/pages/AboutPage";
 import { PricingPage } from "./components/pages/PricingPage";
 import { ContactPage } from "./components/pages/ContactPage";
 import { BlogPage } from "./components/pages/BlogPage";
+import { EvolutionPage } from "./components/pages/EvolutionPage";
 
 const SECTION_LABELS: Record<string, { label: string; description: string; subsections: string[] }> = {
   '04': {
@@ -60,17 +62,17 @@ function ComingSoonPage() {
   const info = SECTION_LABELS[section] || { label: 'Coming Soon', description: 'This section is being built.', subsections: [] };
   return (
     <div className="p-8 lg:p-12 max-w-3xl mx-auto">
-      <div className="rounded-2xl p-8" style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)' }}>
-        <p className="text-xs font-semibold tracking-widest mb-3" style={{ color: 'var(--text-muted)' }}>IN PROGRESS</p>
-        <h1 className="text-2xl font-bold mb-3" style={{ color: 'var(--text-strong)' }}>{info.label}</h1>
-        <p className="mb-6" style={{ color: 'var(--text-muted)' }}>{info.description}</p>
+      <div className="rounded-xl p-8" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule)' }}>
+        <p className="iw-label mb-3">In Progress</p>
+        <h1 className="iw-doctrine mb-3" style={{ fontSize: '1.5rem' }}>{info.label}</h1>
+        <p className="iw-body mb-6" style={{ color: 'var(--ink-muted)' }}>{info.description}</p>
         {info.subsections.length > 0 && (
           <div className="space-y-2">
-            <p className="text-xs font-semibold mb-2" style={{ color: 'var(--text-faint)' }}>PLANNED SUBSECTIONS</p>
+            <p className="iw-mono-label mb-2">Planned Subsections</p>
             {info.subsections.map(sub => (
-              <div key={sub} className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)' }}>
-                <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--border-base)' }} />
-                <span className="text-sm" style={{ color: 'var(--text-muted)' }}>{sub}</span>
+              <div key={sub} className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: 'var(--paper)', border: '1px solid var(--rule-light)' }}>
+                <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--rule)' }} />
+                <span className="text-sm" style={{ color: 'var(--ink-muted)' }}>{sub}</span>
               </div>
             ))}
           </div>
@@ -85,13 +87,13 @@ export const router = createBrowserRouter([
     path: "/",
     Component: RootLayout,
     errorElement: (
-      <div style={{ padding: 32, fontFamily: 'monospace', color: '#c00' }}>
+      <div style={{ padding: 32, fontFamily: 'var(--font-mono)', color: 'var(--red)' }}>
         <h1>Route Error</h1>
         <p>Something went wrong loading this page. Check the console for details.</p>
       </div>
     ),
     children: [
-      { index: true, Component: CompanyPage },
+      { index: true, Component: BrandHubPage },
       { path: "quick-start", Component: QuickStartPage },
       { path: "home", Component: HomePage },
       { path: "company", Component: CompanyPage },
@@ -115,6 +117,7 @@ export const router = createBrowserRouter([
       { path: "pricing", Component: PricingPage },
       { path: "contact", Component: ContactPage },
       { path: "blog", Component: BlogPage },
+      { path: "evolution", Component: EvolutionPage },
       { path: "sales", Component: SalesPage },
       { path: "documentation", Component: DocumentationPage },
       { path: "coming-soon", Component: ComingSoonPage },
@@ -123,8 +126,8 @@ export const router = createBrowserRouter([
         Component: () => (
           <div className="flex items-center justify-center h-full">
             <div className="text-center">
-              <h1 className="text-4xl font-bold" style={{ color: 'var(--foreground)' }}>404</h1>
-              <p style={{ color: 'var(--muted-foreground)' }} className="mt-2">Page not found</p>
+              <h1 className="text-4xl font-bold" style={{ color: 'var(--ink)' }}>404</h1>
+              <p style={{ color: 'var(--ink-muted)' }} className="mt-2">Page not found</p>
             </div>
           </div>
         ),
