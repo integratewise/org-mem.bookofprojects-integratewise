@@ -74,6 +74,48 @@ const entries: DayEntry[] = [
       "Cloudflare token scope: Workers Scripts Edit + Account Workers Edit + Secrets Store Edit (minimum).",
     ],
   },
+  {
+    date: "May 12–13, 2026",
+    label: "Org Memory Infrastructure — The Architecture Statement",
+    what: "The session that defined what org memory means architecturally. Nirmal made the definitive statement: the infrastructure should be set up very clearly first. Org memory must be externally accessible — endpoints open to the world, triage via webhooks, and then any tool can plug in at any point. The session also locked cognitive routing: Hermes as the model orchestrator, deciding per task which model to use (gemma for classify-only, flash-lite for synthesis, Sonnet for reasoning/judgment, Mimo for content). One OpenRouter API key serves all model calls across all Cloudflare Workers. The Kimi Agent Deployment v15 was also being reviewed for HTML/React confusion — the product UI architecture was being refined.",
+    decisions: [
+      "Org memory infrastructure first — endpoints exposed publicly before building tools.",
+      "Triage via webhooks — any producer (Manus, Spark, Hermes session) can POST to /triage.",
+      "Cognitive routing doctrine locked: Hermes decides the model, Workers execute.",
+      "Model decision matrix: classify-only → gemma free; synthesis → flash-lite; reasoning → Sonnet; content → Mimo.",
+      "Single OpenRouter binding across all CF Workers — no more per-worker model configs.",
+      "Three-Mac topology begun: primary (M4 Max), secondary (ops runner), tertiary (Tailscale node).",
+      "Claude Sonnet 4.6 confirmed as the Hermes orchestrator model.",
+    ],
+    quotes: [
+      "I feel the org memory should be created first, or org memory should be made externally, or it should be made accessible with the endpoints. The endpoints should be accessible to the rest of the world, and the triage should be made possible with the webhook. Maybe the infrastructure should be set very clearly, and that is what is the initial task I feel. Then what we can do is add any number of tools. Any tool base can be added at any point in time, at any time. You can directly add it, the operator can directly add it, and can go on. — Nirmal",
+      "When you are performing the operations of design, you should speak up. You should explicitly say 'spine' as an organisational memory or a data centre or a data store, or you can say it as a unified intelligence layer built across multiple tools. If you say 'spine' generally, it will mean biological spine, so you will have to avoid that particular piece. Nowhere are we going to use Python, and that is again I am making very clear. When we run workflows in the web UI, I shouldn't see any Python codes. — Nirmal",
+    ],
+    locked: [
+      "Spine must always be qualified in written/spoken context: 'Adaptive Spine', 'data spine', or 'unified intelligence layer'. Never 'spine' alone.",
+      "No Python anywhere — not in scripts, automations, integrations, workers, runners, or WebUI workflows.",
+      "Cognitive routing: Hermes → task type → model. Workers execute, never decide.",
+    ],
+  },
+  {
+    date: "May 14–15, 2026",
+    label: "CF Access, Memory API, Daily Briefing — Ops System Goes Live",
+    what: "The operational infrastructure reached live status. CF Access service token confirmed working — /health and /api/v1/memory both returning 200. Wrangler OAuth authenticated for connect@integratewise.ai with full workers:write, d1:write, kv:write, pages:write scopes. Root cause of a recurring deployment blocker identified and fixed: CLOUDFLARE_API_TOKEN in secrets.env was silently overriding the wrangler OAuth session. Fix: unset it before any wrangler call. iw-memory-triage cron fixed to write to both Coda and the Spine memory API. Daily briefing delivering to Telegram (5753113905). MCP Coda configured via npx coda-mcp.",
+    decisions: [
+      "CF Access service token confirmed — /health and /api/v1/memory both 200.",
+      "Wrangler OAuth: connect@integratewise.ai · IntegrateWise account a1bbbb12a32cdbb68dd170b09fe8b5f3.",
+      "CLOUDFLARE_API_TOKEN must be unset before any wrangler call — secrets.env override is a documented pitfall.",
+      "iw-memory-triage: writes to Coda (projection) AND /api/v1/memory (Spine) — both destinations required.",
+      "Daily briefing: delivers to Telegram 5753113905.",
+      "MCP Coda: configured via npx coda-mcp, stdio transport, MCP reloaded confirmed.",
+      "gateway.integratewise.ai DNS pending — CNAME: gateway → integratewise-gateway.connect-a1b.workers.dev.",
+    ],
+    quotes: [],
+    locked: [
+      "Wrangler auth: unset CLOUDFLARE_API_TOKEN before running wrangler commands. secrets.env must not have it set.",
+      "iw-memory-triage writes to two destinations: Coda (projection layer) + Spine memory API (canonical store).",
+    ],
+  },
 ];
 
 const pill = (text: string, color: string) => (
