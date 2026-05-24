@@ -238,7 +238,7 @@ function MessageTemplate({
     >
       {/* Phone Preview Header */}
       <div className="bg-[var(--forest)] px-4 py-3 flex items-center gap-3">
-        <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: 'rgba(244,240,232,0.2)' }}>
+        <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--paper) 20%, transparent)' }}>
           <MessageCircle className="w-4 h-4 text-[var(--paper)]" />
         </div>
         {isEditing ? (
@@ -246,7 +246,7 @@ function MessageTemplate({
             value={template.title}
             onChange={(e) => onChange({ ...template, title: e.target.value })}
             className="text-sm font-medium px-2 py-1 rounded flex-1"
-            style={{ color: 'var(--paper)', background: 'rgba(244,240,232,0.2)' }}
+            style={{ color: 'var(--paper)', background: 'color-mix(in srgb, var(--paper) 20%, transparent)' }}
           />
         ) : (
           <p className="text-sm font-medium text-[var(--paper)]">IntegrateWise</p>
@@ -266,7 +266,7 @@ function MessageTemplate({
       <div className="p-4 bg-[var(--paper-warm)] min-h-[200px]">
         <div className="flex justify-center mb-4">
           <span className="text-xs text-[var(--text-muted)] px-3 py-1 rounded-full"
-                style={{ background: 'rgba(244,240,232,0.5)' }}>
+                style={{ background: 'color-mix(in srgb, var(--paper) 50%, transparent)' }}>
             Today
           </span>
         </div>

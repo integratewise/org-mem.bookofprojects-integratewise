@@ -160,7 +160,7 @@ function AnimatedLayerCard({
       
       {/* Content card */}
       <motion.div
-        whileHover={{ y: -2, boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
+        whileHover={{ y: -2, boxShadow: "0 8px 30px color-mix(in srgb, var(--ink) 12%, transparent)" }}
         className="rounded-xl border border-[var(--border-base)] p-5 shadow-sm transition-all" style={{ background: 'var(--surface-raised)' }}
       >
         <div className="flex items-center gap-3 mb-3">

@@ -245,7 +245,7 @@ export function AIAssistant({ initialContext, pageTitle }: AIAssistantProps) {
                  style={{ borderColor: 'var(--rule)', background: 'var(--forest)' }}>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center"
-                     style={{ background: 'rgba(244,240,232,0.15)' }}>
+                     style={{ background: 'color-mix(in srgb, var(--paper) 15%, transparent)' }}>
                   <Bot className="w-5 h-5" style={{ color: 'var(--paper)' }} />
                 </div>
                 <div>

@@ -111,10 +111,12 @@ function exportHTML(content: string, options: ExportOptions): ExportResult {
   <title>${options.title}</title>
   <style>
     :root {
-      --brand-primary: #4154A3;
-      --brand-navy: #1B2544;
-      --brand-gray: #636A82;
-      --brand-light: #F8FAFC;
+      --brand-primary: #1A3A2A;
+      --brand-navy: #0C0C0C;
+      --brand-gray: #5A5550;
+      --brand-light: #F4F0E8;
+      --brand-accent: #B8943F;
+      --brand-paper: #F4F0E8;
     }
     * { box-sizing: border-box; }
     body {
@@ -124,11 +126,11 @@ function exportHTML(content: string, options: ExportOptions): ExportResult {
       margin: 0 auto;
       padding: 40px 20px;
       color: var(--brand-navy);
-      background: white;
+      background: var(--brand-paper);
     }
     h1 { color: var(--brand-primary); border-bottom: 2px solid var(--brand-primary); padding-bottom: 10px; }
     h2 { color: var(--brand-navy); margin-top: 30px; }
-    h3 { color: var(--brand-gray); }
+    h3 { color: var(--brand-gray); font-weight: 500; }
     code { background: var(--brand-light); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
     pre { background: var(--brand-light); padding: 16px; border-radius: 8px; overflow-x: auto; }
     pre code { background: none; padding: 0; }
@@ -168,9 +170,10 @@ function exportHTML(content: string, options: ExportOptions): ExportResult {
 function exportPDF(content: string, options: ExportOptions): ExportResult {
   const doc = new jsPDF();
   
-  // Brand colors
-  const brandPrimary = [65, 84, 163];
-  const brandNavy = [27, 37, 68];
+  // Forest + Paper brand colors
+  const brandPrimary = [26, 58, 42];   // --forest
+  const brandNavy = [12, 12, 12];      // --ink
+  const brandMuted = [90, 85, 80];     // --ink-muted
   
   // Title
   doc.setFontSize(24);
@@ -179,7 +182,7 @@ function exportPDF(content: string, options: ExportOptions): ExportResult {
   
   // Metadata
   doc.setFontSize(11);
-  doc.setTextColor(99, 106, 130);
+  doc.setTextColor(brandMuted[0], brandMuted[1], brandMuted[2]);
   let y = 50;
   
   if (options.includeMetadata) {
@@ -212,7 +215,7 @@ function exportPDF(content: string, options: ExportOptions): ExportResult {
       y += 8;
     } else if (line.startsWith('### ')) {
       doc.setFontSize(12);
-      doc.setTextColor(99, 106, 130);
+      doc.setTextColor(brandMuted[0], brandMuted[1], brandMuted[2]);
       doc.text(line.replace('### ', ''), 20, y);
       y += 6;
     } else if (line.trim()) {
@@ -263,7 +266,7 @@ function exportDOCX(content: string, options: ExportOptions): ExportResult {
   <![endif]-->
   <style>
     body { font-family: 'Calibri', sans-serif; }
-    h1 { color: #4154A3; }
+    h1 { color: #1A3A2A; }
   </style>
 </head>
 <body>

@@ -402,7 +402,7 @@ export function BusinessIntelligencePage() {
               style={{
                 fontSize: '18px',
                 lineHeight: 1.6,
-                color: 'rgba(244,240,232,0.65)',
+                color: 'color-mix(in srgb, var(--paper) 65%, transparent)',
                 maxWidth: '640px',
                 margin: '0 auto',
               }}
@@ -834,8 +834,8 @@ export function BusinessIntelligencePage() {
                 gap: '8px',
                 padding: '6px 16px',
                 borderRadius: '999px',
-                background: 'rgba(244,240,232,0.12)',
-                color: 'rgba(244,240,232,0.85)',
+                background: 'color-mix(in srgb, var(--paper) 12%, transparent)',
+                color: 'color-mix(in srgb, var(--paper) 85%, transparent)',
                 fontFamily: 'var(--font-mono)',
                 fontSize: '12px',
                 fontWeight: 600,
@@ -864,7 +864,7 @@ export function BusinessIntelligencePage() {
               style={{
                 fontSize: '18px',
                 lineHeight: 1.6,
-                color: 'rgba(244,240,232,0.75)',
+                color: 'color-mix(in srgb, var(--paper) 75%, transparent)',
                 maxWidth: '640px',
                 margin: '0 auto',
               }}

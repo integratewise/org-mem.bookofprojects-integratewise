@@ -6,7 +6,7 @@ type ContainerBackgroundImage13Props = {
 
 function ContainerBackgroundImage13({ children, additionalClassNames = "" }: React.PropsWithChildren<ContainerBackgroundImage13Props>) {
   return (
-    <div className={clsx("bg-[#f0f2f7] justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0", additionalClassNames)}>
+    <div className={clsx("bg-[#EBE5D8] justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0", additionalClassNames)}>
       <div className="content-stretch flex flex-col gap-[4px] items-start pt-[12px] px-[12px] relative size-full">{children}</div>
     </div>
   );
@@ -18,7 +18,7 @@ type ContainerBackgroundImage12Props = {
 function ContainerBackgroundImage12({ children, additionalClassNames = "" }: React.PropsWithChildren<ContainerBackgroundImage12Props>) {
   return (
     <div className={clsx("bg-white justify-self-stretch relative rounded-[14px] row-1 self-stretch shrink-0", additionalClassNames)}>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[14px]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
       <div className="content-stretch flex flex-col gap-[16px] items-start pb-px pt-[25px] px-[25px] relative size-full">{children}</div>
     </div>
   );
@@ -41,7 +41,7 @@ type ContainerBackgroundImage10Props = {
 function ContainerBackgroundImage10({ children, additionalClassNames = "" }: React.PropsWithChildren<ContainerBackgroundImage10Props>) {
   return (
     <div className={clsx("bg-white justify-self-stretch relative rounded-[14px] self-stretch shrink-0", additionalClassNames)}>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[14px]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
       <div className="content-stretch flex flex-col gap-[4px] items-start pb-px pt-[25px] px-[25px] relative size-full">{children}</div>
     </div>
   );
@@ -54,7 +54,7 @@ function ContainerBackgroundImage9({ children, additionalClassNames = "" }: Reac
   return (
     <div className={clsx("absolute bg-white h-[223px] rounded-[14px]", additionalClassNames)}>
       <div className="content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[inherit] size-full">{children}</div>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[14px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)]" />
     </div>
   );
 }
@@ -76,7 +76,7 @@ function ContainerBackgroundImage8({ children, additionalClassNames = "" }: Reac
   return (
     <div className={clsx("absolute bg-white h-[247px] rounded-[14px]", additionalClassNames)}>
       <div className="content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[inherit] size-full">{children}</div>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[14px]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
     </div>
   );
 }
@@ -284,7 +284,7 @@ function ContainerBackgroundImage5({ children, additionalClassNames = "" }: Reac
   return (
     <div className={clsx("bg-white col-1 justify-self-stretch relative rounded-[14px] self-stretch shrink-0", additionalClassNames)}>
       <BackgroundImage2>{children}</BackgroundImage2>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[14px]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
     </div>
   );
 }
@@ -302,7 +302,7 @@ function ContainerBackgroundImage4({ children }: React.PropsWithChildren<{}>) {
 
 function ContainerBackgroundImage3({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div className="bg-[#f0f2f7] h-[38px] relative rounded-[10px] shrink-0 w-full">
+    <div className="bg-[#EBE5D8] h-[38px] relative rounded-[10px] shrink-0 w-full">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center px-[12px] relative size-full">{children}</div>
       </div>
@@ -380,8 +380,8 @@ function ParagraphBackgroundImageAndText9({ text }: ParagraphBackgroundImageAndT
   return (
     <div className="h-[16px] relative shrink-0 w-full">
       <BackgroundImage additionalClassNames="left-0 top-px">
-        <path d="M10.5 3.5L3.5 10.5" id="Vector" stroke="var(--stroke-0, #EB4379)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
-        <path d="M3.5 3.5L10.5 10.5" id="Vector_2" stroke="var(--stroke-0, #EB4379)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
+        <path d="M10.5 3.5L3.5 10.5" id="Vector" stroke="var(--stroke-0, #B8943F)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
+        <path d="M3.5 3.5L10.5 10.5" id="Vector_2" stroke="var(--stroke-0, #B8943F)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
       </BackgroundImage>
       <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-[20px] not-italic text-[#9ba8c2] text-[12px] top-0 whitespace-nowrap">{text}</p>
     </div>
@@ -421,8 +421,8 @@ type IconBackgroundImage2Props = {
 function IconBackgroundImage2({ additionalClassNames = "" }: IconBackgroundImage2Props) {
   return (
     <BackgroundImage1 additionalClassNames={additionalClassNames}>
-      <path d="M12 4L4 12" id="Vector" stroke="var(--stroke-0, #EB4379)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
-      <path d="M4 4L12 12" id="Vector_2" stroke="var(--stroke-0, #EB4379)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+      <path d="M12 4L4 12" id="Vector" stroke="var(--stroke-0, #B8943F)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+      <path d="M4 4L12 12" id="Vector_2" stroke="var(--stroke-0, #B8943F)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
     </BackgroundImage1>
   );
 }
@@ -465,10 +465,10 @@ function ContainerBackgroundImage2() {
           <div className="h-[76px] relative shrink-0 w-[160px]">
             <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 160 76">
               <g clipPath="url(#clip0_75_3770)" id="Image (Icon Mark Original)">
-                <path d={svgPaths.pff72670} fill="var(--fill-0, #4154A3)" id="Vector" />
-                <path d={svgPaths.p277b1080} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                <path d={svgPaths.p204e8500} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                <path d={svgPaths.p23a64980} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+                <path d={svgPaths.pff72670} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                <path d={svgPaths.p277b1080} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                <path d={svgPaths.p204e8500} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                <path d={svgPaths.p23a64980} fill="var(--fill-0, #B8943F)" id="Vector_4" />
               </g>
               <defs>
                 <clipPath id="clip0_75_3770">
@@ -531,7 +531,7 @@ function VectorBackgroundImage() {
   return (
     <div className="absolute inset-[31.44%_0.4%_32.71%_83.1%]">
       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.6768 17.2089">
-        <path d={svgPaths.p2f3eb100} fill="var(--fill-0, #EB4379)" id="Vector" />
+        <path d={svgPaths.p2f3eb100} fill="var(--fill-0, #B8943F)" id="Vector" />
       </svg>
     </div>
   );
@@ -571,7 +571,7 @@ type ButtonBackgroundImageAndText2Props = {
 function ButtonBackgroundImageAndText2({ text, additionalClassNames = "" }: ButtonBackgroundImageAndText2Props) {
   return (
     <div className={clsx("bg-white h-[26px] relative rounded-[8px] shrink-0", additionalClassNames)}>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[8px]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[8px]" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-start px-[11px] py-[5px] relative size-full">
         <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#5f6e93] text-[12px] text-center whitespace-nowrap">{text}</p>
       </div>
@@ -677,10 +677,10 @@ function IntegrateWiseLogoBackgroundImage() {
       <div className="h-[64px] relative shrink-0 w-[134.734px]">
         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 134.734 64">
           <g clipPath="url(#clip0_75_3819)" id="Icon">
-            <path d={svgPaths.p1cc05700} fill="var(--fill-0, #4154A3)" id="Vector" />
-            <path d={svgPaths.p3b5598f0} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-            <path d={svgPaths.p1fedef00} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-            <path d={svgPaths.p2ef98000} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+            <path d={svgPaths.p1cc05700} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+            <path d={svgPaths.p3b5598f0} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+            <path d={svgPaths.p1fedef00} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+            <path d={svgPaths.p2ef98000} fill="var(--fill-0, #B8943F)" id="Vector_4" />
           </g>
           <defs>
             <clipPath id="clip0_75_3819">
@@ -707,7 +707,7 @@ type BackgroundImageAndText3Props = {
 function BackgroundImageAndText3({ text }: BackgroundImageAndText3Props) {
   return (
     <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[48px] left-0 not-italic text-[#1b2544] text-[48px] top-px tracking-[-0.8484px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[48px] left-0 not-italic text-[#0c0c0c] text-[48px] top-px tracking-[-0.8484px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -749,7 +749,7 @@ function ExportDropdownBackgroundImage({ additionalClassNames = "" }: ExportDrop
 function ButtonBackgroundImage() {
   return (
     <div className="bg-[rgba(255,255,255,0)] relative rounded-[8px] shrink-0 size-[32px]">
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)]" />
     </div>
   );
 }
@@ -761,7 +761,7 @@ type ButtonBackgroundImageAndText1Props = {
 function ButtonBackgroundImageAndText1({ text, additionalClassNames = "" }: ButtonBackgroundImageAndText1Props) {
   return (
     <div className={clsx("bg-white justify-self-stretch relative rounded-[8px] self-stretch shrink-0", additionalClassNames)}>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[8px]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[8px]" />
       <div className="content-stretch flex items-start px-[9px] py-[7px] relative size-full">
         <p className="flex-[1_0_0] font-['Inter:Medium',sans-serif] font-medium leading-[16px] min-h-px min-w-px not-italic relative text-[#475578] text-[12px]">{text}</p>
       </div>
@@ -776,7 +776,7 @@ type ButtonBackgroundImageAndTextProps = {
 function ButtonBackgroundImageAndText({ text, additionalClassNames = "" }: ButtonBackgroundImageAndTextProps) {
   return (
     <div className={clsx("bg-white relative rounded-[8px] w-[271px]", additionalClassNames)}>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[8px]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[8px]" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
         <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-[13px] not-italic text-[#475578] text-[14px] top-[9px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
       </div>
@@ -803,7 +803,7 @@ type TextBackgroundImageAndTextProps = {
 function TextBackgroundImageAndText({ text, additionalClassNames = "" }: TextBackgroundImageAndTextProps) {
   return (
     <div className={clsx("absolute bg-[rgba(65,84,163,0.1)] content-stretch flex h-[24px] items-start px-[12px] py-[4px] rounded-[33554400px] top-0", additionalClassNames)}>
-      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#4154a3] text-[12px] whitespace-nowrap">{text}</p>
+      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#1a3a2a] text-[12px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -815,7 +815,7 @@ type HeadingBackgroundImageAndTextProps = {
 function HeadingBackgroundImageAndText({ text, additionalClassNames = "" }: HeadingBackgroundImageAndTextProps) {
   return (
     <BackgroundImage9 additionalClassNames={clsx("h-[28px] relative", additionalClassNames)}>
-      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[28px] left-0 not-italic text-[#1b2544] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[28px] left-0 not-italic text-[#0c0c0c] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">{text}</p>
     </BackgroundImage9>
   );
 }
@@ -849,7 +849,7 @@ type BackgroundImageAndText1Props = {
 function BackgroundImageAndText1({ text }: BackgroundImageAndText1Props) {
   return (
     <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#1b2544] text-[14px] top-0 tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#0c0c0c] text-[14px] top-0 tracking-[-0.1504px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -860,7 +860,7 @@ type BackgroundImageAndTextProps = {
 function BackgroundImageAndText({ text }: BackgroundImageAndTextProps) {
   return (
     <div className="h-[20px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#1b2544] text-[14px] top-0 tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#0c0c0c] text-[14px] top-0 tracking-[-0.1504px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -869,7 +869,7 @@ export default function IntegrateWiseLogoDesign() {
   return (
     <div className="bg-[#edf0f5] content-stretch flex items-start relative size-full" data-name="IntegrateWise Logo Design">
       <div className="bg-white h-[895px] relative shrink-0 w-[288px]" data-name="Sidebar">
-        <div aria-hidden="true" className="absolute border-[#d5dae5] border-r border-solid inset-0 pointer-events-none" />
+        <div aria-hidden="true" className="absolute border-[#D8D0C0] border-r border-solid inset-0 pointer-events-none" />
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pr-px relative size-full">
           <div className="h-[64px] relative shrink-0 w-[287px]" data-name="Container">
             <div aria-hidden="true" className="absolute border-[#e8ecf2] border-b border-solid inset-0 pointer-events-none" />
@@ -878,22 +878,22 @@ export default function IntegrateWiseLogoDesign() {
                 <IconBackgroundImage4 additionalClassNames="h-[36px]">
                   <div className="absolute inset-[0_6.71%_1.61%_0]" data-name="Vector">
                     <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 70.668 35.4211">
-                      <path d={svgPaths.p3fd56840} fill="var(--fill-0, #4154A3)" id="Vector" />
+                      <path d={svgPaths.p3fd56840} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                     </svg>
                   </div>
                   <div className="absolute inset-[31.67%_57.15%_1.16%_26.56%]" data-name="Vector">
                     <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.3397 24.1817">
-                      <path d={svgPaths.p1408e440} fill="var(--fill-0, #4154A3)" id="Vector" />
+                      <path d={svgPaths.p1408e440} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                     </svg>
                   </div>
                   <div className="absolute inset-[0.05%_28.9%_33.02%_54.89%]" data-name="Vector">
                     <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.2833 24.094">
-                      <path d={svgPaths.p345fdb80} fill="var(--fill-0, #4154A3)" id="Vector" />
+                      <path d={svgPaths.p345fdb80} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                     </svg>
                   </div>
                   <div className="absolute inset-[31.44%_0.4%_32.71%_83.1%]" data-name="Vector">
                     <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.5018 12.9067">
-                      <path d={svgPaths.pfafeb00} fill="var(--fill-0, #EB4379)" id="Vector" />
+                      <path d={svgPaths.pfafeb00} fill="var(--fill-0, #B8943F)" id="Vector" />
                     </svg>
                   </div>
                 </IconBackgroundImage4>
@@ -920,7 +920,7 @@ export default function IntegrateWiseLogoDesign() {
                   </IconBackgroundImage3>
                   <NavLinkBackgroundImageAndText text="Quick Generators" additionalClassNames="w-[112.859px]" />
                 </LinkBackgroundImage>
-                <LinkBackgroundImage additionalClassNames="bg-[#4154a3]">
+                <LinkBackgroundImage additionalClassNames="bg-[#1a3a2a]">
                   <BackgroundImage3 additionalClassNames="relative shrink-0">
                     <g clipPath="url(#clip0_75_3873)" id="Icon">
                       <path d={svgPaths.p14899500} fill="var(--fill-0, white)" id="Vector" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
@@ -1001,7 +1001,7 @@ export default function IntegrateWiseLogoDesign() {
       <div className="flex-[1263_0_0] h-[895px] min-h-px min-w-px relative" data-name="Container">
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
           <div className="bg-white h-[64px] relative shrink-0 w-[1263px]" data-name="Header">
-            <div aria-hidden="true" className="absolute border-[#d5dae5] border-b border-solid inset-0 pointer-events-none" />
+            <div aria-hidden="true" className="absolute border-[#D8D0C0] border-b border-solid inset-0 pointer-events-none" />
             <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-px pl-[24px] relative size-full">
               <HeadingBackgroundImageAndText text="Brand Assets" additionalClassNames="shrink-0 w-[111.453px]" />
             </div>
@@ -1014,7 +1014,7 @@ export default function IntegrateWiseLogoDesign() {
                     <div className="h-[60px] relative shrink-0 w-[543.234px]" data-name="Container">
                       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[4px] items-start relative size-full">
                         <div className="h-[32px] relative shrink-0 w-full" data-name="Heading 2">
-                          <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-0 not-italic text-[#1b2544] text-[24px] top-0 tracking-[0.0703px] whitespace-nowrap">Brand Assets</p>
+                          <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-0 not-italic text-[#0c0c0c] text-[24px] top-0 tracking-[0.0703px] whitespace-nowrap">Brand Assets</p>
                         </div>
                         <div className="h-[24px] relative shrink-0 w-full" data-name="Paragraph">
                           <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[24px] left-0 not-italic text-[#7b8aad] text-[16px] top-0 tracking-[-0.3125px] whitespace-nowrap">Logo system, brand messaging, visual identity guidelines, and brand motifs</p>
@@ -1023,7 +1023,7 @@ export default function IntegrateWiseLogoDesign() {
                     </div>
                     <div className="h-[38px] relative shrink-0 w-[382.938px]" data-name="Container">
                       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8px] items-start relative size-full">
-                        <div className="h-[38px] relative rounded-[10px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)] shrink-0 w-[164.406px]" data-name="Button" style={{ backgroundImage: "linear-gradient(166.986deg, rgb(65, 84, 163) 0%, rgb(235, 67, 121) 100%)" }}>
+                        <div className="h-[38px] relative rounded-[10px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)] shrink-0 w-[164.406px]" data-name="Button" style={{ backgroundImage: "linear-gradient(166.986deg, rgb(26, 58, 42) 0%, rgb(184, 148, 63) 100%)" }}>
                           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
                             <BackgroundImage4 additionalClassNames="absolute left-[16px] top-[11px]">
                               <g clipPath="url(#clip0_75_3848)" id="Icon">
@@ -1043,14 +1043,14 @@ export default function IntegrateWiseLogoDesign() {
                           </div>
                         </div>
                         <div className="bg-white flex-[1_0_0] h-[38px] min-h-px min-w-px relative rounded-[10px]" data-name="Button">
-                          <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[10px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)]" />
+                          <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[10px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)]" />
                           <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
                             <BackgroundImage1 additionalClassNames="absolute left-[17px] top-[11px]">
-                              <path d={svgPaths.p23ad1400} id="Vector" stroke="var(--stroke-0, #1B2544)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
-                              <path d={svgPaths.p19411800} id="Vector_2" stroke="var(--stroke-0, #1B2544)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
-                              <path d="M8 10V2" id="Vector_3" stroke="var(--stroke-0, #1B2544)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+                              <path d={svgPaths.p23ad1400} id="Vector" stroke="var(--stroke-0, #0C0C0C)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+                              <path d={svgPaths.p19411800} id="Vector_2" stroke="var(--stroke-0, #0C0C0C)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+                              <path d="M8 10V2" id="Vector_3" stroke="var(--stroke-0, #0C0C0C)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
                             </BackgroundImage1>
-                            <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-[117.5px] not-italic text-[#1b2544] text-[14px] text-center top-[9px] tracking-[-0.1504px] whitespace-nowrap">Download Full Kit (.zip)</p>
+                            <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-[117.5px] not-italic text-[#0c0c0c] text-[14px] text-center top-[9px] tracking-[-0.1504px] whitespace-nowrap">Download Full Kit (.zip)</p>
                           </div>
                         </div>
                       </div>
@@ -1060,7 +1060,7 @@ export default function IntegrateWiseLogoDesign() {
                     <div className="overflow-clip rounded-[inherit] size-full">
                       <div className="content-stretch flex flex-col items-start pb-px pt-[33px] px-[33px] relative size-full">
                         <div className="content-stretch flex gap-[24px] h-[108px] items-center relative shrink-0 w-full" data-name="Container">
-                          <div className="relative rounded-[16px] shrink-0 size-[64px]" data-name="Container" style={{ backgroundImage: "linear-gradient(135deg, rgb(65, 84, 163) 0%, rgb(235, 67, 121) 100%)" }}>
+                          <div className="relative rounded-[16px] shrink-0 size-[64px]" data-name="Container" style={{ backgroundImage: "linear-gradient(135deg, rgb(26, 58, 42) 0%, rgb(184, 148, 63) 100%)" }}>
                             <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center px-[16px] relative size-full">
                               <div className="relative shrink-0 size-[32px]" data-name="Icon">
                                 <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32">
@@ -1077,7 +1077,7 @@ export default function IntegrateWiseLogoDesign() {
                           </div>
                           <BackgroundImage7 additionalClassNames="flex-[838.031_0_0] h-[108px]">
                             <div className="absolute h-[28px] left-0 top-0 w-[838.031px]" data-name="Heading 3">
-                              <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[28px] left-0 not-italic text-[#1b2544] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">Advanced Asset Editor Now Available</p>
+                              <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[28px] left-0 not-italic text-[#0c0c0c] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">Advanced Asset Editor Now Available</p>
                             </div>
                             <div className="absolute h-[40px] left-0 top-[32px] w-[838.031px]" data-name="Paragraph">
                               <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[#5f6e93] text-[14px] top-0 tracking-[-0.1504px] w-[829px]">Create custom brand assets with comprehensive editing tools. Adjust colors, dimensions, effects, and export to 12+ social media and print formats in one batch.</p>
@@ -1085,13 +1085,13 @@ export default function IntegrateWiseLogoDesign() {
                             <div className="absolute h-[24px] left-0 top-[84px] w-[838.031px]" data-name="Container">
                               <TextBackgroundImageAndText text="Custom Colors" additionalClassNames="left-0 w-[109.359px]" />
                               <div className="absolute bg-[rgba(65,84,163,0.1)] content-stretch flex h-[24px] items-start left-[117.36px] px-[12px] py-[4px] rounded-[33554400px] top-0 w-[136.375px]" data-name="Text">
-                                <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#4154a3] text-[12px] whitespace-nowrap">{`Gradients & Effects`}</p>
+                                <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#1a3a2a] text-[12px] whitespace-nowrap">{`Gradients & Effects`}</p>
                               </div>
                               <TextBackgroundImageAndText text="Batch Export" additionalClassNames="left-[261.73px] w-[98.563px]" />
                               <TextBackgroundImageAndText text="Social Media Presets" additionalClassNames="left-[368.3px] w-[144.219px]" />
                             </div>
                           </BackgroundImage7>
-                          <div className="h-[44px] relative rounded-[10px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)] shrink-0 w-[151.969px]" data-name="Button" style={{ backgroundImage: "linear-gradient(163.853deg, rgb(65, 84, 163) 0%, rgb(235, 67, 121) 100%)" }}>
+                          <div className="h-[44px] relative rounded-[10px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)] shrink-0 w-[151.969px]" data-name="Button" style={{ backgroundImage: "linear-gradient(163.853deg, rgb(26, 58, 42) 0%, rgb(184, 148, 63) 100%)" }}>
                             <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
                               <BackgroundImage1 additionalClassNames="absolute left-[24px] top-[14px]">
                                 <path d={svgPaths.p2338cf00} id="Vector" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
@@ -1107,7 +1107,7 @@ export default function IntegrateWiseLogoDesign() {
                   </div>
                   <div className="content-stretch flex flex-col gap-[24px] h-[516px] items-start relative shrink-0 w-full" data-name="Section">
                     <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                      <div className="bg-[#4154a3] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
+                      <div className="bg-[#1a3a2a] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
                       <HeadingBackgroundImageAndText text="Interactive Brand Studio" additionalClassNames="shrink-0 w-[203px]" />
                     </div>
                     <div className="bg-white h-[464px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
@@ -1135,7 +1135,7 @@ export default function IntegrateWiseLogoDesign() {
                               <div className="absolute h-[152px] left-[24px] top-[52px] w-[271px]" data-name="Container">
                                 <LabelBackgroundImageAndText text="Logo Layout" additionalClassNames="w-[70.703px]" />
                                 <div className="absolute content-stretch flex flex-col gap-[8px] h-[128px] items-start left-0 top-[24px] w-[271px]" data-name="Container">
-                                  <BackgroundImage8 additionalClassNames="bg-[#4154a3] h-[36px] w-[271px]">
+                                  <BackgroundImage8 additionalClassNames="bg-[#1a3a2a] h-[36px] w-[271px]">
                                     <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-[12px] not-italic text-[14px] text-white top-[8px] tracking-[-0.1504px] whitespace-nowrap">Full Layout</p>
                                   </BackgroundImage8>
                                   <ButtonBackgroundImageAndText text="Compact" additionalClassNames="h-[38px] shrink-0" />
@@ -1145,7 +1145,7 @@ export default function IntegrateWiseLogoDesign() {
                               <div className="absolute h-[130px] left-[24px] top-[228px] w-[271px]" data-name="Container">
                                 <LabelBackgroundImageAndText text="Color Theme" additionalClassNames="w-[73.969px]" />
                                 <div className="absolute gap-x-[8px] gap-y-[8px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(3,minmax(0,1fr))] h-[106px] left-0 top-[24px] w-[271px]" data-name="Container">
-                                  <div className="bg-[#4154a3] col-1 justify-self-stretch relative rounded-[8px] row-1 self-stretch shrink-0" data-name="Button">
+                                  <div className="bg-[#1a3a2a] col-1 justify-self-stretch relative rounded-[8px] row-1 self-stretch shrink-0" data-name="Button">
                                     <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-[8px] not-italic text-[12px] text-white top-[7px] whitespace-nowrap">Default</p>
                                   </div>
                                   <ButtonBackgroundImageAndText1 text="White" additionalClassNames="col-2 row-1" />
@@ -1163,7 +1163,7 @@ export default function IntegrateWiseLogoDesign() {
                                   <ButtonBackgroundImage />
                                   <ButtonBackgroundImage />
                                   <div className="bg-white relative rounded-[8px] shrink-0 size-[32px]" data-name="Button">
-                                    <div aria-hidden="true" className="absolute border-2 border-[#4154a3] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)]" />
+                                    <div aria-hidden="true" className="absolute border-2 border-[#1a3a2a] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)]" />
                                   </div>
                                 </div>
                               </div>
@@ -1190,16 +1190,16 @@ export default function IntegrateWiseLogoDesign() {
                           </BackgroundImage7>
                         </div>
                       </BackgroundImage2>
-                      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[14px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)]" />
+                      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)]" />
                     </div>
                   </div>
                   <div className="content-stretch flex flex-col gap-[24px] h-[894.5px] items-start relative shrink-0 w-full" data-name="Section">
                     <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                      <div className="bg-[#4154a3] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
+                      <div className="bg-[#1a3a2a] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
                       <HeadingBackgroundImageAndText text="Brand Messaging System" additionalClassNames="shrink-0 w-[213.172px]" />
                     </div>
                     <div className="bg-white h-[842.5px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
-                      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[14px]" />
+                      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
                       <div className="content-stretch flex flex-col gap-[24px] items-start pb-px pt-[33px] px-[33px] relative size-full">
                         <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(1,minmax(0,1fr))] h-[154.5px] relative shrink-0 w-full" data-name="Container">
                           <div className="col-1 justify-self-stretch relative row-1 self-stretch shrink-0" data-name="Container">
@@ -1207,7 +1207,7 @@ export default function IntegrateWiseLogoDesign() {
                               <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16.5px] left-0 not-italic text-[#9ba8c2] text-[11px] top-0 tracking-[0.3395px] whitespace-nowrap">PRIMARY PRODUCT DESCRIPTION</p>
                             </div>
                             <div className="absolute h-[28px] left-0 top-[24.5px] w-[535px]" data-name="Paragraph">
-                              <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[28px] left-0 not-italic text-[#1b2544] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">IntegrateWise</p>
+                              <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[28px] left-0 not-italic text-[#0c0c0c] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">IntegrateWise</p>
                             </div>
                             <div className="absolute h-[40px] left-0 top-[56.5px] w-[535px]" data-name="Paragraph">
                               <p className="absolute font-['Inter:Italic',sans-serif] font-normal italic leading-[20px] left-0 text-[#475578] text-[14px] top-0 tracking-[-0.1504px] w-[460px]">A Knowledge Workspace empowered by AI and the Spine — the unified intelligence layer that connects tools, context, and decisions.</p>
@@ -1243,12 +1243,12 @@ export default function IntegrateWiseLogoDesign() {
                               <ParagraphBackgroundImageAndText3 text="Primary Tagline" />
                               <BackgroundImageAndText text="AI Thinks in Context — and Waits for Approval" />
                             </div>
-                            <div className="absolute bg-[#f0f2f7] content-stretch flex flex-col gap-[4px] h-[94.5px] items-start left-[372.66px] pb-px pt-[17px] px-[17px] rounded-[10px] top-0 w-[356.672px]" data-name="MessagingCard">
+                            <div className="absolute bg-[#EBE5D8] content-stretch flex flex-col gap-[4px] h-[94.5px] items-start left-[372.66px] pb-px pt-[17px] px-[17px] rounded-[10px] top-0 w-[356.672px]" data-name="MessagingCard">
                               <div aria-hidden="true" className="absolute border border-[#e8ecf2] border-solid inset-0 pointer-events-none rounded-[10px]" />
                               <ParagraphBackgroundImageAndText3 text="Short Version" />
                               <ParagraphBackgroundImageAndText4 text="Context-Aware AI. Approval-Controlled Work." />
                             </div>
-                            <div className="absolute bg-[#f0f2f7] content-stretch flex flex-col gap-[4px] h-[94.5px] items-start left-[745.33px] pb-px pt-[17px] px-[17px] rounded-[10px] top-0 w-[356.656px]" data-name="MessagingCard">
+                            <div className="absolute bg-[#EBE5D8] content-stretch flex flex-col gap-[4px] h-[94.5px] items-start left-[745.33px] pb-px pt-[17px] px-[17px] rounded-[10px] top-0 w-[356.656px]" data-name="MessagingCard">
                               <div aria-hidden="true" className="absolute border border-[#e8ecf2] border-solid inset-0 pointer-events-none rounded-[10px]" />
                               <ParagraphBackgroundImageAndText3 text="Extended (Marketing)" />
                               <div className="h-[40px] relative shrink-0 w-full" data-name="Paragraph">
@@ -1261,42 +1261,42 @@ export default function IntegrateWiseLogoDesign() {
                           <div aria-hidden="true" className="absolute border-[#e8ecf2] border-solid border-t inset-0 pointer-events-none" />
                           <ParagraphBackgroundImageAndText1 text="APPROVED COPY FOR SPECIFIC ASSETS" />
                           <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(3,minmax(0,1fr))] h-[219.5px] relative shrink-0 w-full" data-name="Container">
-                            <div className="bg-[#f0f2f7] col-1 justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0" data-name="Container">
+                            <div className="bg-[#EBE5D8] col-1 justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0" data-name="Container">
                               <IconBackgroundImage />
                               <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[484.563px]" data-name="Container">
                                 <ParagraphBackgroundImageAndText3 text="Letterhead" />
                                 <ParagraphBackgroundImageAndText4 text="IntegrateWise LLP · Knowledge Workspace Empowered by AI and the Spine" />
                               </div>
                             </div>
-                            <div className="bg-[#f0f2f7] col-2 justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0" data-name="Container">
+                            <div className="bg-[#EBE5D8] col-2 justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0" data-name="Container">
                               <IconBackgroundImage />
                               <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[435.594px]" data-name="Container">
                                 <ParagraphBackgroundImageAndText3 text="Invoice Footer" />
                                 <ParagraphBackgroundImageAndText4 text="IntegrateWise — AI Thinks in Context and Works Through Approvals" />
                               </div>
                             </div>
-                            <div className="bg-[#f0f2f7] col-1 justify-self-stretch relative rounded-[10px] row-2 self-stretch shrink-0" data-name="Container">
+                            <div className="bg-[#EBE5D8] col-1 justify-self-stretch relative rounded-[10px] row-2 self-stretch shrink-0" data-name="Container">
                               <IconBackgroundImage />
                               <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[355.688px]" data-name="Container">
                                 <ParagraphBackgroundImageAndText3 text="Business Card" />
                                 <ParagraphBackgroundImageAndText4 text="Knowledge Workspace Empowered by AI and the Spine" />
                               </div>
                             </div>
-                            <div className="bg-[#f0f2f7] col-2 justify-self-stretch relative rounded-[10px] row-2 self-stretch shrink-0" data-name="Container">
+                            <div className="bg-[#EBE5D8] col-2 justify-self-stretch relative rounded-[10px] row-2 self-stretch shrink-0" data-name="Container">
                               <IconBackgroundImage />
                               <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[354px]" data-name="Container">
                                 <ParagraphBackgroundImageAndText3 text="Profile Headline" />
                                 <ParagraphBackgroundImageAndText4 text="The Knowledge Workspace Where AI Thinks in Context" />
                               </div>
                             </div>
-                            <div className="bg-[#f0f2f7] col-1 justify-self-stretch relative rounded-[10px] row-3 self-stretch shrink-0" data-name="Container">
+                            <div className="bg-[#EBE5D8] col-1 justify-self-stretch relative rounded-[10px] row-3 self-stretch shrink-0" data-name="Container">
                               <IconBackgroundImage />
                               <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[433.344px]" data-name="Container">
                                 <ParagraphBackgroundImageAndText3 text="Brochure Headline" />
                                 <ParagraphBackgroundImageAndText4 text="Bring Work, Knowledge, and Decisions Together Through the Spine" />
                               </div>
                             </div>
-                            <div className="bg-[#f0f2f7] col-2 justify-self-stretch relative rounded-[10px] row-3 self-stretch shrink-0" data-name="Container">
+                            <div className="bg-[#EBE5D8] col-2 justify-self-stretch relative rounded-[10px] row-3 self-stretch shrink-0" data-name="Container">
                               <IconBackgroundImage />
                               <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[351.094px]" data-name="Container">
                                 <ParagraphBackgroundImageAndText3 text="Marketing Headline" />
@@ -1343,7 +1343,7 @@ export default function IntegrateWiseLogoDesign() {
                   <div className="content-stretch flex flex-col gap-[24px] h-[765px] items-start relative shrink-0 w-full" data-name="Section">
                     <div className="h-[28px] relative shrink-0 w-full" data-name="Container">
                       <div className="absolute content-stretch flex gap-[12px] h-[28px] items-center left-0 top-0 w-[174.859px]" data-name="Container">
-                        <div className="bg-[#4154a3] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
+                        <div className="bg-[#1a3a2a] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
                         <HeadingBackgroundImageAndText text="Logo Variants" additionalClassNames="flex-[1_0_0] min-h-px min-w-px" />
                       </div>
                       <div className="absolute content-stretch flex gap-[8px] h-[26px] items-center left-[917.09px] top-px w-[250.906px]" data-name="Container">
@@ -1351,9 +1351,9 @@ export default function IntegrateWiseLogoDesign() {
                           <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#7b8aad] text-[12px] whitespace-nowrap">Background:</p>
                         </BackgroundImage13>
                         <div className="bg-[rgba(65,84,163,0.08)] h-[26px] relative rounded-[8px] shrink-0 w-[55.609px]" data-name="Button">
-                          <div aria-hidden="true" className="absolute border border-[#4154a3] border-solid inset-0 pointer-events-none rounded-[8px]" />
+                          <div aria-hidden="true" className="absolute border border-[#1a3a2a] border-solid inset-0 pointer-events-none rounded-[8px]" />
                           <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-start px-[11px] py-[5px] relative size-full">
-                            <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#4154a3] text-[12px] text-center whitespace-nowrap">White</p>
+                            <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#1a3a2a] text-[12px] text-center whitespace-nowrap">White</p>
                           </div>
                         </div>
                         <ButtonBackgroundImageAndText2 text="Grey" additionalClassNames="w-[49.203px]" />
@@ -1392,10 +1392,10 @@ export default function IntegrateWiseLogoDesign() {
                                 <div className="h-[48px] relative shrink-0 w-[101.047px]" data-name="Icon">
                                   <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 101.047 48">
                                     <g clipPath="url(#clip0_29_959)" id="Image (IntegrateWise Icon)">
-                                      <path d={svgPaths.p256ba1f0} fill="var(--fill-0, #4154A3)" id="Vector" />
-                                      <path d={svgPaths.p229f1000} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                                      <path d={svgPaths.p1e240600} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                                      <path d={svgPaths.p23494800} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+                                      <path d={svgPaths.p256ba1f0} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                                      <path d={svgPaths.p229f1000} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                                      <path d={svgPaths.p1e240600} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                                      <path d={svgPaths.p23494800} fill="var(--fill-0, #B8943F)" id="Vector_4" />
                                     </g>
                                     <defs>
                                       <clipPath id="clip0_29_959">
@@ -1406,7 +1406,7 @@ export default function IntegrateWiseLogoDesign() {
                                 </div>
                                 <BackgroundImage12 additionalClassNames="h-[62px]">
                                   <BackgroundImage13 additionalClassNames="w-[419.219px]">
-                                    <p className="flex-[1_0_0] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[36px] min-h-px min-w-px not-italic relative text-[#1b2544] text-[30px] tracking-[-0.3545px]">IntegrateWise</p>
+                                    <p className="flex-[1_0_0] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[36px] min-h-px min-w-px not-italic relative text-[#0c0c0c] text-[30px] tracking-[-0.3545px]">IntegrateWise</p>
                                   </BackgroundImage13>
                                   <BackgroundImage6 additionalClassNames="h-[24px] w-[419.219px]">
                                     <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[24px] left-0 not-italic text-[#5f6e93] text-[16px] top-0 tracking-[0.0875px] whitespace-nowrap">Knowledge Workspace Empowered by AI and the Spine</p>
@@ -1431,13 +1431,13 @@ export default function IntegrateWiseLogoDesign() {
                               <IntegrateWiseLogoBackgroundImage1 additionalClassNames="h-[48px] w-[101.047px]">
                                 <IconBackgroundImage4 additionalClassNames="h-[48px]">
                                   <VectorBackgroundImage2>
-                                    <path d={svgPaths.p2dc1af00} fill="var(--fill-0, #4154A3)" id="Vector" />
+                                    <path d={svgPaths.p2dc1af00} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                                   </VectorBackgroundImage2>
                                   <VectorBackgroundImage3>
-                                    <path d={svgPaths.p3d044200} fill="var(--fill-0, #4154A3)" id="Vector" />
+                                    <path d={svgPaths.p3d044200} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                                   </VectorBackgroundImage3>
                                   <VectorBackgroundImage4>
-                                    <path d={svgPaths.p363cf00} fill="var(--fill-0, #4154A3)" id="Vector" />
+                                    <path d={svgPaths.p363cf00} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                                   </VectorBackgroundImage4>
                                   <VectorBackgroundImage />
                                 </IconBackgroundImage4>
@@ -1450,7 +1450,7 @@ export default function IntegrateWiseLogoDesign() {
                   </div>
                   <div className="content-stretch flex flex-col gap-[24px] h-[570px] items-start relative shrink-0 w-full" data-name="Section">
                     <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                      <div className="bg-[#4154a3] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
+                      <div className="bg-[#1a3a2a] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
                       <HeadingBackgroundImageAndText text="SVG Source Files" additionalClassNames="shrink-0 w-[142.938px]" />
                     </div>
                     <div className="h-[518px] relative shrink-0 w-full" data-name="Container">
@@ -1526,7 +1526,7 @@ export default function IntegrateWiseLogoDesign() {
                   </div>
                   <div className="content-stretch flex flex-col gap-[24px] h-[522px] items-start relative shrink-0 w-full" data-name="Section">
                     <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                      <div className="bg-[#4154a3] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
+                      <div className="bg-[#1a3a2a] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
                       <HeadingBackgroundImageAndText text="Required Color Variants" additionalClassNames="shrink-0 w-[198.438px]" />
                     </div>
                     <div className="h-[470px] relative shrink-0 w-full" data-name="Container">
@@ -1535,10 +1535,10 @@ export default function IntegrateWiseLogoDesign() {
                           <BackgroundImage11 additionalClassNames="h-[106px] w-[445.547px]">
                             <IconBackgroundImage5>
                               <g clipPath="url(#clip0_75_3795)" id="Icon">
-                                <path d={svgPaths.p23113700} fill="var(--fill-0, #4154A3)" id="Vector" />
-                                <path d={svgPaths.p31935bc0} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                                <path d={svgPaths.p27a9f5f1} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                                <path d={svgPaths.p5200780} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+                                <path d={svgPaths.p23113700} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                                <path d={svgPaths.p31935bc0} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                                <path d={svgPaths.p27a9f5f1} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                                <path d={svgPaths.p5200780} fill="var(--fill-0, #B8943F)" id="Vector_4" />
                               </g>
                               <defs>
                                 <clipPath id="clip0_75_3795">
@@ -1566,10 +1566,10 @@ export default function IntegrateWiseLogoDesign() {
                           <BackgroundImage11 additionalClassNames="h-[106px] w-[445.547px]">
                             <IconBackgroundImage5>
                               <g clipPath="url(#clip0_75_3760)" id="Icon">
-                                <path d={svgPaths.p23113700} fill="var(--fill-0, #1B2544)" id="Vector" />
-                                <path d={svgPaths.p31935bc0} fill="var(--fill-0, #1B2544)" id="Vector_2" />
-                                <path d={svgPaths.p27a9f5f1} fill="var(--fill-0, #1B2544)" id="Vector_3" />
-                                <path d={svgPaths.p5200780} fill="var(--fill-0, #1B2544)" id="Vector_4" />
+                                <path d={svgPaths.p23113700} fill="var(--fill-0, #0C0C0C)" id="Vector" />
+                                <path d={svgPaths.p31935bc0} fill="var(--fill-0, #0C0C0C)" id="Vector_2" />
+                                <path d={svgPaths.p27a9f5f1} fill="var(--fill-0, #0C0C0C)" id="Vector_3" />
+                                <path d={svgPaths.p5200780} fill="var(--fill-0, #0C0C0C)" id="Vector_4" />
                               </g>
                               <defs>
                                 <clipPath id="clip0_75_3760">
@@ -1580,7 +1580,7 @@ export default function IntegrateWiseLogoDesign() {
                             <BackgroundImage12 additionalClassNames="h-[106px]">
                               <BackgroundImageAndText2 text="IntegrateWise" />
                               <BackgroundImage7 additionalClassNames="flex-[1_0_0] w-[333.031px]">
-                                <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[28px] left-0 not-italic text-[#1b2544] text-[18px] top-0 tracking-[0.0105px] w-[322px]">Knowledge Workspace Empowered by AI and the Spine</p>
+                                <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[28px] left-0 not-italic text-[#0c0c0c] text-[18px] top-0 tracking-[0.0105px] w-[322px]">Knowledge Workspace Empowered by AI and the Spine</p>
                               </BackgroundImage7>
                             </BackgroundImage12>
                           </BackgroundImage11>
@@ -1626,7 +1626,7 @@ export default function IntegrateWiseLogoDesign() {
                         </ContainerBackgroundImage6>
                       </ContainerBackgroundImage9>
                       <ContainerBackgroundImage9 additionalClassNames="left-0 top-[247px] w-[373.328px]">
-                        <div className="bg-[#1b2544] content-stretch flex h-[160px] items-center justify-center px-[-37.109px] relative shrink-0 w-full" data-name="Container">
+                        <div className="bg-[#0c0c0c] content-stretch flex h-[160px] items-center justify-center px-[-37.109px] relative shrink-0 w-full" data-name="Container">
                           <BackgroundImage11 additionalClassNames="h-[106px] w-[445.547px]">
                             <IconBackgroundImage5>
                               <g clipPath="url(#clip0_75_3784)" id="Icon">
@@ -1663,10 +1663,10 @@ export default function IntegrateWiseLogoDesign() {
                           <BackgroundImage11 additionalClassNames="h-[106px] w-[445.547px]">
                             <IconBackgroundImage5>
                               <g clipPath="url(#clip0_75_3745)" id="Icon">
-                                <path d={svgPaths.p23113700} fill="var(--fill-0, #4154A3)" id="Vector" />
-                                <path d={svgPaths.p31935bc0} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                                <path d={svgPaths.p27a9f5f1} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                                <path d={svgPaths.p5200780} fill="var(--fill-0, #4154A3)" id="Vector_4" />
+                                <path d={svgPaths.p23113700} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                                <path d={svgPaths.p31935bc0} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                                <path d={svgPaths.p27a9f5f1} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                                <path d={svgPaths.p5200780} fill="var(--fill-0, #1A3A2A)" id="Vector_4" />
                               </g>
                               <defs>
                                 <clipPath id="clip0_75_3745">
@@ -1676,10 +1676,10 @@ export default function IntegrateWiseLogoDesign() {
                             </IconBackgroundImage5>
                             <BackgroundImage12 additionalClassNames="h-[106px]">
                               <BackgroundImage6 additionalClassNames="h-[48px] w-[333.031px]">
-                                <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[48px] left-0 not-italic text-[#4154a3] text-[48px] top-px tracking-[-0.8484px] whitespace-nowrap">IntegrateWise</p>
+                                <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[48px] left-0 not-italic text-[#1a3a2a] text-[48px] top-px tracking-[-0.8484px] whitespace-nowrap">IntegrateWise</p>
                               </BackgroundImage6>
                               <BackgroundImage7 additionalClassNames="flex-[1_0_0] w-[333.031px]">
-                                <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[28px] left-0 not-italic text-[#4154a3] text-[18px] top-0 tracking-[0.0105px] w-[322px]">Knowledge Workspace Empowered by AI and the Spine</p>
+                                <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[28px] left-0 not-italic text-[#1a3a2a] text-[18px] top-0 tracking-[0.0105px] w-[322px]">Knowledge Workspace Empowered by AI and the Spine</p>
                               </BackgroundImage7>
                             </BackgroundImage12>
                           </BackgroundImage11>
@@ -1692,7 +1692,7 @@ export default function IntegrateWiseLogoDesign() {
                         </ContainerBackgroundImage6>
                       </ContainerBackgroundImage9>
                       <ContainerBackgroundImage9 additionalClassNames="left-[794.66px] top-[247px] w-[373.344px]">
-                        <div className="bg-[#4154a3] h-[160px] relative shrink-0 w-full" data-name="Container">
+                        <div className="bg-[#1a3a2a] h-[160px] relative shrink-0 w-full" data-name="Container">
                           <div className="flex flex-row items-center justify-center size-full">
                             <div className="content-stretch flex items-center justify-center pl-[135.141px] pr-[135.156px] relative size-full">
                               <IntegrateWiseLogoBackgroundImage1 additionalClassNames="h-[48px] w-[101.047px]">
@@ -1723,7 +1723,7 @@ export default function IntegrateWiseLogoDesign() {
                   </div>
                   <div className="content-stretch flex flex-col gap-[24px] h-[272px] items-start relative shrink-0 w-full" data-name="Section">
                     <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                      <div className="bg-[#4154a3] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
+                      <div className="bg-[#1a3a2a] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
                       <HeadingBackgroundImageAndText text="Brand Motifs" additionalClassNames="shrink-0 w-[107.344px]" />
                     </div>
                     <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[__106px_minmax(0,1fr)] h-[220px] relative shrink-0 w-full" data-name="Container">
@@ -1749,7 +1749,7 @@ export default function IntegrateWiseLogoDesign() {
                   </div>
                   <div className="content-stretch flex flex-col gap-[24px] h-[322px] items-start relative shrink-0 w-full" data-name="Section">
                     <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                      <div className="bg-[#4154a3] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
+                      <div className="bg-[#1a3a2a] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
                       <HeadingBackgroundImageAndText text="Usage Guidelines" additionalClassNames="shrink-0 w-[146.297px]" />
                     </div>
                     <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(1,minmax(0,1fr))] h-[270px] relative shrink-0 w-full" data-name="Container">
@@ -1777,7 +1777,7 @@ export default function IntegrateWiseLogoDesign() {
                             <IconBackgroundImage2 additionalClassNames="relative shrink-0" />
                           </ContainerBackgroundImage11>
                           <BackgroundImage6 additionalClassNames="h-[20px] w-[36.906px]">
-                            <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#1b2544] text-[14px] top-0 tracking-[-0.1504px] whitespace-nowrap">{`Don't`}</p>
+                            <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#0c0c0c] text-[14px] top-0 tracking-[-0.1504px] whitespace-nowrap">{`Don't`}</p>
                           </BackgroundImage6>
                         </div>
                         <div className="content-stretch flex flex-col gap-[12px] h-[180px] items-start relative shrink-0 w-full" data-name="List">
@@ -1793,11 +1793,11 @@ export default function IntegrateWiseLogoDesign() {
                   </div>
                   <div className="content-stretch flex flex-col gap-[24px] h-[230px] items-start relative shrink-0 w-full" data-name="Section">
                     <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                      <div className="bg-[#4154a3] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
+                      <div className="bg-[#1a3a2a] h-[4px] rounded-[33554400px] shrink-0 w-[48px]" data-name="Container" />
                       <HeadingBackgroundImageAndText text="Overall Design Style" additionalClassNames="shrink-0 w-[168.828px]" />
                     </div>
                     <div className="bg-white h-[146px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
-                      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[14px]" />
+                      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
                       <div className="content-stretch flex flex-col gap-[12px] items-start pb-px pt-[25px] px-[25px] relative size-full">
                         <BackgroundImageAndText text="Enterprise Minimal + Intelligent Systems Aesthetic" />
                         <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(4,minmax(0,1fr))] grid-rows-[repeat(1,minmax(0,1fr))] h-[64px] relative shrink-0 w-full" data-name="Container">

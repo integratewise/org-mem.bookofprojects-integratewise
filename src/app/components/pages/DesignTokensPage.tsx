@@ -448,7 +448,7 @@ export function DesignTokensPage() {
               </span>
               <span
                 className="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full"
-                style={{ background: 'rgba(26,58,42,0.08)', color: 'var(--forest)' }}
+                style={{ background: 'color-mix(in srgb, var(--forest) 8%, transparent)', color: 'var(--forest)' }}
               >
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--forest)' }} />
                 Active
@@ -491,7 +491,7 @@ function TokenCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-xl p-8" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)', boxShadow: '0 1px 4px 0 rgba(12,12,12,0.06)' }}>
+    <div className="rounded-xl p-8" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule)' }}>
       {title && (
         <h3 className="text-base font-semibold mb-6" style={{ color: 'var(--ink)' }}>
           {title}

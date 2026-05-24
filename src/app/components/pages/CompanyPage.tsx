@@ -183,7 +183,7 @@ function TheRoundTrip() {
               style={{ width: 110 }}
             >
               <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-3"
-                   style={{ background: i === 3 ? 'var(--gold)' : 'rgba(244,240,232,0.1)' }}>
+                   style={{ background: i === 3 ? 'var(--gold)' : 'color-mix(in srgb, var(--paper) 10%, transparent)' }}>
                 <Icon className="w-5 h-5" style={{ color: i === 3 ? 'var(--forest)' : 'var(--paper)' }} />
               </div>
               <p className="iw-mono-label mb-1" style={{ color: 'var(--paper)', opacity: 0.9, fontSize: 8 }}>{label}</p>
@@ -198,7 +198,7 @@ function TheRoundTrip() {
 
       {/* Three principles */}
       <div className="grid lg:grid-cols-3 gap-8 pt-10 border-t"
-           style={{ borderColor: 'rgba(244,240,232,0.12)' }}>
+           style={{ borderColor: 'color-mix(in srgb, var(--paper) 12%, transparent)' }}>
         {[
           { heading: 'Persistent Memory',    body: 'The Spine carries full context across every session, every model, every provider. AI never starts cold.' },
           { heading: 'Model Independence',   body: 'Swap providers without losing memory. The Spine owns the context — the model is a variable.' },
@@ -437,7 +437,7 @@ function CTA() {
             href="mailto:hello@integratewise.ai"
             whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
             className="flex items-center gap-2 px-10 py-4 rounded-xl font-semibold"
-            style={{ border: '2px solid rgba(244,240,232,0.35)', color: 'var(--paper)', fontSize: 15 }}
+            style={{ border: '2px solid color-mix(in srgb, var(--paper) 35%, transparent)', color: 'var(--paper)', fontSize: 15 }}
           >
             Request a demo
           </motion.a>

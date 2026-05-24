@@ -353,10 +353,10 @@ function Container() {
           <div className="h-[76px] relative shrink-0 w-[160px]">
             <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 160 76">
               <g clipPath="url(#clip0_12_668)" id="Image (Icon Mark Original)">
-                <path d={svgPaths.pff72670} fill="var(--fill-0, #4154A3)" id="Vector" />
-                <path d={svgPaths.p277b1080} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                <path d={svgPaths.p204e8500} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                <path d={svgPaths.p23a64980} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+                <path d={svgPaths.pff72670} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                <path d={svgPaths.p277b1080} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                <path d={svgPaths.p204e8500} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                <path d={svgPaths.p23a64980} fill="var(--fill-0, #B8943F)" id="Vector_4" />
               </g>
               <defs>
                 <clipPath id="clip0_12_668">
@@ -585,22 +585,22 @@ export default function IntegrateWiseLogoDesign() {
                     <ImageIntegrateWise additionalClassNames="h-[36px]">
                       <div className="absolute inset-[0_6.71%_1.61%_0]" data-name="Vector">
                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 70.668 35.4211">
-                          <path d={svgPaths.p3fd56840} fill="var(--fill-0, #4154A3)" id="Vector" />
+                          <path d={svgPaths.p3fd56840} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                         </svg>
                       </div>
                       <div className="absolute inset-[31.67%_57.15%_1.16%_26.56%]" data-name="Vector">
                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.3397 24.1817">
-                          <path d={svgPaths.p1408e440} fill="var(--fill-0, #4154A3)" id="Vector" />
+                          <path d={svgPaths.p1408e440} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                         </svg>
                       </div>
                       <div className="absolute inset-[0.05%_28.9%_33.02%_54.89%]" data-name="Vector">
                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.2833 24.094">
-                          <path d={svgPaths.p345fdb80} fill="var(--fill-0, #4154A3)" id="Vector" />
+                          <path d={svgPaths.p345fdb80} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                         </svg>
                       </div>
                       <div className="absolute inset-[31.44%_0.4%_32.71%_83.1%]" data-name="Vector">
                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.5018 12.9067">
-                          <path d={svgPaths.pfafeb00} fill="var(--fill-0, #EB4379)" id="Vector" />
+                          <path d={svgPaths.pfafeb00} fill="var(--fill-0, #B8943F)" id="Vector" />
                         </svg>
                       </div>
                     </ImageIntegrateWise>
@@ -621,7 +621,7 @@ export default function IntegrateWiseLogoDesign() {
                       </Icon1>
                       <RootLayoutText text="Overview" additionalClassNames="w-[60.203px]" />
                     </Link>
-                    <Link additionalClassNames="bg-[#4154a3]">
+                    <Link additionalClassNames="bg-[#1a3a2a]">
                       <Wrapper2 additionalClassNames="relative shrink-0">
                         <g clipPath="url(#clip0_12_738)" id="Icon">
                           <path d={svgPaths.p14899500} fill="var(--fill-0, white)" id="Vector" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
@@ -723,7 +723,7 @@ export default function IntegrateWiseLogoDesign() {
                       </div>
                       <div className="content-stretch flex flex-col gap-[24px] h-[914.5px] items-start relative shrink-0 w-full" data-name="Section">
                         <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                          <div className="bg-[#4154a3] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
+                          <div className="bg-[#1a3a2a] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
                           <HeadingText text="Brand Messaging System" additionalClassNames="shrink-0 w-[213.164px]" />
                         </div>
                         <div className="bg-white h-[862.5px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
@@ -876,7 +876,7 @@ export default function IntegrateWiseLogoDesign() {
                         <div className="content-stretch flex h-[28px] items-center justify-between relative shrink-0 w-full" data-name="Container">
                           <div className="h-[28px] relative shrink-0 w-[174.852px]" data-name="Container">
                             <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
-                              <div className="bg-[#4154a3] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
+                              <div className="bg-[#1a3a2a] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
                               <HeadingText text="Logo Variants" additionalClassNames="flex-[1_0_0] min-h-px min-w-px" />
                             </div>
                           </div>
@@ -888,9 +888,9 @@ export default function IntegrateWiseLogoDesign() {
                                 </div>
                               </div>
                               <div className="bg-[rgba(65,84,163,0.1)] h-[26px] relative rounded-[8px] shrink-0 w-[51.297px]" data-name="Button">
-                                <div aria-hidden="true" className="absolute border border-[#4154a3] border-solid inset-0 pointer-events-none rounded-[8px]" />
+                                <div aria-hidden="true" className="absolute border border-[#1a3a2a] border-solid inset-0 pointer-events-none rounded-[8px]" />
                                 <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                                  <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-[26.5px] not-italic text-[#4154a3] text-[12px] text-center top-[6px] whitespace-nowrap">Light</p>
+                                  <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-[26.5px] not-italic text-[#1a3a2a] text-[12px] text-center top-[6px] whitespace-nowrap">Light</p>
                                 </div>
                               </div>
                               <Button3 additionalClassNames="shrink-0 w-[49.094px]">
@@ -918,10 +918,10 @@ export default function IntegrateWiseLogoDesign() {
                                     <div className="h-[64px] relative shrink-0 w-[134.734px]" data-name="Image (IntegrateWise Icon)">
                                       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 134.734 64">
                                         <g clipPath="url(#clip0_12_696)" id="Image (IntegrateWise Icon)">
-                                          <path d={svgPaths.p1cc05700} fill="var(--fill-0, #4154A3)" id="Vector" />
-                                          <path d={svgPaths.p3b5598f0} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                                          <path d={svgPaths.p1fedef00} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                                          <path d={svgPaths.p2ef98000} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+                                          <path d={svgPaths.p1cc05700} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                                          <path d={svgPaths.p3b5598f0} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                                          <path d={svgPaths.p1fedef00} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                                          <path d={svgPaths.p2ef98000} fill="var(--fill-0, #B8943F)" id="Vector_4" />
                                         </g>
                                         <defs>
                                           <clipPath id="clip0_12_696">
@@ -962,10 +962,10 @@ export default function IntegrateWiseLogoDesign() {
                                     <div className="h-[48px] relative shrink-0 w-[101.047px]" data-name="Image (IntegrateWise Icon)">
                                       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 101.047 48">
                                         <g clipPath="url(#clip0_12_728)" id="Image (IntegrateWise Icon)">
-                                          <path d={svgPaths.p256ba1f0} fill="var(--fill-0, #4154A3)" id="Vector" />
-                                          <path d={svgPaths.p229f1000} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                                          <path d={svgPaths.p1e240600} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                                          <path d={svgPaths.p23494800} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+                                          <path d={svgPaths.p256ba1f0} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                                          <path d={svgPaths.p229f1000} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                                          <path d={svgPaths.p1e240600} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                                          <path d={svgPaths.p23494800} fill="var(--fill-0, #B8943F)" id="Vector_4" />
                                         </g>
                                         <defs>
                                           <clipPath id="clip0_12_728">
@@ -1006,22 +1006,22 @@ export default function IntegrateWiseLogoDesign() {
                                     <ImageIntegrateWise additionalClassNames="h-[48px]">
                                       <div className="absolute inset-[0_6.71%_1.61%_0]" data-name="Vector">
                                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 94.2677 47.2281">
-                                          <path d={svgPaths.p2dc1af00} fill="var(--fill-0, #4154A3)" id="Vector" />
+                                          <path d={svgPaths.p2dc1af00} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                                         </svg>
                                       </div>
                                       <div className="absolute inset-[31.67%_57.15%_1.16%_26.56%]" data-name="Vector">
                                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.4605 32.2423">
-                                          <path d={svgPaths.p3d044200} fill="var(--fill-0, #4154A3)" id="Vector" />
+                                          <path d={svgPaths.p3d044200} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                                         </svg>
                                       </div>
                                       <div className="absolute inset-[0.05%_28.9%_33.02%_54.89%]" data-name="Vector">
                                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.3853 32.1253">
-                                          <path d={svgPaths.p363cf00} fill="var(--fill-0, #4154A3)" id="Vector" />
+                                          <path d={svgPaths.p363cf00} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                                         </svg>
                                       </div>
                                       <div className="absolute inset-[31.44%_0.4%_32.71%_83.1%]" data-name="Vector">
                                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.6768 17.2089">
-                                          <path d={svgPaths.p2f3eb100} fill="var(--fill-0, #EB4379)" id="Vector" />
+                                          <path d={svgPaths.p2f3eb100} fill="var(--fill-0, #B8943F)" id="Vector" />
                                         </svg>
                                       </div>
                                     </ImageIntegrateWise>
@@ -1034,7 +1034,7 @@ export default function IntegrateWiseLogoDesign() {
                       </div>
                       <div className="content-stretch flex flex-col gap-[24px] h-[570px] items-start relative shrink-0 w-full" data-name="Section">
                         <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                          <div className="bg-[#4154a3] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
+                          <div className="bg-[#1a3a2a] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
                           <HeadingText text="SVG Source Files" additionalClassNames="shrink-0 w-[142.93px]" />
                         </div>
                         <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(3,minmax(0,1fr))] grid-rows-[repeat(2,minmax(0,1fr))] h-[518px] relative shrink-0 w-full" data-name="Container">
@@ -1110,7 +1110,7 @@ export default function IntegrateWiseLogoDesign() {
                       </div>
                       <div className="content-stretch flex flex-col gap-[24px] h-[190px] items-start relative shrink-0 w-full" data-name="Section">
                         <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                          <div className="bg-[#4154a3] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
+                          <div className="bg-[#1a3a2a] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
                           <HeadingText text="Required Logo Variants" additionalClassNames="shrink-0 w-[194.664px]" />
                         </div>
                         <div className="bg-white h-[138px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
@@ -1118,31 +1118,31 @@ export default function IntegrateWiseLogoDesign() {
                           <div className="content-stretch flex flex-col items-start pb-px pt-[25px] px-[25px] relative size-full">
                             <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(4,minmax(0,1fr))] grid-rows-[repeat(2,minmax(0,1fr))] h-[88px] relative shrink-0 w-full" data-name="Container">
                               <Container5 additionalClassNames="col-1 row-1">
-                                <div className="bg-[#4154a3] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
+                                <div className="bg-[#1a3a2a] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
                                 <ParagraphText2 text="Full Logo Horizontal" additionalClassNames="shrink-0 w-[128.406px]" />
                               </Container5>
                               <Container5 additionalClassNames="col-2 row-1">
-                                <div className="bg-[#4154a3] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
+                                <div className="bg-[#1a3a2a] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
                                 <ParagraphText2 text="Icon Only" additionalClassNames="shrink-0 w-[60.719px]" />
                               </Container5>
                               <Container5 additionalClassNames="col-3 row-1">
-                                <div className="bg-[#4154a3] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
+                                <div className="bg-[#1a3a2a] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
                                 <ParagraphText2 text="Icon in Circle" additionalClassNames="shrink-0 w-[83.398px]" />
                               </Container5>
                               <Container5 additionalClassNames="col-4 row-1">
-                                <div className="bg-[#4154a3] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
+                                <div className="bg-[#1a3a2a] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
                                 <ParagraphText2 text="Monochrome Dark" additionalClassNames="shrink-0 w-[119.109px]" />
                               </Container5>
                               <Container5 additionalClassNames="col-1 row-2">
-                                <div className="bg-[#4154a3] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
+                                <div className="bg-[#1a3a2a] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
                                 <ParagraphText2 text="Monochrome White" additionalClassNames="shrink-0 w-[126.359px]" />
                               </Container5>
                               <Container5 additionalClassNames="col-2 row-2">
-                                <div className="bg-[#4154a3] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
+                                <div className="bg-[#1a3a2a] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
                                 <ParagraphText2 text="Blue-Only" additionalClassNames="shrink-0 w-[64.273px]" />
                               </Container5>
                               <Container5 additionalClassNames="col-3 row-2">
-                                <div className="bg-[#4154a3] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
+                                <div className="bg-[#1a3a2a] rounded-[16777200px] shrink-0 size-[6px]" data-name="Container" />
                                 <ParagraphText2 text="Print-Safe Black" additionalClassNames="shrink-0 w-[104.109px]" />
                               </Container5>
                             </div>
@@ -1151,7 +1151,7 @@ export default function IntegrateWiseLogoDesign() {
                       </div>
                       <div className="content-stretch flex flex-col gap-[24px] h-[272px] items-start relative shrink-0 w-full" data-name="Section">
                         <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                          <div className="bg-[#4154a3] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
+                          <div className="bg-[#1a3a2a] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
                           <HeadingText text="Brand Motifs" additionalClassNames="shrink-0 w-[107.344px]" />
                         </div>
                         <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[__106px_minmax(0,1fr)] h-[220px] relative shrink-0 w-full" data-name="Container">
@@ -1177,7 +1177,7 @@ export default function IntegrateWiseLogoDesign() {
                       </div>
                       <div className="content-stretch flex flex-col gap-[24px] h-[322px] items-start relative shrink-0 w-full" data-name="Section">
                         <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                          <div className="bg-[#4154a3] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
+                          <div className="bg-[#1a3a2a] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
                           <HeadingText text="Usage Guidelines" additionalClassNames="shrink-0 w-[146.297px]" />
                         </div>
                         <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(1,minmax(0,1fr))] h-[270px] relative shrink-0 w-full" data-name="Container">
@@ -1222,7 +1222,7 @@ export default function IntegrateWiseLogoDesign() {
                       </div>
                       <div className="content-stretch flex flex-col gap-[24px] h-[246px] items-start relative shrink-0 w-full" data-name="Section">
                         <div className="content-stretch flex gap-[12px] h-[28px] items-center relative shrink-0 w-full" data-name="Container">
-                          <div className="bg-[#4154a3] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
+                          <div className="bg-[#1a3a2a] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
                           <HeadingText text="Overall Design Style" additionalClassNames="shrink-0 w-[168.828px]" />
                         </div>
                         <div className="bg-white h-[162px] relative rounded-[14px] shrink-0 w-full" data-name="Container">

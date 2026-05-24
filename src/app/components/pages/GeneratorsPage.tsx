@@ -130,6 +130,21 @@ const ColorLogo = ({ size = 48 }: { size?: number }) => (
   </svg>
 );
 
+// Canvas 2D cannot resolve CSS custom properties — use these hex values in ctx calls
+const CANVAS_COLORS = {
+  forest:     '#1A3A2A',
+  forestMid:  '#2D5A3D',
+  forestBright: '#3D7A50',
+  ink:        '#0C0C0C',
+  paper:      '#F4F0E8',
+  paperWarm:  '#EBE5D8',
+  gold:       '#B8943F',
+  inkMuted:   '#5A5550',
+  inkGhost:   '#8A8580',
+  red:        '#8B2020',
+  slate:      '#1A2E4A',
+} as const;
+
 /* ═══════════════════════════════════════
    SHARED HELPERS
    ═══════════════════════════════════════ */
@@ -374,7 +389,7 @@ function AdvancedEditPanel({
                         <img src={state.customImage} alt="" className="w-full h-20 object-cover" />
                         <button onClick={() => set('customImage', null)}
                           className="absolute top-1 right-1 p-1 rounded-full"
-                          style={{ background: 'rgba(12,12,12,0.5)', color: 'var(--paper)' }}>
+                          style={{ background: 'color-mix(in srgb, var(--ink) 50%, transparent)', color: 'var(--paper)' }}>
                           <X className="w-3 h-3" />
                         </button>
                       </div>
@@ -492,23 +507,23 @@ function CampaignKitGenerator({ team, setExportLog }: {
           const canvas = document.createElement('canvas');
           canvas.width = 1128; canvas.height = 191;
           const ctx = canvas.getContext('2d')!;
-          if (styleName === 'dark') { ctx.fillStyle = BRAND.colors.navy; }
+          if (styleName === 'dark') { ctx.fillStyle = CANVAS_COLORS.ink; }
           else {
             const grad = ctx.createLinearGradient(0, 0, 1128, 191);
-            if (styleName === 'gradient') { grad.addColorStop(0, BRAND.colors.primary); grad.addColorStop(0.5, BRAND.colors.primaryDark); grad.addColorStop(1, BRAND.colors.navy); }
-            else if (styleName === 'accent') { grad.addColorStop(0, BRAND.colors.primary); grad.addColorStop(1, BRAND.colors.accent); }
-            else { grad.addColorStop(0, 'var(--paper)'); grad.addColorStop(1, 'var(--rule)'); }
+            if (styleName === 'gradient') { grad.addColorStop(0, CANVAS_COLORS.forest); grad.addColorStop(0.5, CANVAS_COLORS.forestMid); grad.addColorStop(1, CANVAS_COLORS.ink); }
+            else if (styleName === 'accent') { grad.addColorStop(0, CANVAS_COLORS.forest); grad.addColorStop(1, CANVAS_COLORS.gold); }
+            else { grad.addColorStop(0, CANVAS_COLORS.paper); grad.addColorStop(1, CANVAS_COLORS.inkGhost); }
             ctx.fillStyle = grad;
           }
           ctx.fillRect(0, 0, 1128, 191);
-          ctx.fillStyle = styleData.isLight ? 'var(--ink)' : 'var(--paper)';
-          ctx.font = '700 42px system-ui, sans-serif'; ctx.fillText('IntegrateWise', 80, 180);
+          ctx.fillStyle = styleData.isLight ? CANVAS_COLORS.ink : CANVAS_COLORS.paper;
+          ctx.font = '700 42px Bebas Neue, sans-serif'; ctx.fillText('IntegrateWise', 80, 180);
           ctx.globalAlpha = styleData.isLight ? 1 : 0.75;
-          ctx.fillStyle = styleData.isLight ? 'var(--text-muted)' : 'var(--paper)';
-          ctx.font = '400 18px system-ui, sans-serif'; ctx.fillText(BRAND.descriptor, 80, 212);
+          ctx.fillStyle = styleData.isLight ? CANVAS_COLORS.inkMuted : CANVAS_COLORS.paper;
+          ctx.font = '400 18px Instrument Sans, sans-serif'; ctx.fillText(BRAND.descriptor, 80, 212);
           ctx.globalAlpha = styleData.isLight ? 1 : 0.6;
-          ctx.fillStyle = styleData.isLight ? 'var(--forest)' : 'var(--paper)';
-          ctx.font = '400 14px system-ui, sans-serif'; ctx.fillText(BRAND.tagline, 80, 260);
+          ctx.fillStyle = styleData.isLight ? CANVAS_COLORS.forest : CANVAS_COLORS.paper;
+          ctx.font = '400 14px Instrument Sans, sans-serif'; ctx.fillText(BRAND.tagline, 80, 260);
           ctx.globalAlpha = 1;
           const blob = await new Promise<Blob>(r => canvas.toBlob(b => r(b!), 'image/png'));
           f.file(`linkedin-banner-${styleName}.png`, blob);
@@ -523,14 +538,14 @@ function CampaignKitGenerator({ team, setExportLog }: {
             canvas.width = pVal.w; canvas.height = pVal.h;
             const ctx = canvas.getContext('2d')!;
             const grad = ctx.createLinearGradient(0, 0, pVal.w, pVal.h);
-            grad.addColorStop(0, BRAND.colors.primary); grad.addColorStop(1, BRAND.colors.primaryDark);
+            grad.addColorStop(0, CANVAS_COLORS.forest); grad.addColorStop(1, CANVAS_COLORS.forestMid);
             ctx.fillStyle = grad; ctx.fillRect(0, 0, pVal.w, pVal.h);
-            ctx.fillStyle = 'var(--paper)'; ctx.textAlign = 'center';
-            ctx.font = `700 ${pVal.w > 1100 ? 52 : 44}px system-ui, sans-serif`;
+            ctx.fillStyle = CANVAS_COLORS.paper; ctx.textAlign = 'center';
+            ctx.font = `700 ${pVal.w > 1100 ? 52 : 44}px Bebas Neue, sans-serif`;
             ctx.fillText(tmpl.headline, pVal.w / 2, pVal.h / 2 - 20);
-            ctx.globalAlpha = 0.75; ctx.font = `400 ${pVal.w > 1100 ? 20 : 18}px system-ui, sans-serif`;
+            ctx.globalAlpha = 0.75; ctx.font = `400 ${pVal.w > 1100 ? 20 : 18}px Instrument Sans, sans-serif`;
             ctx.fillText(tmpl.subline, pVal.w / 2, pVal.h / 2 + 30);
-            ctx.globalAlpha = 0.4; ctx.font = '400 13px system-ui, sans-serif';
+            ctx.globalAlpha = 0.4; ctx.font = '400 13px Instrument Sans, sans-serif';
             ctx.fillText('integratewise.ai', pVal.w / 2, pVal.h - 30); ctx.globalAlpha = 1;
             const blob = await new Promise<Blob>(r => canvas.toBlob(b => r(b!), 'image/png'));
             f.file(`${pKey}-${tmpl.id}.png`, blob);
@@ -654,15 +669,15 @@ function LinkedInBannerGenerator({ setExportLog }: { setExportLog: React.Dispatc
       for (const [sn, sd] of Object.entries(BANNER_STYLES)) {
         const canvas = document.createElement('canvas'); canvas.width = 1128; canvas.height = 191;
         const ctx = canvas.getContext('2d')!;
-        if (sn === 'dark') { ctx.fillStyle = BRAND.colors.navy; }
-        else { const g = ctx.createLinearGradient(0,0,1128,191); if(sn==='gradient'){g.addColorStop(0,BRAND.colors.primary);g.addColorStop(.5,BRAND.colors.primaryDark);g.addColorStop(1,BRAND.colors.navy)}else if(sn==='accent'){g.addColorStop(0,BRAND.colors.primary);g.addColorStop(1,BRAND.colors.accent)}else{g.addColorStop(0,'var(--paper)');g.addColorStop(1,'var(--rule)')}ctx.fillStyle=g; }
+        if (sn === 'dark') { ctx.fillStyle = CANVAS_COLORS.ink; }
+        else { const g = ctx.createLinearGradient(0,0,1128,191); if(sn==='gradient'){g.addColorStop(0,CANVAS_COLORS.forest);g.addColorStop(.5,CANVAS_COLORS.forestMid);g.addColorStop(1,CANVAS_COLORS.ink)}else if(sn==='accent'){g.addColorStop(0,CANVAS_COLORS.forest);g.addColorStop(1,CANVAS_COLORS.gold)}else{g.addColorStop(0,CANVAS_COLORS.paper);g.addColorStop(1,CANVAS_COLORS.inkGhost)}ctx.fillStyle=g; }
         ctx.fillRect(0,0,1128,191);
-        ctx.fillStyle = sd.isLight ? 'var(--ink)' : 'var(--paper)';
-        ctx.font = '700 42px system-ui'; ctx.fillText(editTitle, 80, 180);
-        ctx.globalAlpha = sd.isLight ? 1 : .75; ctx.fillStyle = sd.isLight ? 'var(--text-muted)' : 'var(--paper)';
-        ctx.font = '400 18px system-ui'; ctx.fillText(editSubtitle, 80, 212);
-        ctx.globalAlpha = sd.isLight ? 1 : .6; ctx.fillStyle = sd.isLight ? 'var(--forest)' : 'var(--paper)';
-        ctx.font = '400 14px system-ui'; ctx.fillText(editTagline, 80, 260); ctx.globalAlpha = 1;
+        ctx.fillStyle = sd.isLight ? CANVAS_COLORS.ink : CANVAS_COLORS.paper;
+        ctx.font = '700 42px Bebas Neue, sans-serif'; ctx.fillText(editTitle, 80, 180);
+        ctx.globalAlpha = sd.isLight ? 1 : .75; ctx.fillStyle = sd.isLight ? CANVAS_COLORS.inkMuted : CANVAS_COLORS.paper;
+        ctx.font = '400 18px Instrument Sans, sans-serif'; ctx.fillText(editSubtitle, 80, 212);
+        ctx.globalAlpha = sd.isLight ? 1 : .6; ctx.fillStyle = sd.isLight ? CANVAS_COLORS.forest : CANVAS_COLORS.paper;
+        ctx.font = '400 14px Instrument Sans, sans-serif'; ctx.fillText(editTagline, 80, 260); ctx.globalAlpha = 1;
         const blob = await new Promise<Blob>(r => canvas.toBlob(b => r(b!), 'image/png'));
         zip.file(`linkedin-banner-${sn}.png`, blob);
       }
@@ -837,18 +852,18 @@ function SocialPostGenerator({ setExportLog }: { setExportLog: React.Dispatch<Re
         const canvas = document.createElement('canvas'); canvas.width = pVal.w; canvas.height = pVal.h;
         const ctx = canvas.getContext('2d')!;
         const g = ctx.createLinearGradient(0, 0, pVal.w, pVal.h);
-        g.addColorStop(0, BRAND.colors.primary); g.addColorStop(1, BRAND.colors.primaryDark);
+        g.addColorStop(0, CANVAS_COLORS.forest); g.addColorStop(1, CANVAS_COLORS.forestMid);
         ctx.fillStyle = g; ctx.fillRect(0, 0, pVal.w, pVal.h);
-        ctx.fillStyle = 'var(--paper)'; ctx.textAlign = 'center';
-        ctx.font = `700 ${pVal.w > 1100 ? 52 : 44}px system-ui`;
+        ctx.fillStyle = CANVAS_COLORS.paper; ctx.textAlign = 'center';
+        ctx.font = `700 ${pVal.w > 1100 ? 52 : 44}px Bebas Neue, sans-serif`;
         ctx.fillText(headline, pVal.w / 2, pVal.h / 2 - 20);
-        ctx.globalAlpha = .75; ctx.font = `400 ${pVal.w > 1100 ? 20 : 18}px system-ui`;
+        ctx.globalAlpha = .75; ctx.font = `400 ${pVal.w > 1100 ? 20 : 18}px Instrument Sans, sans-serif`;
         // wrap text
         const words = subline.split(' '); let lines: string[] = []; let cur = '';
         for (const w of words) { if (ctx.measureText(cur + w).width > pVal.w - 160) { lines.push(cur.trim()); cur = w + ' '; } else cur += w + ' '; }
         if (cur.trim()) lines.push(cur.trim());
         lines.forEach((l, i) => ctx.fillText(l, pVal.w / 2, pVal.h / 2 + 30 + i * 28));
-        ctx.globalAlpha = .4; ctx.font = '400 13px system-ui';
+        ctx.globalAlpha = .4; ctx.font = '400 13px Instrument Sans, sans-serif';
         ctx.fillText('integratewise.ai', pVal.w / 2, pVal.h - 30); ctx.globalAlpha = 1;
         const blob = await new Promise<Blob>(r => canvas.toBlob(b => r(b!), 'image/png'));
         zip.file(`${pKey}-${tmpl.id}.png`, blob);
@@ -1217,7 +1232,7 @@ export function GeneratorsPage() {
                 : { background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }
               }>
               <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: activeTool === tool.id ? 'rgba(244,240,232,0.15)' : `color-mix(in srgb, ${tool.color} 12%, transparent)` }}>
+                style={{ background: activeTool === tool.id ? 'color-mix(in srgb, var(--paper) 15%, transparent)' : `color-mix(in srgb, ${tool.color} 12%, transparent)` }}>
                 <tool.icon className="w-4 h-4" style={{ color: activeTool === tool.id ? 'var(--paper)' : tool.color }} />
               </div>
               <div className="flex-1 min-w-0">
@@ -1225,7 +1240,7 @@ export function GeneratorsPage() {
                   <p className="text-sm font-medium truncate">{tool.label}</p>
                   {tool.badge && (
                     <span className="text-xs font-bold px-1.5 py-0.5 rounded-full"
-                      style={{ background: activeTool === tool.id ? 'rgba(244,240,232,0.25)' : 'var(--accent-color)', color: 'var(--paper)' }}>
+                      style={{ background: activeTool === tool.id ? 'color-mix(in srgb, var(--paper) 25%, transparent)' : 'var(--accent-color)', color: 'var(--paper)' }}>
                       {tool.badge}
                     </span>
                   )}

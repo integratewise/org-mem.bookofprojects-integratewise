@@ -82,12 +82,12 @@ function generateSealSVG() {
   <rect width="1200" height="1200" fill="#ffffff" />
   <circle cx="600" cy="600" r="420" fill="none" stroke="url(#sealGradient)" stroke-width="28" />
   <circle cx="600" cy="600" r="350" fill="none" stroke="var(--accent-color)" stroke-width="10" stroke-dasharray="12 18" />
-  <text x="600" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="8" fill="var(--primary-color)">INTEGRATEWISE LLP</text>
-  <text x="600" y="870" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="600" letter-spacing="6" fill="var(--primary-color)">OFFICIAL SEAL</text>
+  <text x="600" y="360" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="44" font-weight="700" letter-spacing="8" fill="var(--primary-color)">INTEGRATEWISE LLP</text>
+  <text x="600" y="870" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="38" font-weight="600" letter-spacing="6" fill="var(--primary-color)">OFFICIAL SEAL</text>
   <circle cx="600" cy="600" r="180" fill="url(#sealGradient)" opacity="0.1" />
-  <text x="600" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="70" font-weight="700" fill="var(--text-color)">IW</text>
-  <text x="600" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#636A82">${TAGLINES.split.top}</text>
-  <text x="600" y="675" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#636A82">${TAGLINES.split.bottom}</text>
+  <text x="600" y="560" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="70" font-weight="700" fill="var(--text-color)">IW</text>
+  <text x="600" y="635" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="26" font-weight="600" fill="#5A5550">${TAGLINES.split.top}</text>
+  <text x="600" y="675" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="26" font-weight="600" fill="#5A5550">${TAGLINES.split.bottom}</text>
 </svg>`.trim();
 }
 
@@ -702,7 +702,7 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
                 </div>
 
                 {/* Preview */}
-                <div ref={previewRef} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div ref={previewRef} className="bg-[var(--paper)] shadow-lg rounded-lg overflow-hidden">
                   <PreviewContent id={item.id} content={content} />
                 </div>
               </div>
@@ -751,13 +751,13 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
   switch (id) {
     case 'letterhead':
       return (
-        <div className="w-[800px] h-[1131px] p-12 bg-white relative">
+        <div className="w-[800px] h-[1131px] p-12 bg-[var(--paper)] relative">
           <div className="flex justify-between items-start pb-4 border-b-2" style={{ borderColor: brandColor }}>
             <div>
               <h1 className="text-3xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
-              <p className="text-sm text-[#636A82] mt-1">{content.tagline}</p>
+              <p className="text-sm text-[#5A5550] mt-1">{content.tagline}</p>
             </div>
-            <div className="text-right text-xs text-[#636A82]">
+            <div className="text-right text-xs text-[#5A5550]">
               {content.companyDetails?.split('\n').map((line) => (
                 <p key={line}>{line}</p>
               ))}
@@ -782,11 +782,11 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
     
     case 'notepad':
       return (
-        <div className="w-[520px] h-[740px] p-8 bg-white">
+        <div className="w-[520px] h-[740px] p-8 bg-[var(--paper)]">
           <div className="flex justify-between items-start pb-6 border-b-2" style={{ borderColor: brandColor }}>
             <div>
               <h1 className="text-2xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
-              <p className="text-xs text-[#636A82]">{content.tagline}</p>
+              <p className="text-xs text-[#5A5550]">{content.tagline}</p>
             </div>
           </div>
           <div className="mt-8 space-y-3">
@@ -820,10 +820,10 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'sticker':
       return (
-        <div className="w-[600px] h-[600px] bg-white rounded-full flex items-center justify-center border-4" style={{ borderColor: brandColor }}>
+        <div className="w-[600px] h-[600px] bg-[var(--paper)] rounded-full flex items-center justify-center border-4" style={{ borderColor: brandColor }}>
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4" style={{ color: brandColor }}>{content.companyName}</h2>
-            <p className="text-sm text-[#636A82] mb-4">{content.tagline}</p>
+            <p className="text-sm text-[#5A5550] mb-4">{content.tagline}</p>
             <p className="text-lg font-semibold text-[var(--text-color)]">{content.stickerText}</p>
           </div>
         </div>
@@ -831,10 +831,10 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'memo':
       return (
-        <div className="w-[800px] h-[1131px] p-12 bg-white">
+        <div className="w-[800px] h-[1131px] p-12 bg-[var(--paper)]">
           <div className="border-b-2 pb-6" style={{ borderColor: brandColor }}>
             <h1 className="text-2xl font-bold" style={{ color: brandColor }}>MEMORANDUM</h1>
-            <p className="text-sm text-[#636A82]">{content.companyName}</p>
+            <p className="text-sm text-[#5A5550]">{content.companyName}</p>
           </div>
           <div className="mt-8 space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -882,7 +882,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'fax-cover':
       return (
-        <div className="w-[800px] h-[1131px] p-12 bg-white">
+        <div className="w-[800px] h-[1131px] p-12 bg-[var(--paper)]">
           <div className="border-b-4 pb-6" style={{ borderColor: content.brandColor || 'var(--primary-color)' }}>
             <h1 className="text-3xl font-bold" style={{ color: content.brandColor || 'var(--primary-color)' }}>FAX TRANSMISSION COVER SHEET</h1>
           </div>
@@ -914,7 +914,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
                 <tr>
                   <td colSpan={2} className="pt-4">
                     <p className="text-sm font-semibold text-[var(--text-color)] mb-2">Message:</p>
-                    <p className="text-sm text-[#636A82]">{content.message}</p>
+                    <p className="text-sm text-[#5A5550]">{content.message}</p>
                   </td>
                 </tr>
               </tbody>
@@ -989,7 +989,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'invoice':
       return (
-        <div className="w-[600px] bg-white p-10" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <div className="w-[600px] bg-[var(--paper)] p-10" style={{ fontFamily: 'Instrument Sans, sans-serif' }}>
           {/* Header */}
           <div className="flex justify-between items-start mb-8">
             <div>
@@ -1057,41 +1057,41 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'proposal':
       return (
-        <div className="w-[800px] h-[1131px] p-12 bg-white relative">
+        <div className="w-[800px] h-[1131px] p-12 bg-[var(--paper)] relative">
           <div className="flex justify-between items-start pb-4 border-b-2" style={{ borderColor: brandColor }}>
             <h1 className="text-3xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
-            <p className="text-xs text-[#636A82] mt-1">{content.tagline}</p>
+            <p className="text-xs text-[#5A5550] mt-1">{content.tagline}</p>
           </div>
           <div className="mt-10 space-y-6 text-[#333944]">
             <h2 className="text-2xl font-semibold">{content.proposalTitle}</h2>
             <p className="text-sm">Prepared for: <strong>{content.preparedFor}</strong></p>
             <p className="text-sm">Date: {content.proposalDate} | Valid: {content.validUntil}</p>
-            <div><p className="text-xs font-bold uppercase text-[#636A82] mb-1">Summary</p><p className="text-sm">{content.summary}</p></div>
-            <div><p className="text-xs font-bold uppercase text-[#636A82] mb-1">Scope</p><p className="text-sm">{content.scope}</p></div>
-            <div><p className="text-xs font-bold uppercase text-[#636A82] mb-1">Timeline</p><p className="text-sm">{content.timeline}</p></div>
+            <div><p className="text-xs font-bold uppercase text-[#5A5550] mb-1">Summary</p><p className="text-sm">{content.summary}</p></div>
+            <div><p className="text-xs font-bold uppercase text-[#5A5550] mb-1">Scope</p><p className="text-sm">{content.scope}</p></div>
+            <div><p className="text-xs font-bold uppercase text-[#5A5550] mb-1">Timeline</p><p className="text-sm">{content.timeline}</p></div>
           </div>
         </div>
       );
 
     case 'seal':
       return (
-        <div className="w-[400px] h-[400px] bg-white flex items-center justify-center">
+        <div className="w-[400px] h-[400px] bg-[var(--paper)] flex items-center justify-center">
           <svg viewBox="0 0 400 400" className="w-[360px] h-[360px]">
             <circle cx="200" cy="200" r="170" fill="none" stroke="#1A3A2A" strokeWidth="10"/>
             <circle cx="200" cy="200" r="140" fill="none" stroke="#B8943F" strokeWidth="4" strokeDasharray="8 12"/>
-            <text x="200" y="118" textAnchor="middle" fontFamily="Arial" fontSize="15" fontWeight="700" letterSpacing="4" fill="#1A3A2A">{content.companyName}</text>
-            <text x="200" y="290" textAnchor="middle" fontFamily="Arial" fontSize="13" fontWeight="600" letterSpacing="3" fill="#1A3A2A">{content.label}</text>
+            <text x="200" y="118" textAnchor="middle" fontFamily="Instrument Sans" fontSize="15" fontWeight="700" letterSpacing="4" fill="#1A3A2A">{content.companyName}</text>
+            <text x="200" y="290" textAnchor="middle" fontFamily="Instrument Sans" fontSize="13" fontWeight="600" letterSpacing="3" fill="#1A3A2A">{content.label}</text>
             <circle cx="200" cy="200" r="70" fill="#1A3A2A" opacity="0.08"/>
-            <text x="200" y="187" textAnchor="middle" fontFamily="Arial" fontSize="36" fontWeight="700" fill="#0C0C0C">{content.initials}</text>
-            <text x="200" y="214" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#636A82">{content.taglineTop}</text>
-            <text x="200" y="228" textAnchor="middle" fontFamily="Arial" fontSize="10" fill="#636A82">{content.taglineBottom}</text>
+            <text x="200" y="187" textAnchor="middle" fontFamily="Instrument Sans" fontSize="36" fontWeight="700" fill="#0C0C0C">{content.initials}</text>
+            <text x="200" y="214" textAnchor="middle" fontFamily="Instrument Sans" fontSize="10" fill="#5A5550">{content.taglineTop}</text>
+            <text x="200" y="228" textAnchor="middle" fontFamily="Instrument Sans" fontSize="10" fill="#5A5550">{content.taglineBottom}</text>
           </svg>
         </div>
       );
 
     case 'business-card':
       return (
-        <div className="w-[340px] h-[212px] p-5 flex flex-col justify-between" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+        <div className="w-[340px] h-[212px] p-5 flex flex-col justify-between" style={{ background: '#F4F0E8', fontFamily: 'Instrument Sans, sans-serif' }}>
           <div>
             <p className="text-xl font-black tracking-widest" style={{ color: '#1A3A2A', fontFamily: '"Bebas Neue", "Arial Black", sans-serif' }}>{content.companyName}</p>
             <p className="text-xs mt-1 font-medium" style={{ color: '#0C0C0C' }}>{content.personName}</p>
@@ -1108,8 +1108,8 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'email-signature':
       return (
-        <div className="w-[600px] bg-white p-4">
-          <div style={{ borderLeft: '4px solid #B8943F', paddingLeft: '16px', fontFamily: 'Arial, sans-serif' }}>
+        <div className="w-[600px] bg-[var(--paper)] p-4">
+          <div style={{ borderLeft: '4px solid #B8943F', paddingLeft: '16px', fontFamily: 'Instrument Sans, sans-serif' }}>
             <p className="text-sm font-bold" style={{ color: '#1A3A2A' }}>{content.personName}</p>
             <p className="text-xs" style={{ color: '#2A4A6A' }}>{content.personTitle}</p>
             <p className="text-xs" style={{ color: '#0C0C0C' }}>{content.companyName}</p>
@@ -1124,14 +1124,14 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'document-cover':
       return (
-        <div className="w-[400px] h-[565px] flex flex-col overflow-hidden" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <div className="w-[400px] h-[565px] flex flex-col overflow-hidden" style={{ fontFamily: 'Instrument Sans, sans-serif' }}>
           {/* Top third — forest */}
           <div className="flex-shrink-0 flex flex-col justify-center px-10 py-8" style={{ background: '#1A3A2A', height: '188px' }}>
             <p className="text-2xl font-black tracking-widest" style={{ color: '#F4F0E8', fontFamily: '"Bebas Neue", "Arial Black", sans-serif' }}>{content.companyName}</p>
             <p className="text-xs mt-2" style={{ color: '#B8943F' }}>{content.tagline}</p>
           </div>
           {/* Lower two thirds — white */}
-          <div className="flex-1 bg-white px-10 py-8 flex flex-col justify-between">
+          <div className="flex-1 bg-[var(--paper)] px-10 py-8 flex flex-col justify-between">
             <div>
               <p className="text-xs uppercase tracking-widest mb-2" style={{ color: '#2A4A6A' }}>{content.documentType}</p>
               <h2 className="text-xl font-bold leading-snug mb-3" style={{ color: '#0C0C0C', fontFamily: '"DM Serif Display", Georgia, serif' }}>{content.documentTitle}</h2>
@@ -1144,7 +1144,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'envelope':
       return (
-        <div className="w-[560px] h-[400px] relative flex flex-col justify-between overflow-hidden" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+        <div className="w-[560px] h-[400px] relative flex flex-col justify-between overflow-hidden" style={{ background: '#F4F0E8', fontFamily: 'Instrument Sans, sans-serif' }}>
           {/* Return address top-left */}
           <div className="p-8">
             <p className="text-xs font-bold" style={{ color: '#1A3A2A' }}>{content.companyName}</p>
@@ -1171,7 +1171,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'memo':
       return (
-        <div className="w-[600px] p-10" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+        <div className="w-[600px] p-10" style={{ background: '#F4F0E8', fontFamily: 'Instrument Sans, sans-serif' }}>
           <div className="flex justify-between items-start pb-4 mb-6" style={{ borderBottom: '2px solid #1A3A2A' }}>
             <p className="text-lg font-black tracking-widest" style={{ color: '#1A3A2A', fontFamily: '"Bebas Neue", Arial, sans-serif' }}>{content.companyName}</p>
             <p className="text-xs uppercase tracking-widest font-bold" style={{ color: '#B8943F' }}>MEMORANDUM</p>
@@ -1192,7 +1192,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'report-cover':
       return (
-        <div className="w-[400px] h-[565px] flex flex-col" style={{ fontFamily: 'Arial, sans-serif', background: '#F4F0E8' }}>
+        <div className="w-[400px] h-[565px] flex flex-col" style={{ fontFamily: 'Instrument Sans, sans-serif', background: '#F4F0E8' }}>
           <div className="flex-1 flex flex-col justify-end px-10 pb-10 pt-16" style={{ background: '#1A3A2A' }}>
             <p className="text-3xl font-black tracking-widest mb-3" style={{ color: '#F4F0E8', fontFamily: '"Bebas Neue", Arial, sans-serif' }}>{content.reportTitle}</p>
             <p className="text-sm" style={{ color: '#B8943F' }}>{content.reportSubtitle}</p>
@@ -1206,7 +1206,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'fax-cover':
       return (
-        <div className="w-[600px] p-10" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+        <div className="w-[600px] p-10" style={{ background: '#F4F0E8', fontFamily: 'Instrument Sans, sans-serif' }}>
           <div className="flex justify-between items-start pb-4 mb-6" style={{ borderBottom: '2px solid #1A3A2A' }}>
             <p className="text-lg font-black tracking-widest" style={{ color: '#1A3A2A', fontFamily: '"Bebas Neue", Arial, sans-serif' }}>{content.senderCompany}</p>
             <p className="text-xs uppercase tracking-widest font-bold" style={{ color: '#B8943F' }}>FAX COVER SHEET</p>
@@ -1228,7 +1228,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'notepad':
       return (
-        <div className="w-[400px] h-[565px] flex flex-col" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+        <div className="w-[400px] h-[565px] flex flex-col" style={{ background: '#F4F0E8', fontFamily: 'Instrument Sans, sans-serif' }}>
           <div className="px-8 py-5 flex items-center justify-between" style={{ borderBottom: '2px solid #1A3A2A' }}>
             <p className="text-base font-black tracking-widest" style={{ color: '#1A3A2A', fontFamily: '"Bebas Neue", Arial, sans-serif' }}>{content.companyName}</p>
             <p className="text-xs font-mono" style={{ color: '#B8943F' }}>{content.tagline}</p>
@@ -1246,7 +1246,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'folder':
       return (
-        <div className="w-[560px] h-[420px] relative" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <div className="w-[560px] h-[420px] relative" style={{ fontFamily: 'Instrument Sans, sans-serif' }}>
           <div className="absolute inset-0 rounded-br-xl rounded-bl-xl rounded-tr-xl" style={{ background: '#1A3A2A' }} />
           <div className="absolute top-0 left-0 w-32 h-8 rounded-tl-xl rounded-tr-xl" style={{ background: '#2D5A3D' }} />
           <div className="absolute inset-0 flex flex-col justify-end p-10">
@@ -1259,7 +1259,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'sticker':
       return (
-        <div className="flex gap-6 flex-wrap p-8" style={{ background: '#F4F0E8', fontFamily: 'Arial, sans-serif' }}>
+        <div className="flex gap-6 flex-wrap p-8" style={{ background: '#F4F0E8', fontFamily: 'Instrument Sans, sans-serif' }}>
           {[{ w: 120, h: 120, round: '50%', label: 'Round' }, { w: 160, h: 60, round: '8px', label: 'Banner' }, { w: 100, h: 100, round: '12px', label: 'Square' }].map(({ w, h, round, label }) => (
             <div key={label} className="flex flex-col items-center gap-2">
               <div className="flex items-center justify-center" style={{ width: w, height: h, borderRadius: round, background: '#1A3A2A' }}>
@@ -1306,9 +1306,9 @@ ${body}
   <div style="display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:16px;border-bottom:2px solid ${forest};">
     <div>
       <h1 style="margin:0;font-size:28px;font-weight:700;color:${forest};">${content.companyName}</h1>
-      <p style="margin:4px 0 0;font-size:12px;color:#636A82;">${content.tagline}</p>
+      <p style="margin:4px 0 0;font-size:12px;color:#5A5550;">${content.tagline}</p>
     </div>
-    <div style="text-align:right;font-size:11px;color:#636A82;line-height:1.6;">
+    <div style="text-align:right;font-size:11px;color:#5A5550;line-height:1.6;">
       ${(content.companyDetails || '').split('\n').map(l => `<span style="display:block;">${l}</span>`).join('')}
     </div>
   </div>
@@ -1625,9 +1625,9 @@ function StationeryCard({ item }: { item: StationeryItem }) {
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(0,0,0,0.1)" }}
+        whileHover={{ y: -4, boxShadow: "0 12px 40px color-mix(in srgb, var(--ink) 10%, transparent)" }}
         className="rounded-xl border border-[var(--border-base)] overflow-hidden"
-        style={{ background: 'var(--surface-raised)', boxShadow: '0 1px 4px rgba(12,12,12,0.06)' }}
+        style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}
       >
         <div className="h-40 bg-[var(--surface)] flex items-center justify-center p-4">
           <div className="scale-50 origin-center">

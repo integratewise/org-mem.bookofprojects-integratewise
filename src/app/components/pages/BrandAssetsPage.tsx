@@ -57,9 +57,8 @@ const checkerboardStyle: React.CSSProperties = {
 };
 
 const raisedPanelStyle: React.CSSProperties = {
-  background: 'var(--surface-raised)',
-  border: '1px solid var(--border-subtle)',
-  boxShadow: 'var(--shadow-sm)',
+  background: 'var(--paper-warm)',
+  border: '1px solid var(--rule)',
 };
 
 const softPanelStyle: React.CSSProperties = {
@@ -68,9 +67,8 @@ const softPanelStyle: React.CSSProperties = {
 };
 
 const heroPanelStyle: React.CSSProperties = {
-  background: 'linear-gradient(135deg, var(--surface) 0%, var(--primary-soft) 58%, var(--accent-soft) 100%)',
-  border: '1px solid var(--border-subtle)',
-  boxShadow: 'var(--shadow-md)',
+  background: 'var(--paper-warm)',
+  border: '1px solid var(--rule)',
 };
 
 const getCanvasStyle = (
@@ -88,22 +86,21 @@ const getCanvasStyle = (
     case 'light':
     case 'white':
     default:
-      return { background: 'var(--surface-raised)' };
+      return { background: 'var(--paper)' };
   }
 };
 
 const getSelectionButtonStyle = (active: boolean): React.CSSProperties =>
   active
     ? {
-        background: 'var(--primary-soft)',
-        color: 'var(--primary-hover)',
-        border: '1px solid color-mix(in srgb, var(--primary-color) 18%, var(--paper))',
-        boxShadow: 'var(--shadow-sm)',
+        background: 'var(--forest)',
+        color: 'var(--paper)',
+        border: '1px solid var(--forest)',
       }
     : {
-        background: 'var(--surface-raised)',
+        background: 'transparent',
         color: 'var(--text-muted)',
-        border: '1px solid var(--border-subtle)',
+        border: '1px solid var(--rule-light)',
       };
 
 /* ── Preview Modal ── */
@@ -167,9 +164,8 @@ function PreviewModal({
       <div
         className="relative w-[90vw] max-w-4xl max-h-[90vh] flex flex-col overflow-hidden rounded-2xl"
         style={{
-          background: 'var(--surface-raised)',
-          border: '1px solid var(--border-subtle)',
-          boxShadow: 'var(--shadow-2xl)',
+          background: 'var(--paper-warm)',
+          border: '1px solid var(--rule)',
         }}
       >
         {/* Header */}
@@ -186,8 +182,7 @@ function PreviewModal({
                 className="w-6 h-6 rounded-md transition-colors"
                 style={{
                   ...getCanvasStyle(bg),
-                  border: previewBg === bg ? '2px solid var(--primary-color)' : '1px solid var(--border-subtle)',
-                  boxShadow: previewBg === bg ? 'var(--shadow-sm)' : 'none',
+                  border: previewBg === bg ? '2px solid var(--forest)' : '1px solid var(--rule-light)',
                 }}
                 title={bg.charAt(0).toUpperCase() + bg.slice(1)}
               />
@@ -221,10 +216,9 @@ function PreviewModal({
               disabled={isDownloading}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors"
               style={{
-                background: isDownloading ? 'var(--surface-2)' : 'var(--primary-color)',
-                color: isDownloading ? 'var(--text-muted)' : 'var(--text-inverse)',
-                border: isDownloading ? '1px solid var(--border-subtle)' : '1px solid var(--primary-color)',
-                boxShadow: 'var(--shadow-sm)',
+                background: isDownloading ? 'var(--paper-deep)' : 'var(--forest)',
+                color: isDownloading ? 'var(--ink-muted)' : 'var(--paper)',
+                border: isDownloading ? '1px solid var(--rule-light)' : '1px solid var(--forest)',
               }}
             >
               <Download className="w-3.5 h-3.5" /> 
@@ -242,7 +236,7 @@ function PreviewModal({
         {/* Canvas Area */}
         <div
           className="flex-1 overflow-auto flex items-center justify-center p-12 min-h-[400px]"
-          style={{ background: 'linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%)' }}
+          style={{ background: 'var(--paper-warm)' }}
         >
           <div style={{ transform: `scale(${zoom})`, transformOrigin: 'center', transition: 'transform 0.2s ease' }}>
             <div
@@ -282,9 +276,9 @@ function ExportDropdown({ label, onExport }: { label: string; onExport: (format:
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors hover:bg-[var(--surface)]"
         style={{
-          background: 'var(--surface)',
+          background: 'transparent',
           color: 'var(--text-muted)',
-          border: '1px solid var(--border-subtle)',
+          border: '1px solid var(--rule-light)',
         }}
       >
         <Download className="w-3.5 h-3.5" /> Export <ChevronDown className="w-3 h-3" />
@@ -295,9 +289,8 @@ function ExportDropdown({ label, onExport }: { label: string; onExport: (format:
           <div
             className="absolute right-0 top-full mt-1 z-20 rounded-lg py-1 w-48"
             style={{
-              background: 'var(--surface-raised)',
-              border: '1px solid var(--border-subtle)',
-              boxShadow: 'var(--shadow-lg)',
+              background: 'var(--paper-warm)',
+              border: '1px solid var(--rule)',
             }}
           >
             {formats.map((fmt) => (
@@ -429,7 +422,7 @@ export function BrandAssetsPage() {
   }, []);
 
   return (
-    <div className="p-6 lg:p-10 max-w-7xl mx-auto space-y-10">
+    <div className="p-6 lg:p-10 max-w-7xl mx-auto space-y-16">
       {/* Advanced Asset Editor Modal */}
       <AdvancedAssetEditor open={showAdvancedEditor} onClose={() => setShowAdvancedEditor(false)} />
       
@@ -442,61 +435,66 @@ export function BrandAssetsPage() {
         {previewItem?.content}
       </PreviewModal>
 
-      {/* Page header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h2 className="text-2xl font-serif" style={{ color: 'var(--ink)' }}>Brand Assets</h2>
-          <p className="mt-1" style={{ color: 'var(--text-muted)' }}>
-            Canonical mark system, lighter brand language, descriptor usage, and runtime-safe brand assets
-          </p>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-2">
-          <button
-            onClick={() => setShowAdvancedEditor(true)}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-[var(--paper)] transition-all shadow-sm hover:shadow"
-            style={{ background: 'linear-gradient(135deg, var(--primary-color), var(--accent-color))' }}
-          >
-            <Sparkles className="w-4 h-4" />
-            Advanced Editor
-          </button>
-          <button
-            onClick={handleDownloadAll}
-            disabled={isDownloadingAll}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all shadow-sm hover:shadow"
-            style={{ 
-              background: isDownloadingAll ? 'var(--slate-mid)' : 'var(--surface-raised)',
-              color: isDownloadingAll ? 'var(--text-inverse)' : 'var(--ink)',
-              border: isDownloadingAll ? 'none' : '1px solid var(--rule-light)'
-            }}
-          >
-            <Download className="w-4 h-4" />
-            {isDownloadingAll ? 'Zipping Assets...' : 'Download Full Kit (.zip)'}
-          </button>
+      {/* Page header — editorial hero */}
+      <div className="pt-6 pb-4">
+        <p className="iw-label mb-4 flex items-center gap-3">
+          <span style={{ display: 'inline-block', width: 32, height: 1, background: 'var(--gold)' }} />
+          IntegrateWise · Brand System
+        </p>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <h1 className="font-serif mb-4" style={{ fontSize: 'clamp(36px, 5vw, 64px)', lineHeight: 1.05, color: 'var(--ink)', letterSpacing: '0.01em' }}>
+              Brand Assets
+            </h1>
+            <p className="iw-body" style={{ color: 'var(--text-muted)' }}>
+              Canonical mark system, lighter brand language, descriptor usage, and runtime-safe brand assets.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+            <button
+              onClick={() => setShowAdvancedEditor(true)}
+              className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-colors"
+              style={{ background: 'var(--forest)', color: 'var(--paper)' }}
+            >
+              <Sparkles className="w-4 h-4" />
+              Advanced Editor
+            </button>
+            <button
+              onClick={handleDownloadAll}
+              disabled={isDownloadingAll}
+              className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-colors"
+              style={{ 
+                background: isDownloadingAll ? 'var(--slate-mid)' : 'transparent',
+                color: isDownloadingAll ? 'var(--paper)' : 'var(--forest)',
+                border: isDownloadingAll ? 'none' : '2px solid var(--forest)'
+              }}
+            >
+              <Download className="w-4 h-4" />
+              {isDownloadingAll ? 'Zipping Assets...' : 'Download Full Kit'}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Feature Highlight Card */}
-      <div className="relative overflow-hidden rounded-2xl p-6 lg:p-8" style={{ 
-        background: 'linear-gradient(135deg, var(--surface) 0%, var(--primary-soft) 55%, var(--accent-soft) 100%)',
-        border: '1px solid var(--border-subtle)' 
-      }}>
+      {/* Feature Highlight — editorial */}
+      <div className="rounded-xl p-6 lg:p-8" style={{ border: '1px solid var(--rule)' }}>
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
           <div className="flex-shrink-0">
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, var(--forest), var(--gold))' }}>
-              <Sparkles className="w-8 h-8 text-[var(--paper)]" />
+            <div className="w-14 h-14 rounded-xl flex items-center justify-center" style={{ background: 'var(--forest)' }}>
+              <Sparkles className="w-7 h-7" style={{ color: 'var(--paper)' }} />
             </div>
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-serif" style={{ color: 'var(--ink)' }}>Advanced Asset Editor Now Available</h3>
-            <p className="text-sm mb-3" style={{ color: 'var(--text-muted)' }}>
+            <h3 className="iw-s-title" style={{ color: 'var(--ink)' }}>Advanced Asset Editor Now Available</h3>
+            <p className="iw-body mt-2 mb-3" style={{ color: 'var(--text-muted)', fontSize: 'var(--text-sm)' }}>
               Create canonical lighter-system brand assets with adjustable layouts, governed descriptor usage, and export workflows across social, documentation, and print formats.
             </p>
             <div className="flex flex-wrap gap-2">
-              {['Custom Colors', 'Gradients & Effects', 'Batch Export', 'Social Media Presets'].map((feature) => (
+              {['Custom Colors', 'Effects & Layouts', 'Batch Export', 'Social Presets'].map((feature) => (
                 <span
                   key={feature}
-                  className="px-3 py-1 rounded-full text-xs font-medium"
-                  style={{ background: 'color-mix(in srgb, var(--gold) 12%, transparent)', color: 'var(--forest)' }}
+                  className="iw-mono-label px-2.5 py-1"
+                  style={{ background: 'color-mix(in srgb, var(--gold) 10%, transparent)', color: 'var(--forest)' }}
                 >
                   {feature}
                 </span>
@@ -505,8 +503,8 @@ export function BrandAssetsPage() {
           </div>
           <button
             onClick={() => setShowAdvancedEditor(true)}
-            className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-[var(--paper)] transition-all shadow-sm hover:shadow-lg whitespace-nowrap"
-            style={{ background: 'linear-gradient(135deg, var(--forest), var(--gold))' }}
+            className="flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap"
+            style={{ background: 'var(--forest)', color: 'var(--paper)' }}
           >
             <Settings className="w-4 h-4" />
             Open Editor
@@ -514,19 +512,18 @@ export function BrandAssetsPage() {
         </div>
       </div>
 
-      <div className="rounded-xl p-5" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+      <div className="rounded-xl p-5" style={{ border: '1px solid var(--rule)' }}>
         <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>Canonical asset rule</p>
         <p className="text-sm mt-2" style={{ color: 'var(--text-muted)' }}>Historical SVG source exports may still preserve earlier palette references, but all live-rendered brand assets and runtime-facing surfaces should use the current lighter documentation system and the descriptor "Adaptive continuity workspace hydrated by the Spine."</p>
       </div>
 
       {/* Asset Studio */}
-      <section className="space-y-6">
-        <div className="flex items-center gap-3">
-          <div className="h-1 w-12 rounded-full" style={{ background: 'var(--forest)' }} />
-          <h3 className="text-lg font-serif" style={{ color: 'var(--ink)' }}>Interactive Brand Studio</h3>
-        </div>
+      <section className="space-y-6 pt-4">
+        <p className="iw-label mb-2">Interactive Tools</p>
+        <h2 className="iw-doctrine mb-2">Brand Studio</h2>
+        <p className="iw-body mb-6" style={{ color: 'var(--text-muted)' }}>Customize, preview, and export logo variants with real-time controls.</p>
         
-        <div className="rounded-xl overflow-hidden shadow-sm" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--rule)' }}>
           <div className="flex flex-col lg:flex-row">
             {/* Controls */}
             <div className="w-full lg:w-80 p-6 space-y-6" style={{ borderRight: '1px solid var(--paper-deep)', background: 'var(--paper-warm)' }}>
@@ -542,7 +539,8 @@ export function BrandAssetsPage() {
                     <button
                       key={variant}
                       onClick={() => setStudioVariant(variant)}
-                      className={`text-left px-3 py-2 rounded-md text-sm transition-colors ${studioVariant === variant ? 'bg-[var(--primary-color)] text-[var(--paper)]' : 'bg-[var(--surface-raised)] text-[var(--text-color)] border border-[var(--border-subtle)] hover:bg-[var(--surface)]'}`}
+                      className={`text-left px-3 py-2 rounded-md text-sm transition-colors ${studioVariant === variant ? 'font-medium' : 'border hover:bg-[var(--paper-deep)]'}`}
+                      style={studioVariant === variant ? { background: 'var(--forest)', color: 'var(--paper)' } : { borderColor: 'var(--rule-light)', color: 'var(--ink)' }}
                     >
                       {variant === 'full' ? 'Full Layout' : variant === 'compact' ? 'Compact' : 'Icon Only'}
                     </button>
@@ -564,7 +562,8 @@ export function BrandAssetsPage() {
                     <button
                       key={theme.id}
                       onClick={() => setStudioColor(theme.id as any)}
-                      className={`text-left px-2 py-1.5 rounded-md text-xs transition-colors ${studioColor === theme.id ? 'bg-[var(--primary-color)] text-[var(--paper)]' : 'bg-[var(--surface-raised)] text-[var(--text-color)] border border-[var(--border-subtle)] hover:bg-[var(--surface)]'}`}
+                      className={`text-left px-2 py-1.5 rounded-md text-xs transition-colors ${studioColor === theme.id ? 'font-medium' : 'border hover:bg-[var(--paper-deep)]'}`}
+                      style={studioColor === theme.id ? { background: 'var(--forest)', color: 'var(--paper)' } : { borderColor: 'var(--rule-light)', color: 'var(--ink)' }}
                     >
                       {theme.label}
                     </button>
@@ -579,7 +578,7 @@ export function BrandAssetsPage() {
                     <button
                       key={bg}
                       onClick={() => setStudioBg(bg)}
-                      className="w-8 h-8 rounded-md transition-all shadow-sm"
+                      className="w-8 h-8 rounded-md transition-all"
                       style={{
                         border: studioBg === bg ? '2px solid var(--forest)' : '1px solid var(--rule-light)',
                         background:
@@ -644,13 +643,12 @@ export function BrandAssetsPage() {
       </section>
 
       {/* Brand Messaging System */}
-      <section className="space-y-6">
-        <div className="flex items-center gap-3">
-          <div className="h-1 w-12 rounded-full" style={{ background: 'var(--forest)' }} />
-          <h3 className="text-lg font-serif" style={{ color: 'var(--ink)' }}>Brand Messaging System</h3>
-        </div>
+      <section className="space-y-6 pt-4">
+        <p className="iw-label mb-2">Messaging</p>
+        <h2 className="iw-doctrine mb-2">Brand Messaging System</h2>
+        <p className="iw-body mb-6" style={{ color: 'var(--text-muted)' }}>Approved copy, taglines, and descriptors for every surface.</p>
 
-        <div className="rounded-xl p-6 lg:p-8 space-y-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+        <div className="rounded-xl p-6 lg:p-8 space-y-6" style={{ border: '1px solid var(--rule)' }}>
           <div className="grid lg:grid-cols-2 gap-8">
             <div>
               <p className="text-xs tracking-wide mb-2" style={{ color: 'var(--text-muted)' }}>PRIMARY PRODUCT DESCRIPTION</p>
@@ -729,7 +727,7 @@ export function BrandAssetsPage() {
 
           <div className="pt-6" style={{ borderTop: '1px solid var(--rule-light)' }}>
             <p className="text-xs tracking-wide mb-2" style={{ color: 'var(--text-muted)' }}>PRODUCT ESSENCE (FOR MARKETING, DECKS, COMPANY DOCS)</p>
-            <div className="p-4 rounded-lg" style={{ background: 'linear-gradient(135deg, var(--surface) 0%, var(--accent-soft) 100%)', border: '1px solid var(--border-subtle)' }}>
+            <div className="p-4 rounded-lg" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule)' }}>
               <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
                 IntegrateWise is a knowledge workspace where the Spine becomes the single source
                 of truth and AI operates on top of that context — thinking, proposing, and
@@ -753,11 +751,11 @@ export function BrandAssetsPage() {
       </div>
 
       {/* Logo Variants */}
-      <section className="space-y-6">
+      <section className="space-y-6 pt-4">
         <div className="flex items-center justify-between flex-wrap gap-4">
-          <div className="flex items-center gap-3">
-            <div className="h-1 w-12 rounded-full" style={{ background: 'var(--forest)' }} />
-            <h3 className="text-lg font-serif" style={{ color: 'var(--ink)' }}>Logo Variants</h3>
+          <div>
+            <p className="iw-label mb-2">Marks</p>
+            <h2 className="iw-doctrine">Logo Variants</h2>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>Background:</span>
@@ -769,7 +767,7 @@ export function BrandAssetsPage() {
                 style={
                   bgMode === mode
                     ? { border: '1px solid var(--primary-color)', background: 'var(--primary-soft)', color: 'var(--primary-color)' }
-                    : { border: '1px solid var(--rule-light)', background: 'var(--surface-raised)', color: 'var(--slate)' }
+                    : { border: '1px solid var(--rule-light)', background: 'transparent', color: 'var(--ink-muted)' }
                 }
               >
                 {mode === 'light' ? 'White' : mode === 'grey' ? 'Grey' : 'Dark'}
@@ -780,7 +778,7 @@ export function BrandAssetsPage() {
 
         <div className="grid gap-6">
           {LOGO_VARIANTS.map((v) => (
-            <div key={v.variant} className="rounded-xl overflow-hidden" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+            <div key={v.variant} className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--rule)' }}>
               <div className="px-6 py-3 flex items-center justify-between" style={{ borderBottom: '1px solid var(--paper-deep)' }}>
                 <div>
                   <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>{v.label}</p>
@@ -820,14 +818,13 @@ export function BrandAssetsPage() {
       </section>
 
       {/* SVG Source Files */}
-      <section className="space-y-6">
-        <div className="flex items-center gap-3">
-          <div className="h-1 w-12 rounded-full" style={{ background: 'var(--forest)' }} />
-          <h3 className="text-lg font-serif" style={{ color: 'var(--ink)' }}>SVG Source Files</h3>
-        </div>
+      <section className="space-y-6 pt-4">
+        <p className="iw-label mb-2">Source Files</p>
+        <h2 className="iw-doctrine mb-2">SVG Source Files</h2>
+        <p className="iw-body mb-6" style={{ color: 'var(--text-muted)' }}>Original vector exports for design tooling and print production.</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SVG_SOURCE_ASSETS.map((asset) => (
-            <div key={asset.name} className="rounded-xl overflow-hidden group" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+            <div key={asset.name} className="rounded-xl overflow-hidden group" style={{ border: '1px solid var(--rule)' }}>
               <div
                 className="flex items-center justify-center p-6 h-44 transition-colors duration-200"
                 style={{
@@ -880,11 +877,10 @@ export function BrandAssetsPage() {
       </section>
 
       {/* Brand Motifs */}
-      <section className="space-y-6">
-        <div className="flex items-center gap-3">
-          <div className="h-1 w-12 rounded-full" style={{ background: 'var(--forest)' }} />
-          <h3 className="text-lg font-serif" style={{ color: 'var(--ink)' }}>Brand Motifs</h3>
-        </div>
+      <section className="space-y-6 pt-4">
+        <p className="iw-label mb-2">Visual Language</p>
+        <h2 className="iw-doctrine mb-2">Brand Motifs</h2>
+        <p className="iw-body mb-6" style={{ color: 'var(--text-muted)' }}>Recurring visual elements that carry the brand identity across surfaces.</p>
         <div className="grid sm:grid-cols-2 gap-6">
           {[
             { name: 'Spine Node Line', desc: 'Connected circles and lines inspired by the logo symbol. Used for backgrounds and decorative elements.' },
@@ -892,7 +888,7 @@ export function BrandAssetsPage() {
             { name: 'Context Card', desc: 'Soft-edged box representing structured knowledge/context blocks.' },
             { name: 'Layer Bands', desc: 'Subtle layered strips suggesting workspace, intelligence, and governance layers.' },
           ].map((motif) => (
-            <div key={motif.name} className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+            <div key={motif.name} className="rounded-xl p-6" style={{ border: '1px solid var(--rule)' }}>
               <h4 className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>{motif.name}</h4>
               <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{motif.desc}</p>
             </div>
@@ -901,13 +897,12 @@ export function BrandAssetsPage() {
       </section>
 
       {/* Usage Guidelines */}
-      <section className="space-y-6">
-        <div className="flex items-center gap-3">
-          <div className="h-1 w-12 rounded-full" style={{ background: 'var(--forest)' }} />
-          <h3 className="text-lg font-serif" style={{ color: 'var(--ink)' }}>Usage Guidelines</h3>
-        </div>
+      <section className="space-y-6 pt-4">
+        <p className="iw-label mb-2">Governance</p>
+        <h2 className="iw-doctrine mb-2">Usage Guidelines</h2>
+        <p className="iw-body mb-6" style={{ color: 'var(--text-muted)' }}>Rules that keep the brand consistent across every touchpoint.</p>
         <div className="grid sm:grid-cols-2 gap-6">
-          <div className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+          <div className="rounded-xl p-6" style={{ border: '1px solid var(--rule)' }}>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--forest-bright) 12%, transparent)' }}>
                 <Check className="w-4 h-4" style={{ color: 'var(--forest-bright)' }} />
@@ -930,10 +925,10 @@ export function BrandAssetsPage() {
               ))}
             </ul>
           </div>
-          <div className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+          <div className="rounded-xl p-6" style={{ border: '1px solid var(--rule)' }}>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--red) 10%, transparent)' }}>
-                <X className="w-4 h-4" style={{ color: 'var(--gold)' }} />
+              <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: 'var(--red-pale)' }}>
+                <X className="w-4 h-4" style={{ color: 'var(--red)' }} />
               </div>
               <h4 className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>Don't</h4>
             </div>
@@ -957,12 +952,11 @@ export function BrandAssetsPage() {
       </section>
 
       {/* Design Style */}
-      <section className="space-y-6 pb-8">
-        <div className="flex items-center gap-3">
-          <div className="h-1 w-12 rounded-full" style={{ background: 'var(--forest)' }} />
-          <h3 className="text-lg font-serif" style={{ color: 'var(--ink)' }}>Overall Design Style</h3>
-        </div>
-        <div className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+      <section className="space-y-6 pt-4 pb-8">
+        <p className="iw-label mb-2">Principles</p>
+        <h2 className="iw-doctrine mb-2">Overall Design Style</h2>
+        <p className="iw-body mb-6" style={{ color: 'var(--text-muted)' }}>The character of the brand expressed in visual terms.</p>
+        <div className="rounded-xl p-6" style={{ border: '1px solid var(--rule)' }}>
           <p className="text-sm font-semibold mb-3" style={{ color: 'var(--ink)' }}>Enterprise Minimal + Intelligent Systems Aesthetic</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
@@ -971,7 +965,7 @@ export function BrandAssetsPage() {
               { feel: 'Structured intelligence system', not: 'Not crowded marketing layouts' },
               { feel: 'Human-governed AI', not: 'Not generic tech templates' },
             ].map((item, i) => (
-              <div key={i} className="p-3 rounded-lg" style={{ background: 'var(--paper-warm)' }}>
+              <div key={i} className="p-3 rounded-lg" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}>
                 <p className="text-sm flex items-center gap-1.5" style={{ color: 'var(--ink)' }}>
                   <Check className="w-3.5 h-3.5" style={{ color: 'var(--forest-bright)' }} />{item.feel}
                 </p>
@@ -993,11 +987,11 @@ function MessagingCard({ label, text, highlight }: { label: string; text: string
       className="p-4 rounded-lg"
       style={
         highlight
-          ? { border: '1px solid color-mix(in srgb, var(--gold) 35%, transparent)', background: 'color-mix(in srgb, var(--gold) 10%, transparent)' }
-          : { border: '1px solid var(--paper-deep)', background: 'var(--surface-raised)' }
+          ? { border: '1px solid var(--gold)', background: 'var(--gold-pale)' }
+          : { border: '1px solid var(--rule-light)', background: 'var(--paper-warm)' }
       }
     >
-      <p className="text-xs font-medium mb-1" style={{ color: 'var(--text-muted)' }}>{label}</p>
+      <p className="iw-mono-label mb-2">{label}</p>
       <p className={`text-sm ${highlight ? 'font-semibold' : ''}`} style={{ color: 'var(--ink)' }}>{text}</p>
     </div>
   );

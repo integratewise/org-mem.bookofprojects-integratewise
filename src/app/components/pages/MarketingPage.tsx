@@ -319,7 +319,7 @@ function LinkedInPostCard({ post, index }: { post: typeof CONTENT_LIBRARY.linked
       {/* LinkedIn preview modal */}
       {showPreview && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-6"
-             style={{ background: 'rgba(12,12,12,0.55)' }}
+             style={{ background: 'color-mix(in srgb, var(--ink) 55%, transparent)' }}
              onClick={() => setShowPreview(false)}>
           <div className="w-full max-w-lg rounded-2xl overflow-hidden"
                style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule)', boxShadow: 'var(--shadow-2xl)' }}

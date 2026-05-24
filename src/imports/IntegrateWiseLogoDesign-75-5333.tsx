@@ -7,7 +7,7 @@ type ContainerBackgroundImage10Props = {
 function ContainerBackgroundImage10({ children, additionalClassNames = "" }: React.PropsWithChildren<ContainerBackgroundImage10Props>) {
   return (
     <div className={clsx("h-[120px] relative rounded-[4px] shrink-0 w-[200px]", additionalClassNames)}>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[4px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[4px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)]" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pb-px pt-[17px] px-[17px] relative size-full">{children}</div>
     </div>
   );
@@ -38,7 +38,7 @@ function StationeryCardBackgroundImage({ children, additionalClassNames = "" }: 
   return (
     <div className={clsx("bg-white justify-self-stretch relative rounded-[14px] self-stretch shrink-0", additionalClassNames)}>
       <div className="overflow-clip relative rounded-[inherit] size-full">{children}</div>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[14px]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
     </div>
   );
 }
@@ -48,9 +48,9 @@ type ContainerBackgroundImage8Props = {
 
 function ContainerBackgroundImage8({ children, additionalClassNames = "" }: React.PropsWithChildren<ContainerBackgroundImage8Props>) {
   return (
-    <div className={clsx("absolute bg-[#f0f2f7] left-[25px] rounded-[10px] w-[522px]", additionalClassNames)}>
+    <div className={clsx("absolute bg-[#EBE5D8] left-[25px] rounded-[10px] w-[522px]", additionalClassNames)}>
       <div className="content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[inherit] size-full">{children}</div>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[10px]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[10px]" />
     </div>
   );
 }
@@ -80,7 +80,7 @@ type ButtonBackgroundImageProps = {
 function ButtonBackgroundImage({ children, additionalClassNames = "" }: React.PropsWithChildren<ButtonBackgroundImageProps>) {
   return (
     <div className={clsx("bg-white h-[38px] relative rounded-[10px] shrink-0", additionalClassNames)}>
-      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[10px]" />
+      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[10px]" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">{children}</div>
     </div>
   );
@@ -230,10 +230,10 @@ function ImageBackgroundImage2({ additionalClassNames = "" }: ImageBackgroundIma
     <div className={clsx("absolute h-[32px] w-[67.359px]", additionalClassNames)}>
       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 67.3594 32">
         <g clipPath="url(#clip0_75_5363)" id="Image">
-          <path d={svgPaths.pd4e1400} fill="var(--fill-0, #4154A3)" id="Vector" />
-          <path d={svgPaths.pfb64370} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-          <path d={svgPaths.p4f86300} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-          <path d={svgPaths.p37df1b00} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+          <path d={svgPaths.pd4e1400} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+          <path d={svgPaths.pfb64370} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+          <path d={svgPaths.p4f86300} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+          <path d={svgPaths.p37df1b00} fill="var(--fill-0, #B8943F)" id="Vector_4" />
         </g>
         <defs>
           <clipPath id="clip0_75_5363">
@@ -260,10 +260,10 @@ function ImageBackgroundImage1() {
   return (
     <BackgroundImage1 additionalClassNames="absolute left-[22.74px] top-[33.6px]">
       <g clipPath="url(#clip0_75_5443)" id="Image">
-        <path d={svgPaths.pbda0380} fill="var(--fill-0, #4154A3)" id="Vector" />
-        <path d={svgPaths.p14c63f00} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-        <path d={svgPaths.p3e884c80} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-        <path d={svgPaths.p2616e600} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+        <path d={svgPaths.pbda0380} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+        <path d={svgPaths.p14c63f00} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+        <path d={svgPaths.p3e884c80} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+        <path d={svgPaths.p2616e600} fill="var(--fill-0, #B8943F)" id="Vector_4" />
       </g>
       <defs>
         <clipPath id="clip0_75_5443">
@@ -337,7 +337,7 @@ type ParagraphBackgroundImageAndText4Props = {
 function ParagraphBackgroundImageAndText4({ text }: ParagraphBackgroundImageAndText4Props) {
   return (
     <div className="h-[10.5px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[10.5px] left-0 not-italic text-[#1b2544] text-[7px] top-0 tracking-[0.2301px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[10.5px] left-0 not-italic text-[#0c0c0c] text-[7px] top-0 tracking-[0.2301px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -445,10 +445,10 @@ function ImageBackgroundImage() {
     <div className="h-[20px] relative shrink-0 w-[42.094px]">
       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 42.0938 20">
         <g id="Image">
-          <path d={svgPaths.p38422300} fill="var(--fill-0, #4154A3)" id="Vector" />
-          <path d={svgPaths.p34cf7080} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-          <path d={svgPaths.p15e8c900} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-          <path d={svgPaths.p11a14800} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+          <path d={svgPaths.p38422300} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+          <path d={svgPaths.p34cf7080} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+          <path d={svgPaths.p15e8c900} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+          <path d={svgPaths.p11a14800} fill="var(--fill-0, #B8943F)" id="Vector_4" />
         </g>
       </svg>
     </div>
@@ -508,7 +508,7 @@ type BackgroundImageAndText1Props = {
 function BackgroundImageAndText1({ text }: BackgroundImageAndText1Props) {
   return (
     <div className="h-[20px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#1b2544] text-[14px] top-0 tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#0c0c0c] text-[14px] top-0 tracking-[-0.1504px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -520,7 +520,7 @@ type BackgroundImageAndTextProps = {
 function BackgroundImageAndText({ text, additionalClassNames = "" }: BackgroundImageAndTextProps) {
   return (
     <div className={clsx("absolute h-[20px] left-0 top-0", additionalClassNames)}>
-      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#1b2544] text-[14px] top-0 tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#0c0c0c] text-[14px] top-0 tracking-[-0.1504px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -530,7 +530,7 @@ export default function IntegrateWiseLogoDesign() {
     <div className="bg-white relative size-full" data-name="IntegrateWise Logo Design">
       <div className="absolute bg-[#edf0f5] content-stretch flex h-[895px] items-start left-0 overflow-clip top-0 w-[1551px]" data-name="RootLayout">
         <div className="bg-white h-[895px] relative shrink-0 w-[288px]" data-name="Sidebar">
-          <div aria-hidden="true" className="absolute border-[#d5dae5] border-r border-solid inset-0 pointer-events-none" />
+          <div aria-hidden="true" className="absolute border-[#D8D0C0] border-r border-solid inset-0 pointer-events-none" />
           <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pr-px relative size-full">
             <div className="h-[64px] relative shrink-0 w-[287px]" data-name="Container">
               <div aria-hidden="true" className="absolute border-[#e8ecf2] border-b border-solid inset-0 pointer-events-none" />
@@ -540,22 +540,22 @@ export default function IntegrateWiseLogoDesign() {
                     <div className="bg-clip-padding border-0 border-[transparent] border-solid overflow-clip relative rounded-[inherit] size-full">
                       <div className="absolute inset-[0_6.71%_1.61%_0]" data-name="Vector">
                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 70.668 35.4211">
-                          <path d={svgPaths.p3fd56840} fill="var(--fill-0, #4154A3)" id="Vector" />
+                          <path d={svgPaths.p3fd56840} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                         </svg>
                       </div>
                       <div className="absolute inset-[31.67%_57.15%_1.16%_26.56%]" data-name="Vector">
                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.3397 24.1817">
-                          <path d={svgPaths.p1408e440} fill="var(--fill-0, #4154A3)" id="Vector" />
+                          <path d={svgPaths.p1408e440} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                         </svg>
                       </div>
                       <div className="absolute inset-[0.05%_28.9%_33.02%_54.89%]" data-name="Vector">
                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.2833 24.094">
-                          <path d={svgPaths.p345fdb80} fill="var(--fill-0, #4154A3)" id="Vector" />
+                          <path d={svgPaths.p345fdb80} fill="var(--fill-0, #1A3A2A)" id="Vector" />
                         </svg>
                       </div>
                       <div className="absolute inset-[31.44%_0.4%_32.71%_83.1%]" data-name="Vector">
                         <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.5018 12.9067">
-                          <path d={svgPaths.pfafeb00} fill="var(--fill-0, #EB4379)" id="Vector" />
+                          <path d={svgPaths.pfafeb00} fill="var(--fill-0, #B8943F)" id="Vector" />
                         </svg>
                       </div>
                     </div>
@@ -609,7 +609,7 @@ export default function IntegrateWiseLogoDesign() {
                     </IconBackgroundImage>
                     <NavLinkBackgroundImageAndText text="Design Tokens" additionalClassNames="w-[94.172px]" />
                   </LinkBackgroundImage>
-                  <LinkBackgroundImage additionalClassNames="bg-[#4154a3]">
+                  <LinkBackgroundImage additionalClassNames="bg-[#1a3a2a]">
                     <IconBackgroundImage>
                       <path d="M4.16667 18.3333H15.8333" id="Vector" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
                       <path d={svgPaths.p2a47df00} id="Vector_2" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
@@ -666,11 +666,11 @@ export default function IntegrateWiseLogoDesign() {
         <div className="flex-[1263_0_0] h-[895px] min-h-px min-w-px relative" data-name="Container">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
             <div className="bg-white h-[64px] relative shrink-0 w-[1263px]" data-name="Header">
-              <div aria-hidden="true" className="absolute border-[#d5dae5] border-b border-solid inset-0 pointer-events-none" />
+              <div aria-hidden="true" className="absolute border-[#D8D0C0] border-b border-solid inset-0 pointer-events-none" />
               <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-px pl-[24px] relative size-full">
                 <div className="h-[28px] relative shrink-0 w-[87.406px]" data-name="Heading 1">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                    <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[28px] left-0 not-italic text-[#1b2544] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">Stationery</p>
+                    <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[28px] left-0 not-italic text-[#0c0c0c] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">Stationery</p>
                   </div>
                 </div>
               </div>
@@ -681,7 +681,7 @@ export default function IntegrateWiseLogoDesign() {
                   <div className="content-stretch flex flex-col gap-[32px] items-start pt-[40px] px-[40px] relative size-full">
                     <div className="content-stretch flex flex-col gap-[4px] h-[60px] items-start relative shrink-0 w-full" data-name="Container">
                       <div className="h-[32px] relative shrink-0 w-full" data-name="Heading 2">
-                        <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-0 not-italic text-[#1b2544] text-[24px] top-0 tracking-[0.0703px] whitespace-nowrap">Corporate Stationery</p>
+                        <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-0 not-italic text-[#0c0c0c] text-[24px] top-0 tracking-[0.0703px] whitespace-nowrap">Corporate Stationery</p>
                       </div>
                       <div className="h-[24px] relative shrink-0 w-full" data-name="Paragraph">
                         <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[24px] left-0 not-italic text-[#7b8aad] text-[16px] top-0 tracking-[-0.3125px] whitespace-nowrap">Official documents, identity materials, and digital assets for IntegrateWise LLP</p>
@@ -705,10 +705,10 @@ export default function IntegrateWiseLogoDesign() {
                                 <div className="h-[40px] relative shrink-0 w-[84.203px]" data-name="Image (IntegrateWise)">
                                   <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 84.2031 40">
                                     <g clipPath="url(#clip0_75_5430)" id="Image (IntegrateWise)">
-                                      <path d={svgPaths.p2bbfb180} fill="var(--fill-0, #4154A3)" id="Vector" />
-                                      <path d={svgPaths.p205b7980} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                                      <path d={svgPaths.p1d277100} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                                      <path d={svgPaths.p8fa3f80} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+                                      <path d={svgPaths.p2bbfb180} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                                      <path d={svgPaths.p205b7980} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                                      <path d={svgPaths.p1d277100} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                                      <path d={svgPaths.p8fa3f80} fill="var(--fill-0, #B8943F)" id="Vector_4" />
                                     </g>
                                     <defs>
                                       <clipPath id="clip0_75_5430">
@@ -720,7 +720,7 @@ export default function IntegrateWiseLogoDesign() {
                                 <div className="h-[127px] relative shrink-0 w-[333.406px]" data-name="Container">
                                   <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
                                     <div className="absolute h-[24px] left-0 top-0 w-[333.406px]" data-name="Paragraph">
-                                      <p className="-translate-x-full absolute font-['Inter:Medium',sans-serif] font-medium leading-[24px] left-[333.59px] not-italic text-[#1b2544] text-[16px] text-right top-0 tracking-[-0.3125px] whitespace-nowrap">IntegrateWise LLP</p>
+                                      <p className="-translate-x-full absolute font-['Inter:Medium',sans-serif] font-medium leading-[24px] left-[333.59px] not-italic text-[#0c0c0c] text-[16px] text-right top-0 tracking-[-0.3125px] whitespace-nowrap">IntegrateWise LLP</p>
                                     </div>
                                     <div className="absolute h-[19.5px] left-0 top-[24px] w-[333.406px]" data-name="Paragraph">
                                       <p className="-translate-x-full absolute font-['Inter:Regular',sans-serif] font-normal leading-[19.5px] left-[334px] not-italic text-[#5f6e93] text-[13px] text-right top-0 tracking-[-0.0762px] whitespace-nowrap">Knowledge Workspace Empowered by AI and the Spine</p>
@@ -742,15 +742,15 @@ export default function IntegrateWiseLogoDesign() {
                                   </div>
                                 </div>
                               </div>
-                              <div className="bg-[#4154a3] h-[1.5px] opacity-60 rounded-[33554400px] shrink-0 w-full" data-name="Container" />
+                              <div className="bg-[#1a3a2a] h-[1.5px] opacity-60 rounded-[33554400px] shrink-0 w-full" data-name="Container" />
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[14px]" />
+                      <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
                     </div>
                     <div className="content-stretch flex gap-[8px] h-[38px] items-center relative shrink-0 w-full" data-name="Container">
-                      <div className="bg-[#4154a3] h-[36px] relative rounded-[10px] shrink-0 w-[48.734px]" data-name="Button">
+                      <div className="bg-[#1a3a2a] h-[36px] relative rounded-[10px] shrink-0 w-[48.734px]" data-name="Button">
                         <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
                           <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-[24.5px] not-italic text-[14px] text-center text-white top-[8px] tracking-[-0.1504px] whitespace-nowrap">All</p>
                         </div>
@@ -771,11 +771,11 @@ export default function IntegrateWiseLogoDesign() {
                           <ContainerBackgroundImage7 additionalClassNames="h-[74.5px] w-[472.844px]">
                             <ContainerBackgroundImage6>
                               <IconBackgroundImage>
-                                <path d={svgPaths.p3713e00} id="Vector" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d={svgPaths.pd2076c0} id="Vector_2" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d="M8.33333 7.5H6.66667" id="Vector_3" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d="M13.3333 10.8333H6.66667" id="Vector_4" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d="M13.3333 14.1667H6.66667" id="Vector_5" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.p3713e00} id="Vector" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.pd2076c0} id="Vector_2" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d="M8.33333 7.5H6.66667" id="Vector_3" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d="M13.3333 10.8333H6.66667" id="Vector_4" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d="M13.3333 14.1667H6.66667" id="Vector_5" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
                               </IconBackgroundImage>
                             </ContainerBackgroundImage6>
                             <BackgroundImage3 additionalClassNames="h-[74.5px]">
@@ -796,7 +796,7 @@ export default function IntegrateWiseLogoDesign() {
                                 <div className="h-[37.75px] relative shrink-0 w-[192.813px]" data-name="Container">
                                   <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
                                     <div className="absolute h-[13px] left-0 top-0 w-[192.813px]" data-name="Paragraph">
-                                      <p className="-translate-x-full absolute font-['Inter:Medium',sans-serif] font-medium leading-[13px] left-[193.25px] not-italic text-[#1b2544] text-[8px] text-right top-0 tracking-[0.2057px] whitespace-nowrap">IntegrateWise LLP</p>
+                                      <p className="-translate-x-full absolute font-['Inter:Medium',sans-serif] font-medium leading-[13px] left-[193.25px] not-italic text-[#0c0c0c] text-[8px] text-right top-0 tracking-[0.2057px] whitespace-nowrap">IntegrateWise LLP</p>
                                     </div>
                                     <div className="absolute h-[11.375px] left-0 top-[13px] w-[192.813px]" data-name="Paragraph">
                                       <p className="-translate-x-full absolute font-['Inter:Regular',sans-serif] font-normal leading-[11.375px] left-[193px] not-italic text-[#7b8aad] text-[7px] text-right top-0 tracking-[0.2301px] whitespace-nowrap">Knowledge Workspace Empowered by AI and the Spine</p>
@@ -807,15 +807,15 @@ export default function IntegrateWiseLogoDesign() {
                                   </div>
                                 </div>
                               </div>
-                              <div className="absolute bg-[#4154a3] h-px left-[24px] opacity-60 top-[69.75px] w-[272px]" data-name="Container" />
+                              <div className="absolute bg-[#1a3a2a] h-px left-[24px] opacity-60 top-[69.75px] w-[272px]" data-name="Container" />
                               <div className="absolute h-[94px] left-[24px] top-[86.75px] w-[272px]" data-name="Container">
-                                <div className="absolute bg-[#d5dae5] h-[6px] left-0 rounded-[4px] top-0 w-[90.656px]" data-name="Container" />
-                                <div className="absolute bg-[#d5dae5] h-[6px] left-0 rounded-[4px] top-[14px] w-[272px]" data-name="Container" />
-                                <div className="absolute bg-[#d5dae5] h-[6px] left-0 rounded-[4px] top-[28px] w-[272px]" data-name="Container" />
-                                <div className="absolute bg-[#d5dae5] h-[6px] left-0 rounded-[4px] top-[42px] w-[217.594px]" data-name="Container" />
-                                <div className="absolute bg-[#d5dae5] h-[6px] left-0 rounded-[4px] top-[60px] w-[272px]" data-name="Container" />
-                                <div className="absolute bg-[#d5dae5] h-[6px] left-0 rounded-[4px] top-[74px] w-[272px]" data-name="Container" />
-                                <div className="absolute bg-[#d5dae5] h-[6px] left-0 rounded-[4px] top-[88px] w-[163.188px]" data-name="Container" />
+                                <div className="absolute bg-[#D8D0C0] h-[6px] left-0 rounded-[4px] top-0 w-[90.656px]" data-name="Container" />
+                                <div className="absolute bg-[#D8D0C0] h-[6px] left-0 rounded-[4px] top-[14px] w-[272px]" data-name="Container" />
+                                <div className="absolute bg-[#D8D0C0] h-[6px] left-0 rounded-[4px] top-[28px] w-[272px]" data-name="Container" />
+                                <div className="absolute bg-[#D8D0C0] h-[6px] left-0 rounded-[4px] top-[42px] w-[217.594px]" data-name="Container" />
+                                <div className="absolute bg-[#D8D0C0] h-[6px] left-0 rounded-[4px] top-[60px] w-[272px]" data-name="Container" />
+                                <div className="absolute bg-[#D8D0C0] h-[6px] left-0 rounded-[4px] top-[74px] w-[272px]" data-name="Container" />
+                                <div className="absolute bg-[#D8D0C0] h-[6px] left-0 rounded-[4px] top-[88px] w-[163.188px]" data-name="Container" />
                               </div>
                             </div>
                           </ContainerBackgroundImage4>
@@ -827,9 +827,9 @@ export default function IntegrateWiseLogoDesign() {
                           <ContainerBackgroundImage7 additionalClassNames="h-[58.5px] w-[470.938px]">
                             <ContainerBackgroundImage6>
                               <IconBackgroundImage>
-                                <path d={svgPaths.p1cf7de80} id="Vector" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d={svgPaths.p3ebe9ac0} id="Vector_2" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d="M10 14.5833V5.41667" id="Vector_3" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.p1cf7de80} id="Vector" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.p3ebe9ac0} id="Vector_2" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d="M10 14.5833V5.41667" id="Vector_3" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
                               </IconBackgroundImage>
                             </ContainerBackgroundImage6>
                             <BackgroundImage3 additionalClassNames="h-[58.5px]">
@@ -848,7 +848,7 @@ export default function IntegrateWiseLogoDesign() {
                                 <div className="h-[54.5px] relative shrink-0 w-[103.266px]" data-name="Container">
                                   <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
                                     <div className="absolute h-[16.5px] left-0 top-0 w-[103.266px]" data-name="Paragraph">
-                                      <p className="-translate-x-full absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.5px] left-[103.92px] not-italic text-[#4154a3] text-[11px] text-right top-0 tracking-[0.0645px] whitespace-nowrap">INVOICE</p>
+                                      <p className="-translate-x-full absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.5px] left-[103.92px] not-italic text-[#1a3a2a] text-[11px] text-right top-0 tracking-[0.0645px] whitespace-nowrap">INVOICE</p>
                                     </div>
                                     <div className="absolute h-[12px] left-0 top-[18.5px] w-[103.266px]" data-name="Paragraph">
                                       <p className="-translate-x-full absolute font-['Inter:Regular',sans-serif] font-normal leading-[12px] left-[104px] not-italic text-[#7b8aad] text-[8px] text-right top-0 tracking-[0.2057px] whitespace-nowrap">Invoice No: INV-2026-001</p>
@@ -873,7 +873,7 @@ export default function IntegrateWiseLogoDesign() {
                                     <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[10.5px] left-0 not-italic text-[#7b8aad] text-[7px] top-0 tracking-[0.2301px] whitespace-nowrap">BILL TO</p>
                                   </div>
                                   <div className="h-[10.5px] relative shrink-0 w-full" data-name="Paragraph">
-                                    <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[10.5px] left-0 not-italic text-[#1b2544] text-[7px] top-0 tracking-[0.2301px] whitespace-nowrap">Client Name</p>
+                                    <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[10.5px] left-0 not-italic text-[#0c0c0c] text-[7px] top-0 tracking-[0.2301px] whitespace-nowrap">Client Name</p>
                                   </div>
                                   <ParagraphBackgroundImageAndText5 text="Company" />
                                 </div>
@@ -925,7 +925,7 @@ export default function IntegrateWiseLogoDesign() {
                                   <p className="-translate-x-full absolute font-['Inter:Regular',sans-serif] font-normal leading-[10.5px] left-[280.91px] not-italic text-[#7b8aad] text-[7px] text-right top-0 tracking-[0.2301px] whitespace-nowrap">Tax (18%): $1,332</p>
                                 </div>
                                 <div className="absolute h-[10.5px] left-0 top-[25px] w-[280px]" data-name="Paragraph">
-                                  <p className="-translate-x-full absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[10.5px] left-[280.28px] not-italic text-[#4154a3] text-[7px] text-right top-0 tracking-[0.2301px] whitespace-nowrap">Total Due: $8,732</p>
+                                  <p className="-translate-x-full absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[10.5px] left-[280.28px] not-italic text-[#1a3a2a] text-[7px] text-right top-0 tracking-[0.2301px] whitespace-nowrap">Total Due: $8,732</p>
                                 </div>
                               </div>
                             </div>
@@ -942,9 +942,9 @@ export default function IntegrateWiseLogoDesign() {
                           <ContainerBackgroundImage7 additionalClassNames="h-[58.5px] w-[408.563px]">
                             <ContainerBackgroundImage6>
                               <IconBackgroundImage>
-                                <path d={svgPaths.p2b2e6c00} id="Vector" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d={svgPaths.p1370ad80} id="Vector_2" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d="M6.66667 15H7.5" id="Vector_3" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.p2b2e6c00} id="Vector" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.p1370ad80} id="Vector_2" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d="M6.66667 15H7.5" id="Vector_3" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
                               </IconBackgroundImage>
                             </ContainerBackgroundImage6>
                             <BackgroundImage3 additionalClassNames="h-[58.5px]">
@@ -955,38 +955,38 @@ export default function IntegrateWiseLogoDesign() {
                           </ContainerBackgroundImage7>
                           <ContainerBackgroundImage />
                         </div>
-                        <div className="absolute bg-[#f0f2f7] border border-[#d5dae5] border-solid h-[210px] left-[25px] overflow-clip rounded-[10px] top-[91.5px] w-[522px]" data-name="Container">
+                        <div className="absolute bg-[#EBE5D8] border border-[#D8D0C0] border-solid h-[210px] left-[25px] overflow-clip rounded-[10px] top-[91.5px] w-[522px]" data-name="Container">
                           <div className="absolute content-stretch flex flex-col h-[208px] items-start left-0 overflow-clip pt-[24px] px-[100px] top-0 w-[520px]" data-name="Container">
                             <div className="bg-white h-[259px] relative rounded-[4px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)] shrink-0 w-full" data-name="ProposalPreview">
                               <div className="absolute content-stretch flex h-[20px] items-start justify-between left-[20px] top-[20px] w-[280px]" data-name="Container">
                                 <ImageBackgroundImage />
                                 <div className="h-[16.5px] relative shrink-0 w-[61.313px]" data-name="Paragraph">
                                   <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                                    <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.5px] left-0 not-italic text-[#4154a3] text-[11px] top-0 tracking-[0.0645px] whitespace-nowrap">PROPOSAL</p>
+                                    <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.5px] left-0 not-italic text-[#1a3a2a] text-[11px] top-0 tracking-[0.0645px] whitespace-nowrap">PROPOSAL</p>
                                   </div>
                                 </div>
                               </div>
                               <div className="absolute content-stretch flex flex-col gap-[8px] h-[110px] items-start left-[20px] top-[52px] w-[280px]" data-name="Container">
                                 <div className="h-[24.5px] relative shrink-0 w-full" data-name="Container">
                                   <ParagraphBackgroundImageAndText6 text="Project Overview" additionalClassNames="top-0" />
-                                  <div className="absolute bg-[#d5dae5] h-[4px] left-0 rounded-[4px] top-[14.5px] w-[280px]" data-name="Container" />
-                                  <div className="absolute bg-[#d5dae5] h-[4px] left-0 rounded-[4px] top-[20.5px] w-[224px]" data-name="Container" />
+                                  <div className="absolute bg-[#D8D0C0] h-[4px] left-0 rounded-[4px] top-[14.5px] w-[280px]" data-name="Container" />
+                                  <div className="absolute bg-[#D8D0C0] h-[4px] left-0 rounded-[4px] top-[20.5px] w-[224px]" data-name="Container" />
                                 </div>
                                 <div className="h-[24.5px] relative shrink-0 w-full" data-name="Container">
                                   <ParagraphBackgroundImageAndText6 text="Scope of Work" additionalClassNames="top-0" />
-                                  <div className="absolute bg-[#d5dae5] h-[4px] left-0 rounded-[4px] top-[14.5px] w-[280px]" data-name="Container" />
-                                  <div className="absolute bg-[#d5dae5] h-[4px] left-0 rounded-[4px] top-[20.5px] w-[168px]" data-name="Container" />
+                                  <div className="absolute bg-[#D8D0C0] h-[4px] left-0 rounded-[4px] top-[14.5px] w-[280px]" data-name="Container" />
+                                  <div className="absolute bg-[#D8D0C0] h-[4px] left-0 rounded-[4px] top-[20.5px] w-[168px]" data-name="Container" />
                                 </div>
                                 <div className="content-stretch flex flex-col gap-[4px] h-[18.5px] items-start relative shrink-0 w-full" data-name="Container">
                                   <BackgroundImageAndText2 text="Timeline" />
-                                  <div className="bg-[#d5dae5] h-[4px] rounded-[4px] shrink-0 w-full" data-name="Container" />
+                                  <div className="bg-[#D8D0C0] h-[4px] rounded-[4px] shrink-0 w-full" data-name="Container" />
                                 </div>
                                 <div className="content-stretch flex flex-col gap-[4px] h-[18.5px] items-start relative shrink-0 w-full" data-name="Container">
                                   <BackgroundImageAndText2 text="Commercial Terms" />
-                                  <div className="bg-[#d5dae5] h-[4px] rounded-[4px] shrink-0 w-full" data-name="Container" />
+                                  <div className="bg-[#D8D0C0] h-[4px] rounded-[4px] shrink-0 w-full" data-name="Container" />
                                 </div>
                               </div>
-                              <div className="absolute border-[#d5dae5] border-solid border-t h-[61px] left-[20px] top-[178px] w-[280px]" data-name="Container">
+                              <div className="absolute border-[#D8D0C0] border-solid border-t h-[61px] left-[20px] top-[178px] w-[280px]" data-name="Container">
                                 <ParagraphBackgroundImageAndText6 text="Authorized Signatory" additionalClassNames="top-[12px]" />
                                 <div className="absolute gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(1,minmax(0,1fr))] h-[17px] left-0 top-[30.5px] w-[280px]" data-name="Container">
                                   <ContainerBackgroundImage3 additionalClassNames="col-1" />
@@ -999,7 +999,7 @@ export default function IntegrateWiseLogoDesign() {
                               </div>
                             </div>
                           </div>
-                          <div className="absolute bg-gradient-to-t from-[#f0f2f7] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[176px] w-[520px]" data-name="Container" />
+                          <div className="absolute bg-gradient-to-t from-[#EBE5D8] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[176px] w-[520px]" data-name="Container" />
                         </div>
                         <ContainerBackgroundImage2 additionalClassNames="top-[317.5px]" />
                       </StationeryCardBackgroundImage>
@@ -1008,9 +1008,9 @@ export default function IntegrateWiseLogoDesign() {
                           <ContainerBackgroundImage7 additionalClassNames="h-[74.5px] w-[472.844px]">
                             <ContainerBackgroundImage6>
                               <IconBackgroundImage>
-                                <path d="M4.16667 18.3333H15.8333" id="Vector" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d={svgPaths.p2a47df00} id="Vector_2" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d={svgPaths.p36e14b60} id="Vector_3" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d="M4.16667 18.3333H15.8333" id="Vector" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.p2a47df00} id="Vector_2" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.p36e14b60} id="Vector_3" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
                               </IconBackgroundImage>
                             </ContainerBackgroundImage6>
                             <BackgroundImage3 additionalClassNames="h-[74.5px]">
@@ -1023,7 +1023,7 @@ export default function IntegrateWiseLogoDesign() {
                           </ContainerBackgroundImage7>
                           <ContainerBackgroundImage />
                         </div>
-                        <div className="absolute bg-[#f0f2f7] border border-[#d5dae5] border-solid h-[201px] left-[25px] overflow-clip rounded-[10px] top-[107.5px] w-[522px]" data-name="Container">
+                        <div className="absolute bg-[#EBE5D8] border border-[#D8D0C0] border-solid h-[201px] left-[25px] overflow-clip rounded-[10px] top-[107.5px] w-[522px]" data-name="Container">
                           <div className="absolute content-stretch flex flex-col h-[199px] items-start left-0 overflow-clip pt-[24px] px-[24px] top-0 w-[520px]" data-name="Container">
                             <div className="h-[151px] relative shrink-0 w-full" data-name="SealPreview">
                               <div className="flex flex-row items-center justify-center size-full">
@@ -1032,17 +1032,17 @@ export default function IntegrateWiseLogoDesign() {
                                     <div className="h-[96px] relative shrink-0 w-full" data-name="Container">
                                       <div className="absolute left-0 overflow-clip size-[96px] top-0" data-name="Icon">
                                         <VectorBackgroundImage>
-                                          <path d={svgPaths.pfb678c0} id="Vector" stroke="var(--stroke-0, #4154A3)" strokeWidth="2.4" />
+                                          <path d={svgPaths.pfb678c0} id="Vector" stroke="var(--stroke-0, #1A3A2A)" strokeWidth="2.4" />
                                         </VectorBackgroundImage>
                                         <VectorBackgroundImage1>
-                                          <path d={svgPaths.p2bef4700} id="Vector" opacity="0.3" stroke="var(--stroke-0, #4154A3)" strokeWidth="0.8" />
+                                          <path d={svgPaths.p2bef4700} id="Vector" opacity="0.3" stroke="var(--stroke-0, #1A3A2A)" strokeWidth="0.8" />
                                         </VectorBackgroundImage1>
-                                        <p className="absolute bottom-[98.54%] font-['Inter:Regular',sans-serif] font-normal leading-[normal] left-0 not-italic right-full text-[#4154a3] text-[5.6px] top-[-5.83%] whitespace-nowrap">&nbsp;</p>
-                                        <p className="absolute bottom-[99.17%] font-['Inter:Regular',sans-serif] font-normal leading-[normal] left-0 not-italic right-full text-[#4154a3] text-[5.2px] top-[-5.42%] whitespace-nowrap">&nbsp;</p>
+                                        <p className="absolute bottom-[98.54%] font-['Inter:Regular',sans-serif] font-normal leading-[normal] left-0 not-italic right-full text-[#1a3a2a] text-[5.6px] top-[-5.83%] whitespace-nowrap">&nbsp;</p>
+                                        <p className="absolute bottom-[99.17%] font-['Inter:Regular',sans-serif] font-normal leading-[normal] left-0 not-italic right-full text-[#1a3a2a] text-[5.2px] top-[-5.42%] whitespace-nowrap">&nbsp;</p>
                                         <VectorBackgroundImage2>
-                                          <path d={svgPaths.pa9cef00} fill="var(--fill-0, #4154A3)" id="Vector" opacity="0.1" />
+                                          <path d={svgPaths.pa9cef00} fill="var(--fill-0, #1A3A2A)" id="Vector" opacity="0.1" />
                                         </VectorBackgroundImage2>
-                                        <p className="absolute font-['Inter:Bold',sans-serif] font-bold inset-[57.08%_32.71%_37.71%_32.92%] leading-[normal] not-italic text-[#4154a3] text-[4.4px] text-center whitespace-nowrap">OFFICIAL SEAL</p>
+                                        <p className="absolute font-['Inter:Bold',sans-serif] font-bold inset-[57.08%_32.71%_37.71%_32.92%] leading-[normal] not-italic text-[#1a3a2a] text-[4.4px] text-center whitespace-nowrap">OFFICIAL SEAL</p>
                                       </div>
                                       <ImageBackgroundImage1 />
                                     </div>
@@ -1098,7 +1098,7 @@ export default function IntegrateWiseLogoDesign() {
                               </div>
                             </div>
                           </div>
-                          <div className="absolute bg-gradient-to-t from-[#f0f2f7] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[167px] w-[520px]" data-name="Container" />
+                          <div className="absolute bg-gradient-to-t from-[#EBE5D8] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[167px] w-[520px]" data-name="Container" />
                         </div>
                         <div className="absolute content-stretch flex h-[57px] items-center justify-between left-px pt-px px-[24px] top-[324.5px] w-[570px]" data-name="Container">
                           <div aria-hidden="true" className="absolute border-[#e8ecf2] border-solid border-t inset-0 pointer-events-none" />
@@ -1111,8 +1111,8 @@ export default function IntegrateWiseLogoDesign() {
                           <ContainerBackgroundImage7 additionalClassNames="h-[58.5px] w-[452.078px]">
                             <ContainerBackgroundImage6>
                               <IconBackgroundImage>
-                                <path d={svgPaths.p16dd5f0} id="Vector" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d="M1.66667 8.33333H18.3333" id="Vector_2" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.p16dd5f0} id="Vector" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d="M1.66667 8.33333H18.3333" id="Vector_2" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
                               </IconBackgroundImage>
                             </ContainerBackgroundImage6>
                             <BackgroundImage3 additionalClassNames="h-[58.5px]">
@@ -1123,7 +1123,7 @@ export default function IntegrateWiseLogoDesign() {
                           </ContainerBackgroundImage7>
                           <ContainerBackgroundImage />
                         </div>
-                        <div className="absolute bg-[#f0f2f7] border border-[#d5dae5] border-solid h-[170px] left-[25px] overflow-clip rounded-[10px] top-[91.5px] w-[522px]" data-name="Container">
+                        <div className="absolute bg-[#EBE5D8] border border-[#D8D0C0] border-solid h-[170px] left-[25px] overflow-clip rounded-[10px] top-[91.5px] w-[522px]" data-name="Container">
                           <div className="absolute content-stretch flex flex-col h-[168px] items-start left-0 overflow-clip pt-[24px] px-[24px] top-0 w-[520px]" data-name="Container">
                             <div className="h-[120px] relative shrink-0 w-full" data-name="BusinessCardPreview">
                               <div className="flex flex-row items-center justify-center size-full">
@@ -1132,10 +1132,10 @@ export default function IntegrateWiseLogoDesign() {
                                     <div className="content-stretch flex flex-col gap-[6px] h-[86px] items-center justify-center py-[10.75px] relative shrink-0 w-full" data-name="Container">
                                       <BackgroundImage1 additionalClassNames="relative shrink-0">
                                         <g clipPath="url(#clip0_75_5371)" id="Image">
-                                          <path d={svgPaths.pbda0380} fill="var(--fill-0, #4154A3)" id="Vector" />
-                                          <path d={svgPaths.p14c63f00} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                                          <path d={svgPaths.p3e884c80} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                                          <path d={svgPaths.p2616e600} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+                                          <path d={svgPaths.pbda0380} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                                          <path d={svgPaths.p14c63f00} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                                          <path d={svgPaths.p3e884c80} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                                          <path d={svgPaths.p2616e600} fill="var(--fill-0, #B8943F)" id="Vector_4" />
                                         </g>
                                         <defs>
                                           <clipPath id="clip0_75_5371">
@@ -1145,7 +1145,7 @@ export default function IntegrateWiseLogoDesign() {
                                       </BackgroundImage1>
                                       <div className="h-[13.5px] relative shrink-0 w-[63.891px]" data-name="Paragraph">
                                         <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                                          <p className="-translate-x-1/2 absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[13.5px] left-[32.5px] not-italic text-[#1b2544] text-[9px] text-center top-0 tracking-[0.167px] whitespace-nowrap">IntegrateWise</p>
+                                          <p className="-translate-x-1/2 absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[13.5px] left-[32.5px] not-italic text-[#0c0c0c] text-[9px] text-center top-0 tracking-[0.167px] whitespace-nowrap">IntegrateWise</p>
                                         </div>
                                       </div>
                                       <div className="h-[15px] relative shrink-0 w-[106.125px]" data-name="Paragraph">
@@ -1176,7 +1176,7 @@ export default function IntegrateWiseLogoDesign() {
                               </div>
                             </div>
                           </div>
-                          <div className="absolute bg-gradient-to-t from-[#f0f2f7] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[136px] w-[520px]" data-name="Container" />
+                          <div className="absolute bg-gradient-to-t from-[#EBE5D8] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[136px] w-[520px]" data-name="Container" />
                         </div>
                         <div className="absolute content-stretch flex h-[57px] items-center justify-between left-px pt-px px-[24px] top-[277.5px] w-[570px]" data-name="Container">
                           <div aria-hidden="true" className="absolute border-[#e8ecf2] border-solid border-t inset-0 pointer-events-none" />
@@ -1189,8 +1189,8 @@ export default function IntegrateWiseLogoDesign() {
                           <ContainerBackgroundImage7 additionalClassNames="h-[58.5px] w-[459.984px]">
                             <ContainerBackgroundImage6>
                               <IconBackgroundImage>
-                                <path d={svgPaths.pd919a80} id="Vector" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d={svgPaths.p189c1170} id="Vector_2" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.pd919a80} id="Vector" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.p189c1170} id="Vector_2" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
                               </IconBackgroundImage>
                             </ContainerBackgroundImage6>
                             <BackgroundImage3 additionalClassNames="h-[58.5px]">
@@ -1201,7 +1201,7 @@ export default function IntegrateWiseLogoDesign() {
                           </ContainerBackgroundImage7>
                           <ContainerBackgroundImage />
                         </div>
-                        <div className="absolute bg-[#f0f2f7] border border-[#d5dae5] border-solid h-[198.5px] left-[25px] overflow-clip rounded-[10px] top-[91.5px] w-[522px]" data-name="Container">
+                        <div className="absolute bg-[#EBE5D8] border border-[#D8D0C0] border-solid h-[198.5px] left-[25px] overflow-clip rounded-[10px] top-[91.5px] w-[522px]" data-name="Container">
                           <div className="absolute content-stretch flex flex-col h-[196.5px] items-start left-0 overflow-clip pt-[24px] px-[68px] top-0 w-[520px]" data-name="Container">
                             <div className="bg-white h-[148.5px] relative rounded-[4px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)] shrink-0 w-full" data-name="EmailSignaturePreview">
                               <div className="content-stretch flex flex-col gap-[8px] items-start pt-[16px] px-[16px] relative size-full">
@@ -1209,7 +1209,7 @@ export default function IntegrateWiseLogoDesign() {
                                   <ImageBackgroundImage2 additionalClassNames="left-0 top-[2px]" />
                                   <div className="absolute h-[89px] left-[79.36px] top-0 w-[217.547px]" data-name="Container">
                                     <div className="absolute h-[15px] left-0 top-0 w-[217.547px]" data-name="Paragraph">
-                                      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[15px] left-0 not-italic text-[#1b2544] text-[10px] top-0 tracking-[0.1172px] whitespace-nowrap">Nirmal Prince J</p>
+                                      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[15px] left-0 not-italic text-[#0c0c0c] text-[10px] top-0 tracking-[0.1172px] whitespace-nowrap">Nirmal Prince J</p>
                                     </div>
                                     <div className="absolute h-[12px] left-0 top-[15px] w-[217.547px]" data-name="Paragraph">
                                       <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[12px] left-0 not-italic text-[#7b8aad] text-[8px] top-0 tracking-[0.2057px] whitespace-nowrap">{`Founder & CEO`}</p>
@@ -1226,14 +1226,14 @@ export default function IntegrateWiseLogoDesign() {
                                     </div>
                                   </div>
                                 </div>
-                                <div className="bg-[#4154a3] h-px shrink-0 w-full" data-name="Container" />
+                                <div className="bg-[#1a3a2a] h-px shrink-0 w-full" data-name="Container" />
                                 <div className="h-[10.5px] relative shrink-0 w-full" data-name="Paragraph">
                                   <p className="absolute font-['Inter:Italic',sans-serif] font-normal italic leading-[10.5px] left-0 text-[#9ba8c2] text-[7px] top-0 tracking-[0.2301px] whitespace-nowrap">AI Thinks in Context — and Waits for Approval</p>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div className="absolute bg-gradient-to-t from-[#f0f2f7] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[164.5px] w-[520px]" data-name="Container" />
+                          <div className="absolute bg-gradient-to-t from-[#EBE5D8] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[164.5px] w-[520px]" data-name="Container" />
                         </div>
                         <div className="absolute content-stretch flex h-[57px] items-center justify-between left-px pt-px px-[24px] top-[306px] w-[570px]" data-name="Container">
                           <div aria-hidden="true" className="absolute border-[#e8ecf2] border-solid border-t inset-0 pointer-events-none" />
@@ -1246,8 +1246,8 @@ export default function IntegrateWiseLogoDesign() {
                           <ContainerBackgroundImage7 additionalClassNames="h-[74.5px] w-[472.844px]">
                             <ContainerBackgroundImage6>
                               <IconBackgroundImage>
-                                <path d="M10 5.83333V17.5" id="Vector" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                <path d={svgPaths.p25713000} id="Vector_2" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d="M10 5.83333V17.5" id="Vector" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                <path d={svgPaths.p25713000} id="Vector_2" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
                               </IconBackgroundImage>
                             </ContainerBackgroundImage6>
                             <BackgroundImage3 additionalClassNames="h-[74.5px]">
@@ -1260,16 +1260,16 @@ export default function IntegrateWiseLogoDesign() {
                           </ContainerBackgroundImage7>
                           <ContainerBackgroundImage />
                         </div>
-                        <div className="absolute bg-[#f0f2f7] border border-[#d5dae5] border-solid h-[207.5px] left-[25px] overflow-clip rounded-[10px] top-[107.5px] w-[522px]" data-name="Container">
+                        <div className="absolute bg-[#EBE5D8] border border-[#D8D0C0] border-solid h-[207.5px] left-[25px] overflow-clip rounded-[10px] top-[107.5px] w-[522px]" data-name="Container">
                           <div className="absolute content-stretch flex flex-col h-[205.5px] items-start left-0 overflow-clip pt-[24px] px-[120px] top-0 w-[520px]" data-name="Container">
                             <div className="bg-white h-[157.5px] overflow-clip relative rounded-[4px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_-1px_rgba(0,0,0,0.1)] shrink-0 w-full" data-name="DocumentCoverPreview">
                               <div className="absolute h-[128px] left-[5.27px] top-[14.75px] w-[269.469px]" data-name="Image">
                                 <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 269.469 128">
                                   <g id="Image" opacity="0.04">
-                                    <path d={svgPaths.p3d03a200} fill="var(--fill-0, #4154A3)" id="Vector" />
-                                    <path d={svgPaths.p118e9a00} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                                    <path d={svgPaths.p263c0f00} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                                    <path d={svgPaths.p3f11b170} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+                                    <path d={svgPaths.p3d03a200} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                                    <path d={svgPaths.p118e9a00} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                                    <path d={svgPaths.p263c0f00} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                                    <path d={svgPaths.p3f11b170} fill="var(--fill-0, #B8943F)" id="Vector_4" />
                                   </g>
                                 </svg>
                               </div>
@@ -1279,7 +1279,7 @@ export default function IntegrateWiseLogoDesign() {
                               <div className="absolute h-[86px] left-[43.59px] top-[35.75px] w-[192.813px]" data-name="Container">
                                 <ImageBackgroundImage2 additionalClassNames="left-[62.72px] top-0" />
                                 <div className="absolute h-[16.5px] left-0 top-[40px] w-[192.813px]" data-name="Paragraph">
-                                  <p className="-translate-x-1/2 absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.5px] left-[96.27px] not-italic text-[#1b2544] text-[11px] text-center top-0 tracking-[0.0645px] whitespace-nowrap">IntegrateWise</p>
+                                  <p className="-translate-x-1/2 absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[16.5px] left-[96.27px] not-italic text-[#0c0c0c] text-[11px] text-center top-0 tracking-[0.0645px] whitespace-nowrap">IntegrateWise</p>
                                 </div>
                                 <div className="absolute h-[10.5px] left-0 top-[58.5px] w-[192.813px]" data-name="Paragraph">
                                   <p className="-translate-x-1/2 absolute font-['Inter:Regular',sans-serif] font-normal leading-[10.5px] left-[96px] not-italic text-[#5f6e93] text-[7px] text-center top-0 tracking-[0.2301px] whitespace-nowrap">Knowledge Workspace Empowered by AI and the Spine</p>
@@ -1290,7 +1290,7 @@ export default function IntegrateWiseLogoDesign() {
                               </div>
                             </div>
                           </div>
-                          <div className="absolute bg-gradient-to-t from-[#f0f2f7] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[173.5px] w-[520px]" data-name="Container" />
+                          <div className="absolute bg-gradient-to-t from-[#EBE5D8] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[173.5px] w-[520px]" data-name="Container" />
                         </div>
                         <div className="absolute content-stretch flex h-[57px] items-center justify-between left-px pt-px px-[24px] top-[331px] w-[570px]" data-name="Container">
                           <div aria-hidden="true" className="absolute border-[#e8ecf2] border-solid border-t inset-0 pointer-events-none" />
@@ -1304,9 +1304,9 @@ export default function IntegrateWiseLogoDesign() {
                             <ContainerBackgroundImage6>
                               <BackgroundImage>
                                 <g clipPath="url(#clip0_75_5423)" id="Icon">
-                                  <path d={svgPaths.p38b1ad80} id="Vector" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                  <path d={svgPaths.p1846a410} id="Vector_2" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
-                                  <path d={svgPaths.p206a9000} id="Vector_3" stroke="var(--stroke-0, #4154A3)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                  <path d={svgPaths.p38b1ad80} id="Vector" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                  <path d={svgPaths.p1846a410} id="Vector_2" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
+                                  <path d={svgPaths.p206a9000} id="Vector_3" stroke="var(--stroke-0, #1A3A2A)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.66667" />
                                 </g>
                                 <defs>
                                   <clipPath id="clip0_75_5423">
@@ -1324,25 +1324,25 @@ export default function IntegrateWiseLogoDesign() {
                             </BackgroundImage3>
                           </ContainerBackgroundImage7>
                           <BackgroundImage2 additionalClassNames="h-[20.5px] w-[43.313px]">
-                            <BackgroundImage3 additionalClassNames="bg-[#f0f2f7] h-[20.5px] rounded-[33554400px]">
+                            <BackgroundImage3 additionalClassNames="bg-[#EBE5D8] h-[20.5px] rounded-[33554400px]">
                               <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[16.5px] left-[8px] not-italic text-[#7b8aad] text-[11px] top-[2px] tracking-[0.0645px] whitespace-nowrap">Draft</p>
                             </BackgroundImage3>
                           </BackgroundImage2>
                         </div>
-                        <div className="absolute bg-[#f0f2f7] border border-[#d5dae5] border-solid h-[190px] left-[25px] overflow-clip rounded-[10px] top-[107.5px] w-[522px]" data-name="Container">
+                        <div className="absolute bg-[#EBE5D8] border border-[#D8D0C0] border-solid h-[190px] left-[25px] overflow-clip rounded-[10px] top-[107.5px] w-[522px]" data-name="Container">
                           <div className="absolute content-stretch flex flex-col h-[188px] items-start left-0 overflow-clip pt-[24px] px-[120px] top-0 w-[520px]" data-name="Container">
                             <div className="bg-white h-[140px] relative rounded-[4px] shrink-0 w-full" data-name="EnvelopePreview">
-                              <div aria-hidden="true" className="absolute border border-[#d5dae5] border-solid inset-0 pointer-events-none rounded-[4px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)]" />
+                              <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[4px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.1),0px_1px_2px_0px_rgba(0,0,0,0.1)]" />
                               <div className="content-stretch flex flex-col items-start pb-px pt-[17px] px-[17px] relative size-full">
                                 <div className="h-[106px] relative shrink-0 w-full" data-name="Container">
                                   <div className="absolute content-stretch flex gap-[8px] h-[28.5px] items-start left-0 top-0 w-[246px]" data-name="Container">
                                     <div className="h-[16px] relative shrink-0 w-[33.672px]" data-name="Image">
                                       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 33.6719 16">
                                         <g clipPath="url(#clip0_75_5347)" id="Image">
-                                          <path d={svgPaths.pfd77100} fill="var(--fill-0, #4154A3)" id="Vector" />
-                                          <path d={svgPaths.p3d281800} fill="var(--fill-0, #4154A3)" id="Vector_2" />
-                                          <path d={svgPaths.p2787300} fill="var(--fill-0, #4154A3)" id="Vector_3" />
-                                          <path d={svgPaths.p2603980} fill="var(--fill-0, #EB4379)" id="Vector_4" />
+                                          <path d={svgPaths.pfd77100} fill="var(--fill-0, #1A3A2A)" id="Vector" />
+                                          <path d={svgPaths.p3d281800} fill="var(--fill-0, #1A3A2A)" id="Vector_2" />
+                                          <path d={svgPaths.p2787300} fill="var(--fill-0, #1A3A2A)" id="Vector_3" />
+                                          <path d={svgPaths.p2603980} fill="var(--fill-0, #B8943F)" id="Vector_4" />
                                         </g>
                                         <defs>
                                           <clipPath id="clip0_75_5347">
@@ -1358,15 +1358,15 @@ export default function IntegrateWiseLogoDesign() {
                                     </ContainerBackgroundImage5>
                                   </div>
                                   <div className="absolute h-[16px] left-[150px] top-[90px] w-[96px]" data-name="Container">
-                                    <div className="absolute bg-[#d5dae5] h-[4px] left-0 rounded-[4px] top-0 w-[80px]" data-name="Container" />
-                                    <div className="absolute bg-[#d5dae5] h-[4px] left-0 rounded-[4px] top-[6px] w-[96px]" data-name="Container" />
-                                    <div className="absolute bg-[#d5dae5] h-[4px] left-0 rounded-[4px] top-[12px] w-[64px]" data-name="Container" />
+                                    <div className="absolute bg-[#D8D0C0] h-[4px] left-0 rounded-[4px] top-0 w-[80px]" data-name="Container" />
+                                    <div className="absolute bg-[#D8D0C0] h-[4px] left-0 rounded-[4px] top-[6px] w-[96px]" data-name="Container" />
+                                    <div className="absolute bg-[#D8D0C0] h-[4px] left-0 rounded-[4px] top-[12px] w-[64px]" data-name="Container" />
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div className="absolute bg-gradient-to-t from-[#f0f2f7] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[156px] w-[520px]" data-name="Container" />
+                          <div className="absolute bg-gradient-to-t from-[#EBE5D8] h-[32px] left-0 to-[rgba(0,0,0,0)] top-[156px] w-[520px]" data-name="Container" />
                         </div>
                         <div className="absolute content-stretch flex h-[57px] items-center justify-between left-px pt-px px-[24px] top-[313.5px] w-[570px]" data-name="Container">
                           <div aria-hidden="true" className="absolute border-[#e8ecf2] border-solid border-t inset-0 pointer-events-none" />
