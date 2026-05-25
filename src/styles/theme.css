@@ -7,7 +7,7 @@
           Instrument Sans (sans) · IBM Plex Mono (mono)
    ───────────────────────────────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap');
+/* Fonts loaded via index.html <link> — Bebas Neue, DM Serif Display, IBM Plex Mono, Instrument Sans */
 
 :root {
   /* ── Core Palette ── */
@@ -297,6 +297,11 @@
 
 /* ── Tailwind @theme inline ── */
 @theme inline {
+  /* ── Font families — override Tailwind defaults with IW fonts ── */
+  --font-sans:  'Instrument Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-mono:  'IBM Plex Mono', ui-monospace, monospace;
+
   --color-brand-primary:       var(--brand-primary);
   --color-brand-primary-dark:  var(--brand-primary-dark);
   --color-brand-primary-light: var(--brand-primary-light);
