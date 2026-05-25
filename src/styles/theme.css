@@ -214,14 +214,14 @@
   --chart-3:                 var(--forest-bright);
   --chart-4:                 var(--slate-mid);
   --chart-5:                 var(--red);
-  --sidebar:                 var(--paper-warm);
-  --sidebar-foreground:      var(--ink);
-  --sidebar-primary:         rgba(26,58,42,0.10);
+  --sidebar:                 var(--forest);
+  --sidebar-foreground:      var(--paper);
+  --sidebar-primary:         var(--gold);
   --sidebar-primary-foreground: var(--forest);
-  --sidebar-accent:          var(--paper-deep);
-  --sidebar-accent-foreground: var(--ink);
-  --sidebar-border:          var(--rule);
-  --sidebar-ring:            var(--forest-mid);
+  --sidebar-accent:          var(--forest-mid);
+  --sidebar-accent-foreground: var(--paper);
+  --sidebar-border:          var(--forest-mid);
+  --sidebar-ring:            var(--gold);
   --font-size: 16px;
 }
 
