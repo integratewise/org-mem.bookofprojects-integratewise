@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import { RootLayout } from "./components/RootLayout";
+import { WorkbenchLayout } from "./components/WorkbenchLayout";
 import { HomePage } from "./components/pages/HomePage";
 import { BrandHubPage } from "./components/pages/BrandHubPage";
 import { BrandAssetsPage } from "./components/pages/BrandAssetsPage";
@@ -28,108 +29,114 @@ import { ContactPage } from "./components/pages/ContactPage";
 import { BlogPage } from "./components/pages/BlogPage";
 import { EvolutionPage } from "./components/pages/EvolutionPage";
 import { WorkbenchPage } from "./components/pages/WorkbenchPage";
+import ASDashboard from "./components/pages/account-success/dashboard";
+import BizOpsDashboard from "./components/pages/bizops/dashboard";
 
-const SECTION_LABELS: Record<string, { label: string; description: string; subsections: string[] }> = {
-  '04': {
-    label: '04 Customer Success',
-    description: 'Onboarding, support, health monitoring, and renewals.',
-    subsections: ['Onboarding & Implementation', 'Support & Casework', 'Health & QBRs', 'Renewals & Expansion'],
-  },
-  '05': {
-    label: '05 Operations',
-    description: 'Workflow orchestration, runbooks, incident response, and systems administration.',
-    subsections: ['Workflow Orchestration', 'Intake Routing & Execution', 'Service Runbooks & DR', 'Observability & Incident Response', 'Systems Administration', 'Data Normalization & Stewardship'],
-  },
-  '06': {
-    label: '06 Finance, Legal, HR',
-    description: 'Finance, legal contracts, compliance, HR, and access control.',
-    subsections: ['Finance', 'Legal & Contracts', 'Compliance & Risk', 'HR & People Ops', 'Approvals & Access Control'],
-  },
-  '08': {
-    label: '08 External Communications',
-    description: 'Website, press, events, community, and partner communications.',
-    subsections: ['Website & Public Narrative', 'Press & Newsroom', 'Events & Community', 'Partner Communications'],
-  },
-  '09': {
-    label: '09 Archives & Retention',
-    description: 'Yearly archives, legal hold, retention policies, and deletion logs.',
-    subsections: ['Yearly Archives', 'Legal Hold', 'Retention Policies', 'Deletion Logs'],
-  },
-};
-
-function ComingSoonPage() {
-  const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
-  const section = params.get('section') || '';
-  const info = SECTION_LABELS[section] || { label: 'Coming Soon', description: 'This section is being built.', subsections: [] };
+// ── Placeholder for unbuilt cockpit screens ──────────────────────────
+function ComingSoon({ label }: { label: string }) {
   return (
-    <div className="p-8 lg:p-12 max-w-3xl mx-auto">
-      <div className="rounded-xl p-8" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule)' }}>
-        <p className="iw-label mb-3">In Progress</p>
-        <h1 className="iw-doctrine mb-3" style={{ fontSize: '1.5rem' }}>{info.label}</h1>
-        <p className="iw-body mb-6" style={{ color: 'var(--ink-muted)' }}>{info.description}</p>
-        {info.subsections.length > 0 && (
-          <div className="space-y-2">
-            <p className="iw-mono-label mb-2">Planned Subsections</p>
-            {info.subsections.map(sub => (
-              <div key={sub} className="flex items-center gap-2 px-4 py-2 rounded-lg" style={{ background: 'var(--paper)', border: '1px solid var(--rule-light)' }}>
-                <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--rule)' }} />
-                <span className="text-sm" style={{ color: 'var(--ink-muted)' }}>{sub}</span>
-              </div>
-            ))}
-          </div>
-        )}
+    <div className="flex items-center justify-center h-full min-h-[60vh]">
+      <div className="text-center">
+        <p className="text-xs font-mono tracking-widest mb-2" style={{ color: "var(--ink-ghost)", fontFamily: "var(--font-mono)" }}>
+          IN PROGRESS
+        </p>
+        <h2 className="text-xl" style={{ color: "var(--forest)", fontFamily: "var(--font-serif)" }}>{label}</h2>
+        <p className="text-sm mt-2" style={{ color: "var(--ink-muted)" }}>This screen is being wired.</p>
       </div>
     </div>
-  );
+  )
 }
 
+const cs = (label: string) => () => <ComingSoon label={label} />
+
 export const router = createBrowserRouter([
+
+  // ── Cockpit — full-screen, no doc nav ─────────────────────────────
+  {
+    path: "/app",
+    Component: WorkbenchLayout,
+    children: [
+      // Account Success
+      { index: true,                                       Component: () => <ComingSoon label="Select a domain" /> },
+      { path: "account-success",                           Component: ASDashboard },
+      { path: "account-success/accounts",                  Component: cs("Accounts") },
+      { path: "account-success/at-risk",                   Component: cs("At Risk") },
+      { path: "account-success/tasks",                     Component: cs("Tasks") },
+      { path: "account-success/meetings",                  Component: cs("Meetings") },
+      { path: "account-success/engagement-log",            Component: cs("Engagement Log") },
+      { path: "account-success/insights",                  Component: cs("Insights") },
+      { path: "account-success/queue",                     Component: cs("Queue") },
+      { path: "account-success/decisions",                 Component: cs("Decisions") },
+      { path: "account-success/twin",                      Component: WorkbenchPage },
+      { path: "account-success/knowledge",                 Component: cs("Knowledge") },
+      { path: "account-success/workflows",                 Component: cs("Workflows") },
+      { path: "account-success/settings",                  Component: cs("Settings") },
+      // BizOps
+      { path: "bizops",                                    Component: BizOpsDashboard },
+      { path: "bizops/strategic-hub",                      Component: cs("Strategic Hub") },
+      { path: "bizops/founder-ops",                        Component: cs("Founder Ops") },
+      { path: "bizops/marketing",                          Component: cs("Marketing") },
+      { path: "bizops/sales",                              Component: cs("Sales") },
+      { path: "bizops/cs",                                 Component: cs("Customer Success") },
+      { path: "bizops/product",                            Component: cs("Product & Engineering") },
+      { path: "bizops/operations",                         Component: cs("Operations") },
+      { path: "bizops/finance",                            Component: cs("Finance") },
+      { path: "bizops/hr",                                 Component: cs("Human Resources") },
+      { path: "bizops/legal",                              Component: cs("Legal & Compliance") },
+      { path: "bizops/bi",                                 Component: cs("Business Intelligence") },
+      { path: "bizops/it",                                 Component: cs("IT & Infrastructure") },
+      { path: "bizops/partnerships",                       Component: cs("Partnerships") },
+      { path: "bizops/knowledge",                          Component: cs("Knowledge") },
+      { path: "bizops/today",                              Component: cs("BizOps Today") },
+      { path: "bizops/queue",                              Component: cs("Queue") },
+      { path: "bizops/decisions",                          Component: cs("Decisions") },
+      { path: "bizops/twin",                               Component: WorkbenchPage },
+      { path: "bizops/workflows",                          Component: cs("Workflows") },
+      { path: "bizops/settings",                           Component: cs("Settings") },
+    ],
+  },
+
+  // ── Doc/brand shell ───────────────────────────────────────────────
   {
     path: "/",
     Component: RootLayout,
-    errorElement: (
-      <div style={{ padding: 32, fontFamily: 'var(--font-mono)', color: 'var(--red)' }}>
-        <h1>Route Error</h1>
-        <p>Something went wrong loading this page. Check the console for details.</p>
-      </div>
-    ),
     children: [
-      { index: true, Component: BrandHubPage },
-      { path: "quick-start", Component: QuickStartPage },
-      { path: "home", Component: HomePage },
-      { path: "company", Component: CompanyPage },
-      { path: "architecture", Component: ArchitecturePage },
-      { path: "brand-assets", Component: BrandAssetsPage },
-      { path: "design-tokens", Component: DesignTokensPage },
-      { path: "stationery", Component: StationeryPage },
-      { path: "generators", Component: GeneratorsPage },
-      { path: "marketing", Component: MarketingPage },
-      { path: "linkedin", Component: LinkedInPage },
-      { path: "whatsapp", Component: WhatsAppPage },
-      { path: "email", Component: EmailPage },
-      { path: "presentations", Component: PresentationsPage },
-      { path: "control-panel", Component: ControlPanelPage },
-      { path: "gallery", Component: ProductGalleryPage },
-      { path: "product-writeup", Component: ProductWriteupPage },
-      { path: "account-success", Component: AccountSuccessPage },
-      { path: "business-intelligence", Component: BusinessIntelligencePage },
-      { path: "how-it-works", Component: HowItWorksPage },
-      { path: "about", Component: AboutPage },
-      { path: "pricing", Component: PricingPage },
-      { path: "contact", Component: ContactPage },
-      { path: "blog", Component: BlogPage },
-      { path: "evolution", Component: EvolutionPage },
-      { path: "sales", Component: SalesPage },
-      { path: "documentation", Component: DocumentationPage },
-      { path: "workbench", Component: WorkbenchPage },
-      { path: "coming-soon", Component: ComingSoonPage },
+      { index: true,                  Component: BrandHubPage },
+      { path: "quick-start",          Component: QuickStartPage },
+      { path: "home",                 Component: HomePage },
+      { path: "company",              Component: CompanyPage },
+      { path: "architecture",         Component: ArchitecturePage },
+      { path: "brand-assets",         Component: BrandAssetsPage },
+      { path: "design-tokens",        Component: DesignTokensPage },
+      { path: "stationery",           Component: StationeryPage },
+      { path: "generators",           Component: GeneratorsPage },
+      { path: "marketing",            Component: MarketingPage },
+      { path: "linkedin",             Component: LinkedInPage },
+      { path: "whatsapp",             Component: WhatsAppPage },
+      { path: "email",                Component: EmailPage },
+      { path: "presentations",        Component: PresentationsPage },
+      { path: "control-panel",        Component: ControlPanelPage },
+      { path: "gallery",              Component: ProductGalleryPage },
+      { path: "product-writeup",      Component: ProductWriteupPage },
+      { path: "account-success",      Component: AccountSuccessPage },
+      { path: "business-intelligence",Component: BusinessIntelligencePage },
+      { path: "how-it-works",         Component: HowItWorksPage },
+      { path: "about",                Component: AboutPage },
+      { path: "pricing",              Component: PricingPage },
+      { path: "contact",              Component: ContactPage },
+      { path: "blog",                 Component: BlogPage },
+      { path: "evolution",            Component: EvolutionPage },
+      { path: "sales",                Component: SalesPage },
+      { path: "documentation",        Component: DocumentationPage },
+      { path: "workbench",            Component: WorkbenchPage },
+      { path: "coming-soon",          Component: () => <ComingSoon label="Coming Soon" /> },
       {
         path: "*",
         Component: () => (
           <div className="flex items-center justify-center h-full">
             <div className="text-center">
-              <h1 className="text-4xl font-bold" style={{ color: 'var(--ink)' }}>404</h1>
-              <p style={{ color: 'var(--ink-muted)' }} className="mt-2">Page not found</p>
+              <h1 className="text-4xl font-bold" style={{ color: "var(--ink)" }}>404</h1>
+              <p style={{ color: "var(--ink-muted)" }} className="mt-2">Page not found</p>
             </div>
           </div>
         ),
@@ -137,3 +144,6 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+import { RootLayout } from "./components/RootLayout";
+import { HomePage } from "./components/pages/HomePage";
+import { BrandHubPage } from "./components/pages/BrandHubPage";
