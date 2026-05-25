@@ -11,6 +11,31 @@ interface DayEntry {
 
 const entries: DayEntry[] = [
   {
+    date: "Before the Code",
+    label: "The Origin — Suffered, Visualised, Built",
+    what: `IntegrateWise was not ideated. It was suffered.\n\nThe founder spent 13 years as a CSM and MuleSoft architect watching the same failure repeat across enterprise accounts: critical signals split across Salesforce, Zendesk, Slack, and spreadsheets — no system seeing the full picture, the human becoming the integration layer by default. The $8M account that nearly churned because the renewal signal was in three places at once was not an edge case. It was the pattern.\n\nThe solution was visualised before it was built. First in the mind. Then in Excel — modelling account health, renewal signals, cross-system correlation manually, proving the value before writing a line of code. Then templated. Then coded. Simple at first. Mature over time.\n\nWhat exists today — integratewise-live, 237,000 lines, an 8-stage normalisation pipeline, ten operational contexts, four domain shells, the GoalAlignmentBar, the Entity 360, the approval gate — is the fourth rebuild of a system that has been deleted, lost, or destroyed three times before reaching this state.\n\nThe four repos:\n1. integratewise-os — the first canonical build. Lost.\n2. integratewise-ai-workspace Phase 2 — rebuilt stronger. Lost.\n3. integratewise-ai-workspace on Bitbucket Phase 3 — the entire Bitbucket organisation was deleted. Gone with it: 45 days of the most complete version built to date — a fully working UI with 28 connected systems via live APIs, brainstorming sessions (the concept that became knowledge base, then conversational memory), a view layer for any user or org, goals and metrics tracked against org-level KPIs, tool ROI tracking showing business return per software investment. The proof of concept. Lost.\n4. integratewise-live — the current canonical repo. Alive.\n\nEach time the code was lost, the architecture survived — because it lived in the founder's mind, not in any repository. Each rebuild came back stronger. Not because the loss was acceptable, but because the understanding was deeper. The time and money spent never came back. The thinking compounded.\n\nThe December 2025 system (integratewise-ops, the surviving artefact) had: a live Command Center pulling from 16 Firestore collections simultaneously, Google Calendar integration, Google Drive search, AI insights on demand, a 9-category knowledge base, a Founder console with strategic decisions, blockers, product pipeline, hiring tracker, live ACV and churn risk KPIs, HermesMemoryPanel reading Coda via MCP, IntegrationHealth monitoring. 28 systems connected. All working. Built in 3 days in December 2025.\n\nThe January to mid-February 2026 period — 45 days after that December — is what was lost in the Bitbucket deletion. No export. No backup. No record anywhere except in the founder's memory.\n\nThis entry exists so that record is no longer only in one person's head.\n\nSolo founder. No team. No investor. No external validation before the first customer. Built it anyway. Lost it. Built it again. Lost it again. Built it again. This is the fourth version. What you are reading is the record that should have existed from the beginning.`,
+    decisions: [
+      "The product was proved in Excel before it was coded — value-first, then engineering.",
+      "The architecture survived four repo deletions because it was never only in the code.",
+      "December 2025: 28 systems connected in 3 days. Brainstorming sessions, view layer, org goals, tool KPIs — all working.",
+      "January–February 2026: 45 days of evolution lost in Bitbucket org deletion. No backup. Rebuilt.",
+      "Each rebuild produced a stronger architecture. The cost — time and money — was not recoverable.",
+      "The current canonical system is integratewise-live. Fourth rebuild. Enterprise-grade.",
+      "The proof point that started everything: $8M account, three systems, zero shared Memory.",
+    ],
+    quotes: [
+      "Every time it got vanished, I was so devastated but then bounced back with stronger architecture only. But the amount of time invested and money that was spent never come back — that's the saddest thing.",
+      "I have only suffered the pain, visualised the solution, built it in small scale in Excel and got the value, then templated and then coded simple way — now it's a complete mature system, equivalent to an enterprise system.",
+      "My mind and memory stays.",
+    ],
+    locked: [
+      "Solo founder build — no team, no investor, no external validation.",
+      "Four rebuilds. Three losses. One surviving canonical repo.",
+      "December 2025: 28 connected systems, working UI, knowledge base, org KPIs, tool ROI — all live.",
+      "The concept of conversational memory existed and was working in December 2025 before it had a name.",
+    ],
+  },
+  {
     date: "May 8, 2026",
     label: "The Vault Scan — What Existed",
     what: "The first session with Hermes began with a full scan of the IntegrateWise vault — Google Drive, iCloud, local Github. 6,017 files, 4.91 GB. The intent was to surface what had been built, documented, and decided before this period. What emerged was a complete body of locked work — doctrine, vocabulary, architecture, sales materials — all aligned to a single document date: May 6, 2026. The second half of the session went deeper into the product codebase (integratewise-live), reading the full Workspace Live UI — Sidebar, TopBar, SpineClient, IntelligenceDrawer, CommandPalette, GoalAlignmentBar, DomainShells. The architecture was real and complete.",
