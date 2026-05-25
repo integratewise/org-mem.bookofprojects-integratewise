@@ -275,7 +275,7 @@ function LinkedInPostCard({ post, index }: { post: typeof CONTENT_LIBRARY.linked
         viewport={{ once: true }}
         transition={{ delay: index * 0.08 }}
         className="overflow-hidden rounded-xl border flex flex-col"
-        style={{ background: 'var(--surface-raised)', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
+        style={{ background: 'transparent', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
       >
         {/* Theme strip */}
         <div className="h-2 w-full" style={{ background: getSlideGradient(post.image) }} />
@@ -322,7 +322,7 @@ function LinkedInPostCard({ post, index }: { post: typeof CONTENT_LIBRARY.linked
              style={{ background: 'color-mix(in srgb, var(--ink) 55%, transparent)' }}
              onClick={() => setShowPreview(false)}>
           <div className="w-full max-w-lg rounded-2xl overflow-hidden"
-               style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule)', boxShadow: 'var(--shadow-2xl)' }}
+               style={{ background: 'transparent', border: '1px solid var(--rule)', boxShadow: 'var(--shadow-2xl)' }}
                onClick={e => e.stopPropagation()}>
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b" style={{ borderColor: 'var(--rule)' }}>
@@ -376,7 +376,7 @@ function CarouselCard({ carousel, index }: { carousel: typeof CONTENT_LIBRARY.li
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
       className="overflow-hidden rounded-xl border"
-      style={{ background: 'var(--surface-raised)', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
+      style={{ background: 'transparent', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
     >
       {/* Gradient preview */}
       <div className="h-28 flex items-center justify-center px-6"
@@ -447,7 +447,7 @@ function CatalogItem({ item, index }: { item: typeof CONTENT_LIBRARY.whatsapp.ca
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
       className="rounded-xl border p-4"
-      style={{ background: 'var(--surface-raised)', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
+      style={{ background: 'transparent', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex-1">
@@ -471,7 +471,7 @@ function WhatsAppTemplate({ template, index }: { template: typeof CONTENT_LIBRAR
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
       className="rounded-xl border p-5"
-      style={{ background: 'var(--surface-raised)', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
+      style={{ background: 'transparent', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
     >
       <div className="mb-3 flex items-center gap-2">
         <MessageCircle className="h-4 w-4" style={{ color: 'var(--forest)' }} />
@@ -580,7 +580,7 @@ function EmailCard({ email, index }: { email: typeof CONTENT_LIBRARY.email.newsl
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
       className="rounded-xl border overflow-hidden"
-      style={{ background: 'var(--surface-raised)', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
+      style={{ background: 'transparent', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
     >
       <div className="p-5">
         <div className="mb-2 flex items-center gap-2">
@@ -678,7 +678,7 @@ export function MarketingPage() {
           <motion.div key="linkedin" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} className="space-y-10">
             <section>
               <SectionHeader icon={Image} title="Company Banner" />
-              <div className="rounded-xl border p-6" style={{ background: 'var(--surface-raised)', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}>
+              <div className="rounded-xl border p-6" style={{ background: 'transparent', borderColor: 'var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}>
                 <BannerPreview config={CONTENT_LIBRARY.linkedin.banner} />
               </div>
             </section>

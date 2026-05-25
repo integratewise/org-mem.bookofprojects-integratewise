@@ -27,6 +27,7 @@ import { PricingPage } from "./components/pages/PricingPage";
 import { ContactPage } from "./components/pages/ContactPage";
 import { BlogPage } from "./components/pages/BlogPage";
 import { EvolutionPage } from "./components/pages/EvolutionPage";
+import { WorkbenchPage } from "./components/pages/WorkbenchPage";
 
 const SECTION_LABELS: Record<string, { label: string; description: string; subsections: string[] }> = {
   '04': {
@@ -120,6 +121,7 @@ export const router = createBrowserRouter([
       { path: "evolution", Component: EvolutionPage },
       { path: "sales", Component: SalesPage },
       { path: "documentation", Component: DocumentationPage },
+      { path: "workbench", Component: WorkbenchPage },
       { path: "coming-soon", Component: ComingSoonPage },
       {
         path: "*",

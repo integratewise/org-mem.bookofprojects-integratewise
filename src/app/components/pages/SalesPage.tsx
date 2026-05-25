@@ -63,12 +63,12 @@ const deliverables: Deliverable[] = [
 ];
 
 const gradients = [
-  "linear-gradient(135deg, var(--primary-color) 0%, var(--text-color) 100%)",
-  "linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%)",
-  "linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 50%, var(--accent-color) 100%)",
-  "linear-gradient(135deg, var(--primary-color) 0%, var(--brand-primary-light) 100%)",
-  "linear-gradient(135deg, var(--warning-color) 0%, var(--accent-color) 100%)",
-  "linear-gradient(135deg, var(--success-color) 0%, var(--primary-color) 100%)",
+  "linear-gradient(135deg, var(--forest) 0%, var(--ink) 100%)",
+  "linear-gradient(135deg, var(--gold) 0%, var(--forest) 100%)",
+  "linear-gradient(135deg, var(--ink) 0%, var(--forest) 50%, var(--gold) 100%)",
+  "linear-gradient(135deg, var(--forest) 0%, var(--forest-bright) 100%)",
+  "linear-gradient(135deg, var(--warning-color) 0%, var(--gold) 100%)",
+  "linear-gradient(135deg, var(--forest-bright) 0%, var(--forest) 100%)",
 ];
 
 function getSalesAssetContent(item: Deliverable): SalesAssetContent {
@@ -87,8 +87,8 @@ function createSalesSvg(content: SalesAssetContent, gradient: string) {
     <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
       <defs>
         <linearGradient id="salesGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="${gradient.match(/#[0-9A-Fa-f]{6}/g)?.[0] ?? "var(--primary-color)"}" />
-          <stop offset="100%" stop-color="${gradient.match(/#[0-9A-Fa-f]{6}/g)?.slice(-1)[0] ?? "var(--text-color)"}" />
+          <stop offset="0%" stop-color="${gradient.match(/#[0-9A-Fa-f]{6}/g)?.[0] ?? "var(--forest)"}" />
+          <stop offset="100%" stop-color="${gradient.match(/#[0-9A-Fa-f]{6}/g)?.slice(-1)[0] ?? "var(--ink)"}" />
         </linearGradient>
       </defs>
       <rect width="1200" height="675" fill="url(#salesGradient)" rx="32" />
@@ -106,9 +106,9 @@ function createSalesSvg(content: SalesAssetContent, gradient: string) {
 }
 
 function createSalesHtml(content: SalesAssetContent, gradient: string) {
-  const colors = gradient.match(/#[0-9A-Fa-f]{6}/g) ?? ["var(--primary-color)", "var(--text-color)"];
-  const start = colors[0] ?? "var(--primary-color)";
-  const end = colors[colors.length - 1] ?? "var(--text-color)";
+  const colors = gradient.match(/#[0-9A-Fa-f]{6}/g) ?? ["var(--forest)", "var(--ink)"];
+  const start = colors[0] ?? "var(--forest)";
+  const end = colors[colors.length - 1] ?? "var(--ink)";
 
   return `<!DOCTYPE html>
 <html>
@@ -210,13 +210,13 @@ function SalesAssetPreview({ content, gradient }: { content: SalesAssetContent; 
           <div className="relative flex items-center">
             <div className="absolute inset-0 rounded-[32px] bg-[var(--ink)]/10 blur-2xl" />
             <div className="relative w-full rounded-[28px] border border-[rgba(244,240,232,0.15)] bg-[var(--paper)]/10 p-5 backdrop-blur-md shadow-2xl">
-              <div className="rounded-[22px] bg-[var(--paper)] p-5 text-[var(--text-color)]">
+              <div className="rounded-[22px] bg-[var(--paper)] p-5 text-[var(--ink)]">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs uppercase tracking-[0.25em] text-[var(--text-faint)]">Executive Snapshot</p>
                     <h3 className="mt-2 text-2xl font-bold">Board-Ready Asset</h3>
                   </div>
-                  <div className="rounded-2xl bg-[var(--primary-color)] p-3 text-[var(--paper)]">
+                  <div className="rounded-2xl bg-[var(--forest)] p-3 text-[var(--paper)]">
                     <Shield className="h-6 w-6" />
                   </div>
                 </div>
@@ -224,8 +224,8 @@ function SalesAssetPreview({ content, gradient }: { content: SalesAssetContent; 
                   <div className="rounded-2xl bg-[var(--paper)] p-4 shadow-sm">
                     <p className="text-xs text-[var(--text-faint)]">Pipeline Impact</p>
                     <p className="mt-2 text-3xl font-bold">38%</p>
-                    <div className="mt-3 h-2 rounded-full bg-[var(--border-subtle)]">
-                      <div className="h-2 w-2/3 rounded-full bg-[var(--primary-color)]" />
+                    <div className="mt-3 h-2 rounded-full bg-[var(--rule-light)]">
+                      <div className="h-2 w-2/3 rounded-full bg-[var(--forest)]" />
                     </div>
                   </div>
                   <div className="rounded-2xl bg-[var(--paper)] p-4 shadow-sm">
@@ -234,7 +234,7 @@ function SalesAssetPreview({ content, gradient }: { content: SalesAssetContent; 
                     <div className="mt-3 flex gap-1">
                       <div className="h-10 flex-1 rounded-xl bg-[var(--paper-deep)]" />
                       <div className="h-10 flex-1 rounded-xl bg-[var(--rule-light)]" />
-                      <div className="h-10 flex-1 rounded-xl bg-[var(--primary-color)]" />
+                      <div className="h-10 flex-1 rounded-xl bg-[var(--forest)]" />
                     </div>
                   </div>
                 </div>
@@ -304,7 +304,7 @@ function PreviewModal({ item, gradient, onClose }: { item: Deliverable; gradient
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[var(--ink)]/70">
-      <div className="rounded-xl max-w-3xl w-full max-h-[90vh] overflow-hidden flex flex-col" style={{ background: 'var(--surface-raised)' }}>
+      <div className="rounded-xl max-w-3xl w-full max-h-[90vh] overflow-hidden flex flex-col" style={{ background: 'transparent' }}>
         <div className="flex items-center justify-between p-4 border-b">
           <h3 className="font-semibold">{item.title}</h3>
           <div className="flex gap-2">
@@ -319,9 +319,9 @@ function PreviewModal({ item, gradient, onClose }: { item: Deliverable; gradient
             <button onClick={onClose} className="p-2"><X size={20} /></button>
           </div>
         </div>
-        <div ref={contentRef} className="flex-1 p-6" style={{ background: 'var(--surface)' }}>
+        <div ref={contentRef} className="flex-1 p-6" style={{ background: 'var(--paper-warm)' }}>
           <div className="grid lg:grid-cols-[320px_minmax(0,1fr)] gap-6">
-            <div className="rounded-xl border border-[var(--border-subtle)] p-4 space-y-4" style={{ background: 'var(--surface-raised)' }}>
+            <div className="rounded-xl border border-[var(--rule-light)] p-4 space-y-4" style={{ background: 'transparent' }}>
               <div>
                 <label className="text-xs font-medium text-[var(--text-muted)]">Title</label>
                 <input
@@ -395,7 +395,7 @@ export function SalesPage() {
     <div className="p-6 lg:p-10 max-w-7xl mx-auto">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-[var(--text-color)] mb-2">Sales Enablement</h1>
+        <h1 className="text-3xl font-bold text-[var(--ink)] mb-2">Sales Enablement</h1>
         <p className="text-[var(--text-muted)]">Pitch decks, battlecards, case studies, and proposal templates</p>
       </div>
       
@@ -407,8 +407,8 @@ export function SalesPage() {
           { label: 'Formats', value: 'PNG/SVG/HTML' },
           { label: 'Last Updated', value: 'Mar 14' },
         ].map((stat) => (
-          <div key={stat.label} className="p-4 rounded-xl border border-[var(--border-subtle)] text-center" style={{ background: 'var(--surface-raised)' }}>
-            <p className="text-2xl font-bold text-[var(--text-color)]">{stat.value}</p>
+          <div key={stat.label} className="p-4 rounded-xl border border-[var(--rule-light)] text-center" style={{ background: 'transparent' }}>
+            <p className="text-2xl font-bold text-[var(--ink)]">{stat.value}</p>
             <p className="text-xs text-[var(--text-muted)]">{stat.label}</p>
           </div>
         ))}
@@ -417,29 +417,29 @@ export function SalesPage() {
       {/* Grid */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {deliverables.map((item, index) => (
-          <div key={item.id} className="rounded-xl border border-[var(--border-subtle)] overflow-hidden hover:shadow-lg transition-shadow" style={{ background: 'var(--surface-raised)' }}>
+          <div key={item.id} className="rounded-xl border border-[var(--rule-light)] overflow-hidden hover:shadow-lg transition-shadow" style={{ background: 'transparent' }}>
             <div className="h-40">
               <SalesThumbnail title={item.title} gradient={gradients[index % gradients.length]} Icon={item.icon} />
             </div>
             <div className="p-5">
               <div className="flex items-center gap-2 mb-2">
-                <item.icon className="w-4 h-4 text-[var(--primary-color)]" />
+                <item.icon className="w-4 h-4 text-[var(--forest)]" />
                 <span className="text-xs text-[var(--text-muted)] uppercase">{item.category}</span>
               </div>
-              <h4 className="font-semibold text-[var(--text-color)]">{item.title}</h4>
+              <h4 className="font-semibold text-[var(--ink)]">{item.title}</h4>
               <p className="text-sm text-[var(--text-muted)] mt-1">{item.description}</p>
               <div className="flex items-center justify-between mt-4">
                 <span className="text-xs text-[var(--text-faint)]">{item.format}</span>
                 <div className="flex gap-2">
                   <button 
                     onClick={() => setPreviewItem(item)} 
-                    className="flex items-center gap-1 px-3 py-1.5 bg-[var(--primary-color)] text-[var(--paper)] rounded-lg text-sm"
+                    className="flex items-center gap-1 px-3 py-1.5 bg-[var(--forest)] text-[var(--paper)] rounded-lg text-sm"
                   >
                     <Eye className="w-4 h-4" /> Preview
                   </button>
                   <button
                     onClick={() => downloadSalesThumbnail(item, gradients[index % gradients.length])}
-                    className="flex items-center gap-1 px-3 py-1.5 border border-[var(--border-base)] text-[var(--text-color)] rounded-lg text-sm"
+                    className="flex items-center gap-1 px-3 py-1.5 border border-[var(--border-base)] text-[var(--ink)] rounded-lg text-sm"
                     aria-label={`Download ${item.title}`}
                   >
                     <Download className="w-4 h-4" />

@@ -495,7 +495,7 @@ export function DocumentationPage() {
 
   const getStatusColor = (status: DocStatus) => {
     switch (status) {
-      case 'complete': return 'var(--success-color)';
+      case 'complete': return 'var(--forest-bright)';
       case 'in-progress': return 'var(--warning-color)';
       case 'planned': return 'var(--slate)';
     }
@@ -550,8 +550,8 @@ export function DocumentationPage() {
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: 'var(--primary-soft)' }}>
-            <BookOpen className="w-4 h-4" style={{ color: 'var(--primary-color)' }} />
+          <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: 'color-mix(in srgb, var(--forest) 8%, transparent)' }}>
+            <BookOpen className="w-4 h-4" style={{ color: 'var(--forest)' }} />
           </div>
           <h1 className="text-2xl font-bold" style={{ color: 'var(--text-strong)' }}>Documentation Library</h1>
         </div>
@@ -562,21 +562,21 @@ export function DocumentationPage() {
 
       {/* Stats row */}
       <div className="grid grid-cols-3 gap-3 mb-6">
-        <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--surface)', border: '1px solid var(--border-base)' }}>
-          <CheckCircle2 className="w-5 h-5 shrink-0" style={{ color: 'var(--status-success)' }} />
+        <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--paper-warm)', border: '1px solid var(--border-base)' }}>
+          <CheckCircle2 className="w-5 h-5 shrink-0" style={{ color: 'var(--forest-bright)' }} />
           <div>
-            <p className="text-xl font-bold leading-none" style={{ color: 'var(--status-success)' }}>{completeDocs}</p>
+            <p className="text-xl font-bold leading-none" style={{ color: 'var(--forest-bright)' }}>{completeDocs}</p>
             <p className="text-xs mt-0.5" style={{ color: 'var(--text-faint)' }}>Complete</p>
           </div>
         </div>
-        <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--surface)', border: '1px solid var(--border-base)' }}>
+        <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--paper-warm)', border: '1px solid var(--border-base)' }}>
           <Clock className="w-5 h-5 shrink-0" style={{ color: 'var(--status-warning)' }} />
           <div>
             <p className="text-xl font-bold leading-none" style={{ color: 'var(--status-warning)' }}>{inProgressDocs}</p>
             <p className="text-xs mt-0.5" style={{ color: 'var(--text-faint)' }}>In Progress</p>
           </div>
         </div>
-        <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--surface)', border: '1px solid var(--border-base)' }}>
+        <div className="px-4 py-3 rounded-xl flex items-center gap-3" style={{ background: 'var(--paper-warm)', border: '1px solid var(--border-base)' }}>
           <Circle className="w-5 h-5 shrink-0" style={{ color: 'var(--slate)' }} />
           <div>
             <p className="text-xl font-bold leading-none" style={{ color: 'var(--slate)' }}>{plannedDocs}</p>
@@ -595,14 +595,14 @@ export function DocumentationPage() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-9 pr-3 py-2 rounded-lg text-sm"
-            style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-strong)' }}
+            style={{ background: 'transparent', border: '1px solid var(--border-base)', color: 'var(--text-strong)' }}
           />
         </div>
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value as DocStatus | 'all')}
           className="px-3 py-2 rounded-lg text-xs"
-          style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }}
+          style={{ background: 'transparent', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }}
         >
           <option value="all">All Status</option>
           <option value="complete">Complete</option>
@@ -613,7 +613,7 @@ export function DocumentationPage() {
           value={priorityFilter}
           onChange={(e) => setPriorityFilter(e.target.value as DocPriority | 'all')}
           className="px-3 py-2 rounded-lg text-xs"
-          style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }}
+          style={{ background: 'transparent', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }}
         >
           <option value="all">All Priority</option>
           <option value="tier1">Tier 1</option>
@@ -628,7 +628,7 @@ export function DocumentationPage() {
           onClick={() => { setSelectedPack(null); setSelectedDoc(null); }}
           className="px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
           style={{
-            background: selectedPack === null ? 'var(--primary-color)' : 'var(--surface)',
+            background: selectedPack === null ? 'var(--forest)' : 'var(--paper-warm)',
             color: selectedPack === null ? 'var(--text-inverse)' : 'var(--text-muted)',
             border: '1px solid var(--border-base)',
           }}
@@ -641,7 +641,7 @@ export function DocumentationPage() {
             onClick={() => { setSelectedPack(pack.id); setSelectedDoc(pack.documents[0] || null); }}
             className="px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5"
             style={{
-              background: selectedPack === pack.id ? pack.color : 'var(--surface)',
+              background: selectedPack === pack.id ? pack.color : 'var(--paper-warm)',
               color: selectedPack === pack.id ? 'var(--paper)' : 'var(--text-muted)',
               border: `1px solid ${selectedPack === pack.id ? pack.color : 'var(--border-base)'}`,
             }}
@@ -656,7 +656,7 @@ export function DocumentationPage() {
         <div className="mb-8">
           <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid var(--border-base)' }}>
             {/* Doc header */}
-            <div className="p-6" style={{ background: 'var(--surface)', borderBottom: '1px solid var(--border-base)' }}>
+            <div className="p-6" style={{ background: 'var(--paper-warm)', borderBottom: '1px solid var(--border-base)' }}>
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1">
                   <h2 className="text-xl font-bold mb-1" style={{ color: 'var(--text-strong)' }}>{selectedDoc.title}</h2>
@@ -665,7 +665,7 @@ export function DocumentationPage() {
                 <button
                   onClick={() => setSelectedDoc(null)}
                   className="text-xs px-3 py-1.5 rounded-lg"
-                  style={{ color: 'var(--text-muted)', background: 'var(--surface-2)', border: '1px solid var(--border-base)' }}
+                  style={{ color: 'var(--text-muted)', background: 'var(--paper-deep)', border: '1px solid var(--border-base)' }}
                 >
                   Close
                 </button>
@@ -675,10 +675,10 @@ export function DocumentationPage() {
                   {(() => { const S = getStatusIcon(selectedDoc.status); return <S className="w-3 h-3" />; })()}
                   {selectedDoc.status.replace('-', ' ')}
                 </span>
-                <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium" style={{ background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
+                <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium" style={{ background: 'var(--paper-deep)', color: 'var(--text-muted)' }}>
                   <Layers className="w-3 h-3" />{getPriorityLabel(selectedDoc.priority)}
                 </span>
-                <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium" style={{ background: 'var(--surface-2)', color: 'var(--text-muted)' }}>
+                <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium" style={{ background: 'var(--paper-deep)', color: 'var(--text-muted)' }}>
                   <Users className="w-3 h-3" />Owner: {selectedDoc.owner}
                 </span>
               </div>
@@ -687,14 +687,14 @@ export function DocumentationPage() {
                   <button
                     onClick={() => handleDownloadDoc(selectedDoc, 'md')}
                     className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium"
-                    style={{ background: 'var(--primary-color)', color: 'var(--text-inverse)' }}
+                    style={{ background: 'var(--forest)', color: 'var(--text-inverse)' }}
                   >
                     <Download className="w-3.5 h-3.5" />Download Markdown
                   </button>
                   <button
                     onClick={() => handleDownloadDoc(selectedDoc, 'txt')}
                     className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium"
-                    style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }}
+                    style={{ background: 'transparent', border: '1px solid var(--border-base)', color: 'var(--text-muted)' }}
                   >
                     <Download className="w-3.5 h-3.5" />Download TXT
                   </button>
@@ -702,7 +702,7 @@ export function DocumentationPage() {
               )}
             </div>
             {/* Doc content */}
-            <div className="p-6" style={{ background: 'var(--surface-raised)' }}>
+            <div className="p-6" style={{ background: 'transparent' }}>
               {getDocumentContent(selectedDoc.id) ? (
                 <article className="markdown-content prose prose-sm max-w-none">
                   <ReactMarkdown remarkPlugins={[remarkGfm]}>{getDocumentContent(selectedDoc.id)!}</ReactMarkdown>
@@ -736,7 +736,7 @@ export function DocumentationPage() {
               <button
                 onClick={() => togglePack(pack.id)}
                 className="w-full flex items-center gap-3 p-5 text-left transition-colors"
-                style={{ background: isOpen ? 'var(--surface)' : 'var(--surface-raised)' }}
+                style={{ background: isOpen ? 'var(--paper-warm)' : 'var(--paper-warm)' }}
               >
                 <div className="w-9 h-9 rounded-lg shrink-0 flex items-center justify-center" style={{ background: `color-mix(in srgb, ${pack.color} 14%, transparent)` }}>
                   <Icon className="w-4 h-4" style={{ color: pack.color }} />
@@ -747,7 +747,7 @@ export function DocumentationPage() {
                     <span className="text-xs px-1.5 py-0.5 rounded-full shrink-0" style={{ background: `color-mix(in srgb, ${pack.color} 12%, transparent)`, color: pack.color }}>{total}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="flex-1 h-1.5 rounded-full" style={{ background: 'var(--surface-2)' }}>
+                    <div className="flex-1 h-1.5 rounded-full" style={{ background: 'var(--paper-deep)' }}>
                       <div className="h-full rounded-full" style={{ width: `${progress}%`, background: pack.color }} />
                     </div>
                     <span className="text-xs shrink-0" style={{ color: 'var(--text-faint)' }}>{complete}/{total}</span>
@@ -768,13 +768,13 @@ export function DocumentationPage() {
                         onClick={() => setSelectedDoc(isSelected ? null : doc)}
                         className="w-full flex items-start gap-3 px-5 py-3 text-left transition-colors"
                         style={{
-                          background: isSelected ? 'var(--primary-soft)' : i % 2 === 0 ? 'var(--surface-raised)' : 'var(--surface)',
-                          borderTop: i > 0 ? '1px solid var(--border-subtle)' : 'none',
+                          background: isSelected ? 'color-mix(in srgb, var(--forest) 8%, transparent)' : i % 2 === 0 ? 'var(--paper-warm)' : 'var(--paper-warm)',
+                          borderTop: i > 0 ? '1px solid var(--rule-light)' : 'none',
                         }}
                       >
                         <StatusIcon className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: getStatusColor(doc.status) }} />
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs font-medium" style={{ color: isSelected ? 'var(--primary-color)' : 'var(--text-strong)' }}>{doc.title}</p>
+                          <p className="text-xs font-medium" style={{ color: isSelected ? 'var(--forest)' : 'var(--text-strong)' }}>{doc.title}</p>
                           <p className="text-xs mt-0.5" style={{ color: 'var(--text-faint)' }}>{doc.owner} · {getPriorityLabel(doc.priority)}</p>
                         </div>
                         <ChevronRight className="w-3 h-3 shrink-0 mt-0.5" style={{ color: 'var(--text-faint)' }} />
@@ -789,7 +789,7 @@ export function DocumentationPage() {
       </div>
 
       {/* Priority roadmap */}
-      <div className="mt-8 rounded-xl p-6" style={{ background: 'var(--surface)', border: '1px solid var(--border-base)' }}>
+      <div className="mt-8 rounded-xl p-6" style={{ background: 'var(--paper-warm)', border: '1px solid var(--border-base)' }}>
         <h3 className="text-base font-semibold mb-4" style={{ color: 'var(--text-strong)' }}>Priority Roadmap</h3>
         <div className="space-y-3">
           {(['tier1', 'tier2', 'tier3'] as const).map(tier => {
@@ -801,8 +801,8 @@ export function DocumentationPage() {
                   <p className="text-xs font-semibold" style={{ color: 'var(--text-strong)' }}>{tier === 'tier1' ? 'Tier 1' : tier === 'tier2' ? 'Tier 2' : 'Tier 3'}</p>
                   <p className="text-xs" style={{ color: 'var(--text-faint)' }}>{tier === 'tier1' ? 'Immediate' : tier === 'tier2' ? 'Next' : 'Future'}</p>
                 </div>
-                <div className="flex-1 h-2 rounded-full" style={{ background: 'var(--surface-2)' }}>
-                  <div className="h-full rounded-full" style={{ width: `${(tierComplete / tierDocs.length) * 100}%`, background: tier === 'tier1' ? 'var(--status-success)' : tier === 'tier2' ? 'var(--status-warning)' : 'var(--text-faint)' }} />
+                <div className="flex-1 h-2 rounded-full" style={{ background: 'var(--paper-deep)' }}>
+                  <div className="h-full rounded-full" style={{ width: `${(tierComplete / tierDocs.length) * 100}%`, background: tier === 'tier1' ? 'var(--forest-bright)' : tier === 'tier2' ? 'var(--status-warning)' : 'var(--text-faint)' }} />
                 </div>
                 <p className="text-xs font-medium w-16 text-right shrink-0" style={{ color: 'var(--text-muted)' }}>{tierComplete}/{tierDocs.length} done</p>
               </div>

@@ -34,6 +34,7 @@ import {
   HeartHandshake,
   Sun,
   Moon,
+  Layers,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -84,6 +85,7 @@ const NAV_STRUCTURE: NavEntry[] = [
       color: 'var(--slate)',
       children: [
         { to: '/architecture', icon: GitBranch, label: 'Adaptive Spine & Architecture', color: 'var(--slate)' },
+        { to: '/workbench', icon: Layers, label: 'Live Workbench', color: 'var(--forest)' },
         { to: '/documentation?pack=pack-c', icon: Box, label: 'Product Narrative & Continuity', color: 'var(--brand-accent-dark)' },
         { to: '/documentation?pack=pack-d', icon: Shield, label: 'Technical System', color: 'var(--slate-mid)' },
       ],

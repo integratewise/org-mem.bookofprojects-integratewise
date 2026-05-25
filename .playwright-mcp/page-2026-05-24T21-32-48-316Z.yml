@@ -1,0 +1,192 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: IntegrateWise
+        - paragraph [ref=e14]: Continuity Documentation System
+    - generic [ref=e16]:
+      - img [ref=e17]
+      - textbox "Search navigation..." [ref=e20]
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - button "00 Company Strategy 2" [ref=e23]:
+          - img [ref=e24]
+          - img [ref=e26]
+          - generic [ref=e30]: 00 Company Strategy
+          - generic [ref=e31]: "2"
+        - generic [ref=e32]:
+          - link "Strategic Planning" [ref=e33] [cursor=pointer]:
+            - /url: /company
+            - img [ref=e34]
+            - generic [ref=e38]: Strategic Planning
+          - button "Doctrine & Continuity" [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Doctrine & Continuity
+      - generic [ref=e43]:
+        - button "01 Product & Engineering 3" [ref=e44]:
+          - img [ref=e45]
+          - img [ref=e47]
+          - generic [ref=e51]: 01 Product & Engineering
+          - generic [ref=e52]: "3"
+        - generic [ref=e53]:
+          - link "Adaptive Spine & Architecture" [ref=e54] [cursor=pointer]:
+            - /url: /architecture
+            - img [ref=e55]
+            - generic [ref=e59]: Adaptive Spine & Architecture
+          - button "Product Narrative & Continuity" [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: Product Narrative & Continuity
+          - button "Technical System" [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e68]: Technical System
+      - generic [ref=e69]:
+        - button "02 Marketing & Creative 10" [ref=e70]:
+          - img [ref=e71]
+          - img [ref=e73]
+          - generic [ref=e76]: 02 Marketing & Creative
+          - generic [ref=e77]: "10"
+        - generic [ref=e78]:
+          - link "Brand Assets" [ref=e79] [cursor=pointer]:
+            - /url: /brand-assets
+            - img [ref=e80]
+            - generic [ref=e86]: Brand Assets
+          - link "Design Tokens" [ref=e87] [cursor=pointer]:
+            - /url: /design-tokens
+            - img [ref=e88]
+            - generic [ref=e92]: Design Tokens
+          - link "Stationery" [ref=e93] [cursor=pointer]:
+            - /url: /stationery
+            - img [ref=e94]
+            - generic [ref=e97]: Stationery
+          - link "Marketing" [ref=e98] [cursor=pointer]:
+            - /url: /marketing
+            - img [ref=e99]
+            - generic [ref=e102]: Marketing
+          - link "LinkedIn" [ref=e103] [cursor=pointer]:
+            - /url: /linkedin
+            - img [ref=e104]
+            - generic [ref=e107]: LinkedIn
+          - link "WhatsApp" [ref=e108] [cursor=pointer]:
+            - /url: /whatsapp
+            - img [ref=e109]
+            - generic [ref=e111]: WhatsApp
+          - link "Email" [ref=e112] [cursor=pointer]:
+            - /url: /email
+            - img [ref=e113]
+            - generic [ref=e116]: Email
+          - link "Presentations" [ref=e117] [cursor=pointer]:
+            - /url: /presentations
+            - img [ref=e118]
+            - generic [ref=e121]: Presentations
+          - link "Quick Generators" [ref=e122] [cursor=pointer]:
+            - /url: /generators
+            - img [ref=e123]
+            - generic [ref=e125]: Quick Generators
+          - button "Category & Positioning" [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e131]: Category & Positioning
+      - generic [ref=e132]:
+        - button "03 Sales 2" [ref=e133]:
+          - img [ref=e134]
+          - img [ref=e136]
+          - generic [ref=e142]: 03 Sales
+          - generic [ref=e143]: "2"
+        - generic [ref=e144]:
+          - link "Sales Enablement" [ref=e145] [cursor=pointer]:
+            - /url: /sales
+            - img [ref=e146]
+            - generic [ref=e152]: Sales Enablement
+          - button "GTM & Customer Success" [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e157]: GTM & Customer Success
+      - button "04 Customer Success 3" [ref=e159]:
+        - img [ref=e160]
+        - img [ref=e162]
+        - generic [ref=e167]: 04 Customer Success
+        - generic [ref=e168]: "3"
+      - button "05 Operations 3" [ref=e170]:
+        - img [ref=e171]
+        - img [ref=e173]
+        - generic [ref=e175]: 05 Operations
+        - generic [ref=e176]: "3"
+      - button "06 Finance, Legal, HR 2" [ref=e178]:
+        - img [ref=e179]
+        - img [ref=e181]
+        - generic [ref=e185]: 06 Finance, Legal, HR
+        - generic [ref=e186]: "2"
+      - button "07 Resources & Knowledge Base 4" [ref=e188]:
+        - img [ref=e189]
+        - img [ref=e191]
+        - generic [ref=e193]: 07 Resources & Knowledge Base
+        - generic [ref=e194]: "4"
+      - button "08 External Communications 2" [ref=e196]:
+        - img [ref=e197]
+        - img [ref=e199]
+        - generic [ref=e202]: 08 External Communications
+        - generic [ref=e203]: "2"
+      - button "09 Archives & Retention 1" [ref=e205]:
+        - img [ref=e206]
+        - img [ref=e208]
+        - generic [ref=e211]: 09 Archives & Retention
+        - generic [ref=e212]: "1"
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - paragraph [ref=e216]: Continuity Documentation System v1.0
+        - paragraph [ref=e217]: 6 Doctrine Packs · 40 Documents
+      - button "Switch to dark mode" [ref=e218]:
+        - img [ref=e219]
+  - generic [ref=e221]:
+    - banner [ref=e222]:
+      - heading "Continuity Documentation System" [level=1] [ref=e224]
+    - main [ref=e225]:
+      - generic [ref=e226]:
+        - generic [ref=e228]:
+          - paragraph [ref=e229]: Pricing
+          - heading "Simple. Transparent. Based on value." [level=1] [ref=e231]:
+            - text: Simple. Transparent.
+            - text: Based on value.
+          - paragraph [ref=e232]: We are finalizing pricing. Here is what we can tell you now.
+        - generic [ref=e233]:
+          - generic [ref=e234]:
+            - generic [ref=e235]:
+              - generic [ref=e236]:
+                - img [ref=e238]
+                - heading "What it costs without it" [level=3] [ref=e241]
+              - generic [ref=e242]:
+                - generic [ref=e243]:
+                  - img [ref=e244]
+                  - paragraph [ref=e246]: Hours lost to manual context reconstruction
+                - generic [ref=e247]:
+                  - img [ref=e248]
+                  - paragraph [ref=e250]: Customer context siloed across tools
+                - generic [ref=e251]:
+                  - img [ref=e252]
+                  - paragraph [ref=e254]: AI that forgets everything between sessions
+                - generic [ref=e255]:
+                  - img [ref=e256]
+                  - paragraph [ref=e258]: Compliance gaps from ungoverned automation
+                - generic [ref=e259]:
+                  - img [ref=e260]
+                  - paragraph [ref=e262]: Operational risk from fragmented workflows
+            - generic [ref=e263]:
+              - generic [ref=e264]:
+                - img [ref=e266]
+                - heading "What IntegrateWise saves" [level=3] [ref=e269]
+              - generic [ref=e270]:
+                - paragraph [ref=e273]: Persistent AI memory across every session
+                - paragraph [ref=e276]: One surface for every tool and every department
+                - paragraph [ref=e279]: Governed execution with full lineage
+                - paragraph [ref=e282]: Enterprise-grade security by default
+                - paragraph [ref=e285]: A system that compounds intelligence every cycle
+          - generic [ref=e286]:
+            - paragraph [ref=e287]: The cost of not having persistent AI memory is 30 to 40 percent of every knowledge worker's time.
+            - paragraph [ref=e288]: IntegrateWise will be priced to be a fraction of what it costs to not have it.
+            - link "Contact us for early access pricing" [ref=e289] [cursor=pointer]:
+              - /url: /contact
+              - text: Contact us for early access pricing
+              - img [ref=e290]
+  - button "AI Assistant" [ref=e292]:
+    - img [ref=e293]
+    - generic [ref=e296]: AI Assistant
+    - img [ref=e297]

@@ -245,8 +245,8 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, delay: index * 0.06 }}
       style={{
-        background: 'var(--surface-raised)',
-        border: '1px solid var(--border-subtle)',
+        background: 'transparent',
+        border: '1px solid var(--rule-light)',
         borderRadius: 'var(--radius-xl)',
         padding: '2rem',
         position: 'relative',
@@ -388,7 +388,7 @@ function StepCard({ step, index }: { step: typeof steps[0]; index: number }) {
                         padding: '0.75rem 1rem',
                         borderRadius: 'var(--radius-md)',
                         background: 'var(--paper)',
-                        border: '1px solid var(--border-subtle)',
+                        border: '1px solid var(--rule-light)',
                       }}
                     >
                       <p
@@ -551,7 +551,7 @@ export function HowItWorksPage() {
           padding: '4rem 2rem',
           maxWidth: '52rem',
           margin: '0 auto',
-          borderTop: '1px solid var(--border-subtle)',
+          borderTop: '1px solid var(--rule-light)',
         }}
       >
         <motion.div
@@ -602,8 +602,8 @@ export function HowItWorksPage() {
                   gap: '1rem',
                   padding: '1.25rem 1.5rem',
                   borderRadius: 'var(--radius-lg)',
-                  background: 'var(--surface-raised)',
-                  border: '1px solid var(--border-subtle)',
+                  background: 'transparent',
+                  border: '1px solid var(--rule-light)',
                 }}
               >
                 <div
@@ -678,8 +678,8 @@ export function HowItWorksPage() {
                   gap: '0.75rem',
                   padding: '0.75rem 1rem',
                   borderRadius: 'var(--radius-md)',
-                  background: 'var(--surface-raised)',
-                  border: '1px solid var(--border-subtle)',
+                  background: 'transparent',
+                  border: '1px solid var(--rule-light)',
                 }}
               >
                 <div
@@ -754,8 +754,8 @@ export function HowItWorksPage() {
                   gap: '1rem',
                   padding: '1.25rem 1.5rem',
                   borderRadius: 'var(--radius-lg)',
-                  background: 'var(--surface-raised)',
-                  border: '1px solid var(--border-subtle)',
+                  background: 'transparent',
+                  border: '1px solid var(--rule-light)',
                 }}
               >
                 <div
@@ -843,8 +843,8 @@ export function HowItWorksPage() {
                   style={{
                     padding: '1.25rem',
                     borderRadius: 'var(--radius-lg)',
-                    background: 'var(--surface-raised)',
-                    border: '1px solid var(--border-subtle)',
+                    background: 'transparent',
+                    border: '1px solid var(--rule-light)',
                   }}
                 >
                   <Icon size={18} style={{ color: 'var(--forest)', marginBottom: '0.5rem' }} />

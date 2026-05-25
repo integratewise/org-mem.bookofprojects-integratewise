@@ -131,7 +131,7 @@ function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) 
       whileTap={{ scale: 0.98 }}
       onClick={handleCopy}
       className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all"
-      style={{ background: copied ? 'var(--success-color)' : 'color-mix(in srgb, var(--forest) 8%, transparent)', color: copied ? 'var(--paper)' : 'var(--forest)' }}
+      style={{ background: copied ? 'var(--forest-bright)' : 'color-mix(in srgb, var(--forest) 8%, transparent)', color: copied ? 'var(--paper)' : 'var(--forest)' }}
     >
       {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
       {copied ? 'Copied!' : label}
@@ -158,8 +158,8 @@ function CatalogItem({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="rounded-xl border border-[var(--border-subtle)] p-5"
-      style={{ background: 'var(--surface-raised)' }}
+      className="rounded-xl border border-[var(--rule-light)] p-5"
+      style={{ background: 'transparent' }}
     >
       <div className="flex items-start gap-4">
         {isEditing ? (
@@ -179,7 +179,7 @@ function CatalogItem({
               <input
                 value={item.name}
                 onChange={(e) => onChange({ ...item, name: e.target.value })}
-                className="font-semibold text-[var(--text-color)] w-full px-2 py-1 border border-[var(--border-base)] rounded mb-1"
+                className="font-semibold text-[var(--ink)] w-full px-2 py-1 border border-[var(--border-base)] rounded mb-1"
               />
               <input
                 value={item.description}
@@ -194,7 +194,7 @@ function CatalogItem({
             </>
           ) : (
             <>
-              <h4 className="font-semibold text-[var(--text-color)]">{item.name}</h4>
+              <h4 className="font-semibold text-[var(--ink)]">{item.name}</h4>
               <p className="text-sm text-[var(--text-muted)] mt-1">{item.description}</p>
               <p className="text-sm font-medium text-[var(--forest)] mt-2">{item.price}</p>
             </>
@@ -233,8 +233,8 @@ function MessageTemplate({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="rounded-xl border border-[var(--border-subtle)] overflow-hidden"
-      style={{ background: 'var(--surface-raised)' }}
+      className="rounded-xl border border-[var(--rule-light)] overflow-hidden"
+      style={{ background: 'transparent' }}
     >
       {/* Phone Preview Header */}
       <div className="bg-[var(--forest)] px-4 py-3 flex items-center gap-3">
@@ -280,10 +280,10 @@ function MessageTemplate({
               <textarea
                 value={template.text}
                 onChange={(e) => onChange({ ...template, text: e.target.value })}
-                className="w-full text-sm text-[var(--text-color)] whitespace-pre-wrap border border-[var(--border-base)] rounded p-2 min-h-[150px]"
+                className="w-full text-sm text-[var(--ink)] whitespace-pre-wrap border border-[var(--border-base)] rounded p-2 min-h-[150px]"
               />
             ) : (
-              <p className="text-sm text-[var(--text-color)] whitespace-pre-wrap">{template.text}</p>
+              <p className="text-sm text-[var(--ink)] whitespace-pre-wrap">{template.text}</p>
             )}
             <p className="text-xs text-[var(--text-faint)] mt-1 text-right">10:30 AM ✓✓</p>
           </div>
@@ -291,7 +291,7 @@ function MessageTemplate({
       </div>
       
       {/* Footer */}
-      <div className="px-4 py-3 border-t border-[var(--border-subtle)] bg-[var(--surface)] flex items-center justify-between">
+      <div className="px-4 py-3 border-t border-[var(--rule-light)] bg-[var(--paper-warm)] flex items-center justify-between">
         <div className="flex items-center gap-2">
           {isEditing ? (
             <input
@@ -306,10 +306,10 @@ function MessageTemplate({
             <input
               value={template.title}
               onChange={(e) => onChange({ ...template, title: e.target.value })}
-              className="text-sm font-medium text-[var(--text-color)] px-2 py-1 border border-[var(--border-base)] rounded"
+              className="text-sm font-medium text-[var(--ink)] px-2 py-1 border border-[var(--border-base)] rounded"
             />
           ) : (
-            <span className="text-sm font-medium text-[var(--text-color)]">{template.title}</span>
+            <span className="text-sm font-medium text-[var(--ink)]">{template.title}</span>
           )}
         </div>
         {isEditing ? (
@@ -331,7 +331,7 @@ function MessageTemplate({
       </div>
       
       {/* Action */}
-      <div className="px-4 py-3 border-t border-[var(--border-subtle)]">
+      <div className="px-4 py-3 border-t border-[var(--rule-light)]">
         <CopyButton text={template.text} label="Copy Message" />
       </div>
     </motion.div>
@@ -349,8 +349,8 @@ function QuickReplies({
   onChange: (replies: typeof DEFAULT_WHATSAPP_CONTENT.quickReplies) => void;
 }) {
   return (
-    <div className="rounded-xl border border-[var(--border-subtle)] p-6" style={{ background: 'var(--surface-raised)' }}>
-      <h3 className="text-lg font-semibold text-[var(--text-color)] mb-4 flex items-center gap-2">
+    <div className="rounded-xl border border-[var(--rule-light)] p-6" style={{ background: 'transparent' }}>
+      <h3 className="text-lg font-semibold text-[var(--ink)] mb-4 flex items-center gap-2">
         <Send className="w-5 h-5 text-[var(--forest-bright)]" />
         Quick Reply Buttons
       </h3>
@@ -469,7 +469,7 @@ export function WhatsAppPage() {
             <MessageCircle className="w-5 h-5 text-[var(--forest-bright)]" />
             <span className="text-xs font-semibold text-[var(--forest-bright)] uppercase tracking-wider">Messaging</span>
           </div>
-          <h1 className="text-3xl font-bold text-[var(--text-color)] mb-2">WhatsApp Business Assets</h1>
+          <h1 className="text-3xl font-bold text-[var(--ink)] mb-2">WhatsApp Business Assets</h1>
           <p className="text-[var(--text-muted)]">Catalog items, message templates, and quick replies for WhatsApp Business</p>
         </div>
         
@@ -487,7 +487,7 @@ export function WhatsAppPage() {
               </button>
               <button
                 onClick={() => setIsEditing(false)}
-                className="flex items-center gap-2 px-4 py-2 border border-[var(--border-base)] text-[var(--text-color)] rounded-lg text-sm font-medium hover:bg-[var(--surface)]"
+                className="flex items-center gap-2 px-4 py-2 border border-[var(--border-base)] text-[var(--ink)] rounded-lg text-sm font-medium hover:bg-[var(--paper-warm)]"
               >
                 <X className="w-4 h-4" />
                 Cancel
@@ -497,14 +497,14 @@ export function WhatsAppPage() {
             <>
               <button
                 onClick={() => setIsEditing(true)}
-                className="flex items-center gap-2 px-4 py-2 bg-[var(--primary-color)] text-[var(--paper)] rounded-lg text-sm font-medium hover:bg-[var(--primary-hover)]"
+                className="flex items-center gap-2 px-4 py-2 bg-[var(--forest)] text-[var(--paper)] rounded-lg text-sm font-medium hover:bg-[var(--forest-mid)]"
               >
                 <Edit2 className="w-4 h-4" />
                 Edit
               </button>
               <button
                 onClick={handleReset}
-                className="flex items-center gap-2 px-4 py-2 border border-[var(--border-base)] text-[var(--text-color)] rounded-lg text-sm font-medium hover:bg-[var(--surface)]"
+                className="flex items-center gap-2 px-4 py-2 border border-[var(--border-base)] text-[var(--ink)] rounded-lg text-sm font-medium hover:bg-[var(--paper-warm)]"
               >
                 <RotateCcw className="w-4 h-4" />
               </button>
@@ -526,10 +526,10 @@ export function WhatsAppPage() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: i * 0.1 }}
-            className="p-4 rounded-xl border border-[var(--border-subtle)] text-center" style={{ background: 'var(--surface-raised)' }}
+            className="p-4 rounded-xl border border-[var(--rule-light)] text-center" style={{ background: 'transparent' }}
           >
             <stat.icon className="w-5 h-5 text-[var(--forest-bright)] mx-auto mb-2" />
-            <p className="text-2xl font-bold text-[var(--text-color)]">{stat.count}</p>
+            <p className="text-2xl font-bold text-[var(--ink)]">{stat.count}</p>
             <p className="text-xs text-[var(--text-muted)]">{stat.label}</p>
           </motion.div>
         ))}
@@ -542,7 +542,7 @@ export function WhatsAppPage() {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-[var(--forest)]" />
-              <h2 className="text-xl font-bold text-[var(--text-color)]">Business Catalog</h2>
+              <h2 className="text-xl font-bold text-[var(--ink)]">Business Catalog</h2>
             </div>
             {isEditing && (
               <button
@@ -580,7 +580,7 @@ export function WhatsAppPage() {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
               <MessageCircle className="w-5 h-5 text-[var(--forest)]" />
-              <h2 className="text-xl font-bold text-[var(--text-color)]">Message Templates</h2>
+              <h2 className="text-xl font-bold text-[var(--ink)]">Message Templates</h2>
             </div>
             {isEditing && (
               <button
@@ -628,7 +628,7 @@ export function WhatsAppPage() {
         transition={{ delay: 0.5 }}
         className="mt-10 p-4 bg-gradient-to-r from-[var(--forest-bright)]/10 to-transparent rounded-xl border border-[var(--forest-bright)]/20"
       >
-        <p className="text-sm text-[var(--text-color)]">
+        <p className="text-sm text-[var(--ink)]">
           <strong className="text-[var(--forest)]">Pro Tip:</strong> Keep messages under 400 characters for better readability. 
           Use emojis sparingly to maintain professionalism while adding warmth.
         </p>

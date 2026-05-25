@@ -147,19 +147,19 @@ export function DesignTokensPage() {
 
         <TokenCard title="Type Scale & Families">
           <div className="mb-6 grid md:grid-cols-2 gap-4">
-            <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+            <div className="rounded-xl p-4" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>Instrument Sans</p>
               <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Primary UI and body family for readable product and documentation surfaces.</p>
             </div>
-            <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+            <div className="rounded-xl p-4" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>DM Serif Display</p>
               <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>h1–h3 display headings ONLY. Not for UI chrome or body text.</p>
             </div>
-            <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+            <div className="rounded-xl p-4" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>IBM Plex Mono</p>
               <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Tokens, technical labels, code, schemas, and system references.</p>
             </div>
-            <div className="rounded-xl p-4" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+            <div className="rounded-xl p-4" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
               <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>Bebas Neue</p>
               <p className="text-xs" style={{ color: 'var(--slate-mid)' }}>Rare campaign callouts and hero display ONLY. Never for section headings or UI labels.</p>
             </div>
@@ -409,7 +409,7 @@ export function DesignTokensPage() {
                 type="text"
                 placeholder="Default input"
                 className="w-full px-4 py-2.5 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--forest)]/30"
-                style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)', color: 'var(--ink)' }}
+                style={{ background: 'transparent', border: '1px solid var(--rule-light)', color: 'var(--ink)' }}
                 readOnly
               />
               <input

@@ -75,17 +75,17 @@ function generateSealSVG() {
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
   <defs>
     <linearGradient id="sealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="var(--primary-color)" />
-      <stop offset="100%" stop-color="var(--text-color)" />
+      <stop offset="0%" stop-color="var(--forest)" />
+      <stop offset="100%" stop-color="var(--ink)" />
     </linearGradient>
   </defs>
   <rect width="1200" height="1200" fill="#ffffff" />
   <circle cx="600" cy="600" r="420" fill="none" stroke="url(#sealGradient)" stroke-width="28" />
-  <circle cx="600" cy="600" r="350" fill="none" stroke="var(--accent-color)" stroke-width="10" stroke-dasharray="12 18" />
-  <text x="600" y="360" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="44" font-weight="700" letter-spacing="8" fill="var(--primary-color)">INTEGRATEWISE LLP</text>
-  <text x="600" y="870" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="38" font-weight="600" letter-spacing="6" fill="var(--primary-color)">OFFICIAL SEAL</text>
+  <circle cx="600" cy="600" r="350" fill="none" stroke="var(--gold)" stroke-width="10" stroke-dasharray="12 18" />
+  <text x="600" y="360" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="44" font-weight="700" letter-spacing="8" fill="var(--forest)">INTEGRATEWISE LLP</text>
+  <text x="600" y="870" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="38" font-weight="600" letter-spacing="6" fill="var(--forest)">OFFICIAL SEAL</text>
   <circle cx="600" cy="600" r="180" fill="url(#sealGradient)" opacity="0.1" />
-  <text x="600" y="560" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="70" font-weight="700" fill="var(--text-color)">IW</text>
+  <text x="600" y="560" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="70" font-weight="700" fill="var(--ink)">IW</text>
   <text x="600" y="635" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="26" font-weight="600" fill="#5A5550">${TAGLINES.split.top}</text>
   <text x="600" y="675" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="26" font-weight="600" fill="#5A5550">${TAGLINES.split.bottom}</text>
 </svg>`.trim();
@@ -103,7 +103,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         subject: 'Strategic rollout proposal',
         body: `Thank you for exploring ${BRAND.name}.\n\nWe are sharing a governed AI rollout proposal for your team.\n\nPlease review the enclosed scope, timeline, and approval checkpoints.`,
         footer: TAGLINES.primary,
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'invoice':
       return {
@@ -116,7 +116,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         dueDate: 'April 10, 2026',
         lineItem: `${BRAND.name} Platform - Growth Plan`,
         total: '$1,178.82',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'proposal':
       return {
@@ -131,7 +131,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         timeline: '4-week setup, 2-week pilot, 30-day success review with measurable adoption milestones.',
         preparedBy: BRAND.legalName,
         acceptedBy: 'Client Representative',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'memo':
       return {
@@ -141,7 +141,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         memoTo: 'Recipient Name',
         memoSubject: 'Project Update',
         memoBody: 'Please review the following important update regarding our current projects.',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'report-cover':
       return {
@@ -150,7 +150,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         reportDate: 'March 2026',
         companyName: BRAND.name,
         preparedBy: 'Strategy Office',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'fax-cover':
       return {
@@ -163,7 +163,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         numberOfPages: '1',
         subject: 'Fax Transmission',
         message: 'Please find the requested documents attached.',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'seal':
       return {
@@ -172,7 +172,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         initials: 'IW',
         taglineTop: TAGLINES.split.top,
         taglineBottom: TAGLINES.split.bottom,
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'business-card':
       return {
@@ -185,7 +185,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         phone: '+91 [Phone]',
         location: BRAND.location,
         footer: TAGLINES.primary,
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'email-signature':
       return {
@@ -196,7 +196,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         email: CONTACT.general,
         website: BRAND.website,
         footer: TAGLINES.primary,
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'document-cover':
       return {
@@ -208,7 +208,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         preparedBy: 'Strategy Office',
         documentDate: 'March 2026',
         version: 'v1.0',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'envelope':
       return {
@@ -222,28 +222,28 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         recipientCity: 'City, State, ZIP',
         recipientCountry: 'Country',
         footer: TAGLINES.primary,
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'notepad':
       return {
         companyName: BRAND.name,
         tagline: TAGLINES.descriptor,
         footerText: TAGLINES.primary,
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'folder':
       return {
         companyName: BRAND.name,
         tagline: TAGLINES.descriptorExtended,
         folderText: 'Project Folder',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'sticker':
       return {
         companyName: BRAND.name,
         tagline: TAGLINES.descriptor,
         stickerText: 'Made with IntegrateWise',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'sales-deck':
       return {
@@ -253,14 +253,14 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         tagline: TAGLINES.descriptorExtended,
         mainMessage: 'Unify tools. Govern AI. Scale impact.',
         ctaText: 'Get Started Today',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'presentation-bg':
       return {
         companyName: BRAND.name,
         tagline: TAGLINES.descriptorExtended,
         backgroundText: 'Presentation',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'whatsapp-banner':
       return {
@@ -268,7 +268,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         tagline: TAGLINES.descriptor,
         bannerMessage: 'Connect with us on WhatsApp',
         ctaText: 'Chat Now',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'linkedin-banner':
       return {
@@ -276,7 +276,7 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         tagline: TAGLINES.descriptorExtended,
         bannerHeading: 'Governed Intelligence Platform',
         bannerText: TAGLINES.primary,
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     case 'poster':
       return {
@@ -285,10 +285,10 @@ function getDefaultStationeryContent(id: string): StationeryContent {
         posterSubtitle: 'The Governed AI Platform',
         posterMessage: TAGLINES.descriptorExtended,
         posterCTA: 'Learn More',
-        brandColor: 'var(--primary-color)',
+        brandColor: 'var(--forest)',
       };
     default:
-      return { brandColor: 'var(--primary-color)' };
+      return { brandColor: 'var(--forest)' };
   }
 }
 
@@ -507,7 +507,7 @@ function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) 
       whileTap={{ scale: 0.98 }}
       onClick={handleCopy}
       className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
-      style={{ background: copied ? 'var(--success-color)' : 'color-mix(in srgb, var(--forest) 8%, transparent)', color: copied ? 'var(--paper)' : 'var(--forest-mid)' }}
+      style={{ background: copied ? 'var(--forest-bright)' : 'color-mix(in srgb, var(--forest) 8%, transparent)', color: copied ? 'var(--paper)' : 'var(--forest-mid)' }}
     >
       {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
       {copied ? 'Copied!' : label}
@@ -628,22 +628,22 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
         className="rounded-xl max-w-5xl w-full max-h-[90vh] overflow-hidden flex flex-col" style={{ background: 'var(--paper)' }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-[var(--border-subtle)]">
+        <div className="flex items-center justify-between p-6 border-b border-[var(--rule-light)]">
           <div>
-            <h3 className="font-semibold text-[var(--text-color)]">{item.title}</h3>
+            <h3 className="font-semibold text-[var(--ink)]">{item.title}</h3>
             <p className="text-xs text-[var(--text-faint)]">{item.specs} • {item.format}</p>
           </div>
-          <button onClick={onClose} className="p-2 hover:bg-[var(--surface-2)] rounded-lg">
+          <button onClick={onClose} className="p-2 hover:bg-[var(--paper-deep)] rounded-lg">
             <X className="w-5 h-5 text-[var(--text-muted)]" />
           </button>
         </div>
 
         {/* Tabs */}
-        <div className="flex border-b border-[var(--border-subtle)]">
+        <div className="flex border-b border-[var(--rule-light)]">
           <button
             onClick={() => setActiveTab('preview')}
             className={`px-4 py-2 text-sm font-medium border-b-2 transition-all ${
-              activeTab === 'preview' ? 'border-[var(--primary-color)] text-[var(--primary-color)]' : 'border-transparent text-[var(--text-muted)]'
+              activeTab === 'preview' ? 'border-[var(--forest)] text-[var(--forest)]' : 'border-transparent text-[var(--text-muted)]'
             }`}
           >
             Preview & Edit
@@ -651,7 +651,7 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
           <button
             onClick={() => setActiveTab('html')}
             className={`px-4 py-2 text-sm font-medium border-b-2 transition-all ${
-              activeTab === 'html' ? 'border-[var(--primary-color)] text-[var(--primary-color)]' : 'border-transparent text-[var(--text-muted)]'
+              activeTab === 'html' ? 'border-[var(--forest)] text-[var(--forest)]' : 'border-transparent text-[var(--text-muted)]'
             }`}
           >
             HTML Code
@@ -659,13 +659,13 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-auto p-6 bg-[var(--surface)]">
+        <div className="flex-1 overflow-auto p-6 bg-[var(--paper-warm)]">
           {activeTab === 'preview' ? (
             <div className="flex justify-center">
               <div className="grid lg:grid-cols-[300px_minmax(0,1fr)] gap-6 items-start">
                 {/* Edit Panel */}
-                <div className="rounded-xl border border-[var(--border-subtle)] p-5 space-y-4 max-h-[70vh] overflow-y-auto" style={{ background: 'var(--paper)' }}>
-                  <h4 className="font-semibold text-[var(--text-color)] text-sm">Edit Content</h4>
+                <div className="rounded-xl border border-[var(--rule-light)] p-5 space-y-4 max-h-[70vh] overflow-y-auto" style={{ background: 'var(--paper)' }}>
+                  <h4 className="font-semibold text-[var(--ink)] text-sm">Edit Content</h4>
                   {getStationeryFields(item.id).map((field) => (
                     <div key={field.key}>
                       <label className="text-xs font-medium text-[var(--text-muted)]">{field.label}</label>
@@ -708,19 +708,19 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
               </div>
             </div>
           ) : (
-            <div className="bg-[var(--text-color)] rounded-lg p-4 overflow-x-auto">
+            <div className="bg-[var(--ink)] rounded-lg p-4 overflow-x-auto">
               <pre className="text-sm text-white/90 whitespace-pre-wrap">{generateHTML(item.id, content)}</pre>
             </div>
           )}
         </div>
 
         {/* Actions */}
-        <div className="flex items-center justify-between p-6 border-t border-[var(--border-subtle)] gap-4" style={{ background: 'var(--paper)' }}>
+        <div className="flex items-center justify-between p-6 border-t border-[var(--rule-light)] gap-4" style={{ background: 'var(--paper)' }}>
           <div className="flex gap-2 flex-wrap">
             <select
               value={exportFormat}
               onChange={(e) => setExportFormat(e.target.value as any)}
-              className="px-3 py-2 rounded-lg border border-[var(--border-base)] text-sm font-medium text-[var(--text-color)]"
+              className="px-3 py-2 rounded-lg border border-[var(--border-base)] text-sm font-medium text-[var(--ink)]"
             >
               <option value="png">PNG Image</option>
               <option value="pdf">PDF Document</option>
@@ -731,7 +731,7 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
             <button
               onClick={handleDownload}
               disabled={isExporting}
-              className="flex items-center gap-2 px-4 py-2 bg-[var(--primary-color)] text-[var(--paper)] rounded-lg text-sm font-medium disabled:opacity-50"
+              className="flex items-center gap-2 px-4 py-2 bg-[var(--forest)] text-[var(--paper)] rounded-lg text-sm font-medium disabled:opacity-50"
             >
               {isExporting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
               {isExporting ? 'Exporting...' : 'Download'}
@@ -746,7 +746,7 @@ function PreviewModal({ item, onClose }: { item: StationeryItem; onClose: () => 
 
 // Preview Content Component
 function PreviewContent({ id, content }: { id: string; content: StationeryContent }) {
-  const brandColor = content.brandColor || 'var(--primary-color)';
+  const brandColor = content.brandColor || 'var(--forest)';
   
   switch (id) {
     case 'letterhead':
@@ -768,13 +768,13 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
             <p className="text-sm mb-2">To:</p>
             <p className="text-sm mb-8 ml-4">{content.recipient}</p>
             <p className="text-sm mb-4">Subject: {content.subject}</p>
-            <div className="h-64 border border-[var(--border-subtle)] rounded-lg p-6">
+            <div className="h-64 border border-[var(--rule-light)] rounded-lg p-6">
               {content.body?.split('\n').map((line) => (
                 <p key={line} className="text-sm mb-3">{line}</p>
               ))}
             </div>
           </div>
-          <div className="absolute bottom-12 left-12 right-12 pt-4 border-t border-[var(--border-subtle)]">
+          <div className="absolute bottom-12 left-12 right-12 pt-4 border-t border-[var(--rule-light)]">
             <p className="text-xs text-[var(--text-faint)] text-center">{content.footer}</p>
           </div>
         </div>
@@ -791,13 +791,13 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           </div>
           <div className="mt-8 space-y-3">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="flex items-center border-b border-[var(--border-subtle)] pb-3">
+              <div key={i} className="flex items-center border-b border-[var(--rule-light)] pb-3">
                 <div className="w-5 h-5 rounded-full border-2 mr-3" style={{ borderColor: brandColor }} />
-                <div className="flex-1 h-4 bg-[var(--surface-2)] rounded" />
+                <div className="flex-1 h-4 bg-[var(--paper-deep)] rounded" />
               </div>
             ))}
           </div>
-          <div className="absolute bottom-8 left-8 right-8 pt-4 border-t border-[var(--border-subtle)]">
+          <div className="absolute bottom-8 left-8 right-8 pt-4 border-t border-[var(--rule-light)]">
             <p className="text-xs text-[var(--text-faint)] text-center">{content.footerText}</p>
           </div>
         </div>
@@ -824,7 +824,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4" style={{ color: brandColor }}>{content.companyName}</h2>
             <p className="text-sm text-[#5A5550] mb-4">{content.tagline}</p>
-            <p className="text-lg font-semibold text-[var(--text-color)]">{content.stickerText}</p>
+            <p className="text-lg font-semibold text-[var(--ink)]">{content.stickerText}</p>
           </div>
         </div>
       );
@@ -840,23 +840,23 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <p className="text-xs font-semibold text-[var(--text-muted)]">TO:</p>
-                <p className="text-sm text-[var(--text-color)]">{content.memoTo}</p>
+                <p className="text-sm text-[var(--ink)]">{content.memoTo}</p>
               </div>
               <div>
                 <p className="text-xs font-semibold text-[var(--text-muted)]">DATE:</p>
-                <p className="text-sm text-[var(--text-color)]">{content.memoDate}</p>
+                <p className="text-sm text-[var(--ink)]">{content.memoDate}</p>
               </div>
               <div>
                 <p className="text-xs font-semibold text-[var(--text-muted)]">FROM:</p>
-                <p className="text-sm text-[var(--text-color)]">{content.memoFrom}</p>
+                <p className="text-sm text-[var(--ink)]">{content.memoFrom}</p>
               </div>
               <div>
                 <p className="text-xs font-semibold text-[var(--text-muted)]">SUBJECT:</p>
-                <p className="text-sm text-[var(--text-color)]">{content.memoSubject}</p>
+                <p className="text-sm text-[var(--ink)]">{content.memoSubject}</p>
               </div>
             </div>
             <div className="mt-6">
-              <div className="p-6 border border-[var(--border-subtle)] rounded-lg">
+              <div className="p-6 border border-[var(--rule-light)] rounded-lg">
                 <p className="text-sm text-[#333944] whitespace-pre-wrap">{content.memoBody}</p>
               </div>
             </div>
@@ -866,7 +866,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
 
     case 'report-cover':
       return (
-        <div className="w-[800px] h-[1131px] p-12 bg-gradient-to-b text-white flex flex-col justify-between" style={{ background: `linear-gradient(135deg, ${content.brandColor || 'var(--primary-color)'} 0%, ${content.brandColor || 'var(--text-color)'}99 100%)` }}>
+        <div className="w-[800px] h-[1131px] p-12 bg-gradient-to-b text-white flex flex-col justify-between" style={{ background: `linear-gradient(135deg, ${content.brandColor || 'var(--forest)'} 0%, ${content.brandColor || 'var(--ink)'}99 100%)` }}>
           <div />
           <div className="text-center">
             <p className="text-lg opacity-80 mb-4">{content.reportDate}</p>
@@ -883,19 +883,19 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
     case 'fax-cover':
       return (
         <div className="w-[800px] h-[1131px] p-12 bg-[var(--paper)]">
-          <div className="border-b-4 pb-6" style={{ borderColor: content.brandColor || 'var(--primary-color)' }}>
-            <h1 className="text-3xl font-bold" style={{ color: content.brandColor || 'var(--primary-color)' }}>FAX TRANSMISSION COVER SHEET</h1>
+          <div className="border-b-4 pb-6" style={{ borderColor: content.brandColor || 'var(--forest)' }}>
+            <h1 className="text-3xl font-bold" style={{ color: content.brandColor || 'var(--forest)' }}>FAX TRANSMISSION COVER SHEET</h1>
           </div>
           <div className="mt-8 space-y-6">
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <h3 className="text-sm font-bold text-[var(--text-color)] mb-4">FROM:</h3>
+                <h3 className="text-sm font-bold text-[var(--ink)] mb-4">FROM:</h3>
                 <p className="text-sm">{content.senderCompany}</p>
                 <p className="text-sm">{content.senderName}</p>
                 <p className="text-sm">{content.senderPhone}</p>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[var(--text-color)] mb-4">TO:</h3>
+                <h3 className="text-sm font-bold text-[var(--ink)] mb-4">TO:</h3>
                 <p className="text-sm">{content.recipientCompany}</p>
                 <p className="text-sm">{content.recipientName}</p>
                 <p className="text-sm">{content.recipientPhone}</p>
@@ -903,17 +903,17 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
             </div>
             <table className="w-full border-collapse">
               <tbody>
-                <tr className="border-b border-[var(--border-subtle)]">
-                  <td className="text-sm font-semibold text-[var(--text-color)] pb-2">Total Pages (including cover):</td>
+                <tr className="border-b border-[var(--rule-light)]">
+                  <td className="text-sm font-semibold text-[var(--ink)] pb-2">Total Pages (including cover):</td>
                   <td className="text-sm pb-2">{content.numberOfPages}</td>
                 </tr>
-                <tr className="border-b border-[var(--border-subtle)]">
-                  <td className="text-sm font-semibold text-[var(--text-color)] py-2">Subject:</td>
+                <tr className="border-b border-[var(--rule-light)]">
+                  <td className="text-sm font-semibold text-[var(--ink)] py-2">Subject:</td>
                   <td className="text-sm py-2">{content.subject}</td>
                 </tr>
                 <tr>
                   <td colSpan={2} className="pt-4">
-                    <p className="text-sm font-semibold text-[var(--text-color)] mb-2">Message:</p>
+                    <p className="text-sm font-semibold text-[var(--ink)] mb-2">Message:</p>
                     <p className="text-sm text-[#5A5550]">{content.message}</p>
                   </td>
                 </tr>
@@ -1629,7 +1629,7 @@ function StationeryCard({ item }: { item: StationeryItem }) {
         className="rounded-xl border border-[var(--border-base)] overflow-hidden"
         style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}
       >
-        <div className="h-40 bg-[var(--surface)] flex items-center justify-center p-4">
+        <div className="h-40 bg-[var(--paper-warm)] flex items-center justify-center p-4">
           <div className="scale-50 origin-center">
             <PreviewContent id={item.id} content={getDefaultStationeryContent(item.id)} />
           </div>
@@ -1642,7 +1642,7 @@ function StationeryCard({ item }: { item: StationeryItem }) {
                 <Icon className="w-5 h-5" style={{ color: 'var(--forest-mid)' }} />
               </div>
               <div>
-                <h3 className="font-semibold text-[var(--text-color)]">{item.title}</h3>
+                <h3 className="font-semibold text-[var(--ink)]">{item.title}</h3>
                 <p className="text-xs text-[var(--text-muted)]">{item.specs}</p>
               </div>
             </div>
@@ -1694,13 +1694,13 @@ function CategorySection({ category, items }: { category: string; items: Station
     >
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between p-4 rounded-lg border border-[var(--border-subtle)] hover:bg-[var(--paper-warm)] transition-all"
-        style={{ background: 'var(--surface-raised)' }}
+        className="w-full flex items-center justify-between p-4 rounded-lg border border-[var(--rule-light)] hover:bg-[var(--paper-warm)] transition-all"
+        style={{ background: 'transparent' }}
       >
         <div className="flex items-center gap-3">
-          <Icon className="w-5 h-5 text-[var(--primary-color)]" />
+          <Icon className="w-5 h-5 text-[var(--forest)]" />
           <div className="text-left">
-            <h3 className="font-semibold text-[var(--text-color)]">{category}</h3>
+            <h3 className="font-semibold text-[var(--ink)]">{category}</h3>
             <p className="text-xs text-[var(--text-muted)]">{items.length} items</p>
           </div>
         </div>
@@ -1764,10 +1764,10 @@ export function StationeryPage() {
         className="mb-8"
       >
         <div className="flex items-center gap-2 mb-2">
-          <Stamp className="w-5 h-5 text-[var(--primary-color)]" />
-          <span className="text-xs font-semibold text-[var(--primary-color)] uppercase tracking-wider">Brand Assets</span>
+          <Stamp className="w-5 h-5 text-[var(--forest)]" />
+          <span className="text-xs font-semibold text-[var(--forest)] uppercase tracking-wider">Brand Assets</span>
         </div>
-        <h1 className="text-4xl font-bold text-[var(--text-color)] mb-3">Corporate Stationery</h1>
+        <h1 className="text-4xl font-bold text-[var(--ink)] mb-3">Corporate Stationery</h1>
         <p className="text-[var(--text-muted)] mb-6">Complete suite of editable stationery templates with multiple export formats</p>
 
         {/* Search Bar */}
@@ -1778,7 +1778,7 @@ export function StationeryPage() {
             placeholder="Search templates by name, type, or tag..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 rounded-lg border border-[var(--border-base)] text-sm focus:border-[var(--primary-color)] focus:outline-none"
+            className="w-full pl-12 pr-4 py-3 rounded-lg border border-[var(--border-base)] text-sm focus:border-[var(--forest)] focus:outline-none"
           />
         </div>
       </motion.div>
@@ -1796,11 +1796,11 @@ export function StationeryPage() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: i * 0.1 }}
-            className="p-4 rounded-xl border border-[var(--border-subtle)] text-center"
-            style={{ background: 'var(--surface-raised)' }}
+            className="p-4 rounded-xl border border-[var(--rule-light)] text-center"
+            style={{ background: 'transparent' }}
           >
-            <stat.icon className="w-5 h-5 text-[var(--primary-color)] mx-auto mb-2" />
-            <p className="text-2xl font-bold text-[var(--text-color)]">{stat.count}</p>
+            <stat.icon className="w-5 h-5 text-[var(--forest)] mx-auto mb-2" />
+            <p className="text-2xl font-bold text-[var(--ink)]">{stat.count}</p>
             <p className="text-xs text-[var(--text-muted)]">{stat.label}</p>
           </motion.div>
         ))}

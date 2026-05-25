@@ -153,22 +153,22 @@ const DEFAULT_CAROUSEL_SLIDES = [
 const RETHEMED_BANNER_PRESETS = {
   b1: {
     name: 'Forest Light',
-    bg: 'linear-gradient(135deg, var(--surface-raised) 0%, color-mix(in srgb, var(--primary-soft) 78%, var(--surface-raised)) 52%, color-mix(in srgb, var(--accent-soft) 68%, var(--surface-raised)) 100%)',
+    bg: 'linear-gradient(135deg, var(--paper-warm) 0%, color-mix(in srgb, color-mix(in srgb, var(--forest) 8%, transparent) 78%, var(--paper-warm)) 52%, color-mix(in srgb, var(--gold-pale) 68%, var(--paper-warm)) 100%)',
     textColor: 'var(--text-strong)',
   },
   b2: {
     name: 'Continuity Glow',
-    bg: 'linear-gradient(135deg, color-mix(in srgb, var(--primary-soft) 82%, var(--surface-raised)) 0%, color-mix(in srgb, var(--surface) 60%, var(--accent-soft)) 100%)',
+    bg: 'linear-gradient(135deg, color-mix(in srgb, color-mix(in srgb, var(--forest) 8%, transparent) 82%, var(--paper-warm)) 0%, color-mix(in srgb, var(--paper-warm) 60%, var(--gold-pale)) 100%)',
     textColor: 'var(--text-strong)',
   },
   b3: {
     name: 'Warm Accent',
-    bg: 'linear-gradient(135deg, color-mix(in srgb, var(--accent-soft) 80%, var(--surface-raised)) 0%, color-mix(in srgb, var(--primary-soft) 46%, var(--surface-raised)) 100%)',
+    bg: 'linear-gradient(135deg, color-mix(in srgb, var(--gold-pale) 80%, var(--paper-warm)) 0%, color-mix(in srgb, color-mix(in srgb, var(--forest) 8%, transparent) 46%, var(--paper-warm)) 100%)',
     textColor: 'var(--text-strong)',
   },
   b4: {
     name: 'Clean White',
-    bg: 'linear-gradient(135deg, var(--surface-raised) 0%, var(--surface) 58%, color-mix(in srgb, var(--accent-soft) 44%, var(--surface-raised)) 100%)',
+    bg: 'linear-gradient(135deg, var(--paper-warm) 0%, var(--paper-warm) 58%, color-mix(in srgb, var(--gold-pale) 44%, var(--paper-warm)) 100%)',
     textColor: 'var(--text-strong)',
   },
 } as const;
@@ -206,9 +206,9 @@ const DEFAULT_BANNERS = [
 ];
 
 const LEGACY_BANNER_BACKGROUNDS: Record<string, keyof typeof RETHEMED_BANNER_PRESETS> = {
-  'linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 30%, var(--primary-color) 60%, var(--forest-bright) 100%)': 'b1',
-  'linear-gradient(135deg, var(--text-color) 0%, var(--slate-mid) 50%, var(--primary-color) 100%)': 'b2',
-  'linear-gradient(135deg, var(--slate) 0%, var(--primary-color) 30%, var(--forest-mid) 60%, var(--accent-color) 100%)': 'b3',
+  'linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 30%, var(--forest) 60%, var(--forest-bright) 100%)': 'b1',
+  'linear-gradient(135deg, var(--ink) 0%, var(--slate-mid) 50%, var(--forest) 100%)': 'b2',
+  'linear-gradient(135deg, var(--slate) 0%, var(--forest) 30%, var(--forest-mid) 60%, var(--gold) 100%)': 'b3',
   'linear-gradient(135deg, var(--paper) 0%, var(--paper-warm) 50%, var(--paper-deep) 100%)': 'b4',
 };
 
@@ -252,34 +252,34 @@ function saveData(key: string, data: any) {
   saveJson(key, data);
 }
 
-const tintSurface = (tone: string, strength = 14, base = 'var(--surface-raised)') =>
+const tintSurface = (tone: string, strength = 14, base = 'var(--paper-warm)') =>
   `color-mix(in srgb, ${tone} ${strength}%, ${base})`;
 
 const slideBackgrounds: Record<string, string> = {
-  title: `linear-gradient(135deg, ${tintSurface('var(--primary-color)', 14, 'var(--surface)')} 0%, ${tintSurface('var(--accent-color)', 18)} 100%)`,
-  problem: `linear-gradient(135deg, ${tintSurface('var(--accent-color)', 14)} 0%, var(--surface-raised) 100%)`,
-  solution: `linear-gradient(135deg, ${tintSurface('var(--primary-color)', 16)} 0%, ${tintSurface('var(--accent-color)', 14, 'var(--surface)')} 100%)`,
-  architecture: `linear-gradient(135deg, var(--surface-raised) 0%, ${tintSurface('var(--primary-color)', 10)} 100%)`,
-  governance: `linear-gradient(135deg, var(--surface) 0%, ${tintSurface('var(--accent-color)', 10)} 100%)`,
-  cta: `linear-gradient(135deg, ${tintSurface('var(--accent-color)', 18)} 0%, ${tintSurface('var(--primary-color)', 12)} 100%)`,
+  title: `linear-gradient(135deg, ${tintSurface('var(--forest)', 14, 'var(--paper-warm)')} 0%, ${tintSurface('var(--gold)', 18)} 100%)`,
+  problem: `linear-gradient(135deg, ${tintSurface('var(--gold)', 14)} 0%, var(--paper-warm) 100%)`,
+  solution: `linear-gradient(135deg, ${tintSurface('var(--forest)', 16)} 0%, ${tintSurface('var(--gold)', 14, 'var(--paper-warm)')} 100%)`,
+  architecture: `linear-gradient(135deg, var(--paper-warm) 0%, ${tintSurface('var(--forest)', 10)} 100%)`,
+  governance: `linear-gradient(135deg, var(--paper-warm) 0%, ${tintSurface('var(--gold)', 10)} 100%)`,
+  cta: `linear-gradient(135deg, ${tintSurface('var(--gold)', 18)} 0%, ${tintSurface('var(--forest)', 12)} 100%)`,
 };
 
 const carouselBackgrounds: Record<string, string> = {
-  cover: `linear-gradient(145deg, ${tintSurface('var(--primary-color)', 16)} 0%, ${tintSurface('var(--accent-color)', 14)} 100%)`,
-  content: `linear-gradient(145deg, var(--surface-raised) 0%, ${tintSurface('var(--primary-color)', 10)} 100%)`,
-  cta: `linear-gradient(145deg, ${tintSurface('var(--accent-color)', 18)} 0%, ${tintSurface('var(--primary-color)', 12)} 100%)`,
+  cover: `linear-gradient(145deg, ${tintSurface('var(--forest)', 16)} 0%, ${tintSurface('var(--gold)', 14)} 100%)`,
+  content: `linear-gradient(145deg, var(--paper-warm) 0%, ${tintSurface('var(--forest)', 10)} 100%)`,
+  cta: `linear-gradient(145deg, ${tintSurface('var(--gold)', 18)} 0%, ${tintSurface('var(--forest)', 12)} 100%)`,
 };
 
 const previewFieldStyle = {
-  background: 'var(--surface-raised)',
+  background: 'transparent',
   color: 'var(--text-strong)',
-  border: '1px solid var(--border-subtle)',
+  border: '1px solid var(--rule-light)',
   boxShadow: 'var(--shadow-sm)',
 };
 
 const shellCardStyle = {
-  background: 'var(--surface-raised)',
-  border: '1px solid var(--border-subtle)',
+  background: 'transparent',
+  border: '1px solid var(--rule-light)',
   boxShadow: 'var(--shadow-sm)',
 };
 
@@ -300,9 +300,9 @@ function CopyButton({ text, label = 'Copy' }: { text: string; label?: string }) 
       onClick={handleCopy}
       className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all"
       style={{
-        background: copied ? 'var(--success-color)' : 'var(--primary-soft)',
-        color: copied ? 'var(--text-inverse)' : 'var(--primary-color)',
-        border: copied ? '1px solid transparent' : '1px solid var(--border-subtle)',
+        background: copied ? 'var(--forest-bright)' : 'color-mix(in srgb, var(--forest) 8%, transparent)',
+        color: copied ? 'var(--text-inverse)' : 'var(--forest)',
+        border: copied ? '1px solid transparent' : '1px solid var(--rule-light)',
         boxShadow: copied ? 'var(--shadow-sm)' : 'none',
       }}
     >
@@ -347,7 +347,7 @@ function SlidePreview({
         className="w-full aspect-[16/9] rounded-2xl overflow-hidden relative flex items-center justify-center p-12"
         style={{
           background,
-          border: '1px solid var(--border-subtle)',
+          border: '1px solid var(--rule-light)',
           boxShadow: 'var(--shadow-lg)',
         }}
       >
@@ -355,7 +355,7 @@ function SlidePreview({
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--surface) 22%, transparent) 100%)',
+              'linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--paper-warm) 22%, transparent) 100%)',
           }}
         />
         <div className="relative text-center max-w-3xl" style={{ color: 'var(--text-strong)' }}>
@@ -398,7 +398,7 @@ function SlidePreview({
                 </p>
               )}
               {slide.tagline && (
-                <p className="text-lg mt-6" style={{ color: 'var(--primary-color)' }}>
+                <p className="text-lg mt-6" style={{ color: 'var(--forest)' }}>
                   {slide.tagline}
                 </p>
               )}
@@ -406,7 +406,7 @@ function SlidePreview({
                 <button
                   className="mt-8 px-8 py-3 rounded-full font-semibold"
                   style={{
-                    background: 'var(--primary-color)',
+                    background: 'var(--forest)',
                     color: 'var(--text-inverse)',
                     boxShadow: 'var(--shadow-sm)',
                   }}
@@ -424,7 +424,7 @@ function SlidePreview({
           disabled={isExporting}
           className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium disabled:opacity-50"
           style={{
-            background: 'var(--primary-color)',
+            background: 'var(--forest)',
             color: 'var(--text-inverse)',
             boxShadow: 'var(--shadow-sm)',
           }}
@@ -509,8 +509,8 @@ function CarouselSlide({
                     className="text-xs font-semibold uppercase tracking-wider px-2 py-1 rounded-lg"
                     style={{
                       ...previewFieldStyle,
-                      background: tintSurface('var(--primary-color)', 10),
-                      color: 'var(--primary-color)',
+                      background: tintSurface('var(--forest)', 10),
+                      color: 'var(--forest)',
                     }}
                   />
                 </div>
@@ -533,7 +533,7 @@ function CarouselSlide({
                   <span className="text-4xl font-bold" style={{ color: 'var(--text-faint)' }}>
                     {slide.number}
                   </span>
-                  <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--primary-color)' }}>
+                  <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--forest)' }}>
                     {slide.highlight}
                   </span>
                 </div>
@@ -568,8 +568,8 @@ function CarouselSlide({
                   className="text-sm font-semibold text-center w-full px-4 py-2 rounded-xl"
                   style={{
                     ...previewFieldStyle,
-                    background: tintSurface('var(--accent-color)', 12),
-                    color: 'var(--accent-color)',
+                    background: tintSurface('var(--gold)', 12),
+                    color: 'var(--gold)',
                   }}
                 />
               </>
@@ -579,7 +579,7 @@ function CarouselSlide({
                 <p className="text-base mb-4 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
                   {slide.content}
                 </p>
-                <span className="text-sm font-semibold" style={{ color: 'var(--accent-color)' }}>
+                <span className="text-sm font-semibold" style={{ color: 'var(--gold)' }}>
                   {slide.cta}
                 </span>
               </>
@@ -589,7 +589,7 @@ function CarouselSlide({
       </div>
       <div
         className="p-4 flex items-center justify-between"
-        style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--surface)' }}
+        style={{ borderTop: '1px solid var(--rule-light)', background: 'var(--paper-warm)' }}
       >
         <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
           Slide {slide.number || 'Cover'}
@@ -597,7 +597,7 @@ function CarouselSlide({
         <button
           onClick={handleDownload}
           className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium"
-          style={{ background: 'var(--primary-color)', color: 'var(--text-inverse)' }}
+          style={{ background: 'var(--forest)', color: 'var(--text-inverse)' }}
         >
           <Download className="w-3 h-3" />
           PNG
@@ -629,9 +629,9 @@ function BannerPreview({
 
   const textColor = banner.textColor || 'var(--text-strong)';
   const bannerInputStyle = {
-    background: 'color-mix(in srgb, var(--surface-raised) 82%, transparent)',
+    background: 'color-mix(in srgb, var(--paper-warm) 82%, transparent)',
     color: textColor,
-    border: '1px solid var(--border-subtle)',
+    border: '1px solid var(--rule-light)',
     boxShadow: 'var(--shadow-sm)',
   };
 
@@ -675,7 +675,7 @@ function BannerPreview({
       </div>
       <div
         className="p-4 flex items-center justify-between"
-        style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--surface)' }}
+        style={{ borderTop: '1px solid var(--rule-light)', background: 'var(--paper-warm)' }}
       >
         {isEditing ? (
           <input
@@ -692,7 +692,7 @@ function BannerPreview({
         <button
           onClick={handleDownload}
           className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium"
-          style={{ background: 'var(--primary-color)', color: 'var(--text-inverse)' }}
+          style={{ background: 'var(--forest)', color: 'var(--text-inverse)' }}
         >
           <Download className="w-3 h-3" />
           PNG
@@ -756,8 +756,8 @@ export function PresentationsPage() {
         className="rounded-2xl p-6 lg:p-8 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between"
         style={{
           background:
-            'linear-gradient(135deg, var(--surface) 0%, var(--primary-soft) 58%, color-mix(in srgb, var(--accent-soft) 70%, var(--surface-raised)) 100%)',
-          border: '1px solid var(--border-subtle)',
+            'linear-gradient(135deg, var(--paper-warm) 0%, color-mix(in srgb, var(--forest) 8%, transparent) 58%, color-mix(in srgb, var(--gold-pale) 70%, var(--paper-warm)) 100%)',
+          border: '1px solid var(--rule-light)',
           boxShadow: 'var(--shadow-md)',
         }}
       >
@@ -765,13 +765,13 @@ export function PresentationsPage() {
           <div className="flex items-center gap-3 mb-4">
             <div
               className="w-11 h-11 rounded-xl flex items-center justify-center"
-              style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}
+              style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}
             >
-              <Presentation className="w-5 h-5" style={{ color: 'var(--primary-color)' }} />
+              <Presentation className="w-5 h-5" style={{ color: 'var(--forest)' }} />
             </div>
             <span
               className="text-xs font-semibold uppercase"
-              style={{ color: 'var(--primary-color)', letterSpacing: '0.18em' }}
+              style={{ color: 'var(--forest)', letterSpacing: '0.18em' }}
             >
               Presentations
             </span>
@@ -792,7 +792,7 @@ export function PresentationsPage() {
                 onClick={handleSave}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
                 style={{
-                  background: 'var(--success-color)',
+                  background: 'var(--forest-bright)',
                   color: 'var(--text-inverse)',
                   boxShadow: 'var(--shadow-sm)',
                 }}
@@ -804,9 +804,9 @@ export function PresentationsPage() {
                 onClick={() => setIsEditing(false)}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
                 style={{
-                  background: 'var(--surface-raised)',
+                  background: 'transparent',
                   color: 'var(--text-muted)',
-                  border: '1px solid var(--border-subtle)',
+                  border: '1px solid var(--rule-light)',
                 }}
               >
                 <X className="w-4 h-4" />
@@ -819,7 +819,7 @@ export function PresentationsPage() {
                 onClick={() => setIsEditing(true)}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
                 style={{
-                  background: 'var(--primary-color)',
+                  background: 'var(--forest)',
                   color: 'var(--text-inverse)',
                   boxShadow: 'var(--shadow-sm)',
                 }}
@@ -831,9 +831,9 @@ export function PresentationsPage() {
                 onClick={handleReset}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
                 style={{
-                  background: 'var(--surface-raised)',
+                  background: 'transparent',
                   color: 'var(--text-muted)',
-                  border: '1px solid var(--border-subtle)',
+                  border: '1px solid var(--rule-light)',
                 }}
               >
                 <RotateCcw className="w-4 h-4" />
@@ -846,7 +846,7 @@ export function PresentationsPage() {
       {/* Tabs */}
       <div
         className="flex flex-wrap gap-2 p-2 rounded-2xl"
-        style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)' }}
+        style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)' }}
       >
         {[
           { key: 'slides', label: 'Pitch Deck', icon: Presentation },
@@ -860,9 +860,9 @@ export function PresentationsPage() {
             style={
               activeTab === tab.key
                 ? {
-                    background: 'var(--surface-raised)',
-                    color: 'var(--primary-color)',
-                    border: '1px solid var(--border-subtle)',
+                    background: 'transparent',
+                    color: 'var(--forest)',
+                    border: '1px solid var(--rule-light)',
                     boxShadow: 'var(--shadow-sm)',
                   }
                 : {
@@ -930,7 +930,7 @@ export function PresentationsPage() {
                   className="aspect-video rounded-lg border-2 overflow-hidden"
                   style={{
                     background: slideBackgrounds[slide.type] || slideBackgrounds.title,
-                    borderColor: currentSlide === i ? 'var(--primary-color)' : 'var(--border-subtle)',
+                    borderColor: currentSlide === i ? 'var(--forest)' : 'var(--rule-light)',
                     boxShadow: currentSlide === i ? 'var(--shadow-sm)' : 'none',
                   }}
                 >
@@ -958,7 +958,7 @@ export function PresentationsPage() {
               <button
                 onClick={downloadAll}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium"
-                style={{ background: 'var(--primary-color)', color: 'var(--text-inverse)' }}
+                style={{ background: 'var(--forest)', color: 'var(--text-inverse)' }}
               >
                 <Download className="w-4 h-4" />
                 Download All

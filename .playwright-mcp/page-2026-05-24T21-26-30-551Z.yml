@@ -1,0 +1,304 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: IntegrateWise
+        - paragraph [ref=e14]: Continuity Documentation System
+    - generic [ref=e16]:
+      - img [ref=e17]
+      - textbox "Search navigation..." [ref=e20]
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - button "00 Company Strategy 2" [ref=e23]:
+          - img [ref=e24]
+          - img [ref=e26]
+          - generic [ref=e30]: 00 Company Strategy
+          - generic [ref=e31]: "2"
+        - generic [ref=e32]:
+          - link "Strategic Planning" [ref=e33] [cursor=pointer]:
+            - /url: /company
+            - img [ref=e34]
+            - generic [ref=e38]: Strategic Planning
+          - button "Doctrine & Continuity" [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Doctrine & Continuity
+      - generic [ref=e43]:
+        - button "01 Product & Engineering 3" [ref=e44]:
+          - img [ref=e45]
+          - img [ref=e47]
+          - generic [ref=e51]: 01 Product & Engineering
+          - generic [ref=e52]: "3"
+        - generic [ref=e53]:
+          - link "Adaptive Spine & Architecture" [ref=e54] [cursor=pointer]:
+            - /url: /architecture
+            - img [ref=e55]
+            - generic [ref=e59]: Adaptive Spine & Architecture
+          - button "Product Narrative & Continuity" [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: Product Narrative & Continuity
+          - button "Technical System" [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e68]: Technical System
+      - generic [ref=e69]:
+        - button "02 Marketing & Creative 10" [ref=e70]:
+          - img [ref=e71]
+          - img [ref=e73]
+          - generic [ref=e76]: 02 Marketing & Creative
+          - generic [ref=e77]: "10"
+        - generic [ref=e78]:
+          - link "Brand Assets" [ref=e79] [cursor=pointer]:
+            - /url: /brand-assets
+            - img [ref=e80]
+            - generic [ref=e86]: Brand Assets
+          - link "Design Tokens" [ref=e87] [cursor=pointer]:
+            - /url: /design-tokens
+            - img [ref=e88]
+            - generic [ref=e92]: Design Tokens
+          - link "Stationery" [ref=e93] [cursor=pointer]:
+            - /url: /stationery
+            - img [ref=e94]
+            - generic [ref=e97]: Stationery
+          - link "Marketing" [ref=e98] [cursor=pointer]:
+            - /url: /marketing
+            - img [ref=e99]
+            - generic [ref=e102]: Marketing
+          - link "LinkedIn" [ref=e103] [cursor=pointer]:
+            - /url: /linkedin
+            - img [ref=e104]
+            - generic [ref=e107]: LinkedIn
+          - link "WhatsApp" [ref=e108] [cursor=pointer]:
+            - /url: /whatsapp
+            - img [ref=e109]
+            - generic [ref=e111]: WhatsApp
+          - link "Email" [ref=e112] [cursor=pointer]:
+            - /url: /email
+            - img [ref=e113]
+            - generic [ref=e116]: Email
+          - link "Presentations" [ref=e117] [cursor=pointer]:
+            - /url: /presentations
+            - img [ref=e118]
+            - generic [ref=e121]: Presentations
+          - link "Quick Generators" [ref=e122] [cursor=pointer]:
+            - /url: /generators
+            - img [ref=e123]
+            - generic [ref=e125]: Quick Generators
+          - button "Category & Positioning" [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e131]: Category & Positioning
+      - generic [ref=e132]:
+        - button "03 Sales 2" [ref=e133]:
+          - img [ref=e134]
+          - img [ref=e136]
+          - generic [ref=e142]: 03 Sales
+          - generic [ref=e143]: "2"
+        - generic [ref=e144]:
+          - link "Sales Enablement" [ref=e145] [cursor=pointer]:
+            - /url: /sales
+            - img [ref=e146]
+            - generic [ref=e152]: Sales Enablement
+          - button "GTM & Customer Success" [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e157]: GTM & Customer Success
+      - button "04 Customer Success 3" [ref=e159]:
+        - img [ref=e160]
+        - img [ref=e162]
+        - generic [ref=e167]: 04 Customer Success
+        - generic [ref=e168]: "3"
+      - button "05 Operations 3" [ref=e170]:
+        - img [ref=e171]
+        - img [ref=e173]
+        - generic [ref=e175]: 05 Operations
+        - generic [ref=e176]: "3"
+      - button "06 Finance, Legal, HR 2" [ref=e178]:
+        - img [ref=e179]
+        - img [ref=e181]
+        - generic [ref=e185]: 06 Finance, Legal, HR
+        - generic [ref=e186]: "2"
+      - button "07 Resources & Knowledge Base 4" [ref=e188]:
+        - img [ref=e189]
+        - img [ref=e191]
+        - generic [ref=e193]: 07 Resources & Knowledge Base
+        - generic [ref=e194]: "4"
+      - button "08 External Communications 2" [ref=e196]:
+        - img [ref=e197]
+        - img [ref=e199]
+        - generic [ref=e202]: 08 External Communications
+        - generic [ref=e203]: "2"
+      - button "09 Archives & Retention 1" [ref=e205]:
+        - img [ref=e206]
+        - img [ref=e208]
+        - generic [ref=e211]: 09 Archives & Retention
+        - generic [ref=e212]: "1"
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - paragraph [ref=e216]: Continuity Documentation System v1.0
+        - paragraph [ref=e217]: 6 Doctrine Packs · 40 Documents
+      - button "Switch to dark mode" [ref=e218]:
+        - img [ref=e219]
+  - generic [ref=e221]:
+    - banner [ref=e222]:
+      - heading "Continuity Documentation System" [level=1] [ref=e224]
+    - main [ref=e225]:
+      - generic [ref=e226]:
+        - generic [ref=e228]:
+          - paragraph [ref=e229]: IntegrateWise · Brand System
+          - heading "One doctrine. One design system." [level=1] [ref=e231]:
+            - text: One doctrine.
+            - text: One design system.
+          - paragraph [ref=e232]: The canonical source for IntegrateWise brand assets, design tokens, documentation packs, and organisational continuity. Every surface, every message, every decision flows from here.
+        - generic [ref=e234]:
+          - paragraph [ref=e235]: 02 Marketing & Creative
+          - heading "The creative system." [level=2] [ref=e236]:
+            - text: The
+            - strong [ref=e237]: creative system.
+          - generic [ref=e238]:
+            - button "Brand Brand Assets Logo system, lockups, clearspace rules, messaging hierarchy, and usage guidelines." [ref=e239]:
+              - generic [ref=e240]:
+                - img [ref=e242]
+                - img [ref=e248]
+              - paragraph [ref=e250]: Brand
+              - heading "Brand Assets" [level=3] [ref=e251]
+              - paragraph [ref=e252]: Logo system, lockups, clearspace rules, messaging hierarchy, and usage guidelines.
+            - button "Tokens Design Tokens Canonical colors, typography, spacing, radii, and shadows. The source of truth for every surface." [ref=e253]:
+              - generic [ref=e254]:
+                - img [ref=e256]
+                - img [ref=e260]
+              - paragraph [ref=e262]: Tokens
+              - heading "Design Tokens" [level=3] [ref=e263]
+              - paragraph [ref=e264]: Canonical colors, typography, spacing, radii, and shadows. The source of truth for every surface.
+            - button "Stationery Stationery Letterhead, business cards, envelopes, and printed matter specifications." [ref=e265]:
+              - generic [ref=e266]:
+                - img [ref=e268]
+                - img [ref=e271]
+              - paragraph [ref=e273]: Stationery
+              - heading "Stationery" [level=3] [ref=e274]
+              - paragraph [ref=e275]: Letterhead, business cards, envelopes, and printed matter specifications.
+            - button "Marketing Marketing Materials Social templates, one-pagers, campaign assets, and channel-specific guidelines." [ref=e276]:
+              - generic [ref=e277]:
+                - img [ref=e279]
+                - img [ref=e282]
+              - paragraph [ref=e284]: Marketing
+              - heading "Marketing Materials" [level=3] [ref=e285]
+              - paragraph [ref=e286]: Social templates, one-pagers, campaign assets, and channel-specific guidelines.
+            - button "Decks Presentations Slide templates, speaker notes, and presentation guidelines for every audience." [ref=e287]:
+              - generic [ref=e288]:
+                - img [ref=e290]
+                - img [ref=e293]
+              - paragraph [ref=e295]: Decks
+              - heading "Presentations" [level=3] [ref=e296]
+              - paragraph [ref=e297]: Slide templates, speaker notes, and presentation guidelines for every audience.
+            - button "Tools Quick Generators Batch-export logos, stationery, and social assets in every format and size." [ref=e298]:
+              - generic [ref=e299]:
+                - img [ref=e301]
+                - img [ref=e303]
+              - paragraph [ref=e305]: Tools
+              - heading "Quick Generators" [level=3] [ref=e306]
+              - paragraph [ref=e307]: Batch-export logos, stationery, and social assets in every format and size.
+        - generic [ref=e309]:
+          - paragraph [ref=e310]: Channel Guidelines
+          - heading "Assets for every channel." [level=2] [ref=e311]:
+            - text: Assets for
+            - strong [ref=e312]: every channel.
+          - generic [ref=e313]:
+            - button "Social LinkedIn Post templates, banner specs, and brand voice for the professional network." [ref=e314]:
+              - generic [ref=e315]:
+                - img [ref=e317]
+                - img [ref=e320]
+              - paragraph [ref=e322]: Social
+              - heading "LinkedIn" [level=3] [ref=e323]
+              - paragraph [ref=e324]: Post templates, banner specs, and brand voice for the professional network.
+            - button "Messaging WhatsApp Status templates, business profile assets, and conversational brand guidelines." [ref=e325]:
+              - generic [ref=e326]:
+                - img [ref=e328]
+                - img [ref=e331]
+              - paragraph [ref=e333]: Messaging
+              - heading "WhatsApp" [level=3] [ref=e334]
+              - paragraph [ref=e335]: Status templates, business profile assets, and conversational brand guidelines.
+            - button "Email Email Signature templates, newsletter layouts, and transactional email design." [ref=e336]:
+              - generic [ref=e337]:
+                - img [ref=e339]
+                - img [ref=e342]
+              - paragraph [ref=e344]: Email
+              - heading "Email" [level=3] [ref=e345]
+              - paragraph [ref=e346]: Signature templates, newsletter layouts, and transactional email design.
+        - generic [ref=e348]:
+          - paragraph [ref=e349]: 07 Resources & Knowledge Base
+          - heading "Documentation & continuity." [level=2] [ref=e350]:
+            - text: Documentation
+            - strong [ref=e351]: "& continuity."
+          - generic [ref=e352]:
+            - button "Library Documentation Six doctrine packs. Forty-plus documents. The complete organisational narrative." [ref=e353]:
+              - generic [ref=e354]:
+                - img [ref=e356]
+                - img [ref=e358]
+              - paragraph [ref=e360]: Library
+              - heading "Documentation" [level=3] [ref=e361]
+              - paragraph [ref=e362]: Six doctrine packs. Forty-plus documents. The complete organisational narrative.
+            - button "Architecture Adaptive Spine System architecture, hydration flows, entity models, and technical diagrams." [ref=e363]:
+              - generic [ref=e364]:
+                - img [ref=e366]
+                - img [ref=e370]
+              - paragraph [ref=e372]: Architecture
+              - heading "Adaptive Spine" [level=3] [ref=e373]
+              - paragraph [ref=e374]: System architecture, hydration flows, entity models, and technical diagrams.
+            - button "Start Quick Start Edit brand content, export assets, and publish documentation in minutes." [ref=e375]:
+              - generic [ref=e376]:
+                - img [ref=e378]
+                - img [ref=e383]
+              - paragraph [ref=e385]: Start
+              - heading "Quick Start" [level=3] [ref=e386]
+              - paragraph [ref=e387]: Edit brand content, export assets, and publish documentation in minutes.
+            - button "Gallery Product Gallery Campaign imagery, product shots, diagrams, and visual asset library." [ref=e388]:
+              - generic [ref=e389]:
+                - img [ref=e391]
+                - img [ref=e395]
+              - paragraph [ref=e397]: Gallery
+              - heading "Product Gallery" [level=3] [ref=e398]
+              - paragraph [ref=e399]: Campaign imagery, product shots, diagrams, and visual asset library.
+        - generic [ref=e401]:
+          - paragraph [ref=e402]: Tokens at a Glance
+          - heading "The core palette." [level=2] [ref=e403]:
+            - text: The
+            - strong [ref=e404]: core palette.
+          - generic [ref=e405]:
+            - generic [ref=e408]:
+              - paragraph [ref=e409]: Ink
+              - paragraph [ref=e410]: "--ink"
+            - generic [ref=e413]:
+              - paragraph [ref=e414]: Paper
+              - paragraph [ref=e415]: "--paper"
+            - generic [ref=e418]:
+              - paragraph [ref=e419]: Forest
+              - paragraph [ref=e420]: "--forest"
+            - generic [ref=e423]:
+              - paragraph [ref=e424]: Gold
+              - paragraph [ref=e425]: "--gold"
+            - generic [ref=e428]:
+              - paragraph [ref=e429]: Slate
+              - paragraph [ref=e430]: "--slate"
+            - generic [ref=e433]:
+              - paragraph [ref=e434]: Red
+              - paragraph [ref=e435]: "--red"
+          - generic [ref=e436]:
+            - generic [ref=e437]:
+              - paragraph [ref=e438]: Typography
+              - paragraph [ref=e439]: DM Serif Display
+              - paragraph [ref=e440]: Headings, doctrine statements, editorial display
+            - generic [ref=e441]:
+              - paragraph [ref=e442]: Typography
+              - paragraph [ref=e443]: Instrument Sans
+              - paragraph [ref=e444]: Body text, UI chrome, labels, buttons
+            - generic [ref=e445]:
+              - paragraph [ref=e446]: Typography
+              - paragraph [ref=e447]: IBM Plex Mono
+              - paragraph [ref=e448]: Technical labels, data strings, code, timestamps
+        - generic [ref=e450]:
+          - generic [ref=e451]:
+            - paragraph [ref=e452]: IntegrateWise Brand System
+            - paragraph [ref=e453]: Canonical source of organisational truth
+          - paragraph [ref=e454]: Version 1.0 · Forest + Paper Design System
+  - button "AI Assistant" [ref=e455]:
+    - img [ref=e456]
+    - generic [ref=e459]: AI Assistant
+    - img [ref=e460]

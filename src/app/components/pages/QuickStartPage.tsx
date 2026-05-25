@@ -93,9 +93,9 @@ function AIEditModal({
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         className="rounded-2xl shadow-2xl w-full max-w-2xl mx-4 max-h-[90vh] overflow-auto"
-        style={{ background: 'var(--surface-raised)' }}
+        style={{ background: 'transparent' }}
       >
-        <div className="p-6 border-b" style={{ borderColor: 'var(--border-subtle)' }}>
+        <div className="p-6 border-b" style={{ borderColor: 'var(--rule-light)' }}>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, var(--forest-mid), var(--gold))' }}>
               <Sparkles className="w-5 h-5" style={{ color: 'var(--paper)' }} />
@@ -110,7 +110,7 @@ function AIEditModal({
         <div className="p-6 space-y-4">
           <div>
             <label className="text-sm font-medium mb-2 block" style={{ color: 'var(--text-muted)' }}>Current Text</label>
-            <div className="p-4 rounded-xl text-sm" style={{ background: 'var(--surface)', color: 'var(--text-muted)' }}>
+            <div className="p-4 rounded-xl text-sm" style={{ background: 'var(--paper-warm)', color: 'var(--text-muted)' }}>
               {currentText}
             </div>
           </div>
@@ -124,7 +124,7 @@ function AIEditModal({
                 onChange={(e) => setPrompt(e.target.value)}
                 placeholder="e.g., make it shorter, more professional, add energy..."
                 className="flex-1 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--forest-bright)]"
-                style={{ border: '1px solid var(--border-base)', background: 'var(--surface-raised)', color: 'var(--text-strong)' }}
+                style={{ border: '1px solid var(--border-base)', background: 'transparent', color: 'var(--text-strong)' }}
               />
               <button
                 onClick={generateSuggestion}
@@ -141,14 +141,14 @@ function AIEditModal({
           {suggestion && (
             <div>
               <label className="text-sm font-medium mb-2 block" style={{ color: 'var(--text-muted)' }}>AI Suggestion</label>
-              <div className="p-4 rounded-xl" style={{ background: 'var(--surface)', border: '1px solid var(--border-subtle)', color: 'var(--text-strong)' }}>
+              <div className="p-4 rounded-xl" style={{ background: 'var(--paper-warm)', border: '1px solid var(--rule-light)', color: 'var(--text-strong)' }}>
                 {suggestion}
               </div>
             </div>
           )}
         </div>
 
-        <div className="p-6 flex justify-end gap-3" style={{ borderTop: '1px solid var(--border-subtle)' }}>
+        <div className="p-6 flex justify-end gap-3" style={{ borderTop: '1px solid var(--rule-light)' }}>
           <button onClick={onClose} className="px-4 py-2" style={{ color: 'var(--text-muted)' }}>
             Cancel
           </button>
@@ -186,11 +186,11 @@ function ExportItem({
     <motion.div
       whileHover={{ y: -2 }}
       className="rounded-xl border p-5 hover:shadow-lg transition-all"
-      style={{ background: 'var(--surface-raised)', borderColor: 'var(--border-base)' }}
+      style={{ background: 'transparent', borderColor: 'var(--border-base)' }}
     >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'var(--surface-2)' }}>
+          <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'var(--paper-deep)' }}>
             <Icon className="w-6 h-6" style={{ color: 'var(--forest-bright)' }} />
           </div>
           <div>
@@ -348,7 +348,7 @@ export function QuickStartPage() {
           </div>
 
           {/* One Liner */}
-          <div className="rounded-xl border p-5" style={{ background: 'var(--surface-raised)', borderColor: 'var(--border-base)' }}>
+          <div className="rounded-xl border p-5" style={{ background: 'transparent', borderColor: 'var(--border-base)' }}>
             <div className="flex items-center justify-between mb-3">
               <label className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>One-Liner</label>
               <div className="flex gap-2">
@@ -362,7 +362,7 @@ export function QuickStartPage() {
                 </button>
                 <button
                   onClick={() => startEdit('oneLiner')}
-                  className="p-2 rounded-lg hover:bg-[var(--surface-2)]"
+                  className="p-2 rounded-lg hover:bg-[var(--paper-deep)]"
                   style={{ color: 'var(--text-muted)' }}
                 >
                   <Edit3 className="w-4 h-4" />
@@ -375,7 +375,7 @@ export function QuickStartPage() {
                   value={editValue}
                   onChange={(e) => setEditValue(e.target.value)}
                   className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--forest-bright)]"
-                  style={{ border: '1px solid var(--border-base)', background: 'var(--surface-raised)', color: 'var(--text-strong)' }}
+                  style={{ border: '1px solid var(--border-base)', background: 'transparent', color: 'var(--text-strong)' }}
                   rows={3}
                 />
                 <div className="flex gap-2">
@@ -390,7 +390,7 @@ export function QuickStartPage() {
           </div>
 
           {/* Short Description */}
-          <div className="rounded-xl border p-5" style={{ background: 'var(--surface-raised)', borderColor: 'var(--border-base)' }}>
+          <div className="rounded-xl border p-5" style={{ background: 'transparent', borderColor: 'var(--border-base)' }}>
             <div className="flex items-center justify-between mb-3">
               <label className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>Short Description</label>
               <div className="flex gap-2">
@@ -403,7 +403,7 @@ export function QuickStartPage() {
                 </button>
                 <button
                   onClick={() => startEdit('shortDescription')}
-                  className="p-2 rounded-lg hover:bg-[var(--surface-2)]"
+                  className="p-2 rounded-lg hover:bg-[var(--paper-deep)]"
                   style={{ color: 'var(--text-muted)' }}
                 >
                   <Edit3 className="w-4 h-4" />
@@ -416,7 +416,7 @@ export function QuickStartPage() {
                   value={editValue}
                   onChange={(e) => setEditValue(e.target.value)}
                   className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--forest-bright)]"
-                  style={{ border: '1px solid var(--border-base)', background: 'var(--surface-raised)', color: 'var(--text-strong)' }}
+                  style={{ border: '1px solid var(--border-base)', background: 'transparent', color: 'var(--text-strong)' }}
                   rows={4}
                 />
                 <div className="flex gap-2">
@@ -431,7 +431,7 @@ export function QuickStartPage() {
           </div>
 
           {/* Key Benefits */}
-          <div className="rounded-xl border p-5" style={{ background: 'var(--surface-raised)', borderColor: 'var(--border-base)' }}>
+          <div className="rounded-xl border p-5" style={{ background: 'transparent', borderColor: 'var(--border-base)' }}>
             <div className="flex items-center justify-between mb-3">
               <label className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>Key Benefits</label>
               <div className="flex gap-2">
@@ -444,7 +444,7 @@ export function QuickStartPage() {
                 </button>
                 <button
                   onClick={() => startEdit('keyBenefits')}
-                  className="p-2 rounded-lg hover:bg-[var(--surface-2)]"
+                  className="p-2 rounded-lg hover:bg-[var(--paper-deep)]"
                   style={{ color: 'var(--text-muted)' }}
                 >
                   <Edit3 className="w-4 h-4" />
@@ -458,7 +458,7 @@ export function QuickStartPage() {
                   onChange={(e) => setEditValue(e.target.value)}
                   placeholder="One benefit per line"
                   className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--forest-bright)]"
-                  style={{ border: '1px solid var(--border-base)', background: 'var(--surface-raised)', color: 'var(--text-strong)' }}
+                  style={{ border: '1px solid var(--border-base)', background: 'transparent', color: 'var(--text-strong)' }}
                   rows={6}
                 />
                 <div className="flex gap-2">
@@ -480,7 +480,7 @@ export function QuickStartPage() {
           </div>
 
           {/* Call to Action */}
-          <div className="rounded-xl border p-5" style={{ background: 'var(--surface-raised)', borderColor: 'var(--border-base)' }}>
+          <div className="rounded-xl border p-5" style={{ background: 'transparent', borderColor: 'var(--border-base)' }}>
             <div className="flex items-center justify-between mb-3">
               <label className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>Call to Action</label>
               <div className="flex gap-2">
@@ -493,7 +493,7 @@ export function QuickStartPage() {
                 </button>
                 <button
                   onClick={() => startEdit('callToAction')}
-                  className="p-2 rounded-lg hover:bg-[var(--surface-2)]"
+                  className="p-2 rounded-lg hover:bg-[var(--paper-deep)]"
                   style={{ color: 'var(--text-muted)' }}
                 >
                   <Edit3 className="w-4 h-4" />
@@ -507,7 +507,7 @@ export function QuickStartPage() {
                   value={editValue}
                   onChange={(e) => setEditValue(e.target.value)}
                   className="w-full p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--forest-bright)]"
-                  style={{ border: '1px solid var(--border-base)', background: 'var(--surface-raised)', color: 'var(--text-strong)' }}
+                  style={{ border: '1px solid var(--border-base)', background: 'transparent', color: 'var(--text-strong)' }}
                 />
                 <div className="flex gap-2">
                   <button onClick={saveEdit} className="px-4 py-2 text-[var(--paper)] rounded-lg text-sm" style={{ background: 'var(--forest-bright)' }}>Save</button>
@@ -529,7 +529,7 @@ export function QuickStartPage() {
           </div>
 
           {/* Office Supplies Section */}
-          <div className="rounded-xl border p-5" style={{ background: 'var(--surface)', borderColor: 'var(--border-base)' }}>
+          <div className="rounded-xl border p-5" style={{ background: 'var(--paper-warm)', borderColor: 'var(--border-base)' }}>
             <div className="flex items-center gap-2 mb-4">
               <Printer className="w-5 h-5" style={{ color: 'var(--forest-bright)' }} />
               <h3 className="font-semibold" style={{ color: 'var(--text-strong)' }}>Office Supplies (Print First)</h3>
@@ -563,7 +563,7 @@ export function QuickStartPage() {
           </div>
 
           {/* Social Media Section */}
-          <div className="rounded-xl border p-5" style={{ background: 'var(--surface)', borderColor: 'var(--border-base)' }}>
+          <div className="rounded-xl border p-5" style={{ background: 'var(--paper-warm)', borderColor: 'var(--border-base)' }}>
             <div className="flex items-center gap-2 mb-4">
               <Share2 className="w-5 h-5" style={{ color: 'var(--forest-bright)' }} />
               <h3 className="font-semibold" style={{ color: 'var(--text-strong)' }}>Social Media (Promote)</h3>
@@ -594,10 +594,10 @@ export function QuickStartPage() {
           <a 
             href="/gallery" 
             className="block rounded-xl border p-5 hover:shadow-lg transition-all"
-            style={{ background: 'var(--surface)', borderColor: 'var(--border-base)' }}
+            style={{ background: 'var(--paper-warm)', borderColor: 'var(--border-base)' }}
           >
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'var(--surface-2)' }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'var(--paper-deep)' }}>
                 <Image className="w-6 h-6" style={{ color: 'var(--forest-bright)' }} />
               </div>
               <div className="flex-1">

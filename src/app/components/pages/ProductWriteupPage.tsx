@@ -50,7 +50,7 @@ function Callout({ children, type = 'insight' }: { children: React.ReactNode; ty
 function LayerCard({ num, title, what, whatUser, whatSolves, whatNot }: { num: number; title: string; what: string; whatUser?: string; whatSolves: string; whatNot?: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="rounded-xl overflow-hidden" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
+    <div className="rounded-xl overflow-hidden" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-5 py-4 text-left">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold" style={{ background: 'var(--forest)', color: 'var(--paper)', fontFamily: 'var(--font-mono)' }}>{num}</div>
@@ -61,7 +61,7 @@ function LayerCard({ num, title, what, whatUser, whatSolves, whatNot }: { num: n
       <AnimatePresence>
         {open && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-            <div className="px-5 pb-5 space-y-3" style={{ borderTop: '1px solid var(--border-subtle)' }}>
+            <div className="px-5 pb-5 space-y-3" style={{ borderTop: '1px solid var(--rule-light)' }}>
               <p className="text-sm mt-3" style={{ color: 'var(--text-muted)' }}>{what}</p>
               {whatUser && <div><p className="text-xs font-bold tracking-widest mb-1" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>WHAT THE USER DOES</p><p className="text-sm" style={{ color: 'var(--ink)' }}>{whatUser}</p></div>}
               <div><p className="text-xs font-bold tracking-widest mb-1" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>WHAT THIS SOLVES</p><p className="text-sm" style={{ color: 'var(--ink)' }}>{whatSolves}</p></div>
@@ -130,7 +130,7 @@ export function ProductWriteupPage() {
                 { step: '04', title: 'Loader and Normalizer came next', desc: 'The Loader fetches data from external tools. The Normalizer transforms it into a common shape. Together they break through platform lock-in.' },
                 { step: '05', title: 'The $8M moment', desc: 'An account marked red. Because the Spine connected dots no one else could connect, Nirmal saw the full picture. He saved $8 million. That was the moment.' },
               ].map(item => (
-                <div key={item.step} className="flex gap-4 p-4 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
+                <div key={item.step} className="flex gap-4 p-4 rounded-xl" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold" style={{ background: 'var(--forest)', color: 'var(--paper)', fontFamily: 'var(--font-mono)' }}>{item.step}</div>
                   <div>
                     <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>{item.title}</p>
@@ -148,11 +148,11 @@ export function ProductWriteupPage() {
             <p className="text-xs font-bold tracking-[0.2em] mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>THE FOUNDER'S EXPERIENCE</p>
             <h2 className="text-3xl font-bold mb-6" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Two roles. One product.</h2>
             <div className="grid md:grid-cols-2 gap-4 mb-6">
-              <div className="p-5 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
+              <div className="p-5 rounded-xl" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
                 <p className="text-xs font-bold tracking-widest mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>AS A CSM</p>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>He was the human API. He managed 30+ accounts across CRM, support desk, communication platform, documentation tools, and email. He tracked a renewal in the CRM while the customer's technical issue lived in the support desk while the internal coordination happened in the communication platform. He rebuilt context every morning because overnight everything moved.</p>
               </div>
-              <div className="p-5 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
+              <div className="p-5 rounded-xl" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
                 <p className="text-xs font-bold tracking-widest mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>AS A MULESOFT ARCHITECT</p>
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>He designed enterprise integration platforms. He built secure data flows between systems that were never meant to connect. He enforced security policies. He applied architectural best practices at scale. He understood data transformation, schema mapping, API governance, and the principles that make enterprise integrations reliable.</p>
               </div>
@@ -180,7 +180,7 @@ export function ProductWriteupPage() {
                 { title: 'Human in the Loop', desc: 'AI proposes. Human approves. Operator executes. Nothing runs without human approval. This is not a limitation. This is the architecture.' },
                 { title: 'Continuity Across Change', desc: 'The model is a variable. The memory is a constant. Change the AI model — the new model inherits all the memory. The user never re-explains.' },
               ].map((item, i) => (
-                <div key={item.title} className="flex gap-4 p-4 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
+                <div key={item.title} className="flex gap-4 p-4 rounded-xl" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold" style={{ background: 'color-mix(in srgb, var(--forest) 10%, transparent)', color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>{String(i + 1).padStart(2, '0')}</div>
                   <div>
                     <p className="text-sm font-semibold mb-1" style={{ color: 'var(--ink)' }}>{item.title}</p>
@@ -260,7 +260,7 @@ export function ProductWriteupPage() {
                 { num: 13, name: 'Proactive Intelligence', desc: 'Suggests before the user asks.' },
                 { num: 14, name: 'Learned Workflows', desc: 'Workflows that get smarter with every execution.' },
               ].map(item => (
-                <div key={item.num} className="flex items-center gap-3 px-4 py-3 rounded-lg" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
+                <div key={item.num} className="flex items-center gap-3 px-4 py-3 rounded-lg" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
                   <div className="w-7 h-7 rounded flex items-center justify-center text-xs font-bold shrink-0" style={{ background: 'var(--forest)', color: 'var(--paper)', fontFamily: 'var(--font-mono)' }}>{item.num}</div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>{item.name}</p>
@@ -277,14 +277,14 @@ export function ProductWriteupPage() {
             <h2 className="text-3xl font-bold mb-8" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Two products. One architecture.</h2>
 
             {/* Account Success */}
-            <div className="mb-8 p-6 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
+            <div className="mb-8 p-6 rounded-xl" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
               <p className="text-xs font-bold tracking-widest mb-2" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PRODUCT 1</p>
               <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Account Success</h3>
               <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>A tool-organistic and platform-organistic system for managing complex relationships across any tool, any role, any industry, and any department. Born from a CSM's need to connect dots that no tool would connect. Built with an architect's discipline. Proven by an $8 million save.</p>
               <p className="text-xs font-bold tracking-widest mb-3" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>THE 15 LAYERS</p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                 {['Account Master', 'People / Team', 'Business Context', 'Strategic Objectives', 'Capabilities', 'Value Streams', 'API Portfolio', 'Platform Health', 'Initiatives', 'Risk Register', 'Stakeholder Outcomes', 'Engagement Log', 'Success Plan', 'Task Manager', 'Generated Insights'].map((layer, i) => (
-                  <div key={layer} className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs" style={{ background: 'var(--paper)', border: '1px solid var(--border-subtle)' }}>
+                  <div key={layer} className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs" style={{ background: 'var(--paper)', border: '1px solid var(--rule-light)' }}>
                     <span className="font-bold" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>{String(i + 1).padStart(2, '0')}</span>
                     <span style={{ color: 'var(--ink)' }}>{layer}</span>
                   </div>
@@ -293,14 +293,14 @@ export function ProductWriteupPage() {
             </div>
 
             {/* Business Intelligence */}
-            <div className="p-6 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
+            <div className="p-6 rounded-xl" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
               <p className="text-xs font-bold tracking-widest mb-2" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PRODUCT 2</p>
               <h3 className="text-xl font-bold mb-3" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>Business Intelligence (Business Ops)</h3>
               <p className="text-sm mb-4" style={{ color: 'var(--text-muted)' }}>A complete operational nervous system for running any organization from one surface. Born from a founder's need to run his own company from one surface. Proven by IntegrateWise running on IntegrateWise.</p>
               <p className="text-xs font-bold tracking-widest mb-3" style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}>ALL FUNCTIONAL DEPARTMENTS</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {['Strategy & Leadership', 'Marketing', 'Sales', 'Customer Success', 'Product', 'Engineering', 'Operations', 'Finance', 'Human Resources', 'Legal & Compliance', 'BI / Analytics', 'IT & Infrastructure', 'Partnerships & BD', 'Knowledge Management'].map(dept => (
-                  <div key={dept} className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs" style={{ background: 'var(--paper)', border: '1px solid var(--border-subtle)' }}>
+                  <div key={dept} className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs" style={{ background: 'var(--paper)', border: '1px solid var(--rule-light)' }}>
                     <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: 'var(--forest)' }} />
                     <span style={{ color: 'var(--ink)' }}>{dept}</span>
                   </div>
@@ -359,7 +359,7 @@ export function ProductWriteupPage() {
                 { title: 'Providers', items: ['OpenRouter (365 models)', 'Google Gemini (direct)', 'Cloudflare Workers AI', 'GitHub Copilot'] },
                 { title: 'Security', items: ['Supabase via Worker only', 'Infisical secrets management', 'Docker network isolation', 'CF Access on every call'] },
               ].map(card => (
-                <div key={card.title} className="p-5 rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
+                <div key={card.title} className="p-5 rounded-xl" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
                   <p className="text-xs font-bold tracking-widest mb-3" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>{card.title.toUpperCase()}</p>
                   <ul className="space-y-1.5">
                     {card.items.map(item => (

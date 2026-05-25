@@ -1,0 +1,260 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: IntegrateWise
+        - paragraph [ref=e14]: Continuity Documentation System
+    - generic [ref=e16]:
+      - img [ref=e17]
+      - textbox "Search navigation..." [ref=e20]
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - button "00 Company Strategy 2" [ref=e23]:
+          - img [ref=e24]
+          - img [ref=e26]
+          - generic [ref=e30]: 00 Company Strategy
+          - generic [ref=e31]: "2"
+        - generic [ref=e32]:
+          - link "Strategic Planning" [ref=e33] [cursor=pointer]:
+            - /url: /company
+            - img [ref=e34]
+            - generic [ref=e38]: Strategic Planning
+          - button "Doctrine & Continuity" [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Doctrine & Continuity
+      - generic [ref=e43]:
+        - button "01 Product & Engineering 3" [ref=e44]:
+          - img [ref=e45]
+          - img [ref=e47]
+          - generic [ref=e51]: 01 Product & Engineering
+          - generic [ref=e52]: "3"
+        - generic [ref=e53]:
+          - link "Adaptive Spine & Architecture" [ref=e54] [cursor=pointer]:
+            - /url: /architecture
+            - img [ref=e55]
+            - generic [ref=e59]: Adaptive Spine & Architecture
+          - button "Product Narrative & Continuity" [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: Product Narrative & Continuity
+          - button "Technical System" [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e68]: Technical System
+      - generic [ref=e69]:
+        - button "02 Marketing & Creative 10" [ref=e70]:
+          - img [ref=e71]
+          - img [ref=e73]
+          - generic [ref=e76]: 02 Marketing & Creative
+          - generic [ref=e77]: "10"
+        - generic [ref=e78]:
+          - link "Brand Assets" [ref=e79] [cursor=pointer]:
+            - /url: /brand-assets
+            - img [ref=e80]
+            - generic [ref=e86]: Brand Assets
+          - link "Design Tokens" [ref=e87] [cursor=pointer]:
+            - /url: /design-tokens
+            - img [ref=e88]
+            - generic [ref=e92]: Design Tokens
+          - link "Stationery" [ref=e93] [cursor=pointer]:
+            - /url: /stationery
+            - img [ref=e94]
+            - generic [ref=e97]: Stationery
+          - link "Marketing" [ref=e98] [cursor=pointer]:
+            - /url: /marketing
+            - img [ref=e99]
+            - generic [ref=e102]: Marketing
+          - link "LinkedIn" [ref=e103] [cursor=pointer]:
+            - /url: /linkedin
+            - img [ref=e104]
+            - generic [ref=e107]: LinkedIn
+          - link "WhatsApp" [ref=e108] [cursor=pointer]:
+            - /url: /whatsapp
+            - img [ref=e109]
+            - generic [ref=e111]: WhatsApp
+          - link "Email" [ref=e112] [cursor=pointer]:
+            - /url: /email
+            - img [ref=e113]
+            - generic [ref=e116]: Email
+          - link "Presentations" [ref=e117] [cursor=pointer]:
+            - /url: /presentations
+            - img [ref=e118]
+            - generic [ref=e121]: Presentations
+          - link "Quick Generators" [ref=e122] [cursor=pointer]:
+            - /url: /generators
+            - img [ref=e123]
+            - generic [ref=e125]: Quick Generators
+          - button "Category & Positioning" [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e131]: Category & Positioning
+      - generic [ref=e132]:
+        - button "03 Sales 2" [ref=e133]:
+          - img [ref=e134]
+          - img [ref=e136]
+          - generic [ref=e142]: 03 Sales
+          - generic [ref=e143]: "2"
+        - generic [ref=e144]:
+          - link "Sales Enablement" [ref=e145] [cursor=pointer]:
+            - /url: /sales
+            - img [ref=e146]
+            - generic [ref=e152]: Sales Enablement
+          - button "GTM & Customer Success" [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e157]: GTM & Customer Success
+      - generic [ref=e158]:
+        - button "04 Customer Success 3" [ref=e159]:
+          - img [ref=e160]
+          - img [ref=e162]
+          - generic [ref=e167]: 04 Customer Success
+          - generic [ref=e168]: "3"
+        - generic [ref=e169]:
+          - link "Account Success Dashboard" [ref=e170] [cursor=pointer]:
+            - /url: /account-success
+            - img [ref=e171]
+            - generic [ref=e176]: Account Success Dashboard
+          - button "Onboarding & Implementation" [ref=e177]:
+            - img [ref=e178]
+            - generic [ref=e183]: Onboarding & Implementation
+          - button "Support & Health" [ref=e184]:
+            - img [ref=e185]
+            - generic [ref=e190]: Support & Health
+      - button "05 Operations 3" [ref=e192]:
+        - img [ref=e193]
+        - img [ref=e195]
+        - generic [ref=e197]: 05 Operations
+        - generic [ref=e198]: "3"
+      - button "06 Finance, Legal, HR 2" [ref=e200]:
+        - img [ref=e201]
+        - img [ref=e203]
+        - generic [ref=e207]: 06 Finance, Legal, HR
+        - generic [ref=e208]: "2"
+      - button "07 Resources & Knowledge Base 4" [ref=e210]:
+        - img [ref=e211]
+        - img [ref=e213]
+        - generic [ref=e215]: 07 Resources & Knowledge Base
+        - generic [ref=e216]: "4"
+      - button "08 External Communications 2" [ref=e218]:
+        - img [ref=e219]
+        - img [ref=e221]
+        - generic [ref=e224]: 08 External Communications
+        - generic [ref=e225]: "2"
+      - button "09 Archives & Retention 1" [ref=e227]:
+        - img [ref=e228]
+        - img [ref=e230]
+        - generic [ref=e233]: 09 Archives & Retention
+        - generic [ref=e234]: "1"
+    - generic [ref=e236]:
+      - generic [ref=e237]:
+        - paragraph [ref=e238]: Continuity Documentation System v1.0
+        - paragraph [ref=e239]: 6 Doctrine Packs · 40 Documents
+      - button "Switch to dark mode" [ref=e240]:
+        - img [ref=e241]
+  - generic [ref=e243]:
+    - banner [ref=e244]:
+      - generic [ref=e245]:
+        - generic [ref=e246]: 04 Customer Success
+        - img [ref=e247]
+        - heading "Account Success Dashboard" [level=1] [ref=e249]
+    - main [ref=e250]:
+      - generic [ref=e252]:
+        - generic [ref=e253]:
+          - generic [ref=e254]:
+            - heading "Account Success" [level=1] [ref=e255]
+            - paragraph [ref=e256]: Portfolio Intelligence — 6 accounts
+          - generic [ref=e257]:
+            - generic [ref=e258]:
+              - paragraph [ref=e259]: Total ARR
+              - paragraph [ref=e260]: $1813K
+            - generic [ref=e261]:
+              - paragraph [ref=e262]: Expansion Pipeline
+              - paragraph [ref=e263]: $337K
+            - generic [ref=e264]:
+              - paragraph [ref=e265]: At Risk / Critical
+              - paragraph [ref=e266]: 2 accts
+            - generic [ref=e267]:
+              - paragraph [ref=e268]: Renewing ≤ 30d
+              - paragraph [ref=e269]: 2 accts
+          - generic [ref=e270]:
+            - button "Axiom Financial Healthy Financial Services $420K ARR 94d renewal 87 1 risks 4 tasks" [ref=e271]:
+              - generic [ref=e272]:
+                - generic [ref=e273]: Axiom Financial
+                - generic [ref=e274]: Healthy
+              - paragraph [ref=e275]: Financial Services
+              - generic [ref=e276]:
+                - generic [ref=e277]:
+                  - generic [ref=e278]: $420K ARR
+                  - generic [ref=e279]: 94d renewal
+                - generic [ref=e283]: "87"
+              - generic [ref=e284]:
+                - generic [ref=e285]: 1 risks
+                - generic [ref=e286]: 4 tasks
+            - button "MedCore Health Systems At Risk Healthcare $310K ARR 28d renewal 54 5 risks 9 tasks" [ref=e287]:
+              - generic [ref=e288]:
+                - generic [ref=e289]: MedCore Health Systems
+                - generic [ref=e290]: At Risk
+              - paragraph [ref=e291]: Healthcare
+              - generic [ref=e292]:
+                - generic [ref=e293]:
+                  - generic [ref=e294]: $310K ARR
+                  - generic [ref=e295]: 28d renewal
+                - generic [ref=e299]: "54"
+              - generic [ref=e300]:
+                - generic [ref=e301]: 5 risks
+                - generic [ref=e302]: 9 tasks
+            - button "Stellarworks SaaS Healthy Technology $195K ARR 187d renewal 91 2 tasks" [ref=e303]:
+              - generic [ref=e304]:
+                - generic [ref=e305]: Stellarworks SaaS
+                - generic [ref=e306]: Healthy
+              - paragraph [ref=e307]: Technology
+              - generic [ref=e308]:
+                - generic [ref=e309]:
+                  - generic [ref=e310]: $195K ARR
+                  - generic [ref=e311]: 187d renewal
+                - generic [ref=e315]: "91"
+              - generic [ref=e317]: 2 tasks
+            - button "Vantage Telecom Critical Telecommunications $540K ARR 11d renewal 31 9 risks 14 tasks" [ref=e318]:
+              - generic [ref=e319]:
+                - generic [ref=e320]: Vantage Telecom
+                - generic [ref=e321]: Critical
+              - paragraph [ref=e322]: Telecommunications
+              - generic [ref=e323]:
+                - generic [ref=e324]:
+                  - generic [ref=e325]: $540K ARR
+                  - generic [ref=e326]: 11d renewal
+                - generic [ref=e330]: "31"
+              - generic [ref=e331]:
+                - generic [ref=e332]: 9 risks
+                - generic [ref=e333]: 14 tasks
+            - button "Crestline Manufacturing Healthy Manufacturing $260K ARR 142d renewal 73 2 risks 5 tasks" [ref=e334]:
+              - generic [ref=e335]:
+                - generic [ref=e336]: Crestline Manufacturing
+                - generic [ref=e337]: Healthy
+              - paragraph [ref=e338]: Manufacturing
+              - generic [ref=e339]:
+                - generic [ref=e340]:
+                  - generic [ref=e341]: $260K ARR
+                  - generic [ref=e342]: 142d renewal
+                - generic [ref=e346]: "73"
+              - generic [ref=e347]:
+                - generic [ref=e348]: 2 risks
+                - generic [ref=e349]: 5 tasks
+            - button "Luminos Retail Group Healthy Retail & Commerce $88K ARR 63d renewal 68 2 risks 3 tasks" [ref=e350]:
+              - generic [ref=e351]:
+                - generic [ref=e352]: Luminos Retail Group
+                - generic [ref=e353]: Healthy
+              - paragraph [ref=e354]: Retail & Commerce
+              - generic [ref=e355]:
+                - generic [ref=e356]:
+                  - generic [ref=e357]: $88K ARR
+                  - generic [ref=e358]: 63d renewal
+                - generic [ref=e362]: "68"
+              - generic [ref=e363]:
+                - generic [ref=e364]: 2 risks
+                - generic [ref=e365]: 3 tasks
+        - generic [ref=e367]:
+          - generic [ref=e368]: ◎
+          - heading "Select an account" [level=2] [ref=e369]
+          - paragraph [ref=e370]: Choose an account from the list to view its 15-layer intelligence graph — from contract metadata to AI-generated strategic insights.
+  - button "AI Assistant" [ref=e371]:
+    - img [ref=e372]
+    - generic [ref=e375]: AI Assistant
+    - img [ref=e376]

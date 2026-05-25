@@ -1,0 +1,378 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: IntegrateWise
+        - paragraph [ref=e14]: Continuity Documentation System
+    - generic [ref=e16]:
+      - img [ref=e17]
+      - textbox "Search navigation..." [ref=e20]
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - button "00 Company Strategy 2" [ref=e23]:
+          - img [ref=e24]
+          - img [ref=e26]
+          - generic [ref=e30]: 00 Company Strategy
+          - generic [ref=e31]: "2"
+        - generic [ref=e32]:
+          - link "Strategic Planning" [ref=e33] [cursor=pointer]:
+            - /url: /company
+            - img [ref=e34]
+            - generic [ref=e38]: Strategic Planning
+          - button "Doctrine & Continuity" [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Doctrine & Continuity
+      - generic [ref=e43]:
+        - button "01 Product & Engineering 3" [ref=e44]:
+          - img [ref=e45]
+          - img [ref=e47]
+          - generic [ref=e51]: 01 Product & Engineering
+          - generic [ref=e52]: "3"
+        - generic [ref=e53]:
+          - link "Adaptive Spine & Architecture" [ref=e54] [cursor=pointer]:
+            - /url: /architecture
+            - img [ref=e55]
+            - generic [ref=e59]: Adaptive Spine & Architecture
+          - button "Product Narrative & Continuity" [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: Product Narrative & Continuity
+          - button "Technical System" [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e68]: Technical System
+      - generic [ref=e69]:
+        - button "02 Marketing & Creative 10" [ref=e70]:
+          - img [ref=e71]
+          - img [ref=e73]
+          - generic [ref=e76]: 02 Marketing & Creative
+          - generic [ref=e77]: "10"
+        - generic [ref=e78]:
+          - link "Brand Assets" [ref=e79] [cursor=pointer]:
+            - /url: /brand-assets
+            - img [ref=e80]
+            - generic [ref=e86]: Brand Assets
+          - link "Design Tokens" [ref=e87] [cursor=pointer]:
+            - /url: /design-tokens
+            - img [ref=e88]
+            - generic [ref=e92]: Design Tokens
+          - link "Stationery" [ref=e93] [cursor=pointer]:
+            - /url: /stationery
+            - img [ref=e94]
+            - generic [ref=e97]: Stationery
+          - link "Marketing" [ref=e98] [cursor=pointer]:
+            - /url: /marketing
+            - img [ref=e99]
+            - generic [ref=e102]: Marketing
+          - link "LinkedIn" [ref=e103] [cursor=pointer]:
+            - /url: /linkedin
+            - img [ref=e104]
+            - generic [ref=e107]: LinkedIn
+          - link "WhatsApp" [ref=e108] [cursor=pointer]:
+            - /url: /whatsapp
+            - img [ref=e109]
+            - generic [ref=e111]: WhatsApp
+          - link "Email" [ref=e112] [cursor=pointer]:
+            - /url: /email
+            - img [ref=e113]
+            - generic [ref=e116]: Email
+          - link "Presentations" [ref=e117] [cursor=pointer]:
+            - /url: /presentations
+            - img [ref=e118]
+            - generic [ref=e121]: Presentations
+          - link "Quick Generators" [ref=e122] [cursor=pointer]:
+            - /url: /generators
+            - img [ref=e123]
+            - generic [ref=e125]: Quick Generators
+          - button "Category & Positioning" [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e131]: Category & Positioning
+      - generic [ref=e132]:
+        - button "03 Sales 2" [ref=e133]:
+          - img [ref=e134]
+          - img [ref=e136]
+          - generic [ref=e142]: 03 Sales
+          - generic [ref=e143]: "2"
+        - generic [ref=e144]:
+          - link "Sales Enablement" [ref=e145] [cursor=pointer]:
+            - /url: /sales
+            - img [ref=e146]
+            - generic [ref=e152]: Sales Enablement
+          - button "GTM & Customer Success" [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e157]: GTM & Customer Success
+      - button "04 Customer Success 2" [ref=e159]:
+        - img [ref=e160]
+        - img [ref=e162]
+        - generic [ref=e167]: 04 Customer Success
+        - generic [ref=e168]: "2"
+      - button "05 Operations 2" [ref=e170]:
+        - img [ref=e171]
+        - img [ref=e173]
+        - generic [ref=e175]: 05 Operations
+        - generic [ref=e176]: "2"
+      - button "06 Finance, Legal, HR 2" [ref=e178]:
+        - img [ref=e179]
+        - img [ref=e181]
+        - generic [ref=e185]: 06 Finance, Legal, HR
+        - generic [ref=e186]: "2"
+      - button "07 Resources & Knowledge Base 4" [ref=e188]:
+        - img [ref=e189]
+        - img [ref=e191]
+        - generic [ref=e193]: 07 Resources & Knowledge Base
+        - generic [ref=e194]: "4"
+      - button "08 External Communications 2" [ref=e196]:
+        - img [ref=e197]
+        - img [ref=e199]
+        - generic [ref=e202]: 08 External Communications
+        - generic [ref=e203]: "2"
+      - button "09 Archives & Retention 1" [ref=e205]:
+        - img [ref=e206]
+        - img [ref=e208]
+        - generic [ref=e211]: 09 Archives & Retention
+        - generic [ref=e212]: "1"
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - paragraph [ref=e216]: Continuity Documentation System v1.0
+        - paragraph [ref=e217]: 6 Doctrine Packs · 40 Documents
+      - button "Switch to dark mode" [active] [ref=e569]:
+        - img [ref=e570]
+  - generic [ref=e221]:
+    - banner [ref=e222]:
+      - heading "Continuity Documentation System" [level=1] [ref=e224]
+    - main [ref=e225]:
+      - generic [ref=e226]:
+        - generic [ref=e227]:
+          - generic [ref=e228]:
+            - paragraph [ref=e229]: IntegrateWise · The Company
+            - heading "The Memory-Native Operating System" [level=1] [ref=e231]:
+              - text: The Memory-Native
+              - text: Operating System
+            - generic [ref=e232]:
+              - paragraph [ref=e233]: AI that remembers.
+              - paragraph [ref=e234]: Systems that learn.
+              - paragraph [ref=e235]: Humans that decide.
+            - paragraph [ref=e236]: Connect every tool to one Spine. Give AI persistent memory across sessions, models, and providers. Keep humans in control. The complete round trip — no other system does this.
+            - generic [ref=e237]:
+              - link "Try it free" [ref=e238] [cursor=pointer]:
+                - /url: https://integratewise.ai
+                - text: Try it free
+                - img [ref=e239]
+              - link "Request a demo" [ref=e241] [cursor=pointer]:
+                - /url: mailto:hello@integratewise.ai
+          - generic [ref=e242]:
+            - generic [ref=e243]:
+              - paragraph [ref=e244]: 30–40%
+              - paragraph [ref=e245]: of knowledge work is manual integration
+            - generic [ref=e246]:
+              - paragraph [ref=e247]: ~30 min
+              - paragraph [ref=e248]: before AI resets its context
+            - generic [ref=e249]:
+              - paragraph [ref=e250]: $0
+              - paragraph [ref=e251]: institutional memory when someone leaves
+        - generic [ref=e254]:
+          - paragraph [ref=e255]: The Problem
+          - heading "Your team is the integration layer." [level=2] [ref=e256]:
+            - text: Your team is
+            - strong [ref=e257]: the integration layer.
+          - generic [ref=e258]:
+            - generic [ref=e259]:
+              - img [ref=e261]
+              - paragraph [ref=e266]: AI starts cold every session
+              - paragraph [ref=e267]: Every conversation resets. Every model forgets. Every new session demands the same context again. Your team explains the same things over and over — to people, to AI, to systems.
+            - generic [ref=e268]:
+              - img [ref=e270]
+              - paragraph [ref=e274]: Tools do not talk to each other
+              - paragraph [ref=e275]: Your CRM knows the deal. Your support tool knows the issues. Your Slack knows the sentiment. None of them know what the others know. Your team manually reconstructs the picture every day.
+            - generic [ref=e276]:
+              - img [ref=e278]
+              - paragraph [ref=e283]: Knowledge walks out the door
+              - paragraph [ref=e284]: When someone leaves, everything they knew leaves with them. No system captured it. No AI remembers it. The next person starts from zero. The cost is invisible until it is not.
+        - generic [ref=e285]:
+          - paragraph [ref=e286]: The Solution
+          - heading "The complete round trip." [level=2] [ref=e287]
+          - paragraph [ref=e288]: Data flows in, gets acted on, flows back. Every cycle makes the system smarter. Every cycle means you explain less. No other system does this.
+          - generic [ref=e289]:
+            - generic [ref=e290]:
+              - generic [ref=e291]:
+                - img [ref=e293]
+                - paragraph [ref=e297]: Your Tools
+                - paragraph [ref=e298]: CRM · Slack · Docs · Calendar
+              - img [ref=e299]
+            - generic [ref=e301]:
+              - generic [ref=e302]:
+                - img [ref=e304]
+                - paragraph [ref=e306]: Loader
+                - paragraph [ref=e307]: Ingests every signal
+              - img [ref=e308]
+            - generic [ref=e310]:
+              - generic [ref=e311]:
+                - img [ref=e313]
+                - paragraph [ref=e317]: Normalizer
+                - paragraph [ref=e318]: Cleans and maps the data
+              - img [ref=e319]
+            - generic [ref=e321]:
+              - generic [ref=e322]:
+                - img [ref=e324]
+                - paragraph [ref=e334]: The Spine
+                - paragraph [ref=e335]: Persistent memory layer
+              - img [ref=e336]
+            - generic [ref=e338]:
+              - generic [ref=e339]:
+                - img [ref=e341]
+                - paragraph [ref=e345]: Workbenches
+                - paragraph [ref=e346]: AI acts with full context
+              - img [ref=e347]
+            - generic [ref=e349]:
+              - generic [ref=e350]:
+                - img [ref=e352]
+                - paragraph [ref=e354]: Governance
+                - paragraph [ref=e355]: Human approves every action
+              - img [ref=e356]
+            - generic [ref=e359]:
+              - img [ref=e361]
+              - paragraph [ref=e366]: Back to Tools
+              - paragraph [ref=e367]: Data flows back. Spine grows.
+          - generic [ref=e368]:
+            - generic [ref=e369]:
+              - img [ref=e370]
+              - paragraph [ref=e373]: Persistent Memory
+              - paragraph [ref=e374]: The Spine carries full context across every session, every model, every provider. AI never starts cold.
+            - generic [ref=e375]:
+              - img [ref=e376]
+              - paragraph [ref=e379]: Model Independence
+              - paragraph [ref=e380]: Swap providers without losing memory. The Spine owns the context — the model is a variable.
+            - generic [ref=e381]:
+              - img [ref=e382]
+              - paragraph [ref=e385]: Governance by Design
+              - paragraph [ref=e386]: Every AI suggestion shows its evidence. Every action requires human approval before execution.
+        - generic [ref=e387]:
+          - generic [ref=e389]:
+            - paragraph [ref=e390]: Two Products. One Spine.
+            - heading "Built for the roles that run the company." [level=2] [ref=e391]:
+              - text: Built for the roles that
+              - strong [ref=e392]: run the company.
+            - paragraph [ref=e393]: Same architecture. Same Spine. Two surfaces for two distinct operational realities.
+            - generic [ref=e394]:
+              - generic [ref=e395]:
+                - generic [ref=e396]:
+                  - img [ref=e398]
+                  - generic [ref=e402]:
+                    - paragraph [ref=e403]: Account Success
+                    - paragraph [ref=e404]: Relationship intelligence for CS teams.
+                - paragraph [ref=e405]: One customer view across every tool. AI that remembers every account, every conversation, every decision. 15 layers of intelligence — from health scores to stakeholder mapping. Proactive insights before you ask.
+                - paragraph [ref=e407]: Built by a CSM who managed 30 accounts and saved $8 million by surfacing context no one else could see.
+                - generic [ref=e408]:
+                  - generic [ref=e409]: Customer Success
+                  - generic [ref=e410]: RevOps
+                  - generic [ref=e411]: Account Management
+              - generic [ref=e412]:
+                - generic [ref=e413]:
+                  - img [ref=e415]
+                  - generic [ref=e419]:
+                    - paragraph [ref=e420]: Business Ops
+                    - paragraph [ref=e421]: The operating system for your company.
+                - paragraph [ref=e422]: "14 departments. One surface. AI that knows your business across every function. Goals-first: every metric connected to organisational objectives."
+                - paragraph [ref=e424]: Built by a MuleSoft architect who designed enterprise integration platforms. Every architectural principle and security policy embedded from day one.
+                - generic [ref=e425]:
+                  - generic [ref=e426]: Founders
+                  - generic [ref=e427]: COOs
+                  - generic [ref=e428]: Operations Leaders
+          - generic [ref=e430]:
+            - paragraph [ref=e431]: Who It Is For
+            - heading "Built for the people who run the work." [level=2] [ref=e432]:
+              - text: Built for the people who
+              - strong [ref=e433]: run the work.
+            - paragraph [ref=e434]: Not another dashboard. Not another AI assistant that forgets everything after the call. A system that grows every time you use it.
+            - generic [ref=e435]:
+              - generic [ref=e436]:
+                - generic [ref=e437]:
+                  - img [ref=e439]
+                  - paragraph [ref=e444]: Customer Success
+                - paragraph [ref=e445]: One customer view across every tool.
+                - paragraph [ref=e446]: AI that remembers every account, every conversation, every decision. 15 layers of intelligence. Proactive insights before you ask. No more reopening six tabs to understand one customer.
+              - generic [ref=e447]:
+                - generic [ref=e448]:
+                  - img [ref=e450]
+                  - paragraph [ref=e454]: RevOps
+                - paragraph [ref=e455]: Pipeline intelligence with full context.
+                - paragraph [ref=e456]: Pipeline data from your CRM, enrichment tools, and communication platform — unified in one Spine. AI tracks deal velocity, flags stalled opportunities, and projects revenue with operational context.
+              - generic [ref=e457]:
+                - generic [ref=e458]:
+                  - img [ref=e460]
+                  - paragraph [ref=e464]: Marketing
+                - paragraph [ref=e465]: Prove ROI from impression to closed deal.
+                - paragraph [ref=e466]: Campaign data connected to pipeline connected to revenue. AI traces the full funnel. No more last-click attribution. Evidence from every touchpoint.
+              - generic [ref=e467]:
+                - generic [ref=e468]:
+                  - img [ref=e470]
+                  - paragraph [ref=e472]: Compliance
+                - paragraph [ref=e473]: Every action has lineage.
+                - paragraph [ref=e474]: Every decision recorded. Every AI suggestion shows its evidence. Every execution governed. Built on enterprise-grade integration architecture by a MuleSoft architect.
+              - generic [ref=e475]:
+                - generic [ref=e476]:
+                  - img [ref=e478]
+                  - paragraph [ref=e488]: Leaders
+                - paragraph [ref=e489]: 14 departments. One surface.
+                - paragraph [ref=e490]: "AI that knows your business. Goals-first: every metric connected to organisational objectives. Proactive insights across every function."
+              - generic [ref=e491]:
+                - generic [ref=e492]:
+                  - img [ref=e494]
+                  - paragraph [ref=e499]: Operations
+                - paragraph [ref=e500]: The complete round trip.
+                - paragraph [ref=e501]: Every tool connected to one Spine. Data flows in, gets acted on, flows back. The Loader and Normalizer handle the complexity. Your team makes decisions instead of shuttling data.
+          - generic [ref=e503]:
+            - paragraph [ref=e504]: The Origin
+            - heading "Built by a CSM who saved $8 million." [level=2] [ref=e505]:
+              - text: Built by a CSM who
+              - strong [ref=e506]: saved $8 million.
+            - generic [ref=e507]:
+              - img [ref=e508]
+              - generic [ref=e511]:
+                - paragraph [ref=e512]: IntegrateWise was not designed in a boardroom. It was built at a desk.
+                - paragraph [ref=e513]: Nirmal managed 30+ accounts across six tools. He was the only person who remembered what happened yesterday. He built templates to structure what he knew. He built a Spine to connect what was scattered.
+                - paragraph [ref=e514]: That Spine saved an $8 million red account by surfacing context no one else could see. That moment proved the problem is universal.
+                - paragraph [ref=e515]: The co-founder designed enterprise integration platforms — secure data flows, governed access, scalable architecture. Every architectural principle from enterprise integration is embedded in the foundation.
+                - paragraph [ref=e516]: IntegrateWise runs on IntegrateWise. The company eats its own cooking.
+              - generic [ref=e517]:
+                - generic [ref=e518]:
+                  - paragraph [ref=e519]: CSM background
+                  - paragraph [ref=e520]: 30+ accounts · 6 tools · daily context reconstruction
+                - generic [ref=e521]:
+                  - paragraph [ref=e522]: MuleSoft architecture
+                  - paragraph [ref=e523]: Enterprise integration · governance · security by design
+                - generic [ref=e524]:
+                  - paragraph [ref=e525]: Proven in production
+                  - paragraph [ref=e526]: $8M account saved · problem confirmed · company built
+          - generic [ref=e529]:
+            - generic [ref=e530]:
+              - paragraph [ref=e531]: Vision
+              - heading "Make the human the decision maker — not the integration layer." [level=2] [ref=e532]
+              - generic [ref=e533]:
+                - paragraph [ref=e534]: To give every organisation AI that remembers — across sessions, across models, across providers — so that every interaction builds on the last.
+                - paragraph [ref=e535]: To create the operating system where tools connect, memory accumulates, and nothing happens without human approval.
+            - generic [ref=e536]:
+              - paragraph [ref=e537]: Mission
+              - heading "Connect every tool. Build persistent memory. Keep humans in control." [level=2] [ref=e538]
+              - generic [ref=e539]:
+                - paragraph [ref=e540]: To connect every tool to one Spine through the Loader and Normalizer.
+                - paragraph [ref=e541]: To give AI persistent, model-independent memory that grows every day.
+                - paragraph [ref=e542]: To ensure every action is governed by a human before execution.
+                - paragraph [ref=e543]: To create the round trip where data flows in, gets acted on, flows back, and the system gets smarter with every cycle.
+        - generic [ref=e545]:
+          - paragraph [ref=e546]: Get Started
+          - heading "Ready to stop being the integration layer?" [level=2] [ref=e547]:
+            - text: Ready to stop being
+            - text: the integration layer?
+          - paragraph [ref=e548]: "Free tier: 1 user · 2 tools · 30-day memory. No credit card required."
+          - generic [ref=e549]:
+            - link "Try it free" [ref=e550] [cursor=pointer]:
+              - /url: https://integratewise.ai
+              - text: Try it free
+              - img [ref=e551]
+            - link "Request a demo" [ref=e553] [cursor=pointer]:
+              - /url: mailto:hello@integratewise.ai
+          - paragraph [ref=e554]: IntegrateWise LLP · Bengaluru, India · hello@integratewise.ai
+  - button "AI Assistant" [ref=e555]:
+    - img [ref=e556]
+    - generic [ref=e559]: AI Assistant
+    - img [ref=e560]

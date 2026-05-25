@@ -131,7 +131,7 @@ function TheProblem() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
             className="rounded-xl p-6"
-            style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule)' }}
+            style={{ background: 'transparent', border: '1px solid var(--rule)' }}
           >
             <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-4"
                  style={{ background: 'var(--paper-deep)' }}>
@@ -252,7 +252,7 @@ function TwoProducts() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="rounded-2xl p-8"
-            style={{ background: 'var(--surface-raised)', border: '2px solid var(--rule)' }}
+            style={{ background: 'transparent', border: '2px solid var(--rule)' }}
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center"
@@ -317,7 +317,7 @@ function ValueProps() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
             className="rounded-xl p-6"
-            style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule)' }}
+            style={{ background: 'transparent', border: '1px solid var(--rule)' }}
           >
             <div className="flex items-center gap-2 mb-3">
               <div className="w-7 h-7 rounded-lg flex items-center justify-center"
@@ -345,7 +345,7 @@ function OriginStory() {
       </h2>
 
       <div className="rounded-2xl p-10"
-           style={{ background: 'var(--surface-raised)', border: '2px solid var(--rule)' }}>
+           style={{ background: 'transparent', border: '2px solid var(--rule)' }}>
         <Quote className="w-8 h-8 mb-6" style={{ color: 'var(--gold)' }} />
 
         <div className="space-y-5 iw-body">

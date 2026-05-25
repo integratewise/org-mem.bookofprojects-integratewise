@@ -302,23 +302,23 @@ export function ProductGalleryPage() {
             placeholder="Search assets..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-[var(--border-base)] rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+            className="w-full pl-10 pr-4 py-2 border border-[var(--border-base)] rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
           />
         </div>
 
         {/* View Toggle */}
-        <div className="flex items-center gap-2 bg-[var(--surface-2)] p-1 rounded-lg">
+        <div className="flex items-center gap-2 bg-[var(--paper-deep)] p-1 rounded-lg">
           <button
             onClick={() => setViewMode('grid')}
             className={`p-2 rounded-md transition-colors ${viewMode === 'grid' ? 'shadow-sm' : ''}`}
-            style={viewMode === 'grid' ? { background: 'var(--surface-raised)' } : { color: 'var(--text-muted)' }}
+            style={viewMode === 'grid' ? { background: 'transparent' } : { color: 'var(--text-muted)' }}
           >
             <Grid className="w-4 h-4" />
           </button>
           <button
             onClick={() => setViewMode('list')}
             className={`p-2 rounded-md transition-colors ${viewMode === 'list' ? 'shadow-sm' : ''}`}
-            style={viewMode === 'list' ? { background: 'var(--surface-raised)' } : { color: 'var(--text-muted)' }}
+            style={viewMode === 'list' ? { background: 'transparent' } : { color: 'var(--text-muted)' }}
           >
             <List className="w-4 h-4" />
           </button>
@@ -345,9 +345,9 @@ export function ProductGalleryPage() {
             className={`px-4 py-2 rounded-xl text-sm font-medium flex items-center gap-2 transition-colors ${
               activeCategory === cat.id
                 ? 'text-[var(--paper)]'
-                : 'bg-[var(--surface-2)] text-[var(--text-muted)] hover:bg-[var(--surface)]'
+                : 'bg-[var(--paper-deep)] text-[var(--text-muted)] hover:bg-[var(--paper-warm)]'
             }`}
-            style={activeCategory === cat.id ? { background: 'var(--primary-color)' } : {}}
+            style={activeCategory === cat.id ? { background: 'var(--forest)' } : {}}
           >
             <cat.icon className="w-4 h-4" />
             {cat.label}
@@ -371,11 +371,11 @@ export function ProductGalleryPage() {
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ y: -4 }}
               className="rounded-xl border border-[var(--border-base)] overflow-hidden hover:shadow-lg transition-all cursor-pointer"
-              style={{ background: 'var(--surface-raised)' }}
+              style={{ background: 'transparent' }}
               onClick={() => setSelectedItem(item)}
             >
               {/* Preview */}
-              <div className="aspect-square flex items-center justify-center p-4 overflow-hidden" style={{ background: 'var(--surface)' }}>
+              <div className="aspect-square flex items-center justify-center p-4 overflow-hidden" style={{ background: 'var(--paper-warm)' }}>
                 {item.type === 'svg' && item.src ? (
                   <div className="w-full h-full flex items-center justify-center">
                     <img 
@@ -403,7 +403,7 @@ export function ProductGalleryPage() {
                 <p className="text-xs mt-1 line-clamp-2" style={{ color: 'var(--text-muted)' }}>{item.description}</p>
                 <div className="flex items-center justify-between mt-3">
                   <span className="text-xs" style={{ color: 'var(--text-faint)' }}>{item.size}</span>
-                  <span className="text-xs bg-[var(--surface-2)] px-2 py-1 rounded">
+                  <span className="text-xs bg-[var(--paper-deep)] px-2 py-1 rounded">
                     {item.formats[0]}
                   </span>
                 </div>
@@ -421,10 +421,10 @@ export function ProductGalleryPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className="rounded-xl border border-[var(--border-base)] p-4 flex items-center gap-4 hover:shadow-md transition-all cursor-pointer"
-              style={{ background: 'var(--surface-raised)' }}
+              style={{ background: 'transparent' }}
               onClick={() => setSelectedItem(item)}
             >
-              <div className="w-16 h-16 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'var(--surface)' }}>
+              <div className="w-16 h-16 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'var(--paper-warm)' }}>
                 {item.type === 'svg' && item.src ? (
                   <img src={item.src} alt={item.title} className="max-w-full max-h-full p-2" />
                 ) : (
@@ -466,7 +466,7 @@ export function ProductGalleryPage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               className="rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col"
-              style={{ background: 'var(--surface-raised)' }}
+              style={{ background: 'transparent' }}
             >
               {/* Header */}
               <div className="p-6 border-b border-[var(--border-base)] flex items-center justify-between">
@@ -474,18 +474,18 @@ export function ProductGalleryPage() {
                   <h2 className="text-xl font-bold" style={{ color: 'var(--text-strong)' }}>{selectedItem.title}</h2>
                   <p className="text-sm" style={{ color: 'var(--text-muted)' }}>{selectedItem.description}</p>
                 </div>
-                <button onClick={() => setSelectedItem(null)} className="p-2 hover:bg-[var(--surface-2)] rounded-lg">
+                <button onClick={() => setSelectedItem(null)} className="p-2 hover:bg-[var(--paper-deep)] rounded-lg">
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Preview */}
-              <div className="flex-1 overflow-auto p-8" style={{ background: 'var(--surface)' }}>
+              <div className="flex-1 overflow-auto p-8" style={{ background: 'var(--paper-warm)' }}>
                 <div 
                   ref={previewRef}
                   className="rounded-xl shadow-lg mx-auto"
                   style={{ 
-                    background: 'var(--surface-raised)',
+                    background: 'transparent',
                     width: selectedItem.category === 'logos' ? '400px' : '600px',
                     maxWidth: '100%'
                   }}
@@ -501,7 +501,7 @@ export function ProductGalleryPage() {
                       {selectedItem.component}
                     </div>
                   ) : (
-                    <div className="aspect-video flex items-center justify-center text-[var(--paper)] p-8" style={{ background: 'linear-gradient(to bottom right, var(--primary-hover), var(--primary-color))' }}>
+                    <div className="aspect-video flex items-center justify-center text-[var(--paper)] p-8" style={{ background: 'linear-gradient(to bottom right, var(--forest-mid), var(--forest))' }}>
                       <div className="text-center">
                         <IntegrateWiseLogo variant="icon-only" className="h-16 w-auto mx-auto mb-4" />
                         <h3 className="text-2xl font-bold">{BRAND.name}</h3>
@@ -513,13 +513,13 @@ export function ProductGalleryPage() {
               </div>
 
               {/* Actions */}
-              <div className="p-6 border-t border-[var(--border-base)]" style={{ background: 'var(--surface)' }}>
+              <div className="p-6 border-t border-[var(--border-base)]" style={{ background: 'var(--paper-warm)' }}>
                 <div className="flex flex-wrap gap-3">
                   {selectedItem.type === 'editable' ? (
                     <button
                       onClick={() => { setSelectedItem(null); openEditor(selectedItem); }}
                       className="px-6 py-3 text-[var(--paper)] rounded-xl font-medium flex items-center gap-2"
-                      style={{ background: 'var(--primary-color)' }}
+                      style={{ background: 'var(--forest)' }}
                     >
                       <Palette className="w-5 h-5" />
                       Customize & Export
@@ -537,7 +537,7 @@ export function ProductGalleryPage() {
                       {selectedItem.formats.includes('SVG') && (
                         <button
                           onClick={() => downloadAsSVG(selectedItem)}
-                          className="px-4 py-2 bg-[var(--surface-2)] rounded-lg text-sm font-medium flex items-center gap-2"
+                          className="px-4 py-2 bg-[var(--paper-deep)] rounded-lg text-sm font-medium flex items-center gap-2"
                           style={{ color: 'var(--text-muted)' }}
                         >
                           <FileImage className="w-4 h-4" />
@@ -550,7 +550,7 @@ export function ProductGalleryPage() {
                   {/* Format tags */}
                   <div className="flex gap-2 ml-auto">
                     {selectedItem.formats.map(format => (
-                      <span key={format} className="px-3 py-1 border border-[var(--border-base)] rounded-lg text-sm" style={{ background: 'var(--surface-raised)', color: 'var(--text-muted)' }}>
+                      <span key={format} className="px-3 py-1 border border-[var(--border-base)] rounded-lg text-sm" style={{ background: 'transparent', color: 'var(--text-muted)' }}>
                         {format}
                       </span>
                     ))}

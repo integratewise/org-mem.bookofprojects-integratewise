@@ -94,7 +94,7 @@ function Story() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="rounded-2xl p-8"
-          style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}
+          style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="rounded-xl p-3" style={{ background: 'var(--forest)', color: 'var(--paper)' }}>
@@ -117,7 +117,7 @@ function Story() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
           className="rounded-2xl p-8"
-          style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}
+          style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="rounded-xl p-3" style={{ background: 'var(--gold)', color: 'var(--paper)' }}>
@@ -191,7 +191,7 @@ function TheCommitment() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
         className="rounded-2xl p-8"
-        style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}
+        style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}
       >
         <div className="flex items-start gap-4 mb-6">
           <div className="rounded-xl p-3" style={{ background: 'var(--forest)', color: 'var(--paper)', flexShrink: 0 }}>
@@ -274,7 +274,7 @@ function Principles() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="rounded-2xl p-8"
-            style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}
+            style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}
           >
             <div className="rounded-xl p-3 mb-6 inline-flex"
                  style={{ background: index % 2 === 0 ? 'var(--forest)' : 'var(--gold)', color: 'var(--paper)' }}>

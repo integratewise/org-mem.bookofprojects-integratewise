@@ -119,6 +119,18 @@
   --brand-navy-300:       var(--rule);
   --brand-navy-200:       var(--paper-deep);
 
+  /* ── Workbench surface tokens (dashboards, product UI) ── */
+  --card:                 #FAF7F0;
+  --card-foreground:      var(--ink);
+  --border:               var(--rule-light);
+  --paper-dark:           var(--paper-warm);
+  --forest-muted:         var(--forest-mid);
+  --forest-light:         var(--forest-mid);
+  --health-green:         var(--forest-bright);
+  --health-amber:         var(--gold);
+  --health-red:           var(--red);
+  --font-lora:            var(--font-serif);
+
   /* ── Spacing ── */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;

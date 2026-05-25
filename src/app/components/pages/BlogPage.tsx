@@ -44,10 +44,10 @@ const pillars = [
   },
   {
     title: 'Built From the Seat',
-    desc: 'Content that tells the founder\'s story and the product\'s origin.',
+    desc: "Content that tells the founder's story and the product's origin.",
     articles: [
       'From CSM to founder: how managing 30 accounts became a product.',
-      'The MuleSoft architect\'s approach to AI architecture.',
+      "The MuleSoft architect's approach to AI architecture.",
       'Two roles, one product: the origin of IntegrateWise.',
       'Why we dogfood: running a company on its own operating system.',
     ],
@@ -56,39 +56,52 @@ const pillars = [
 
 export function BlogPage() {
   return (
-    <div className="min-h-screen">
-      {/* Hero */}
-      <section className="relative py-20 px-6 overflow-hidden" style={{ background: 'var(--forest)' }}>
-        <div className="absolute inset-0 pointer-events-none opacity-10">
-          <div className="absolute top-0 left-1/3 w-96 h-96 rounded-full" style={{ background: 'var(--gold)', filter: 'blur(120px)' }} />
-        </div>
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <p className="text-xs font-bold tracking-[0.2em] mb-4" style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>THOUGHT LEADERSHIP</p>
-          <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: 'var(--paper)', fontFamily: 'var(--font-serif)' }}>
+    <div>
+      {/* Editorial Header */}
+      <section className="relative px-8 lg:px-16 pt-16 pb-8">
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 55% 45% at 75% 15%, color-mix(in srgb, var(--gold) 5%, transparent) 0%, transparent 70%)' }}
+        />
+        <div className="relative max-w-4xl">
+          <p className="iw-hero-eyebrow mb-6 flex items-center gap-3">
+            <span style={{ display: 'inline-block', width: 32, height: 1, background: 'var(--gold)' }} />
+            Thought Leadership
+          </p>
+          <h1 className="iw-hero-title mb-6" style={{ color: 'var(--ink)' }}>
             Blog
           </h1>
-          <p className="text-lg leading-relaxed" style={{ color: 'var(--paper)', opacity: 0.8 }}>
+          <p className="iw-body max-w-2xl" style={{ color: 'var(--ink-muted)' }}>
             Five pillars. One thesis: memory is the moat.
           </p>
         </div>
       </section>
 
-      <div className="max-w-4xl mx-auto px-6 py-16 space-y-12">
+      <div className="max-w-4xl mx-auto px-8 lg:px-16 py-12 space-y-12">
         {pillars.map((pillar, i) => (
-          <motion.section key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
+          <motion.section
+            key={pillar.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.05 }}
+          >
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'var(--forest)', color: 'var(--paper)' }}>
                 <BookOpen className="w-4 h-4" />
               </div>
               <div>
                 <p className="text-xs font-bold tracking-widest" style={{ color: 'var(--forest)', fontFamily: 'var(--font-mono)' }}>PILLAR {String(i + 1).padStart(2, '0')}</p>
-                <h2 className="text-lg font-bold" style={{ color: 'var(--ink)', fontFamily: 'var(--font-serif)' }}>{pillar.title}</h2>
+                <h2 className="font-serif text-lg font-bold" style={{ color: 'var(--ink)' }}>{pillar.title}</h2>
               </div>
             </div>
-            <p className="text-sm mb-4 ml-11" style={{ color: 'var(--text-muted)' }}>{pillar.desc}</p>
+            <p className="text-sm mb-4 ml-11" style={{ color: 'var(--ink-muted)' }}>{pillar.desc}</p>
             <div className="ml-11 space-y-2">
               {pillar.articles.map(article => (
-                <div key={article} className="flex items-center gap-3 px-4 py-3 rounded-xl group cursor-pointer transition-all hover:shadow-sm" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
+                <div
+                  key={article}
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl group cursor-pointer transition-all hover:shadow-sm"
+                  style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}
+                >
                   <ArrowRight className="w-3.5 h-3.5 shrink-0 transition-transform group-hover:translate-x-1" style={{ color: 'var(--forest)' }} />
                   <span className="text-sm" style={{ color: 'var(--ink)' }}>{article}</span>
                 </div>

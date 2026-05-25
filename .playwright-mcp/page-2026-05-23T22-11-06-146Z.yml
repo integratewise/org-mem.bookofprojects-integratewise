@@ -1,0 +1,395 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: IntegrateWise
+        - paragraph [ref=e14]: Continuity Documentation System
+    - generic [ref=e16]:
+      - img [ref=e17]
+      - textbox "Search navigation..." [ref=e20]
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - button "00 Company Strategy 2" [ref=e23]:
+          - img [ref=e24]
+          - img [ref=e26]
+          - generic [ref=e30]: 00 Company Strategy
+          - generic [ref=e31]: "2"
+        - generic [ref=e32]:
+          - link "Strategic Planning" [ref=e33] [cursor=pointer]:
+            - /url: /company
+            - img [ref=e34]
+            - generic [ref=e38]: Strategic Planning
+          - button "Doctrine & Continuity" [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Doctrine & Continuity
+      - generic [ref=e43]:
+        - button "01 Product & Engineering 3" [ref=e44]:
+          - img [ref=e45]
+          - img [ref=e47]
+          - generic [ref=e51]: 01 Product & Engineering
+          - generic [ref=e52]: "3"
+        - generic [ref=e53]:
+          - link "Adaptive Spine & Architecture" [ref=e54] [cursor=pointer]:
+            - /url: /architecture
+            - img [ref=e55]
+            - generic [ref=e59]: Adaptive Spine & Architecture
+          - button "Product Narrative & Continuity" [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: Product Narrative & Continuity
+          - button "Technical System" [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e68]: Technical System
+      - generic [ref=e69]:
+        - button "02 Marketing & Creative 10" [ref=e70]:
+          - img [ref=e71]
+          - img [ref=e73]
+          - generic [ref=e76]: 02 Marketing & Creative
+          - generic [ref=e77]: "10"
+        - generic [ref=e78]:
+          - link "Brand Assets" [ref=e79] [cursor=pointer]:
+            - /url: /brand-assets
+            - img [ref=e80]
+            - generic [ref=e86]: Brand Assets
+          - link "Design Tokens" [ref=e87] [cursor=pointer]:
+            - /url: /design-tokens
+            - img [ref=e88]
+            - generic [ref=e92]: Design Tokens
+          - link "Stationery" [ref=e93] [cursor=pointer]:
+            - /url: /stationery
+            - img [ref=e94]
+            - generic [ref=e97]: Stationery
+          - link "Marketing" [ref=e98] [cursor=pointer]:
+            - /url: /marketing
+            - img [ref=e99]
+            - generic [ref=e102]: Marketing
+          - link "LinkedIn" [ref=e103] [cursor=pointer]:
+            - /url: /linkedin
+            - img [ref=e104]
+            - generic [ref=e107]: LinkedIn
+          - link "WhatsApp" [ref=e108] [cursor=pointer]:
+            - /url: /whatsapp
+            - img [ref=e109]
+            - generic [ref=e111]: WhatsApp
+          - link "Email" [ref=e112] [cursor=pointer]:
+            - /url: /email
+            - img [ref=e113]
+            - generic [ref=e116]: Email
+          - link "Presentations" [ref=e117] [cursor=pointer]:
+            - /url: /presentations
+            - img [ref=e118]
+            - generic [ref=e121]: Presentations
+          - link "Quick Generators" [ref=e122] [cursor=pointer]:
+            - /url: /generators
+            - img [ref=e123]
+            - generic [ref=e125]: Quick Generators
+          - button "Category & Positioning" [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e131]: Category & Positioning
+      - generic [ref=e132]:
+        - button "03 Sales 2" [ref=e133]:
+          - img [ref=e134]
+          - img [ref=e136]
+          - generic [ref=e142]: 03 Sales
+          - generic [ref=e143]: "2"
+        - generic [ref=e144]:
+          - link "Sales Enablement" [ref=e145] [cursor=pointer]:
+            - /url: /sales
+            - img [ref=e146]
+            - generic [ref=e152]: Sales Enablement
+          - button "GTM & Customer Success" [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e157]: GTM & Customer Success
+      - button "04 Customer Success 2" [ref=e159]:
+        - img [ref=e160]
+        - img [ref=e162]
+        - generic [ref=e167]: 04 Customer Success
+        - generic [ref=e168]: "2"
+      - button "05 Operations 2" [ref=e170]:
+        - img [ref=e171]
+        - img [ref=e173]
+        - generic [ref=e175]: 05 Operations
+        - generic [ref=e176]: "2"
+      - button "06 Finance, Legal, HR 2" [ref=e178]:
+        - img [ref=e179]
+        - img [ref=e181]
+        - generic [ref=e185]: 06 Finance, Legal, HR
+        - generic [ref=e186]: "2"
+      - button "07 Resources & Knowledge Base 4" [ref=e188]:
+        - img [ref=e189]
+        - img [ref=e191]
+        - generic [ref=e193]: 07 Resources & Knowledge Base
+        - generic [ref=e194]: "4"
+      - button "08 External Communications 2" [ref=e196]:
+        - img [ref=e197]
+        - img [ref=e199]
+        - generic [ref=e202]: 08 External Communications
+        - generic [ref=e203]: "2"
+      - button "09 Archives & Retention 1" [ref=e205]:
+        - img [ref=e206]
+        - img [ref=e208]
+        - generic [ref=e211]: 09 Archives & Retention
+        - generic [ref=e212]: "1"
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - paragraph [ref=e216]: Continuity Documentation System v1.0
+        - paragraph [ref=e217]: 6 Doctrine Packs · 40 Documents
+      - button "Switch to dark mode" [ref=e218]:
+        - img [ref=e219]
+  - generic [ref=e221]:
+    - banner [ref=e222]:
+      - generic [ref=e223]:
+        - generic [ref=e224]: 02 Marketing & Creative
+        - img [ref=e225]
+        - heading "Email" [level=1] [ref=e227]
+    - main [ref=e228]:
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - generic [ref=e231]:
+            - generic [ref=e232]:
+              - img [ref=e233]
+              - generic [ref=e236]: Communication
+            - heading "Email Templates" [level=1] [ref=e237]
+            - paragraph [ref=e238]: Subject lines, email templates, and signatures for all communication
+          - generic [ref=e239]:
+            - button "Edit" [ref=e240]:
+              - img [ref=e241]
+              - text: Edit
+            - button [ref=e243]:
+              - img [ref=e244]
+        - generic [ref=e247]:
+          - generic [ref=e248]:
+            - img [ref=e249]
+            - paragraph [ref=e252]: "9"
+            - paragraph [ref=e253]: Subject Lines
+          - generic [ref=e254]:
+            - img [ref=e255]
+            - paragraph [ref=e258]: "3"
+            - paragraph [ref=e259]: Templates
+          - generic [ref=e260]:
+            - img [ref=e261]
+            - paragraph [ref=e263]: "2"
+            - paragraph [ref=e264]: Signatures
+          - generic [ref=e265]:
+            - img [ref=e266]
+            - paragraph [ref=e268]: 35%
+            - paragraph [ref=e269]: Avg Open Rate
+        - generic [ref=e270]:
+          - generic [ref=e271]:
+            - heading "Subject Lines by Category" [level=2] [ref=e272]:
+              - img [ref=e273]
+              - text: Subject Lines by Category
+            - generic [ref=e276]:
+              - generic [ref=e277]:
+                - heading "Newsletters" [level=3] [ref=e279]
+                - generic [ref=e280]:
+                  - generic [ref=e282]:
+                    - generic [ref=e283]:
+                      - generic [ref=e284]:
+                        - img [ref=e285]
+                        - generic [ref=e288]: SUBJECT LINE
+                      - 'heading "This week: The $8M lesson in disconnected tools" [level=4] [ref=e289]'
+                      - paragraph [ref=e290]: How fragmented systems nearly cost one company their biggest account...
+                    - button "Copy" [ref=e292]:
+                      - img [ref=e293]
+                      - text: Copy
+                  - generic [ref=e297]:
+                    - generic [ref=e298]:
+                      - generic [ref=e299]:
+                        - img [ref=e300]
+                        - generic [ref=e303]: SUBJECT LINE
+                      - 'heading "New: Approval-first AI workflows" [level=4] [ref=e304]'
+                      - paragraph [ref=e305]: Govern AI actions with human checkpoints built-in...
+                    - button "Copy" [ref=e307]:
+                      - img [ref=e308]
+                      - text: Copy
+                  - generic [ref=e312]:
+                    - generic [ref=e313]:
+                      - generic [ref=e314]:
+                        - img [ref=e315]
+                        - generic [ref=e318]: SUBJECT LINE
+                      - heading "The Spine explained (in 3 minutes)" [level=4] [ref=e319]
+                      - paragraph [ref=e320]: Why we built a knowledge workspace over a unified intelligence layer...
+                    - button "Copy" [ref=e322]:
+                      - img [ref=e323]
+                      - text: Copy
+              - generic [ref=e326]:
+                - heading "Sales Outreach" [level=3] [ref=e328]
+                - generic [ref=e329]:
+                  - generic [ref=e331]:
+                    - generic [ref=e332]:
+                      - generic [ref=e333]:
+                        - img [ref=e334]
+                        - generic [ref=e337]: SUBJECT LINE
+                      - 'heading "IntegrateWise + {{Company}}: Quick question" [level=4] [ref=e338]'
+                      - paragraph [ref=e339]: Wanted to reach out about your tech stack...
+                    - button "Copy" [ref=e341]:
+                      - img [ref=e342]
+                      - text: Copy
+                  - generic [ref=e346]:
+                    - generic [ref=e347]:
+                      - generic [ref=e348]:
+                        - img [ref=e349]
+                        - generic [ref=e352]: SUBJECT LINE
+                      - heading "The $8M lesson every CTO should know" [level=4] [ref=e353]
+                      - paragraph [ref=e354]: What disconnected tools cost one enterprise...
+                    - button "Copy" [ref=e356]:
+                      - img [ref=e357]
+                      - text: Copy
+                  - generic [ref=e361]:
+                    - generic [ref=e362]:
+                      - generic [ref=e363]:
+                        - img [ref=e364]
+                        - generic [ref=e367]: SUBJECT LINE
+                      - heading "Your demo is ready (15 minutes this week?)" [level=4] [ref=e368]
+                      - paragraph [ref=e369]: I'd love to show you how the Spine works...
+                    - button "Copy" [ref=e371]:
+                      - img [ref=e372]
+                      - text: Copy
+              - generic [ref=e375]:
+                - heading "Onboarding" [level=3] [ref=e377]
+                - generic [ref=e378]:
+                  - generic [ref=e380]:
+                    - generic [ref=e381]:
+                      - generic [ref=e382]:
+                        - img [ref=e383]
+                        - generic [ref=e386]: SUBJECT LINE
+                      - heading "Welcome to IntegrateWise! Let's get you set up" [level=4] [ref=e387]
+                      - paragraph [ref=e388]: Your knowledge workspace is ready...
+                    - button "Copy" [ref=e390]:
+                      - img [ref=e391]
+                      - text: Copy
+                  - generic [ref=e395]:
+                    - generic [ref=e396]:
+                      - generic [ref=e397]:
+                        - img [ref=e398]
+                        - generic [ref=e401]: SUBJECT LINE
+                      - 'heading "Step 1: Connect your first tool" [level=4] [ref=e402]'
+                      - paragraph [ref=e403]: Start building your unified workspace...
+                    - button "Copy" [ref=e405]:
+                      - img [ref=e406]
+                      - text: Copy
+                  - generic [ref=e410]:
+                    - generic [ref=e411]:
+                      - generic [ref=e412]:
+                        - img [ref=e413]
+                        - generic [ref=e416]: SUBJECT LINE
+                      - heading "Your onboarding checklist" [level=4] [ref=e417]
+                      - paragraph [ref=e418]: 3 simple steps to get the most from IntegrateWise...
+                    - button "Copy" [ref=e420]:
+                      - img [ref=e421]
+                      - text: Copy
+          - generic [ref=e424]:
+            - heading "Email Templates" [level=2] [ref=e425]:
+              - img [ref=e426]
+              - text: Email Templates
+            - generic [ref=e429]:
+              - generic [ref=e430]:
+                - generic [ref=e431]:
+                  - generic [ref=e432]:
+                    - img [ref=e433]
+                    - generic [ref=e436]: Cold Outreach
+                  - generic [ref=e437]: Sales
+                - generic [ref=e438]:
+                  - generic [ref=e439]:
+                    - paragraph [ref=e440]: SUBJECT
+                    - paragraph [ref=e441]: "Quick question about {{Company}}'s tech stack"
+                  - generic [ref=e442]:
+                    - generic [ref=e443]:
+                      - paragraph [ref=e444]: BODY
+                      - button "Show more" [ref=e445]:
+                        - img [ref=e446]
+                        - text: Show more
+                    - generic [ref=e448]: "Hi {{FirstName}}, I noticed {{Company}} is growing fast in the {{Industry}} space — congratulations! Quick question: How are you currently handling cross-tool visibility? Most teams I talk to struggle with: • Data living in silos across 5+ tools • Missing signals because they're in different systems • AI without proper context We built IntegrateWise to solve exactly this — an adaptive continuity workspace where your entire tech stack connects into one Adaptive Spine. Continuity hydrates continuously. AI surfaces what matters, humans approve every action. Worth a brief conversation to see if this applies to {{Company}}? Best, [Your Name] IntegrateWise"
+                - generic [ref=e449]:
+                  - button "Copy Full Email" [ref=e450]:
+                    - img [ref=e451]
+                    - text: Copy Full Email
+                  - button "Copy Subject" [ref=e454]:
+                    - img [ref=e455]
+                    - text: Copy Subject
+              - generic [ref=e458]:
+                - generic [ref=e459]:
+                  - generic [ref=e460]:
+                    - img [ref=e461]
+                    - generic [ref=e464]: Demo Follow-up
+                  - generic [ref=e465]: Follow-up
+                - generic [ref=e466]:
+                  - generic [ref=e467]:
+                    - paragraph [ref=e468]: SUBJECT
+                    - paragraph [ref=e469]: Thanks for your time today
+                  - generic [ref=e470]:
+                    - generic [ref=e471]:
+                      - paragraph [ref=e472]: BODY
+                      - button "Show more" [ref=e473]:
+                        - img [ref=e474]
+                        - text: Show more
+                    - generic [ref=e476]: "Hi {{FirstName}}, Thanks for taking the time to see IntegrateWise today. It was great showing you how the Spine can unify {{Company}}'s {{Tools}} data. As promised, here are the next steps: 1. [Specific next step based on conversation] 2. [Resource or document] 3. [Timeline for follow-up] Let me know if you have any questions before our next call on {{Date}}. Best, [Your Name] IntegrateWise"
+                - generic [ref=e477]:
+                  - button "Copy Full Email" [ref=e478]:
+                    - img [ref=e479]
+                    - text: Copy Full Email
+                  - button "Copy Subject" [ref=e482]:
+                    - img [ref=e483]
+                    - text: Copy Subject
+              - generic [ref=e486]:
+                - generic [ref=e487]:
+                  - generic [ref=e488]:
+                    - img [ref=e489]
+                    - generic [ref=e492]: Proposal Email
+                  - generic [ref=e493]: Proposal
+                - generic [ref=e494]:
+                  - generic [ref=e495]:
+                    - paragraph [ref=e496]: SUBJECT
+                    - paragraph [ref=e497]: "IntegrateWise Proposal for {{Company}}"
+                  - generic [ref=e498]:
+                    - generic [ref=e499]:
+                      - paragraph [ref=e500]: BODY
+                      - button "Show more" [ref=e501]:
+                        - img [ref=e502]
+                        - text: Show more
+                    - generic [ref=e504]: "Hi {{FirstName}}, Per our conversation, I'm excited to share the IntegrateWise proposal for {{Company}}. What we're solving: [Specific pain points discussed] Our solution: • The Spine as your unified intelligence layer • Context-aware AI that reasons across your tools • Approval-governed execution • [Custom features for their use case] Investment: [Pricing] Timeline: [Implementation timeline] I've attached the full proposal. Let me know if you have any questions — happy to walk through it on a call. Best, [Your Name] IntegrateWise"
+                - generic [ref=e505]:
+                  - button "Copy Full Email" [ref=e506]:
+                    - img [ref=e507]
+                    - text: Copy Full Email
+                  - button "Copy Subject" [ref=e510]:
+                    - img [ref=e511]
+                    - text: Copy Subject
+          - generic [ref=e514]:
+            - heading "Email Signatures" [level=2] [ref=e515]:
+              - img [ref=e516]
+              - text: Email Signatures
+            - generic [ref=e519]:
+              - generic [ref=e520]:
+                - button "standard" [ref=e521]
+                - button "minimal" [ref=e522]
+              - generic [ref=e523]:
+                - table [ref=e525]:
+                  - rowgroup [ref=e526]:
+                    - row "IntegrateWise Adaptive Continuity Workspace — Hydrated by the Spine [Your Name] [Your Title] hello@integratewise.ai integratewise.ai" [ref=e527]:
+                      - cell "IntegrateWise Adaptive Continuity Workspace — Hydrated by the Spine" [ref=e528]:
+                        - paragraph [ref=e529]: IntegrateWise
+                        - paragraph [ref=e530]: Adaptive Continuity Workspace — Hydrated by the Spine
+                      - cell "[Your Name] [Your Title] hello@integratewise.ai integratewise.ai" [ref=e531]:
+                        - paragraph [ref=e532]: "[Your Name]"
+                        - paragraph [ref=e533]: "[Your Title]"
+                        - paragraph [ref=e534]:
+                          - link "hello@integratewise.ai" [ref=e535] [cursor=pointer]:
+                            - /url: mailto:hello@integratewise.ai
+                        - paragraph [ref=e536]:
+                          - link "integratewise.ai" [ref=e537] [cursor=pointer]:
+                            - /url: https://integratewise.ai
+                    - row "AI Thinks in Context — and Waits for Approval" [ref=e538]:
+                      - cell "AI Thinks in Context — and Waits for Approval" [ref=e539]:
+                        - paragraph [ref=e540]: AI Thinks in Context — and Waits for Approval
+                - button "Copy HTML" [ref=e541]:
+                  - img [ref=e542]
+                  - text: Copy HTML
+        - paragraph [ref=e546]:
+          - strong [ref=e547]: "Email Best Practices:"
+          - text: Keep subject lines under 50 characters, personalize with recipient's name and company, and always include a clear call-to-action.
+  - button "AI Assistant" [ref=e548]:
+    - img [ref=e549]
+    - generic [ref=e552]: AI Assistant
+    - img [ref=e553]

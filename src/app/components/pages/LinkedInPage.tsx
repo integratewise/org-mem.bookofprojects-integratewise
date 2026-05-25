@@ -24,77 +24,77 @@ import { autoSyncContent, loadConnections } from '../../services/sync';
 import { loadJson, saveJson } from '../../lib/storage';
 
 const LIGHT_LINKEDIN_BANNER_BACKGROUND =
-  'linear-gradient(135deg, var(--surface-raised) 0%, color-mix(in srgb, var(--primary-soft) 72%, var(--paper)) 56%, var(--accent-soft) 100%)';
+  'linear-gradient(135deg, var(--paper-warm) 0%, color-mix(in srgb, color-mix(in srgb, var(--forest) 8%, transparent) 72%, var(--paper)) 56%, var(--gold-pale) 100%)';
 
 const LIGHT_LINKEDIN_PREVIEW_BACKGROUNDS: Record<string, string> = {
   'soft-contrast':
-    'linear-gradient(135deg, var(--surface-raised) 0%, var(--surface-subtle) 54%, var(--primary-soft) 100%)',
+    'linear-gradient(135deg, var(--paper-warm) 0%, var(--paper-deep) 54%, color-mix(in srgb, var(--forest) 8%, transparent) 100%)',
   'gradient-ocean':
-    'linear-gradient(135deg, var(--surface-raised) 0%, color-mix(in srgb, var(--primary-soft) 74%, var(--paper)) 58%, var(--accent-soft) 100%)',
+    'linear-gradient(135deg, var(--paper-warm) 0%, color-mix(in srgb, color-mix(in srgb, var(--forest) 8%, transparent) 74%, var(--paper)) 58%, var(--gold-pale) 100%)',
   'gradient-sunset':
-    'linear-gradient(135deg, var(--surface-raised) 0%, var(--accent-soft) 58%, color-mix(in srgb, var(--primary-soft) 44%, var(--accent-soft)) 100%)'
+    'linear-gradient(135deg, var(--paper-warm) 0%, var(--gold-pale) 58%, color-mix(in srgb, color-mix(in srgb, var(--forest) 8%, transparent) 44%, var(--gold-pale)) 100%)'
 };
 
 const legacyBannerTokens = [
   'var(--slate)',
   'var(--slate-mid)',
-  'var(--primary-color)',
+  'var(--forest)',
   'var(--forest-bright)',
-  'var(--text-color)',
+  'var(--ink)',
   'var(--slate-mid)',
-  'var(--brand-primary-light)',
+  'var(--forest-bright)',
   'var(--slate)',
   'var(--forest-mid)',
-  'var(--accent-color)'
+  'var(--gold)'
 ];
 
 const cardSurfaceStyle: CSSProperties = {
-  backgroundColor: 'var(--surface-raised)',
-  borderColor: 'var(--border-subtle)',
+  backgroundColor: 'var(--paper-warm)',
+  borderColor: 'var(--rule-light)',
   boxShadow: 'var(--shadow-sm)'
 };
 
 const mutedSurfaceStyle: CSSProperties = {
-  backgroundColor: 'var(--surface-subtle)',
-  borderColor: 'var(--border-subtle)'
+  backgroundColor: 'var(--paper-deep)',
+  borderColor: 'var(--rule-light)'
 };
 
 const primaryButtonStyle: CSSProperties = {
-  backgroundColor: 'var(--primary-color)',
+  backgroundColor: 'var(--forest)',
   color: 'var(--text-inverse)',
   boxShadow: 'var(--shadow-sm)'
 };
 
 const secondaryButtonStyle: CSSProperties = {
-  backgroundColor: 'var(--surface-raised)',
+  backgroundColor: 'var(--paper-warm)',
   borderColor: 'var(--border-default)',
   color: 'var(--text-default)'
 };
 
 const successButtonStyle: CSSProperties = {
-  backgroundColor: 'var(--status-success)',
+  backgroundColor: 'var(--forest-bright)',
   color: 'var(--text-inverse)',
   boxShadow: 'var(--shadow-sm)'
 };
 
 const previewInputStyle: CSSProperties = {
-  background: 'color-mix(in srgb, var(--surface-raised) 92%, transparent)',
-  border: '1px solid var(--border-subtle)',
+  background: 'color-mix(in srgb, var(--paper-warm) 92%, transparent)',
+  border: '1px solid var(--rule-light)',
   color: 'var(--text-default)',
   boxShadow: 'var(--shadow-sm)'
 };
 
 const avatarStyle: CSSProperties = {
   background:
-    'linear-gradient(135deg, var(--primary-soft) 0%, color-mix(in srgb, var(--accent-soft) 78%, var(--surface-raised)) 100%)',
-  color: 'var(--primary-hover)',
-  border: '1px solid var(--border-subtle)'
+    'linear-gradient(135deg, color-mix(in srgb, var(--forest) 8%, transparent) 0%, color-mix(in srgb, var(--gold-pale) 78%, var(--paper-warm)) 100%)',
+  color: 'var(--forest-mid)',
+  border: '1px solid var(--rule-light)'
 };
 
 const noticePanelStyle: CSSProperties = {
   background:
-    'linear-gradient(135deg, color-mix(in srgb, var(--primary-soft) 64%, var(--paper)) 0%, var(--surface-raised) 100%)',
-  borderColor: 'var(--border-subtle)'
+    'linear-gradient(135deg, color-mix(in srgb, color-mix(in srgb, var(--forest) 8%, transparent) 64%, var(--paper)) 0%, var(--paper-warm) 100%)',
+  borderColor: 'var(--rule-light)'
 };
 
 const getPreviewBackground = (theme: string) =>
@@ -270,8 +270,8 @@ function CopyButton({ text, label = 'Copy' }: { text: string; label?: string }) 
       onClick={handleCopy}
       className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all"
       style={{
-        backgroundColor: copied ? 'var(--status-success)' : 'var(--primary-soft)',
-        color: copied ? 'var(--text-inverse)' : 'var(--primary-hover)',
+        backgroundColor: copied ? 'var(--forest-bright)' : 'color-mix(in srgb, var(--forest) 8%, transparent)',
+        color: copied ? 'var(--text-inverse)' : 'var(--forest-mid)',
         boxShadow: copied ? 'var(--shadow-sm)' : 'none'
       }}
     >
@@ -283,7 +283,7 @@ function CopyButton({ text, label = 'Copy' }: { text: string; label?: string }) 
 
 function fieldInputStyle(multiline = false): CSSProperties {
   return {
-    backgroundColor: 'var(--surface-raised)',
+    backgroundColor: 'var(--paper-warm)',
     borderColor: 'var(--border-default)',
     color: 'var(--text-default)',
     minHeight: multiline ? '100px' : undefined
@@ -332,7 +332,7 @@ function BannerPreview({
         className="relative flex aspect-[1128/191] w-full items-center justify-center overflow-hidden rounded-2xl border"
         style={{
           background,
-          borderColor: 'var(--border-subtle)',
+          borderColor: 'var(--rule-light)',
           boxShadow: 'var(--shadow-md)'
         }}
       >
@@ -340,15 +340,15 @@ function BannerPreview({
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(circle at top right, color-mix(in srgb, var(--accent-soft) 84%, transparent) 0%, transparent 44%)'
+              'radial-gradient(circle at top right, color-mix(in srgb, var(--gold-pale) 84%, transparent) 0%, transparent 44%)'
           }}
         />
         <div
           className="absolute left-6 top-6 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em]"
           style={{
-            backgroundColor: 'color-mix(in srgb, var(--surface-raised) 92%, transparent)',
-            border: '1px solid var(--border-subtle)',
-            color: 'var(--primary-hover)'
+            backgroundColor: 'color-mix(in srgb, var(--paper-warm) 92%, transparent)',
+            border: '1px solid var(--rule-light)',
+            color: 'var(--forest-mid)'
           }}
         >
           LinkedIn banner
@@ -359,19 +359,19 @@ function BannerPreview({
               <input
                 value={banner.content.headline}
                 onChange={(e) => updateContent('headline', e.target.value)}
-                className="mb-2 w-full rounded-md px-3 py-2 text-center text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+                className="mb-2 w-full rounded-md px-3 py-2 text-center text-2xl font-bold focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
                 style={previewInputStyle}
               />
               <input
                 value={banner.content.tagline}
                 onChange={(e) => updateContent('tagline', e.target.value)}
-                className="mb-1 w-full rounded-md px-3 py-2 text-center text-base focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+                className="mb-1 w-full rounded-md px-3 py-2 text-center text-base focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
                 style={previewInputStyle}
               />
               <input
                 value={banner.content.cta}
                 onChange={(e) => updateContent('cta', e.target.value)}
-                className="w-full rounded-md px-3 py-2 text-center text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+                className="w-full rounded-md px-3 py-2 text-center text-sm focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
                 style={previewInputStyle}
               />
             </>
@@ -383,7 +383,7 @@ function BannerPreview({
               <p className="text-lg" style={{ color: 'var(--text-muted)' }}>
                 {banner.content.tagline}
               </p>
-              <p className="mt-3 text-sm font-medium" style={{ color: 'var(--primary-hover)' }}>
+              <p className="mt-3 text-sm font-medium" style={{ color: 'var(--forest-mid)' }}>
                 {banner.content.cta}
               </p>
             </>
@@ -423,22 +423,22 @@ function CarouselCard({ carousel, index }: { carousel: LinkedInCarousel; index: 
     >
       <div
         className="flex h-40 items-center justify-center border-b p-6"
-        style={{ background: getPreviewBackground(carousel.theme), borderColor: 'var(--border-subtle)' }}
+        style={{ background: getPreviewBackground(carousel.theme), borderColor: 'var(--rule-light)' }}
       >
         <div
           className="rounded-2xl px-6 py-5 text-center"
           style={{
-            backgroundColor: 'color-mix(in srgb, var(--surface-raised) 76%, transparent)',
-            border: '1px solid var(--border-subtle)',
+            backgroundColor: 'color-mix(in srgb, var(--paper-warm) 76%, transparent)',
+            border: '1px solid var(--rule-light)',
             boxShadow: 'var(--shadow-sm)'
           }}
         >
           <div
             className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-lg"
             style={{
-              backgroundColor: 'var(--primary-soft)',
-              color: 'var(--primary-hover)',
-              border: '1px solid var(--border-subtle)'
+              backgroundColor: 'color-mix(in srgb, var(--forest) 8%, transparent)',
+              color: 'var(--forest-mid)',
+              border: '1px solid var(--rule-light)'
             }}
           >
             <span className="text-lg font-bold">{carousel.slides.length}</span>
@@ -458,7 +458,7 @@ function CarouselCard({ carousel, index }: { carousel: LinkedInCarousel; index: 
             <div key={slideIndex} className="flex gap-3">
               <span
                 className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-medium"
-                style={{ backgroundColor: 'var(--primary-soft)', color: 'var(--primary-hover)' }}
+                style={{ backgroundColor: 'color-mix(in srgb, var(--forest) 8%, transparent)', color: 'var(--forest-mid)' }}
               >
                 {slideIndex + 1}
               </span>
@@ -473,13 +473,13 @@ function CarouselCard({ carousel, index }: { carousel: LinkedInCarousel; index: 
           <button
             onClick={() => setExpanded(true)}
             className="mt-3 text-xs hover:underline"
-            style={{ color: 'var(--primary-color)' }}
+            style={{ color: 'var(--forest)' }}
           >
             Show all {carousel.slides.length} slides
           </button>
         )}
 
-        <div className="mt-4 flex gap-2 border-t pt-4" style={{ borderColor: 'var(--border-subtle)' }}>
+        <div className="mt-4 flex gap-2 border-t pt-4" style={{ borderColor: 'var(--rule-light)' }}>
           <button
             onClick={handleCopyAll}
             className="flex items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-medium transition-all hover:brightness-95"
@@ -527,7 +527,7 @@ function LinkedInPostCard({
               <input
                 value={post.title}
                 onChange={(e) => onChange({ ...post, title: e.target.value })}
-                className="w-full rounded border px-2 py-1 font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+                className="w-full rounded border px-2 py-1 font-semibold focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
                 style={fieldInputStyle()}
               />
             ) : (
@@ -558,7 +558,7 @@ function LinkedInPostCard({
           <textarea
             value={post.content}
             onChange={(e) => onChange({ ...post, content: e.target.value })}
-            className="min-h-[200px] w-full rounded-lg border p-3 text-sm whitespace-pre-wrap focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+            className="min-h-[200px] w-full rounded-lg border p-3 text-sm whitespace-pre-wrap focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
             style={fieldInputStyle(true)}
           />
         ) : (
@@ -571,7 +571,7 @@ function LinkedInPostCard({
           <button
             onClick={() => setExpanded(!expanded)}
             className="mt-2 text-sm font-medium hover:underline"
-            style={{ color: 'var(--primary-color)' }}
+            style={{ color: 'var(--forest)' }}
           >
             {expanded ? 'Show less' : 'Show more'}
           </button>
@@ -585,11 +585,11 @@ function LinkedInPostCard({
             className="flex h-32 w-full items-center justify-center rounded-lg border"
             style={{
               background: getPreviewBackground(post.image),
-              borderColor: 'var(--border-subtle)'
+              borderColor: 'var(--rule-light)'
             }}
           >
             <div className="text-center">
-              <Image className="mx-auto mb-2 h-8 w-8" style={{ color: 'var(--primary-hover)' }} />
+              <Image className="mx-auto mb-2 h-8 w-8" style={{ color: 'var(--forest-mid)' }} />
               <p className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
                 Light preview treatment
               </p>
@@ -600,13 +600,13 @@ function LinkedInPostCard({
 
       <div
         className="flex items-center justify-between border-t px-6 py-4"
-        style={{ backgroundColor: 'var(--surface-subtle)', borderColor: 'var(--border-subtle)' }}
+        style={{ backgroundColor: 'var(--paper-deep)', borderColor: 'var(--rule-light)' }}
       >
         {isEditing ? (
           <input
             value={post.title}
             onChange={(e) => onChange({ ...post, title: e.target.value })}
-            className="rounded border px-2 py-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+            className="rounded border px-2 py-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
             style={fieldInputStyle()}
           />
         ) : (
@@ -645,13 +645,13 @@ function CompanyInfo({
               <input
                 value={info.name}
                 onChange={(e) => updateField('name', e.target.value)}
-                className="mb-1 w-full rounded border px-2 py-1 text-xl font-bold focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+                className="mb-1 w-full rounded border px-2 py-1 text-xl font-bold focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
                 style={fieldInputStyle()}
               />
               <input
                 value={info.tagline}
                 onChange={(e) => updateField('tagline', e.target.value)}
-                className="w-full rounded border px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+                className="w-full rounded border px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
                 style={{ ...fieldInputStyle(), color: 'var(--text-muted)' }}
               />
             </>
@@ -677,7 +677,7 @@ function CompanyInfo({
             <textarea
               value={info.about}
               onChange={(e) => updateField('about', e.target.value)}
-              className="min-h-[150px] w-full rounded-lg border p-3 text-sm whitespace-pre-wrap focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+              className="min-h-[150px] w-full rounded-lg border p-3 text-sm whitespace-pre-wrap focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
               style={fieldInputStyle(true)}
             />
           ) : (
@@ -690,7 +690,7 @@ function CompanyInfo({
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 border-t pt-4" style={{ borderColor: 'var(--border-subtle)' }}>
+        <div className="grid grid-cols-2 gap-4 border-t pt-4" style={{ borderColor: 'var(--rule-light)' }}>
           {[
             { key: 'industry', label: 'Industry' },
             { key: 'size', label: 'Company Size' },
@@ -705,7 +705,7 @@ function CompanyInfo({
                 <input
                   value={info[key as keyof LinkedInCompanyInfo]}
                   onChange={(e) => updateField(key as keyof LinkedInCompanyInfo, e.target.value)}
-                  className="w-full rounded border px-2 py-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+                  className="w-full rounded border px-2 py-1 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
                   style={fieldInputStyle()}
                 />
               ) : (
@@ -717,7 +717,7 @@ function CompanyInfo({
           ))}
         </div>
 
-        <div className="border-t pt-4" style={{ borderColor: 'var(--border-subtle)' }}>
+        <div className="border-t pt-4" style={{ borderColor: 'var(--rule-light)' }}>
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--text-faint)' }}>
             Specialties
           </p>
@@ -725,7 +725,7 @@ function CompanyInfo({
             <textarea
               value={info.specialties}
               onChange={(e) => updateField('specialties', e.target.value)}
-              className="w-full rounded-lg border p-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+              className="w-full rounded-lg border p-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--forest)]"
               style={fieldInputStyle()}
             />
           ) : (
@@ -811,8 +811,8 @@ export function LinkedInPage() {
       >
         <div>
           <div className="mb-2 flex items-center gap-2">
-            <Linkedin className="h-5 w-5" style={{ color: 'var(--primary-color)' }} />
-            <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--primary-color)' }}>
+            <Linkedin className="h-5 w-5" style={{ color: 'var(--forest)' }} />
+            <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--forest)' }}>
               Social Media
             </span>
           </div>
@@ -828,9 +828,9 @@ export function LinkedInPage() {
               <span
                 className="flex items-center gap-1 rounded-full px-2 py-1 text-xs"
                 style={{
-                  backgroundColor: 'color-mix(in srgb, var(--status-success) 14%, var(--surface-raised))',
-                  border: '1px solid color-mix(in srgb, var(--status-success) 22%, var(--surface-raised))',
-                  color: 'var(--status-success)'
+                  backgroundColor: 'color-mix(in srgb, var(--forest-bright) 14%, var(--paper-warm))',
+                  border: '1px solid color-mix(in srgb, var(--forest-bright) 22%, var(--paper-warm))',
+                  color: 'var(--forest-bright)'
                 }}
               >
                 <RefreshCw className="h-3 w-3" />
@@ -883,7 +883,7 @@ export function LinkedInPage() {
         </div>
       </motion.div>
 
-      <div className="mb-8 flex gap-2 border-b" style={{ borderColor: 'var(--border-subtle)' }}>
+      <div className="mb-8 flex gap-2 border-b" style={{ borderColor: 'var(--rule-light)' }}>
         {[
           { key: 'banner', label: 'Company Banner', icon: Image },
           { key: 'posts', label: 'Post Templates', icon: FileText },
@@ -896,7 +896,7 @@ export function LinkedInPage() {
             className="flex items-center gap-2 border-b-2 px-4 py-3 text-sm font-medium transition-all hover:opacity-85"
             style={
               activeTab === tab.key
-                ? { borderColor: 'var(--primary-color)', color: 'var(--primary-color)' }
+                ? { borderColor: 'var(--forest)', color: 'var(--forest)' }
                 : { borderColor: 'transparent', color: 'var(--text-muted)' }
             }
           >
@@ -935,7 +935,7 @@ export function LinkedInPage() {
             <div className="flex items-center justify-between gap-4">
               <div className="mr-0 flex-1 rounded-xl border p-4 md:mr-4" style={noticePanelStyle}>
                 <p className="text-sm" style={{ color: 'var(--text-default)' }}>
-                  <Sparkles className="mr-2 inline h-4 w-4" style={{ color: 'var(--primary-color)' }} />
+                  <Sparkles className="mr-2 inline h-4 w-4" style={{ color: 'var(--forest)' }} />
                   Use these templates as starting points. Customize with your specific context and always add relevant hashtags.
                 </p>
               </div>
@@ -969,7 +969,7 @@ export function LinkedInPage() {
           <div className="space-y-6">
             <div className="rounded-xl border p-4" style={noticePanelStyle}>
               <p className="text-sm" style={{ color: 'var(--text-default)' }}>
-                <Sparkles className="mr-2 inline h-4 w-4" style={{ color: 'var(--primary-color)' }} />
+                <Sparkles className="mr-2 inline h-4 w-4" style={{ color: 'var(--forest)' }} />
                 LinkedIn carousels get 2x more engagement than single-image posts. Use these 5-slide templates.
               </p>
             </div>

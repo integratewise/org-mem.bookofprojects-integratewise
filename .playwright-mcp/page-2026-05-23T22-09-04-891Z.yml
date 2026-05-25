@@ -1,0 +1,694 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: IntegrateWise
+        - paragraph [ref=e14]: Continuity Documentation System
+    - generic [ref=e16]:
+      - img [ref=e17]
+      - textbox "Search navigation..." [ref=e20]
+    - navigation [ref=e21]:
+      - generic [ref=e22]:
+        - button "00 Company Strategy 2" [ref=e23]:
+          - img [ref=e24]
+          - img [ref=e26]
+          - generic [ref=e30]: 00 Company Strategy
+          - generic [ref=e31]: "2"
+        - generic [ref=e32]:
+          - link "Strategic Planning" [ref=e33] [cursor=pointer]:
+            - /url: /company
+            - img [ref=e34]
+            - generic [ref=e38]: Strategic Planning
+          - button "Doctrine & Continuity" [ref=e39]:
+            - img [ref=e40]
+            - generic [ref=e42]: Doctrine & Continuity
+      - generic [ref=e43]:
+        - button "01 Product & Engineering 3" [ref=e44]:
+          - img [ref=e45]
+          - img [ref=e47]
+          - generic [ref=e51]: 01 Product & Engineering
+          - generic [ref=e52]: "3"
+        - generic [ref=e53]:
+          - link "Adaptive Spine & Architecture" [ref=e54] [cursor=pointer]:
+            - /url: /architecture
+            - img [ref=e55]
+            - generic [ref=e59]: Adaptive Spine & Architecture
+          - button "Product Narrative & Continuity" [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: Product Narrative & Continuity
+          - button "Technical System" [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e68]: Technical System
+      - generic [ref=e69]:
+        - button "02 Marketing & Creative 10" [ref=e70]:
+          - img [ref=e71]
+          - img [ref=e73]
+          - generic [ref=e76]: 02 Marketing & Creative
+          - generic [ref=e77]: "10"
+        - generic [ref=e78]:
+          - link "Brand Assets" [ref=e79] [cursor=pointer]:
+            - /url: /brand-assets
+            - img [ref=e80]
+            - generic [ref=e86]: Brand Assets
+          - link "Design Tokens" [ref=e87] [cursor=pointer]:
+            - /url: /design-tokens
+            - img [ref=e88]
+            - generic [ref=e92]: Design Tokens
+          - link "Stationery" [ref=e93] [cursor=pointer]:
+            - /url: /stationery
+            - img [ref=e94]
+            - generic [ref=e97]: Stationery
+          - link "Marketing" [ref=e98] [cursor=pointer]:
+            - /url: /marketing
+            - img [ref=e99]
+            - generic [ref=e102]: Marketing
+          - link "LinkedIn" [ref=e103] [cursor=pointer]:
+            - /url: /linkedin
+            - img [ref=e104]
+            - generic [ref=e107]: LinkedIn
+          - link "WhatsApp" [ref=e108] [cursor=pointer]:
+            - /url: /whatsapp
+            - img [ref=e109]
+            - generic [ref=e111]: WhatsApp
+          - link "Email" [ref=e112] [cursor=pointer]:
+            - /url: /email
+            - img [ref=e113]
+            - generic [ref=e116]: Email
+          - link "Presentations" [ref=e117] [cursor=pointer]:
+            - /url: /presentations
+            - img [ref=e118]
+            - generic [ref=e121]: Presentations
+          - link "Quick Generators" [ref=e122] [cursor=pointer]:
+            - /url: /generators
+            - img [ref=e123]
+            - generic [ref=e125]: Quick Generators
+          - button "Category & Positioning" [ref=e126]:
+            - img [ref=e127]
+            - generic [ref=e131]: Category & Positioning
+      - generic [ref=e132]:
+        - button "03 Sales 2" [ref=e133]:
+          - img [ref=e134]
+          - img [ref=e136]
+          - generic [ref=e142]: 03 Sales
+          - generic [ref=e143]: "2"
+        - generic [ref=e144]:
+          - link "Sales Enablement" [ref=e145] [cursor=pointer]:
+            - /url: /sales
+            - img [ref=e146]
+            - generic [ref=e152]: Sales Enablement
+          - button "GTM & Customer Success" [ref=e153]:
+            - img [ref=e154]
+            - generic [ref=e157]: GTM & Customer Success
+      - button "04 Customer Success 2" [ref=e159]:
+        - img [ref=e160]
+        - img [ref=e162]
+        - generic [ref=e167]: 04 Customer Success
+        - generic [ref=e168]: "2"
+      - button "05 Operations 2" [ref=e170]:
+        - img [ref=e171]
+        - img [ref=e173]
+        - generic [ref=e175]: 05 Operations
+        - generic [ref=e176]: "2"
+      - button "06 Finance, Legal, HR 2" [ref=e178]:
+        - img [ref=e179]
+        - img [ref=e181]
+        - generic [ref=e185]: 06 Finance, Legal, HR
+        - generic [ref=e186]: "2"
+      - button "07 Resources & Knowledge Base 4" [ref=e188]:
+        - img [ref=e189]
+        - img [ref=e191]
+        - generic [ref=e193]: 07 Resources & Knowledge Base
+        - generic [ref=e194]: "4"
+      - button "08 External Communications 2" [ref=e196]:
+        - img [ref=e197]
+        - img [ref=e199]
+        - generic [ref=e202]: 08 External Communications
+        - generic [ref=e203]: "2"
+      - button "09 Archives & Retention 1" [ref=e205]:
+        - img [ref=e206]
+        - img [ref=e208]
+        - generic [ref=e211]: 09 Archives & Retention
+        - generic [ref=e212]: "1"
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - paragraph [ref=e216]: Continuity Documentation System v1.0
+        - paragraph [ref=e217]: 6 Doctrine Packs · 40 Documents
+      - button "Switch to dark mode" [ref=e218]:
+        - img [ref=e219]
+  - generic [ref=e221]:
+    - banner [ref=e222]:
+      - generic [ref=e223]:
+        - generic [ref=e224]: 02 Marketing & Creative
+        - img [ref=e225]
+        - heading "Stationery" [level=1] [ref=e227]
+    - main [ref=e228]:
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - generic [ref=e231]:
+            - img [ref=e232]
+            - generic [ref=e235]: Brand Assets
+          - heading "Corporate Stationery" [level=1] [ref=e236]
+          - paragraph [ref=e237]: Complete suite of editable stationery templates with multiple export formats
+          - generic [ref=e238]:
+            - img [ref=e239]
+            - textbox "Search templates by name, type, or tag..." [ref=e242]
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - img [ref=e245]
+            - paragraph [ref=e248]: "19"
+            - paragraph [ref=e249]: Total Items
+          - generic [ref=e250]:
+            - img [ref=e251]
+            - paragraph [ref=e254]: "5"
+            - paragraph [ref=e255]: Export Formats
+          - generic [ref=e256]:
+            - img [ref=e257]
+            - paragraph [ref=e260]: All
+            - paragraph [ref=e261]: Editable Fields
+          - generic [ref=e262]:
+            - img [ref=e263]
+            - paragraph [ref=e265]: "5"
+            - paragraph [ref=e266]: Categories
+        - generic [ref=e267]:
+          - button "Documents 8 items" [ref=e268]:
+            - generic [ref=e269]:
+              - img [ref=e270]
+              - generic [ref=e273]:
+                - heading "Documents" [level=3] [ref=e274]
+                - paragraph [ref=e275]: 8 items
+            - img [ref=e277]
+          - generic [ref=e279]:
+            - generic [ref=e280]:
+              - generic [ref=e283]:
+                - generic [ref=e284]:
+                  - generic [ref=e285]:
+                    - heading "IntegrateWise" [level=1] [ref=e286]
+                    - paragraph [ref=e287]: Adaptive continuity workspace projected from hydrated organizational reality
+                  - generic [ref=e288]:
+                    - paragraph [ref=e289]: IntegrateWise LLP
+                    - paragraph [ref=e290]: Bengaluru, India
+                    - paragraph [ref=e291]: hello@integratewise.ai
+                    - paragraph [ref=e292]: integratewise.ai
+                - generic [ref=e293]:
+                  - paragraph [ref=e294]: "Date: March 25, 2026"
+                  - paragraph [ref=e295]: "To:"
+                  - paragraph [ref=e296]: Recipient Name
+                  - paragraph [ref=e297]: "Subject: Strategic rollout proposal"
+                  - generic [ref=e298]:
+                    - paragraph [ref=e299]: Thank you for exploring IntegrateWise.
+                    - paragraph
+                    - paragraph [ref=e300]: We are sharing a governed AI rollout proposal for your team.
+                    - paragraph
+                    - paragraph [ref=e301]: Please review the enclosed scope, timeline, and approval checkpoints.
+                - paragraph [ref=e303]: AI Thinks in Context — and Waits for Approval
+              - generic [ref=e304]:
+                - generic [ref=e305]:
+                  - generic [ref=e306]:
+                    - img [ref=e308]
+                    - generic [ref=e311]:
+                      - heading "Letterhead" [level=3] [ref=e312]
+                      - paragraph [ref=e313]: A4 (210×297mm)
+                  - generic [ref=e314]: ready
+                - paragraph [ref=e315]: Official A4 letterhead template
+                - button "Edit & Download" [ref=e317]:
+                  - img [ref=e318]
+                  - text: Edit & Download
+            - generic [ref=e321]:
+              - generic [ref=e324]:
+                - generic [ref=e325]:
+                  - generic [ref=e326]:
+                    - heading "IntegrateWise" [level=1] [ref=e327]
+                    - paragraph [ref=e328]: Adaptive continuity workspace projected from hydrated organizational reality
+                  - generic [ref=e329]:
+                    - heading "INVOICE" [level=2] [ref=e330]
+                    - paragraph [ref=e331]: "#INV-2026-001"
+                - generic [ref=e332]:
+                  - generic [ref=e333]:
+                    - paragraph [ref=e334]: From
+                    - paragraph [ref=e335]: IntegrateWise
+                    - paragraph [ref=e336]: "Issued: March 25, 2026"
+                    - paragraph [ref=e337]: "Due: April 10, 2026"
+                  - generic [ref=e338]:
+                    - paragraph [ref=e339]: Bill To
+                    - paragraph [ref=e340]: Client Name
+                    - paragraph [ref=e341]: Client Address
+                - table [ref=e342]:
+                  - rowgroup [ref=e343]:
+                    - row "Description Qty Rate Amount" [ref=e344]:
+                      - columnheader "Description" [ref=e345]
+                      - columnheader "Qty" [ref=e346]
+                      - columnheader "Rate" [ref=e347]
+                      - columnheader "Amount" [ref=e348]
+                  - rowgroup [ref=e349]:
+                    - row "IntegrateWise Platform - Growth Plan 1 $1,178.82 $1,178.82" [ref=e350]:
+                      - cell "IntegrateWise Platform - Growth Plan" [ref=e351]
+                      - cell "1" [ref=e352]
+                      - cell "$1,178.82" [ref=e353]
+                      - cell "$1,178.82" [ref=e354]
+                    - row "Onboarding & Setup Fee 1 $200.00 $200.00" [ref=e355]:
+                      - cell "Onboarding & Setup Fee" [ref=e356]
+                      - cell "1" [ref=e357]
+                      - cell "$200.00" [ref=e358]
+                      - cell "$200.00" [ref=e359]
+                    - row "Priority Support (Monthly) 1 $49.00 $49.00" [ref=e360]:
+                      - cell "Priority Support (Monthly)" [ref=e361]
+                      - cell "1" [ref=e362]
+                      - cell "$49.00" [ref=e363]
+                      - cell "$49.00" [ref=e364]
+                  - rowgroup [ref=e365]:
+                    - row "Total $1,178.82" [ref=e366]:
+                      - cell "Total" [ref=e367]
+                      - cell "$1,178.82" [ref=e368]
+              - generic [ref=e369]:
+                - generic [ref=e370]:
+                  - generic [ref=e371]:
+                    - img [ref=e373]
+                    - generic [ref=e376]:
+                      - heading "Invoice Template" [level=3] [ref=e377]
+                      - paragraph [ref=e378]: A4 (210×297mm)
+                  - generic [ref=e379]: ready
+                - paragraph [ref=e380]: Professional billing template
+                - button "Edit & Download" [ref=e382]:
+                  - img [ref=e383]
+                  - text: Edit & Download
+            - generic [ref=e386]:
+              - generic [ref=e389]:
+                - generic [ref=e390]:
+                  - heading "IntegrateWise" [level=1] [ref=e391]
+                  - paragraph [ref=e392]: Adaptive continuity workspace projected from hydrated organizational reality
+                - generic [ref=e393]:
+                  - heading "Context-Aware AI Rollout" [level=2] [ref=e394]
+                  - paragraph [ref=e395]:
+                    - text: "Prepared for:"
+                    - strong [ref=e396]: Client Name
+                  - paragraph [ref=e397]: "Date: March 2026 | Valid: 30 Days"
+                  - generic [ref=e398]:
+                    - paragraph [ref=e399]: Summary
+                    - paragraph [ref=e400]: Unify fragmented tools into one governed workspace where AI reasons in context and every action waits for approval.
+                  - generic [ref=e401]:
+                    - paragraph [ref=e402]: Scope
+                    - paragraph [ref=e403]: Spine setup, workflow design, approval checkpoints, rollout onboarding, and stakeholder enablement.
+                  - generic [ref=e404]:
+                    - paragraph [ref=e405]: Timeline
+                    - paragraph [ref=e406]: 4-week setup, 2-week pilot, 30-day success review with measurable adoption milestones.
+              - generic [ref=e407]:
+                - generic [ref=e408]:
+                  - generic [ref=e409]:
+                    - img [ref=e411]
+                    - generic [ref=e413]:
+                      - heading "Proposal Template" [level=3] [ref=e414]
+                      - paragraph [ref=e415]: A4 (210×297mm)
+                  - generic [ref=e416]: ready
+                - paragraph [ref=e417]: Project proposal with signature blocks
+                - button "Edit & Download" [ref=e419]:
+                  - img [ref=e420]
+                  - text: Edit & Download
+            - generic [ref=e423]:
+              - generic [ref=e426]:
+                - generic [ref=e427]:
+                  - heading "MEMORANDUM" [level=1] [ref=e428]
+                  - paragraph [ref=e429]: IntegrateWise
+                - generic [ref=e430]:
+                  - generic [ref=e431]:
+                    - generic [ref=e432]:
+                      - paragraph [ref=e433]: "TO:"
+                      - paragraph [ref=e434]: Recipient Name
+                    - generic [ref=e435]:
+                      - paragraph [ref=e436]: "DATE:"
+                      - paragraph [ref=e437]: March 25, 2026
+                    - generic [ref=e438]:
+                      - paragraph [ref=e439]: "FROM:"
+                      - paragraph [ref=e440]: Sender Name
+                    - generic [ref=e441]:
+                      - paragraph [ref=e442]: "SUBJECT:"
+                      - paragraph [ref=e443]: Project Update
+                  - paragraph [ref=e446]: Please review the following important update regarding our current projects.
+              - generic [ref=e447]:
+                - generic [ref=e448]:
+                  - generic [ref=e449]:
+                    - img [ref=e451]
+                    - generic [ref=e454]:
+                      - heading "Memo Template" [level=3] [ref=e455]
+                      - paragraph [ref=e456]: A4 (210×297mm)
+                  - generic [ref=e457]: ready
+                - paragraph [ref=e458]: Internal memo for quick communication
+                - button "Edit & Download" [ref=e460]:
+                  - img [ref=e461]
+                  - text: Edit & Download
+            - generic [ref=e464]:
+              - generic [ref=e467]:
+                - generic [ref=e468]:
+                  - paragraph [ref=e469]: March 2026
+                  - heading "Quarterly Report" [level=1] [ref=e470]
+                  - paragraph [ref=e471]: Q1 2026 Performance Review
+                - generic [ref=e472]:
+                  - paragraph [ref=e473]: IntegrateWise
+                  - paragraph [ref=e474]: Prepared by Strategy Office
+              - generic [ref=e475]:
+                - generic [ref=e476]:
+                  - generic [ref=e477]:
+                    - img [ref=e479]
+                    - generic [ref=e481]:
+                      - heading "Report Cover" [level=3] [ref=e482]
+                      - paragraph [ref=e483]: A4 (210×297mm)
+                  - generic [ref=e484]: ready
+                - paragraph [ref=e485]: Professional report cover page
+                - button "Edit & Download" [ref=e487]:
+                  - img [ref=e488]
+                  - text: Edit & Download
+            - generic [ref=e491]:
+              - generic [ref=e494]:
+                - heading "FAX TRANSMISSION COVER SHEET" [level=1] [ref=e496]
+                - generic [ref=e497]:
+                  - generic [ref=e498]:
+                    - generic [ref=e499]:
+                      - heading "FROM:" [level=3] [ref=e500]
+                      - paragraph [ref=e501]: IntegrateWise
+                      - paragraph [ref=e502]: Sender Name
+                      - paragraph [ref=e503]: hello@integratewise.ai
+                    - generic [ref=e504]:
+                      - heading "TO:" [level=3] [ref=e505]
+                      - paragraph [ref=e506]: Recipient Company
+                      - paragraph [ref=e507]: Recipient Name
+                      - paragraph [ref=e508]: +1 (000) 000-0000
+                  - table [ref=e509]:
+                    - rowgroup [ref=e510]:
+                      - 'row "Total Pages (including cover): 1" [ref=e511]':
+                        - cell "Total Pages (including cover):" [ref=e512]
+                        - cell "1" [ref=e513]
+                      - 'row "Subject: Fax Transmission" [ref=e514]':
+                        - cell "Subject:" [ref=e515]
+                        - cell "Fax Transmission" [ref=e516]
+                      - 'row "Message: Please find the requested documents attached." [ref=e517]':
+                        - 'cell "Message: Please find the requested documents attached." [ref=e518]':
+                          - paragraph [ref=e519]: "Message:"
+                          - paragraph [ref=e520]: Please find the requested documents attached.
+              - generic [ref=e521]:
+                - generic [ref=e522]:
+                  - generic [ref=e523]:
+                    - img [ref=e525]
+                    - generic [ref=e529]:
+                      - heading "Fax Cover Sheet" [level=3] [ref=e530]
+                      - paragraph [ref=e531]: A4 (210×297mm)
+                  - generic [ref=e532]: ready
+                - paragraph [ref=e533]: Standard fax cover sheet template
+                - button "Edit & Download" [ref=e535]:
+                  - img [ref=e536]
+                  - text: Edit & Download
+            - generic [ref=e539]:
+              - generic [ref=e542]:
+                - generic [ref=e543]:
+                  - paragraph [ref=e544]: IntegrateWise
+                  - paragraph [ref=e545]: Adaptive continuity workspace projected from hydrated organizational reality
+                - generic [ref=e546]:
+                  - generic [ref=e547]:
+                    - paragraph [ref=e548]: Board Brief
+                    - heading "Governed Intelligence Rollout Plan" [level=2] [ref=e549]
+                    - paragraph [ref=e550]: Execution roadmap for adopting context-aware AI across work, knowledge, and decisions.
+                  - paragraph [ref=e551]: March 2026 · v1.0
+              - generic [ref=e552]:
+                - generic [ref=e553]:
+                  - generic [ref=e554]:
+                    - img [ref=e556]
+                    - generic [ref=e558]:
+                      - heading "Document Cover" [level=3] [ref=e559]
+                      - paragraph [ref=e560]: 1920×1080px
+                  - generic [ref=e561]: ready
+                - paragraph [ref=e562]: Presentation cover page
+                - button "Edit & Download" [ref=e564]:
+                  - img [ref=e565]
+                  - text: Edit & Download
+            - generic [ref=e568]:
+              - generic [ref=e571]:
+                - generic [ref=e572]:
+                  - paragraph [ref=e573]: IntegrateWise LLP
+                  - paragraph [ref=e574]: Bengaluru, India
+                - generic [ref=e576]:
+                  - paragraph [ref=e577]: Recipient Name
+                  - paragraph [ref=e578]: Company Name
+                  - paragraph [ref=e579]: Street Address
+                  - paragraph [ref=e580]: City, State, ZIP
+                  - paragraph [ref=e581]: Country
+                - paragraph [ref=e583]: IntegrateWise LLP
+              - generic [ref=e584]:
+                - generic [ref=e585]:
+                  - generic [ref=e586]:
+                    - img [ref=e588]
+                    - generic [ref=e592]:
+                      - heading "Envelope" [level=3] [ref=e593]
+                      - paragraph [ref=e594]: DL (220×110mm)
+                  - generic [ref=e595]: ready
+                - paragraph [ref=e596]: Corporate envelope template
+                - button "Edit & Download" [ref=e598]:
+                  - img [ref=e599]
+                  - text: Edit & Download
+        - generic [ref=e602]:
+          - button "Identity 2 items" [ref=e603]:
+            - generic [ref=e604]:
+              - img [ref=e605]
+              - generic [ref=e607]:
+                - heading "Identity" [level=3] [ref=e608]
+                - paragraph [ref=e609]: 2 items
+            - img [ref=e611]
+          - generic [ref=e613]:
+            - generic [ref=e614]:
+              - img [ref=e618]:
+                - generic [ref=e621]: INTEGRATEWISE LLP
+                - generic [ref=e622]: OFFICIAL SEAL
+                - generic [ref=e624]: IW
+                - generic [ref=e625]: AI Thinks in Context
+                - generic [ref=e626]: and Waits for Approval
+              - generic [ref=e627]:
+                - generic [ref=e628]:
+                  - generic [ref=e629]:
+                    - img [ref=e631]
+                    - generic [ref=e634]:
+                      - heading "Company Seal" [level=3] [ref=e635]
+                      - paragraph [ref=e636]: Vector SVG
+                  - generic [ref=e637]: ready
+                - paragraph [ref=e638]: Official circular seal design
+                - button "Edit & Download" [ref=e640]:
+                  - img [ref=e641]
+                  - text: Edit & Download
+            - generic [ref=e644]:
+              - generic [ref=e647]:
+                - generic [ref=e648]:
+                  - paragraph [ref=e649]: IntegrateWise
+                  - paragraph [ref=e650]: Your Name
+                  - paragraph [ref=e651]: Your Title
+                - separator [ref=e652]
+                - generic [ref=e653]:
+                  - paragraph [ref=e654]: hello@integratewise.ai
+                  - paragraph [ref=e655]: +91 [Phone]
+                  - paragraph [ref=e656]: integratewise.ai
+              - generic [ref=e657]:
+                - generic [ref=e658]:
+                  - generic [ref=e659]:
+                    - img [ref=e661]
+                    - generic [ref=e663]:
+                      - heading "Business Card" [level=3] [ref=e664]
+                      - paragraph [ref=e665]: 85×55mm
+                  - generic [ref=e666]: ready
+                - paragraph [ref=e667]: Front and back design
+                - button "Edit & Download" [ref=e669]:
+                  - img [ref=e670]
+                  - text: Edit & Download
+        - generic [ref=e673]:
+          - button "Digital 1 items" [ref=e674]:
+            - generic [ref=e675]:
+              - img [ref=e676]
+              - generic [ref=e679]:
+                - heading "Digital" [level=3] [ref=e680]
+                - paragraph [ref=e681]: 1 items
+            - img [ref=e683]
+          - generic [ref=e686]:
+            - generic [ref=e690]:
+              - paragraph [ref=e691]: Your Name
+              - paragraph [ref=e692]: Your Title
+              - paragraph [ref=e693]: IntegrateWise
+              - separator [ref=e694]
+              - paragraph [ref=e695]: hello@integratewise.ai | integratewise.ai
+              - paragraph [ref=e696]: Adaptive continuity workspace hydrated by the Spine
+            - generic [ref=e697]:
+              - generic [ref=e698]:
+                - generic [ref=e699]:
+                  - img [ref=e701]
+                  - generic [ref=e704]:
+                    - heading "Email Signature" [level=3] [ref=e705]
+                    - paragraph [ref=e706]: 600px wide
+                - generic [ref=e707]: ready
+              - paragraph [ref=e708]: HTML email signature template
+              - button "Edit & Download" [ref=e710]:
+                - img [ref=e711]
+                - text: Edit & Download
+        - generic [ref=e714]:
+          - button "Collateral 3 items" [ref=e715]:
+            - generic [ref=e716]:
+              - img [ref=e717]
+              - generic [ref=e719]:
+                - heading "Collateral" [level=3] [ref=e720]
+                - paragraph [ref=e721]: 3 items
+            - img [ref=e723]
+          - generic [ref=e725]:
+            - generic [ref=e726]:
+              - generic [ref=e729]:
+                - generic [ref=e731]:
+                  - heading "IntegrateWise" [level=1] [ref=e732]
+                  - paragraph [ref=e733]: Adaptive continuity workspace hydrated by the Spine
+                - paragraph [ref=e760]: AI Thinks in Context — and Waits for Approval
+              - generic [ref=e761]:
+                - generic [ref=e762]:
+                  - generic [ref=e763]:
+                    - img [ref=e765]
+                    - generic [ref=e768]:
+                      - heading "Notepad Design" [level=3] [ref=e769]
+                      - paragraph [ref=e770]: A5 (148×210mm)
+                  - generic [ref=e771]: ready
+                - paragraph [ref=e772]: Custom branded notepad template
+                - button "Edit & Download" [ref=e774]:
+                  - img [ref=e775]
+                  - text: Edit & Download
+            - generic [ref=e778]:
+              - generic [ref=e782]:
+                - generic [ref=e783]:
+                  - heading "IntegrateWise" [level=1] [ref=e784]
+                  - paragraph [ref=e785]: Adaptive continuity workspace projected from hydrated organizational reality
+                - paragraph [ref=e787]: Project Folder
+              - generic [ref=e788]:
+                - generic [ref=e789]:
+                  - generic [ref=e790]:
+                    - img [ref=e792]
+                    - generic [ref=e794]:
+                      - heading "Folder Template" [level=3] [ref=e795]
+                      - paragraph [ref=e796]: A4 Folded
+                  - generic [ref=e797]: ready
+                - paragraph [ref=e798]: File folder branding design
+                - button "Edit & Download" [ref=e800]:
+                  - img [ref=e801]
+                  - text: Edit & Download
+            - generic [ref=e804]:
+              - generic [ref=e808]:
+                - heading "IntegrateWise" [level=2] [ref=e809]
+                - paragraph [ref=e810]: Adaptive continuity workspace hydrated by the Spine
+                - paragraph [ref=e811]: Made with IntegrateWise
+              - generic [ref=e812]:
+                - generic [ref=e813]:
+                  - generic [ref=e814]:
+                    - img [ref=e816]
+                    - generic [ref=e819]:
+                      - heading "Sticker Design" [level=3] [ref=e820]
+                      - paragraph [ref=e821]: Multiple sizes
+                  - generic [ref=e822]: ready
+                - paragraph [ref=e823]: Custom branded sticker sheet
+                - button "Edit & Download" [ref=e825]:
+                  - img [ref=e826]
+                  - text: Edit & Download
+        - generic [ref=e829]:
+          - button "Marketing & Social 5 items" [ref=e830]:
+            - generic [ref=e831]:
+              - img [ref=e832]
+              - generic [ref=e835]:
+                - heading "Marketing & Social" [level=3] [ref=e836]
+                - paragraph [ref=e837]: 5 items
+            - img [ref=e839]
+          - generic [ref=e841]:
+            - generic [ref=e842]:
+              - generic [ref=e845]:
+                - generic [ref=e846]:
+                  - heading "Sales Presentation" [level=1] [ref=e847]
+                  - paragraph [ref=e848]: Context-Aware AI Solutions
+                - generic [ref=e849]:
+                  - paragraph [ref=e850]: Unify tools. Govern AI. Scale impact.
+                  - button "Get Started Today" [ref=e851]
+                - paragraph [ref=e852]: IntegrateWise
+              - generic [ref=e853]:
+                - generic [ref=e854]:
+                  - generic [ref=e855]:
+                    - img [ref=e857]
+                    - generic [ref=e859]:
+                      - heading "Sales & Marketing Deck" [level=3] [ref=e860]
+                      - paragraph [ref=e861]: 16:9 (1920×1080px)
+                  - generic [ref=e862]: ready
+                - paragraph [ref=e863]: Professional presentation slides for sales pitches
+                - button "Edit & Download" [ref=e865]:
+                  - img [ref=e866]
+                  - text: Edit & Download
+            - generic [ref=e869]:
+              - generic [ref=e873]:
+                - heading "IntegrateWise" [level=1] [ref=e874]
+                - paragraph [ref=e875]: Presentation
+                - paragraph [ref=e876]: Adaptive continuity workspace projected from hydrated organizational reality
+              - generic [ref=e877]:
+                - generic [ref=e878]:
+                  - generic [ref=e879]:
+                    - img [ref=e881]
+                    - generic [ref=e887]:
+                      - heading "Presentation Background" [level=3] [ref=e888]
+                      - paragraph [ref=e889]: 1920×1080px
+                  - generic [ref=e890]: ready
+                - paragraph [ref=e891]: Custom branded presentation background
+                - button "Edit & Download" [ref=e893]:
+                  - img [ref=e894]
+                  - text: Edit & Download
+            - generic [ref=e897]:
+              - generic [ref=e900]:
+                - generic [ref=e901]:
+                  - heading "Connect with us on WhatsApp" [level=2] [ref=e902]
+                  - paragraph [ref=e903]: IntegrateWise
+                  - button "Chat Now" [ref=e904]
+                - generic [ref=e905]: 💬
+              - generic [ref=e906]:
+                - generic [ref=e907]:
+                  - generic [ref=e908]:
+                    - img [ref=e910]
+                    - generic [ref=e913]:
+                      - heading "WhatsApp Banner" [level=3] [ref=e914]
+                      - paragraph [ref=e915]: 2048×1024px
+                  - generic [ref=e916]: ready
+                - paragraph [ref=e917]: Branded banner for WhatsApp profile and groups
+                - button "Edit & Download" [ref=e919]:
+                  - img [ref=e920]
+                  - text: Edit & Download
+            - generic [ref=e923]:
+              - generic [ref=e927]:
+                - heading "Governed Intelligence Platform" [level=1] [ref=e928]
+                - paragraph [ref=e929]: AI Thinks in Context — and Waits for Approval
+                - paragraph [ref=e930]: IntegrateWise
+              - generic [ref=e931]:
+                - generic [ref=e932]:
+                  - generic [ref=e933]:
+                    - img [ref=e935]
+                    - generic [ref=e938]:
+                      - heading "LinkedIn Banner" [level=3] [ref=e939]
+                      - paragraph [ref=e940]: 1200×627px
+                  - generic [ref=e941]: ready
+                - paragraph [ref=e942]: Professional LinkedIn profile and post banner
+                - button "Edit & Download" [ref=e944]:
+                  - img [ref=e945]
+                  - text: Edit & Download
+            - generic [ref=e948]:
+              - generic [ref=e951]:
+                - generic [ref=e952]:
+                  - heading "Introducing IntegrateWise" [level=1] [ref=e953]
+                  - paragraph [ref=e954]: The Governed AI Platform
+                - generic [ref=e955]:
+                  - paragraph [ref=e956]: Adaptive continuity workspace projected from hydrated organizational reality
+                  - button "Learn More" [ref=e957]
+                - paragraph [ref=e958]: IntegrateWise
+              - generic [ref=e959]:
+                - generic [ref=e960]:
+                  - generic [ref=e961]:
+                    - img [ref=e963]
+                    - generic [ref=e965]:
+                      - heading "Promotional Poster" [level=3] [ref=e966]
+                      - paragraph [ref=e967]: A2 (420×594mm)
+                  - generic [ref=e968]: ready
+                - paragraph [ref=e969]: Eye-catching promotional poster design
+                - button "Edit & Download" [ref=e971]:
+                  - img [ref=e972]
+                  - text: Edit & Download
+  - button "AI Assistant" [ref=e975]:
+    - img [ref=e976]
+    - generic [ref=e979]: AI Assistant
+    - img [ref=e980]

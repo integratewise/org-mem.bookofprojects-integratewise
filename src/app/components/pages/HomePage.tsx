@@ -154,27 +154,27 @@ export function HomePage() {
       <div
         className="relative rounded-2xl overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, var(--surface) 0%, var(--primary-soft) 58%, var(--accent-soft) 100%)',
-          border: '1px solid var(--border-subtle)',
+          background: 'linear-gradient(135deg, var(--paper-warm) 0%, color-mix(in srgb, var(--forest) 8%, transparent) 58%, var(--gold-pale) 100%)',
+          border: '1px solid var(--rule-light)',
         }}
       >
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-[-120px] right-[-60px] w-[400px] h-[400px] rounded-full" style={{ background: 'radial-gradient(circle, color-mix(in srgb, var(--forest) 14%, transparent) 0%, transparent 72%)' }} />
           <div className="absolute bottom-[-80px] left-[-40px] w-[300px] h-[300px] rounded-full" style={{ background: 'radial-gradient(circle, color-mix(in srgb, var(--gold) 14%, transparent) 0%, transparent 72%)' }} />
           <svg className="absolute right-8 top-8 opacity-25" width="200" height="200" viewBox="0 0 200 200" fill="none">
-            <circle cx="30" cy="30" r="8" fill="var(--primary-color)" />
-            <circle cx="100" cy="80" r="12" fill="var(--primary-color)" />
-            <circle cx="170" cy="50" r="6" fill="var(--accent-color)" />
-            <circle cx="140" cy="150" r="10" fill="var(--primary-color)" />
-            <line x1="30" y1="30" x2="100" y2="80" stroke="var(--accent-color)" strokeWidth="2" opacity="0.55" />
-            <line x1="100" y1="80" x2="170" y2="50" stroke="var(--accent-color)" strokeWidth="2" opacity="0.55" />
-            <line x1="100" y1="80" x2="140" y2="150" stroke="var(--primary-color)" strokeWidth="2" opacity="0.4" />
+            <circle cx="30" cy="30" r="8" fill="var(--forest)" />
+            <circle cx="100" cy="80" r="12" fill="var(--forest)" />
+            <circle cx="170" cy="50" r="6" fill="var(--gold)" />
+            <circle cx="140" cy="150" r="10" fill="var(--forest)" />
+            <line x1="30" y1="30" x2="100" y2="80" stroke="var(--gold)" strokeWidth="2" opacity="0.55" />
+            <line x1="100" y1="80" x2="170" y2="50" stroke="var(--gold)" strokeWidth="2" opacity="0.55" />
+            <line x1="100" y1="80" x2="140" y2="150" stroke="var(--forest)" strokeWidth="2" opacity="0.4" />
           </svg>
         </div>
         <div className="relative z-10 p-8 lg:p-12">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
-              <Shield className="w-5 h-5" style={{ color: 'var(--primary-color)' }} />
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
+              <Shield className="w-5 h-5" style={{ color: 'var(--forest)' }} />
             </div>
             <div>
               <p className="text-sm font-semibold" style={{ color: 'var(--text-strong)' }}>IntegrateWise</p>
@@ -195,9 +195,9 @@ export function HomePage() {
               <div
                 key={stat.label}
                 className="flex items-center gap-3 rounded-lg px-5 py-3"
-                style={{ background: 'color-mix(in srgb, var(--paper) 84%, transparent)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-sm)' }}
+                style={{ background: 'color-mix(in srgb, var(--paper) 84%, transparent)', border: '1px solid var(--rule-light)', boxShadow: 'var(--shadow-sm)' }}
               >
-                <stat.icon className="w-5 h-5" style={{ color: 'var(--primary-color)' }} />
+                <stat.icon className="w-5 h-5" style={{ color: 'var(--forest)' }} />
                 <div>
                   <p className="text-xl font-bold" style={{ color: 'var(--text-strong)' }}>{stat.value}</p>
                   <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{stat.label}</p>
@@ -227,7 +227,7 @@ export function HomePage() {
           <button
             onClick={() => navigate('/generators')}
             className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md transition-colors"
-            style={{ color: 'var(--primary-color)', background: 'var(--primary-soft)' }}
+            style={{ color: 'var(--forest)', background: 'color-mix(in srgb, var(--forest) 8%, transparent)' }}
           >
             All Generators <ArrowRight className="w-3 h-3" />
           </button>
@@ -237,23 +237,23 @@ export function HomePage() {
           onClick={() => navigate('/generators')}
           className="w-full mb-4 group relative overflow-hidden rounded-xl p-5 text-left hover:shadow-lg transition-all"
           style={{
-            background: 'linear-gradient(135deg, var(--surface) 0%, var(--primary-soft) 62%, var(--accent-soft) 100%)',
-            border: '1px solid var(--border-subtle)',
+            background: 'linear-gradient(135deg, var(--paper-warm) 0%, color-mix(in srgb, var(--forest) 8%, transparent) 62%, var(--gold-pale) 100%)',
+            border: '1px solid var(--rule-light)',
           }}
         >
           <div className="absolute top-[-50%] right-[-10%] w-[300px] h-[300px] rounded-full" style={{ background: 'radial-gradient(circle, color-mix(in srgb, var(--forest) 8%, transparent) 0%, transparent 72%)' }} />
           <div className="relative z-10 flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'var(--surface-raised)', border: '1px solid var(--border-subtle)' }}>
-              <Package className="w-6 h-6" style={{ color: 'var(--primary-color)' }} />
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
+              <Package className="w-6 h-6" style={{ color: 'var(--forest)' }} />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <p className="text-sm font-semibold" style={{ color: 'var(--text-strong)' }}>Generate Full Campaign Kit</p>
-                <span className="text-xs font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'var(--accent-soft)', color: 'var(--warning-color)' }}>ONE CLICK</span>
+                <span className="text-xs font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'var(--gold-pale)', color: 'var(--warning-color)' }}>ONE CLICK</span>
               </div>
               <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>LinkedIn banners + social posts + team signatures + contact blocks + copy library in one ZIP</p>
             </div>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform ml-auto shrink-0" style={{ color: 'var(--primary-color)' }} />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform ml-auto shrink-0" style={{ color: 'var(--forest)' }} />
           </div>
         </button>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -267,7 +267,7 @@ export function HomePage() {
               key={action.label}
               onClick={() => navigate(action.to)}
               className="group flex items-center gap-3 rounded-xl px-5 py-4 text-left hover:shadow-md transition-all"
-              style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}
+              style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}
             >
               <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform"
                 style={{ background: `color-mix(in srgb, ${action.color} 12%, transparent)` }}>
@@ -283,7 +283,7 @@ export function HomePage() {
       </div>
 
       {/* One-Click Copy Bar */}
-      <div className="rounded-xl p-5" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+      <div className="rounded-xl p-5" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
         <p className="text-xs font-semibold mb-3" style={{ color: 'var(--forest-mid)' }}>One-Click Copy</p>
         <div className="flex flex-wrap gap-2">
           {[
@@ -298,7 +298,7 @@ export function HomePage() {
               onClick={() => quickCopy(item.id, item.text)}
               className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all"
               style={{
-                background: copiedId === item.id ? 'var(--primary-color)' : 'var(--surface-2)',
+                background: copiedId === item.id ? 'var(--forest)' : 'var(--paper-deep)',
                 color: copiedId === item.id ? 'var(--text-inverse)' : 'var(--text-muted)',
               }}
             >
@@ -334,7 +334,7 @@ export function HomePage() {
           </div>
 
           {/* Brand Positioning */}
-          <div className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+          <div className="rounded-xl p-6" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
             <div className="flex items-center gap-2 mb-4">
               <Quote className="w-4 h-4" style={{ color: 'var(--forest)' }} />
               <p className="text-sm font-semibold" style={{ color: 'var(--ink)' }}>Brand Positioning</p>
@@ -360,7 +360,7 @@ export function HomePage() {
           </div>
 
           {/* Color Palette Quick View */}
-          <div className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+          <div className="rounded-xl p-6" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
             <p className="text-sm font-semibold mb-4" style={{ color: 'var(--ink)' }}>Forest + Paper Palette</p>
             <div className="grid grid-cols-5 gap-3">
               {[
@@ -390,7 +390,7 @@ export function HomePage() {
           </div>
 
           {productArchitecture.map((item) => (
-            <div key={item.title} className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+            <div key={item.title} className="rounded-xl p-6" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
               <div className="flex items-start gap-4">
                 <div
                   className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0"
@@ -407,7 +407,7 @@ export function HomePage() {
           ))}
 
           {/* Product Essence */}
-          <div className="rounded-xl p-6" style={{ background: 'linear-gradient(135deg, var(--surface) 0%, var(--accent-soft) 100%)', border: '1px solid var(--border-subtle)' }}>
+          <div className="rounded-xl p-6" style={{ background: 'linear-gradient(135deg, var(--paper-warm) 0%, var(--gold-pale) 100%)', border: '1px solid var(--rule-light)' }}>
             <p className="text-xs tracking-widest mb-2" style={{ color: 'var(--slate-mid)' }}>PRODUCT ESSENCE</p>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--ink)' }}>
               IntegrateWise is a continuity workspace where the Adaptive Spine continuously hydrates
@@ -427,7 +427,7 @@ export function HomePage() {
               key={section.to}
               onClick={() => navigate(section.to)}
               className="group rounded-xl p-6 text-left hover:shadow-lg transition-all"
-              style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}
+              style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}
             >
               <div className="flex items-start justify-between">
                 <div
@@ -456,7 +456,7 @@ export function HomePage() {
       {/* Contact System */}
       <div>
         <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ink)' }}>Official Contact System</h3>
-        <div className="rounded-xl p-6" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+        <div className="rounded-xl p-6" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { dept: 'General', emails: ['hello@integratewise.ai', 'connect@integratewise.ai'] },
@@ -491,7 +491,7 @@ export function HomePage() {
       {/* Recent updates */}
       <div>
         <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ink)' }}>Recent Updates</h3>
-        <div className="rounded-xl" style={{ background: 'var(--surface-raised)', border: '1px solid var(--rule-light)' }}>
+        <div className="rounded-xl" style={{ background: 'transparent', border: '1px solid var(--rule-light)' }}>
           {[
             { title: 'Logo Mark v2 Updated', category: 'Brand Assets', date: 'Mar 14, 2026', color: 'var(--forest)' },
             { title: 'Corporate Stationery Suite Published', category: 'Stationery', date: 'Mar 13, 2026', color: 'var(--forest-mid)' },
