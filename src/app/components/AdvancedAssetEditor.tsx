@@ -56,15 +56,15 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
   const [colorVariant, setColorVariant] = useState<'default' | 'white' | 'monochrome-dark' | 'monochrome-white' | 'blue-only' | 'print-safe-black'>('default');
   
   // Custom colors
-  const [customPrimaryColor, setCustomPrimaryColor] = useState('#1A3A2A');
-  const [customAccentColor, setCustomAccentColor] = useState('#b0894f');
+  const [customPrimaryColor, setCustomPrimaryColor] = useState('var(--forest)');
+  const [customAccentColor, setCustomAccentColor] = useState('var(--gold)');
   const [useCustomColors, setUseCustomColors] = useState(false);
   
   // Background settings
   const [bgType, setBgType] = useState<'solid' | 'gradient' | 'transparent'>('solid');
-  const [bgColor, setBgColor] = useState('#ffffff');
-  const [bgGradientStart, setBgGradientStart] = useState('#f0eee8');
-  const [bgGradientEnd, setBgGradientEnd] = useState('#ffffff');
+  const [bgColor, setBgColor] = useState('var(--paper)');
+  const [bgGradientStart, setBgGradientStart] = useState('var(--paper-warm)');
+  const [bgGradientEnd, setBgGradientEnd] = useState('var(--paper)');
   const [bgGradientAngle, setBgGradientAngle] = useState(135);
   
   // Dimensions
@@ -93,7 +93,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
     setColorVariant('default');
     setUseCustomColors(false);
     setBgType('solid');
-    setBgColor('#ffffff');
+    setBgColor('var(--paper)');
     setScale(100);
     setPaddingX(64);
     setPaddingY(64);
@@ -105,7 +105,7 @@ export function AdvancedAssetEditor({ open, onClose }: AdvancedAssetEditorProps)
     if (bgType === 'transparent') {
       return {
         background: 'repeating-conic-gradient(var(--rule-light) 0% 25%, transparent 0% 50%) 50% / 20px 20px',
-        backgroundColor: '#ffffff'
+        backgroundColor: 'var(--paper)'
       };
     }
     if (bgType === 'gradient') {
