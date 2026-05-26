@@ -6,7 +6,7 @@ type Container11Props = {
 
 function Container11({ children, additionalClassNames = "" }: React.PropsWithChildren<Container11Props>) {
   return (
-    <div className={clsx("bg-[#f9fafb] justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0", additionalClassNames)}>
+    <div className={clsx("bg-[var(--paper-warm)] justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0", additionalClassNames)}>
       <div className="content-stretch flex flex-col gap-[4px] items-start pt-[12px] px-[12px] relative size-full">{children}</div>
     </div>
   );
@@ -17,8 +17,8 @@ type Container10Props = {
 
 function Container10({ children, additionalClassNames = "" }: React.PropsWithChildren<Container10Props>) {
   return (
-    <div className={clsx("bg-white justify-self-stretch relative rounded-[14px] row-1 self-stretch shrink-0", additionalClassNames)}>
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[14px]" />
+    <div className={clsx("bg-[var(--paper)] justify-self-stretch relative rounded-[14px] row-1 self-stretch shrink-0", additionalClassNames)}>
+      <div aria-hidden="true" className="absolute border border-[var(--rule)] border-solid inset-0 pointer-events-none rounded-[14px]" />
       <div className="content-stretch flex flex-col gap-[16px] items-start pb-px pt-[25px] px-[25px] relative size-full">{children}</div>
     </div>
   );
@@ -40,8 +40,8 @@ type Container8Props = {
 
 function Container8({ children, additionalClassNames = "" }: React.PropsWithChildren<Container8Props>) {
   return (
-    <div className={clsx("bg-white justify-self-stretch relative rounded-[14px] self-stretch shrink-0", additionalClassNames)}>
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[14px]" />
+    <div className={clsx("bg-[var(--paper)] justify-self-stretch relative rounded-[14px] self-stretch shrink-0", additionalClassNames)}>
+      <div aria-hidden="true" className="absolute border border-[var(--rule)] border-solid inset-0 pointer-events-none rounded-[14px]" />
       <div className="content-stretch flex flex-col gap-[4px] items-start pb-px pt-[25px] px-[25px] relative size-full">{children}</div>
     </div>
   );
@@ -74,8 +74,8 @@ type Button3Props = {
 
 function Button3({ children, additionalClassNames = "" }: React.PropsWithChildren<Button3Props>) {
   return (
-    <div className={clsx("bg-white h-[26px] relative rounded-[8px]", additionalClassNames)}>
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[8px]" />
+    <div className={clsx("bg-[var(--paper)] h-[26px] relative rounded-[8px]", additionalClassNames)}>
+      <div aria-hidden="true" className="absolute border border-[var(--rule)] border-solid inset-0 pointer-events-none rounded-[8px]" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">{children}</div>
     </div>
   );
@@ -117,7 +117,7 @@ function ImageIntegrateWise({ children, additionalClassNames = "" }: React.Props
 function Wrapper4({ children }: React.PropsWithChildren<{}>) {
   return (
     <div className="h-[16px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-0 not-italic text-[#6a7282] text-[12px] top-px whitespace-nowrap">{children}</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-0 not-italic text-[var(--ink-muted)] text-[12px] top-px whitespace-nowrap">{children}</p>
     </div>
   );
 }
@@ -126,9 +126,9 @@ function Wrapper3({ children }: React.PropsWithChildren<{}>) {
   return (
     <div className="h-[20px] relative shrink-0 w-full">
       <Wrapper1 additionalClassNames="absolute left-0 top-[2px]">
-        <path d={svgPaths.p39be50} id="Vector" stroke="var(--stroke-0, #00BC7D)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+        <path d={svgPaths.p39be50} id="Vector" stroke="var(--stroke-0, var(--forest-bright))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
       </Wrapper1>
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-[24px] not-italic text-[#364153] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{children}</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-[24px] not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{children}</p>
     </div>
   );
 }
@@ -153,7 +153,7 @@ function Heading({ children, additionalClassNames = "" }: React.PropsWithChildre
   return (
     <div className={clsx("h-[20px] relative shrink-0", additionalClassNames)}>
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#101828] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{children}</p>
+        <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{children}</p>
       </div>
     </div>
   );
@@ -164,7 +164,7 @@ type Container5Props = {
 
 function Container5({ children, additionalClassNames = "" }: React.PropsWithChildren<Container5Props>) {
   return (
-    <div className={clsx("bg-[#f9fafb] justify-self-stretch relative rounded-[10px] self-stretch shrink-0", additionalClassNames)}>
+    <div className={clsx("bg-[var(--paper-warm)] justify-self-stretch relative rounded-[10px] self-stretch shrink-0", additionalClassNames)}>
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center pl-[12px] relative size-full">{children}</div>
       </div>
@@ -175,7 +175,7 @@ function Container5({ children, additionalClassNames = "" }: React.PropsWithChil
 function Container4({ children }: React.PropsWithChildren<{}>) {
   return (
     <div className="h-[69px] relative shrink-0 w-full">
-      <div aria-hidden="true" className="absolute border-[#f3f4f6] border-solid border-t inset-0 pointer-events-none" />
+      <div aria-hidden="true" className="absolute border-[var(--rule-light)] border-solid border-t inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between pt-px px-[20px] relative size-full">{children}</div>
       </div>
@@ -188,11 +188,11 @@ type Container3Props = {
 
 function Container3({ children, additionalClassNames = "" }: React.PropsWithChildren<Container3Props>) {
   return (
-    <div className={clsx("bg-white justify-self-stretch relative rounded-[14px] self-stretch shrink-0", additionalClassNames)}>
+    <div className={clsx("bg-[var(--paper)] justify-self-stretch relative rounded-[14px] self-stretch shrink-0", additionalClassNames)}>
       <div className="overflow-clip rounded-[inherit] size-full">
         <div className="content-stretch flex flex-col items-start p-px relative size-full">{children}</div>
       </div>
-      <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[14px]" />
+      <div aria-hidden="true" className="absolute border border-[var(--rule)] border-solid inset-0 pointer-events-none rounded-[14px]" />
     </div>
   );
 }
@@ -200,7 +200,7 @@ function Container3({ children, additionalClassNames = "" }: React.PropsWithChil
 function Container2({ children }: React.PropsWithChildren<{}>) {
   return (
     <div className="h-[61px] relative shrink-0 w-full">
-      <div aria-hidden="true" className="absolute border-[#f3f4f6] border-b border-solid inset-0 pointer-events-none" />
+      <div aria-hidden="true" className="absolute border-[var(--rule-light)] border-b border-solid inset-0 pointer-events-none" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex items-center justify-between pb-px px-[24px] relative size-full">{children}</div>
       </div>
@@ -210,7 +210,7 @@ function Container2({ children }: React.PropsWithChildren<{}>) {
 
 function Container1({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div className="bg-[#f9fafb] h-[38px] relative rounded-[10px] shrink-0 w-full">
+    <div className="bg-[var(--paper-warm)] h-[38px] relative rounded-[10px] shrink-0 w-full">
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[8px] items-center px-[12px] relative size-full">{children}</div>
       </div>
@@ -290,10 +290,10 @@ function ParagraphText10({ text }: ParagraphText10Props) {
   return (
     <div className="h-[16px] relative shrink-0 w-full">
       <Wrapper additionalClassNames="left-0 top-px">
-        <path d="M10.5 3.5L3.5 10.5" id="Vector" stroke="var(--stroke-0, #FF6467)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
-        <path d="M3.5 3.5L10.5 10.5" id="Vector_2" stroke="var(--stroke-0, #FF6467)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
+        <path d="M10.5 3.5L3.5 10.5" id="Vector" stroke="var(--stroke-0, var(--red))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
+        <path d="M3.5 3.5L10.5 10.5" id="Vector_2" stroke="var(--stroke-0, var(--red))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
       </Wrapper>
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-[20px] not-italic text-[#6a7282] text-[12px] top-px whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-[20px] not-italic text-[var(--ink-muted)] text-[12px] top-px whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -305,9 +305,9 @@ function ParagraphText9({ text }: ParagraphText9Props) {
   return (
     <div className="h-[20px] relative shrink-0 w-full">
       <Wrapper additionalClassNames="left-0 top-[3px]">
-        <path d={svgPaths.p3de7e600} id="Vector" stroke="var(--stroke-0, #00BC7D)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
+        <path d={svgPaths.p3de7e600} id="Vector" stroke="var(--stroke-0, var(--forest-bright))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
       </Wrapper>
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-[20px] not-italic text-[#1e2939] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-[20px] not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -319,10 +319,10 @@ function ListItemText1({ text }: ListItemText1Props) {
   return (
     <div className="h-[20px] relative shrink-0 w-full">
       <Wrapper1 additionalClassNames="absolute left-0 top-[2px]">
-        <path d="M12 4L4 12" id="Vector" stroke="var(--stroke-0, #FB2C36)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
-        <path d="M4 4L12 12" id="Vector_2" stroke="var(--stroke-0, #FB2C36)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+        <path d="M12 4L4 12" id="Vector" stroke="var(--stroke-0, var(--red))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+        <path d="M4 4L12 12" id="Vector_2" stroke="var(--stroke-0, var(--red))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
       </Wrapper1>
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-[24px] not-italic text-[#364153] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-[24px] not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -340,14 +340,14 @@ type ParagraphText8Props = {
 function ParagraphText8({ text }: ParagraphText8Props) {
   return (
     <div className="h-[16px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-0 not-italic text-[#4a5565] text-[12px] top-px whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-0 not-italic text-[var(--ink-muted)] text-[12px] top-px whitespace-nowrap">{text}</p>
     </div>
   );
 }
 
 function Container() {
   return (
-    <div className="bg-white h-[176px] relative shrink-0 w-full">
+    <div className="bg-[var(--paper)] h-[176px] relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center px-[93px] relative size-full">
           <div className="h-[76px] relative shrink-0 w-[160px]">
@@ -379,21 +379,21 @@ function Button2() {
           <div className="absolute inset-[62.5%_12.5%_12.5%_12.5%]" data-name="Vector">
             <div className="absolute inset-[-16.67%_-5.56%]">
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13.3333 5.33333">
-                <path d={svgPaths.p59b1b00} id="Vector" stroke="var(--stroke-0, #6A7282)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+                <path d={svgPaths.p59b1b00} id="Vector" stroke="var(--stroke-0, var(--ink-muted))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
               </svg>
             </div>
           </div>
           <div className="absolute inset-[41.67%_29.17%_37.5%_29.17%]" data-name="Vector">
             <div className="absolute inset-[-20%_-10%]">
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 8 4.66667">
-                <path d={svgPaths.p32713180} id="Vector" stroke="var(--stroke-0, #6A7282)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+                <path d={svgPaths.p32713180} id="Vector" stroke="var(--stroke-0, var(--ink-muted))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
               </svg>
             </div>
           </div>
           <div className="absolute bottom-[37.5%] left-1/2 right-1/2 top-[12.5%]" data-name="Vector">
             <div className="absolute inset-[-8.33%_-0.67px]">
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1.33333 9.33333">
-                <path d="M0.666667 8.66667V0.666667" id="Vector" stroke="var(--stroke-0, #6A7282)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+                <path d="M0.666667 8.66667V0.666667" id="Vector" stroke="var(--stroke-0, var(--ink-muted))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
               </svg>
             </div>
           </div>
@@ -409,7 +409,7 @@ type ParagraphText7Props = {
 function ParagraphText7({ text }: ParagraphText7Props) {
   return (
     <div className="h-[16px] relative shrink-0 w-full">
-      <p className="absolute font-['Menlo:Regular',sans-serif] leading-[16px] left-0 not-italic text-[#6a7282] text-[12px] top-0 whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Menlo:Regular',sans-serif] leading-[16px] left-0 not-italic text-[var(--ink-muted)] text-[12px] top-0 whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -420,21 +420,21 @@ type ParagraphText6Props = {
 function ParagraphText6({ text }: ParagraphText6Props) {
   return (
     <div className="h-[20px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-0 not-italic text-[#101828] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-0 not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
 
 function Button1() {
   return (
-    <div className="bg-[#f3f4f6] h-[28px] relative rounded-[8px] shrink-0 w-[68.68px]">
+    <div className="bg-[var(--paper-deep)] h-[28px] relative rounded-[8px] shrink-0 w-[68.68px]">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
         <Wrapper additionalClassNames="left-[12px] top-[7px]">
-          <path d={svgPaths.p34aacb00} id="Vector" stroke="var(--stroke-0, #364153)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
-          <path d={svgPaths.p27169580} id="Vector_2" stroke="var(--stroke-0, #364153)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
-          <path d="M7 8.75V1.75" id="Vector_3" stroke="var(--stroke-0, #364153)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
+          <path d={svgPaths.p34aacb00} id="Vector" stroke="var(--stroke-0, var(--ink))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
+          <path d={svgPaths.p27169580} id="Vector_2" stroke="var(--stroke-0, var(--ink))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
+          <path d="M7 8.75V1.75" id="Vector_3" stroke="var(--stroke-0, var(--ink))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
         </Wrapper>
-        <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-[44px] not-italic text-[#364153] text-[12px] text-center top-[7px] whitespace-nowrap">{` SVG`}</p>
+        <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-[44px] not-italic text-[var(--ink)] text-[12px] text-center top-[7px] whitespace-nowrap">{` SVG`}</p>
       </div>
     </div>
   );
@@ -450,8 +450,8 @@ function ParagraphText5({ text }: ParagraphText5Props) {
 function Icon() {
   return (
     <Wrapper1 additionalClassNames="absolute left-[12px] top-[14px]">
-      <path d={svgPaths.p30e43c00} id="Vector" stroke="var(--stroke-0, #99A1AF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
-      <path d={svgPaths.pa5f680} id="Vector_2" stroke="var(--stroke-0, #99A1AF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+      <path d={svgPaths.p30e43c00} id="Vector" stroke="var(--stroke-0, var(--ink-ghost))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
+      <path d={svgPaths.pa5f680} id="Vector_2" stroke="var(--stroke-0, var(--ink-ghost))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.33333" />
     </Wrapper1>
   );
 }
@@ -462,7 +462,7 @@ type ParagraphText4Props = {
 function ParagraphText4({ text }: ParagraphText4Props) {
   return (
     <div className="h-[20px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[#1e2939] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -473,7 +473,7 @@ type ParagraphText3Props = {
 function ParagraphText3({ text }: ParagraphText3Props) {
   return (
     <div className="h-[16.5px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[16.5px] left-0 not-italic text-[#6a7282] text-[11px] top-[0.5px] tracking-[0.0645px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[16.5px] left-0 not-italic text-[var(--ink-muted)] text-[11px] top-[0.5px] tracking-[0.0645px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -484,10 +484,10 @@ function Button() {
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pt-[4px] px-[4px] relative size-full">
         <div className="h-[14px] overflow-clip relative shrink-0 w-full">
           <Vector additionalClassNames="inset-[33.33%_8.33%_8.33%_33.33%]">
-            <path d={svgPaths.p1d5c00} id="Vector" stroke="var(--stroke-0, #99A1AF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
+            <path d={svgPaths.p1d5c00} id="Vector" stroke="var(--stroke-0, var(--ink-ghost))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
           </Vector>
           <Vector additionalClassNames="inset-[8.33%_33.33%_33.33%_8.33%]">
-            <path d={svgPaths.p2c300d00} id="Vector" stroke="var(--stroke-0, #99A1AF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
+            <path d={svgPaths.p2c300d00} id="Vector" stroke="var(--stroke-0, var(--ink-ghost))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16667" />
           </Vector>
         </div>
       </div>
@@ -503,7 +503,7 @@ function ParagraphText2({ text, additionalClassNames = "" }: ParagraphText2Props
   return (
     <div className={clsx("h-[20px] relative", additionalClassNames)}>
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[#364153] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+        <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
       </div>
     </div>
   );
@@ -515,7 +515,7 @@ type ParagraphText1Props = {
 function ParagraphText1({ text }: ParagraphText1Props) {
   return (
     <div className="h-[16.5px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16.5px] left-0 not-italic text-[#99a1af] text-[11px] top-[0.5px] tracking-[0.3395px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16.5px] left-0 not-italic text-[var(--ink-ghost)] text-[11px] top-[0.5px] tracking-[0.3395px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -528,7 +528,7 @@ function HeadingText({ text, additionalClassNames = "" }: HeadingTextProps) {
   return (
     <div className={clsx("h-[28px] relative", additionalClassNames)}>
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[28px] left-0 not-italic text-[#101828] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">{text}</p>
+        <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[28px] left-0 not-italic text-[var(--ink)] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">{text}</p>
       </div>
     </div>
   );
@@ -542,7 +542,7 @@ function RootLayoutText({ text, additionalClassNames = "" }: RootLayoutTextProps
   return (
     <div className={clsx("h-[20px] relative shrink-0", additionalClassNames)}>
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[#4a5565] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+        <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[var(--ink-muted)] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
       </div>
     </div>
   );
@@ -554,7 +554,7 @@ type ParagraphTextProps = {
 function ParagraphText({ text }: ParagraphTextProps) {
   return (
     <div className="h-[16.5px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16.5px] left-0 not-italic text-[#6a7282] text-[11px] top-[0.5px] tracking-[0.0645px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16.5px] left-0 not-italic text-[var(--ink-muted)] text-[11px] top-[0.5px] tracking-[0.0645px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
@@ -565,21 +565,21 @@ type TextProps = {
 function Text({ text }: TextProps) {
   return (
     <div className="h-[20px] relative shrink-0 w-full">
-      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#101828] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
+      <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">{text}</p>
     </div>
   );
 }
 
 export default function IntegrateWiseLogoDesign() {
   return (
-    <div className="bg-white relative size-full" data-name="IntegrateWise Logo Design">
-      <div className="absolute bg-white content-stretch flex flex-col h-[708px] items-start left-0 top-0 w-[1460px]" data-name="Body">
-        <div className="bg-[#f9fafb] content-stretch flex h-[708px] items-start overflow-clip relative shrink-0 w-full" data-name="RootLayout">
-          <div className="bg-white h-[708px] relative shrink-0 w-[288px]" data-name="Sidebar">
-            <div aria-hidden="true" className="absolute border-[#e5e7eb] border-r border-solid inset-0 pointer-events-none" />
+    <div className="bg-[var(--paper)] relative size-full" data-name="IntegrateWise Logo Design">
+      <div className="absolute bg-[var(--paper)] content-stretch flex flex-col h-[708px] items-start left-0 top-0 w-[1460px]" data-name="Body">
+        <div className="bg-[var(--paper-warm)] content-stretch flex h-[708px] items-start overflow-clip relative shrink-0 w-full" data-name="RootLayout">
+          <div className="bg-[var(--paper)] h-[708px] relative shrink-0 w-[288px]" data-name="Sidebar">
+            <div aria-hidden="true" className="absolute border-[var(--rule)] border-r border-solid inset-0 pointer-events-none" />
             <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pr-px relative size-full">
               <div className="h-[64px] relative shrink-0 w-[287px]" data-name="Container">
-                <div aria-hidden="true" className="absolute border-[#f3f4f6] border-b border-solid inset-0 pointer-events-none" />
+                <div aria-hidden="true" className="absolute border-[var(--rule-light)] border-b border-solid inset-0 pointer-events-none" />
                 <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[33.262px] items-center pb-px pl-[24px] relative size-full">
                   <IntegrateWiseLogo additionalClassNames="h-[36px] w-[75.75px]">
                     <ImageIntegrateWise additionalClassNames="h-[36px]">
@@ -687,12 +687,12 @@ export default function IntegrateWiseLogoDesign() {
                 </div>
               </div>
               <div className="h-[91.5px] relative shrink-0 w-[287px]" data-name="Container">
-                <div aria-hidden="true" className="absolute border-[#f3f4f6] border-solid border-t inset-0 pointer-events-none" />
+                <div aria-hidden="true" className="absolute border-[var(--rule-light)] border-solid border-t inset-0 pointer-events-none" />
                 <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pt-[17px] px-[16px] relative size-full">
                   <div className="bg-gradient-to-r from-[rgba(65,84,163,0.1)] h-[58.5px] relative rounded-[10px] shrink-0 to-[rgba(235,67,121,0.1)] w-full" data-name="Container">
                     <div className="content-stretch flex flex-col gap-[2px] items-start pt-[12px] px-[16px] relative size-full">
                       <div className="h-[16px] relative shrink-0 w-full" data-name="Paragraph">
-                        <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-0 not-italic text-[#101828] text-[12px] top-px whitespace-nowrap">Brand Store v1.0</p>
+                        <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-0 not-italic text-[var(--ink)] text-[12px] top-px whitespace-nowrap">Brand Store v1.0</p>
                       </div>
                       <ParagraphText text="Brand + Marketing + Sales" />
                     </div>
@@ -703,8 +703,8 @@ export default function IntegrateWiseLogoDesign() {
           </div>
           <div className="flex-[1_0_0] h-[708px] min-h-px min-w-px relative" data-name="Container">
             <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-              <div className="bg-white h-[64px] relative shrink-0 w-[1172px]" data-name="Header">
-                <div aria-hidden="true" className="absolute border-[#e5e7eb] border-b border-solid inset-0 pointer-events-none" />
+              <div className="bg-[var(--paper)] h-[64px] relative shrink-0 w-[1172px]" data-name="Header">
+                <div aria-hidden="true" className="absolute border-[var(--rule)] border-b border-solid inset-0 pointer-events-none" />
                 <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-px pl-[24px] relative size-full">
                   <HeadingText text="Brand Assets" additionalClassNames="shrink-0 w-[111.445px]" />
                 </div>
@@ -715,10 +715,10 @@ export default function IntegrateWiseLogoDesign() {
                     <div className="content-stretch flex flex-col gap-[40px] items-start pt-[40px] px-[40px] relative size-full">
                       <div className="content-stretch flex flex-col gap-[4px] h-[60px] items-start relative shrink-0 w-full" data-name="Container">
                         <div className="h-[32px] relative shrink-0 w-full" data-name="Heading 2">
-                          <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-0 not-italic text-[#101828] text-[24px] top-0 tracking-[0.0703px] whitespace-nowrap">Brand Assets</p>
+                          <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[32px] left-0 not-italic text-[var(--ink)] text-[24px] top-0 tracking-[0.0703px] whitespace-nowrap">Brand Assets</p>
                         </div>
                         <div className="h-[24px] relative shrink-0 w-full" data-name="Paragraph">
-                          <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[24px] left-0 not-italic text-[#4a5565] text-[16px] top-[-0.5px] tracking-[-0.3125px] whitespace-nowrap">Logo system, brand messaging, visual identity guidelines, and brand motifs</p>
+                          <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[24px] left-0 not-italic text-[var(--ink-muted)] text-[16px] top-[-0.5px] tracking-[-0.3125px] whitespace-nowrap">Logo system, brand messaging, visual identity guidelines, and brand motifs</p>
                         </div>
                       </div>
                       <div className="content-stretch flex flex-col gap-[24px] h-[914.5px] items-start relative shrink-0 w-full" data-name="Section">
@@ -726,22 +726,22 @@ export default function IntegrateWiseLogoDesign() {
                           <div className="bg-[#1a3a2a] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
                           <HeadingText text="Brand Messaging System" additionalClassNames="shrink-0 w-[213.164px]" />
                         </div>
-                        <div className="bg-white h-[862.5px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
-                          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[14px]" />
+                        <div className="bg-[var(--paper)] h-[862.5px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
+                          <div aria-hidden="true" className="absolute border border-[var(--rule)] border-solid inset-0 pointer-events-none rounded-[14px]" />
                           <div className="content-stretch flex flex-col gap-[24px] items-start pb-px pt-[33px] px-[33px] relative size-full">
                             <div className="gap-x-[32px] gap-y-[32px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[repeat(1,minmax(0,1fr))] h-[154.5px] relative shrink-0 w-full" data-name="Container">
                               <div className="col-1 justify-self-stretch relative row-1 self-stretch shrink-0" data-name="Container">
                                 <div className="absolute h-[16.5px] left-0 top-0 w-[497px]" data-name="Paragraph">
-                                  <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16.5px] left-0 not-italic text-[#99a1af] text-[11px] top-[0.5px] tracking-[0.3395px] whitespace-nowrap">PRIMARY PRODUCT DESCRIPTION</p>
+                                  <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16.5px] left-0 not-italic text-[var(--ink-ghost)] text-[11px] top-[0.5px] tracking-[0.3395px] whitespace-nowrap">PRIMARY PRODUCT DESCRIPTION</p>
                                 </div>
                                 <div className="absolute h-[28px] left-0 top-[24.5px] w-[497px]" data-name="Paragraph">
-                                  <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[28px] left-0 not-italic text-[#101828] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">IntegrateWise</p>
+                                  <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[28px] left-0 not-italic text-[var(--ink)] text-[18px] top-0 tracking-[-0.4395px] whitespace-nowrap">IntegrateWise</p>
                                 </div>
                                 <div className="absolute h-[40px] left-0 top-[56.5px] w-[497px]" data-name="Paragraph">
-                                  <p className="absolute font-['Inter:Italic',sans-serif] font-normal italic leading-[20px] left-0 text-[#364153] text-[14px] top-[0.5px] tracking-[-0.1504px] w-[460px]">A Knowledge Workspace empowered by AI and the Spine — the unified intelligence layer that connects tools, context, and decisions.</p>
+                                  <p className="absolute font-['Inter:Italic',sans-serif] font-normal italic leading-[20px] left-0 text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] w-[460px]">A Knowledge Workspace empowered by AI and the Spine — the unified intelligence layer that connects tools, context, and decisions.</p>
                                 </div>
                                 <div className="absolute h-[20px] left-0 top-[104.5px] w-[497px]" data-name="Paragraph">
-                                  <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-0 not-italic text-[#1e2939] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">AI thinks in context — and works through approvals.</p>
+                                  <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[20px] left-0 not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] whitespace-nowrap">AI thinks in context — and works through approvals.</p>
                                 </div>
                               </div>
                               <div className="col-2 content-stretch flex flex-col gap-[8px] items-start justify-self-stretch relative row-1 self-stretch shrink-0" data-name="Container">
@@ -763,72 +763,72 @@ export default function IntegrateWiseLogoDesign() {
                               </div>
                             </div>
                             <div className="content-stretch flex flex-col gap-[12px] h-[148px] items-start pt-[25px] relative shrink-0 w-full" data-name="Container">
-                              <div aria-hidden="true" className="absolute border-[#f3f4f6] border-solid border-t inset-0 pointer-events-none" />
+                              <div aria-hidden="true" className="absolute border-[var(--rule-light)] border-solid border-t inset-0 pointer-events-none" />
                               <ParagraphText1 text="TAGLINE SYSTEM" />
                               <div className="h-[94.5px] relative shrink-0 w-full" data-name="Container">
                                 <div className="absolute bg-[rgba(65,84,163,0.05)] content-stretch flex flex-col gap-[4px] h-[94.5px] items-start left-0 pb-px pt-[17px] px-[17px] rounded-[10px] top-0 w-[331.328px]" data-name="MessagingCard">
                                   <div aria-hidden="true" className="absolute border border-[rgba(65,84,163,0.2)] border-solid inset-0 pointer-events-none rounded-[10px]" />
                                   <ParagraphText3 text="Primary Tagline" />
                                   <div className="h-[40px] relative shrink-0 w-full" data-name="Paragraph">
-                                    <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[#101828] text-[14px] top-[0.5px] tracking-[-0.1504px] w-[244px]">AI Thinks in Context — and Waits for Approval</p>
+                                    <p className="absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[20px] left-0 not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] w-[244px]">AI Thinks in Context — and Waits for Approval</p>
                                   </div>
                                 </div>
-                                <div className="absolute bg-[#f9fafb] content-stretch flex flex-col gap-[4px] h-[94.5px] items-start left-[347.33px] pb-px pt-[17px] px-[17px] rounded-[10px] top-0 w-[331.336px]" data-name="MessagingCard">
-                                  <div aria-hidden="true" className="absolute border border-[#f3f4f6] border-solid inset-0 pointer-events-none rounded-[10px]" />
+                                <div className="absolute bg-[var(--paper-warm)] content-stretch flex flex-col gap-[4px] h-[94.5px] items-start left-[347.33px] pb-px pt-[17px] px-[17px] rounded-[10px] top-0 w-[331.336px]" data-name="MessagingCard">
+                                  <div aria-hidden="true" className="absolute border border-[var(--rule-light)] border-solid inset-0 pointer-events-none rounded-[10px]" />
                                   <ParagraphText3 text="Short Version" />
                                   <ParagraphText4 text="Context-Aware AI. Approval-Controlled Work." />
                                 </div>
-                                <div className="absolute bg-[#f9fafb] content-stretch flex flex-col gap-[4px] h-[94.5px] items-start left-[694.66px] pb-px pt-[17px] px-[17px] rounded-[10px] top-0 w-[331.336px]" data-name="MessagingCard">
-                                  <div aria-hidden="true" className="absolute border border-[#f3f4f6] border-solid inset-0 pointer-events-none rounded-[10px]" />
+                                <div className="absolute bg-[var(--paper-warm)] content-stretch flex flex-col gap-[4px] h-[94.5px] items-start left-[694.66px] pb-px pt-[17px] px-[17px] rounded-[10px] top-0 w-[331.336px]" data-name="MessagingCard">
+                                  <div aria-hidden="true" className="absolute border border-[var(--rule-light)] border-solid inset-0 pointer-events-none rounded-[10px]" />
                                   <ParagraphText3 text="Extended (Marketing)" />
                                   <div className="h-[40px] relative shrink-0 w-full" data-name="Paragraph">
-                                    <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[#1e2939] text-[14px] top-[0.5px] tracking-[-0.1504px] w-[293px]">AI Thinks in Context. Humans Stay in Control. Every Action Waits for Approval.</p>
+                                    <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] w-[293px]">AI Thinks in Context. Humans Stay in Control. Every Action Waits for Approval.</p>
                                   </div>
                                 </div>
                               </div>
                             </div>
                             <div className="content-stretch flex flex-col gap-[12px] h-[293px] items-start pt-[25px] relative shrink-0 w-full" data-name="Container">
-                              <div aria-hidden="true" className="absolute border-[#f3f4f6] border-solid border-t inset-0 pointer-events-none" />
+                              <div aria-hidden="true" className="absolute border-[var(--rule-light)] border-solid border-t inset-0 pointer-events-none" />
                               <ParagraphText1 text="APPROVED COPY FOR SPECIFIC ASSETS" />
                               <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(2,minmax(0,1fr))] grid-rows-[___82.50px_62.50px_minmax(0,1fr)] h-[239.5px] relative shrink-0 w-full" data-name="Container">
-                                <div className="bg-[#f9fafb] col-1 justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0" data-name="Container">
+                                <div className="bg-[var(--paper-warm)] col-1 justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0" data-name="Container">
                                   <Icon />
                                   <div className="absolute content-stretch flex flex-col gap-[2px] h-[58.5px] items-start left-[40px] top-[12px] w-[453px]" data-name="Container">
                                     <ParagraphText3 text="Letterhead" />
                                     <div className="h-[40px] relative shrink-0 w-full" data-name="Paragraph">
-                                      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[#1e2939] text-[14px] top-[0.5px] tracking-[-0.1504px] w-[445px]">IntegrateWise LLP · Knowledge Workspace Empowered by AI and the Spine</p>
+                                      <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[20px] left-0 not-italic text-[var(--ink)] text-[14px] top-[0.5px] tracking-[-0.1504px] w-[445px]">IntegrateWise LLP · Knowledge Workspace Empowered by AI and the Spine</p>
                                     </div>
                                   </div>
                                 </div>
-                                <div className="bg-[#f9fafb] col-2 justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0" data-name="Container">
+                                <div className="bg-[var(--paper-warm)] col-2 justify-self-stretch relative rounded-[10px] row-1 self-stretch shrink-0" data-name="Container">
                                   <Icon />
                                   <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[435.586px]" data-name="Container">
                                     <ParagraphText3 text="Invoice Footer" />
                                     <ParagraphText4 text="IntegrateWise — AI Thinks in Context and Works Through Approvals" />
                                   </div>
                                 </div>
-                                <div className="bg-[#f9fafb] col-1 justify-self-stretch relative rounded-[10px] row-2 self-stretch shrink-0" data-name="Container">
+                                <div className="bg-[var(--paper-warm)] col-1 justify-self-stretch relative rounded-[10px] row-2 self-stretch shrink-0" data-name="Container">
                                   <Icon />
                                   <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[355.688px]" data-name="Container">
                                     <ParagraphText3 text="Business Card" />
                                     <ParagraphText4 text="Knowledge Workspace Empowered by AI and the Spine" />
                                   </div>
                                 </div>
-                                <div className="bg-[#f9fafb] col-2 justify-self-stretch relative rounded-[10px] row-2 self-stretch shrink-0" data-name="Container">
+                                <div className="bg-[var(--paper-warm)] col-2 justify-self-stretch relative rounded-[10px] row-2 self-stretch shrink-0" data-name="Container">
                                   <Icon />
                                   <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[353.992px]" data-name="Container">
                                     <ParagraphText3 text="Profile Headline" />
                                     <ParagraphText4 text="The Knowledge Workspace Where AI Thinks in Context" />
                                   </div>
                                 </div>
-                                <div className="bg-[#f9fafb] col-1 justify-self-stretch relative rounded-[10px] row-3 self-stretch shrink-0" data-name="Container">
+                                <div className="bg-[var(--paper-warm)] col-1 justify-self-stretch relative rounded-[10px] row-3 self-stretch shrink-0" data-name="Container">
                                   <Icon />
                                   <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[433.336px]" data-name="Container">
                                     <ParagraphText3 text="Brochure Headline" />
                                     <ParagraphText4 text="Bring Work, Knowledge, and Decisions Together Through the Spine" />
                                   </div>
                                 </div>
-                                <div className="bg-[#f9fafb] col-2 justify-self-stretch relative rounded-[10px] row-3 self-stretch shrink-0" data-name="Container">
+                                <div className="bg-[var(--paper-warm)] col-2 justify-self-stretch relative rounded-[10px] row-3 self-stretch shrink-0" data-name="Container">
                                   <Icon />
                                   <div className="absolute content-stretch flex flex-col gap-[2px] h-[38.5px] items-start left-[40px] top-[12px] w-[351.086px]" data-name="Container">
                                     <ParagraphText3 text="Marketing Headline" />
@@ -838,13 +838,13 @@ export default function IntegrateWiseLogoDesign() {
                               </div>
                             </div>
                             <div className="content-stretch flex flex-col gap-[8px] h-[129px] items-start pt-[25px] relative shrink-0 w-full" data-name="Container">
-                              <div aria-hidden="true" className="absolute border-[#f3f4f6] border-solid border-t inset-0 pointer-events-none" />
+                              <div aria-hidden="true" className="absolute border-[var(--rule-light)] border-solid border-t inset-0 pointer-events-none" />
                               <ParagraphText1 text="PRODUCT ESSENCE (FOR MARKETING, DECKS, COMPANY DOCS)" />
                               <div className="bg-gradient-to-r from-[rgba(65,84,163,0.05)] h-[79.5px] relative rounded-[10px] shrink-0 to-[rgba(235,67,121,0.05)] w-full" data-name="Container">
                                 <div aria-hidden="true" className="absolute border border-[rgba(65,84,163,0.1)] border-solid inset-0 pointer-events-none rounded-[10px]" />
                                 <div className="content-stretch flex flex-col items-start pb-px pt-[17px] px-[17px] relative size-full">
                                   <div className="h-[45.5px] relative shrink-0 w-full" data-name="Paragraph">
-                                    <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[22.75px] left-0 not-italic text-[#1e2939] text-[14px] top-px tracking-[-0.1504px] w-[923px]">IntegrateWise is a knowledge workspace where the Spine becomes the single source of truth and AI operates on top of that context — thinking, proposing, and learning while every action remains under human approval.</p>
+                                    <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[22.75px] left-0 not-italic text-[var(--ink)] text-[14px] top-px tracking-[-0.1504px] w-[923px]">IntegrateWise is a knowledge workspace where the Spine becomes the single source of truth and AI operates on top of that context — thinking, proposing, and learning while every action remains under human approval.</p>
                                   </div>
                                 </div>
                               </div>
@@ -884,7 +884,7 @@ export default function IntegrateWiseLogoDesign() {
                             <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[8px] items-center relative size-full">
                               <div className="h-[16px] relative shrink-0 w-[49.313px]" data-name="Text">
                                 <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                                  <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-0 not-italic text-[#6a7282] text-[12px] top-px whitespace-nowrap">Preview:</p>
+                                  <p className="absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-0 not-italic text-[var(--ink-muted)] text-[12px] top-px whitespace-nowrap">Preview:</p>
                                 </div>
                               </div>
                               <div className="bg-[rgba(65,84,163,0.1)] h-[26px] relative rounded-[8px] shrink-0 w-[51.297px]" data-name="Button">
@@ -894,10 +894,10 @@ export default function IntegrateWiseLogoDesign() {
                                 </div>
                               </div>
                               <Button3 additionalClassNames="shrink-0 w-[49.094px]">
-                                <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-[25.5px] not-italic text-[#4a5565] text-[12px] text-center top-[6px] whitespace-nowrap">Dark</p>
+                                <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-[25.5px] not-italic text-[var(--ink-muted)] text-[12px] text-center top-[6px] whitespace-nowrap">Dark</p>
                               </Button3>
                               <Button3 additionalClassNames="flex-[1_0_0] min-h-px min-w-px">
-                                <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-[27.5px] not-italic text-[#4a5565] text-[12px] text-center top-[6px] whitespace-nowrap">Color</p>
+                                <p className="-translate-x-1/2 absolute font-['Inter:Medium',sans-serif] font-medium leading-[16px] left-[27.5px] not-italic text-[var(--ink-muted)] text-[12px] text-center top-[6px] whitespace-nowrap">Color</p>
                               </Button3>
                             </div>
                           </div>
@@ -911,7 +911,7 @@ export default function IntegrateWiseLogoDesign() {
                               </Container6>
                               <Button1 />
                             </Container2>
-                            <div className="bg-white h-[174px] relative shrink-0 w-full" data-name="Container">
+                            <div className="bg-[var(--paper)] h-[174px] relative shrink-0 w-full" data-name="Container">
                               <div className="flex flex-row items-center justify-center size-full">
                                 <div className="content-stretch flex items-center justify-center px-[237.188px] relative size-full">
                                   <IntegrateWiseLogo1 additionalClassNames="h-[78px] w-[615.625px]">
@@ -933,12 +933,12 @@ export default function IntegrateWiseLogoDesign() {
                                     <Container7 additionalClassNames="h-[78px]">
                                       <div className="flex-[1_0_0] min-h-px min-w-px relative w-[464.891px]" data-name="Heading 1">
                                         <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                                          <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[48px] left-0 not-italic text-[#101828] text-[48px] top-[0.5px] tracking-[-0.8484px] whitespace-nowrap">IntegrateWise</p>
+                                          <p className="absolute font-['Inter:Bold',sans-serif] font-bold leading-[48px] left-0 not-italic text-[var(--ink)] text-[48px] top-[0.5px] tracking-[-0.8484px] whitespace-nowrap">IntegrateWise</p>
                                         </div>
                                       </div>
                                       <div className="h-[28px] relative shrink-0 w-[464.891px]" data-name="Paragraph">
                                         <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                                          <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[28px] left-0 not-italic text-[#4a5565] text-[18px] top-0 tracking-[0.0105px] whitespace-nowrap">Knowledge Workspace Empowered by AI and the Spine</p>
+                                          <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[28px] left-0 not-italic text-[var(--ink-muted)] text-[18px] top-0 tracking-[0.0105px] whitespace-nowrap">Knowledge Workspace Empowered by AI and the Spine</p>
                                         </div>
                                       </div>
                                     </Container7>
@@ -955,7 +955,7 @@ export default function IntegrateWiseLogoDesign() {
                               </Container6>
                               <Button1 />
                             </Container2>
-                            <div className="bg-white h-[158px] relative shrink-0 w-full" data-name="Container">
+                            <div className="bg-[var(--paper)] h-[158px] relative shrink-0 w-full" data-name="Container">
                               <div className="flex flex-row items-center justify-center size-full">
                                 <div className="content-stretch flex items-center justify-center pl-[276.867px] pr-[276.875px] relative size-full">
                                   <IntegrateWiseLogo1 additionalClassNames="h-[62px] w-[536.258px]">
@@ -977,12 +977,12 @@ export default function IntegrateWiseLogoDesign() {
                                     <Container7 additionalClassNames="h-[62px]">
                                       <div className="flex-[1_0_0] min-h-px min-w-px relative w-[419.211px]" data-name="Heading 1">
                                         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-start relative size-full">
-                                          <p className="flex-[1_0_0] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[36px] min-h-px min-w-px not-italic relative text-[#101828] text-[30px] tracking-[-0.3545px]">IntegrateWise</p>
+                                          <p className="flex-[1_0_0] font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[36px] min-h-px min-w-px not-italic relative text-[var(--ink)] text-[30px] tracking-[-0.3545px]">IntegrateWise</p>
                                         </div>
                                       </div>
                                       <div className="h-[24px] relative shrink-0 w-[419.211px]" data-name="Paragraph">
                                         <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                                          <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[24px] left-0 not-italic text-[#4a5565] text-[16px] top-[-0.5px] tracking-[0.0875px] whitespace-nowrap">Knowledge Workspace Empowered by AI and the Spine</p>
+                                          <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[24px] left-0 not-italic text-[var(--ink-muted)] text-[16px] top-[-0.5px] tracking-[0.0875px] whitespace-nowrap">Knowledge Workspace Empowered by AI and the Spine</p>
                                         </div>
                                       </div>
                                     </Container7>
@@ -999,7 +999,7 @@ export default function IntegrateWiseLogoDesign() {
                               </Container6>
                               <Button1 />
                             </Container2>
-                            <div className="bg-white h-[144px] relative shrink-0 w-full" data-name="Container">
+                            <div className="bg-[var(--paper)] h-[144px] relative shrink-0 w-full" data-name="Container">
                               <div className="flex flex-row items-center justify-center size-full">
                                 <div className="content-stretch flex items-center justify-center px-[494.477px] relative size-full">
                                   <IntegrateWiseLogo additionalClassNames="h-[48px] w-[101.047px]">
@@ -1039,7 +1039,7 @@ export default function IntegrateWiseLogoDesign() {
                         </div>
                         <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(3,minmax(0,1fr))] grid-rows-[repeat(2,minmax(0,1fr))] h-[518px] relative shrink-0 w-full" data-name="Container">
                           <Container3 additionalClassNames="col-1 row-1">
-                            <div className="bg-white h-[176px] relative shrink-0 w-full" data-name="Container">
+                            <div className="bg-[var(--paper)] h-[176px] relative shrink-0 w-full" data-name="Container">
                               <div className="flex flex-row items-center justify-center size-full">
                                 <div className="content-stretch flex items-center justify-center px-[92.07px] relative size-full">
                                   <div className="h-[24px] shrink-0 w-[161.859px]" data-name="Image (Logo Frame Original)" />
@@ -1055,7 +1055,7 @@ export default function IntegrateWiseLogoDesign() {
                             </Container4>
                           </Container3>
                           <Container3 additionalClassNames="col-2 row-1">
-                            <div className="bg-white h-[176px] relative shrink-0 w-full" data-name="Container">
+                            <div className="bg-[var(--paper)] h-[176px] relative shrink-0 w-full" data-name="Container">
                               <div className="flex flex-row items-center justify-center size-full">
                                 <div className="content-stretch flex items-center justify-center pl-[111.117px] pr-[111.125px] relative size-full">
                                   <div className="h-[24px] shrink-0 w-[123.758px]" data-name="Image (Logo Frame v2)" />
@@ -1071,7 +1071,7 @@ export default function IntegrateWiseLogoDesign() {
                             </Container4>
                           </Container3>
                           <Container3 additionalClassNames="col-3 row-1">
-                            <div className="bg-white h-[176px] relative shrink-0 w-full" data-name="Container">
+                            <div className="bg-[var(--paper)] h-[176px] relative shrink-0 w-full" data-name="Container">
                               <div className="flex flex-row items-center justify-center size-full">
                                 <div className="content-stretch flex items-center justify-center pl-[110.93px] pr-[110.938px] relative size-full">
                                   <div className="h-[24px] shrink-0 w-[124.133px]" data-name="Image (Logo Frame v3)" />
@@ -1113,8 +1113,8 @@ export default function IntegrateWiseLogoDesign() {
                           <div className="bg-[#1a3a2a] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
                           <HeadingText text="Required Logo Variants" additionalClassNames="shrink-0 w-[194.664px]" />
                         </div>
-                        <div className="bg-white h-[138px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
-                          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[14px]" />
+                        <div className="bg-[var(--paper)] h-[138px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
+                          <div aria-hidden="true" className="absolute border border-[var(--rule)] border-solid inset-0 pointer-events-none rounded-[14px]" />
                           <div className="content-stretch flex flex-col items-start pb-px pt-[25px] px-[25px] relative size-full">
                             <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(4,minmax(0,1fr))] grid-rows-[repeat(2,minmax(0,1fr))] h-[88px] relative shrink-0 w-full" data-name="Container">
                               <Container5 additionalClassNames="col-1 row-1">
@@ -1158,7 +1158,7 @@ export default function IntegrateWiseLogoDesign() {
                           <Container8 additionalClassNames="col-1 row-1">
                             <Text text="Spine Node Line" />
                             <div className="h-[32px] relative shrink-0 w-full" data-name="Paragraph">
-                              <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-0 not-italic text-[#4a5565] text-[12px] top-px w-[472px]">Connected circles and lines inspired by the logo symbol. Used for backgrounds and decorative elements.</p>
+                              <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-0 not-italic text-[var(--ink-muted)] text-[12px] top-px w-[472px]">Connected circles and lines inspired by the logo symbol. Used for backgrounds and decorative elements.</p>
                             </div>
                           </Container8>
                           <Container8 additionalClassNames="col-2 row-1">
@@ -1225,8 +1225,8 @@ export default function IntegrateWiseLogoDesign() {
                           <div className="bg-[#1a3a2a] h-[4px] rounded-[16777200px] shrink-0 w-[48px]" data-name="Container" />
                           <HeadingText text="Overall Design Style" additionalClassNames="shrink-0 w-[168.828px]" />
                         </div>
-                        <div className="bg-white h-[162px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
-                          <div aria-hidden="true" className="absolute border border-[#e5e7eb] border-solid inset-0 pointer-events-none rounded-[14px]" />
+                        <div className="bg-[var(--paper)] h-[162px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
+                          <div aria-hidden="true" className="absolute border border-[var(--rule)] border-solid inset-0 pointer-events-none rounded-[14px]" />
                           <div className="content-stretch flex flex-col gap-[12px] items-start pb-px pt-[25px] px-[25px] relative size-full">
                             <Text text="Enterprise Minimal + Intelligent Systems Aesthetic" />
                             <div className="gap-x-[16px] gap-y-[16px] grid grid-cols-[repeat(4,minmax(0,1fr))] grid-rows-[repeat(1,minmax(0,1fr))] h-[80px] relative shrink-0 w-full" data-name="Container">
@@ -1240,12 +1240,12 @@ export default function IntegrateWiseLogoDesign() {
                                   <div className="absolute h-[14px] left-0 top-[9px] w-[13.039px]" data-name="Icon">
                                     <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13.0391 14">
                                       <g id="Icon">
-                                        <path d={svgPaths.p3dde00} id="Vector" stroke="var(--stroke-0, #FF6467)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.08659" />
-                                        <path d={svgPaths.p3b552a00} id="Vector_2" stroke="var(--stroke-0, #FF6467)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.08659" />
+                                        <path d={svgPaths.p3dde00} id="Vector" stroke="var(--stroke-0, var(--red))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.08659" />
+                                        <path d={svgPaths.p3b552a00} id="Vector_2" stroke="var(--stroke-0, var(--red))" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.08659" />
                                       </g>
                                     </svg>
                                   </div>
-                                  <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-[19.04px] not-italic text-[#6a7282] text-[12px] top-px w-[161px]">Not old-fashioned corporate stationery</p>
+                                  <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[16px] left-[19.04px] not-italic text-[var(--ink-muted)] text-[12px] top-px w-[161px]">Not old-fashioned corporate stationery</p>
                                 </div>
                               </Container11>
                               <Container11 additionalClassNames="col-3">

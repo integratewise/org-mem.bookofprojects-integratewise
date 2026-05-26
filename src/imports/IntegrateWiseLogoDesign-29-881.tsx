@@ -277,7 +277,7 @@ function ParagraphBackgroundImageAndText({ text }: ParagraphBackgroundImageAndTe
 export default function IntegrateWiseLogoDesign() {
   return (
     <div className="bg-[#edf0f5] content-stretch flex items-start relative size-full" data-name="IntegrateWise Logo Design">
-      <div className="bg-white h-[895px] relative shrink-0 w-[288px]" data-name="Sidebar">
+      <div className="bg-[var(--paper)] h-[895px] relative shrink-0 w-[288px]" data-name="Sidebar">
         <div aria-hidden="true" className="absolute border-[#D8D0C0] border-r border-solid inset-0 pointer-events-none" />
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pr-px relative size-full">
           <div className="h-[64px] relative shrink-0 w-[287px]" data-name="Container">
@@ -410,7 +410,7 @@ export default function IntegrateWiseLogoDesign() {
         </div>
       </div>
       <ContainerBackgroundImage1 additionalClassNames="h-[895px]">
-        <div className="bg-white h-[64px] relative shrink-0 w-[1263px]" data-name="Header">
+        <div className="bg-[var(--paper)] h-[64px] relative shrink-0 w-[1263px]" data-name="Header">
           <div aria-hidden="true" className="absolute border-[#D8D0C0] border-b border-solid inset-0 pointer-events-none" />
           <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-px pl-[24px] relative size-full">
             <BackgroundImage2 additionalClassNames="h-[28px] w-[78.891px]">
@@ -504,7 +504,7 @@ export default function IntegrateWiseLogoDesign() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-white h-[251px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
+                <div className="bg-[var(--paper)] h-[251px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
                   <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
                   <div className="content-stretch flex flex-col gap-[16px] items-start pb-px pt-[33px] px-[33px] relative size-full">
                     <div className="content-stretch flex gap-[8px] h-[24px] items-center relative shrink-0 w-full" data-name="Container">
@@ -543,7 +543,7 @@ export default function IntegrateWiseLogoDesign() {
                 <div className="content-stretch flex flex-col gap-[16px] h-[512px] items-start relative shrink-0 w-full" data-name="Container">
                   <BackgroundImageAndText text="Browse Categories" />
                   <div className="h-[468px] relative shrink-0 w-full" data-name="Container">
-                    <div className="absolute bg-white border border-[#D8D0C0] border-solid h-[222px] left-0 rounded-[14px] top-0 w-[373.328px]" data-name="Button">
+                    <div className="absolute bg-[var(--paper)] border border-[#D8D0C0] border-solid h-[222px] left-0 rounded-[14px] top-0 w-[373.328px]" data-name="Button">
                       <div className="absolute content-stretch flex h-[48px] items-start justify-between left-[24px] top-[24px] w-[323.328px]" data-name="Container">
                         <ContainerBackgroundImage2 additionalClassNames="bg-[rgba(65,84,163,0.07)]">
                           <IconBackgroundImage1>
@@ -566,7 +566,7 @@ export default function IntegrateWiseLogoDesign() {
                         </TextBackgroundImage>
                       </div>
                     </div>
-                    <div className="absolute bg-white border border-[#D8D0C0] border-solid h-[222px] left-[397.33px] rounded-[14px] top-0 w-[373.328px]" data-name="Button">
+                    <div className="absolute bg-[var(--paper)] border border-[#D8D0C0] border-solid h-[222px] left-[397.33px] rounded-[14px] top-0 w-[373.328px]" data-name="Button">
                       <div className="absolute content-stretch flex h-[48px] items-start justify-between left-[24px] top-[24px] w-[323.328px]" data-name="Container">
                         <ContainerBackgroundImage2 additionalClassNames="bg-[rgba(107,125,196,0.07)]">
                           <IconBackgroundImage1>
@@ -588,7 +588,7 @@ export default function IntegrateWiseLogoDesign() {
                         </TextBackgroundImage>
                       </div>
                     </div>
-                    <div className="absolute bg-white border border-[#D8D0C0] border-solid h-[222px] left-[794.66px] rounded-[14px] top-0 w-[373.344px]" data-name="Button">
+                    <div className="absolute bg-[var(--paper)] border border-[#D8D0C0] border-solid h-[222px] left-[794.66px] rounded-[14px] top-0 w-[373.344px]" data-name="Button">
                       <div className="absolute content-stretch flex h-[48px] items-start justify-between left-[24px] top-[24px] w-[323.344px]" data-name="Container">
                         <ContainerBackgroundImage2 additionalClassNames="bg-[rgba(54,71,137,0.07)]">
                           <IconBackgroundImage1>
@@ -609,7 +609,7 @@ export default function IntegrateWiseLogoDesign() {
                         </TextBackgroundImage>
                       </div>
                     </div>
-                    <div className="absolute bg-white border border-[#D8D0C0] border-solid h-[222px] left-0 rounded-[14px] top-[246px] w-[373.328px]" data-name="Button">
+                    <div className="absolute bg-[var(--paper)] border border-[#D8D0C0] border-solid h-[222px] left-0 rounded-[14px] top-[246px] w-[373.328px]" data-name="Button">
                       <div className="absolute content-stretch flex h-[48px] items-start justify-between left-[24px] top-[24px] w-[323.328px]" data-name="Container">
                         <ContainerBackgroundImage2 additionalClassNames="bg-[rgba(235,67,121,0.07)]">
                           <IconBackgroundImage1>
@@ -629,7 +629,7 @@ export default function IntegrateWiseLogoDesign() {
                         </TextBackgroundImage>
                       </div>
                     </div>
-                    <div className="absolute bg-white border border-[#D8D0C0] border-solid h-[222px] left-[397.33px] rounded-[14px] top-[246px] w-[373.328px]" data-name="Button">
+                    <div className="absolute bg-[var(--paper)] border border-[#D8D0C0] border-solid h-[222px] left-[397.33px] rounded-[14px] top-[246px] w-[373.328px]" data-name="Button">
                       <div className="absolute content-stretch flex h-[48px] items-start justify-between left-[24px] top-[24px] w-[323.328px]" data-name="Container">
                         <ContainerBackgroundImage2 additionalClassNames="bg-[rgba(208,53,104,0.07)]">
                           <IconBackgroundImage1>
@@ -656,7 +656,7 @@ export default function IntegrateWiseLogoDesign() {
                 </div>
                 <div className="content-stretch flex flex-col gap-[16px] h-[215px] items-start relative shrink-0 w-full" data-name="Container">
                   <BackgroundImageAndText text="Official Contact System" />
-                  <div className="bg-white h-[171px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
+                  <div className="bg-[var(--paper)] h-[171px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
                     <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
                     <div className="content-stretch flex flex-col gap-[16px] items-start pb-px pt-[25px] px-[25px] relative size-full">
                       <div className="gap-x-[24px] gap-y-[24px] grid grid-cols-[repeat(4,minmax(0,1fr))] grid-rows-[repeat(1,minmax(0,1fr))] h-[56px] relative shrink-0 w-full" data-name="Container">
@@ -705,7 +705,7 @@ export default function IntegrateWiseLogoDesign() {
                 </div>
                 <div className="content-stretch flex flex-col gap-[16px] h-[390px] items-start relative shrink-0 w-full" data-name="Container">
                   <BackgroundImageAndText text="Recent Updates" />
-                  <div className="bg-white h-[346px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
+                  <div className="bg-[var(--paper)] h-[346px] relative rounded-[14px] shrink-0 w-full" data-name="Container">
                     <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
                     <div className="content-stretch flex flex-col items-start p-px relative size-full">
                       <ContainerBackgroundImage>

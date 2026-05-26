@@ -86,8 +86,8 @@ function generateSealSVG() {
   <text x="600" y="870" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="38" font-weight="600" letter-spacing="6" fill="var(--primary-color)">OFFICIAL SEAL</text>
   <circle cx="600" cy="600" r="180" fill="url(#sealGradient)" opacity="0.1" />
   <text x="600" y="560" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="70" font-weight="700" fill="var(--text-color)">IW</text>
-  <text x="600" y="635" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="26" font-weight="600" fill="#5A5550">${TAGLINES.split.top}</text>
-  <text x="600" y="675" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="26" font-weight="600" fill="#5A5550">${TAGLINES.split.bottom}</text>
+  <text x="600" y="635" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="26" font-weight="600" fill="var(--ink-muted)">${TAGLINES.split.top}</text>
+  <text x="600" y="675" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="26" font-weight="600" fill="var(--ink-muted)">${TAGLINES.split.bottom}</text>
 </svg>`.trim();
 }
 
@@ -755,15 +755,15 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           <div className="flex justify-between items-start pb-4 border-b-2" style={{ borderColor: brandColor }}>
             <div>
               <h1 className="text-3xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
-              <p className="text-sm text-[#5A5550] mt-1">{content.tagline}</p>
+              <p className="text-sm text-ink-muted mt-1">{content.tagline}</p>
             </div>
-            <div className="text-right text-xs text-[#5A5550]">
+            <div className="text-right text-xs text-ink-muted">
               {content.companyDetails?.split('\n').map((line) => (
                 <p key={line}>{line}</p>
               ))}
             </div>
           </div>
-          <div className="mt-12 text-[#333944]">
+          <div className="mt-12 text-foreground">
             <p className="text-sm mb-2">Date: {content.date}</p>
             <p className="text-sm mb-2">To:</p>
             <p className="text-sm mb-8 ml-4">{content.recipient}</p>
@@ -786,7 +786,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
           <div className="flex justify-between items-start pb-6 border-b-2" style={{ borderColor: brandColor }}>
             <div>
               <h1 className="text-2xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
-              <p className="text-xs text-[#5A5550]">{content.tagline}</p>
+              <p className="text-xs text-ink-muted">{content.tagline}</p>
             </div>
           </div>
           <div className="mt-8 space-y-3">
@@ -823,7 +823,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
         <div className="w-[600px] h-[600px] bg-[var(--paper)] rounded-full flex items-center justify-center border-4" style={{ borderColor: brandColor }}>
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4" style={{ color: brandColor }}>{content.companyName}</h2>
-            <p className="text-sm text-[#5A5550] mb-4">{content.tagline}</p>
+            <p className="text-sm text-ink-muted mb-4">{content.tagline}</p>
             <p className="text-lg font-semibold text-[var(--text-color)]">{content.stickerText}</p>
           </div>
         </div>
@@ -834,7 +834,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
         <div className="w-[800px] h-[1131px] p-12 bg-[var(--paper)]">
           <div className="border-b-2 pb-6" style={{ borderColor: brandColor }}>
             <h1 className="text-2xl font-bold" style={{ color: brandColor }}>MEMORANDUM</h1>
-            <p className="text-sm text-[#5A5550]">{content.companyName}</p>
+            <p className="text-sm text-ink-muted">{content.companyName}</p>
           </div>
           <div className="mt-8 space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -914,7 +914,7 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
                 <tr>
                   <td colSpan={2} className="pt-4">
                     <p className="text-sm font-semibold text-[var(--text-color)] mb-2">Message:</p>
-                    <p className="text-sm text-[#5A5550]">{content.message}</p>
+                    <p className="text-sm text-ink-muted">{content.message}</p>
                   </td>
                 </tr>
               </tbody>
@@ -1060,15 +1060,15 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
         <div className="w-[800px] h-[1131px] p-12 bg-[var(--paper)] relative">
           <div className="flex justify-between items-start pb-4 border-b-2" style={{ borderColor: brandColor }}>
             <h1 className="text-3xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
-            <p className="text-xs text-[#5A5550] mt-1">{content.tagline}</p>
+            <p className="text-xs text-ink-muted mt-1">{content.tagline}</p>
           </div>
-          <div className="mt-10 space-y-6 text-[#333944]">
+          <div className="mt-10 space-y-6 text-foreground">
             <h2 className="text-2xl font-semibold">{content.proposalTitle}</h2>
             <p className="text-sm">Prepared for: <strong>{content.preparedFor}</strong></p>
             <p className="text-sm">Date: {content.proposalDate} | Valid: {content.validUntil}</p>
-            <div><p className="text-xs font-bold uppercase text-[#5A5550] mb-1">Summary</p><p className="text-sm">{content.summary}</p></div>
-            <div><p className="text-xs font-bold uppercase text-[#5A5550] mb-1">Scope</p><p className="text-sm">{content.scope}</p></div>
-            <div><p className="text-xs font-bold uppercase text-[#5A5550] mb-1">Timeline</p><p className="text-sm">{content.timeline}</p></div>
+            <div><p className="text-xs font-bold uppercase text-ink-muted mb-1">Summary</p><p className="text-sm">{content.summary}</p></div>
+            <div><p className="text-xs font-bold uppercase text-ink-muted mb-1">Scope</p><p className="text-sm">{content.scope}</p></div>
+            <div><p className="text-xs font-bold uppercase text-ink-muted mb-1">Timeline</p><p className="text-sm">{content.timeline}</p></div>
           </div>
         </div>
       );

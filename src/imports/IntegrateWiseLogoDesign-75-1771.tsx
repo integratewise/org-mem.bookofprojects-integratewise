@@ -114,7 +114,7 @@ function BackgroundImage({ children, additionalClassNames = "" }: React.PropsWit
 
 function ButtonBackgroundImage1({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div className="bg-white h-[62.5px] relative rounded-[14px] shrink-0 w-full">
+    <div className="bg-[var(--paper)] h-[62.5px] relative rounded-[14px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
       <div className="flex flex-row items-center size-full">
         <div className="content-stretch flex gap-[12px] items-center px-[17px] py-px relative size-full">{children}</div>
@@ -390,7 +390,7 @@ function ParagraphBackgroundImageAndText({ text }: ParagraphBackgroundImageAndTe
 export default function IntegrateWiseLogoDesign() {
   return (
     <div className="bg-[#edf0f5] content-stretch flex items-start relative size-full" data-name="IntegrateWise Logo Design">
-      <div className="bg-white h-[895px] relative shrink-0 w-[288px]" data-name="Sidebar">
+      <div className="bg-[var(--paper)] h-[895px] relative shrink-0 w-[288px]" data-name="Sidebar">
         <div aria-hidden="true" className="absolute border-[#D8D0C0] border-r border-solid inset-0 pointer-events-none" />
         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start pr-px relative size-full">
           <div className="h-[64px] relative shrink-0 w-[287px]" data-name="Container">
@@ -529,7 +529,7 @@ export default function IntegrateWiseLogoDesign() {
         </div>
       </div>
       <ContainerBackgroundImage2 additionalClassNames="flex-[1263_0_0] h-[895px]">
-        <div className="bg-white h-[64px] relative shrink-0 w-[1263px]" data-name="Header">
+        <div className="bg-[var(--paper)] h-[64px] relative shrink-0 w-[1263px]" data-name="Header">
           <div aria-hidden="true" className="absolute border-[#D8D0C0] border-b border-solid inset-0 pointer-events-none" />
           <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-px pl-[24px] relative size-full">
             <BackgroundImage4 additionalClassNames="w-[146.922px]">
@@ -663,7 +663,7 @@ export default function IntegrateWiseLogoDesign() {
                       </ButtonBackgroundImage1>
                     </div>
                   </div>
-                  <div className="bg-white flex-[1_0_0] h-[594.5px] min-h-px min-w-px relative rounded-[14px]" data-name="Container">
+                  <div className="bg-[var(--paper)] flex-[1_0_0] h-[594.5px] min-h-px min-w-px relative rounded-[14px]" data-name="Container">
                     <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[14px]" />
                     <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[24px] items-start pb-px pt-[33px] px-[33px] relative size-full">
                       <div className="content-stretch flex gap-[12px] h-[61px] items-center pb-px relative shrink-0 w-full" data-name="Container">
@@ -715,7 +715,7 @@ export default function IntegrateWiseLogoDesign() {
                                   <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
                                     <TextInputBackgroundImage additionalClassNames="left-0">Nirmal Prince J</TextInputBackgroundImage>
                                     <TextInputBackgroundImage additionalClassNames="left-[206.22px]">{`Founder & CEO`}</TextInputBackgroundImage>
-                                    <div className="absolute bg-white content-stretch flex flex-col h-[27px] items-start left-[412.44px] pb-px pl-[-1114.438px] pr-[1312.656px] pt-[-373.5px] rounded-[4px] top-0 w-[198.219px]" data-name="Dropdown">
+                                    <div className="absolute bg-[var(--paper)] content-stretch flex flex-col h-[27px] items-start left-[412.44px] pb-px pl-[-1114.438px] pr-[1312.656px] pt-[-373.5px] rounded-[4px] top-0 w-[198.219px]" data-name="Dropdown">
                                       <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[4px]" />
                                       <div className="h-0 shrink-0 w-full" data-name="Option" />
                                       <div className="h-0 shrink-0 w-full" data-name="Option" />
@@ -743,7 +743,7 @@ export default function IntegrateWiseLogoDesign() {
                                   <ButtonBackgroundImage />
                                 </BackgroundImage2>
                               </div>
-                              <div className="absolute bg-white content-stretch flex flex-col h-[180.5px] items-start left-[17px] pb-px pl-[17px] pr-[412.25px] pt-[17px] rounded-[10px] top-[65px] w-[803px]" data-name="Container">
+                              <div className="absolute bg-[var(--paper)] content-stretch flex flex-col h-[180.5px] items-start left-[17px] pb-px pl-[17px] pr-[412.25px] pt-[17px] rounded-[10px] top-[65px] w-[803px]" data-name="Container">
                                 <div aria-hidden="true" className="absolute border border-[#D8D0C0] border-solid inset-0 pointer-events-none rounded-[10px]" />
                                 <div className="h-[146.5px] relative shrink-0 w-full" data-name="Table">
                                   <div className="absolute h-[146.5px] left-0 top-0 w-[373.75px]" data-name="Table Body">
@@ -783,7 +783,7 @@ export default function IntegrateWiseLogoDesign() {
                             <div aria-hidden="true" className="absolute border border-[#e8ecf2] border-solid inset-0 pointer-events-none rounded-[10px]" />
                           </div>
                           <ContainerBackgroundImage1>
-                            <BackgroundImage additionalClassNames="bg-white">
+                            <BackgroundImage additionalClassNames="bg-[var(--paper)]">
                               <ContainerBackgroundImageAndText text="TM" />
                               <ContainerBackgroundImage2 additionalClassNames="flex-[610.672_0_0] h-[36.5px]">
                                 <ParagraphBackgroundImageAndText3 text="Team Member" />
@@ -793,7 +793,7 @@ export default function IntegrateWiseLogoDesign() {
                             </BackgroundImage>
                           </ContainerBackgroundImage1>
                           <ContainerBackgroundImage1>
-                            <BackgroundImage additionalClassNames="bg-white">
+                            <BackgroundImage additionalClassNames="bg-[var(--paper)]">
                               <ContainerBackgroundImageAndText text="TM" />
                               <ContainerBackgroundImage2 additionalClassNames="flex-[610.672_0_0] h-[36.5px]">
                                 <ParagraphBackgroundImageAndText3 text="Team Member" />
