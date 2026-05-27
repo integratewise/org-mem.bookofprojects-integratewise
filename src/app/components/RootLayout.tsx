@@ -301,7 +301,7 @@ export function RootLayout() {
         }
       }
     }
-    return 'Continuity Documentation System';
+    return 'Org Memory — Book of Projects';
   })();
 
   // Check if a doc-pack nav item is "active" (matches current URL including query)
@@ -381,7 +381,7 @@ export function RootLayout() {
           <IntegrateWiseLogo variant="icon-only" className="scale-75 origin-left" />
           <div className="ml-2">
             <p className="text-sm font-semibold" style={{ color: 'var(--text-strong)' }}>IntegrateWise</p>
-            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Continuity Documentation System</p>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Org Memory — Book of Projects</p>
           </div>
           <button
             className="ml-auto lg:hidden p-1 rounded-md"
@@ -561,7 +561,7 @@ export function RootLayout() {
             }}
           >
             <p className="text-xs font-medium" style={{ color: 'var(--text-strong)' }}>
-              Continuity Documentation System v1.0
+              Org Memory — Book of Projects v1.0
             </p>
             <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
               6 Doctrine Packs &middot; 40 Documents
