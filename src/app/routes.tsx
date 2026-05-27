@@ -141,6 +141,11 @@ export const router = createBrowserRouter([
       { path: "contact",              Component: ContactPage },
       { path: "blog",                 Component: BlogPage },
       { path: "evolution",            Component: EvolutionPage },
+      { path: "governance",          Component: () => (
+        <div style={{ width: '100%', height: '100vh', border: 'none' }}>
+          <iframe src="/governance/index.html" style={{ width: '100%', height: '100%', border: 'none' }} />
+        </div>
+      )},
       { path: "sales",                Component: SalesPage },
       { path: "documentation",        Component: DocumentationPage },
       { path: "workbench",            Component: WorkbenchPage },

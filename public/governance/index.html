@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IntegrateWise — Document Governance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f4f0e8;--bg-deep:#ece7db;--surface:#ffffff;--surface-alt:#faf8f3;
+  --border:#d4cdb8;--border-light:#e6e0d0;
+  --text:#1a1a14;--text-muted:#6b6556;--text-faint:#9b9484;
+  --heading:#1a3a2a;--gold:#b8943f;--gold-light:#d4ab5a;--gold-bg:#f5ecd4;
+  --forest:#1a3a2a;--forest-light:#2d5a3d;--forest-deep:#0f2218;
+  --green:#2d7a4f;--green-bg:#dafbe1;--green-border:#4ac97e;
+  --blue:#0969da;--blue-bg:#ddf4ff;--blue-border:#54aeff;
+  --amber:#bf8700;--amber-bg:#fff8c5;--amber-border:#d4a72c;
+  --red:#cf222e;--red-bg:#ffebe9;--purple:#8250df;--purple-bg:#fbefff;
+  --radius:8px;--radius-lg:12px;--radius-xl:16px;
+  --font:'DM Sans',-apple-system,sans-serif;
+  --serif:'Lora',Georgia,serif;--mono:'DM Mono','SFMono-Regular',monospace;
+  --shadow-sm:0 1px 3px rgba(26,26,20,.06);
+  --shadow-md:0 4px 12px rgba(26,26,20,.08);
+  --shadow-lg:0 8px 30px rgba(26,26,20,.12);
+  --sidebar-w:270px;--panel-w:620px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;font-size:14px;min-height:100vh;overflow-x:hidden}
+
+.app{display:flex;min-height:100vh}
+
+/* ── Sidebar ── */
+.sidebar{width:var(--sidebar-w);background:linear-gradient(180deg,#0f2218 0%,#162e20 100%);color:#c8d6cc;position:fixed;top:0;left:0;bottom:0;overflow-y:auto;z-index:100;display:flex;flex-direction:column}
+.sidebar-brand{padding:24px 20px 16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.sidebar-brand h1{font-family:var(--serif);font-size:19px;font-weight:700;color:#e8e0d0;letter-spacing:-.3px}
+.sidebar-brand .sub{font-size:10px;color:#6a8a74;font-family:var(--mono);margin-top:3px;letter-spacing:.3px}
+.sidebar-section{padding:16px 12px 4px}
+.sidebar-section-title{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#4a6a54;padding:0 8px;margin-bottom:6px}
+.sidebar-item{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:5px;cursor:pointer;font-size:12.5px;font-weight:500;color:#8aaa94;transition:all .15s;user-select:none}
+.sidebar-item:hover{background:rgba(255,255,255,.06);color:#c0d4c4}
+.sidebar-item.active{background:rgba(184,148,63,.12);color:#d4ab5a}
+.sidebar-item .cb{margin-left:auto;font-size:9.5px;font-weight:700;font-family:var(--mono);background:rgba(255,255,255,.07);color:#5a7a64;padding:1px 6px;border-radius:8px;min-width:20px;text-align:center}
+.sidebar-item.active .cb{background:rgba(184,148,63,.18);color:#d4ab5a}
+.sidebar-item .ic{width:16px;text-align:center;font-size:11px;flex-shrink:0}
+.sidebar-footer{margin-top:auto;padding:16px 20px;border-top:1px solid rgba(255,255,255,.06);font-size:10px;color:#3a5a44;font-family:var(--mono)}
+
+/* ── Main ── */
+.main{margin-left:var(--sidebar-w);flex:1;min-height:100vh;transition:margin-right .3s ease}
+.main.panel-open{margin-right:var(--panel-w)}
+
+.topbar{position:sticky;top:0;z-index:50;background:rgba(244,240,232,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light);padding:14px 32px;display:flex;align-items:center;gap:16px}
+.topbar-title{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--heading)}
+.topbar-desc{font-size:11.5px;color:var(--text-muted)}
+.search-box{margin-left:auto;position:relative}
+.search-box input{font-family:var(--font);font-size:12.5px;padding:7px 12px 7px 32px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text);width:240px;outline:none;transition:border .2s}
+.search-box input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,148,63,.1)}
+.search-box::before{content:'⌕';position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text-faint);pointer-events:none}
+
+/* ── Stats ── */
+.dashboard{padding:20px 32px 8px}
+.stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.stat-card{background:var(--surface);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:14px 16px;display:flex;align-items:center;gap:12px;transition:box-shadow .2s}
+.stat-card:hover{box-shadow:var(--shadow-sm)}
+.stat-icon{width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-size:15px;flex-shrink:0}
+.stat-icon.green{background:var(--green-bg);color:var(--green)}.stat-icon.gold{background:var(--gold-bg);color:var(--gold)}
+.stat-icon.blue{background:var(--blue-bg);color:var(--blue)}.stat-icon.amber{background:var(--amber-bg);color:var(--amber)}
+.stat-icon.purple{background:var(--purple-bg);color:var(--purple)}
+.stat-number{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--heading);line-height:1}
+.stat-label{font-size:10.5px;color:var(--text-muted);margin-top:1px}
+
+/* ── Content ── */
+.content{padding:0 32px 60px}
+.section-header{display:flex;align-items:center;gap:10px;margin:24px 0 12px;padding-bottom:10px;border-bottom:1px solid var(--border-light)}
+.section-header h2{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--heading)}
+.section-header .sc{font-size:10px;font-weight:700;font-family:var(--mono);background:var(--bg-deep);color:var(--text-muted);padding:2px 8px;border-radius:8px}
+
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:10px}
+.doc-card{background:var(--surface);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:14px 16px;transition:all .2s;cursor:pointer;display:flex;flex-direction:column;gap:8px;position:relative}
+.doc-card:hover{box-shadow:var(--shadow-md);border-color:var(--border)}
+.doc-card.has-content::after{content:'';position:absolute;top:12px;right:12px;width:6px;height:6px;border-radius:50%;background:var(--green)}
+.doc-card-top{display:flex;align-items:flex-start;gap:8px}
+.doc-card-top h4{font-size:13px;font-weight:600;color:var(--heading);line-height:1.3;flex:1}
+.doc-card-desc{font-size:12px;color:var(--text-muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.doc-card-meta{display:flex;align-items:center;gap:10px;font-size:10px;color:var(--text-faint);font-family:var(--mono);margin-top:auto;padding-top:6px;border-top:1px solid var(--border-light)}
+.doc-card-tags{display:flex;gap:4px;flex-wrap:wrap}
+.tag{font-size:9px;font-weight:600;padding:1px 6px;border-radius:3px;background:var(--bg-deep);color:var(--text-muted)}
+.tag.arch{background:var(--purple-bg);color:var(--purple)}.tag.product{background:var(--green-bg);color:var(--green)}
+.tag.gtm{background:var(--gold-bg);color:#7a5c10}.tag.eng{background:var(--blue-bg);color:var(--blue)}
+.tag.strategy{background:var(--red-bg);color:#9a1a24}
+
+.status-badge{font-size:9px;font-weight:700;font-family:var(--mono);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;flex-shrink:0}
+.status-badge.locked{background:var(--green-bg);color:#1a5d34}
+.status-badge.drafted{background:var(--gold-bg);color:#7a5c10}
+.status-badge.pending{background:var(--amber-bg);color:#7a5500}
+.status-badge.inprogress{background:var(--blue-bg);color:#0a4a9a}
+.status-badge.na{background:#f0ece4;color:var(--text-faint)}
+
+.priority{font-weight:700}.priority.critical{color:var(--red)}.priority.high{color:var(--amber)}.priority.medium{color:var(--blue)}.priority.low{color:var(--text-faint)}
+
+/* ── Side Panel ── */
+.panel{position:fixed;top:0;right:0;width:var(--panel-w);height:100vh;background:var(--surface);border-left:1px solid var(--border);z-index:200;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s ease;box-shadow:-4px 0 20px rgba(0,0,0,.08)}
+.panel.open{transform:translateX(0)}
+.panel-header{padding:20px 24px 16px;border-bottom:1px solid var(--border-light);flex-shrink:0}
+.panel-header-top{display:flex;align-items:flex-start;gap:12px}
+.panel-header h3{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--heading);flex:1;line-height:1.3}
+.panel-close{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:var(--surface);cursor:pointer;display:grid;place-items:center;font-size:14px;color:var(--text-muted);transition:all .15s;flex-shrink:0}
+.panel-close:hover{background:var(--bg);color:var(--text)}
+.panel-meta{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.panel-meta-item{font-size:10.5px;font-family:var(--mono);color:var(--text-muted)}
+
+.panel-tabs{display:flex;border-bottom:1px solid var(--border-light);flex-shrink:0}
+.panel-tab{flex:1;padding:10px;text-align:center;font-size:12px;font-weight:600;color:var(--text-muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s}
+.panel-tab:hover{color:var(--text)}
+.panel-tab.active{color:var(--heading);border-bottom-color:var(--gold)}
+
+.panel-body{flex:1;overflow-y:auto;padding:0}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* ── Content View ── */
+.content-view{padding:24px}
+.content-view .doc-prose{font-size:13.5px;line-height:1.75;color:var(--text)}
+.content-view .doc-prose h1{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--heading);margin:0 0 6px;letter-spacing:-.4px}
+.content-view .doc-prose h2{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--heading);margin:28px 0 8px;letter-spacing:-.2px;border-bottom:1px solid var(--border-light);padding-bottom:6px}
+.content-view .doc-prose h3{font-size:15px;font-weight:700;color:var(--heading);margin:20px 0 6px}
+.content-view .doc-prose h4{font-size:13.5px;font-weight:700;color:var(--heading);margin:16px 0 4px}
+.content-view .doc-prose p{margin-bottom:12px}
+.content-view .doc-prose strong{color:var(--text);font-weight:600}
+.content-view .doc-prose em{font-style:italic}
+.content-view .doc-prose ul,.content-view .doc-prose ol{margin:0 0 12px 18px;font-size:13px}
+.content-view .doc-prose li{margin-bottom:4px;line-height:1.6}
+.content-view .doc-prose blockquote{border-left:3px solid var(--gold);background:var(--gold-bg);padding:12px 16px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0;font-style:italic;color:#5c4813}
+.content-view .doc-prose code{font-family:var(--mono);font-size:12px;background:#f0ece4;padding:1px 5px;border-radius:3px}
+.content-view .doc-prose pre{background:var(--forest-deep);color:#e6edf3;padding:16px;border-radius:var(--radius);overflow-x:auto;margin:16px 0;font-family:var(--mono);font-size:12px;line-height:1.7}
+.content-view .doc-prose pre code{background:none;padding:0;color:inherit}
+.content-view .doc-prose hr{border:none;border-top:1px solid var(--border-light);margin:24px 0}
+.content-view .doc-prose table{width:100%;border-collapse:collapse;margin:12px 0;font-size:12.5px}
+.content-view .doc-prose table th{padding:8px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text-muted);border-bottom:2px solid var(--border);background:#f0ece4}
+.content-view .doc-prose table td{padding:8px 12px;border-bottom:1px solid var(--border-light);color:var(--text)}
+
+/* ── Edit Area ── */
+.content-edit{padding:20px 24px;height:100%;display:flex;flex-direction:column}
+.content-edit textarea{flex:1;font-family:var(--mono);font-size:12.5px;line-height:1.7;padding:16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface-alt);color:var(--text);resize:none;outline:none}
+.content-edit textarea:focus{border-color:var(--gold)}
+.edit-bar{display:flex;gap:8px;margin-bottom:12px;align-items:center}
+.edit-bar .hint{font-size:11px;color:var(--text-faint);font-family:var(--mono);margin-left:auto}
+
+/* ── Settings Tab ── */
+.settings-content{padding:24px}
+.settings-content label{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:4px;margin-top:14px}
+.settings-content label:first-child{margin-top:0}
+.settings-content select,.settings-content input[type="text"],.settings-content textarea{width:100%;font-family:var(--font);font-size:12.5px;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface-alt);color:var(--text);outline:none}
+.settings-content textarea{resize:vertical;min-height:80px;font-size:12px;line-height:1.6}
+.settings-content select:focus,.settings-content input:focus,.settings-content textarea:focus{border-color:var(--gold)}
+.settings-save{margin-top:20px}
+
+/* ── Buttons ── */
+.btn{font-family:var(--font);font-size:12px;font-weight:600;padding:7px 16px;border-radius:var(--radius);cursor:pointer;transition:all .15s;border:1px solid transparent;display:inline-flex;align-items:center;gap:6px}
+.btn-primary{background:var(--forest);color:#e8e0d0;border-color:var(--forest)}.btn-primary:hover{background:var(--forest-light)}
+.btn-ghost{background:transparent;color:var(--text-muted);border-color:var(--border)}.btn-ghost:hover{background:var(--bg);color:var(--text)}
+.btn-gold{background:var(--gold);color:#fff;border-color:var(--gold)}.btn-gold:hover{background:var(--gold-light)}
+.btn-sm{font-size:11px;padding:5px 12px}
+
+.empty-state{text-align:center;padding:60px 20px;color:var(--text-faint)}
+.empty-state .ei{font-size:28px;margin-bottom:10px;opacity:.4}
+.empty-state p{font-size:12px}
+
+@media(max-width:1200px){.stats-row{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.sidebar{display:none}.main{margin-left:0}.topbar,.dashboard,.content{padding-left:16px;padding-right:16px}.doc-grid{grid-template-columns:1fr}.panel{width:100%}--panel-w:100%}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.doc-card{animation:fadeUp .25s ease forwards}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="sidebar" id="sidebar"></div>
+<div class="main" id="main">
+  <div class="topbar">
+    <div><div class="topbar-title" id="topbar-title">All Documents</div><div class="topbar-desc" id="topbar-desc">Complete document governance</div></div>
+    <div class="search-box"><input type="text" id="searchInput" placeholder="Search documents..."></div>
+  </div>
+  <div class="dashboard"><div class="stats-row" id="stats-row"></div></div>
+  <div class="content" id="content"></div>
+</div>
+<div class="panel" id="panel">
+  <div class="panel-header">
+    <div class="panel-header-top"><h3 id="panel-title">Document</h3><button class="panel-close" onclick="closePanel()">✕</button></div>
+    <div class="panel-meta" id="panel-meta"></div>
+  </div>
+  <div class="panel-tabs" id="panel-tabs">
+    <div class="panel-tab active" data-tab="content" onclick="switchTab('content')">Content</div>
+    <div class="panel-tab" data-tab="settings" onclick="switchTab('settings')">Settings</div>
+  </div>
+  <div class="panel-body">
+    <div class="tab-content active" id="tab-content"></div>
+    <div class="tab-content" id="tab-settings"></div>
+  </div>
+</div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// DOCUMENT REGISTRY
+// ═══════════════════════════════════════════════════════
+const R=[
+// PUBLIC — Product & Website
+{n:"Product Overview",c:"public",s:"public-product",d:"What IntegrateWise is, who it is for, what it does. Derived from Product Document v1.0.",st:"locked",p:"critical",t:["product"],l:"Product Doc v1.0"},
+{n:"Website Content",c:"public",s:"public-product",d:"Landing page copy, feature sections, hero messaging, CTAs. Sourced from One-Pager and Product Document.",st:"pending",p:"critical",t:["gtm","product"],l:"One-Pager, Product Doc v1.0"},
+{n:"Feature Documentation",c:"public",s:"public-product",d:"Detailed documentation for each feature — User Workbench, Twin, Memory Views, MCP, Watchers, AI Connectors.",st:"pending",p:"high",t:["product"],l:"Architecture Doc v3.0"},
+{n:"Pricing & Plans",c:"public",s:"public-product",d:"Pricing tiers, what is included at each level, usage-based components.",st:"pending",p:"high",t:["gtm"],l:""},
+// PUBLIC — Documentation
+{n:"API Documentation",c:"public",s:"public-docs",d:"MCP endpoints, authentication, request/response schemas, rate limits, error codes.",st:"pending",p:"high",t:["eng"],l:"Architecture Doc v3.0 §4"},
+{n:"SDK Guides",c:"public",s:"public-docs",d:"Client SDKs for connecting to IntegrateWise from external applications.",st:"pending",p:"low",t:["eng"],l:""},
+{n:"Integration Guides",c:"public",s:"public-docs",d:"How to connect specific tools — CRM, support desk, communication platforms, documentation systems.",st:"pending",p:"high",t:["product","eng"],l:"Architecture Doc v3.0 §4-6"},
+{n:"Quick Start Guides",c:"public",s:"public-docs",d:"Get from zero to first connected tool in under 10 minutes.",st:"pending",p:"high",t:["product"],l:""},
+{n:"Tutorials & Walkthroughs",c:"public",s:"public-docs",d:"Step-by-step guides for common use cases.",st:"pending",p:"medium",t:["product"],l:""},
+{n:"Architecture (High-Level)",c:"public",s:"public-docs",d:"Public-facing architecture overview. Non-sensitive version of Architecture Doc.",st:"pending",p:"high",t:["arch","product"],l:"Architecture Doc v3.0"},
+{n:"Release Notes",c:"public",s:"public-docs",d:"What changed in each release.",st:"pending",p:"medium",t:["eng"],l:""},
+{n:"Changelogs",c:"public",s:"public-docs",d:"Detailed technical changelog for developers.",st:"pending",p:"low",t:["eng"],l:""},
+// PUBLIC — GTM & Sales
+{n:"Sales Collateral",c:"public",s:"public-gtm",d:"One-pagers, battle cards, objection handling, demo scripts.",st:"pending",p:"high",t:["gtm"],l:"One-Pager"},
+{n:"Investor Deck (Sanitized)",c:"public",s:"public-gtm",d:"Public-safe investor presentation. No sensitive metrics.",st:"pending",p:"medium",t:["gtm","strategy"],l:""},
+{n:"Brand Assets",c:"public",s:"public-gtm",d:"Logo files, color palette, typography, usage guidelines.",st:"pending",p:"medium",t:["gtm"],l:""},
+{n:"Case Studies",c:"public",s:"public-gtm",d:"Customer stories including the $8M account proof point.",st:"pending",p:"high",t:["gtm","product"],l:""},
+{n:"GTM Materials",c:"public",s:"public-gtm",d:"Campaign briefs, content calendar, launch plans.",st:"pending",p:"medium",t:["gtm"],l:""},
+{n:"Public Roadmap",c:"public",s:"public-gtm",d:"Planned features and improvements.",st:"pending",p:"medium",t:["product","gtm"],l:""},
+{n:"Demo Videos",c:"public",s:"public-gtm",d:"Product walkthroughs, feature demos.",st:"pending",p:"high",t:["gtm","product"],l:""},
+// PUBLIC — Support & Community
+{n:"Security Overview",c:"public",s:"public-support",d:"How IntegrateWise handles security — data isolation, access control, encryption.",st:"pending",p:"high",t:["eng","arch"],l:"Architecture Doc v3.0 §12"},
+{n:"Compliance Statements",c:"public",s:"public-support",d:"GDPR, SOC2 readiness, data residency, privacy policy.",st:"pending",p:"medium",t:["eng"],l:""},
+{n:"FAQ",c:"public",s:"public-support",d:"Frequently asked questions.",st:"pending",p:"medium",t:["product","gtm"],l:""},
+{n:"Support Documentation",c:"public",s:"public-support",d:"Troubleshooting guides, known issues.",st:"pending",p:"medium",t:["product"],l:""},
+{n:"Knowledge Base",c:"public",s:"public-support",d:"Searchable repository of articles.",st:"pending",p:"medium",t:["product"],l:""},
+{n:"Community Guidelines",c:"public",s:"public-support",d:"How to participate in the community.",st:"pending",p:"low",t:["gtm"],l:""},
+{n:"Marketplace Listings",c:"public",s:"public-support",d:"Integration marketplace listings.",st:"pending",p:"low",t:["gtm"],l:""},
+{n:"Public Whitepapers",c:"public",s:"public-support",d:"Deep-dive papers on memory, governance, continuity.",st:"pending",p:"low",t:["strategy","arch"],l:""},
+{n:"Open Source Documentation",c:"public",s:"public-support",d:"Open-source components, contribution guidelines.",st:"pending",p:"low",t:["eng"],l:""},
+{n:"Partner Documentation",c:"public",s:"public-support",d:"How partners integrate and co-sell.",st:"pending",p:"low",t:["gtm"],l:""},
+// INTERNAL — Architecture & Engineering
+{n:"System Architecture",c:"internal",s:"internal-arch",d:"Complete technical architecture. Spine, pipelines, MCP, surfaces, governance, security.",st:"locked",p:"critical",t:["arch","eng"],l:""},
+{n:"Memory Architecture",c:"internal",s:"internal-arch",d:"Deep dive into the Spine — storage layers, access patterns, persistence guarantees.",st:"drafted",p:"critical",t:["arch","eng"],l:"Architecture Doc v3.0 §9"},
+{n:"Data Models",c:"internal",s:"internal-arch",d:"Entity schemas, relationship graphs, field definitions.",st:"inprogress",p:"high",t:["eng","arch"],l:""},
+{n:"Internal APIs",c:"internal",s:"internal-arch",d:"Service-to-service APIs. Spine read/write, memory promotion, governance gate.",st:"inprogress",p:"high",t:["eng"],l:""},
+{n:"Infrastructure Design",c:"internal",s:"internal-arch",d:"VPS layout, Docker networks, Cloudflare Workers, storage topology.",st:"drafted",p:"high",t:["eng"],l:""},
+{n:"Folder Watcher Logic",c:"internal",s:"internal-arch",d:"How watchers work — detection, fetch, normalization, error handling.",st:"drafted",p:"medium",t:["eng"],l:""},
+{n:"Automation Flows",c:"internal",s:"internal-arch",d:"Internal automation — triggers, schedules, promotion flows, writeback logic.",st:"inprogress",p:"medium",t:["eng"],l:""},
+// INTERNAL — Operations & DevOps
+{n:"Deployment Playbooks",c:"internal",s:"internal-ops",d:"How to deploy, update, rollback.",st:"drafted",p:"high",t:["eng"],l:""},
+{n:"DevOps Runbooks",c:"internal",s:"internal-ops",d:"Scaling, failover, monitoring, alerting.",st:"pending",p:"high",t:["eng"],l:""},
+{n:"Vendor Configurations",c:"internal",s:"internal-ops",d:"Provider configs — Hostinger, Cloudflare, Supabase, Infisical, OpenRouter.",st:"drafted",p:"medium",t:["eng"],l:""},
+{n:"Cost Optimization",c:"internal",s:"internal-ops",d:"Provider costs, optimization, budget tracking.",st:"pending",p:"medium",t:["strategy","eng"],l:""},
+{n:"Incident Management",c:"internal",s:"internal-ops",d:"Incident response, escalation paths, post-mortem templates.",st:"pending",p:"medium",t:["eng"],l:""},
+{n:"Debugging Playbooks",c:"internal",s:"internal-ops",d:"Common failure modes, diagnostic steps, resolution patterns.",st:"pending",p:"medium",t:["eng"],l:""},
+{n:"Operational Dashboards",c:"internal",s:"internal-ops",d:"Internal monitoring — system health, pipeline status, error rates.",st:"inprogress",p:"high",t:["eng"],l:""},
+// INTERNAL — AI & Cognition
+{n:"Cognitive Layer Design",c:"internal",s:"internal-ai",d:"How the Twin reasons — skill architecture, model orchestration, Hermes engine.",st:"drafted",p:"critical",t:["arch","eng"],l:""},
+{n:"Governance Layer",c:"internal",s:"internal-ai",d:"Approval gates, lineage tracking, policy enforcement, promotion rules.",st:"drafted",p:"critical",t:["arch","eng"],l:""},
+{n:"Agent Orchestration",c:"internal",s:"internal-ai",d:"Multi-model reasoning, skill invocation, handoff to user's agentic claw.",st:"drafted",p:"high",t:["arch","eng"],l:""},
+{n:"Prompt Engineering Standards",c:"internal",s:"internal-ai",d:"Prompt construction, system prompts, skill prompts, context management.",st:"inprogress",p:"high",t:["eng"],l:""},
+{n:"AI Safety Controls",c:"internal",s:"internal-ai",d:"Guardrails, output validation, drift detection, content safety.",st:"drafted",p:"high",t:["eng"],l:""},
+{n:"Drift Protection Logic",c:"internal",s:"internal-ai",d:"How the system prevents AI drift — memory anchoring, context reconstruction.",st:"drafted",p:"critical",t:["eng","arch"],l:""},
+{n:"Memory Promotion Rules",c:"internal",s:"internal-ai",d:"Rules governing promotion from conversational to personal or organisational.",st:"drafted",p:"high",t:["eng","arch"],l:""},
+{n:"AI Evaluation Benchmarks",c:"internal",s:"internal-ai",d:"Performance measurement — accuracy, relevance, governance compliance.",st:"pending",p:"medium",t:["eng"],l:""},
+{n:"Security Policies",c:"internal",s:"internal-ai",d:"Access control, data handling, secret rotation, incident response.",st:"drafted",p:"high",t:["eng"],l:""},
+{n:"Access Control Policies",c:"internal",s:"internal-ai",d:"Role-based access, memory boundary enforcement, API auth.",st:"drafted",p:"high",t:["eng"],l:""},
+{n:"Approval Workflows",c:"internal",s:"internal-ai",d:"What triggers approval, who approves, escalation paths.",st:"drafted",p:"medium",t:["eng"],l:""},
+// INTERNAL — Organizational
+{n:"Internal SOPs",c:"internal",s:"internal-org",d:"Standard operating procedures for daily work.",st:"pending",p:"medium",t:["strategy"],l:""},
+{n:"Research Notes",c:"internal",s:"internal-org",d:"Market research, competitive analysis, technology evaluation.",st:"pending",p:"medium",t:["strategy"],l:""},
+{n:"Experimental Features",c:"internal",s:"internal-org",d:"Features in experimentation — hypotheses, prototypes, results.",st:"pending",p:"medium",t:["eng","product"],l:""},
+{n:"Engineering RFCs",c:"internal",s:"internal-org",d:"Request for Comments on significant engineering decisions.",st:"pending",p:"medium",t:["eng"],l:""},
+{n:"Meeting Notes",c:"internal",s:"internal-org",d:"Key decisions from internal meetings.",st:"pending",p:"low",t:["strategy"],l:""},
+{n:"Employee Onboarding",c:"internal",s:"internal-org",d:"How new team members get up to speed.",st:"pending",p:"low",t:["strategy"],l:""},
+{n:"Org Structure",c:"internal",s:"internal-org",d:"Team structure, roles, responsibilities.",st:"pending",p:"low",t:["strategy"],l:""},
+{n:"QA Docs",c:"internal",s:"internal-org",d:"Testing strategy, test plans, quality gates.",st:"pending",p:"medium",t:["eng"],l:""},
+{n:"Workspace Design",c:"internal",s:"internal-org",d:"File structure, naming conventions, documentation hierarchy.",st:"drafted",p:"medium",t:["eng"],l:""},
+// STRATEGY — Vision & Direction
+{n:"Vision Document",c:"strategy",s:"strategy-vision",d:"Where IntegrateWise is going. Long-term vision for memory-native operating systems.",st:"drafted",p:"critical",t:["strategy"],l:""},
+{n:"Founder Thesis",c:"strategy",s:"strategy-vision",d:"The CSM/architect convergence. The $8M account. Why this matters.",st:"drafted",p:"critical",t:["strategy","gtm"],l:""},
+{n:"Product Philosophy",c:"strategy",s:"strategy-vision",d:"Core beliefs — memory-first, governance-by-default, model-independence.",st:"drafted",p:"high",t:["strategy","product"],l:""},
+{n:"Operating Principles",c:"strategy",s:"strategy-vision",d:"How IntegrateWise operates — doctrines, standards, quality bars.",st:"drafted",p:"high",t:["strategy"],l:""},
+{n:"Narrative & Messaging",c:"strategy",s:"strategy-vision",d:"The story IntegrateWise tells. Key messages, positioning language.",st:"drafted",p:"critical",t:["strategy","gtm"],l:""},
+// STRATEGY — Market & GTM
+{n:"Product Strategy",c:"strategy",s:"strategy-market",d:"What to build, in what order, for whom.",st:"drafted",p:"critical",t:["strategy","product"],l:""},
+{n:"GTM Strategy",c:"strategy",s:"strategy-market",d:"How IntegrateWise reaches the market.",st:"pending",p:"critical",t:["strategy","gtm"],l:""},
+{n:"Monetization Strategy",c:"strategy",s:"strategy-market",d:"Pricing model, revenue streams, unit economics.",st:"pending",p:"high",t:["strategy","gtm"],l:""},
+{n:"Customer Segmentation",c:"strategy",s:"strategy-market",d:"ICP definition, persona mapping, segment prioritization.",st:"drafted",p:"high",t:["strategy","gtm"],l:""},
+{n:"Competitive Analysis",c:"strategy",s:"strategy-market",d:"Who else is in the space. Where IntegrateWise differs.",st:"pending",p:"high",t:["strategy","gtm"],l:""},
+{n:"Differentiation Matrix",c:"strategy",s:"strategy-market",d:"Feature-by-feature comparison with alternatives.",st:"pending",p:"high",t:["strategy","gtm"],l:""},
+{n:"Market Positioning",c:"strategy",s:"strategy-market",d:"Category definition, positioning statement.",st:"drafted",p:"high",t:["strategy","gtm"],l:""},
+{n:"Adoption Strategy",c:"strategy",s:"strategy-market",d:"Onboarding flow, time-to-value, expansion triggers.",st:"pending",p:"high",t:["strategy","product"],l:""},
+{n:"Retention Strategy",c:"strategy",s:"strategy-market",d:"Why users stay. Stickiness, switching costs, memory lock-in.",st:"pending",p:"medium",t:["strategy"],l:""},
+{n:"Enterprise Strategy",c:"strategy",s:"strategy-market",d:"Moving upmarket. Enterprise requirements, certifications, procurement.",st:"pending",p:"medium",t:["strategy","gtm"],l:""},
+{n:"Expansion Strategy",c:"strategy",s:"strategy-market",d:"Growing beyond initial ICP. New segments, verticals, use cases.",st:"pending",p:"medium",t:["strategy"],l:""},
+// STRATEGY — Platform & Technical
+{n:"AI Strategy",c:"strategy",s:"strategy-platform",d:"Model independence, provider abstraction, reasoning architecture.",st:"drafted",p:"critical",t:["strategy","arch"],l:""},
+{n:"Platform Strategy",c:"strategy",s:"strategy-platform",d:"Product to platform evolution. Extension points, ecosystem.",st:"drafted",p:"high",t:["strategy","arch"],l:""},
+{n:"Ecosystem Strategy",c:"strategy",s:"strategy-platform",d:"Connector ecosystem growth. Partners, community, marketplace.",st:"pending",p:"medium",t:["strategy","gtm"],l:""},
+{n:"Platform Governance Strategy",c:"strategy",s:"strategy-platform",d:"Multi-tenant, role-based, organizational policies, compliance.",st:"drafted",p:"high",t:["strategy","arch"],l:""},
+{n:"Multi-Agent Strategy",c:"strategy",s:"strategy-platform",d:"Supporting multi-agent ecosystems. Orchestration model.",st:"drafted",p:"high",t:["strategy","arch"],l:""},
+{n:"Memory Strategy",c:"strategy",s:"strategy-platform",d:"How memory evolves — new types, sharing, cross-org, memory markets.",st:"drafted",p:"high",t:["strategy","arch"],l:""},
+{n:"Continuity Strategy",c:"strategy",s:"strategy-platform",d:"How continuity extends — new providers, connections, surfaces.",st:"drafted",p:"medium",t:["strategy","arch"],l:""},
+{n:"Provider Abstraction",c:"strategy",s:"strategy-platform",d:"Abstraction across AI providers — routing, fallback, cost.",st:"drafted",p:"medium",t:["strategy","arch"],l:""},
+{n:"Security & Trust Strategy",c:"strategy",s:"strategy-platform",d:"Certifications, compliance frameworks, trust signals.",st:"drafted",p:"high",t:["strategy","eng"],l:""},
+{n:"Roadmaps",c:"strategy",s:"strategy-platform",d:"Product, engineering, platform roadmaps. What ships when.",st:"pending",p:"critical",t:["strategy","product"],l:""},
+{n:"Partnership Strategy",c:"strategy",s:"strategy-platform",d:"Which partners, partner program, co-sell and co-build.",st:"pending",p:"medium",t:["strategy","gtm"],l:""},
+{n:"Acquisition Targets",c:"strategy",s:"strategy-platform",d:"Potential acquisitions — connectors, memory startups, complementary tools.",st:"pending",p:"low",t:["strategy"],l:""},
+{n:"Investment Planning",c:"strategy",s:"strategy-platform",d:"Fundraising strategy, use of funds, milestones.",st:"pending",p:"high",t:["strategy"],l:""},
+{n:"Risk Analysis",c:"strategy",s:"strategy-platform",d:"Strategic risks — market, technical, competitive, execution.",st:"pending",p:"medium",t:["strategy"],l:""},
+{n:"Long-Term Architecture Vision",c:"strategy",s:"strategy-platform",d:"3-5 year architecture direction. Distributed memory, federated Spine, edge.",st:"drafted",p:"medium",t:["strategy","arch"],l:""},
+{n:"Strategic Research",c:"strategy",s:"strategy-platform",d:"Ongoing research — market sizing, trends, user patterns.",st:"pending",p:"medium",t:["strategy"],l:""},
+{n:"Opportunity Mapping",c:"strategy",s:"strategy-platform",d:"Adjacent opportunities enabled by the memory layer.",st:"pending",p:"medium",t:["strategy"],l:""}
+];
+
+// ═══════════════════════════════════════════════════════
+// SIDEBAR STRUCTURE
+// ═══════════════════════════════════════════════════════
+const SIDEBAR=[
+{type:'brand'},
+{type:'section',title:'Overview',items:[
+  {id:'all',icon:'◉',label:'All Documents'}
+]},
+{type:'section',title:'Public Docs',items:[
+  {id:'public',icon:'◻',label:'All Public'},
+  {id:'public-product',icon:'→',label:'Product & Website'},
+  {id:'public-docs',icon:'→',label:'Documentation'},
+  {id:'public-gtm',icon:'→',label:'GTM & Sales'},
+  {id:'public-support',icon:'→',label:'Support & Community'}
+]},
+{type:'section',title:'Internal Docs',items:[
+  {id:'internal',icon:'◻',label:'All Internal'},
+  {id:'internal-arch',icon:'→',label:'Architecture & Eng'},
+  {id:'internal-ops',icon:'→',label:'Operations & DevOps'},
+  {id:'internal-ai',icon:'→',label:'AI & Cognition'},
+  {id:'internal-org',icon:'→',label:'Organizational'}
+]},
+{type:'section',title:'Strategy',items:[
+  {id:'strategy',icon:'◻',label:'All Strategy'},
+  {id:'strategy-vision',icon:'→',label:'Vision & Direction'},
+  {id:'strategy-market',icon:'→',label:'Market & GTM'},
+  {id:'strategy-platform',icon:'→',label:'Platform & Technical'}
+]},
+{type:'section',title:'By Status',items:[
+  {id:'status-locked',icon:'●',label:'Locked',iconColor:'#2d7a4f'},
+  {id:'status-drafted',icon:'●',label:'Drafted',iconColor:'#b8943f'},
+  {id:'status-inprogress',icon:'●',label:'In Progress',iconColor:'#0969da'},
+  {id:'status-pending',icon:'●',label:'Pending',iconColor:'#bf8700'}
+]}
+];
+
+const VIEW_META={
+'all':{t:'All Documents',d:'Complete document governance across public, internal, and strategy'},
+'public':{t:'Public Docs',d:'Customer-facing, ecosystem-facing, community-visible'},
+'public-product':{t:'Product & Website',d:'Overview, website, features, pricing'},
+'public-docs':{t:'Documentation',d:'API docs, guides, tutorials, release notes'},
+'public-gtm':{t:'GTM & Sales',d:'Collateral, case studies, brand, demos'},
+'public-support':{t:'Support & Community',d:'Security, compliance, FAQ, knowledge base'},
+'internal':{t:'Internal Docs',d:'Operational, engineering, organizational knowledge'},
+'internal-arch':{t:'Architecture & Engineering',d:'System architecture, memory, data models, infra'},
+'internal-ops':{t:'Operations & DevOps',d:'Deployment, runbooks, monitoring, incidents'},
+'internal-ai':{t:'AI & Cognition',d:'Cognitive layer, governance, drift protection'},
+'internal-org':{t:'Organizational',d:'SOPs, onboarding, org structure, QA'},
+'strategy':{t:'Strategy Docs',d:'Decision-making, direction-setting, competitive thinking'},
+'strategy-vision':{t:'Vision & Direction',d:'Vision, thesis, philosophy, messaging'},
+'strategy-market':{t:'Market & GTM',d:'Product strategy, GTM, monetization, positioning'},
+'strategy-platform':{t:'Platform & Technical',d:'AI, platform, ecosystem, memory strategies'},
+'status-locked':{t:'Locked Documents',d:'Finalized and approved'},
+'status-drafted':{t:'Drafted',d:'Written but not finalized'},
+'status-inprogress':{t:'In Progress',d:'Actively being worked on'},
+'status-pending':{t:'Pending',d:'Not yet created'}
+};
+
+// ═══════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════
+let currentView='all';
+let searchQuery='';
+let currentDocIdx=null;
+let editing=false;
+
+function getState(){
+  try{return JSON.parse(localStorage.getItem('iw-state')||'{}')}catch{return{}}
+}
+function setState(k,v){
+  const s=getState();s[k]=v;
+  try{localStorage.setItem('iw-state',JSON.stringify(s))}catch(e){console.warn('Storage full',e)}
+}
+function getDoc(idx){
+  const s=getState();
+  const base=R[idx];
+  const saved=s['doc_'+idx];
+  return saved?{...base,...saved,idx}:{...base,idx};
+}
+function saveDoc(idx,data){
+  setState('doc_'+idx,data);
+}
+function getContent(idx){
+  const s=getState();
+  return s['content_'+idx]||null;
+}
+function saveContent(idx,content){
+  setState('content_'+idx,content);
+}
+
+// ═══════════════════════════════════════════════════════
+// SIDEBAR RENDER
+// ═══════════════════════════════════════════════════════
+function renderSidebar(){
+  const el=document.getElementById('sidebar');
+  let h='';
+  SIDEBAR.forEach(sec=>{
+    if(sec.type==='brand'){
+      h+=`<div class="sidebar-brand"><h1>IntegrateWise</h1><div class="sub">Document Governance</div></div>`;
+      return;
+    }
+    h+=`<div class="sidebar-section"><div class="sidebar-section-title">${sec.title}</div>`;
+    sec.items.forEach(item=>{
+      const active=currentView===item.id?' active':'';
+      const count=getCountForView(item.id);
+      const icStyle=item.iconColor?` style="color:${item.iconColor}"`:'';
+      h+=`<div class="sidebar-item${active}" data-view="${item.id}"><span class="ic"${icStyle}>${item.icon}</span>${item.label}<span class="cb">${count}</span></div>`;
+    });
+    h+=`</div>`;
+  });
+  h+=`<div class="sidebar-footer">v3.0 · live</div>`;
+  el.innerHTML=h;
+  el.querySelectorAll('.sidebar-item').forEach(item=>{
+    item.addEventListener('click',()=>{
+      currentView=item.dataset.view;
+      editing=false;
+      closePanel();
+      render();
+    });
+  });
+}
+
+function getCountForView(view){
+  const docs=getFilteredDocs(view,'');
+  return docs.length;
+}
+
+// ═══════════════════════════════════════════════════════
+// STATS
+// ═══════════════════════════════════════════════════════
+function renderStats(){
+  const all=R.map((_,i)=>getDoc(i));
+  const locked=all.filter(d=>d.st==='locked').length;
+  const drafted=all.filter(d=>d.st==='drafted').length;
+  const inprog=all.filter(d=>d.st==='inprogress').length;
+  const pending=all.filter(d=>d.st==='pending').length;
+  const total=all.length;
+  document.getElementById('stats-row').innerHTML=`
+    <div class="stat-card"><div class="stat-icon green">✓</div><div><div class="stat-number">${locked}</div><div class="stat-label">Locked</div></div></div>
+    <div class="stat-card"><div class="stat-icon gold">◆</div><div><div class="stat-number">${drafted}</div><div class="stat-label">Drafted</div></div></div>
+    <div class="stat-card"><div class="stat-icon blue">▶</div><div><div class="stat-number">${inprog}</div><div class="stat-label">In Progress</div></div></div>
+    <div class="stat-card"><div class="stat-icon amber">○</div><div><div class="stat-number">${pending}</div><div class="stat-label">Pending</div></div></div>
+    <div class="stat-card"><div class="stat-icon purple">Σ</div><div><div class="stat-number">${total}</div><div class="stat-label">Total</div></div></div>
+  `;
+}
+
+// ═══════════════════════════════════════════════════════
+// FILTER + RENDER GRID
+// ═══════════════════════════════════════════════════════
+function getFilteredDocs(view,query){
+  let docs=R.map((_,i)=>getDoc(i));
+  if(view!=='all'){
+    if(view.startsWith('status-')){
+      const st=view.replace('status-','');
+      docs=docs.filter(d=>d.st===st);
+    }else{
+      docs=docs.filter(d=>d.c===view||d.s===view);
+    }
+  }
+  if(query){
+    const q=query.toLowerCase();
+    docs=docs.filter(d=>d.n.toLowerCase().includes(q)||d.d.toLowerCase().includes(q)||(d.l&&d.l.toLowerCase().includes(q)));
+  }
+  return docs;
+}
+
+const SUB_NAMES={'public-product':'Product & Website','public-docs':'Documentation','public-gtm':'GTM & Sales','public-support':'Support & Community','internal-arch':'Architecture & Engineering','internal-ops':'Operations & DevOps','internal-ai':'AI & Cognition','internal-org':'Organizational','strategy-vision':'Vision & Direction','strategy-market':'Market & GTM Strategy','strategy-platform':'Platform & Technical Strategy'};
+const SUB_ORDER=['public-product','public-docs','public-gtm','public-support','internal-arch','internal-ops','internal-ai','internal-org','strategy-vision','strategy-market','strategy-platform'];
+
+function renderContent(){
+  const docs=getFilteredDocs(currentView,searchQuery);
+  const meta=VIEW_META[currentView]||VIEW_META['all'];
+  document.getElementById('topbar-title').textContent=meta.t;
+  document.getElementById('topbar-desc').textContent=meta.d;
+
+  if(docs.length===0){
+    document.getElementById('content').innerHTML=`<div class="empty-state"><div class="ei">◇</div><p>No documents match.</p></div>`;
+    return;
+  }
+
+  const shouldGroup=['all','public','internal','strategy'].includes(currentView);
+  let h='';
+
+  if(shouldGroup){
+    const groups={};
+    docs.forEach(d=>{const k=d.s||d.c;if(!groups[k])groups[k]=[];groups[k].push(d);});
+    SUB_ORDER.forEach(key=>{
+      if(!groups[key])return;
+      const g=groups[key];
+      h+=`<div class="section-header"><h2>${SUB_NAMES[key]||key}</h2><span class="sc">${g.length}</span></div><div class="doc-grid">`;
+      g.forEach(d=>h+=renderCard(d));
+      h+=`</div>`;
+    });
+  }else{
+    h+=`<div class="doc-grid">`;
+    docs.forEach(d=>h+=renderCard(d));
+    h+=`</div>`;
+  }
+  document.getElementById('content').innerHTML=h;
+
+  document.querySelectorAll('.doc-card').forEach(card=>{
+    card.addEventListener('click',()=>openPanel(parseInt(card.dataset.idx)));
+  });
+}
+
+function renderCard(d){
+  const hasContent=getContent(d.idx)!==null;
+  const tagH=(d.t||[]).map(t=>`<span class="tag ${t}">${t}</span>`).join('');
+  const stLabel={locked:'locked',drafted:'drafted',inprogress:'in progress',pending:'pending',na:'n/a'};
+  const pLabel={critical:'CRIT',high:'HIGH',medium:'MED',low:'LOW'};
+  return `<div class="doc-card${hasContent?' has-content':''}" data-idx="${d.idx}">
+    <div class="doc-card-top"><h4>${d.n}</h4><span class="status-badge ${d.st}">${stLabel[d.st]||d.st}</span></div>
+    <div class="doc-card-desc">${d.d}</div>
+    ${tagH?'<div class="doc-card-tags">'+tagH+'</div>':''}
+    <div class="doc-card-meta"><span class="priority ${d.p}">${pLabel[d.p]||d.p}</span>${d.l?'<span>→ '+d.l+'</span>':''}</div>
+  </div>`;
+}
+
+// ═══════════════════════════════════════════════════════
+// PANEL
+// ═══════════════════════════════════════════════════════
+function openPanel(idx){
+  currentDocIdx=idx;
+  editing=false;
+  const d=getDoc(idx);
+  document.getElementById('panel-title').textContent=d.n;
+
+  const stLabel={locked:'Locked',drafted:'Drafted',inprogress:'In Progress',pending:'Pending'};
+  const pLabel={critical:'Critical',high:'High',medium:'Medium',low:'Low'};
+  let meta=`<span class="status-badge ${d.st}">${stLabel[d.st]||d.st}</span>`;
+  meta+=`<span class="panel-meta-item priority ${d.p}">${pLabel[d.p]||d.p}</span>`;
+  meta+=`<span class="panel-meta-item">${d.c}</span>`;
+  if(d.l)meta+=`<span class="panel-meta-item">→ ${d.l}</span>`;
+  document.getElementById('panel-meta').innerHTML=meta;
+
+  renderContentTab();
+  renderSettingsTab();
+  switchTab('content');
+
+  document.getElementById('panel').classList.add('open');
+  document.getElementById('main').classList.add('panel-open');
+}
+
+function closePanel(){
+  document.getElementById('panel').classList.remove('open');
+  document.getElementById('main').classList.remove('panel-open');
+  currentDocIdx=null;
+  editing=false;
+}
+
+function switchTab(tab){
+  document.querySelectorAll('.panel-tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.toggle('active',t.id==='tab-'+tab));
+}
+
+function renderContentTab(){
+  const idx=currentDocIdx;
+  if(idx===null)return;
+  const content=getContent(idx);
+
+  if(editing){
+    const val=content!==null?content:getTemplate(idx);
+    document.getElementById('tab-content').innerHTML=`
+      <div class="content-edit">
+        <div class="edit-bar">
+          <button class="btn btn-primary btn-sm" onclick="saveContentEdit()">Save</button>
+          <button class="btn btn-ghost btn-sm" onclick="cancelEdit()">Cancel</button>
+          <span class="hint">Markdown supported — # headings, **bold**, - lists, > quotes, \`\`\` code</span>
+        </div>
+        <textarea id="editArea">${escHtml(val)}</textarea>
+      </div>`;
+  }else{
+    const rendered=content!==null?renderMarkdown(content):`<div style="padding:40px;text-align:center;color:var(--text-faint)"><p style="font-size:14px;margin-bottom:16px">No content yet.</p><button class="btn btn-gold btn-sm" onclick="startEdit()">Start Writing</button></div>`;
+    document.getElementById('tab-content').innerHTML=`
+      <div class="content-view">
+        <div style="margin-bottom:16px;display:flex;gap:8px">
+          <button class="btn btn-ghost btn-sm" onclick="startEdit()">Edit</button>
+          ${content!==null?'<button class="btn btn-ghost btn-sm" onclick="copyContent()">Copy</button>':''}
+        </div>
+        <div class="doc-prose">${rendered}</div>
+      </div>`;
+  }
+}
+
+function renderSettingsTab(){
+  const idx=currentDocIdx;
+  if(idx===null)return;
+  const d=getDoc(idx);
+  document.getElementById('tab-settings').innerHTML=`
+    <div class="settings-content">
+      <label>Status</label>
+      <select id="set-status">
+        <option value="pending"${d.st==='pending'?' selected':''}>Pending</option>
+        <option value="drafted"${d.st==='drafted'?' selected':''}>Drafted</option>
+        <option value="inprogress"${d.st==='inprogress'?' selected':''}>In Progress</option>
+        <option value="locked"${d.st==='locked'?' selected':''}>Locked</option>
+        <option value="na"${d.st==='na'?' selected':''}>N/A</option>
+      </select>
+      <label>Priority</label>
+      <select id="set-priority">
+        <option value="low"${d.p==='low'?' selected':''}>Low</option>
+        <option value="medium"${d.p==='medium'?' selected':''}>Medium</option>
+        <option value="high"${d.p==='high'?' selected':''}>High</option>
+        <option value="critical"${d.p==='critical'?' selected':''}>Critical</option>
+      </select>
+      <label>Linked Documents</label>
+      <input type="text" id="set-linked" value="${escHtml(d.l||'')}" placeholder="e.g. Architecture Doc v3.0">
+      <label>Internal Notes</label>
+      <textarea id="set-notes" placeholder="Notes about this document...">${escHtml(d.notes||'')}</textarea>
+      <div class="settings-save"><button class="btn btn-primary btn-sm" onclick="saveSettings()">Save Settings</button></div>
+    </div>`;
+}
+
+function startEdit(){editing=true;renderContentTab();}
+function cancelEdit(){editing=false;renderContentTab();}
+function saveContentEdit(){
+  const val=document.getElementById('editArea').value;
+  saveContent(currentDocIdx,val);
+  editing=false;
+  renderContentTab();
+  renderContent();
+}
+function copyContent(){
+  const c=getContent(currentDocIdx);
+  if(c)navigator.clipboard.writeText(c).then(()=>{});
+}
+function saveSettings(){
+  saveDoc(currentDocIdx,{
+    st:document.getElementById('set-status').value,
+    p:document.getElementById('set-priority').value,
+    l:document.getElementById('set-linked').value,
+    notes:document.getElementById('set-notes').value
+  });
+  const d=getDoc(currentDocIdx);
+  const stLabel={locked:'Locked',drafted:'Drafted',inprogress:'In Progress',pending:'Pending'};
+  const pLabel={critical:'Critical',high:'High',medium:'Medium',low:'Low'};
+  let meta=`<span class="status-badge ${d.st}">${stLabel[d.st]||d.st}</span>`;
+  meta+=`<span class="panel-meta-item priority ${d.p}">${pLabel[d.p]||d.p}</span>`;
+  meta+=`<span class="panel-meta-item">${d.c}</span>`;
+  if(d.l)meta+=<span class="panel-meta-item">→ ${d.l}</span>`;
+  document.getElementById('panel-meta').innerHTML=meta;
+  renderContent();
+}
+
+// ═══════════════════════════════════════════════════════
+// TEMPLATES
+// ═══════════════════════════════════════════════════════
+function getTemplate(idx){
+  const d=R[idx];
+  const templates={
+    // Product & Website
+    'pub-02':`# Website Content\n\n## Hero Section\n\n**Headline:** [Main value proposition]\n**Subhead:** [Supporting context]\n**CTA:** [Primary action]\n\n## Problem Section\n\n[Describe the pain the visitor feels]\n\n## Solution Section\n\n[How IntegrateWise solves it — the five pillars]\n\n## Features Section\n\n[Key features with descriptions]\n\n## Social Proof\n\n[$8M account save. Founder story. Testimonials.]\n\n## Pricing Section\n\n[Link to pricing page or embed pricing table]\n\n## Footer\n\n[Links, contact, legal]`,
+    'pub-03':`# Feature Documentation\n\n## Feature: User Workbench\n\n### What It Does\n\n### How To Use It\n\n### Configuration\n\n### Common Use Cases\n\n---\n\n## Feature: Twin\n\n### What It Does\n\n### How To Use It\n\n### Configuration\n\n### Common Use Cases\n\n---\n\n## Feature: Memory Views\n\n[Repeat for each feature]`,
+    'pub-04':`# Pricing & Plans\n\n## Pricing Philosophy\n\n[Memory-based? Seat-based? Usage-based? Hybrid?]\n\n## Plan: Starter\n\n- What is included\n- Limits\n- Price\n\n## Plan: Pro\n\n- What is included\n- Limits\n- Price\n\n## Plan: Enterprise\n\n- What is included\n- Limits\n- Price\n\n## Usage Metrics\n\n[What gets measured for pricing — memory size, connectors, API calls]`,
+    // Documentation
+    'pub-05':`# API Documentation\n\n## Authentication\n\n[How to authenticate MCP calls]\n\n## Endpoints\n\n### GET /memory/[layer]\n\n### POST /memory/[layer]\n\n### GET /entities\n\n### POST /governance/approve\n\n## Rate Limits\n\n## Error Codes\n\n## Webhooks`,
+    'pub-06':`# SDK Guides\n\n## JavaScript SDK\n\n### Installation\n\n### Quick Start\n\n### API Reference\n\n## Python SDK\n\n### Installation\n\n### Quick Start\n\n### API Reference`,
+    'pub-07':`# Integration Guides\n\n## CRM Integration\n\n### Salesforce\n\n### HubSpot\n\n## Support Desk\n\n### Zendesk\n\n### Intercom\n\n## Communication\n\n### Slack\n\n### Microsoft Teams\n\n## Documentation\n\n### Notion\n\n### Confluence`,
+    'pub-08':`# Quick Start Guide\n\n## Step 1: Connect Your First Tool (2 min)\n\n## Step 2: See Your Data in the Workbench (1 min)\n\n## Step 3: Ask the Twin a Question (1 min)\n\n## Step 4: Approve Your First Action (1 min)\n\n## What is Next\n\n[Link to integration guides, feature docs]`,
+    'pub-09':`# Tutorials & Walkthroughs\n\n## Tutorial 1: Setting Up Account Monitoring\n\n### Prerequisites\n\n### Steps\n\n### Expected Outcome\n\n## Tutorial 2: Building a Memory-Powered Workflow\n\n## Tutorial 3: Configuring AI Connectors`,
+    'pub-10':`# Architecture (High-Level)\n\n## How IntegrateWise Works\n\n[Derived from Architecture Doc v3.0 — public-safe version]\n\n## The Spine\n\n## The Three Surfaces\n\n## MCP Connection\n\n## Memory Model\n\n## Governance`,
+    'pub-11':`# Release Notes\n\n## v1.0.0 — [Date]\n\n### New Features\n\n### Improvements\n\n### Bug Fixes\n\n### Breaking Changes`,
+    'pub-12':`# Changelog\n\n## [Date] — [Version]\n\n- Change 1\n- Change 2\n- Change 3`,
+    // GTM
+    'pub-13':`# Sales Collateral\n\n## One-Pager\n\n[Copy from One-Pager document]\n\n## Battle Card\n\n### vs. [Competitor]\n\n| Feature | IntegrateWise | Competitor |\n|---|---|---|\n| Persistent memory | Yes | No |\n| Model independence | Yes | No |\n| ... | ... | ... |\n\n## Objection Handling\n\n"We already have Copilot/Einstein" → ...\n\n## Demo Script\n\n[3-minute demo flow]`,
+    'pub-14':`# Investor Deck (Sanitized)\n\n## Slide 1: Title\n\n## Slide 2: Problem\n\n## Slide 3: Solution\n\n## Slide 4: How It Works\n\n## Slide 5: Market\n\n## Slide 6: Traction\n\n## Slide 7: Business Model\n\n## Slide 8: Team\n\n## Slide 9: Ask`,
+    'pub-15':`# Brand Assets\n\n## Logo\n\n[Files: SVG, PNG, favicon]\n\n## Colors\n\n- Forest: #1A3A2A\n- Gold: #B8943F\n- Paper: #F4F0E8\n\n## Typography\n\n- Headings: Lora\n- Body: DM Sans\n- Code: DM Mono\n\n## Usage Guidelines`,
+    'pub-16':`# Case Studies\n\n## Case Study 1: The $8M Account Save\n\n### Background\n\n### The Problem\n\n### How IntegrateWise Helped\n\n### The Outcome\n\n### Key Metrics\n\n---\n\n## Case Study 2: [Customer Name]\n\n[Same structure]`,
+    'pub-17':`# GTM Materials\n\n## Launch Plan\n\n### Pre-Launch\n\n### Launch Week\n\n### Post-Launch\n\n## Content Calendar\n\n## Campaign Briefs\n\n## Webinar Outlines`,
+    'pub-18':`# Public Roadmap\n\n## Now\n\n[What is being built right now]\n\n## Next\n\n[What is planned for the next quarter]\n\n## Later\n\n[What is on the long-term vision]\n\n## Completed\n\n[What has shipped]`,
+    'pub-19':`# Demo Videos\n\n## Video 1: 3-Minute Overview\n\n### Script\n\n### Key Moments\n\n## Video 2: Deep Dive — Memory Architecture\n\n## Video 3: Deep Dive — MCP Integration`,
+    // Support
+    'pub-20':`# Security Overview\n\n## Data Isolation\n\n## Access Control\n\n## Encryption\n\n## Network Security\n\n## Compliance Posture\n\n## Incident Response`,
+    'pub-21':`# Compliance Statements\n\n## GDPR\n\n## Data Residency\n\n## Privacy Policy\n\n## Terms of Service`,
+    'pub-22':`# FAQ\n\n## General\n\n**Q: What is IntegrateWise?**\nA:\n\n**Q: How is this different from a CRM/dashboard?**\nA:\n\n## Technical\n\n**Q: Which AI models are supported?**\nA:\n\n## Pricing\n\n**Q: How much does it cost?**\nA:`,
+    'pub-23':`# Support Documentation\n\n## Getting Help\n\n## Troubleshooting\n\n### Common Issues\n\n### Known Issues\n\n## Configuration Help`,
+    'pub-24':`# Knowledge Base\n\n## Getting Started\n\n## Features\n\n## Integrations\n\n## Account & Billing\n\n## Troubleshooting`,
+    'pub-25':`# Community Guidelines\n\n## Code of Conduct\n\n## How to Participate\n\n## Contributing\n\n## Support Channels`,
+    'pub-26':`# Marketplace Listings\n\n## Listing Copy\n\n## Screenshots\n\n## Categories\n\n## Pricing Display`,
+    'pub-27':`# Open Source Documentation\n\n## License\n\n## Contributing\n\n## Code of Conduct\n\n## Development Setup`,
+    'pub-28':`# Partner Documentation\n\n## Partner Program\n\n## Integration Guide for Partners\n\n## Co-Sell Playbook\n\n## Co-Build Guidelines`,
+    'pub-29':`# Public Whitepapers\n\n## Whitepaper 1: The Memory-First Architecture\n\n### Abstract\n\n### Introduction\n\n### The Problem\n\n### The Architecture\n\n### Results\n\n### Conclusion`,
+    // Internal — Architecture
+    'int-02':`# Memory Architecture\n\n## Spine Storage Topology\n\n### Postgres Layer\n\n[Schema, access patterns, entity tables]\n\n### Redis Layer\n\n[Cache strategy, session state, TTL policies]\n\n### Cloudflare KV\n\n[Edge config, lightweight state]\n\n### Cloudflare R2\n\n[Object storage, file handling]\n\n### Cloudflare D1\n\n[Edge SQL use cases]\n\n### Supabase\n\n[Access pattern — CF Worker only]\n\n## Data Classification\n\n[What goes where and why]\n\n## Persistence Guarantees\n\n[What survives what]`,
+    'int-03':`# Data Models\n\n## Entity Types\n\n### Account\n\n### Contact\n\n### Deal\n\n### Risk\n\n### Initiative\n\n## Relationship Graph\n\n[Entity-to-entity connections]\n\n## Field Definitions\n\n[Type system, required/optional, validation rules]`,
+    'int-04':`# Internal APIs\n\n## Spine Read API\n\n## Spine Write API\n\n## Memory Promotion API\n\n## Governance Gate API\n\n## MCP Routing API`,
+    'int-05':`# Infrastructure Design\n\n## VPS — Hostinger\n\n### Directory Structure\n\n### Docker Compose\n\n## Docker Networks\n\n### iw-public\n\n### iw-cognition\n\n### iw-spine\n\n## Cloudflare Workers\n\n[11 workers — names, purposes]\n\n## Storage Topology\n\n## Domain Configuration`,
+    'int-06':`# Folder Watcher Logic\n\n## Detection\n\n[How changes are detected]\n\n## Fetch\n\n[How data is pulled]\n\n## Normalization\n\n[How raw data becomes canonical]\n\n## Error Handling\n\n[What happens on failure]\n\n## Configuration\n\n[How watchers are set up]`,
+    'int-07':`# Automation Flows\n\n## MCP Pipeline Triggers\n\n## Watcher Schedules\n\n## Promotion Flows\n\n## Writeback Logic\n\n## Error Recovery`,
+    // Internal — Operations
+    'int-08':`# Deployment Playbooks\n\n## First Deploy\n\n## Update Procedure\n\n## Rollback Procedure\n\n## Health Checks`,
+    'int-09':`# DevOps Runbooks\n\n## Scaling\n\n## Failover\n\n## Monitoring\n\n## Alerting\n\n## Common Failures`,
+    'int-10':`# Vendor Configurations\n\n## Hostinger\n\n## Cloudflare\n\n## Supabase\n\n## Infisical\n\n## OpenRouter`,
+    'int-11':`# Cost Optimization\n\n## Current Costs per Provider\n\n## Cost per User Estimate\n\n## Optimization Strategies\n\n## Budget Tracking`,
+    'int-12':`# Incident Management\n\n## Severity Levels\n\n## Escalation Paths\n\n## Response Procedure\n\n## Post-Mortem Template`,
+    'int-13':`# Debugging Playbooks\n\n## Pipeline Failures\n\n## MCP Connection Issues\n\n## Memory Promotion Failures\n\n## Writeback Errors`,
+    'int-14':`# Operational Dashboards\n\n## System Health\n\n## Pipeline Status\n\n## Memory Growth\n\n## Error Rates\n\n## Usage Metrics`,
+    // Internal — AI
+    'int-15':`# Cognitive Layer Design\n\n## Skill Architecture\n\n[148 prescribed skills, 116 loaded]\n\n## Model Orchestration\n\n[How models are selected and routed]\n\n## Context Assembly\n\n[How the Twin reads from the Spine]\n\n## Hermes Engine\n\n[Reasoning internals]\n\n## Output Generation\n\n[How insights become proposals]`,
+    'int-16':`# Governance Layer\n\n## Approval Gates\n\n[What triggers approval]\n\n## Lineage Tracking\n\n[How decisions are recorded]\n\n## Policy Enforcement\n\n[Rules that cannot be overridden]\n\n## Promotion Rules\n\n[Memory promotion governance]`,
+    'int-17':`# Agent Orchestration\n\n## Multi-Model Reasoning\n\n## Skill Invocation\n\n## Handoff Protocol\n\n[How operational details reach user's agentic claw]\n\n## Feedback Loop\n\n[How execution results inform the Twin]`,
+    'int-18':`# Prompt Engineering Standards\n\n## System Prompts\n\n## Skill Prompts\n\n## Context Window Management\n\n## Prompt Versioning`,
+    'int-19':`# AI Safety Controls\n\n## Guardrails\n\n## Output Validation\n\n## Drift Detection\n\n## Content Safety\n\n## Model Behavior Boundaries`,
+    'int-20':`# Drift Protection Logic\n\n## Memory Anchoring\n\n[How memory prevents drift]\n\n## Context Reconstruction\n\n[How sessions rebuild context from the Spine]\n\n## Session Continuity\n\n[How the system bridges session boundaries]\n\n## Provider Switching\n\n[How context survives model/provider changes]`,
+    'int-21':`# Memory Promotion Rules\n\n## Conversational → Organizational\n\n### Trigger Conditions\n\n### Approval Requirements\n\n### What Gets Promoted\n\n## Conversational → Personal\n\n### Trigger Conditions\n\n### Approval Requirements\n\n### What Gets Promoted\n\n## Anti-Patterns\n\n[What should never be promoted]`,
+    'int-22':`# AI Evaluation Benchmarks\n\n## Accuracy\n\n## Relevance\n\n## Response Quality\n\n## Governance Compliance\n\n## Latency`,
+    'int-23':`# Security Policies\n\n## Access Control\n\n## Data Handling\n\n## Secret Rotation\n\n## Incident Response\n\n## Vulnerability Management`,
+    'int-24':`# Access Control Policies\n\n## Role-Based Access\n\n## Memory Boundary Enforcement\n\n## API Authentication\n\n## CF Access Configuration`,
+    'int-25':`# Approval Workflows\n\n## What Triggers Approval\n\n## Who Approves\n\n## Escalation Paths\n\n## Timeout Behavior\n\n## Override Conditions`,
+    // Internal — Org
+    'int-26':`# Internal SOPs\n\n## Daily Operations\n\n## Communication Norms\n\n## Decision Process\n\n## Quality Standards`,
+    'int-27':`# Research Notes\n\n## Market Research\n\n## Competitive Analysis\n\n## Technology Evaluation\n\n## User Research`,
+    'int-28':`# Experimental Features\n\n## Experiment: [Name]\n\n### Hypothesis\n\n### Prototype\n\n### Results\n\n### Decision: Go / No-Go`,
+    'int-29':`# Engineering RFCs\n\n## RFC-001: [Title]\n\n### Problem\n\n### Proposal\n\n### Alternatives Considered\n\n### Decision\n\n### Status`,
+    'int-30':`# Meeting Notes\n\n## [Date] — [Topic]\n\n### Attendees\n\n### Discussion\n\n### Decisions\n\n### Action Items`,
+    'int-31':`# Employee Onboarding\n\n## Day 1\n\n## Week 1\n\n## Month 1\n\n## Architecture Overview\n\n## Tooling Setup`,
+    'int-32':`# Org Structure\n\n## Team\n\n## Roles\n\n## Responsibilities\n\n## Reporting Lines`,
+    'int-33':`# QA Docs\n\n## Testing Strategy\n\n## Test Plans\n\n## QA Checklists\n\n## Quality Gates`,
+    'int-34':`# Workspace Design\n\n## File Structure\n\n## Naming Conventions\n\n## Documentation Hierarchy\n\n## Git Workflow`,
+    // Strategy — Vision
+    'str-01':`# Vision Document\n\n## The World We Are Building\n\n[What does the world look like when IntegrateWise succeeds?]\n\n## The Conviction\n\n[Why memory is the layer that matters]\n\n## The Trajectory\n\n[Where this goes over 3-5 years]`,
+    'str-02':`# Founder Thesis\n\n## The Two Roles\n\n### As a CSM\n\n### As a MuleSoft Architect\n\n## The Convergence\n\n## The $8M Moment\n\n## The Universal Problem\n\n## Why This Founder`,
+    'str-03':`# Product Philosophy\n\n## Memory First\n\n## Governance by Default\n\n## Model Independence\n\n## The Human Decides\n\n## Continuity Is the Foundation`,
+    'str-04':`# Operating Principles\n\n## Doctrine 1\n\n## Doctrine 2\n\n## ...\n\n[Autonomous Parallel Execution, Compose Split, Supabase Access, etc.]`,
+    'str-05':`# Narrative & Messaging\n\n## The One Sentence\n\n> IntegrateWise owns memory. You own execution. MCP connects the two.\n\n## The Five Pillars\n\n1. One Surface\n2. Persistent Memory\n3. AI That Knows Everything\n4. Governance and Security\n5. Continuity\n\n## Elevator Pitch (30 seconds)\n\n## Elevator Pitch (90 seconds)\n\n## Key Messages by Audience\n\n### For CSMs\n\n### For Founders\n\n### For Enterprise\n\n### For Investors`,
+    // Strategy — Market
+    'str-06':`# Product Strategy\n\n## What to Build\n\n## In What Order\n\n## For Whom\n\n## Feature Prioritization Framework`,
+    'str-07':`# GTM Strategy\n\n## Channel Strategy\n\n## First 10 Customers\n\n## Timing\n\n## Launch Plan\n\n## Growth Motion`,
+    'str-08':`# Monetization Strategy\n\n## Revenue Model\n\n## Pricing Strategy\n\n## Unit Economics\n\n## Expansion Revenue`,
+    'str-09':`# Customer Segmentation\n\n## Ideal Customer Profile\n\n## Persona Map\n\n## Segment Prioritization\n\n## Vertical Strategy`,
+    'str-10':`# Competitive Analysis\n\n## Landscape\n\n## Direct Competitors\n\n## Adjacent Players\n\n## IntegrateWise Position`,
+    'str-11':`# Differentiation Matrix\n\n| Feature | IntegrateWise | ChatGPT | Copilot | Notion AI |\n|---|---|---|---|---|\n| Persistent memory | ✓ | ✗ | Partial | ✗ |\n| Model independence | ✓ | ✗ | ✗ | ✗ |\n| Cross-tool memory | ✓ | ✗ | Partial | ✗ |\n| Governance | ✓ | ✗ | ✗ | ✗ |`,
+    'str-12':`# Market Positioning\n\n## Category\n\n## Positioning Statement\n\n## Key Differentiator\n\n## Competitive Frame`,
+    'str-13':`# Adoption Strategy\n\n## Onboarding Flow\n\n## Time to Value\n\n## Expansion Triggers\n\n## Stickiness Mechanisms`,
+    'str-14':`# Retention Strategy\n\n## Why Users Stay\n\n## Switching Costs\n\n## Memory Lock-In\n\n## Churn Prevention`,
+    'str-15':`# Enterprise Strategy\n\n## Enterprise Requirements\n\n## Security Certifications\n\n## Procurement Process\n\n## Expansion Motion`,
+    'str-16':`# Expansion Strategy\n\n## New Segments\n\n## New Verticals\n\n## New Use Cases\n\n## International`,
+    // Strategy — Platform
+    'str-17':`# AI Strategy\n\n## Model Independence\n\n## Provider Abstraction\n\n## Reasoning Architecture\n\n## Multi-Model Future`,
+    'str-18':`# Platform Strategy\n\n## Product → Platform\n\n## Extension Points\n\n## Ecosystem Design\n\n## Network Effects`,
+    'str-19':`# Ecosystem Strategy\n\n## Connector Growth\n\n## Partner Integrations\n\n## Community Connectors\n\n## Marketplace`,
+    'str-20':`# Platform Governance Strategy\n\n## Multi-Tenant\n\n## Role-Based Governance\n\n## Organizational Policies\n\n## Compliance at Scale`,
+    'str-21':`# Multi-Agent Strategy\n\n## User's Agents\n\n## Third-Party Agents\n\n## Orchestration Model\n\n## Handoff Protocol`,
+    'str-22':`# Memory Strategy\n\n## New Memory Types\n\n## Memory Sharing\n\n## Cross-Org Memory\n\n## Memory Markets`,
+    'str-23':`# Continuity Strategy\n\n## New Providers\n\n## New Connection Types\n\n## New Surfaces\n\n## Continuity Guarantees`,
+    'str-24':`# Provider Abstraction\n\n## Model Routing\n\n## Fallback Strategy\n\n## Cost Optimization\n\n## Provider Comparison`,
+    'str-25':`# Security & Trust Strategy\n\n## Certifications\n\n## Compliance Frameworks\n\n## Trust Signals\n\n## Incident Response`,
+    'str-26':`# Roadmaps\n\n## Product Roadmap\n\n### Now\n\n### Next\n\n### Later\n\n## Engineering Roadmap\n\n## Platform Roadmap`,
+    'str-27':`# Partnership Strategy\n\n## Target Partners\n\n## Partner Program\n\n## Co-Sell Motion\n\n## Co-Build Motion`,
+    'str-28':`# Acquisition Targets\n\n## Target Profile\n\n## Candidates\n\n## Rationale\n\n## Integration Plan`,
+    'str-29':`# Investment Planning\n\n## Round Details\n\n## Use of Funds\n\n## Milestones\n\n## Timeline`,
+    'str-30':`# Risk Analysis\n\n## Market Risks\n\n## Technical Risks\n\n## Competitive Risks\n\n## Execution Risks\n\n## Mitigation Plans`,
+    'str-31':`# Long-Term Architecture Vision\n\n## Year 1-2\n\n## Year 3-5\n\n## Distributed Memory\n\n## Federated Spine\n\n## Edge Intelligence`,
+    'str-32':`# Strategic Research\n\n## Market Sizing\n\n## Technology Trends\n\n## User Behavior Patterns\n\n## Emerging Opportunities`,
+    'str-33':`# Opportunity Mapping\n\n## Adjacent Markets\n\n## New Products\n\n## New Revenue Streams\n\n## Platform Plays`
+  };
+  // Generate id for lookup
+  const allIds=R.map((_,i)=>i);
+  const idMap={
+    0:'pub-01',1:'pub-02',2:'pub-03',3:'pub-04',4:'pub-05',5:'pub-06',6:'pub-07',7:'pub-08',8:'pub-09',9:'pub-10',
+    10:'pub-11',11:'pub-12',12:'pub-13',13:'pub-14',14:'pub-15',15:'pub-16',16:'pub-17',17:'pub-18',18:'pub-19',
+    19:'pub-20',20:'pub-21',21:'pub-22',22:'pub-23',23:'pub-24',24:'pub-25',25:'pub-26',26:'pub-27',27:'pub-28',28:'pub-29',
+    29:'int-01',30:'int-02',31:'int-03',32:'int-04',33:'int-05',34:'int-06',35:'int-07',
+    36:'int-08',37:'int-09',38:'int-10',39:'int-11',40:'int-12',41:'int-13',42:'int-14',
+    43:'int-15',44:'int-16',45:'int-17',46:'int-18',47:'int-19',48:'int-20',49:'int-21',50:'int-22',51:'int-23',52:'int-24',53:'int-25',
+    54:'int-26',55:'int-27',56:'int-28',57:'int-29',58:'int-30',59:'int-31',60:'int-32',61:'int-33',62:'int-34',
+    63:'str-01',64:'str-02',65:'str-03',66:'str-04',67:'str-05',68:'str-06',69:'str-07',70:'str-08',71:'str-09',72:'str-10',
+    73:'str-11',74:'str-12',75:'str-13',76:'str-14',77:'str-15',78:'str-16',79:'str-17',80:'str-18',81:'str-19',82:'str-20',
+    83:'str-21',84:'str-22',85:'str-23',86:'str-24',87:'str-25',88:'str-26',89:'str-27',90:'str-28',91:'str-29',92:'str-30',
+    93:'str-31',94:'str-32',95:'str-33'
+  };
+  const docId=idMap[idx];
+  return templates[docId]||`# ${R[idx].n}\n\n## Overview\n\n${R[idx].d}\n\n## Content\n\n[Start writing here]\n\n## Notes\n\n`;
+}
+
+// ═══════════════════════════════════════════════════════
+// SIMPLE MARKDOWN RENDERER
+// ═══════════════════════════════════════════════════════
+function renderMarkdown(md){
+  if(!md)return'';
+  let h=md;
+  // Code blocks
+  h=h.replace(/```(\w*)\n([\s\S]*?)```/g,(m,lang,code)=>`<pre><code>${escHtml(code.trim())}</code></pre>`);
+  // Tables
+  h=h.replace(/^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)+)/gm,(m,header,sep,body)=>{
+    const cols=header.split('|').filter(c=>c.trim());
+    const rows=body.trim().split('\n');
+    let t='<table><thead><tr>';
+    cols.forEach(c=>t+=`<th>${c.trim()}</th>`);
+    t+='</tr></thead><tbody>';
+    rows.forEach(r=>{
+      const cells=r.split('|').filter(c=>c.trim());
+      t+='<tr>';
+      cells.forEach(c=>t+=`<td>${c.trim()}</td>`);
+      t+='</tr>';
+    });
+    t+='</tbody></table>';
+    return t;
+  });
+  // Headers
+  h=h.replace(/^#### (.+)$/gm,'<h4>$1</h4>');
+  h=h.replace(/^### (.+)$/gm,'<h3>$1</h3>');
+  h=h.replace(/^## (.+)$/gm,'<h2>$1</h2>');
+  h=h.replace(/^# (.+)$/gm,'<h1>$1</h1>');
+  // Blockquote
+  h=h.replace(/^> (.+)$/gm,'<blockquote>$1</blockquote>');
+  // HR
+  h=h.replace(/^---$/gm,'<hr>');
+  // Bold and italic
+  h=h.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+  h=h.replace(/\*(.+?)\*/g,'<em>$1</em>');
+  // Inline code
+  h=h.replace(/`([^`]+)`/g,'<code>$1</code>');
+  // Unordered lists
+  h=h.replace(/^- (.+)$/gm,'<li>$1</li>');
+  h=h.replace(/(<li>.*<\/li>\n?)+/g,m=>`<ul>${m}</ul>`);
+  // Ordered lists
+  h=h.replace(/^\d+\. (.+)$/gm,'<li>$1</li>');
+  // Paragraphs
+  h=h.replace(/\n\n(?!<)/g,'</p><p>');
+  h=h.replace(/\n(?!<)/g,'<br>');
+  h='<p>'+h+'</p>';
+  // Clean up
+  h=h.replace(/<p>\s*<(h[1-4]|ul|ol|table|pre|blockquote|hr)/g,'<$1');
+  h=h.replace(/<\/(h[1-4]|ul|ol|table|pre|blockquote)>\s*<\/p>/g,'</$1>');
+  h=h.replace(/<p>\s*<\/p>/g,'');
+  h=h.replace(/<p><hr><\/p>/g,'<hr>');
+  h=h.replace(/<p><br><\/p>/g,'');
+  return h;
+}
+
+function escHtml(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ═══════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════
+document.getElementById('searchInput').addEventListener('input',e=>{searchQuery=e.target.value;renderContent();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel();});
+
+// ═══════════════════════════════════════════════════════
+// PRE-LOADED CANONICAL CONTENT
+// Seeds localStorage with the 3 canonical documents.
+// These are the single source of truth for the product.
+// ═══════════════════════════════════════════════════════
+(function seedCanonicalDocs(){
+  try{
+    const KEY='iw-state';
+    const existing=JSON.parse(localStorage.getItem(KEY)||'{}');
+    let changed=false;
+
+    // Pre-load content only if not already present
+    function seed(idx,title,content){
+      const ck='content_'+idx;
+      if(existing[ck]!==undefined)return;
+      existing[ck]=content;
+      changed=true;
+    }
+
+    // Index 0 → Product Overview = rewritten customer-facing version
+    seed(0,'Product Overview',
+      '# IntegrateWise — Your AI Remembers Everything\n\n'+
+      'You use six tools. Your AI uses zero of them.\n\n'+
+      'Every morning you rebuild context. Every meeting you re-explain what the AI should already know. '+
+      'Every session starts from zero because no AI remembers what happened yesterday.\n\n'+
+      'IntegrateWise changes that. Connect your tools. Your AI sees everything — your CRM, '+
+      'your support tickets, your conversations, your docs. It remembers every account, '+
+      'every decision, every risk. It never starts cold. It never forgets.\n\n'+
+      'You open one place. Everything is there. Your AI already knows the context. '+
+      'You stop re-explaining and start doing.\n\n'+
+      '## One Place for Everything\n\n'+
+      'All your tools, one surface. Your CRM data next to your support tickets next to your conversations. '+
+      'No more six tabs. No more copying context from one tool to another.\n\n'+
+      '**14 modules** — Dashboard, CRM, Sales Hub, Clients, Accounts, Tasks, Documents, Workflows, Calendar, '+
+      'Analytics, Strategic Hub, Metrics, Integration Hub, Ops Command Center.\n\n'+
+      '**15-layer account intelligence** — Account Master, People, Business Context, Strategic Objectives, '+
+      'Capabilities, Value Streams, API Portfolio, Platform Health, Initiatives, Risk Register, '+
+      'Stakeholder Outcomes, Engagement Log, Success Plan, Task Manager, Generated Insights.\n\n'+
+      '## Your AI Never Forgets\n\n'+
+      'The AI reads from the same memory you write to. It knows what happened yesterday, '+
+      'what changed overnight, what matters to you. Switch from ChatGPT to Claude to Gemini — '+
+      'it still remembers. The memory does not reset. Ever.\n\n'+
+      '## You Stay in Control\n\n'+
+      'The AI suggests. You decide. Nothing happens without your say-so. '+
+      'Every action is recorded. Every change is tracked.\n\n'+
+      '## Your Tools Stay in Sync\n\n'+
+      'Edit a record here, it updates there. Data flows in from your tools, you work on it, '+
+      'changes flow back. Your tools stay current without you manually updating each one.\n\n'+
+      '## Your Knowledge Does Not Walk Out the Door\n\n'+
+      'When someone leaves the team, the knowledge stays. Decisions, patterns, context — all captured. '+
+      'The next person picks up where the last one left off, not from scratch.'
+    );
+
+    // Index 9 → Architecture (High-Level) = Architecture v3.0 public-safe
+    seed(9,'Architecture v3.0 (Public)',
+      '# IntegrateWise Architecture\n\n'+
+      '**Version:** 3.0  \n**Status:** Canonical\n\n'+
+      '## Architectural Thesis\n\n'+
+      'Humans and machines enter through different channels, but both converge into the same memory '+
+      'and the same governed operational model.\n\n'+
+      '> IntegrateWise owns memory. The user owns execution. MCP connects the two.\n\n'+
+      '## The Three Surfaces\n\n'+
+      '**User Workbench** — Main operating surface. Projected data from all connected tools. '+
+      'Twin embedded at the bottom for insights, suggestions, and approvals.\n\n'+
+      '**Twin Workbench** — Complete AI ecosystem surface. Multi-model orchestration, '+
+      'conversational memory, operational handoff to your agents.\n\n'+
+      '**Memory View Layer** — Personal and Organisational memory surfaced through internal views '+
+      'and your own connectors.\n\n'+
+      '## Five Pillars\n\n'+
+      '1. **One Surface** — Stop juggling tools\n'+
+      '2. **Persistent Memory** — Personal, Org, and Conversational AI\n'+
+      '3. **AI That Knows Everything** — Across all tools and AI models\n'+
+      '4. **Governance and Control** — Nothing happens without approval\n'+
+      '5. **Continuity** — Between systems, work, and memory'
+    );
+
+    // Index 29 → System Architecture = Full Architecture v3.0
+    seed(29,'Architecture v3.0 (Full)',
+      '# IntegrateWise Architecture\n\n'+
+      '**Version:** 3.0  \n**Scope:** Internal source of truth\n\n'+
+      '## 1. Problem\n\n'+
+      'Modern work is fragmented across CRMs, support desks, communication tools, documentation systems, '+
+      'project trackers, and AI interfaces. No single tool holds the full picture. '+
+      'The human becomes the integration layer.\n\n'+
+      '## 2. Architectural Thesis\n\n'+
+      'Humans enter through natural language. Machines enter through MCP, watchers, and AI connectors. '+
+      'Both converge into the same memory and governed operational model.\n\n'+
+      '## 3. The Three Surfaces\n\n'+
+      'User Workbench, Twin Workbench, Memory View Layer.\n\n'+
+      '## 4. Eight Pipelines\n\n'+
+      'Inbound Data → Projection → Cognitive → Governance → Handoff → Writeback → Memory Promotion → Ingestion\n\n'+
+      'All converge on the persistence layer. Governance gates every promotion and writeback.\n\n'+
+      '## 5. Governance\n\n'+
+      'AI proposes. Human approves. User executes through their own stack. '+
+      'Lineage is immutable. Every action has an audit trail.\n\n'+
+      '## 6. Continuity\n\n'+
+      'The model is a variable. The memory is a constant. '+
+      'Model switches, provider changes, infrastructure rebuilds — all memory survives.'
+    );
+
+    // Load external seed if available (generated from document-governance-seed.js)
+    if(typeof IW_DOCS_SEED !== 'undefined'){
+      Object.keys(IW_DOCS_SEED).forEach(idx=>{
+        const ck='content_'+idx;
+        if(existing[ck]!==undefined)return;
+        existing[ck]=IW_DOCS_SEED[idx];
+        changed=true;
+      });
+    }
+
+    if(changed){
+      localStorage.setItem(KEY,JSON.stringify(existing));
+    }
+  }catch(e){/* localStorage may not be available */ }
+})();
+
+function render(){
+  renderSidebar();
+  renderStats();
+  renderContent();
+}
+render();
+</script>
+</body>
+</html>

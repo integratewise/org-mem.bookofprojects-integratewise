@@ -182,6 +182,8 @@ const NAV_STRUCTURE: NavEntry[] = [
         { to: '/gallery', icon: Image, label: 'Product Gallery', color: 'var(--slate-mid)' },
         { to: '/documentation', icon: BookOpen, label: 'Documentation Library', color: 'var(--brand-accent-dark)' },
         { to: '/documentation?pack=pack-e', icon: Shield, label: 'AI Governance & Trust', color: 'var(--brand-primary-dark)' },
+        { to: '/governance', icon: Shield, label: 'Document Governance (95 docs)', color: 'var(--gold)' },
+        { to: '/evolution', icon: GitBranch, label: 'Evolution Timeline', color: 'var(--forest-bright)' },
       ],
     },
   },
