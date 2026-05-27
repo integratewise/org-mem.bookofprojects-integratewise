@@ -32,6 +32,21 @@ import { WorkbenchPage } from "./components/pages/WorkbenchPage";
 import ASDashboard from "./components/pages/account-success/dashboard";
 import BizOpsDashboard from "./components/pages/bizops/dashboard";
 
+// BizOps views
+import StrategicHubView from "./components/pages/bizops/strategic-hub-view";
+import FounderOpsView from "./components/pages/bizops/founder-ops-view";
+import CrmView from "./components/pages/bizops/crm-view";
+import MarketingView from "./components/pages/bizops/marketing-view";
+import OperationsView from "./components/pages/bizops/operations-view";
+
+// Account Success views
+import AccountsView from "./components/pages/account-success/accounts-view";
+import AtRiskView from "./components/pages/account-success/at-risk-view";
+import TasksView from "./components/pages/account-success/tasks-view";
+import MeetingsView from "./components/pages/account-success/meetings-view";
+import EngagementLogView from "./components/pages/account-success/engagement-log-view";
+import InsightsView from "./components/pages/account-success/insights-view";
+
 // ── Placeholder for unbuilt cockpit screens ──────────────────────────
 function ComingSoon({ label }: { label: string }) {
   return (
@@ -59,12 +74,12 @@ export const router = createBrowserRouter([
       // Account Success
       { index: true,                                       Component: () => <ComingSoon label="Select a domain" /> },
       { path: "account-success",                           Component: ASDashboard },
-      { path: "account-success/accounts",                  Component: cs("Accounts") },
-      { path: "account-success/at-risk",                   Component: cs("At Risk") },
-      { path: "account-success/tasks",                     Component: cs("Tasks") },
-      { path: "account-success/meetings",                  Component: cs("Meetings") },
-      { path: "account-success/engagement-log",            Component: cs("Engagement Log") },
-      { path: "account-success/insights",                  Component: cs("Insights") },
+      { path: "account-success/accounts",                  Component: AccountsView },
+      { path: "account-success/at-risk",                   Component: AtRiskView },
+      { path: "account-success/tasks",                     Component: TasksView },
+      { path: "account-success/meetings",                  Component: MeetingsView },
+      { path: "account-success/engagement-log",            Component: EngagementLogView },
+      { path: "account-success/insights",                  Component: InsightsView },
       { path: "account-success/queue",                     Component: cs("Queue") },
       { path: "account-success/decisions",                 Component: cs("Decisions") },
       { path: "account-success/twin",                      Component: () => <WorkbenchPage ctx="account-success" /> },
@@ -73,13 +88,13 @@ export const router = createBrowserRouter([
       { path: "account-success/settings",                  Component: cs("Settings") },
       // BizOps
       { path: "bizops",                                    Component: BizOpsDashboard },
-      { path: "bizops/strategic-hub",                      Component: cs("Strategic Hub") },
-      { path: "bizops/founder-ops",                        Component: cs("Founder Ops") },
-      { path: "bizops/marketing",                          Component: cs("Marketing") },
+      { path: "bizops/strategic-hub",                      Component: StrategicHubView },
+      { path: "bizops/founder-ops",                        Component: FounderOpsView },
+      { path: "bizops/marketing",                          Component: MarketingView },
       { path: "bizops/sales",                              Component: cs("Sales") },
       { path: "bizops/cs",                                 Component: cs("Customer Success") },
       { path: "bizops/product",                            Component: cs("Product & Engineering") },
-      { path: "bizops/operations",                         Component: cs("Operations") },
+      { path: "bizops/operations",                         Component: OperationsView },
       { path: "bizops/finance",                            Component: cs("Finance") },
       { path: "bizops/hr",                                 Component: cs("Human Resources") },
       { path: "bizops/legal",                              Component: cs("Legal & Compliance") },
@@ -144,6 +159,3 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
-import { RootLayout } from "./components/RootLayout";
-import { HomePage } from "./components/pages/HomePage";
-import { BrandHubPage } from "./components/pages/BrandHubPage";

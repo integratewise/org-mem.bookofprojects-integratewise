@@ -1,4 +1,4 @@
-@import './fonts.css';
+/* Fonts loaded via index.html <link> — see theme.css font-family tokens */
 @import './theme.css';
 @import './tailwind.css';
 

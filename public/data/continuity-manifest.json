@@ -1,0 +1,395 @@
+{
+  "version": "1.0",
+  "updated": "2026-05-27",
+  "pillars": {
+    "one-surface": {
+      "label": "One Surface",
+      "description": "Stop juggling tools — one workbench for all contexts",
+      "canonical": "01 Product & Engineering/ui-shell-guide.md",
+      "evolution": [
+        "shell-v1",
+        "unified-shell-html"
+      ]
+    },
+    "memory": {
+      "label": "Memory",
+      "description": "Personal, Organisational, and Conversational AI — knows everything, always",
+      "canonical": "00 Company Strategy/founding-origin.md",
+      "evolution": [
+        "origin",
+        "vault-scan",
+        "org-memory-arch"
+      ]
+    },
+    "operating-environment": {
+      "label": "Operating Environment",
+      "description": "Across all tools and AI models — AI thinks in Context and waits for human approval",
+      "canonical": "01 Product & Engineering/master-architecture-final.md",
+      "evolution": [
+        "arch-v1",
+        "arch-connected",
+        "articulation-day"
+      ]
+    },
+    "governance": {
+      "label": "Governance & Control & Security",
+      "description": "Nothing happens without your approval",
+      "canonical": "01 Product & Engineering/master-architecture-connected-system.md",
+      "evolution": [
+        "connections-v1",
+        "cognitive-routing"
+      ]
+    },
+    "continuity": {
+      "label": "Continuity",
+      "description": "Between systems, work, and memory — nothing is lost, everything compounds",
+      "canonical": "01 Product & Engineering/master-architecture-connected-system.md",
+      "evolution": [
+        "connections-v1",
+        "evolution-page-created"
+      ]
+    }
+  },
+  "entries": [
+    {
+      "id": "origin",
+      "date": "2025-08",
+      "label": "The Origin — Founding Pains & Four Axioms",
+      "pillar": "memory",
+      "type": "founding",
+      "canonical_path": "00 Company Strategy/00-Founding-Architecture/founding-origin.md",
+      "provenance": "Nirmal, written May 25 2026 from August 2025 origin",
+      "summary": "Two founding pains (tool fragmentation, vanishing AI context), four immutable axioms (Loader, Normalizer, Spine, Trait Detection). The system was proved in Excel before code."
+    },
+    {
+      "id": "vault-scan",
+      "date": "2026-05-08",
+      "label": "The Vault Scan — What Existed",
+      "pillar": "memory",
+      "type": "milestone",
+      "canonical_path": "01 Product & Engineering/",
+      "provenance": "Hermes CLI session 1",
+      "summary": "6,017 files scanned (4.91 GB), vocabulary v1.1 locked (Memory/Spine/Twin/Connectors), CouchDB substrate confirmed, Supabase Auth added."
+    },
+    {
+      "id": "repo-consolidation",
+      "date": "2026-05-09",
+      "label": "Repo Consolidation Decision",
+      "pillar": "operating-environment",
+      "type": "decision",
+      "canonical_path": "",
+      "provenance": "Hermes session",
+      "summary": "Three marketing repos consolidated into one. CI/CD set up. DNS pointed to Firebase."
+    },
+    {
+      "id": "infra-day",
+      "date": "2026-05-11",
+      "label": "Infrastructure Day — Workers, Secondary Mac, WebUI",
+      "pillar": "operating-environment",
+      "type": "milestone",
+      "canonical_path": "",
+      "provenance": "Hermes session",
+      "summary": "All CF Workers deployed, secondary Mac as compute node, Open WebUI + LiteLLM, first identity question: 'Hermes or Twin?'"
+    },
+    {
+      "id": "org-memory-arch",
+      "date": "2026-05-12",
+      "label": "Org Memory Infrastructure — Founding Architecture Statement",
+      "pillar": "memory",
+      "type": "decision",
+      "canonical_path": "",
+      "provenance": "Hermes session",
+      "summary": "Memory-first build order locked. Cognitive routing doctrine (Hermes decides models). Three-Mac topology. Zero Python enforced."
+    },
+    {
+      "id": "ops-system-live",
+      "date": "2026-05-14",
+      "label": "Ops System Live — Memory API, Daily Briefing, MCP Coda",
+      "pillar": "continuity",
+      "type": "milestone",
+      "canonical_path": "",
+      "provenance": "Hermes session",
+      "summary": "Memory API live. Daily briefing operational. MCP Coda connected. Deployment pitfalls documented (legacy env override)."
+    },
+    {
+      "id": "articulation-day",
+      "date": "2026-05-25",
+      "label": "Articulation Day — Complete System Stated for First Time",
+      "pillar": "operating-environment",
+      "type": "founding",
+      "canonical_path": "",
+      "provenance": "Hermes session",
+      "summary": "Four August 2025 axioms named and connected to everything built on top. Two founding pains formally recorded. 19 documents written to integratewise-memory."
+    },
+    {
+      "id": "arch-v1",
+      "date": "2026-05-25",
+      "label": "Final Master Architecture",
+      "pillar": "operating-environment",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/master-architecture-final.md",
+      "provenance": "Nirmal, written May 25 2026",
+      "summary": "Complete architecture statement: executive summary, system components, market position, build sequence."
+    },
+    {
+      "id": "arch-connected",
+      "date": "2026-05-25",
+      "label": "Master Architecture — The Connected System",
+      "pillar": "continuity",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/master-architecture-connected-system.md",
+      "provenance": "Nirmal, written May 25 2026",
+      "summary": "Seven islands, five missing connections, MCP as nervous system, complete build sequence. Architecture locked, connections pending."
+    },
+    {
+      "id": "shell-v1",
+      "date": "2026-05-24",
+      "label": "UI Shell Guide",
+      "pillar": "one-surface",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/ui-shell-guide.md",
+      "provenance": "Nirmal, written May 24 2026",
+      "summary": "Four workbenches (User, Cognitive, Twin, Operator), shell architecture, layer stack, navigation system."
+    },
+    {
+      "id": "unified-shell-html",
+      "date": "2026-05-24",
+      "label": "Unified Shell HTML Prototype",
+      "pillar": "one-surface",
+      "type": "prototype",
+      "canonical_path": "",
+      "provenance": "Kimi/Agent output",
+      "summary": "Complete 1101-line HTML prototype of Unified Shell with sidebar, KPI grid, tile grid, Twin panel, cognitive drawer, bottom bar."
+    },
+    {
+      "id": "shell-narrative",
+      "date": "2026-05-24",
+      "label": "UI Shell Narrative Guide",
+      "pillar": "one-surface",
+      "type": "canonical",
+      "canonical_path": "02 Marketing & Creative/ui-shell-narrative-guide.md",
+      "provenance": "Nirmal, written May 24 2026",
+      "summary": "Messaging map for UI Shell across every surface: website, pitch deck, demo, sales call, onboarding."
+    },
+    {
+      "id": "marketing-website",
+      "date": "2026-05-24",
+      "label": "Marketing Website (React 19 + shadcn)",
+      "pillar": "one-surface",
+      "type": "prototype",
+      "canonical_path": "",
+      "provenance": "Kimi Code CLI output",
+      "summary": "Production-grade marketing site with 11 pages, 53 shadcn components, 7 workbench components. DM Sans instead of Instrument Sans — design drift noted."
+    },
+    {
+      "id": "evolution-page-created",
+      "date": "2026-05-27",
+      "label": "Evolution Page + Continuity Manifest",
+      "pillar": "continuity",
+      "type": "infrastructure",
+      "canonical_path": "",
+      "provenance": "This session",
+      "summary": "EvolutionPage now reads from continuity-manifest.json. Downloads organized, deduped, canonical docs moved to memory repo."
+    },
+    {
+      "id": "arch-v3",
+      "date": "2026-05-27",
+      "label": "Architecture Document v3.0",
+      "pillar": "operating-environment",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/architecture-v3-0.md",
+      "provenance": "Nirmal, defined in session May 27 2026",
+      "summary": "Canonical architecture. 16 sections. Supersedes all previous architecture descriptions."
+    },
+    {
+      "id": "product-v1",
+      "date": "2026-05-27",
+      "label": "Product Document v1.0",
+      "pillar": "one-surface",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/product-v1-0.md",
+      "provenance": "Derived from Architecture v3.0",
+      "summary": "Buyer-facing product description. What the system does."
+    },
+    {
+      "id": "one-pager",
+      "date": "2026-05-27",
+      "label": "One-Pager",
+      "pillar": "governance",
+      "type": "canonical",
+      "canonical_path": "02 Marketing & Creative/one-pager.md",
+      "provenance": "Derived from Product v1.0",
+      "summary": "90-second version. Five pillars. The governed memory layer for organisations."
+    },
+    {
+      "id": "systems-arch",
+      "date": "2026-05-27",
+      "label": "Systems Architecture v1.0",
+      "pillar": "operating-environment",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/systems-architecture-v1-0.md",
+      "provenance": "Derived from Architecture v3.0",
+      "summary": "Five-layer system: Connection, Persistence, Governance, Cognition, User Surfaces."
+    },
+    {
+      "id": "tech-arch",
+      "date": "2026-05-27",
+      "label": "Technical Architecture v1.0",
+      "pillar": "operating-environment",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/technical-architecture-v1-0.md",
+      "provenance": "Derived from Architecture v3.0 + Systems Architecture",
+      "summary": "Implementation-level specs, interfaces, schemas, tech stack."
+    },
+    {
+      "id": "infra-stack",
+      "date": "2026-05-27",
+      "label": "Infrastructure Stack v1.0",
+      "pillar": "operating-environment",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/infrastructure-stack-v1-0.md",
+      "provenance": "Derived from Technical Architecture",
+      "summary": "Physical/logical infra, network segmentation, storage topology, security."
+    },
+    {
+      "id": "deployment",
+      "date": "2026-05-27",
+      "label": "Deployment v1.0",
+      "pillar": "operating-environment",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/deployment-v1-0.md",
+      "provenance": "Derived from Infrastructure Stack",
+      "summary": "Deploy, update, rollback procedures, health checks, backup strategy."
+    },
+    {
+      "id": "integration",
+      "date": "2026-05-27",
+      "label": "Integration v1.0",
+      "pillar": "operating-environment",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/integration-v1-0.md",
+      "provenance": "Derived from Architecture v3.0 + Technical Architecture",
+      "summary": "MCP protocol, tool-specific integrations, watchers, AI connectors, writeback."
+    },
+    {
+      "id": "development",
+      "date": "2026-05-27",
+      "label": "Development v1.0",
+      "pillar": "operating-environment",
+      "type": "canonical",
+      "canonical_path": "01 Product & Engineering/development-v1-0.md",
+      "provenance": "Derived from Technical Architecture + Infrastructure Stack",
+      "summary": "Local setup, coding standards, testing, PR process, adding components."
+    }
+  ],
+  "pending": [
+    {
+      "item": "Book-of-Project-IntegrateWise",
+      "copies": 4,
+      "status": "3 variants (9KB, 11KB, 327KB) + 2 extracted dirs. All different. Not dedupable.",
+      "action": "extract and classify each variant"
+    },
+    {
+      "item": "SecretStore (x2: Downloads + Github)",
+      "copies": 2,
+      "status": "⚠️ Live API keys in plaintext",
+      "action": "Move to Infisical. Delete both copies."
+    },
+    {
+      "item": "account-success-system/",
+      "copies": 2,
+      "status": "Has WIRING_SUMMARY.md with 210-screen arch. Not deduped — variants differ.",
+      "action": "merge navigation components into BD workbench"
+    },
+    {
+      "item": "app/ (marketing site)",
+      "copies": 1,
+      "status": "Design drift: DM Sans instead of Instrument Sans. 2K lines dead code.",
+      "action": "review and fix design drift"
+    },
+    {
+      "item": "mimo/ (product pilot)",
+      "copies": 1,
+      "status": "Express workbench + 19 user journeys. Unique content.",
+      "action": "extract journey definitions"
+    },
+    {
+      "item": "Book-of-Project dirs (x3 extracted)",
+      "copies": 3,
+      "status": "All different sizes. Need content review.",
+      "action": "classify and dedup into memory"
+    }
+  ],
+  "triage": {
+    "completed": "2026-05-27",
+    "downloads": {
+      "exact_duplicates_deleted": 6,
+      "files_moved_to_memory": 45,
+      "directories_moved_to_memory": 12,
+      "zips_moved_to_archives": 12,
+      "config_build_files_archived": 8,
+      "tsx_components_archived": 13,
+      "remaining_personal_files": 10,
+      "security_flags": 2
+    },
+    "github_root": {
+      "screenshots_archived": 50,
+      "loose_html_archived": 3,
+      "redundant_zips_deleted": 2,
+      "security_flags": 1
+    },
+    "memory_repo_organization": {
+      "00 Company Strategy": [
+        "founding-origin.md",
+        "founding-origin-short.md",
+        "chatgpt-operationalization-strategy.md"
+      ],
+      "01 Product & Engineering": [
+        "architecture-v3-0.md",
+        "product-v1-0.md",
+        "systems-architecture-v1-0.md",
+        "technical-architecture-v1-0.md",
+        "infrastructure-stack-v1-0.md",
+        "deployment-v1-0.md",
+        "integration-v1-0.md",
+        "development-v1-0.md",
+        "master-architecture-final.md",
+        "master-architecture-connected-system.md",
+        "master-architecture-connected-system-v2.md",
+        "master-architecture-connected-system-short.md",
+        "ui-shell-guide.md",
+        "ui-shell-unified-prototype.html",
+        "architecture-v2-0.html",
+        "products-page.html",
+        "master-product-document.html",
+        "product-ui.html",
+        "full-documentation.html",
+        "consolidated-writeup-evolution.md",
+        "concept-lineage-autonomous-parallel-execution.md"
+      ],
+      "02 Marketing & Creative": [
+        "one-pager.md",
+        "ui-shell-narrative-guide.md",
+        "marketing-website.html"
+      ],
+      "07 Resources & Knowledge Base": [
+        "Components/ (13 TSX files + config)",
+        "account-success-system/",
+        "account-success-temp/",
+        "marketing-site-app/",
+        "product-workbench-pilot/"
+      ],
+      "09 Archives & Retention": [
+        "TRIAGE-INDEX.md",
+        "Book-of-Project (3 variants + 3 dirs)",
+        "Kimi Agent (4 zips)",
+        "Archived zips + dirs"
+      ],
+      "10 AI": [
+        "analysis-mimo-vs-app.md",
+        "app-marketing-site-review.md",
+        "merged-session-output.txt"
+      ]
+    }
+  }
+}

@@ -17,6 +17,11 @@ const sections = [
   { id: 'convergence', label: 'Convergence', icon: Activity },
 ];
 
+const CANONICAL_SOURCE = `
+> **Canonical source:** Product Document v1.0 — stored in IntegrateWise Memory
+> **Status:** This page is a rendered projection of the canonical document.
+`;
+
 function SectionNav({ active }: { active: string }) {
   return (
     <nav className="hidden lg:block fixed left-0 top-0 h-screen w-56 pt-20 pb-8 px-4 overflow-y-auto" style={{ background: 'var(--paper-warm)', borderRight: '1px solid var(--rule)' }}>

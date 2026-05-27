@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface DayEntry {
   date: string;
@@ -7,6 +7,33 @@ interface DayEntry {
   decisions: string[];
   quotes?: string[];
   locked?: string[];
+}
+
+interface ManifestPillar {
+  label: string;
+  description: string;
+  canonical: string;
+  evolution: string[];
+}
+
+interface ManifestEntry {
+  id: string;
+  date: string;
+  label: string;
+  pillar: string;
+  type: string;
+}
+
+interface ManifestPending {
+  item: string;
+  copies: number;
+  action: string;
+}
+
+interface Manifest {
+  pillars: Record<string, ManifestPillar>;
+  entries: ManifestEntry[];
+  pending: ManifestPending[];
 }
 
 const entries: DayEntry[] = [
@@ -189,8 +216,29 @@ const pill = (text: string, color: string) => (
   </span>
 );
 
+const PILLAR_COLORS: Record<string, string> = {
+  "one-surface": "var(--forest-bright)",
+  "memory": "var(--gold)",
+  "operating-environment": "var(--slate-mid)",
+  "governance": "var(--red)",
+  "continuity": "var(--forest)",
+};
+
 export function EvolutionPage() {
   const [open, setOpen] = useState<number | null>(0);
+  const [manifest, setManifest] = useState<Manifest | null>(null);
+  const [activePillar, setActivePillar] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch('/data/continuity-manifest.json')
+      .then(r => r.json())
+      .then(setManifest)
+      .catch(() => {});
+  }, []);
+
+  const filteredEntries = activePillar
+    ? entries.filter(e => manifest?.entries.find(me => me.label === e.label)?.pillar === activePillar)
+    : entries;
 
   return (
     <div style={{ maxWidth: 860, margin: '0 auto', padding: '48px 24px' }}>
@@ -208,14 +256,52 @@ export function EvolutionPage() {
           style={{ color: 'var(--ink-muted)', maxWidth: 600, lineHeight: 1.7 }}
         >
           A chronological record of how IntegrateWise evolved — drawn from every Hermes session,
-          every conversation, every decision that was made between May 8 and May 24, 2026.
+          every conversation, every decision that was made.
           Written as it happened. Permanent.
         </p>
         <div style={{ marginTop: 20, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          {pill("May 8 – May 24, 2026", "var(--forest)")}
-          {pill("17 days", "var(--ink-muted)")}
-          {pill("Source: Hermes CLI Sessions", "var(--gold)")}
+          {pill("May 2025 – ongoing", "var(--forest)")}
+          {pill(`${entries.length} records`, "var(--ink-muted)")}
+          {pill("Source: continuity-manifest.json", "var(--gold)")}
         </div>
+
+        {/* Pillar filters */}
+        {manifest && (
+          <div style={{ marginTop: 24 }}>
+            <p className="iw-mono-label" style={{ marginBottom: 10, fontSize: 10 }}>
+              Filter by pillar
+            </p>
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+              <button
+                onClick={() => setActivePillar(null)}
+                style={{
+                  padding: '6px 14px', borderRadius: 20, border: '1px solid var(--rule)',
+                  background: !activePillar ? 'var(--forest)' : 'transparent',
+                  color: !activePillar ? 'var(--paper)' : 'var(--ink-muted)',
+                  fontSize: 12, cursor: 'pointer', fontFamily: 'var(--font-mono)',
+                  transition: 'all 0.15s',
+                }}
+              >
+                All
+              </button>
+              {Object.entries(manifest.pillars).map(([key, p]) => (
+                <button
+                  key={key}
+                  onClick={() => setActivePillar(activePillar === key ? null : key)}
+                  style={{
+                    padding: '6px 14px', borderRadius: 20, border: '1px solid var(--rule)',
+                    background: activePillar === key ? PILLAR_COLORS[key] : 'transparent',
+                    color: activePillar === key ? 'var(--paper)' : 'var(--ink-muted)',
+                    fontSize: 12, cursor: 'pointer', fontFamily: 'var(--font-mono)',
+                    transition: 'all 0.15s',
+                  }}
+                >
+                  {p.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Timeline */}
@@ -232,7 +318,10 @@ export function EvolutionPage() {
           }}
         />
 
-        {entries.map((entry, i) => (
+        {filteredEntries.map((entry, i) => {
+          const me = manifest?.entries.find(e => e.label === entry.label);
+          const pColor = me ? (PILLAR_COLORS[me.pillar] || 'var(--forest)') : 'var(--forest)';
+          return (
           <div key={i} style={{ position: 'relative', paddingLeft: 56, marginBottom: 32 }}>
             {/* Dot */}
             <div
@@ -243,8 +332,8 @@ export function EvolutionPage() {
                 width: 18,
                 height: 18,
                 borderRadius: '50%',
-                background: open === i ? 'var(--forest)' : 'var(--paper-warm)',
-                border: '2px solid var(--forest)',
+                background: open === i ? (me ? PILLAR_COLORS[me.pillar] || 'var(--forest)' : 'var(--forest)') : 'var(--paper-warm)',
+                border: `2px solid ${me ? PILLAR_COLORS[me.pillar] || 'var(--forest)' : 'var(--forest)'}`,
                 transition: 'background 0.2s',
               }}
             />
@@ -283,6 +372,19 @@ export function EvolutionPage() {
                   >
                     {entry.label}
                   </h2>
+                  {me && (
+                    <span
+                      style={{
+                        display: 'inline-block', marginTop: 6,
+                        padding: '2px 8px', borderRadius: 999, fontSize: 10,
+                        fontFamily: 'var(--font-mono)',
+                        background: PILLAR_COLORS[me.pillar] || 'var(--ink-muted)',
+                        color: 'var(--paper)',
+                      }}
+                    >
+                      {manifest?.pillars[me.pillar]?.label || me.pillar}
+                    </span>
+                  )}
                 </div>
                 <span
                   style={{
@@ -420,53 +522,72 @@ export function EvolutionPage() {
               )}
             </div>
           </div>
-        ))}
+        );
+      })}
 
-        {/* More coming */}
-        <div style={{ paddingLeft: 56, paddingBottom: 8 }}>
-          <div
-            style={{
-              position: 'absolute',
-              left: 12,
-              width: 18,
-              height: 18,
-              borderRadius: '50%',
-              background: 'var(--rule)',
-              border: '2px solid var(--rule)',
-            }}
-          />
-          <div
-            style={{
-              padding: '16px 20px',
-              background: 'var(--paper-warm)',
-              border: '1px dashed var(--rule)',
-              borderRadius: 12,
-            }}
-          >
-            <p className="iw-mono-label" style={{ color: 'var(--ink-muted)', fontSize: 11 }}>
-              May 9 – May 24 · Writing in progress
-            </p>
-            <p className="iw-body" style={{ color: 'var(--ink-muted)', marginTop: 4, fontSize: '0.875rem' }}>
-              Each day is being recorded as read from the source sessions. The record will be complete.
-            </p>
+      </div>
+
+      {/* Pending items */}
+      {manifest && manifest.pending.length > 0 && (
+        <div style={{ marginTop: 48 }}>
+          <p className="iw-label" style={{ marginBottom: 16, fontSize: 11 }}>
+            Pending ingestion — {manifest.pending.length} items
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {manifest.pending.map((p, i) => (
+              <div
+                key={i}
+                style={{
+                  padding: '14px 18px',
+                  background: 'var(--paper-warm)',
+                  border: '1px dashed var(--gold)',
+                  borderRadius: 10,
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 12,
+                }}
+              >
+                <span style={{ color: 'var(--gold)', fontSize: 14, flexShrink: 0, marginTop: 1 }}>○</span>
+                <div>
+                  <p className="iw-body" style={{ fontWeight: 600, fontSize: '0.875rem' }}>
+                    {p.item}
+                  </p>
+                  <p className="iw-body" style={{ color: 'var(--ink-muted)', fontSize: '0.8rem', marginTop: 2 }}>
+                    {p.action}
+                  </p>
+                  {p.copies > 1 && (
+                    <span
+                      style={{
+                        display: 'inline-block', marginTop: 6,
+                        padding: '2px 8px', borderRadius: 999, fontSize: 10,
+                        fontFamily: 'var(--font-mono)',
+                        background: 'var(--gold-pale)', color: 'var(--gold)',
+                      }}
+                    >
+                      {p.copies} copies — dedup needed
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      )}
 
       {/* Footer */}
       <div
         style={{
-          marginTop: 64,
+          marginTop: 48,
           paddingTop: 24,
           borderTop: '1px solid var(--rule)',
         }}
       >
         <p className="iw-mono-label" style={{ color: 'var(--ink-muted)', fontSize: 11 }}>
-          Source: Hermes CLI session exports · merged_files.txt series · state.db
+          Source: continuity-manifest.json · Hermes CLI sessions · merged_files.txt
         </p>
         <p className="iw-body" style={{ color: 'var(--ink-muted)', marginTop: 4, fontSize: '0.8rem' }}>
-          This is a living record. Each entry is written from primary source — verbatim sessions,
-          not reconstruction. Nothing is paraphrased without indication.
+          This is a living record managed by continuity-manifest.json. Entries track evolution
+          across the five pillars. Pending items await ingestion into the memory repo.
         </p>
       </div>
     </div>

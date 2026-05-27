@@ -96,16 +96,16 @@ const DOMAIN_NAV: Record<Domain, { sections: { label: string; items: { id: strin
 
 const S = {
   rail:         "#111D14",
-  sidebar:      "#1A3A2A",
-  sidebarBorder:"#2D5A3D",
-  paper:        "#F4F0E8",
-  paperWarm:    "#EBE5D8",
-  text:         "#F4F0E8",
+  sidebar:      "var(--forest)",
+  sidebarBorder:"var(--forest-mid)",
+  paper:        "var(--paper)",
+  paperWarm:    "var(--paper-warm)",
+  text:         "var(--paper)",
   textMuted:    "rgba(244,240,232,0.6)",
   textFaint:    "rgba(244,240,232,0.35)",
-  gold:         "#B8943F",
-  goldLight:    "#D4AC5A",
-  activeBg:     "rgba(184,148,63,0.15)",
+  gold:         "var(--gold)",
+  goldLight:    "var(--gold-light)",
+  activeBg:     "var(--accent-soft)",
   hoverBg:      "rgba(244,240,232,0.07)",
 }
 
