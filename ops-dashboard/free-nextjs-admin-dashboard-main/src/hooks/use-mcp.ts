@@ -4,7 +4,7 @@
  * All tools speak via MCP and Spine only.
  * No direct database access. No direct Supabase calls.
  * 
- * Pattern: Frontend → MCP /invoke → Worker → Spine
+ * Pattern: Frontend → API Proxy → MCP → Worker → Spine
  */
 
 import { useState, useCallback } from 'react';
@@ -41,13 +41,14 @@ export function useMCP(): UseMCPResult {
 
     try {
       const request = buildMCPRequest(toolName, args);
-      const headers = getMCPHeaders();
 
-      const response = await fetch(MCP_CONFIG.endpoint, {
+      // Call server-side API proxy (keeps API key server-side)
+      const response = await fetch('/api/mcp', {
         method: 'POST',
-        headers,
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(request),
-        signal: AbortSignal.timeout(MCP_CONFIG.requestTimeout),
       });
 
       const data: MCPResponse = await response.json();

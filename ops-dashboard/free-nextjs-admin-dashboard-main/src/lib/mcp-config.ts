@@ -9,13 +9,17 @@ export const MCP_CONFIG = {
   // MCP Endpoint (Cloudflare Worker)
   endpoint: process.env.NEXT_PUBLIC_MCP_ENDPOINT || 'https://mcp.integratewise.ai',
   
-  // Auth
-  apiKey: process.env.NEXT_PUBLIC_MCP_API_KEY || '',
+  // Auth (SERVER-SIDE ONLY - never exposed to browser)
+  apiKey: process.env.MCP_API_KEY || '',  // Removed NEXT_PUBLIC_
   
-  // Tenant
+  // Client credentials (manual - server doesn't support auto-registration)
+  clientId: process.env.MCP_CLIENT_ID || 'integratewise-ops-dashboard',  // Removed NEXT_PUBLIC_
+  clientSecret: process.env.MCP_CLIENT_SECRET || '',  // Removed NEXT_PUBLIC_
+  
+  // Tenant (public - needed for client requests)
   tenantId: process.env.NEXT_PUBLIC_TENANT_ID || '',
   
-  // User
+  // User (public - needed for client requests)
   userId: process.env.NEXT_PUBLIC_USER_ID || '',
   
   // Environment
@@ -42,6 +46,14 @@ export function getMCPHeaders(): Record<string, string> {
   
   if (MCP_CONFIG.apiKey) {
     headers['Authorization'] = `Bearer ${MCP_CONFIG.apiKey}`;
+  }
+  
+  if (MCP_CONFIG.clientId) {
+    headers['X-Client-ID'] = MCP_CONFIG.clientId;
+  }
+  
+  if (MCP_CONFIG.clientSecret) {
+    headers['X-Client-Secret'] = MCP_CONFIG.clientSecret;
   }
   
   if (MCP_CONFIG.tenantId) {
