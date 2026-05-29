@@ -18,6 +18,16 @@ const navItems: NavItem[] = [
     path: "/",
   },
   {
+    icon: "📦",
+    name: "Product View",
+    path: "/product-view",
+  },
+  {
+    icon: "🐕",
+    name: "Customer Zero",
+    path: "/customer-zero",
+  },
+  {
     icon: "📢",
     name: "Marketing",
     path: "/marketing",
@@ -36,11 +46,6 @@ const navItems: NavItem[] = [
       { name: "At Risk", path: "/cs", badge: "5" },
       { name: "Renewals", path: "/cs", badge: "9" },
     ],
-  },
-  {
-    icon: "📦",
-    name: "Product",
-    path: "/product",
   },
   {
     icon: "⚙️",
