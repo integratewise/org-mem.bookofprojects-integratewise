@@ -175,8 +175,47 @@ export class TriageBotAgent {
           confidence: 0.9,
         });
       }
+
+      // Write to org_memory via MCP
+      await this.writeToOrgMemory(input, output, intent);
     } catch (error) {
       console.error('Failed to store learnings:', error);
+    }
+  }
+
+  /**
+   * Write to org_memory via MCP
+   */
+  private async writeToOrgMemory(input: string, output: TriageResponse, intent: string): Promise<void> {
+    try {
+      const request = buildMCPRequest('memory.upsert_org', {
+        category: 'triage-bot',
+        key: `triage_${Date.now()}`,
+        content: JSON.stringify({
+          input,
+          output: output.message,
+          intent,
+          classification: output.classification,
+          category: output.category,
+          priority: output.priority,
+        }),
+        source: 'triage-bot',
+        confidence: 0.8,
+        governance_state: 'approved',
+      });
+
+      const response = await fetch(this.endpoint, {
+        method: 'POST',
+        headers: this.headers,
+        body: JSON.stringify(request),
+      });
+
+      const data = await response.json();
+      if (data.status === 'error') {
+        console.error('Failed to write to org_memory:', data.error?.message);
+      }
+    } catch (error) {
+      console.error('Failed to write to org_memory:', error);
     }
   }
 
