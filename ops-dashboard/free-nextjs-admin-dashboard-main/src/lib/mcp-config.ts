@@ -88,5 +88,8 @@ export function buildMCPRequest(
         ...args,
       },
     },
+    // Include client credentials for MCP server
+    client_id: MCP_CONFIG.clientId,
+    client_secret: MCP_CONFIG.clientSecret,
   };
 }
