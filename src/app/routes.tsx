@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import { RootLayout } from "./components/RootLayout";
 import { WorkbenchLayout } from "./components/WorkbenchLayout";
+import { KnowledgeWorkbench } from "./components/knowledge/KnowledgeWorkbench";
 import { HomePage } from "./components/pages/HomePage";
 import { BrandHubPage } from "./components/pages/BrandHubPage";
 import { BrandAssetsPage } from "./components/pages/BrandAssetsPage";
@@ -111,9 +112,15 @@ export const router = createBrowserRouter([
     ],
   },
 
-  // ── Doc/brand shell ───────────────────────────────────────────────
+  // ── Knowledge Workbench (primary surface) ──────────────────────────
   {
     path: "/",
+    Component: KnowledgeWorkbench,
+  },
+
+  // ── Doc/brand shell ───────────────────────────────────────────────
+  {
+    path: "/docs",
     Component: RootLayout,
     children: [
       { index: true,                  Component: BrandHubPage },

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated": "2026-05-27",
+  "updated": "2026-05-28",
   "pillars": {
     "one-surface": {
       "label": "One Surface",
@@ -318,6 +318,76 @@
       "copies": 3,
       "status": "All different sizes. Need content review.",
       "action": "classify and dedup into memory"
+    },
+    {
+      "item": "1. One Surface — stop juggling tools_2. Memory — it knows everything, always - Personal, Org and Coversational AI  _3. Operating Environment across all tools and AI models where AI thinks in Context and waits for human approval. _4. Gove.md",
+      "copies": 1,
+      "status": "new — needs triage",
+      "action": "classify: pillar? canonical or reference?",
+      "size": 148842
+    },
+    {
+      "item": "Get the UI or Fields available for business Ops.md",
+      "copies": 1,
+      "status": "new — needs triage",
+      "action": "classify: pillar? canonical or reference?",
+      "size": 406831
+    },
+    {
+      "item": "Get the UI or Fields avvailable for business Ops  C.md",
+      "copies": 1,
+      "status": "new — needs triage",
+      "action": "classify: pillar? canonical or reference?",
+      "size": 304413
+    },
+    {
+      "item": "SecretStore.txt",
+      "copies": 1,
+      "status": "new — needs triage",
+      "action": "classify: pillar? canonical or reference?",
+      "size": 2981
+    },
+    {
+      "item": "Stop. This is the most important statement made in this entire conversation. Let me map it precisely before saying anything else._    _    _    _    What you just described is the complete product map__    _    _    Folder.md",
+      "copies": 1,
+      "status": "new — needs triage",
+      "action": "classify: pillar? canonical or reference?",
+      "size": 106995
+    },
+    {
+      "item": "This seems to be good out of all.md",
+      "copies": 1,
+      "status": "new — needs triage",
+      "action": "classify: pillar? canonical or reference?",
+      "size": 34083
+    },
+    {
+      "item": "integratewise_architecture_document.md",
+      "copies": 1,
+      "status": "new — needs triage",
+      "action": "classify: pillar? canonical or reference?",
+      "size": 9938
+    },
+    {
+      "item": "integratewise_architecture_document_v2.md",
+      "copies": 1,
+      "status": "new — needs triage",
+      "action": "classify: pillar? canonical or reference?",
+      "size": 12942
+    },
+    {
+      "item": "org-mem.bookofprojects-integratewise-main.zip",
+      "copies": 1,
+      "status": "new — needs triage",
+      "action": "classify: pillar? canonical or reference?",
+      "size": 375281045
+    },
+    {
+      "item": "{_  _$schema__ _https___opencode.ai_config.json_,_  _model__ _github-copilot_claude-sonnet-4.5_,_  _small_model__ _github-copilot_gpt-4o_,_  _mcp__ {_    _coda__ {_      _type__ _remote_,_      _url__ _https___coda.io_apis_mcp_,_      _enabl.md",
+      "copies": 1,
+      "status": "new — needs triage",
+      "action": "classify: pillar? canonical or reference?",
+      "size": 10607
     }
   ],
   "triage": {
