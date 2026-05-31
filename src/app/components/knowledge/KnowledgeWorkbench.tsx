@@ -4,7 +4,7 @@ import { AISidebar } from './AISidebar';
 
 // ── Surface Types ───────────────────────────────────────────────────────────
 
-type SurfaceView = 'governance' | 'intake' | 'internal' | 'public' | 'operations' | 'evolution';
+type SurfaceView = 'governance' | 'intake' | 'triage' | 'internal' | 'public' | 'operations' | 'evolution' | 'book-of-projects';
 
 // ── Document Types ──────────────────────────────────────────────────────────
 
@@ -816,6 +816,7 @@ export function KnowledgeWorkbench() {
             { id: 'public' as SurfaceView, label: 'Public Docs', icon: '🌐', desc: 'External users' },
             { id: 'operations' as SurfaceView, label: 'Operations', icon: '⚙️', desc: 'KPIs & systems' },
             { id: 'evolution' as SurfaceView, label: 'Evolution', icon: '📈', desc: 'Timeline' },
+            { id: 'book-of-projects' as SurfaceView, label: 'Book of Projects', icon: '📚', desc: 'Institutional knowledge' },
           ].map(surface => (
             <button
               key={surface.id}
@@ -1206,14 +1207,51 @@ export function KnowledgeWorkbench() {
         {/* Evolution View */}
         {activeSurface === 'evolution' && (
           <div style={{ flex: 1, overflow: 'auto', padding: '28px 40px 60px' }}>
-            <div style={{ background: '#dafbe1', border: '1px solid #4ac97e', borderRadius: 12, padding: '16px 20px', marginBottom: 24 }}>
-              <div style={{ fontSize: 13, fontWeight: 600, color: '#1a5d34', marginBottom: 4 }}>📈 Evolution Timeline</div>
-              <div style={{ fontSize: 12, color: '#1a5d34' }}>Continuity manifest showing how IntegrateWise evolved over time.</div>
+            <div style={{ background: 'var(--forest-bright)', border: '1px solid var(--forest-bright)', borderRadius: 12, padding: '16px 20px', marginBottom: 24 }}>
+              <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--paper)', marginBottom: 4 }}>📈 Evolution Timeline</div>
+              <div style={{ fontSize: 12, color: 'var(--paper)' }}>Continuity manifest showing how IntegrateWise evolved over time.</div>
             </div>
-            <div style={{ textAlign: 'center', padding: '40px', color: '#6b6556' }}>
+            <div style={{ textAlign: 'center', padding: '40px', color: 'var(--ink-muted)' }}>
               <div style={{ fontSize: 48, marginBottom: 16 }}>📈</div>
-              <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>Evolution Timeline</div>
-              <div style={{ fontSize: 13 }}>23 entries across 5 pillars. View at <a href="/evolution" style={{ color: '#1a3a2a' }}>/evolution</a></div>
+              <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8, color: 'var(--forest)' }}>Evolution Timeline</div>
+              <div style={{ fontSize: 13 }}>23 entries across 5 pillars. View at <a href="/evolution" style={{ color: 'var(--forest)' }}>/evolution</a></div>
+            </div>
+          </div>
+        )}
+
+        {/* Book of Projects View */}
+        {activeSurface === 'book-of-projects' && (
+          <div style={{ flex: 1, overflow: 'auto', padding: '28px 40px 60px' }}>
+            <div style={{ background: 'var(--gold-pale)', border: '1px solid var(--gold)', borderRadius: 12, padding: '16px 20px', marginBottom: 24 }}>
+              <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--gold)', marginBottom: 4 }}>📚 Book of Projects</div>
+              <div style={{ fontSize: 12, color: 'var(--gold)' }}>Institutional knowledge — decisions, commitments, learnings, episodes. Separate from Spine (operational data).</div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 16 }}>
+              {[
+                { icon: '📖', title: 'Episodes', desc: 'Active episodes tracking organizational decisions and events', count: 0 },
+                { icon: '✅', title: 'Decisions', desc: 'Key decisions made by the organization', count: 0 },
+                { icon: '💡', title: 'Learnings', desc: 'Patterns and insights discovered over time', count: 0 },
+                { icon: '🤝', title: 'Commitments', desc: 'Promises and commitments made', count: 0 },
+                { icon: '📊', title: 'Facts', desc: 'Verified facts and data points', count: 0 },
+              ].map((section) => (
+                <div key={section.title} style={{ background: 'var(--paper)', border: '1px solid var(--rule)', borderRadius: 12, padding: '24px', cursor: 'pointer' }}>
+                  <div style={{ fontSize: 28, marginBottom: 12 }}>{section.icon}</div>
+                  <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--forest)', marginBottom: 4 }}>{section.title}</div>
+                  <div style={{ fontSize: 12, color: 'var(--ink-muted)', marginBottom: 12 }}>{section.desc}</div>
+                  <div style={{ fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-mono)', color: 'var(--gold)' }}>{section.count} items</div>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ marginTop: 24, background: 'var(--paper)', border: '1px solid var(--rule)', borderRadius: 12, padding: '24px' }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--forest)', marginBottom: 12 }}>How it works</div>
+              <div style={{ fontSize: 13, color: 'var(--ink-muted)', lineHeight: 1.7 }}>
+                <p>The <strong>Book of Projects</strong> is separate from the Spine (operational data).</p>
+                <p style={{ marginTop: 8 }}><strong>Spine</strong> = What is the state of the business right now?</p>
+                <p><strong>Book of Projects</strong> = What has the organization learned, decided, committed to?</p>
+                <p style={{ marginTop: 8 }}>Written only through Triage Bot → HITL → sole-writer path. Append-only. Versioned. Nothing deleted.</p>
+              </div>
             </div>
           </div>
         )}
