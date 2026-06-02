@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated": "2026-05-28",
+  "updated": "2026-06-02",
   "pillars": {
     "one-surface": {
       "label": "One Surface",
@@ -280,6 +280,16 @@
       "canonical_path": "01 Product & Engineering/development-v1-0.md",
       "provenance": "Derived from Technical Architecture + Infrastructure Stack",
       "summary": "Local setup, coding standards, testing, PR process, adding components."
+    },
+    {
+      "id": "twin-decoupling-consolidation",
+      "date": "2026-06-02",
+      "label": "Twin 2.0 Pro Decoupling & v3.6 Backend Consolidation",
+      "pillar": "operating-environment",
+      "type": "milestone",
+      "canonical_path": "01 Product & Engineering/01-Engineering/TWIN-DECOUPLING-CONSOLIDATION-SPEC-2026-06-02.md",
+      "provenance": "Hermes session June 2, 2026",
+      "summary": "Decoupled Twin Orchestrator from direct Supabase database connections to run strictly within a secure edge sandbox, querying compiled Edge D1 MorningContext. Consolidated 25 workers into pipeline, connector, and intelligence."
     }
   ],
   "pending": [

@@ -194,6 +194,25 @@ const entries: DayEntry[] = [
       "Architecture locked. Build sequence confirmed. Four weeks to full connection.",
     ],
   },
+  {
+    date: "June 2, 2026",
+    label: "Twin 2.0 Pro Decoupling & v3.6 Backend Consolidation",
+    what: `A major engineering day achieving the complete decoupling of the Twin Orchestrator from direct database connections, ensuring the runtime operates strictly within a secure edge sandbox. We built the parallel MorningContextBuilder in Hono edge-D1, standardizing context extraction to the Zod-validated MorningContext payload schema. In parallel, all 25 edge services were consolidated into the core pipeline, connector, and intelligence services in the v3.6 backend. Onboarding ingestion paths were mapped to establish the 'Customer Zero' operations command console.`,
+    decisions: [
+      "Decoupled Twin Orchestrator Agent from raw database reads and writes. Standardized D1 local edge cache compiled via parallel retrieve operations.",
+      "Built the Morning Context parallel edge retrieval builder in services/intelligence, querying Edge D1 caches and returning a structured MorningContext Zod payload.",
+      "Consolidated 25 monorepo services under the v3.6 layout into pipeline (active normalizer and Spine write gatekeeper), connector (loader, storage), and intelligence (reasoning, twin orchestrator).",
+      "Mapped the five onboarding and ingest phases (Welcome, Profile & Spine Init, OAuth Connect, Ingest, Ready) for the Customer Zero operations board."
+    ],
+    quotes: [
+      "The Twin Orchestrator has no raw DB credentials and reasons strictly over Edge D1 MorningContext compilation payloads."
+    ],
+    locked: [
+      "Twin 2.0 Pro decoupling is locked: the Twin has zero database writes or direct queries, ensuring data sandboxing and low latency.",
+      "v3.6 worker architecture is consolidated: pipeline is the sole Supabase write authority, connector handles ingestion and adapters, intelligence controls reasoning.",
+      "Zero Python policy strictly enforced across all 25 Cloudflare Workers and local host systems."
+    ]
+  }
 ];
 
 const pill = (text: string, color: string) => (
