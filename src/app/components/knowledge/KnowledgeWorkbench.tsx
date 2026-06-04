@@ -920,6 +920,7 @@ export function KnowledgeWorkbench() {
               {activeSurface === 'public' && 'Public Documentation'}
               {activeSurface === 'operations' && 'Operations'}
               {activeSurface === 'evolution' && 'Evolution Timeline'}
+              {activeSurface === 'book-of-projects' && 'Book of Projects'}
             </div>
             <div style={{ fontSize: 12, color: 'var(--ink-muted)' }}>
               {activeSurface === 'governance' && meta.desc}
@@ -929,6 +930,7 @@ export function KnowledgeWorkbench() {
               {activeSurface === 'public' && 'Sanitized documentation for external users'}
               {activeSurface === 'operations' && 'KPIs, connected systems, execution status'}
               {activeSurface === 'evolution' && 'Continuity manifest and timeline'}
+              {activeSurface === 'book-of-projects' && 'Institutional knowledge — Decisions, commitments, learnings, episodes'}
             </div>
           </div>
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 12 }}>
