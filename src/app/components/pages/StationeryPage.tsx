@@ -758,8 +758,8 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
               <p className="text-sm text-[#5A5550] mt-1">{content.tagline}</p>
             </div>
             <div className="text-right text-xs text-[#5A5550]">
-              {content.companyDetails?.split('\n').map((line) => (
-                <p key={line}>{line}</p>
+              {content.companyDetails?.split('\n').map((line, i) => (
+                <p key={i}>{line}</p>
               ))}
             </div>
           </div>
@@ -769,8 +769,8 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
             <p className="text-sm mb-8 ml-4">{content.recipient}</p>
             <p className="text-sm mb-4">Subject: {content.subject}</p>
             <div className="h-64 border border-[var(--rule-light)] rounded-lg p-6">
-              {content.body?.split('\n').map((line) => (
-                <p key={line} className="text-sm mb-3">{line}</p>
+              {content.body?.split('\n').map((line, i) => (
+                <p key={i} className="text-sm mb-3">{line}</p>
               ))}
             </div>
           </div>
@@ -780,149 +780,6 @@ function PreviewContent({ id, content }: { id: string; content: StationeryConten
         </div>
       );
     
-    case 'notepad':
-      return (
-        <div className="w-[520px] h-[740px] p-8 bg-[var(--paper)]">
-          <div className="flex justify-between items-start pb-6 border-b-2" style={{ borderColor: brandColor }}>
-            <div>
-              <h1 className="text-2xl font-bold" style={{ color: brandColor }}>{content.companyName}</h1>
-              <p className="text-xs text-[#5A5550]">{content.tagline}</p>
-            </div>
-          </div>
-          <div className="mt-8 space-y-3">
-            {[...Array(8)].map((_, i) => (
-              <div key={i} className="flex items-center border-b border-[var(--rule-light)] pb-3">
-                <div className="w-5 h-5 rounded-full border-2 mr-3" style={{ borderColor: brandColor }} />
-                <div className="flex-1 h-4 bg-[var(--paper-deep)] rounded" />
-              </div>
-            ))}
-          </div>
-          <div className="absolute bottom-8 left-8 right-8 pt-4 border-t border-[var(--rule-light)]">
-            <p className="text-xs text-[var(--text-faint)] text-center">{content.footerText}</p>
-          </div>
-        </div>
-      );
-
-    case 'folder':
-      return (
-        <div className="w-[800px] h-[500px] p-8 bg-gradient-to-b rounded-lg overflow-hidden" style={{ background: `linear-gradient(135deg, ${brandColor} 0%, ${brandColor}99 100%)` }}>
-          <div className="h-full flex flex-col justify-between text-white">
-            <div>
-              <h1 className="text-4xl font-bold mb-2">{content.companyName}</h1>
-              <p className="text-lg opacity-90">{content.tagline}</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-semibold">{content.folderText}</p>
-            </div>
-          </div>
-        </div>
-      );
-
-    case 'sticker':
-      return (
-        <div className="w-[600px] h-[600px] bg-[var(--paper)] rounded-full flex items-center justify-center border-4" style={{ borderColor: brandColor }}>
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: brandColor }}>{content.companyName}</h2>
-            <p className="text-sm text-[#5A5550] mb-4">{content.tagline}</p>
-            <p className="text-lg font-semibold text-[var(--ink)]">{content.stickerText}</p>
-          </div>
-        </div>
-      );
-
-    case 'memo':
-      return (
-        <div className="w-[800px] h-[1131px] p-12 bg-[var(--paper)]">
-          <div className="border-b-2 pb-6" style={{ borderColor: brandColor }}>
-            <h1 className="text-2xl font-bold" style={{ color: brandColor }}>MEMORANDUM</h1>
-            <p className="text-sm text-[#5A5550]">{content.companyName}</p>
-          </div>
-          <div className="mt-8 space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <p className="text-xs font-semibold text-[var(--text-muted)]">TO:</p>
-                <p className="text-sm text-[var(--ink)]">{content.memoTo}</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-[var(--text-muted)]">DATE:</p>
-                <p className="text-sm text-[var(--ink)]">{content.memoDate}</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-[var(--text-muted)]">FROM:</p>
-                <p className="text-sm text-[var(--ink)]">{content.memoFrom}</p>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-[var(--text-muted)]">SUBJECT:</p>
-                <p className="text-sm text-[var(--ink)]">{content.memoSubject}</p>
-              </div>
-            </div>
-            <div className="mt-6">
-              <div className="p-6 border border-[var(--rule-light)] rounded-lg">
-                <p className="text-sm text-[#333944] whitespace-pre-wrap">{content.memoBody}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-
-    case 'report-cover':
-      return (
-        <div className="w-[800px] h-[1131px] p-12 bg-gradient-to-b text-white flex flex-col justify-between" style={{ background: `linear-gradient(135deg, ${content.brandColor || 'var(--forest)'} 0%, ${content.brandColor || 'var(--ink)'}99 100%)` }}>
-          <div />
-          <div className="text-center">
-            <p className="text-lg opacity-80 mb-4">{content.reportDate}</p>
-            <h1 className="text-5xl font-bold mb-4">{content.reportTitle}</h1>
-            <p className="text-2xl opacity-90">{content.reportSubtitle}</p>
-          </div>
-          <div className="text-center text-sm opacity-70">
-            <p>{content.companyName}</p>
-            <p className="mt-2">Prepared by {content.preparedBy}</p>
-          </div>
-        </div>
-      );
-
-    case 'fax-cover':
-      return (
-        <div className="w-[800px] h-[1131px] p-12 bg-[var(--paper)]">
-          <div className="border-b-4 pb-6" style={{ borderColor: content.brandColor || 'var(--forest)' }}>
-            <h1 className="text-3xl font-bold" style={{ color: content.brandColor || 'var(--forest)' }}>FAX TRANSMISSION COVER SHEET</h1>
-          </div>
-          <div className="mt-8 space-y-6">
-            <div className="grid grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-sm font-bold text-[var(--ink)] mb-4">FROM:</h3>
-                <p className="text-sm">{content.senderCompany}</p>
-                <p className="text-sm">{content.senderName}</p>
-                <p className="text-sm">{content.senderPhone}</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-bold text-[var(--ink)] mb-4">TO:</h3>
-                <p className="text-sm">{content.recipientCompany}</p>
-                <p className="text-sm">{content.recipientName}</p>
-                <p className="text-sm">{content.recipientPhone}</p>
-              </div>
-            </div>
-            <table className="w-full border-collapse">
-              <tbody>
-                <tr className="border-b border-[var(--rule-light)]">
-                  <td className="text-sm font-semibold text-[var(--ink)] pb-2">Total Pages (including cover):</td>
-                  <td className="text-sm pb-2">{content.numberOfPages}</td>
-                </tr>
-                <tr className="border-b border-[var(--rule-light)]">
-                  <td className="text-sm font-semibold text-[var(--ink)] py-2">Subject:</td>
-                  <td className="text-sm py-2">{content.subject}</td>
-                </tr>
-                <tr>
-                  <td colSpan={2} className="pt-4">
-                    <p className="text-sm font-semibold text-[var(--ink)] mb-2">Message:</p>
-                    <p className="text-sm text-[#5A5550]">{content.message}</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      );
-
     case 'sales-deck':
       return (
         <div className="w-[1280px] h-[720px] p-12 flex flex-col justify-between" style={{ background: `linear-gradient(135deg, ${brandColor} 0%, ${brandColor}dd 100%)` }}>

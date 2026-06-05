@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { Search, ChevronDown, ChevronRight, Check, X, Edit3, Trash2, Copy, MoreHorizontal, FileText, FolderOpen, Shield, BarChart3, GitBranch, Bot, ExternalLink, MessageSquare } from 'lucide-react';
+import { Search, ChevronDown, ChevronRight, ChevronLeft, ArrowLeft, Check, X, Edit3, Trash2, Copy, MoreHorizontal, FileText, FolderOpen, Shield, BarChart3, GitBranch, Bot, ExternalLink, MessageSquare } from 'lucide-react';
 import { AISidebar } from './AISidebar';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 // ── Surface Types ───────────────────────────────────────────────────────────
 
@@ -645,6 +647,41 @@ export function KnowledgeWorkbench() {
   const [showAISidebar, setShowAISidebar] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
 
+  // Dynamic memory states
+  const [memoryIndex, setMemoryIndex] = useState<any>(null);
+  const [selectedBookSection, setSelectedBookSection] = useState<string | null>(null);
+  const [selectedBookFile, setSelectedBookFile] = useState<string | null>(null);
+  const [bookFileContent, setBookFileContent] = useState<string>('');
+  const [bookViewMode, setBookViewMode] = useState<'human' | 'ai'>('human');
+
+  useEffect(() => {
+    fetch('/memory/index.json')
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(data => setMemoryIndex(data))
+      .catch(err => console.error('Failed to load memory index:', err));
+  }, []);
+
+  const handleSelectBookFile = (section: string, filename: string) => {
+    setSelectedBookFile(filename);
+    setBookFileContent('Loading...');
+    
+    let folder = '';
+    if (section === 'Decisions') folder = 'decisions';
+    else if (section === 'Episodes') folder = 'conversational';
+    else folder = 'org';
+    
+    fetch(`/memory/${folder}/${filename}`)
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.text();
+      })
+      .then(text => setBookFileContent(text))
+      .catch(err => setBookFileContent(`Failed to load content: ${err.message}`));
+  };
+
   // LocalStorage state
   const getDocState = useCallback((id: string) => {
     try {
@@ -806,7 +843,7 @@ export function KnowledgeWorkbench() {
         {/* Surface Navigation */}
         <div style={{ padding: '16px 12px 8px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <div style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1.2, color: 'var(--gold)', padding: '0 12px', marginBottom: 8 }}>
-            SURFACES
+            WORKSPACES
           </div>
           {[
             { id: 'governance' as SurfaceView, label: 'Governance', icon: '📋', desc: '95 documents' },
@@ -816,7 +853,7 @@ export function KnowledgeWorkbench() {
             { id: 'public' as SurfaceView, label: 'Public Docs', icon: '🌐', desc: 'External users' },
             { id: 'operations' as SurfaceView, label: 'Operations', icon: '⚙️', desc: 'KPIs & systems' },
             { id: 'evolution' as SurfaceView, label: 'Evolution', icon: '📈', desc: 'Timeline' },
-            { id: 'book-of-projects' as SurfaceView, label: 'Book of Projects', icon: '📚', desc: 'Institutional knowledge' },
+            { id: 'book-of-projects' as SurfaceView, label: 'Book of Projects', icon: '📚', desc: 'How we think & what we decided' },
           ].map(surface => (
             <button
               key={surface.id}
@@ -930,10 +967,35 @@ export function KnowledgeWorkbench() {
               {activeSurface === 'public' && 'Sanitized documentation for external users'}
               {activeSurface === 'operations' && 'KPIs, connected systems, execution status'}
               {activeSurface === 'evolution' && 'Continuity manifest and timeline'}
-              {activeSurface === 'book-of-projects' && 'Institutional knowledge — Decisions, commitments, learnings, episodes'}
+              {activeSurface === 'book-of-projects' && 'A permanent, human-readable record of what we decided, learned, and committed to.'}
             </div>
           </div>
           <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 12 }}>
+            {/* Book of Projects view toggle */}
+            {activeSurface === 'book-of-projects' && (
+              <div style={{ display: 'flex', alignItems: 'center', background: 'var(--paper-deep)', border: '1px solid var(--rule)', borderRadius: 8, padding: 3, gap: 2 }}>
+                <button
+                  onClick={() => { setBookViewMode('human'); setSelectedBookSection(null); }}
+                  title="Human view — plain language chapters"
+                  style={{
+                    padding: '5px 12px', borderRadius: 6, border: 'none', fontSize: 11, fontWeight: 700,
+                    cursor: 'pointer', transition: 'all 0.15s', fontFamily: 'var(--font-mono)',
+                    background: bookViewMode === 'human' ? 'var(--forest)' : 'transparent',
+                    color: bookViewMode === 'human' ? 'var(--paper)' : 'var(--ink-muted)',
+                  }}
+                >👤 Human</button>
+                <button
+                  onClick={() => { setBookViewMode('ai'); setSelectedBookSection(null); }}
+                  title="AI view — system-level memory framing"
+                  style={{
+                    padding: '5px 12px', borderRadius: 6, border: 'none', fontSize: 11, fontWeight: 700,
+                    cursor: 'pointer', transition: 'all 0.15s', fontFamily: 'var(--font-mono)',
+                    background: bookViewMode === 'ai' ? 'var(--gold)' : 'transparent',
+                    color: bookViewMode === 'ai' ? 'var(--forest)' : 'var(--ink-muted)',
+                  }}
+                >🤖 AI</button>
+              </div>
+            )}
             <button
               onClick={() => setShowAISidebar(!showAISidebar)}
               style={{
@@ -1223,38 +1285,336 @@ export function KnowledgeWorkbench() {
 
         {/* Book of Projects View */}
         {activeSurface === 'book-of-projects' && (
-          <div style={{ flex: 1, overflow: 'auto', padding: '28px 40px 60px' }}>
-            <div style={{ background: 'var(--gold-pale)', border: '1px solid var(--gold)', borderRadius: 12, padding: '16px 20px', marginBottom: 24 }}>
-              <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--gold)', marginBottom: 4 }}>📚 Book of Projects</div>
-              <div style={{ fontSize: 12, color: 'var(--gold)' }}>Institutional knowledge — decisions, commitments, learnings, episodes. Separate from Spine (operational data).</div>
-            </div>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', height: '100%' }}>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 16 }}>
-              {[
-                { icon: '📖', title: 'Episodes', desc: 'Active episodes tracking organizational decisions and events', count: 0 },
-                { icon: '✅', title: 'Decisions', desc: 'Key decisions made by the organization', count: 0 },
-                { icon: '💡', title: 'Learnings', desc: 'Patterns and insights discovered over time', count: 0 },
-                { icon: '🤝', title: 'Commitments', desc: 'Promises and commitments made', count: 0 },
-                { icon: '📊', title: 'Facts', desc: 'Verified facts and data points', count: 0 },
-              ].map((section) => (
-                <div key={section.title} style={{ background: 'var(--paper)', border: '1px solid var(--rule)', borderRadius: 12, padding: '24px', cursor: 'pointer' }}>
-                  <div style={{ fontSize: 28, marginBottom: 12 }}>{section.icon}</div>
-                  <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--forest)', marginBottom: 4 }}>{section.title}</div>
-                  <div style={{ fontSize: 12, color: 'var(--ink-muted)', marginBottom: 12 }}>{section.desc}</div>
-                  <div style={{ fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-mono)', color: 'var(--gold)' }}>{section.count} items</div>
+            {/* ── AI VIEW (original machine-centric framing) ───────────────── */}
+            {bookViewMode === 'ai' && (
+              <div style={{ flex: 1, overflow: 'auto', padding: '28px 40px 60px' }}>
+                {/* Banner */}
+                <div style={{ background: 'var(--gold-pale)', border: '1px solid var(--gold)', borderRadius: 12, padding: '16px 20px', marginBottom: 24 }}>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--gold)', marginBottom: 4 }}>📚 Book of Projects — AI Memory View</div>
+                  <div style={{ fontSize: 12, color: 'var(--gold)' }}>Institutional memory — decisions, commitments, learnings, episodes. Separate from Spine (operational data).</div>
                 </div>
-              ))}
-            </div>
 
-            <div style={{ marginTop: 24, background: 'var(--paper)', border: '1px solid var(--rule)', borderRadius: 12, padding: '24px' }}>
-              <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--forest)', marginBottom: 12 }}>How it works</div>
-              <div style={{ fontSize: 13, color: 'var(--ink-muted)', lineHeight: 1.7 }}>
-                <p>The <strong>Book of Projects</strong> is separate from the Spine (operational data).</p>
-                <p style={{ marginTop: 8 }}><strong>Spine</strong> = What is the state of the business right now?</p>
-                <p><strong>Book of Projects</strong> = What has the organization learned, decided, committed to?</p>
-                <p style={{ marginTop: 8 }}>Written only through Triage Bot → HITL → sole-writer path. Append-only. Versioned. Nothing deleted.</p>
+                {/* Original flat cards */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 16 }}>
+                  {[
+                    {
+                      icon: '📖',
+                      title: 'Episodes',
+                      desc: 'Active episodes tracking organizational decisions and events',
+                      count: memoryIndex ? Object.keys(memoryIndex.conversational || {}).length : 0,
+                      key: 'Work Sessions'
+                    },
+                    {
+                      icon: '✅',
+                      title: 'Decisions',
+                      desc: 'Key decisions made by the organization',
+                      count: memoryIndex ? Object.values(memoryIndex.decisions || {}).reduce((acc: number, d: any) => acc + (d.decision_count || 0), 0) : 0,
+                      key: 'Decisions'
+                    },
+                    {
+                      icon: '💡',
+                      title: 'Learnings',
+                      desc: 'Patterns and insights discovered over time',
+                      count: memoryIndex ? Object.values(memoryIndex.org || {}).filter((o: any) => o.category === 'learning').length : 0,
+                      key: 'Principles'
+                    },
+                    {
+                      icon: '🤝',
+                      title: 'Commitments',
+                      desc: 'Promises and commitments made',
+                      count: memoryIndex ? Object.values(memoryIndex.org || {}).filter((o: any) => o.category === 'commitment').length : 0,
+                      key: 'Commitments'
+                    },
+                    {
+                      icon: '📊',
+                      title: 'Facts',
+                      desc: 'Verified facts, doctrines and data points',
+                      count: memoryIndex ? Object.values(memoryIndex.org || {}).filter((o: any) => ['doctrine', 'fact', 'insight'].includes(o.category)).length : 0,
+                      key: 'Reference Facts'
+                    },
+                  ].map((section) => (
+                    <div
+                      key={section.title}
+                      onClick={() => { setSelectedBookSection(section.key); setSelectedBookFile(null); setBookFileContent(''); }}
+                      style={{ background: 'var(--paper)', border: '1px solid var(--rule)', borderRadius: 12, padding: '24px', cursor: 'pointer' }}
+                      onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--gold)'; }}
+                      onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--rule)'; }}
+                    >
+                      <div style={{ fontSize: 28, marginBottom: 12 }}>{section.icon}</div>
+                      <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--forest)', marginBottom: 4 }}>{section.title}</div>
+                      <div style={{ fontSize: 12, color: 'var(--ink-muted)', marginBottom: 12 }}>{section.desc}</div>
+                      <div style={{ fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-mono)', color: 'var(--gold)' }}>{section.count} items</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Original "How it works" block */}
+                <div style={{ marginTop: 24, background: 'var(--paper)', border: '1px solid var(--rule)', borderRadius: 12, padding: '24px' }}>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--forest)', marginBottom: 12 }}>How it works</div>
+                  <div style={{ fontSize: 13, color: 'var(--ink-muted)', lineHeight: 1.7 }}>
+                    <p>The <strong>Book of Projects</strong> is separate from the Spine (operational data).</p>
+                    <p style={{ marginTop: 8 }}><strong>Spine</strong> = What is the state of the business right now?</p>
+                    <p><strong>Book of Projects</strong> = What has the organization learned, decided, committed to?</p>
+                    <p style={{ marginTop: 8 }}>Written only through Triage Bot → HITL → sole-writer path. Append-only. Versioned. Nothing deleted.</p>
+                  </div>
+                </div>
+
+                {/* System metadata */}
+                <div style={{ marginTop: 16, background: 'var(--paper-deep)', border: '1px solid var(--rule)', borderRadius: 8, padding: '16px 20px', display: 'flex', gap: 32 }}>
+                  {[
+                    { label: 'Memory source', value: '/Users/nirmal/.iw-memory' },
+                    { label: 'Index', value: '/memory/index.json' },
+                    { label: 'Sync target', value: 'D1 · integratewise-spine-cache' },
+                    { label: 'Path', value: 'decisions/ · conversational/ · org/' },
+                  ].map(m => (
+                    <div key={m.label}>
+                      <div style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, color: 'var(--ink-ghost)', marginBottom: 4 }}>{m.label}</div>
+                      <div style={{ fontSize: 11, fontFamily: 'var(--font-mono)', color: 'var(--gold)' }}>{m.value}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
+
+            {/* ── HUMAN VIEW (chapter-based, question-driven) ──────────────── */}
+            {bookViewMode === 'human' && selectedBookSection === null ? (
+              <div style={{ flex: 1, overflow: 'auto', padding: '28px 40px 60px' }}>
+                {/* Page header */}
+                <div style={{ marginBottom: 32 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: 1.5, color: 'var(--gold)', marginBottom: 8 }}>IntegrateWise · Living Record</div>
+                  <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 28, fontWeight: 700, color: 'var(--forest)', margin: 0, marginBottom: 10 }}>Book of Projects</h2>
+                  <p style={{ fontSize: 14, color: 'var(--ink-muted)', lineHeight: 1.6, maxWidth: 560, margin: 0 }}>
+                    Everything we have decided, learned, and committed to — written in plain language, preserved permanently. This is how we think, not just what we built.
+                  </p>
+                </div>
+
+                {/* Chapter cards */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16, marginBottom: 32 }}>
+                  {[
+                    {
+                      icon: '✍️',
+                      chapter: 'Chapter I',
+                      title: 'Decisions',
+                      question: 'What did we decide, and why?',
+                      desc: 'Every significant call we made — on product, architecture, and how we work. Written at the moment of decision.',
+                      count: memoryIndex ? Object.values(memoryIndex.decisions || {}).reduce((acc: number, d: any) => acc + (d.decision_count || 0), 0) : 0,
+                      unit: 'recorded decisions'
+                    },
+                    {
+                      icon: '📅',
+                      chapter: 'Chapter II',
+                      title: 'Work Sessions',
+                      question: 'What happened in our working sessions?',
+                      desc: 'A log of key working sessions — what was discussed, what was built, what changed. The diary of how this organisation grew.',
+                      count: memoryIndex ? Object.keys(memoryIndex.conversational || {}).length : 0,
+                      unit: 'sessions logged'
+                    },
+                    {
+                      icon: '💡',
+                      chapter: 'Chapter III',
+                      title: 'Principles',
+                      question: 'What patterns did we discover?',
+                      desc: 'The truths we kept rediscovering — doctrine, hard-won insight, and the principles we now operate by.',
+                      count: memoryIndex ? Object.values(memoryIndex.org || {}).filter((o: any) => o.category === 'learning').length : 0,
+                      unit: 'principles'
+                    },
+                    {
+                      icon: '🤝',
+                      chapter: 'Chapter IV',
+                      title: 'Commitments',
+                      question: 'What did we promise ourselves?',
+                      desc: 'Targets we set, standards we agreed to hold, and policies we chose to enforce. Public to the whole team.',
+                      count: memoryIndex ? Object.values(memoryIndex.org || {}).filter((o: any) => o.category === 'commitment').length : 0,
+                      unit: 'commitments'
+                    },
+                    {
+                      icon: '📐',
+                      chapter: 'Chapter V',
+                      title: 'Reference Facts',
+                      question: 'What is definitively true?',
+                      desc: 'Verified specifications, canonical facts, and reference doctrine. Things we do not want to debate again.',
+                      count: memoryIndex ? Object.values(memoryIndex.org || {}).filter((o: any) => ['doctrine', 'fact', 'insight'].includes(o.category)).length : 0,
+                      unit: 'reference entries'
+                    },
+                  ].map((section) => (
+                    <div
+                      key={section.title}
+                      onClick={() => { setSelectedBookSection(section.title); setSelectedBookFile(null); setBookFileContent(''); }}
+                      style={{ background: 'var(--paper)', border: '1px solid var(--rule)', borderRadius: 12, padding: '24px 24px 20px', cursor: 'pointer', position: 'relative', overflow: 'hidden' }}
+                      onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)'; }}
+                      onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--rule)'; e.currentTarget.style.boxShadow = 'none'; }}
+                    >
+                      <div style={{ fontSize: 10, fontWeight: 700, fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: 1.2, color: 'var(--ink-ghost)', marginBottom: 12 }}>{section.chapter}</div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 10 }}>
+                        <div style={{ fontSize: 24, lineHeight: 1 }}>{section.icon}</div>
+                        <div>
+                          <div style={{ fontSize: 17, fontWeight: 700, color: 'var(--forest)', fontFamily: 'var(--font-serif)', marginBottom: 2 }}>{section.title}</div>
+                          <div style={{ fontSize: 12, color: 'var(--gold)', fontStyle: 'italic' }}>{section.question}</div>
+                        </div>
+                      </div>
+                      <div style={{ fontSize: 12, color: 'var(--ink-muted)', lineHeight: 1.6, marginBottom: 16 }}>{section.desc}</div>
+                      <div style={{ borderTop: '1px solid var(--rule)', paddingTop: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div style={{ fontSize: 11, fontWeight: 700, fontFamily: 'var(--font-mono)', color: section.count > 0 ? 'var(--forest)' : 'var(--ink-ghost)' }}>
+                          {section.count > 0 ? `${section.count} ${section.unit}` : 'Nothing recorded yet'}
+                        </div>
+                        <div style={{ fontSize: 11, color: 'var(--gold)', fontWeight: 600 }}>Open →</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Doctrine strip */}
+                <div style={{ background: 'var(--paper)', border: '1px solid var(--rule)', borderRadius: 12, padding: '24px' }}>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--forest)', marginBottom: 12 }}>What this is — and is not</div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+                    <div>
+                      <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, color: 'var(--gold)', marginBottom: 8 }}>This book</div>
+                      <ul style={{ fontSize: 12, color: 'var(--ink-muted)', lineHeight: 1.8, paddingLeft: 16, margin: 0 }}>
+                        <li>What we decided and why</li>
+                        <li>What we learned and now believe</li>
+                        <li>What we committed to</li>
+                        <li>Append-only — nothing is deleted</li>
+                        <li>Written in plain language, for humans</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, color: 'var(--ink-ghost)', marginBottom: 8 }}>Not this book</div>
+                      <ul style={{ fontSize: 12, color: 'var(--ink-muted)', lineHeight: 1.8, paddingLeft: 16, margin: 0 }}>
+                        <li>Live business state (that's the Spine)</li>
+                        <li>Real-time KPIs or dashboards</li>
+                        <li>Drafts or unreviewed notes</li>
+                        <li>Things we haven't decided yet</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', height: '100%' }}>
+                {/* Section Header */}
+                <div style={{ padding: '20px 40px', borderBottom: '1px solid var(--rule)', display: 'flex', alignItems: 'center', gap: 16, background: 'var(--paper-deep)' }}>
+                  <button
+                    onClick={() => setSelectedBookSection(null)}
+                    style={{ background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, color: 'var(--forest)', fontWeight: 600 }}
+                  >
+                    <ArrowLeft size={16} /> Back to Book
+                  </button>
+                  <div style={{ fontSize: 13, color: 'var(--ink-ghost)' }}>/</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--forest)', fontFamily: 'var(--font-serif)' }}>{selectedBookSection}</div>
+                </div>
+
+                {/* Split Pane */}
+                <div style={{ flex: 1, display: 'flex', overflow: 'hidden' }}>
+                  {/* Left: Files List */}
+                  <div style={{ width: 340, borderRight: '1px solid var(--rule)', overflow: 'auto', background: 'var(--paper-deep)', display: 'flex', flexDirection: 'column' }}>
+                    {(() => {
+                      let files: string[] = [];
+                      if (selectedBookSection === 'Decisions') {
+                        files = Object.keys(memoryIndex?.decisions || {});
+                      } else if (selectedBookSection === 'Work Sessions') {
+                        files = Object.keys(memoryIndex?.conversational || {});
+                      } else if (selectedBookSection === 'Principles') {
+                        files = Object.keys(memoryIndex?.org || {}).filter(fn => memoryIndex.org[fn].category === 'learning');
+                      } else if (selectedBookSection === 'Commitments') {
+                        files = Object.keys(memoryIndex?.org || {}).filter(fn => memoryIndex.org[fn].category === 'commitment');
+                      } else if (selectedBookSection === 'Reference Facts') {
+                        files = Object.keys(memoryIndex?.org || {}).filter(fn => ['doctrine', 'fact', 'insight'].includes(memoryIndex.org[fn].category));
+                      }
+
+                      if (files.length === 0) {
+                        return (
+                          <div style={{ padding: '40px 20px', textAlign: 'center', color: 'var(--ink-muted)', fontSize: 13 }}>
+                            <div style={{ fontSize: 32, marginBottom: 12 }}>📭</div>
+                            <div style={{ fontWeight: 600, color: 'var(--forest)', marginBottom: 4 }}>Nothing here yet</div>
+                            <div style={{ fontSize: 12 }}>Entries will appear here as they are written and approved.</div>
+                          </div>
+                        );
+                      }
+
+                      return files.map(filename => {
+                        const isSelected = selectedBookFile === filename;
+                        let detailText = '';
+                        let subtitleText = '';
+                        
+                        if (selectedBookSection === 'Decisions') {
+                          const info = memoryIndex.decisions[filename];
+                          detailText = `${info.decision_count} ${info.decision_count === 1 ? 'decision' : 'decisions'}`;
+                          subtitleText = info.date;
+                        } else if (selectedBookSection === 'Work Sessions') {
+                          const info = memoryIndex.conversational[filename];
+                          detailText = `${(info.size_bytes / 1024).toFixed(1)} KB`;
+                          subtitleText = new Date(info.synced_at).toLocaleDateString();
+                        } else {
+                          const info = memoryIndex.org[filename];
+                          detailText = info.category === 'learning' ? 'Principle' : info.category === 'commitment' ? 'Commitment' : 'Reference';
+                          subtitleText = info.department || '';
+                        }
+
+                        return (
+                          <div
+                            key={filename}
+                            onClick={() => handleSelectBookFile(selectedBookSection, filename)}
+                            style={{
+                              padding: '16px 20px',
+                              borderBottom: '1px solid var(--rule)',
+                              cursor: 'pointer',
+                              background: isSelected ? 'var(--paper)' : 'transparent',
+                              borderLeft: isSelected ? '4px solid var(--gold)' : '4px solid transparent',
+                              transition: 'all 0.15s'
+                            }}
+                          >
+                            <div style={{ fontSize: 13, fontWeight: 600, color: isSelected ? 'var(--forest)' : 'var(--ink)', marginBottom: 5, lineHeight: 1.4 }}>
+                              {filename.replace(/\.(md|txt|json)$/i, '').replace(/[-_]/g, ' ')}
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 11, color: 'var(--ink-muted)' }}>
+                              <span>{subtitleText}</span>
+                              <span style={{ fontWeight: 600, color: isSelected ? 'var(--gold)' : 'var(--ink-ghost)' }}>{detailText}</span>
+                            </div>
+                          </div>
+                        );
+                      });
+                    })()}
+                  </div>
+
+                  {/* Right: File Viewer */}
+                  <div style={{ flex: 1, overflow: 'auto', padding: '40px', background: 'var(--paper)' }}>
+                    {selectedBookFile ? (
+                      <div className="prose prose-forest max-w-none" style={{ color: 'var(--ink)' }}>
+                        <div style={{ borderBottom: '1px solid var(--rule)', paddingBottom: 20, marginBottom: 28 }}>
+                          <div style={{ fontSize: 10, fontWeight: 700, fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: 1.5, color: 'var(--gold)', marginBottom: 10 }}>
+                            Book of Projects · {selectedBookSection}
+                          </div>
+                          <h2 style={{ fontSize: 24, fontFamily: 'var(--font-serif)', color: 'var(--forest)', margin: 0, marginBottom: 10, lineHeight: 1.3 }}>
+                            {selectedBookFile.replace(/\.(md|txt)$/i, '').replace(/[-_]/g, ' ')}
+                          </h2>
+                          <div style={{ fontSize: 12, color: 'var(--ink-ghost)', fontFamily: 'var(--font-mono)' }}>
+                            {selectedBookFile}
+                          </div>
+                        </div>
+                        {bookFileContent === 'Loading...' ? (
+                          <div style={{ color: 'var(--ink-muted)', fontSize: 13, display: 'flex', alignItems: 'center', gap: 8 }}>
+                            <span style={{ display: 'inline-block', width: 12, height: 12, borderRadius: '50%', border: '2px solid var(--gold)', borderTopColor: 'transparent', animation: 'spin 0.8s linear infinite' }} />
+                            Reading entry…
+                          </div>
+                        ) : (
+                          <div className="markdown-content" style={{ fontSize: 14, lineHeight: 1.75, color: 'var(--ink)' }}>
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>{bookFileContent}</ReactMarkdown>
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <div style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: 'var(--ink-muted)', padding: '40px 0', gap: 8 }}>
+                        <div style={{ fontSize: 40, marginBottom: 8 }}>📖</div>
+                        <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--forest)', fontFamily: 'var(--font-serif)' }}>Choose an entry to read</div>
+                        <div style={{ fontSize: 12, color: 'var(--ink-muted)', textAlign: 'center', maxWidth: 240 }}>Select any entry from the left to open and read its full content.</div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         )}
 
