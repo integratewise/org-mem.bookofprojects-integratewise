@@ -44,10 +44,7 @@ interface GalleryItem {
 }
 
 // Import SVG assets
-import logoFrame1 from '../../../imports/Frame_1.svg';
 import logoFrame1v2 from '../../../imports/Frame_1-1.svg';
-import logoFrame1v3 from '../../../imports/Frame_1-2.svg';
-import logoFrame4 from '../../../imports/Frame_4.svg';
 import logoIconSvg from '../../../imports/Frame_4-1.svg';
 
 export function ProductGalleryPage() {
@@ -70,7 +67,7 @@ export function ProductGalleryPage() {
       description: 'Primary logo with full color scheme',
       category: 'logos',
       type: 'svg',
-      src: logoFrame1,
+      src: logoFrame1v2,
       formats: ['SVG', 'PNG', 'PDF'],
       size: '1200×400px',
       tags: ['logo', 'primary', 'color']
@@ -96,28 +93,6 @@ export function ProductGalleryPage() {
       formats: ['SVG', 'PNG', 'ICO'],
       size: '512×512px',
       tags: ['logo', 'icon', 'favicon']
-    },
-    {
-      id: 'logo-frame-1',
-      title: 'Logo Frame Original',
-      description: 'Original Figma frame export',
-      category: 'logos',
-      type: 'svg',
-      src: logoFrame1,
-      formats: ['SVG'],
-      size: 'Vector',
-      tags: ['logo', 'original', 'figma']
-    },
-    {
-      id: 'logo-frame-4',
-      title: 'Icon Mark Original',
-      description: 'Original icon mark from Figma',
-      category: 'logos',
-      type: 'svg',
-      src: logoFrame4,
-      formats: ['SVG'],
-      size: 'Vector',
-      tags: ['logo', 'icon', 'figma']
     },
     
     // Banners

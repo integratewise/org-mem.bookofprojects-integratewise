@@ -26,20 +26,14 @@ import { IntegrateWiseLogo } from '../IntegrateWiseLogo';
 import { TAGLINES, BRAND } from '../../lib/brand';
 
 // Import SVG files as URLs for preview display
-import logoFrame1 from '../../../imports/Frame_1.svg';
 import logoFrame1v2 from '../../../imports/Frame_1-1.svg';
-import logoFrame1v3 from '../../../imports/Frame_1-2.svg';
-import logoFrame4 from '../../../imports/Frame_4.svg';
 import logoIconSvg from '../../../imports/Frame_4-1.svg';
 
 type BgMode = 'light' | 'dark' | 'grey';
 
 const SVG_SOURCE_ASSETS = [
-  { src: logoFrame1, name: 'Frame_1.svg', label: 'Logo Frame Original' },
-  { src: logoFrame1v2, name: 'Frame_1-1.svg', label: 'Logo Frame v2' },
-  { src: logoFrame1v3, name: 'Frame_1-2.svg', label: 'Logo Frame v3' },
-  { src: logoFrame4, name: 'Frame_4.svg', label: 'Icon Mark Original' },
-  { src: logoIconSvg, name: 'Frame_4-1.svg', label: 'Icon Mark v2' },
+  { src: logoFrame1v2, name: 'Frame_1-1.svg', label: 'Logo Frame Vector' },
+  { src: logoIconSvg, name: 'Frame_4-1.svg', label: 'Icon Mark Vector' },
 ] as const;
 
 const LOGO_VARIANTS = [
